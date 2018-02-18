@@ -1,22 +1,27 @@
 package se.kth.chaos;
 
 import com.opencsv.CSVReader;
+import com.opencsv.CSVWriter;
 import net.rubyeye.xmemcached.MemcachedClient;
 import net.rubyeye.xmemcached.XMemcachedClient;
 import net.rubyeye.xmemcached.exception.MemcachedException;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeoutException;
 
 public class ChaosController {
-    private final String memcachedHost = "localhost";
-    private final int memcachedPort = 11211;
+    private final String memcachedHost;
+    private final int memcachedPort;
+
+    public ChaosController(String memcachedHost, int memcachedPort) {
+        this.memcachedHost = memcachedHost;
+        this.memcachedPort = memcachedPort;
+    }
 
     public void updateMode(String memcachedKey, int lifetime, String value) {
         try {
@@ -78,9 +83,39 @@ public class ChaosController {
         System.out.println("INFO ChaosController - Succeeded in updating modes!");
     }
 
+    public List<String[]> readTcInfoFromFile(String filepath) {
+        CSVReader reader = null;
+        List<String[]> tryCatchInfo = null;
+        try {
+            reader = new CSVReader(new FileReader(filepath));
+            tryCatchInfo = reader.readAll();
+            reader.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return tryCatchInfo;
+    }
+
+    public void write2csvfile(String filepath, List<String[]> csvinfo) {
+        try {
+            Writer writer = Files.newBufferedWriter(Paths.get(filepath));
+            CSVWriter csvWriter = new CSVWriter(writer,
+                    CSVWriter.DEFAULT_SEPARATOR,
+                    CSVWriter.NO_QUOTE_CHARACTER,
+                    CSVWriter.DEFAULT_ESCAPE_CHARACTER,
+                    CSVWriter.DEFAULT_LINE_END);
+            csvWriter.writeAll(csvinfo);
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void main(String args[]) {
-        ChaosController controller = new ChaosController();
-        String filepath = "C:\\development\\ttorrent\\chaosMonkey.csv";
+        ChaosController controller = new ChaosController("localhost", 11211);
+        String filepath = "C:\\development\\chaosMonkey.csv";
         Long lastModified = 0L;
         while (true) {
             File file = new File(filepath);
