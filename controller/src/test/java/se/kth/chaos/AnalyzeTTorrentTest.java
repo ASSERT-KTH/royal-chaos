@@ -1,7 +1,5 @@
 package se.kth.chaos;
 
-import javafx.concurrent.Worker;
-
 import java.io.*;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
@@ -14,7 +12,7 @@ public class AnalyzeTTorrentTest {
         ChaosController controller = new ChaosController("localhost", 11211);
 
         // step 0: run a seeder, and a tracker
-        //*
+        /*
         Process trackerProcess = null;
         try {
             if (osName.contains("Windows")) {
@@ -125,7 +123,6 @@ public class AnalyzeTTorrentTest {
                             Thread.currentThread().sleep(2000);
                             addInfo2Log("-- TIME OUT, KILLED BY CHAOS CONTROLLER --", workingpath + "/injection.log");
                         }
-                        //*/
                     } else {
 
                     }
@@ -136,6 +133,8 @@ public class AnalyzeTTorrentTest {
                 }
             }
         }
+        //*/
+
         /*
         for (String memcachedKey : memcachedKV.keySet()) {
             suffix = memcachedKey.replace("/", "_");

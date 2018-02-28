@@ -2,6 +2,10 @@ package se.kth.chaos;
 
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
+import com.sun.tools.attach.AgentInitializationException;
+import com.sun.tools.attach.AgentLoadException;
+import com.sun.tools.attach.AttachNotSupportedException;
+import com.sun.tools.attach.VirtualMachine;
 import net.rubyeye.xmemcached.MemcachedClient;
 import net.rubyeye.xmemcached.XMemcachedClient;
 import net.rubyeye.xmemcached.exception.MemcachedException;
@@ -12,15 +16,42 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 import java.util.concurrent.TimeoutException;
 
 public class ChaosController {
-    private final String memcachedHost;
-    private final int memcachedPort;
+    private String memcachedHost;
+    private int memcachedPort;
+    private String chaosAgentPath;
+    private String chaosAgentArg;
+    private int targetPid;
+    private String targetDir;
+    private String targetLog;
+    private String recoveryCommand;
+    private String osName = System.getProperty("os.name");
 
     public ChaosController(String memcachedHost, int memcachedPort) {
         this.memcachedHost = memcachedHost;
         this.memcachedPort = memcachedPort;
+    }
+
+    public ChaosController(String configFilePath) {
+        Properties p = new Properties();
+        try {
+            InputStream inputStream = new FileInputStream(configFilePath);
+            p.load(inputStream);
+            this.memcachedHost = p.getProperty("memcachedHost", "localhost");
+            this.memcachedPort = Integer.valueOf(p.getProperty("memcachedPort", "11211"));
+            this.chaosAgentPath = p.getProperty("chaosAgentPath", "");
+            this.chaosAgentArg = p.getProperty("chaosAgentArg", "");
+            this.targetPid = Integer.valueOf(p.getProperty("targetPid", "-1"));
+            this.targetDir = p.getProperty("targetDir", "");
+            this.targetLog = p.getProperty("targetLog", "");
+            this.recoveryCommand = p.getProperty("recoveryCommand", "");
+            inputStream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void updateMode(String memcachedKey, int lifetime, String value) {
@@ -111,6 +142,30 @@ public class ChaosController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void attachChaosMonkey() {
+        try {
+            VirtualMachine vm = VirtualMachine.attach(String.valueOf(this.targetPid));
+            vm.loadAgent(this.chaosAgentPath, this.chaosAgentArg);
+        } catch (AttachNotSupportedException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (AgentLoadException e) {
+            e.printStackTrace();
+        } catch (AgentInitializationException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void monitorLog() {
+        LogMonitor monitor = new LogMonitor(this.targetLog);
+        monitor.startMonitor();
+    }
+
+    public void updateTargetPid(int newPid) {
+        this.targetPid = newPid;
     }
 
     public static void main(String args[]) {
