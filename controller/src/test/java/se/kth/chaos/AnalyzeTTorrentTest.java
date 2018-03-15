@@ -1,5 +1,7 @@
 package se.kth.chaos;
 
+import org.apache.commons.lang3.ArrayUtils;
+
 import java.io.*;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
@@ -12,15 +14,18 @@ public class AnalyzeTTorrentTest {
         ChaosController controller = new ChaosController("localhost", 11211);
 
         // step 0: run a seeder, and a tracker
-        /*
+        //*
         Process trackerProcess = null;
         try {
             if (osName.contains("Windows")) {
                 trackerProcess = Runtime.getRuntime().exec(new String[] {"cmd", "/c", "init_tracker_and_seeder.bat"}, null, new File(rootPath));
             } else {
-                trackerProcess = Runtime.getRuntime().exec(new String[] {"bash", "-c", "init_tracker_and_seeder.sh"}, null, new File(rootPath));
+                trackerProcess = Runtime.getRuntime().exec("./init_tracker_and_seeder.sh", null, new File(rootPath));
+                trackerProcess.waitFor();
             }
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
         //*/
@@ -37,16 +42,17 @@ public class AnalyzeTTorrentTest {
             } else {
                 process = Runtime.getRuntime().exec(new String[] {"bash", "-c", "cp shared/*.* 0_original/"}, null, new File(rootPath));
                 process.waitFor();
-                process = Runtime.getRuntime().exec("java -jar ttorrent-client.jar -o . -s 0 ccf-gair.torrent", null, new File(path));
+                process = Runtime.getRuntime().exec(new String[] {"bash", "-c", "java -noverify -javaagent:/home/gluck/development/byte-monkey-jar-with-dependencies.jar=mode:analyzetc,csvfilepath:./0_original.csv,filter:com/turn/ttorrent -jar ttorrent-client.jar -o . -s 0 related_papers.torrent > 0_original.log 2>&1 &"}, null, new File(path));
             }
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
         //*/
-        // step 2: caculate the coverage of try catch blocks executed by this user action
+
+        //*
+        // step 2: calculate the coverage of try catch blocks executed by this user action
         File originalLog = new File(rootPath + "/0_original/0_original.log");
         String lastLine = null;
         try {
@@ -63,6 +69,7 @@ public class AnalyzeTTorrentTest {
         }
 
         Set<String> tcSets = new HashSet<String>();
+        Map<String, Integer> tcMap = new HashMap<>();
         try {
             BufferedReader logReader = new BufferedReader(new InputStreamReader(new FileInputStream(originalLog)));
             String line = "";
@@ -70,6 +77,11 @@ public class AnalyzeTTorrentTest {
                 if (line.startsWith("INFO ByteMonkey try catch index")) {
                     line = line.substring("INFO ByteMonkey try catch index ".length());
                     tcSets.add(line);
+                    if (tcMap.containsKey(line)) {
+                        tcMap.put(line, tcMap.get(line) + 1);
+                    } else {
+                        tcMap.put(line, 1);
+                    }
                 }
             }
             logReader.close();
@@ -80,14 +92,18 @@ public class AnalyzeTTorrentTest {
         }
 
         List<String[]> registeredTCinfo = controller.readTcInfoFromFile(rootPath + "/0_original/0_original.csv");
-        Map<String, String> memcachedKV = new HashMap<String, String>();
+        List<String> tc = new ArrayList<>(Arrays.asList(registeredTCinfo.get(0)));
+        tc.add("run times in normal");
+        tc.add("run times in injection");
+        registeredTCinfo.set(0, tc.toArray(new String[tc.size()]));
         for (int i = 1; i < registeredTCinfo.size(); i++) {
-            String[] tc = registeredTCinfo.get(i);
-            String key = String.format("%s,%s,%s", tc[0], tc[1], tc[2]);
-            if (tcSets.contains(key)) {
-                tc[3] = "yes";
-                registeredTCinfo.set(i, tc);
-                memcachedKV.put(key, tc[4]);
+            tc = new ArrayList<>(Arrays.asList(registeredTCinfo.get(i)));
+            String key = String.format("%s,%s,%s", tc.get(0), tc.get(1), tc.get(2));
+            if (tcMap.containsKey(key)) {
+                tc.set(3, "yes");
+                tc.add(tcMap.get(key).toString()); // calculate run times in normal mode
+                tc.add("-"); // leave a blank for run times in injection mode
+                registeredTCinfo.set(i, tc.toArray(new String[tc.size()]));
             }
         }
         controller.write2csvfile(rootPath + "/0_original/0_original.csv", registeredTCinfo);
@@ -95,19 +111,18 @@ public class AnalyzeTTorrentTest {
         // step 3: loop many times, one injection for each loop
         //*
         for (int i = 1; i < registeredTCinfo.size(); i++) {
-            String[] tc = registeredTCinfo.get(i);
-            if (tc[3].equals("yes")) {
-                String filter = tc[2] + "/" + tc[1];
-                String tcindex = tc[0].split("@")[0];
+            tc = new ArrayList<>(Arrays.asList(registeredTCinfo.get(i)));
+            if (tc.get(3).equals("yes")) {
+                String filter = tc.get(2) + "/" + tc.get(1);
+                String tcindex = tc.get(0).split("@")[0];
                 String suffix = tcindex + "@" + filter.replace("/", "_");
-                String command = String.format("java -noverify -javaagent:..\\byte-monkey-jar-with-dependencies.jar=mode:scircuit,filter:%s,tcindex:%s -jar ttorrent-client.jar -o . -s 0 a_song_for_you.torrent > injection.log 2>&1", filter, tcindex);
                 String workingpath = rootPath + "/" + suffix;
-
                 System.out.println("start to inject at " + suffix);
 
                 new File(workingpath).mkdir();
                 try {
-                    if (osName.contains("Windows")) { ;
+                    if (osName.contains("Windows")) {
+                        String command = String.format("java -noverify -javaagent:..\\byte-monkey-jar-with-dependencies.jar=mode:scircuit,filter:%s,tcindex:%s -jar ttorrent-client.jar -o . -s 0 a_song_for_you.torrent > injection.log 2>&1", filter, tcindex);
                         process = Runtime.getRuntime().exec(new String[] {"cmd", "/c", "xcopy .\\shared\\*.* .\\" + suffix}, null, new File(rootPath));
                         process.waitFor();
                         process = Runtime.getRuntime().exec(new String[] {"cmd", "/c", command}, null, new File(workingpath));
@@ -124,7 +139,16 @@ public class AnalyzeTTorrentTest {
                             addInfo2Log("-- TIME OUT, KILLED BY CHAOS CONTROLLER --", workingpath + "/injection.log");
                         }
                     } else {
-
+                        String command = String.format("timeout 30 java -noverify -javaagent:/home/gluck/development/byte-monkey-jar-with-dependencies.jar=mode:scircuit,filter:%s,tcindex:%s -jar ttorrent-client.jar -o . -s 0 related_papers.torrent > injection.log 2>&1", filter.replace("$", "\\$"), tcindex);
+                        process = Runtime.getRuntime().exec(new String[] {"bash", "-c", "cp ./shared/*.* ./" + suffix.replace("$", "\\$")}, null, new File(rootPath));
+                        process.waitFor();
+                        process = Runtime.getRuntime().exec(new String[] {"bash", "-c", command}, null, new File(workingpath));
+                        int exitValue = process.waitFor();
+                        if (exitValue == 124) {
+                            // handle timeout
+                            Thread.currentThread().sleep(2000);
+                            addInfo2Log("-- TIME OUT, KILLED BY CHAOS CONTROLLER --", workingpath + "/injection.log");
+                        }
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -135,35 +159,38 @@ public class AnalyzeTTorrentTest {
         }
         //*/
 
-        /*
-        for (String memcachedKey : memcachedKV.keySet()) {
-            suffix = memcachedKey.replace("/", "_");
-            String workingpath = rootPath + "/" + suffix;
-            new File(workingpath).mkdir();
-            memcachedKV.put(memcachedKey, "inject");
-            controller.updateMode(memcachedKV, 0);
-            try {
-                if (osName.contains("Windows")) { ;
-                    process = Runtime.getRuntime().exec(new String[] {"cmd", "/c", "xcopy .\\shared\\*.* .\\" + suffix}, null, new File(rootPath));
-                    process.waitFor();
-                    process = Runtime.getRuntime().exec("java -noverify -javaagent:..\\byte-monkey-jar-with-dependencies.jar=config:bytemonkey.properties -jar ttorrent-client.jar -o . -s 0 a_song_for_you.torrent", null, new File(workingpath));
-                    printProcessLog(process.getInputStream(), workingpath + "/injection.log");
-                    process.waitFor();
-                } else {
+        // step 4: calculate run times in injection mode
+        registeredTCinfo = controller.readTcInfoFromFile(rootPath + "/0_original/0_original.csv");
+        for (int i = 1; i < registeredTCinfo.size(); i++) {
+            tc = new ArrayList<>(Arrays.asList(registeredTCinfo.get(i)));
+            if (tc.get(3).equals("yes")) {
+                String filter = tc.get(2) + "/" + tc.get(1);
+                String tcindex = tc.get(0).split("@")[0];
+                String suffix = tcindex + "@" + filter.replace("/", "_");
+                String workingpath = rootPath + "/" + suffix;
+                int injectionCount = 0;
 
+                try {
+                    File injectionLog = new File(workingpath + "/injection.log");
+                    BufferedReader logReader = new BufferedReader(new InputStreamReader(new FileInputStream(injectionLog)));
+                    String line = "";
+                    while ((line = logReader.readLine()) != null) {
+                        if (line.startsWith("INFO ByteMonkey injection!")) {
+                            injectionCount++;
+                        }
+                    }
+                    logReader.close();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+
+                tc.set(6, String.valueOf(injectionCount));
+                registeredTCinfo.set(i, tc.toArray(new String[tc.size()]));
             }
-
-            memcachedKV.put(memcachedKey, "off");
         }
-        //*/
-
-
-        // step 4: diff the logs with the original one
+        controller.write2csvfile(rootPath + "/0_original/0_original.csv", registeredTCinfo);
     }
 
     public static void printProcessLog(InputStream input, String logFileName) throws IOException {

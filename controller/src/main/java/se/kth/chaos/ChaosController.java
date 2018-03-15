@@ -6,29 +6,29 @@ import com.sun.tools.attach.AgentInitializationException;
 import com.sun.tools.attach.AgentLoadException;
 import com.sun.tools.attach.AttachNotSupportedException;
 import com.sun.tools.attach.VirtualMachine;
+import net.rubyeye.xmemcached.KeyIterator;
 import net.rubyeye.xmemcached.MemcachedClient;
 import net.rubyeye.xmemcached.XMemcachedClient;
 import net.rubyeye.xmemcached.exception.MemcachedException;
+import net.rubyeye.xmemcached.utils.AddrUtil;
 
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
+import java.util.*;
 import java.util.concurrent.TimeoutException;
 
 public class ChaosController {
-    private String memcachedHost;
-    private int memcachedPort;
-    private String chaosAgentPath;
-    private String chaosAgentArg;
-    private int targetPid;
-    private String targetDir;
-    private String targetLog;
-    private String recoveryCommand;
-    private String osName = System.getProperty("os.name");
+    public String memcachedHost;
+    public int memcachedPort;
+    public String chaosAgentPath;
+    public String chaosAgentArg;
+    public int targetPid;
+    public String targetDir;
+    public String targetCsv;
+    public String targetLog;
+    public String recoveryCommand;
+    public String osName = System.getProperty("os.name");
 
     public ChaosController(String memcachedHost, int memcachedPort) {
         this.memcachedHost = memcachedHost;
@@ -46,6 +46,7 @@ public class ChaosController {
             this.chaosAgentArg = p.getProperty("chaosAgentArg", "");
             this.targetPid = Integer.valueOf(p.getProperty("targetPid", "-1"));
             this.targetDir = p.getProperty("targetDir", "");
+            this.targetCsv = p.getProperty("targetCsv", "");
             this.targetLog = p.getProperty("targetLog", "");
             this.recoveryCommand = p.getProperty("recoveryCommand", "");
             inputStream.close();
@@ -166,6 +167,41 @@ public class ChaosController {
 
     public void updateTargetPid(int newPid) {
         this.targetPid = newPid;
+    }
+
+    // useless method, because all the try-catch info will be registered into memcached now
+    public void updateRegisterInfo() {
+        MemcachedClient client = null;
+        try {
+            client = new XMemcachedClient(memcachedHost, memcachedPort);
+            KeyIterator it = client.getKeyIterator(AddrUtil.getOneAddress(memcachedHost + ":" +  memcachedPort));
+            Set<String> tcSets = new HashSet<String>();
+            while(it.hasNext()) {
+                tcSets.add(it.next());
+            }
+
+            List<String[]> registeredTCinfo = this.readTcInfoFromFile(this.targetCsv);
+            Map<String, String> memcachedKV = new HashMap<String, String>();
+
+            for (int i = 1; i < registeredTCinfo.size(); i++) {
+                String[] tc = registeredTCinfo.get(i);
+                String key = String.format("%s,%s,%s", tc[0], tc[1], tc[2]);
+                if (tcSets.contains(key)) {
+                    tc[3] = "yes"; // this is wrong
+                    registeredTCinfo.set(i, tc);
+                }
+            }
+            this.write2csvfile(this.targetCsv, registeredTCinfo);
+            client.shutdown();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (MemcachedException e) {
+            e.printStackTrace();
+        } catch (TimeoutException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void main(String args[]) {
