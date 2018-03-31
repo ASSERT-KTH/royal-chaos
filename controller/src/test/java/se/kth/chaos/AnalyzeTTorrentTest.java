@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 public class AnalyzeTTorrentTest {
     public static void main(String[] args) {
         Process process = null;
-        String rootPath = "controller/evaluation";
+        String rootPath = "controller/evaluation_1.4";
         String osName = System.getProperty("os.name");
         ChaosController controller = new ChaosController("localhost", 11211);
 
@@ -42,7 +42,7 @@ public class AnalyzeTTorrentTest {
             } else {
                 process = Runtime.getRuntime().exec(new String[] {"bash", "-c", "cp shared/*.* 0_original/"}, null, new File(rootPath));
                 process.waitFor();
-                process = Runtime.getRuntime().exec(new String[] {"bash", "-c", "java -noverify -javaagent:/home/gluck/development/byte-monkey-jar-with-dependencies.jar=mode:analyzetc,csvfilepath:./0_original.csv,filter:com/turn/ttorrent -jar ttorrent-client.jar -o . -s 0 related_papers.torrent > 0_original.log 2>&1 &"}, null, new File(path));
+                process = Runtime.getRuntime().exec(new String[] {"bash", "-c", "java -noverify -javaagent:/home/gluck/development/byte-monkey-jar-with-dependencies.jar=mode:analyzetc,csvfilepath:./0_original.csv,filter:com/turn/ttorrent -jar ttorrent-1.4-client.jar -o . -s 0 related_papers.torrent > 0_original.log 2>&1 &"}, null, new File(path));
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -139,7 +139,7 @@ public class AnalyzeTTorrentTest {
                             addInfo2Log("-- TIME OUT, KILLED BY CHAOS CONTROLLER --", workingpath + "/injection.log");
                         }
                     } else {
-                        String command = String.format("timeout 30 java -noverify -javaagent:/home/gluck/development/byte-monkey-jar-with-dependencies.jar=mode:scircuit,filter:%s,tcindex:%s -jar ttorrent-client.jar -o . -s 0 related_papers.torrent > injection.log 2>&1", filter.replace("$", "\\$"), tcindex);
+                        String command = String.format("timeout 30 java -noverify -javaagent:/home/gluck/development/byte-monkey-jar-with-dependencies.jar=mode:scircuit,filter:%s,tcindex:%s -jar ttorrent-1.4-client.jar -o . -s 0 related_papers.torrent > injection.log 2>&1", filter.replace("$", "\\$"), tcindex);
                         process = Runtime.getRuntime().exec(new String[] {"bash", "-c", "cp ./shared/*.* ./" + suffix.replace("$", "\\$")}, null, new File(rootPath));
                         process.waitFor();
                         process = Runtime.getRuntime().exec(new String[] {"bash", "-c", command}, null, new File(workingpath));

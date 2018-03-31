@@ -83,6 +83,8 @@ public class ChaosController {
                     e.printStackTrace();
                 } catch (MemcachedException e) {
                     e.printStackTrace();
+                } catch (IllegalArgumentException e) {
+                    e.printStackTrace();
                 }
             });
             client.shutdown();
@@ -108,7 +110,10 @@ public class ChaosController {
         Map<String, String> kv = new HashMap<String, String>();
         for (int i = 1; i < tryCatchInfo.size(); i++) {
             String[] line = tryCatchInfo.get(i);
-            kv.put(String.format("%s,%s,%s", line[0], line[1], line[2]), line[4]);
+            if (line[3].equals("yes")) {
+                // we should not register try-catch info to memcached if it is not covered
+                kv.put(String.format("%s,%s,%s", line[0], line[1], line[2]), line[4]);
+            }
         }
         updateMode(kv, 0);
 
@@ -169,7 +174,6 @@ public class ChaosController {
         this.targetPid = newPid;
     }
 
-    // useless method, because all the try-catch info will be registered into memcached now
     public void updateRegisterInfo() {
         MemcachedClient client = null;
         try {
@@ -187,7 +191,7 @@ public class ChaosController {
                 String[] tc = registeredTCinfo.get(i);
                 String key = String.format("%s,%s,%s", tc[0], tc[1], tc[2]);
                 if (tcSets.contains(key)) {
-                    tc[3] = "yes"; // this is wrong
+                    tc[3] = "yes"; // if the try block can be found in memcached, it indicates that this tc has been run for at least 1 time
                     registeredTCinfo.set(i, tc);
                 }
             }
