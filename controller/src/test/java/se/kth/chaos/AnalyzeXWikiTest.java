@@ -8,8 +8,8 @@ public class AnalyzeXWikiTest {
     public static void main(String[] args) {
         Process process = null;
         String osName = System.getProperty("os.name");
-        ChaosController controller = new ChaosController("controller/src/main/resources/chaosconfig.properties");
-        int operation = 0;
+        ChaosController controller = new ChaosController("controller/src/main/resources/chaosconfig_broadleaf.properties");
+        int operation = 3;
 
         switch (operation) {
             case 0: {
@@ -26,7 +26,7 @@ public class AnalyzeXWikiTest {
                 List<String> tc = null;
                 for (int i = 1; i < registeredTCinfo.size(); i++) {
                     tc = new ArrayList<>(Arrays.asList(registeredTCinfo.get(i)));
-                    if (tc.get(3).equals("yes")) {
+                    if (tc.get(3).equals("yes") && !tc.get(5).isEmpty()) {
                         String tcKey = String.format("%s,%s,%s", tc.get(0), tc.get(1), tc.get(2));
                         controller.updateMode(tcKey, 0, "inject");
 
@@ -51,7 +51,7 @@ public class AnalyzeXWikiTest {
                                     @Override
                                     public void run() {
                                         try {
-                                            String command = String.format("timeout 3m tail -f xwiki_0319.log > %s 2>&1", workingpath.replace("$", "\\$") + "/injection.log");
+                                            String command = String.format("timeout 60s tail -f %s > %s 2>&1", controller.targetLog, workingpath.replace("$", "\\$") + "/injection.log");
                                             Process process = Runtime.getRuntime().exec(new String[] {"bash", "-c", command}, null, new File(controller.targetDir));
                                             process.waitFor();
                                         } catch (IOException e) {
@@ -63,8 +63,8 @@ public class AnalyzeXWikiTest {
                                 });
                                 monitor_log.start();
 
-                                // replay production traffic for 3 mins
-                                String command = String.format("timeout 3m goreplay --output-http-track-response --input-raw-track-response --input-file-loop --input-file traffic_0.log --output-http \"http://localhost:8080\" --middleware \"/home/gluck/.pyenv/shims/python goreplay_middleware_xwiki.py\" > %s 2>&1", workingpath.replace("$", "\\$") + "/" + "response_diff.log");
+                                // replay production traffic for 2 mins
+                                String command = String.format("timeout 60s goreplay --output-http-track-response --input-raw-track-response --input-file traffic0405_60s.log --output-http \"http://localhost:8080\" --middleware \"/home/gluck/.pyenv/shims/python goreplay_middleware_xwiki.py\" > %s 2>&1", workingpath.replace("$", "\\$") + "/" + "response_diff.log");
                                 process = Runtime.getRuntime().exec(new String[] {"bash", "-c", command}, null, new File(controller.targetDir));
                                 process.waitFor();
                             }
@@ -119,19 +119,22 @@ public class AnalyzeXWikiTest {
                         try {
                             File diffLog = new File(workingpath + "/response_diff.log");
                             if (!diffLog.exists()) {
-                                break;
+                                continue;
                             }
                             BufferedReader logReader = new BufferedReader(new InputStreamReader(new FileInputStream(diffLog)));
                             String line = "";
                             String example = "";
-                            int notMatchCount = 0;
+                            int statusNotMatchCount = 0;
+                            int bodyNotMatchCount = 0;
                             while ((line = logReader.readLine()) != null) {
                                 if (line.startsWith("Response status not match")) {
-                                    notMatchCount++;
+                                    statusNotMatchCount++;
                                     example = line;
+                                } else if (line.startsWith("Response body not match")) {
+                                    bodyNotMatchCount++;
                                 }
                             }
-                            tc.set(7, notMatchCount + " | e.g.:" + example.replace(",", " "));
+                            tc.set(7, String.format("%s %s | e.g.: %s", statusNotMatchCount, bodyNotMatchCount, example.replace(",", " ")));
                             logReader.close();
                             registeredTCinfo.set(i, tc.toArray(new String[tc.size()]));
                         } catch (FileNotFoundException e) {
@@ -150,7 +153,7 @@ public class AnalyzeXWikiTest {
                 List<String> tc = null;
                 for (int i = 1; i < registeredTCinfo.size(); i++) {
                     tc = new ArrayList<>(Arrays.asList(registeredTCinfo.get(i)));
-                    if (tc.get(3).equals("yes")) {
+                    if (tc.get(3).equals("yes") && tc.get(7).startsWith("0 |")) {
                         String tcKey = String.format("%s,%s,%s", tc.get(0), tc.get(1), tc.get(2));
                         controller.updateMode(tcKey, 0, "inject");
 
@@ -175,7 +178,7 @@ public class AnalyzeXWikiTest {
                                     @Override
                                     public void run() {
                                         try {
-                                            String command = String.format("timeout 3m tail -f xwiki_0319.log > %s 2>&1", workingpath.replace("$", "\\$") + "/injection_2.log");
+                                            String command = String.format("timeout 60s tail -f %s > %s 2>&1", controller.targetLog, workingpath.replace("$", "\\$") + "/injection_2.log");
                                             Process process = Runtime.getRuntime().exec(new String[] {"bash", "-c", command}, null, new File(controller.targetDir));
                                             process.waitFor();
                                         } catch (IOException e) {
@@ -187,8 +190,8 @@ public class AnalyzeXWikiTest {
                                 });
                                 monitor_log.start();
 
-                                // replay production traffic for 3 mins
-                                String command = String.format("timeout 3m goreplay --output-http-track-response --input-raw-track-response --input-file-loop --input-file traffic_0.log --output-http \"http://localhost:8080\" --middleware \"/home/gluck/.pyenv/shims/python goreplay_middleware_xwiki.py\" > %s 2>&1", workingpath.replace("$", "\\$") + "/" + "response_diff_2.log");
+                                // replay production traffic for 2 mins
+                                String command = String.format("timeout 60s goreplay --output-http-track-response --input-raw-track-response --input-file traffic0405_60s.log --output-http \"http://localhost:8080\" --middleware \"/home/gluck/.pyenv/shims/python goreplay_middleware_xwiki.py\" > %s 2>&1", workingpath.replace("$", "\\$") + "/" + "response_diff_2.log");
                                 process = Runtime.getRuntime().exec(new String[] {"bash", "-c", command}, null, new File(controller.targetDir));
                                 process.waitFor();
                             }
@@ -220,7 +223,7 @@ public class AnalyzeXWikiTest {
                         try {
                             File businessLog = new File(workingpath + "/injection.log");
                             if (!businessLog.exists()) {
-                                break;
+                                continue;
                             }
                             BufferedReader logReader = new BufferedReader(new InputStreamReader(new FileInputStream(businessLog)));
                             String line = "";
@@ -230,7 +233,7 @@ public class AnalyzeXWikiTest {
                                 logReader.readLine();
                             }
                             while ((line = logReader.readLine()) != null) {
-                                if (line.contains("ERROR")) {
+                                if (line.contains(" WARN ") || line.contains(" ERROR ")) {
                                     capturedCount++;
                                 }
                             }
@@ -245,6 +248,47 @@ public class AnalyzeXWikiTest {
                     }
                 }
                 controller.write2csvfile(controller.targetCsv, registeredTCinfo);
+                break;
+            }
+
+            case 6: {
+                // verify we correctly replayed the user traffic
+                List<String[]> registeredTCinfo = controller.readTcInfoFromFile(controller.targetCsv);
+                List<String> tc = null;
+                for (int i = 1; i < registeredTCinfo.size(); i++) {
+                    tc = new ArrayList<>(Arrays.asList(registeredTCinfo.get(i)));
+                    if (tc.get(3).equals("yes")) {
+                        String tcKey = String.format("%s,%s,%s", tc.get(0), tc.get(1), tc.get(2));
+                        String tcindex = tc.get(0).split("@")[0];
+                        String filter = tc.get(2) + "/" + tc.get(1);
+                        String suffix = tcindex + "@" + filter.replace("/", "_");
+                        String workingpath = controller.targetDir + "/evaluation/" + suffix;
+
+                        System.out.println("analyze: " + suffix);
+                        try {
+                            File businessLog = new File(workingpath + "/injection.log");
+                            if (!businessLog.exists()) {
+                                continue;
+                            }
+                            BufferedReader logReader = new BufferedReader(new InputStreamReader(new FileInputStream(businessLog)));
+                            String line = "";
+                            // skip the first 10 lines because we use top to capture the log
+                            for (int ii = 0; ii < 10; ii++) {
+                                logReader.readLine();
+                            }
+                            while ((line = logReader.readLine()) != null) {
+                                if (line.contains("csrf")) {
+                                    System.out.println(line);
+                                }
+                            }
+                            logReader.close();
+                        } catch (FileNotFoundException e) {
+                            e.printStackTrace();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
                 break;
             }
         }
