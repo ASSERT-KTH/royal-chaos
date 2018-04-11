@@ -19,6 +19,7 @@ In target folder, you can find `byte-monkey.jar` and `byte-monkey-jar-with-depen
 ## Step 2 - Attach to your Java application
 
 ```bash
-java -noverify -javaagent:/path/to/byte-monkey-jar-with-dependencies.jar -jar your-java-app.jar
+java -noverify -javaagent:/path/to/byte-monkey-jar-with-dependencies.jar=[configurations] -jar your-java-app.jar
 ```
+
 You can get more details and examples in Chaos Controller module.
