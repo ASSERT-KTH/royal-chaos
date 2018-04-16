@@ -8,7 +8,7 @@ public class AnalyzeXWikiTest {
     public static void main(String[] args) {
         Process process = null;
         String osName = System.getProperty("os.name");
-        ChaosController controller = new ChaosController("controller/src/main/resources/chaosconfig_broadleaf.properties");
+        ChaosController controller = new ChaosController("chaos_controller/src/main/resources/chaosconfig.properties");
         int operation = 3;
 
         switch (operation) {
@@ -123,15 +123,26 @@ public class AnalyzeXWikiTest {
                             }
                             BufferedReader logReader = new BufferedReader(new InputStreamReader(new FileInputStream(diffLog)));
                             String line = "";
+                            String currentRequest = "";
                             String example = "";
                             int statusNotMatchCount = 0;
-                            int bodyNotMatchCount = 0;
+                            int bodyNotMatchCount = 2;
                             while ((line = logReader.readLine()) != null) {
-                                if (line.startsWith("Response status not match")) {
+                                if (line.startsWith("replay request: ")) {
+                                    currentRequest = line.substring("replay request: ".length());
+                                } else if (line.startsWith("Response status not match")) {
                                     statusNotMatchCount++;
                                     example = line;
                                 } else if (line.startsWith("Response body not match")) {
-                                    bodyNotMatchCount++;
+                                    if (!currentRequest.contains("/xwiki-9.11.1/webjars")) {
+                                        line = logReader.readLine();
+                                        if (currentRequest.contains("commentadd") && line.contains("<ins style=\"background:#e6ffe6;\">")) {
+                                            bodyNotMatchCount--;
+                                            example = "√" + example;
+                                        } else {
+                                            bodyNotMatchCount++;
+                                        }
+                                    }
                                 }
                             }
                             tc.set(7, String.format("%s %s | e.g.: %s", statusNotMatchCount, bodyNotMatchCount, example.replace(",", " ")));
