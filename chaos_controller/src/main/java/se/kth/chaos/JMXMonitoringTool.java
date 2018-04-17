@@ -70,15 +70,7 @@ public class JMXMonitoringTool {
         // call the garbage collector before the test using the Memory Mbean
         try {
             jmxc.getMBeanServerConnection().invoke(new ObjectName("java.lang:type=Memory"), "gc", null, null);
-        } catch (InstanceNotFoundException e) {
-            e.printStackTrace();
-        } catch (MBeanException e) {
-            e.printStackTrace();
-        } catch (ReflectionException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (MalformedObjectNameException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -102,21 +94,20 @@ public class JMXMonitoringTool {
                 // System.out.println("Used memory: " + " " + cd.get("used") + " System cpu load: " + osMbean); // print memory usage
 
                 Thread.sleep(interval);
-            } catch (MBeanException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
-            } catch (AttributeNotFoundException e) {
-                e.printStackTrace();
-            } catch (InstanceNotFoundException e) {
-                e.printStackTrace();
-            } catch (ReflectionException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (MalformedObjectNameException e) {
-                e.printStackTrace();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+                try {
+                    Thread.sleep(interval);
+                } catch (InterruptedException e1) {
+                    e1.printStackTrace();
+                }
             }
+        }
+
+        try {
+            jmxc.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
         // System.out.println("average process cpu load is: " + totalCpuLoad / samplesCount); // print average process cpu load

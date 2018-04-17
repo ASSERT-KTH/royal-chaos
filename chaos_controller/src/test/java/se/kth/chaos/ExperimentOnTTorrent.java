@@ -8,7 +8,7 @@ public class ExperimentOnTTorrent {
     public static void main(String[] args) {
         Process process = null;
         String rootPath = "chaos_controller/evaluation_1.5";
-        String javaagentPath = "/home/gluck/development/byte-monkey-jar-with-dependencies.jar";
+        String javaagentPath = "/home/gluckzhang/development/byte-monkey-jar-with-dependencies.jar";
         String endingPattern = "BitTorrent client signing off";
         String osName = System.getProperty("os.name");
         ChaosController controller = new ChaosController("localhost", 11211);
@@ -24,11 +24,14 @@ public class ExperimentOnTTorrent {
                 process = Runtime.getRuntime().exec(new String[] {"bash", "-c", String.format("java -noverify -javaagent:%s=mode:analyzetc,csvfilepath:./0_original.csv,filter:com/turn/ttorrent -jar ttorrent-1.5-client.jar -o . -s 0 ubuntu-14.04.5-server-i386.iso.torrent 2>&1", javaagentPath)}, null, new File(rootPath));
                 int pid = JMXMonitoringTool.getPidByThreadName("ttorrent-1.5-client.jar");
 
-                Thread jmxMonitoring = new Thread(() -> {
-                    JMXMonitoringTool.MONITORING_SWITCH = true;
-                    Map jmxMonitoringResult = JMXMonitoringTool.monitorProcessByPid(pid, 1000);
-                });
-                jmxMonitoring.start();
+                Thread jmxMonitoring = null;
+                if (pid > 0) {
+                    jmxMonitoring = new Thread(() -> {
+                        JMXMonitoringTool.MONITORING_SWITCH = true;
+                        JMXMonitoringTool.monitorProcessByPid(pid, 1000);
+                    });
+                    jmxMonitoring.start();
+                }
 
                 InputStream inputStream = process.getInputStream();
                 InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
@@ -48,7 +51,9 @@ public class ExperimentOnTTorrent {
                     }
                 }
                 JMXMonitoringTool.MONITORING_SWITCH = false;
-                jmxMonitoring.join();
+                if (jmxMonitoring != null) {
+                    jmxMonitoring.join();
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
