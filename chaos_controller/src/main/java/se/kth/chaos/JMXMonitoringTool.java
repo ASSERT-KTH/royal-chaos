@@ -74,7 +74,7 @@ public class JMXMonitoringTool {
             e.printStackTrace();
         }
 
-        // create a loop to get values every second (optional)
+        // create a loop to get values every second
         while(MONITORING_SWITCH) {
             // get an instance of the HeapMemoryUsage Mbean
             try {
@@ -101,19 +101,20 @@ public class JMXMonitoringTool {
                 } catch (InterruptedException e1) {
                     e1.printStackTrace();
                 }
+                MONITORING_SWITCH = false;
             }
-        }
-
-        try {
-            jmxc.close();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
 
         // System.out.println("average process cpu load is: " + totalCpuLoad / samplesCount); // print average process cpu load
         // System.out.println("average memory usage is: " + tempMemory / samplesCount); // print average memory usage
         // System.out.println("peak thread count is: " + peakThreadCount); // print peak thread count
         averageMemoryUsage = tempMemory / samplesCount;
+
+        try {
+            jmxc.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static int getPidByProcessObject(Process process) {
