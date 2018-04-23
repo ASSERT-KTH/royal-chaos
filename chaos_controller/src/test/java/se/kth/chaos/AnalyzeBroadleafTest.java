@@ -2,13 +2,12 @@ package se.kth.chaos;
 
 import java.io.*;
 import java.util.*;
-import java.util.concurrent.TimeUnit;
 
-public class AnalyzeXWikiTest {
+public class AnalyzeBroadleafTest {
     public static void main(String[] args) {
         Process process = null;
         String osName = System.getProperty("os.name");
-        ChaosController controller = new ChaosController("chaos_controller/src/main/resources/chaosconfig_xwiki.properties");
+        ChaosController controller = new ChaosController("chaos_controller/src/main/resources/chaosconfig_broadleaf.properties");
         int operation = 0;
 
         switch (operation) {
@@ -126,23 +125,13 @@ public class AnalyzeXWikiTest {
                             String currentRequest = "";
                             String example = "";
                             int statusNotMatchCount = 0;
-                            int bodyNotMatchCount = 2;
+                            int bodyNotMatchCount = 0;
                             while ((line = logReader.readLine()) != null) {
-                                if (line.startsWith("replay request: ")) {
-                                    currentRequest = line.substring("replay request: ".length());
-                                } else if (line.startsWith("Response status not match")) {
+                                if (line.startsWith("Response status not match")) {
                                     statusNotMatchCount++;
                                     example = line;
                                 } else if (line.startsWith("Response body not match")) {
-                                    if (!currentRequest.contains("/xwiki-9.11.1/webjars")) {
-                                        line = logReader.readLine();
-                                        if (currentRequest.contains("commentadd") && line.contains("<ins style=\"background:#e6ffe6;\">")) {
-                                            bodyNotMatchCount--;
-                                            example = "√" + example;
-                                        } else {
-                                            bodyNotMatchCount++;
-                                        }
-                                    }
+                                    bodyNotMatchCount++;
                                 }
                             }
                             tc.set(7, String.format("%s %s | e.g.: %s", statusNotMatchCount, bodyNotMatchCount, example.replace(",", " ")));

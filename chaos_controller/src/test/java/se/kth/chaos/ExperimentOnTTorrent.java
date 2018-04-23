@@ -7,28 +7,29 @@ import java.util.*;
 public class ExperimentOnTTorrent {
     public static void main(String[] args) {
         Process process = null;
-        String rootPath = "chaos_controller/evaluation_1.6";
-        String javaagentPath = "/home/gluckzhang/development/byte-monkey-jar-with-dependencies.jar";
+        String rootPath = "chaos_controller/ttorrent_evaluation_1.5";
+        String javaagentPath = "/home/gluckzhang/development/byte-monkey-jar-with-dependencies.jar"; // replace it to your javaagent path
         String endingPattern = "BitTorrent client signing off";
+        String threadName = "ttorrent-1.5-client.jar";
         String osName = System.getProperty("os.name");
         ChaosController controller = new ChaosController("localhost", 11211);
         Map<String, Integer> tcMap = new HashMap<>();
 
-        /*
+        //*
         // step 0: analysis mode, gathering data for control group
         try {
             if (osName.contains("Windows")) {
                 // todo
             } else {
                 System.out.println("[CHAOS_MACHINE]step 0: analysis mode, downloading the file normally.");
-                process = Runtime.getRuntime().exec(new String[] {"bash", "-c", String.format("java -noverify -javaagent:%s=mode:analyzetc,csvfilepath:./0_original.csv,filter:com/turn/ttorrent -jar ttorrent-1.6-SNAPSHOT-client.jar -o . -s 0 ubuntu-14.04.5-server-i386.iso.torrent 2>&1", javaagentPath)}, null, new File(rootPath));
-                int pid = JMXMonitoringTool.getPidByThreadName("ttorrent-1.6-SNAPSHOT-client.jar");
+                process = Runtime.getRuntime().exec(new String[] {"bash", "-c", String.format("java -noverify -javaagent:%s=mode:analyzetc,csvfilepath:./0_original.csv,filter:com/turn/ttorrent -jar %s -o . -s 0 ubuntu-14.04.5-server-i386.iso.torrent 2>&1", javaagentPath, threadName)}, null, new File(rootPath));
+                int input_pid = JMXMonitoringTool.getPidByThreadName(threadName);
 
                 Thread jmxMonitoring = null;
-                if (pid > 0) {
+                if (input_pid > 0) {
                     jmxMonitoring = new Thread(() -> {
                         JMXMonitoringTool.MONITORING_SWITCH = true;
-                        JMXMonitoringTool.monitorProcessByPid(pid, 1000);
+                        JMXMonitoringTool.monitorProcessByPid(input_pid, 1000);
                     });
                     jmxMonitoring.start();
                 }
@@ -97,11 +98,22 @@ public class ExperimentOnTTorrent {
         controller.write2csvfile(rootPath + "/0_original.csv", registeredTCinfo);
         //*/
 
+        // sometimes the ttorrent-client does not exit in some specific os
+        // but based on the logs, the client has already successfully stopped, so we just kill the thread
+        int pid = JMXMonitoringTool.getPidByThreadName(threadName);
+        if (pid > 0) {
+            try {
+                process = Runtime.getRuntime().exec(new String[] {"bash", "-c", "kill -9 " + pid}, null, new File(rootPath));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
         //*/
         // step 2: analysis mode, activating perturbation injectors one by one
         System.out.println("[CHAOS_MACHINE]step 2: analysis mode, activating perturbation injectors one by one.");
-        List<String[]> registeredTCinfo = controller.readTcInfoFromFile(rootPath + "/0_original.csv");
-        List<String> tc = new ArrayList<>(Arrays.asList(registeredTCinfo.get(0)));
+//        List<String[]> registeredTCinfo = controller.readTcInfoFromFile(rootPath + "/0_original.csv");
+//        List<String> tc = new ArrayList<>(Arrays.asList(registeredTCinfo.get(0)));
         File targetFile = null;
         for (int i = 1; i < registeredTCinfo.size(); i++) {
             targetFile = new File(rootPath + "/ubuntu-14.04.5-server-i386.iso");
@@ -123,13 +135,13 @@ public class ExperimentOnTTorrent {
                         String command = String.format("timeout --signal=9 300 java -noverify -javaagent:%s=mode:scircuit,filter:%s,tcindex:%s -jar ttorrent-1.6-SNAPSHOT-client.jar -o . -s 0 ubuntu-14.04.5-server-i386.iso.torrent 2>&1", javaagentPath, filter.replace("$", "\\$"), tcindex);
                         process = Runtime.getRuntime().exec(new String[] {"bash", "-c", command}, null, new File(rootPath));
 
-                        int pid = JMXMonitoringTool.getPidByThreadName("ttorrent-1.6-SNAPSHOT-client.jar");
+                        int input_pid = JMXMonitoringTool.getPidByThreadName(threadName);
                         Thread jmxMonitoring = null;
 
-                        if (pid > 0) {
+                        if (input_pid > 0) {
                             jmxMonitoring = new Thread(() -> {
                                 JMXMonitoringTool.MONITORING_SWITCH = true;
-                                JMXMonitoringTool.monitorProcessByPid(pid, 1000);
+                                JMXMonitoringTool.monitorProcessByPid(input_pid, 1000);
                             });
                             jmxMonitoring.start();
                         }
@@ -188,7 +200,7 @@ public class ExperimentOnTTorrent {
                 controller.write2csvfile(rootPath + "/0_original.csv", registeredTCinfo);
                 System.out.println("finish to perturb at " + suffix);
 
-                int pid = JMXMonitoringTool.getPidByThreadName("ttorrent-1.6-SNAPSHOT-client.jar");
+                pid = JMXMonitoringTool.getPidByThreadName(threadName);
                 if (pid > 0) {
                     try {
                         process = Runtime.getRuntime().exec(new String[] {"bash", "-c", "kill -9 " + pid}, null, new File(rootPath));

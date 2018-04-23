@@ -17,7 +17,7 @@ public class JMXMonitoringTest {
         // create jmx connection with mules jmx agent
         JMXConnector jmxc = null;
         try {
-            String address = ConnectorAddressLink.importFrom(10866);
+            String address = ConnectorAddressLink.importFrom(10866); // the input is pid
             JMXServiceURL url = new JMXServiceURL(address);
             jmxc = JMXConnectorFactory.connect(url, null);
             jmxc.connect();
