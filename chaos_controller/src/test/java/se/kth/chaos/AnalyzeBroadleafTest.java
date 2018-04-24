@@ -8,7 +8,7 @@ public class AnalyzeBroadleafTest {
         Process process = null;
         String osName = System.getProperty("os.name");
         ChaosController controller = new ChaosController("chaos_controller/src/main/resources/chaosconfig_broadleaf.properties");
-        int operation = 0;
+        int operation = 4;
 
         switch (operation) {
             case 0: {
@@ -32,7 +32,7 @@ public class AnalyzeBroadleafTest {
                         String tcindex = tc.get(0).split("@")[0];
                         String filter = tc.get(2) + "/" + tc.get(1);
                         String suffix = tcindex + "@" + filter.replace("/", "_");
-                        String workingpath = controller.targetDir + "/evaluation/" + suffix;
+                        String workingpath = controller.targetDir + "/evaluation_v5.1/" + suffix;
 
                         System.out.println("start to inject at " + suffix);
 
@@ -50,7 +50,7 @@ public class AnalyzeBroadleafTest {
                                     @Override
                                     public void run() {
                                         try {
-                                            String command = String.format("timeout 60s tail -f %s > %s 2>&1", controller.targetLog, workingpath.replace("$", "\\$") + "/injection.log");
+                                            String command = String.format("timeout 70s tail -f %s > %s 2>&1", controller.targetLog, workingpath.replace("$", "\\$") + "/injection.log");
                                             Process process = Runtime.getRuntime().exec(new String[] {"bash", "-c", command}, null, new File(controller.targetDir));
                                             process.waitFor();
                                         } catch (IOException e) {
@@ -63,7 +63,7 @@ public class AnalyzeBroadleafTest {
                                 monitor_log.start();
 
                                 // replay production traffic for 2 mins
-                                String command = String.format("timeout 60s goreplay --output-http-track-response --input-raw-track-response --input-file traffic0405_60s.log --output-http \"http://localhost:8080\" --middleware \"/home/gluck/.pyenv/shims/python goreplay_middleware_xwiki.py\" > %s 2>&1", workingpath.replace("$", "\\$") + "/" + "response_diff.log");
+                                String command = String.format("timeout 70s goreplay --output-http-track-response --input-raw-track-response --input-file traffic0424_for5.1_0.log --output-http \"http://localhost:8080\" --middleware \"/home/gluck/.pyenv/shims/python goreplay_middleware_broadleaf.py\" > %s 2>&1", workingpath.replace("$", "\\$") + "/" + "response_diff.log");
                                 process = Runtime.getRuntime().exec(new String[] {"bash", "-c", command}, null, new File(controller.targetDir));
                                 process.waitFor();
                             }
@@ -112,7 +112,7 @@ public class AnalyzeBroadleafTest {
                         String tcindex = tc.get(0).split("@")[0];
                         String filter = tc.get(2) + "/" + tc.get(1);
                         String suffix = tcindex + "@" + filter.replace("/", "_");
-                        String workingpath = controller.targetDir + "/evaluation/" + suffix;
+                        String workingpath = controller.targetDir + "/evaluation_v5.1/" + suffix;
 
                         System.out.println("analyze: " + suffix);
                         try {
@@ -153,14 +153,14 @@ public class AnalyzeBroadleafTest {
                 List<String> tc = null;
                 for (int i = 1; i < registeredTCinfo.size(); i++) {
                     tc = new ArrayList<>(Arrays.asList(registeredTCinfo.get(i)));
-                    if (tc.get(3).equals("yes") && tc.get(7).startsWith("0 |")) {
+                    if (tc.get(3).equals("yes") && tc.get(7).startsWith("0 ")) {
                         String tcKey = String.format("%s,%s,%s", tc.get(0), tc.get(1), tc.get(2));
                         controller.updateMode(tcKey, 0, "inject");
 
                         String tcindex = tc.get(0).split("@")[0];
                         String filter = tc.get(2) + "/" + tc.get(1);
                         String suffix = tcindex + "@" + filter.replace("/", "_");
-                        String workingpath = controller.targetDir + "/evaluation/" + suffix;
+                        String workingpath = controller.targetDir + "/evaluation_v5.1/" + suffix;
 
                         System.out.println("start to inject at " + suffix);
 
@@ -178,7 +178,7 @@ public class AnalyzeBroadleafTest {
                                     @Override
                                     public void run() {
                                         try {
-                                            String command = String.format("timeout 60s tail -f %s > %s 2>&1", controller.targetLog, workingpath.replace("$", "\\$") + "/injection_2.log");
+                                            String command = String.format("timeout 70s tail -f %s > %s 2>&1", controller.targetLog, workingpath.replace("$", "\\$") + "/injection_2.log");
                                             Process process = Runtime.getRuntime().exec(new String[] {"bash", "-c", command}, null, new File(controller.targetDir));
                                             process.waitFor();
                                         } catch (IOException e) {
@@ -191,7 +191,7 @@ public class AnalyzeBroadleafTest {
                                 monitor_log.start();
 
                                 // replay production traffic for 2 mins
-                                String command = String.format("timeout 60s goreplay --output-http-track-response --input-raw-track-response --input-file traffic0405_60s.log --output-http \"http://localhost:8080\" --middleware \"/home/gluck/.pyenv/shims/python goreplay_middleware_xwiki.py\" > %s 2>&1", workingpath.replace("$", "\\$") + "/" + "response_diff_2.log");
+                                String command = String.format("timeout 70s goreplay --output-http-track-response --input-raw-track-response --input-file traffic0424_for5.1_0.log --output-http \"http://localhost:8080\" --middleware \"/home/gluck/.pyenv/shims/python goreplay_middleware_broadleaf.py\" > %s 2>&1", workingpath.replace("$", "\\$") + "/" + "response_diff_2.log");
                                 process = Runtime.getRuntime().exec(new String[] {"bash", "-c", command}, null, new File(controller.targetDir));
                                 process.waitFor();
                             }
@@ -217,7 +217,7 @@ public class AnalyzeBroadleafTest {
                         String tcindex = tc.get(0).split("@")[0];
                         String filter = tc.get(2) + "/" + tc.get(1);
                         String suffix = tcindex + "@" + filter.replace("/", "_");
-                        String workingpath = controller.targetDir + "/evaluation/" + suffix;
+                        String workingpath = controller.targetDir + "/evaluation_v5.1/" + suffix;
 
                         System.out.println("analyze: " + suffix);
                         try {
@@ -233,7 +233,9 @@ public class AnalyzeBroadleafTest {
                                 logReader.readLine();
                             }
                             while ((line = logReader.readLine()) != null) {
-                                if (line.contains(" WARN ") || line.contains(" ERROR ")) {
+                                if (line.contains("[ERROR]")) {
+                                    capturedCount++;
+                                } else if (line.contains("[ WARN]") && !line.contains("GoogleUniversalAnalyticsProcessor") && !line.contains("NullMessageCreator")) {
                                     capturedCount++;
                                 }
                             }
@@ -262,7 +264,7 @@ public class AnalyzeBroadleafTest {
                         String tcindex = tc.get(0).split("@")[0];
                         String filter = tc.get(2) + "/" + tc.get(1);
                         String suffix = tcindex + "@" + filter.replace("/", "_");
-                        String workingpath = controller.targetDir + "/evaluation/" + suffix;
+                        String workingpath = controller.targetDir + "/evaluation_v5.1/" + suffix;
 
                         System.out.println("analyze: " + suffix);
                         try {
