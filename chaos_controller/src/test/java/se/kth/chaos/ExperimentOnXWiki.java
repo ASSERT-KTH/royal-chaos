@@ -1,10 +1,12 @@
 package se.kth.chaos;
 
+import se.kth.chaos.ChaosController;
+
 import java.io.*;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
-public class AnalyzeXWikiTest {
+public class ExperimentOnXWiki {
     public static void main(String[] args) {
         Process process = null;
         String osName = System.getProperty("os.name");

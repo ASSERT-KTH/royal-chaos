@@ -1,14 +1,16 @@
 package se.kth.chaos;
 
+import se.kth.chaos.ChaosController;
+
 import java.io.*;
 import java.util.*;
 
-public class AnalyzeBroadleafTest {
+public class ExperimentOnBroadleaf {
     public static void main(String[] args) {
         Process process = null;
         String osName = System.getProperty("os.name");
         ChaosController controller = new ChaosController("chaos_controller/src/main/resources/chaosconfig_broadleaf.properties");
-        int operation = 4;
+        int operation = 5;
 
         switch (operation) {
             case 0: {
@@ -25,7 +27,7 @@ public class AnalyzeBroadleafTest {
                 List<String> tc = null;
                 for (int i = 1; i < registeredTCinfo.size(); i++) {
                     tc = new ArrayList<>(Arrays.asList(registeredTCinfo.get(i)));
-                    if (tc.get(3).equals("yes") && !tc.get(5).isEmpty()) {
+                    if (tc.get(3).equals("yes") && tc.get(6).equals("-")) {
                         String tcKey = String.format("%s,%s,%s", tc.get(0), tc.get(1), tc.get(2));
                         controller.updateMode(tcKey, 0, "inject");
 
@@ -63,7 +65,7 @@ public class AnalyzeBroadleafTest {
                                 monitor_log.start();
 
                                 // replay production traffic for 2 mins
-                                String command = String.format("timeout 70s goreplay --output-http-track-response --input-raw-track-response --input-file traffic0424_for5.1_0.log --output-http \"http://localhost:8080\" --middleware \"/home/gluck/.pyenv/shims/python goreplay_middleware_broadleaf.py\" > %s 2>&1", workingpath.replace("$", "\\$") + "/" + "response_diff.log");
+                                String command = String.format("timeout 70s goreplay --output-http-track-response --input-raw-track-response --input-file-loop --input-file traffic0424_for5.1_0.log --output-http \"http://localhost:8080\" --middleware \"/home/gluck/.pyenv/shims/python goreplay_middleware_broadleaf.py\" > %s 2>&1", workingpath.replace("$", "\\$") + "/" + "response_diff.log");
                                 process = Runtime.getRuntime().exec(new String[] {"bash", "-c", command}, null, new File(controller.targetDir));
                                 process.waitFor();
                             }

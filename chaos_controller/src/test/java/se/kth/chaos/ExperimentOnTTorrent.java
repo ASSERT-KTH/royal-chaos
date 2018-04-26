@@ -1,5 +1,8 @@
 package se.kth.chaos;
 
+import se.kth.chaos.ChaosController;
+import se.kth.chaos.JMXMonitoringTool;
+
 import java.io.*;
 import java.lang.reflect.Field;
 import java.util.*;
@@ -8,7 +11,7 @@ public class ExperimentOnTTorrent {
     public static void main(String[] args) {
         Process process = null;
         String rootPath = "chaos_controller/ttorrent_evaluation_1.5";
-        String javaagentPath = "/home/gluckzhang/development/byte-monkey-jar-with-dependencies.jar"; // replace it to your javaagent path
+        String javaagentPath = "/home/gluck/development/byte-monkey-jar-with-dependencies.jar"; // replace it to your javaagent path
         String endingPattern = "BitTorrent client signing off";
         String threadName = "ttorrent-1.5-client.jar";
         String osName = System.getProperty("os.name");
@@ -24,7 +27,6 @@ public class ExperimentOnTTorrent {
                 System.out.println("[CHAOS_MACHINE]step 0: analysis mode, downloading the file normally.");
                 process = Runtime.getRuntime().exec(new String[] {"bash", "-c", String.format("java -noverify -javaagent:%s=mode:analyzetc,csvfilepath:./0_original.csv,filter:com/turn/ttorrent -jar %s -o . -s 0 ubuntu-14.04.5-server-i386.iso.torrent 2>&1", javaagentPath, threadName)}, null, new File(rootPath));
                 int input_pid = JMXMonitoringTool.getPidByThreadName(threadName);
-
                 Thread jmxMonitoring = null;
                 if (input_pid > 0) {
                     jmxMonitoring = new Thread(() -> {
