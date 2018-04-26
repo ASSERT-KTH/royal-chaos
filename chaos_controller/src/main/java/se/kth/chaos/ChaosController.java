@@ -2,10 +2,6 @@ package se.kth.chaos;
 
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
-import com.sun.tools.attach.AgentInitializationException;
-import com.sun.tools.attach.AgentLoadException;
-import com.sun.tools.attach.AttachNotSupportedException;
-import com.sun.tools.attach.VirtualMachine;
 import net.rubyeye.xmemcached.KeyIterator;
 import net.rubyeye.xmemcached.MemcachedClient;
 import net.rubyeye.xmemcached.XMemcachedClient;
@@ -146,21 +142,6 @@ public class ChaosController {
             csvWriter.writeAll(csvinfo);
             writer.close();
         } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void attachChaosMonkey() {
-        try {
-            VirtualMachine vm = VirtualMachine.attach(String.valueOf(this.targetPid));
-            vm.loadAgent(this.chaosAgentPath, this.chaosAgentArg);
-        } catch (AttachNotSupportedException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (AgentLoadException e) {
-            e.printStackTrace();
-        } catch (AgentInitializationException e) {
             e.printStackTrace();
         }
     }

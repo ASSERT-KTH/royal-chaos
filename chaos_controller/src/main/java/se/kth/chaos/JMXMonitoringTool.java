@@ -3,7 +3,7 @@ package se.kth.chaos;
 import com.sun.tools.attach.VirtualMachine;
 import sun.management.ConnectorAddressLink;
 
-import javax.management.*;
+import javax.management.ObjectName;
 import javax.management.openmbean.CompositeData;
 import javax.management.remote.JMXConnector;
 import javax.management.remote.JMXConnectorFactory;
@@ -11,7 +11,6 @@ import javax.management.remote.JMXServiceURL;
 import java.io.*;
 import java.lang.reflect.Field;
 import java.net.MalformedURLException;
-import java.util.Map;
 
 public class JMXMonitoringTool {
     public static boolean MONITORING_SWITCH = false;

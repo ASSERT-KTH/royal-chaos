@@ -1,4 +1,4 @@
-package se.kth.chaos;
+package se.kth.chaos.examples;
 
 import se.kth.chaos.ChaosController;
 
@@ -10,7 +10,7 @@ public class ExperimentOnXWiki {
     public static void main(String[] args) {
         Process process = null;
         String osName = System.getProperty("os.name");
-        ChaosController controller = new ChaosController("chaos_controller/src/main/resources/chaosconfig_xwiki.properties");
+        ChaosController controller = new ChaosController("src/main/resources/chaosconfig_xwiki.properties");
         int operation = 0;
 
         switch (operation) {
