@@ -1,4 +1,4 @@
-package uk.co.probablyfine.bytemonkey.testfiles;
+package se.kth.chaos.testfiles;
 
 import java.io.IOException;
 import java.util.Random;

@@ -1,17 +1,16 @@
-package uk.co.probablyfine.bytemonkey.shortcircuit;
+package se.kth.chaos;
 
 import com.ea.agentloader.AgentLoader;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import uk.co.probablyfine.bytemonkey.ByteMonkeyAgent;
-import uk.co.probablyfine.bytemonkey.testfiles.TryCatchTestObject;
+import se.kth.chaos.testfiles.TryCatchTestObject;
 
-public class ByteMonkeyConfigFileTest {
+public class ChaosMachineConfigFileTest {
     @Before
     public void loadAgent() {
         // in this config file, we declared the mode should be scircuit
-        AgentLoader.loadAgentClass(ByteMonkeyAgent.class.getName(), "config:src/test/resource/bytemonkey-scircuit.properties");
+        AgentLoader.loadAgentClass(ChaosMachineAgent.class.getName(), "config:src/test/resource/chaosmachine-scircuit.properties");
     }
 
     @Test

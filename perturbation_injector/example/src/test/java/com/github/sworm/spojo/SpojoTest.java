@@ -24,9 +24,6 @@ import static com.github.sworm.spojo.model.Gender.*;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 
-import com.ea.agentloader.AgentLoader;
-import uk.co.probablyfine.bytemonkey.ByteMonkeyAgent;
-
 /**
  * @author Vincent Palau
  * @Since Feb 27, 2011
@@ -105,8 +102,6 @@ public class SpojoTest extends BaseTestCase {
 
 	@BeforeClass
 	public static void config() {
-//		AgentLoader.loadAgentClass(ByteMonkeyAgent.class.getName(), "mode:scircuit,tcindex:0,filter:com/github/sworm/spojo/utils/SpojoUtils/findClazztype2instantiate");
-
 		List<RuleMetadata> metadataList = new ArrayList<RuleMetadata>();
 		// MetaData definition
 

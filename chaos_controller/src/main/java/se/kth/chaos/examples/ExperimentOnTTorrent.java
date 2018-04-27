@@ -41,8 +41,8 @@ public class ExperimentOnTTorrent {
                 BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
                 String line = null;
                 while((line = bufferedReader.readLine()) != null) {
-                    if (line.startsWith("INFO ByteMonkey try catch index")) {
-                        line = line.substring("INFO ByteMonkey try catch index ".length());
+                    if (line.startsWith("INFO ChaosMachine try catch index")) {
+                        line = line.substring("INFO ChaosMachine try catch index ".length());
                         if (tcMap.containsKey(line)) {
                             tcMap.put(line, tcMap.get(line) + 1);
                         } else {
@@ -134,7 +134,7 @@ public class ExperimentOnTTorrent {
                     if (osName.contains("Windows")) {
                         // todo
                     } else {
-                        String command = String.format("timeout --signal=9 300 java -noverify -javaagent:%s=mode:scircuit,filter:%s,tcindex:%s -jar ttorrent-1.6-SNAPSHOT-client.jar -o . -s 0 ubuntu-14.04.5-server-i386.iso.torrent 2>&1", javaagentPath, filter.replace("$", "\\$"), tcindex);
+                        String command = String.format("timeout --signal=9 300 java -noverify -javaagent:%s=mode:scircuit,filter:%s,tcindex:%s -jar %s -o . -s 0 ubuntu-14.04.5-server-i386.iso.torrent 2>&1", javaagentPath, filter.replace("$", "\\$"), tcindex, threadName);
                         process = Runtime.getRuntime().exec(new String[] {"bash", "-c", command}, null, new File(rootPath));
 
                         int input_pid = JMXMonitoringTool.getPidByThreadName(threadName);
@@ -155,7 +155,7 @@ public class ExperimentOnTTorrent {
                         int injectionCount = 0;
                         int capturedInLogCount = 0;
                         while((line = bufferedReader.readLine()) != null) {
-                            if (line.startsWith("INFO ByteMonkey injection!")) {
+                            if (line.startsWith("INFO ChaosMachine injection!")) {
                                 injectionCount++;
                             } else if(line.contains(" WARN ") || line.contains("ERROR")) {
                                 capturedInLogCount++;

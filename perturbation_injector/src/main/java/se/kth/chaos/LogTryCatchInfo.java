@@ -1,4 +1,4 @@
-package uk.co.probablyfine.bytemonkey;
+package se.kth.chaos;
 
 public class LogTryCatchInfo {
     public static void printInfo(String tcIndexInfo) {
@@ -7,10 +7,10 @@ public class LogTryCatchInfo {
         String testMethodName = testClassInfo[1];
 
         // TryCatch Info
-        System.out.println(String.format("INFO ByteMonkey try catch index %s", tcIndexInfo));
+        System.out.println(String.format("INFO ChaosMachine try catch index %s", tcIndexInfo));
         if (!testClassName.equals("NOT TEST CLASS")) {
             // Testcase Info
-            System.out.println(String.format("INFO ByteMonkey testCase: %s @ %s", testMethodName, testClassName));
+            System.out.println(String.format("INFO ChaosMachine testCase: %s @ %s", testMethodName, testClassName));
         }
     }
 

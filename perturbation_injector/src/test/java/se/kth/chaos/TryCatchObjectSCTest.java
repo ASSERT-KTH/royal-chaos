@@ -1,17 +1,16 @@
-package uk.co.probablyfine.bytemonkey.shortcircuit;
+package se.kth.chaos;
 
 import com.ea.agentloader.AgentLoader;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import uk.co.probablyfine.bytemonkey.ByteMonkeyAgent;
-import uk.co.probablyfine.bytemonkey.testfiles.TryCatchTestObject;
+import se.kth.chaos.testfiles.TryCatchTestObject;
 
 public class TryCatchObjectSCTest {
 	
     @Before
     public void loadAgent() {
-        AgentLoader.loadAgentClass(ByteMonkeyAgent.class.getName(), "mode:scircuit");
+        AgentLoader.loadAgentClass(ChaosMachineAgent.class.getName(), "mode:scircuit");
     }
 
     @Test
@@ -23,7 +22,7 @@ public class TryCatchObjectSCTest {
     }
 
     public static void main(String[] args) {
-    	AgentLoader.loadAgentClass(ByteMonkeyAgent.class.getName(), "mode:scircuit");
+    	AgentLoader.loadAgentClass(ChaosMachineAgent.class.getName(), "mode:scircuit");
 
         TryCatchTestObject tcTest = new TryCatchTestObject();
         System.out.println(tcTest.multipleTryCatch());

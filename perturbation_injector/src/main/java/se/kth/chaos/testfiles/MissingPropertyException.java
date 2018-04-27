@@ -1,4 +1,4 @@
-package uk.co.probablyfine.bytemonkey.testfiles;
+package se.kth.chaos.testfiles;
 
 public class MissingPropertyException extends Exception {
 

@@ -1,4 +1,4 @@
-package uk.co.probablyfine.bytemonkey;
+package se.kth.chaos;
 
 import jdk.internal.org.objectweb.asm.ClassReader;
 import jdk.internal.org.objectweb.asm.ClassWriter;
@@ -7,16 +7,12 @@ import jdk.internal.org.objectweb.asm.tree.*;
 import java.lang.instrument.ClassFileTransformer;
 import java.lang.instrument.IllegalClassFormatException;
 import java.security.ProtectionDomain;
-import java.util.Optional;
 
-import static java.util.Optional.ofNullable;
+public class ChaosMachineClassTransformer implements ClassFileTransformer {
 
-public class ByteMonkeyClassTransformer implements ClassFileTransformer {
-
-    private final AddChanceOfFailure addChanceOfFailure = new AddChanceOfFailure();
     private final AgentArguments arguments;
 
-    public ByteMonkeyClassTransformer(String args) {
+    public ChaosMachineClassTransformer(String args) {
         this.arguments = new AgentArguments(args == null ? "" : args);
     }
 
@@ -30,7 +26,7 @@ public class ByteMonkeyClassTransformer implements ClassFileTransformer {
         ClassNode cn = new ClassNode();
         new ClassReader(classFileBuffer).accept(cn, 0);
 
-        if (cn.name.startsWith("java/") || cn.name.startsWith("sun/") || cn.name.startsWith("uk/co/probablyfine/bytemonkey/ChaosMonkey")) return classFileBuffer;
+        if (cn.name.startsWith("java/") || cn.name.startsWith("sun/") || cn.name.startsWith("se/kth/chaos/ChaosMonkey")) return classFileBuffer;
 
         switch (arguments.operationMode()) {
 	        case SCIRCUIT:
@@ -101,31 +97,12 @@ public class ByteMonkeyClassTransformer implements ClassFileTransformer {
                     });
 	        	break;
 	        default:
-	            cn.methods.stream()
-                    .filter(method -> !method.name.startsWith("<"))
-                    .filter(method -> arguments.filter().matches(cn.name, method.name))
-                    .forEach(method -> {
-                        createNewInstructions(method).ifPresent(newInstructions -> {
-                            method.maxStack += newInstructions.size();
-                            method.instructions.insertBefore(
-                                method.instructions.getFirst(),
-                                newInstructions
-                            );
-                        });
-                    });
+	            // nothing now
 	            break;
         }
 
         final ClassWriter cw = new ClassWriter(0);
         cn.accept(cw);
         return cw.toByteArray();
-    }
-
-    private Optional<InsnList> createNewInstructions(MethodNode method) {
-        InsnList newInstructions = arguments.operationMode().generateByteCode(method, arguments);
-
-        return ofNullable(
-            addChanceOfFailure.apply(newInstructions, arguments.chanceOfFailure())
-        );
     }
 }

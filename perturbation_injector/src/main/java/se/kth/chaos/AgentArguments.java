@@ -1,4 +1,4 @@
-package uk.co.probablyfine.bytemonkey;
+package se.kth.chaos;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -8,8 +8,6 @@ import java.util.Properties;
 import java.util.stream.Collectors;
 
 public class AgentArguments {
-    private long latency;
-    private double chanceOfFailure;
     private int tcIndex;
     private OperationMode operationMode;
     private FilterByClassAndMethodName filter;
@@ -21,10 +19,8 @@ public class AgentArguments {
 
     public AgentArguments(String args) {
         Map<String, String> configuration = argumentMap(args == null ? "" : args);
-        this.latency = Long.valueOf(configuration.getOrDefault("latency","100"));
-        this.chanceOfFailure = Double.valueOf(configuration.getOrDefault("rate","1"));
         this.tcIndex = Integer.valueOf(configuration.getOrDefault("tcindex", "-1"));
-        this.operationMode = OperationMode.fromLowerCase(configuration.getOrDefault("mode", OperationMode.FAULT.name()));
+        this.operationMode = OperationMode.fromLowerCase(configuration.getOrDefault("mode", OperationMode.ANALYZETC.name()));
         this.filter = new FilterByClassAndMethodName(configuration.getOrDefault("filter", ".*"));
         this.configFile = configuration.getOrDefault("config", null);
         this.memcachedHost = configuration.getOrDefault("memcachedHost", "localhost");
@@ -38,8 +34,6 @@ public class AgentArguments {
     }
 
     public AgentArguments(long latency, double activationRatio, int tcIndex, String operationMode, String filter, String configFile) {
-        this.latency = latency;
-        this.chanceOfFailure = activationRatio;
         this.tcIndex = tcIndex;
         this.operationMode = OperationMode.fromLowerCase(operationMode);
         this.filter = new FilterByClassAndMethodName(filter);
@@ -66,10 +60,8 @@ public class AgentArguments {
         try {
             InputStream inputStream = new FileInputStream(this.configFile);
             p.load(inputStream);
-            this.latency = Long.valueOf(p.getProperty("latency", "100"));
-            this.chanceOfFailure = Double.valueOf(p.getProperty("rate", "1"));
             this.tcIndex = Integer.valueOf(p.getProperty("tcindex", "-1"));
-            this.operationMode = OperationMode.fromLowerCase(p.getProperty("mode", OperationMode.FAULT.name()));
+            this.operationMode = OperationMode.fromLowerCase(p.getProperty("mode", OperationMode.ANALYZETC.name()));
             this.filter = new FilterByClassAndMethodName(p.getProperty("filter", ".*"));
             this.memcachedHost = p.getProperty("memcachedHost", "localhost");
             this.memcachedPort = Integer.valueOf(p.getProperty("memcachedPort", "11211"));
@@ -81,21 +73,7 @@ public class AgentArguments {
         }
     }
 
-    public long latency() {
-        if (this.configFile != null) {
-            refreshConfig();
-        }
-        return latency;
-    }
-
-    public double chanceOfFailure() {
-        if (this.configFile != null) {
-            refreshConfig();
-        }
-        return chanceOfFailure;
-    }
-
-    public int tcIndex() {
+     public int tcIndex() {
         if (this.configFile != null) {
             refreshConfig();
         }

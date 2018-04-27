@@ -1,8 +1,8 @@
-package uk.co.probablyfine.bytemonkey.shortcircuit;
+package se.kth.chaos;
 
 import org.junit.Assert;
 import org.junit.Test;
-import uk.co.probablyfine.bytemonkey.testfiles.TryCatchTestObject;
+import se.kth.chaos.testfiles.TryCatchTestObject;
 
 public class TryCatchObjectNormalTest {
     @Test

@@ -1,4 +1,4 @@
-package uk.co.probablyfine.bytemonkey;
+package se.kth.chaos;
 
 import java.util.regex.Pattern;
 

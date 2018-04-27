@@ -1,4 +1,4 @@
-package uk.co.probablyfine.bytemonkey.shortcircuit;
+package se.kth.chaos;
 
 import org.apache.log4j.Logger;
 import spoon.Launcher;
@@ -85,7 +85,7 @@ public class TryCatchBlocksAnalysis {
              BufferedReader input = new BufferedReader(new InputStreamReader(process.getInputStream()));
              String line = "";
              while ((line = input.readLine()) != null) {
-                 if (line.startsWith("INFO ByteMonkey try catch index")) {
+                 if (line.startsWith("INFO ChaosMachine try catch index")) {
                      tcMap.put(line, line);
                      String testCaseLine = input.readLine();
                      processList.add(line);

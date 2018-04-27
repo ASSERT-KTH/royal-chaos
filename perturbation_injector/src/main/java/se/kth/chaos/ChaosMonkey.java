@@ -1,4 +1,4 @@
-package uk.co.probablyfine.bytemonkey;
+package se.kth.chaos;
 
 import net.rubyeye.xmemcached.MemcachedClient;
 import net.rubyeye.xmemcached.MemcachedClientBuilder;
@@ -18,7 +18,7 @@ public class ChaosMonkey {
     public static void doChaos(String tcIndexInfo, String tcType, String defaultMode, String memcachedHost, int memcachedPort) throws Throwable {
         String chaosMode = getMode(tcIndexInfo, memcachedHost, memcachedPort);
         if (chaosMode == null) {
-            System.out.println("INFO ByteMonkey unregistered try catch found, register and use default mode: " + defaultMode);
+            System.out.println("INFO ChaosMachine unregistered try catch found, register and use default mode: " + defaultMode);
             registerTrycatchToMemcached(tcIndexInfo, defaultMode, memcachedHost, memcachedPort);
             chaosMode = defaultMode;
         }
@@ -53,14 +53,14 @@ public class ChaosMonkey {
             mode = "UNKNOWN";
             String executedClassName = Thread.currentThread().getStackTrace()[3].getClassName();
             String executedMethodName = Thread.currentThread().getStackTrace()[3].getMethodName();
-            System.out.println(String.format("INFO ByteMonkey getMode time out, %s @ %s", executedMethodName, executedClassName));
+            System.out.println(String.format("INFO ChaosMachine getMode time out, %s @ %s", executedMethodName, executedClassName));
         }
 
         return mode;
     }
 
     public static void printInfo(String tcIndexInfo) {
-        System.out.println(String.format("INFO ByteMonkey try catch index %s", tcIndexInfo));
+        System.out.println(String.format("INFO ChaosMachine try catch index %s", tcIndexInfo));
     }
 
     public static Throwable throwOrDefault(String tcIndexInfo, String tcType) {
@@ -68,8 +68,8 @@ public class ChaosMonkey {
         String executedMethodName = Thread.currentThread().getStackTrace()[3].getMethodName();
 
         // TryCatch Injection Info
-        System.out.println(String.format("INFO ByteMonkey injection! %s, %s @ %s", tcIndexInfo, executedMethodName, executedClassName));
-        // System.out.println("INFO ByteMonkey StackTrace Info:");
+        System.out.println(String.format("INFO ChaosMachine injection! %s, %s @ %s", tcIndexInfo, executedMethodName, executedClassName));
+        // System.out.println("INFO ChaosMachine StackTrace Info:");
         // new Throwable().printStackTrace();
 
         String dotSeparatedClassName = tcType.replace("/", ".");
@@ -82,20 +82,20 @@ public class ChaosMonkey {
             if (Throwable.class.isAssignableFrom(p)) {
                 return (Throwable) p.newInstance();
             } else {
-                return new ByteMonkeyException(tcType);
+                return new ChaosMachineException(tcType);
             }
         } catch (IllegalAccessException e) {
-            return new ByteMonkeyException(tcType);
+            return new ChaosMachineException(tcType);
         } catch (InstantiationException e) {
             // the target exception has no default constructor
             // since lots of exception has a constructor with a string parameter, try it again
             try {
-                return (Throwable) p.getConstructor(String.class).newInstance("INJECTED BY CHAOS MONKEY: " + dotSeparatedClassName);
+                return (Throwable) p.getConstructor(String.class).newInstance("INJECTED BY CHAOS MACHINE: " + dotSeparatedClassName);
             } catch (Exception e1) {
-                return new ByteMonkeyException(tcType);
+                return new ChaosMachineException(tcType);
             }
         } catch (ClassNotFoundException e) {
-            return new ByteMonkeyException(tcType);
+            return new ChaosMachineException(tcType);
         }
     }
 
@@ -134,7 +134,7 @@ public class ChaosMonkey {
         } catch (MemcachedException e) {
             e.printStackTrace();
         } catch (TimeoutException e) {
-            System.out.println(String.format("INFO ByteMonkey registerTrycatchInfo time out (%s)", memcachedKey));
+            System.out.println(String.format("INFO ChaosMachine registerTrycatchInfo time out (%s)", memcachedKey));
         }
         */
     }
@@ -154,7 +154,7 @@ public class ChaosMonkey {
         } catch (MemcachedException e) {
             e.printStackTrace();
         } catch (TimeoutException e) {
-            System.out.println(String.format("INFO ByteMonkey registerTrycatchToMemcached time out (%s)", tcIndexInfo));
+            System.out.println(String.format("INFO ChaosMachine registerTrycatchToMemcached time out (%s)", tcIndexInfo));
         }
     }
 }

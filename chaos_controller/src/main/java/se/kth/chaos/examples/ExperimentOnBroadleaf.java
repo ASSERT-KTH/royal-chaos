@@ -84,7 +84,7 @@ public class ExperimentOnBroadleaf {
                             BufferedReader logReader = new BufferedReader(new InputStreamReader(new FileInputStream(injectionLog)));
                             String line = "";
                             while ((line = logReader.readLine()) != null) {
-                                if (line.startsWith("INFO ByteMonkey injection! " + tcKey)) {
+                                if (line.startsWith("INFO ChaosMachine injection! " + tcKey)) {
                                     injectionCount++;
                                 }
                             }
@@ -324,8 +324,8 @@ public class ExperimentOnBroadleaf {
             BufferedReader logReader = new BufferedReader(new InputStreamReader(new FileInputStream(originalLog)));
             String line = "";
             while ((line = logReader.readLine()) != null) {
-                if (line.startsWith("INFO ByteMonkey try catch index")) {
-                    line = line.substring("INFO ByteMonkey try catch index ".length());
+                if (line.startsWith("INFO ChaosMachine try catch index")) {
+                    line = line.substring("INFO ChaosMachine try catch index ".length());
                     tcSets.add(line);
                     if (tcMap.containsKey(line)) {
                         tcMap.put(line, tcMap.get(line) + 1);

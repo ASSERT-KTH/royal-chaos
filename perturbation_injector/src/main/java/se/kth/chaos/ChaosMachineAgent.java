@@ -1,4 +1,4 @@
-package uk.co.probablyfine.bytemonkey;
+package se.kth.chaos;
 
 import org.apache.log4j.PropertyConfigurator;
 
@@ -6,7 +6,7 @@ import java.lang.instrument.Instrumentation;
 import java.lang.instrument.UnmodifiableClassException;
 import java.util.Properties;
 
-public class ByteMonkeyAgent {
+public class ChaosMachineAgent {
 
     public static void premain(String agentArguments, Instrumentation instrumentation) throws UnmodifiableClassException {
         // PropertyConfigurator.configure("log4j.properties");
@@ -16,7 +16,7 @@ public class ByteMonkeyAgent {
         properties.setProperty("log4j.logger.com.google.code.yanf4j", "OFF");
         PropertyConfigurator.configure(properties);
 
-        ByteMonkeyClassTransformer transformer = new ByteMonkeyClassTransformer(agentArguments);
+        ChaosMachineClassTransformer transformer = new ChaosMachineClassTransformer(agentArguments);
         instrumentation.addTransformer(transformer);
 
         // for already loaded classes, we can retransform them, but that depends on platform's type
@@ -36,7 +36,7 @@ public class ByteMonkeyAgent {
                 }
             }
         } else {
-            System.out.println("WARN ByteMonkey: Retransforming classes is not supported!");
+            System.out.println("WARN ChaosMachine: Retransforming classes is not supported!");
         }
     }
 
