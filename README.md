@@ -7,6 +7,10 @@ Chaos machine is a tool to do chaos engineering on the JVM level using bytecode.
 
 More details on: [A Chaos Engineering System for Live Analysis and Falsification of Exception-handling in the JVM](https://arxiv.org/abs/1805.05246)
 
+## Recent talks about Chaos Machine
+
+- [Stockholm Chaos Engineering Meetup, Tuesday, June 19, 2018](https://www.meetup.com/Stockholm-Chaos-Engineering-Community/events/250982413/)
+
 ## How to conduct a chaos experiment using Chaos Machine
 
 First of all, run the following command in root directory:
