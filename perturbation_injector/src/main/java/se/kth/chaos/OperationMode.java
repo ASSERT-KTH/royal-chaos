@@ -4,6 +4,12 @@ import jdk.internal.org.objectweb.asm.Opcodes;
 import jdk.internal.org.objectweb.asm.tree.*;
 
 public enum OperationMode {
+    NONE {
+        public InsnList generateByteCode(TryCatchBlockNode tryCatchBlock, MethodNode methodNode, ClassNode classNode, int tcIndex, AgentArguments arguments) {
+            // we use this mode together with outputting class files to compare the overhead of file size
+            return null;
+        }
+    },
 	SCIRCUIT {
         public InsnList generateByteCode(TryCatchBlockNode tryCatchBlock, MethodNode methodNode, ClassNode classNode, int tcIndex, AgentArguments arguments) {
 			InsnList list = new InsnList();
@@ -21,12 +27,6 @@ public enum OperationMode {
             
             return list;
         }
-        
-		@Override
-		public InsnList generateByteCode(MethodNode method, AgentArguments arguments) {
-			// won't use this method
-			return null;
-		}
 	},
     ANALYZETC {
         public InsnList generateByteCode(TryCatchBlockNode tryCatchBlock, MethodNode methodNode, ClassNode classNode, int tcIndex, AgentArguments arguments) {
@@ -45,12 +45,6 @@ public enum OperationMode {
             ChaosMonkey.registerTrycatchInfo(arguments, tcIndexInfo, arguments.defaultMode());
 
             return list;
-        }
-
-        @Override
-        public InsnList generateByteCode(MethodNode method, AgentArguments arguments) {
-            // won't use this method
-            return null;
         }
     },
     MEMCACHED {
@@ -78,18 +72,11 @@ public enum OperationMode {
 
             return list;
         }
-
-        @Override
-        public InsnList generateByteCode(MethodNode method, AgentArguments arguments) {
-            // won't use this method
-            return null;
-        }
     };
 
     public static OperationMode fromLowerCase(String mode) {
         return OperationMode.valueOf(mode.toUpperCase());
     }
 
-    public abstract InsnList generateByteCode(MethodNode method, AgentArguments arguments);
     public abstract InsnList generateByteCode(TryCatchBlockNode tryCatchBlock, MethodNode methodNode, ClassNode classNode, int tcIndex, AgentArguments arguments);
 }

@@ -2,8 +2,12 @@ package se.kth.chaos;
 
 import jdk.internal.org.objectweb.asm.ClassReader;
 import jdk.internal.org.objectweb.asm.ClassWriter;
-import jdk.internal.org.objectweb.asm.tree.*;
+import jdk.internal.org.objectweb.asm.tree.ClassNode;
+import jdk.internal.org.objectweb.asm.tree.InsnList;
+import jdk.internal.org.objectweb.asm.tree.LabelNode;
+import jdk.internal.org.objectweb.asm.tree.TryCatchBlockNode;
 
+import java.io.*;
 import java.lang.instrument.ClassFileTransformer;
 import java.lang.instrument.IllegalClassFormatException;
 import java.security.ProtectionDomain;
@@ -103,6 +107,20 @@ public class ChaosMachineClassTransformer implements ClassFileTransformer {
 
         final ClassWriter cw = new ClassWriter(0);
         cn.accept(cw);
+        // writeIntoClassFile(cn.name, cw.toByteArray()); // we use this method to compare the overhead of file size
         return cw.toByteArray();
+    }
+
+    private void writeIntoClassFile(String className, byte[] data) {
+        String folderName = "instrumented";
+        try {
+            String[] parts = className.split("/");
+            DataOutputStream dout = new DataOutputStream(new FileOutputStream(new File(folderName + "/" + parts[parts.length - 1] + ".class")));
+            dout.write(data);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

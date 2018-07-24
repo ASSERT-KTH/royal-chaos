@@ -23,7 +23,6 @@ public class ExperimentOnTTorrent {
             if (osName.contains("Windows")) {
                 // todo
             } else {
-                System.out.println(javaagentPath);
                 System.out.println("[CHAOS_MACHINE]step 0: analysis mode, downloading the file normally.");
                 process = Runtime.getRuntime().exec(new String[] {"bash", "-c", String.format("java -noverify -javaagent:%s=mode:analyzetc,csvfilepath:./0_original.csv,filter:com/turn/ttorrent -jar %s -o . -s 0 ubuntu-14.04.5-server-i386.iso.torrent 2>&1", javaagentPath, threadName)}, null, new File(rootPath));
                 int input_pid = JMXMonitoringTool.getPidByThreadName(threadName);

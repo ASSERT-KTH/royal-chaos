@@ -112,7 +112,7 @@ public class JMXMonitoringTool {
         try {
             jmxc.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            // e.printStackTrace();
         }
     }
 
