@@ -25,6 +25,7 @@ public class OverheadEvaluationOnTTorrent {
         long totalDownloadingTime = 0;
         int loopCount = 5;
 
+        /*
         // step 0: do not attach chaos machine
         if (osName.contains("Windows")) {
 
@@ -97,9 +98,9 @@ public class OverheadEvaluationOnTTorrent {
         if (osName.contains("Windows")) {
 
         } else {
+            System.out.println("[CHAOS_MACHINE]step 1: analysis mode, downloading the file normally.");
             for (int i = 0; i < loopCount; i++) {
                 try {
-                    System.out.println("[CHAOS_MACHINE]step 1: analysis mode, downloading the file normally.");
                     startTime = System.currentTimeMillis();
                     process = Runtime.getRuntime().exec(new String[] {"bash", "-c", String.format("java -noverify -javaagent:%s=mode:analyzetc,csvfilepath:./0_original.csv,filter:com/turn/ttorrent -jar %s -o . -s 0 ubuntu-14.04.5-server-i386.iso.torrent 2>&1", javaagentPath, threadName)}, null, new File(rootPath));
                     int input_pid = JMXMonitoringTool.getPidByThreadName(threadName);
@@ -148,10 +149,77 @@ public class OverheadEvaluationOnTTorrent {
             }
 
             System.out.println("summary:");
-            System.out.println("normally process cpu time(in seconds): " + totalProcessCpuTime / loopCount);
-            System.out.println("normally average memory usage(in MB): " + totalAverageMemoryUsage / loopCount);
-            System.out.println("normally peak thread count: " + totalPeakThreadCount / loopCount);
-            System.out.println("normally downloading time(in ms): " + totalDownloadingTime / loopCount);
+            System.out.println("analysis process cpu time(in seconds): " + totalProcessCpuTime / loopCount);
+            System.out.println("analysis average memory usage(in MB): " + totalAverageMemoryUsage / loopCount);
+            System.out.println("analysis peak thread count: " + totalPeakThreadCount / loopCount);
+            System.out.println("analysis downloading time(in ms): " + totalDownloadingTime / loopCount);
+        }
+        */
+
+        // step 2: injection mode
+        totalProcessCpuTime = 0;
+        totalAverageMemoryUsage = 0;
+        totalPeakThreadCount = 0;
+        totalDownloadingTime = 0;
+        if (osName.contains("Windows")) {
+
+        } else {
+            System.out.println("[CHAOS_MACHINE]step 2: injection mode, downloading the file with an injection.");
+            for (int i = 0; i < loopCount; i++) {
+                try {
+                    startTime = System.currentTimeMillis();
+                    // take com/turn/ttorrent/client/peer/PeerExchange/stop as an example
+                    process = Runtime.getRuntime().exec(new String[] {"bash", "-c", String.format("java -noverify -javaagent:%s=mode:scircuit,filter:com/turn/ttorrent/client/peer/PeerExchange/stop -jar %s -o . -s 0 ubuntu-14.04.5-server-i386.iso.torrent 2>&1", javaagentPath, threadName)}, null, new File(rootPath));
+                    int input_pid = JMXMonitoringTool.getPidByThreadName(threadName);
+                    Thread jmxMonitoring = null;
+                    if (input_pid > 0) {
+                        jmxMonitoring = new Thread(() -> {
+                            JMXMonitoringTool.MONITORING_SWITCH = true;
+                            JMXMonitoringTool.monitorProcessByPid(input_pid, 1000);
+                        });
+                        jmxMonitoring.start();
+                    }
+
+                    InputStream inputStream = process.getInputStream();
+                    InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+                    BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+                    String line = null;
+                    while((line = bufferedReader.readLine()) != null) {
+                        if (line.contains(endingPattern)) {
+                            process.destroy();
+                            break;
+                        }
+                    }
+                    endTime = System.currentTimeMillis();
+                    JMXMonitoringTool.MONITORING_SWITCH = false;
+                    if (jmxMonitoring != null) {
+                        jmxMonitoring.join();
+                    }
+
+                    System.out.println("round " + i);
+                    System.out.println("injection mode process cpu time(in seconds): " + (JMXMonitoringTool.processCpuTime / 1000000000));
+                    System.out.println("injection mode average memory usage(in MB): " + JMXMonitoringTool.averageMemoryUsage / 1000000);
+                    System.out.println("injection mode peak thread count: " + JMXMonitoringTool.peakThreadCount);
+                    System.out.println("injection mode downloading time(in ms): " + (endTime - startTime));
+                    totalProcessCpuTime = totalProcessCpuTime + JMXMonitoringTool.processCpuTime / 1000000000;
+                    totalAverageMemoryUsage = totalAverageMemoryUsage + JMXMonitoringTool.averageMemoryUsage / 1000000;
+                    totalPeakThreadCount = totalPeakThreadCount + JMXMonitoringTool.peakThreadCount;
+                    totalDownloadingTime = totalDownloadingTime + (endTime - startTime);
+
+                    killRemainingThread(threadName, rootPath);
+                    removeRelevantFiles(rootPath);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            System.out.println("summary:");
+            System.out.println("injection process cpu time(in seconds): " + totalProcessCpuTime / loopCount);
+            System.out.println("injection average memory usage(in MB): " + totalAverageMemoryUsage / loopCount);
+            System.out.println("injection peak thread count: " + totalPeakThreadCount / loopCount);
+            System.out.println("injection downloading time(in ms): " + totalDownloadingTime / loopCount);
         }
     }
 
