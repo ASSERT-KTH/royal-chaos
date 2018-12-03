@@ -1,0 +1,27 @@
+key,className,methodName,methodSignature,exceptionType,indexNumber,countdown,rate,mode,covered,run times in normal,run times in injection,injection captured in the business log,tps and hitRate,exit status,process cpu time(in seconds),average memory usage(in MB),peak thread count
+4DAF9AD4D5756F30BB58C4BC11B328B2,net/spy/memcached/MemcachedClientIF,cas,(Ljava/lang/String;JLjava/lang/Object;Lnet/spy/memcached/transcoders/Transcoder;)Lnet/spy/memcached/CASResponse;,net/spy/memcached/OperationTimeoutException,0,1,1.0,analysis,-,-,-,-,-,-,-,-,-
+33C0CCFA124359F723215FB3CE0A17E9,net/spy/memcached/DefaultConnectionFactory,createConnection,(Ljava/util/List;)Lnet/spy/memcached/MemcachedConnection;,java/io/IOException,0,1,1.0,analysis,yes,1,-,-,-,-,-,-,-
+2710C987CC02D91021287545EE69942D,net/spy/memcached/ConnectionFactory,createConnection,(Ljava/util/List;)Lnet/spy/memcached/MemcachedConnection;,java/io/IOException,0,1,1.0,analysis,-,-,-,-,-,-,-,-,-
+7D7BC6291BC249716518E403EADD0693,net/spy/memcached/MemcachedConnection,handleIO,()V,java/io/IOException,0,1,1.0,analysis,yes,74037,-,-,-,-,-,-,-
+7F60F035CACC8809E1B687A9FCC418DF,net/spy/memcached/MemcachedConnection,handleWrites,(Ljava/nio/channels/SelectionKey;Lnet/spy/memcached/MemcachedNode;)V,java/io/IOException,0,1,1.0,analysis,yes,55673,-,-,-,-,-,-,-
+4634C477CB59FF686CC043EA75FC1237,net/spy/memcached/MemcachedConnection,handleReads,(Ljava/nio/channels/SelectionKey;Lnet/spy/memcached/MemcachedNode;)V,java/io/IOException,0,1,1.0,analysis,yes,53858,-,-,-,-,-,-,-
+CBD256BB2C8571BE9FB6892E7DA1E215,net/spy/memcached/MemcachedConnection,attemptReconnects,()V,java/io/IOException,0,1,1.0,analysis,-,-,-,-,-,-,-,-,-
+586D27DB609CD4045571980E27DF9953,net/spy/memcached/MemcachedConnection,shutdown,()V,java/io/IOException,0,1,1.0,analysis,-,-,-,-,-,-,-,-,-
+A4CD4DCC4EB548924AE8C2160594BFA9,net/spy/memcached/protocol/TCPMemcachedNodeImpl,writeSome,()I,java/io/IOException,0,1,1.0,analysis,yes,67677,-,-,-,-,-,-,-
+5E3C7D0B17D044C32D608D7304B9FE10,net/spy/memcached/MemcachedNode,writeSome,()I,java/io/IOException,0,1,1.0,analysis,-,-,-,-,-,-,-,-,-
+7F089889C070855301625CD1D116BEC2,net/spy/memcached/compat/log/LoggerFactory,getNewInstance,(Ljava/lang/String;)Lnet/spy/memcached/compat/log/Logger;,java/lang/InstantiationException,0,1,1.0,analysis,yes,6,-,-,-,-,-,-,-
+DE164AB87F4130077802DFDD57C8A6DF,net/spy/memcached/compat/log/LoggerFactory,getNewInstance,(Ljava/lang/String;)Lnet/spy/memcached/compat/log/Logger;,java/lang/IllegalAccessException,1,1,1.0,analysis,yes,6,-,-,-,-,-,-,-
+1A1B5A55703CCDA4CE2E96E2C2806005,net/spy/memcached/compat/log/LoggerFactory,getNewInstance,(Ljava/lang/String;)Lnet/spy/memcached/compat/log/Logger;,java/lang/IllegalArgumentException,2,1,1.0,analysis,yes,6,-,-,-,-,-,-,-
+9533A90EB8B170E13DF23B0F0EEE4080,net/spy/memcached/compat/log/LoggerFactory,getNewInstance,(Ljava/lang/String;)Lnet/spy/memcached/compat/log/Logger;,java/lang/reflect/InvocationTargetException,3,1,1.0,analysis,yes,6,-,-,-,-,-,-,-
+C1F7766FDCEC3209C20DD55D7AFFA75B,net/spy/memcached/ops/Operation,readFromBuffer,(Ljava/nio/ByteBuffer;)V,java/io/IOException,0,1,1.0,analysis,-,-,-,-,-,-,-,-,-
+69BB298DDB3F5D0A56708455BED0A493,net/spy/memcached/protocol/ascii/OperationImpl,readFromBuffer,(Ljava/nio/ByteBuffer;)V,java/io/IOException,0,1,1.0,analysis,yes,179006,-,-,-,-,-,-,-
+822E231B487FBA2B2C7A57CA140683B9,net/spy/memcached/protocol/BaseOperationImpl,readFromBuffer,(Ljava/nio/ByteBuffer;)V,java/io/IOException,0,1,1.0,analysis,-,-,-,-,-,-,-,-,-
+00007311CA60D00BC0965B4F272F3B1A,net/spy/memcached/internal/OperationFuture,get,()Ljava/lang/Object;,java/lang/InterruptedException,0,1,1.0,analysis,yes,300300,-,-,-,-,-,-,-
+320A54B3A5952C348BDC6E9A2CCC53C4,net/spy/memcached/internal/OperationFuture,get,()Ljava/lang/Object;,java/util/concurrent/ExecutionException,1,1,1.0,analysis,yes,300300,-,-,-,-,-,-,-
+F9C2A5E6111E2CEEB8B830D45205B587,net/spy/memcached/internal/OperationFuture,get,(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;,java/util/concurrent/ExecutionException,2,1,1.0,analysis,yes,300300,-,-,-,-,-,-,-
+0652CECAFAF9F69F1CE6A1DD66E06D16,net/spy/memcached/internal/GetFuture,get,()Ljava/lang/Object;,java/lang/InterruptedException,0,1,1.0,analysis,yes,240240,-,-,-,-,-,-,-
+7529584F94B6E6AC00652B3D27F417AB,net/spy/memcached/internal/GetFuture,get,()Ljava/lang/Object;,java/util/concurrent/ExecutionException,1,1,1.0,analysis,yes,240240,-,-,-,-,-,-,-
+E2C9C74227E1A8904C6407804F49786A,net/spy/memcached/internal/GetFuture,get,(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;,java/util/concurrent/ExecutionException,2,1,1.0,analysis,yes,240240,-,-,-,-,-,-,-
+BE0A859390EC9DEFD0B58C010DEB5B26,net/spy/memcached/transcoders/TranscodeService$Task,get,()Ljava/lang/Object;,java/lang/InterruptedException,0,1,1.0,analysis,yes,228280,-,-,-,-,-,-,-
+2765D00E2A6B348317B9D5E1FAB4A2E4,net/spy/memcached/transcoders/TranscodeService$Task,get,()Ljava/lang/Object;,java/util/concurrent/ExecutionException,1,1,1.0,analysis,yes,228280,-,-,-,-,-,-,-
+67BB4D4E51FAD7BDD7ACB2B700CA52F7,net/spy/memcached/transcoders/TranscodeService$Task,get,(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;,java/util/concurrent/TimeoutException,2,1,1.0,analysis,-,-,-,-,-,-,-,-,-
