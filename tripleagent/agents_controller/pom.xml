@@ -84,31 +84,6 @@
       </build>
     </profile>
     <profile>
-      <id>experiment-on-memcached</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>exec-maven-plugin</artifactId>
-            <executions>
-              <execution>
-                <phase>test</phase>
-                <goals>
-                  <goal>java</goal>
-                </goals>
-                <configuration>
-                  <mainClass>se.kth.chaos.controller.examples.ThrowExceptionOnMemcached</mainClass>
-                  <additionalClasspathElements>
-                    <additionalClasspathElement>${java.home}/../lib/tools.jar</additionalClasspathElement>
-                  </additionalClasspathElements>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-    <profile>
       <id>default-tools.jar</id>
       <activation>
         <property>
