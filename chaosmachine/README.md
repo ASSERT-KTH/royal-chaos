@@ -11,6 +11,7 @@ More details in the Arxiv paper: [A Chaos Engineering System for Live Analysis a
 
 - SINTEF Digital, Department of Software and Service Innovation, Oslo, Norway, Monday, May 28, 2018
 - [Stockholm Chaos Engineering Meetup, Stockholm, Sweden, Tuesday, June 19, 2018](https://www.meetup.com/Stockholm-Chaos-Engineering-Community/events/250982413/)
+- [2nd European Chaos Engineering Day, Stockholm, Sweden, Wednesday, December 05, 2018](https://www.chaos.conf.kth.se/)
 
 ## How to conduct a chaos experiment using Chaos Machine
 
