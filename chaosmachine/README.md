@@ -1,9 +1,9 @@
 # Chaos Machine
-Chaos machine is a tool to do chaos engineering on the JVM level using bytecode. In particular, it concentrates on analyzing the error-handling ability of each try-catch block involved in the application. It has three modules:
+Chaos machine is a tool to do application level chaos engineering in the JVM. It concentrates on analyzing the error-handling ability of each try-catch block involved in the application. It has three modules:
 
 - Monitoring sidecar: collects the information needed to study the outcome of chaos experiments  
-- Perturbation injector: injects a corresponding exception at a specific time  
-- Chaos controller: controls every perturbation injector to fulfill a chaos experiment, generates analysis report for developers  
+- Perturbation injector: injects an exception at a specific time  
+- Chaos controller: controls every perturbation injector to fulfill a chaos experiment, generates analysis reports for developers  
 
 More details in the Arxiv paper: [A Chaos Engineering System for Live Analysis and Falsification of Exception-handling in the JVM (Arxiv 1805.05246, 2018)](https://arxiv.org/abs/1805.05246)
 
@@ -15,7 +15,7 @@ More details in the Arxiv paper: [A Chaos Engineering System for Live Analysis a
 
 ## How to conduct a chaos experiment using Chaos Machine
 
-First of all, run the following command in root directory:
+Run the following command in root directory:
 
 ```
 mvn package
@@ -27,7 +27,7 @@ or
 mvn install
 ```
 
-Then you can get the javaagent jar file `chaosmachine-injector-jar-with-dependencies.jar` in `perturbation_injector/target`. Both monitoring sidecar and perturbation injector are implemented in this jar file.
+Then you can get the javaagent jar file `chaosmachine-injector-jar-with-dependencies.jar` in `perturbation_injector/target`. Both the monitoring sidecar and the perturbation injector are implemented in this jar file.
 
 Next you can implement your own chaos controller to evaluate your applications according to the paper, we present 3 examples: TTorrent, XWiki, Broadleaf. Every experiment has a script written by Java to show the procedures.
 
