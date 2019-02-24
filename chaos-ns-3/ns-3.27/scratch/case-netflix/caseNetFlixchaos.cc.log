@@ -1,0 +1,54 @@
+BEGIN CHAOSEXPERIMENT NR 0 EXPERIMENTNAME: DataRatefaultinject
+UdpEchoServerApplication:UdpEchoServer(0x560910bab330)
+UdpEchoServerApplication:UdpEchoServer(0x560910bab450)
+UdpEchoServerApplication:UdpEchoServer(0x560910bab590)
+UdpEchoServerApplication:UdpEchoServer(0x560910bab6d0)
+UdpEchoServerApplication:UdpEchoServer(0x560910bab840)
+UdpEchoServerApplication:UdpEchoServer(0x560910bab9b0)
+UdpEchoServerApplication:StartApplication(0x560910bab9b0)
+UdpEchoServerApplication:StartApplication(0x560910bab840)
+UdpEchoServerApplication:StartApplication(0x560910bab6d0)
+UdpEchoServerApplication:StartApplication(0x560910bab590)
+UdpEchoServerApplication:StartApplication(0x560910bab450)
+UdpEchoServerApplication:StartApplication(0x560910bab330)
+At time 1.004s  monkey 2 caused chaos to datarate of device 0
++1.004000000s -1 SecondScriptExample:FixDataRate(): [INFO ] System detected a chaos monkey at Node 16 Device 0 !DataRate changed to 1000000
+
++1.004000000s -1 SecondScriptExample:FixDataRate(): [INFO ] DataRate fixed back to default!!!!!5000000
+
+UdpEchoServerApplication:HandleRead(0x560910bab330, 0x560910c11c20)
+UdpEchoServerApplication:HandleRead(0x560910bab330, 0x560910c11c20)
+UdpEchoServerApplication:HandleRead(0x560910bab330, 0x560910c11c20)
+UdpEchoServerApplication:HandleRead(0x560910bab330, 0x560910c11c20)
+UdpEchoServerApplication:HandleRead(0x560910bab330, 0x560910c11c20)
+UdpEchoServerApplication:HandleRead(0x560910bab330, 0x560910c11c20)
+UdpEchoServerApplication:DoDispose(0x560910bab9b0)
+UdpEchoServerApplication:~UdpEchoServer(0x560910bab9b0)
+UdpEchoServerApplication:DoDispose(0x560910bab840)
+UdpEchoServerApplication:~UdpEchoServer(0x560910bab840)
+UdpEchoServerApplication:DoDispose(0x560910bab6d0)
+UdpEchoServerApplication:~UdpEchoServer(0x560910bab6d0)
+UdpEchoServerApplication:DoDispose(0x560910bab590)
+UdpEchoServerApplication:~UdpEchoServer(0x560910bab590)
+UdpEchoServerApplication:DoDispose(0x560910bab450)
+UdpEchoServerApplication:~UdpEchoServer(0x560910bab450)
+UdpEchoServerApplication:DoDispose(0x560910bab330)
+UdpEchoServerApplication:~UdpEchoServer(0x560910bab330)
+SecondScriptExample:main(): [INFO ] EXPERIMENT SUCCESS!
+
+BEGIN CHAOSEXPERIMENT NR 1 EXPERIMENTNAME: P2PNodefaultinject
+UdpEchoServerApplication:UdpEchoServer(0x556979bbf330)
+UdpEchoServerApplication:UdpEchoServer(0x556979bbf450)
+UdpEchoServerApplication:UdpEchoServer(0x556979bbf590)
+UdpEchoServerApplication:UdpEchoServer(0x556979bbf6d0)
+UdpEchoServerApplication:UdpEchoServer(0x556979bbf840)
+UdpEchoServerApplication:UdpEchoServer(0x556979bbf9b0)
+UdpEchoServerApplication:StartApplication(0x556979bbf9b0)
+UdpEchoServerApplication:StartApplication(0x556979bbf840)
+UdpEchoServerApplication:StartApplication(0x556979bbf6d0)
+UdpEchoServerApplication:StartApplication(0x556979bbf590)
+UdpEchoServerApplication:StartApplication(0x556979bbf450)
+UdpEchoServerApplication:StartApplication(0x556979bbf330)
+Node nr 0 have been destroyed at time 1.004
+Command ['/home/tai/reposnew/ns-3-allinone/ns-3-dev/build/scratch/caseNetFlixchaosver1', '--DoingChaosExperiment=1', '--P2PNodefaultinject=1'] terminated with signal SIGSEGV. Run it under a debugger to get more information (./waf --run <program> --command-template="gdb --args %s <args>").
+EXPERIMENT FAILED! A BUG WAS FOUND!

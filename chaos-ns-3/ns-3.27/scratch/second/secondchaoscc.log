@@ -1,0 +1,52 @@
+BEGIN CHAOSEXPERIMENT NR 0 EXPERIMENTNAME: DataRatefaultinject
+UdpEchoServerApplication:UdpEchoServer(0x5591019c22c0)
++0.000000000s -1 UdpEchoClientApplication:UdpEchoClient(0x5591019f7b20)
++0.000000000s -1 UdpEchoClientApplication:SetDataSize(0x5591019f7b20, 1024)
+UdpEchoServerApplication:StartApplication(0x5591019c22c0)
++2.000000000s 0 UdpEchoClientApplication:StartApplication(0x5591019f7b20)
++2.000000000s 0 UdpEchoClientApplication:ScheduleTransmit(0x5591019f7b20, +0.0ns)
++2.000000000s 0 UdpEchoClientApplication:Send(0x5591019f7b20)
+At time 2.004s  monkey 2 caused chaos to datarate of device 0
++2.004000000s -1 SecondScriptExample:FixDataRate(): [INFO ] System detected a chaos monkey at Node 0 Device 0 !DataRate changed to 1000000
+
++2.004000000s -1 SecondScriptExample:FixDataRate(): [INFO ] DataRate fixed back to default!!!!!5000000
+
+UdpEchoServerApplication:HandleRead(0x5591019c22c0, 0x5591019531b0)
++2.014607840s 0 UdpEchoClientApplication:HandleRead(0x5591019f7b20, 0x5591019f4370)
++10.000000000s 0 UdpEchoClientApplication:StopApplication(0x5591019f7b20)
+UdpEchoServerApplication:StopApplication(0x5591019c22c0)
+UdpEchoClientApplication:DoDispose(0x5591019f7b20)
+UdpEchoServerApplication:DoDispose(0x5591019c22c0)
+UdpEchoClientApplication:~UdpEchoClient(0x5591019f7b20)
+UdpEchoServerApplication:~UdpEchoServer(0x5591019c22c0)
+SecondScriptExample:main(): [INFO ] EXPERIMENT SUCCESS!
+BEGIN CHAOSEXPERIMENT NR 1 EXPERIMENTNAME: P2PNodefaultinject
+UdpEchoServerApplication:UdpEchoServer(0x55fd973022c0)
++0.000000000s -1 UdpEchoClientApplication:UdpEchoClient(0x55fd97337b20)
++0.000000000s -1 UdpEchoClientApplication:SetDataSize(0x55fd97337b20, 1024)
+UdpEchoServerApplication:StartApplication(0x55fd973022c0)
++2.000000000s 0 UdpEchoClientApplication:StartApplication(0x55fd97337b20)
++2.000000000s 0 UdpEchoClientApplication:ScheduleTransmit(0x55fd97337b20, +0.0ns)
++2.000000000s 0 UdpEchoClientApplication:Send(0x55fd97337b20)
+UdpEchoServerApplication:HandleRead(0x55fd973022c0, 0x55fd972931b0)
++2.014607840s 0 UdpEchoClientApplication:HandleRead(0x55fd97337b20, 0x55fd97334370)
++10.000000000s 0 UdpEchoClientApplication:StopApplication(0x55fd97337b20)
+UdpEchoServerApplication:StopApplication(0x55fd973022c0)
+UdpEchoClientApplication:DoDispose(0x55fd97337b20)
+UdpEchoServerApplication:DoDispose(0x55fd973022c0)
+UdpEchoClientApplication:~UdpEchoClient(0x55fd97337b20)
+UdpEchoServerApplication:~UdpEchoServer(0x55fd973022c0)
+SecondScriptExample:main(): [INFO ] EXPERIMENT SUCCESS!
+BEGIN CHAOSEXPERIMENT NR 2 EXPERIMENTNAME: P2PDevicefaultinject
+UdpEchoServerApplication:UdpEchoServer(0x5555bd2ce2c0)
++0.000000000s -1 UdpEchoClientApplication:UdpEchoClient(0x5555bd303b20)
++0.000000000s -1 UdpEchoClientApplication:SetDataSize(0x5555bd303b20, 1024)
+UdpEchoServerApplication:StartApplication(0x5555bd2ce2c0)
++2.000000000s 0 UdpEchoClientApplication:StartApplication(0x5555bd303b20)
++2.000000000s 0 UdpEchoClientApplication:ScheduleTransmit(0x5555bd303b20, +0.0ns)
++2.000000000s 0 UdpEchoClientApplication:Send(0x5555bd303b20)
+Device nr 0 have been destroyed at time 2.004
+UdpEchoServerApplication:HandleRead(0x5555bd2ce2c0, 0x5555bd25f1b0)
+Command ['/home/tai/reposnew/ns-3-allinone/ns-3-dev/build/scratch/second_chaos', '--DoingChaosExperiment=1', '--P2PDevicefaultinject=1'] terminated with signal SIGSEGV. Run it under a debugger to get more information (./waf --run <program> --command-template="gdb --args %s <args>").
+EXPERIMENT FAILED! A BUG WAS FOUND!
+

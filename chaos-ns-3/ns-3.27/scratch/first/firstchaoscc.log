@@ -1,0 +1,36 @@
+BEGIN CHAOSEXPERIMENT NR 0 EXPERIMENTNAME: DataRatefaultinject
++0.000000000s -1 UdpEchoServerApplication:UdpEchoServer(0x5612e2918c70)
++0.000000000s -1 UdpEchoClientApplication:UdpEchoClient(0x5612e2923b20)
++0.000000000s -1 UdpEchoClientApplication:SetDataSize(0x5612e2923b20, 2048)
++1.000000000s 1 UdpEchoServerApplication:StartApplication(0x5612e2918c70)
++2.000000000s 0 UdpEchoClientApplication:StartApplication(0x5612e2923b20)
++2.000000000s 0 UdpEchoClientApplication:ScheduleTransmit(0x5612e2923b20, +0.0ns)
++2.000000000s 0 UdpEchoClientApplication:Send(0x5612e2923b20)
+At time 2.004s  monkey 1 caused chaos to datarate of device 0
++2.004000000s -1 FirstScriptExample:FixDataRate(): [INFO ] System detected a chaos monkey at Node 0 !DataRate changed to 1000000
++2.004000000s -1 FirstScriptExample:FixDataRate(): [INFO ] DataRate fixed back to default!!!!!5000000
+
++2.005359998s 1 UdpEchoServerApplication:HandleRead(0x5612e2918c70, 0x5612e287f1b0)
++2.010719996s 0 UdpEchoClientApplication:HandleRead(0x5612e2923b20, 0x5612e2920370)
++10.000000000s 0 UdpEchoClientApplication:StopApplication(0x5612e2923b20)
++10.000000000s 1 UdpEchoServerApplication:StopApplication(0x5612e2918c70)
+UdpEchoClientApplication:DoDispose(0x5612e2923b20)
+UdpEchoServerApplication:DoDispose(0x5612e2918c70)
+UdpEchoClientApplication:~UdpEchoClient(0x5612e2923b20)
+UdpEchoServerApplication:~UdpEchoServer(0x5612e2918c70)
+FirstScriptExample:main(): [INFO ] EXPERIMENT SUCCESS!
+
+BEGIN CHAOSEXPERIMENT NR 1 EXPERIMENTNAME: Nodefaultinject
++0.000000000s -1 UdpEchoServerApplication:UdpEchoServer(0x561b52cbac70)
++0.000000000s -1 UdpEchoClientApplication:UdpEchoClient(0x561b52cc5b20)
++0.000000000s -1 UdpEchoClientApplication:SetDataSize(0x561b52cc5b20, 2048)
++1.000000000s 1 UdpEchoServerApplication:StartApplication(0x561b52cbac70)
++2.000000000s 0 UdpEchoClientApplication:StartApplication(0x561b52cc5b20)
++2.000000000s 0 UdpEchoClientApplication:ScheduleTransmit(0x561b52cc5b20, +0.0ns)
++2.000000000s 0 UdpEchoClientApplication:Send(0x561b52cc5b20)
+Node nr 0 have been destroyed at time 2.004
++2.004000000s -1 UdpEchoClientApplication:DoDispose(0x561b52cc5b20)
++2.005359998s 1 UdpEchoServerApplication:HandleRead(0x561b52cbac70, 0x561b52c211b0)
+Command ['/home/tai/reposnew/ns-3-allinone/ns-3-dev/build/scratch/first_chaos', '--DoingChaosExperiment=1', '--P2PNodefaultinject=1'] terminated with signal SIGSEGV. Run it under a debugger to get more information (./waf --run <program> --command-template="gdb --args %s <args>").
+EXPERIMENT FAILED! A BUG WAS FOUND!
+

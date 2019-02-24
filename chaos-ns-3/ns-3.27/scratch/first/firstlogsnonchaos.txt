@@ -1,0 +1,69 @@
+Traceback (most recent call last):
+  File "/home/tai/reposnew/ns-3-allinone/ns-3-dev/.waf-1.8.19-b1fc8f7baef51bd2db4c2971909a568d/waflib/Logs.py", line 84, in emit
+    self.flush()
+  File "/usr/lib/python2.7/logging/__init__.py", line 845, in flush
+    self.stream.flush()
+IOError: [Errno 32] Broken pipe
+Logged from file Logs.py, line 163
+Traceback (most recent call last):
+  File "/home/tai/reposnew/ns-3-allinone/ns-3-dev/.waf-1.8.19-b1fc8f7baef51bd2db4c2971909a568d/waflib/Logs.py", line 84, in emit
+    self.flush()
+  File "/usr/lib/python2.7/logging/__init__.py", line 845, in flush
+    self.stream.flush()
+IOError: [Errno 32] Broken pipe
+Logged from file Logs.py, line 163
+Traceback (most recent call last):
+  File "/home/tai/reposnew/ns-3-allinone/ns-3-dev/.waf-1.8.19-b1fc8f7baef51bd2db4c2971909a568d/waflib/Logs.py", line 84, in emit
+    self.flush()
+  File "/usr/lib/python2.7/logging/__init__.py", line 845, in flush
+    self.stream.flush()
+IOError: [Errno 32] Broken pipe
+Logged from file Logs.py, line 163
+Traceback (most recent call last):
+  File "/home/tai/reposnew/ns-3-allinone/ns-3-dev/.waf-1.8.19-b1fc8f7baef51bd2db4c2971909a568d/waflib/Logs.py", line 84, in emit
+    self.flush()
+  File "/usr/lib/python2.7/logging/__init__.py", line 845, in flush
+    self.stream.flush()
+IOError: [Errno 32] Broken pipe
+Logged from file Logs.py, line 163
++0.000000000s -1 UdpEchoServerApplication:UdpEchoServer(0x563dffdfcc70)
++0.000000000s -1 UdpEchoClientApplication:UdpEchoClient(0x563dffe07b20)
++0.000000000s -1 UdpEchoClientApplication:SetDataSize(0x563dffe07b20, 2048)
++1.000000000s 1 UdpEchoServerApplication:StartApplication(0x563dffdfcc70)
++2.000000000s 0 UdpEchoClientApplication:StartApplication(0x563dffe07b20)
++2.000000000s 0 UdpEchoClientApplication:ScheduleTransmit(0x563dffe07b20, +0.0ns)
++2.000000000s 0 UdpEchoClientApplication:Send(0x563dffe07b20)
++2.000000000s 0 UdpEchoClientApplication:Send(): [INFO ] At time 2s client sent 2048 bytes to 10.1.1.2 port 9
++2.005359998s 1 UdpEchoServerApplication:HandleRead(0x563dffdfcc70, 0x563dffd631b0)
++2.005359998s 1 UdpEchoServerApplication:HandleRead(): [INFO ] At time 2.00536s server received 2048 bytes from 10.1.1.1 port 49153
++2.005359998s 1 UdpEchoServerApplication:HandleRead(): [LOGIC] Echoing packet
++2.005359998s 1 UdpEchoServerApplication:HandleRead(): [INFO ] At time 2.00536s server sent 2048 bytes to 10.1.1.1 port 49153
++2.010719996s 0 UdpEchoClientApplication:HandleRead(0x563dffe07b20, 0x563dffe04370)
++2.010719996s 0 UdpEchoClientApplication:HandleRead(): [INFO ] At time 2.01072s client received 2048 bytes from 10.1.1.2 port 9
++10.000000000s 0 UdpEchoClientApplication:StopApplication(0x563dffe07b20)
++10.000000000s 1 UdpEchoServerApplication:StopApplication(0x563dffdfcc70)
+UdpEchoClientApplication:DoDispose(0x563dffe07b20)
+UdpEchoServerApplication:DoDispose(0x563dffdfcc70)
+UdpEchoClientApplication:~UdpEchoClient(0x563dffe07b20)
+UdpEchoServerApplication:~UdpEchoServer(0x563dffdfcc70)
+
++0.000000000s -1 UdpEchoServerApplication:UdpEchoServer(0x563dffd717c0)
++0.000000000s -1 UdpEchoClientApplication:UdpEchoClient(0x563dffe07b20)
++0.000000000s -1 UdpEchoClientApplication:SetDataSize(0x563dffe07b20, 2048)
++1.000000000s 1 UdpEchoServerApplication:StartApplication(0x563dffd717c0)
++2.000000000s 0 UdpEchoClientApplication:StartApplication(0x563dffe07b20)
++2.000000000s 0 UdpEchoClientApplication:ScheduleTransmit(0x563dffe07b20, +0.0ns)
++2.000000000s 0 UdpEchoClientApplication:Send(0x563dffe07b20)
++2.000000000s 0 UdpEchoClientApplication:Send(): [INFO ] At time 2s client sent 2048 bytes to 10.1.1.2 port 9
++2.005359998s 1 UdpEchoServerApplication:HandleRead(0x563dffd717c0, 0x563dffe146a0)
++2.005359998s 1 UdpEchoServerApplication:HandleRead(): [INFO ] At time 2.00536s server received 2048 bytes from 10.1.1.1 port 49153
++2.005359998s 1 UdpEchoServerApplication:HandleRead(): [LOGIC] Echoing packet
++2.005359998s 1 UdpEchoServerApplication:HandleRead(): [INFO ] At time 2.00536s server sent 2048 bytes to 10.1.1.1 port 49153
++2.010719996s 0 UdpEchoClientApplication:HandleRead(0x563dffe07b20, 0x563dffe04370)
++2.010719996s 0 UdpEchoClientApplication:HandleRead(): [INFO ] At time 2.01072s client received 2048 bytes from 10.1.1.2 port 9
++10.000000000s 0 UdpEchoClientApplication:StopApplication(0x563dffe07b20)
++10.000000000s 1 UdpEchoServerApplication:StopApplication(0x563dffd717c0)
+UdpEchoClientApplication:DoDispose(0x563dffe07b20)
+UdpEchoServerApplication:DoDispose(0x563dffd717c0)
+UdpEchoClientApplication:~UdpEchoClient(0x563dffe07b20)
+UdpEchoServerApplication:~UdpEchoServer(0x563dffd717c0)

@@ -1,0 +1,58 @@
+BEGIN CHAOSEXPERIMENT NR 0 EXPERIMENTNAME: DataRatefaultinject
+Logged from file Logs.py, line 163
+UdpEchoServerApplication:UdpEchoServer(0x5601523cf2b0)
+UdpEchoServerApplication:StartApplication(0x5601523cf2b0)
+At time 2.004s  monkey 2 caused chaos to datarate of device 0
++2.004000000s -1 SecondScriptExample:FixDataRate(): [INFO ] System detected a chaos monkey at Node 0 Device 0 !DataRate changed to 1000000
+
++2.004000000s -1 SecondScriptExample:FixDataRate(): [INFO ] DataRate fixed back to default!!!!!5000000
+
+UdpEchoServerApplication:HandleRead(0x5601523cf2b0, 0x560152314840)
+UdpEchoServerApplication:DoDispose(0x5601523cf2b0)
+UdpEchoServerApplication:~UdpEchoServer(0x5601523cf2b0)
+SecondScriptExample:main(): [INFO ] EXPERIMENT SUCCESS!
+
+BEGIN CHAOSEXPERIMENT NR 1 EXPERIMENTNAME: P2PNodefaultinject
+Logged from file Logs.py, line 163
+UdpEchoServerApplication:UdpEchoServer(0x56187537f2b0)
+UdpEchoServerApplication:StartApplication(0x56187537f2b0)
+UdpEchoServerApplication:HandleRead(0x56187537f2b0, 0x5618752c4840)
+UdpEchoServerApplication:DoDispose(0x56187537f2b0)
+UdpEchoServerApplication:~UdpEchoServer(0x56187537f2b0)
+SecondScriptExample:main(): [INFO ] EXPERIMENT SUCCESS!
+
+BEGIN CHAOSEXPERIMENT NR 2 EXPERIMENTNAME: P2PDevicefaultinject
+Logged from file Logs.py, line 163
+UdpEchoServerApplication:UdpEchoServer(0x56275c9d42b0)
+UdpEchoServerApplication:StartApplication(0x56275c9d42b0)
+UdpEchoServerApplication:HandleRead(0x56275c9d42b0, 0x56275c919840)
+UdpEchoServerApplication:DoDispose(0x56275c9d42b0)
+UdpEchoServerApplication:~UdpEchoServer(0x56275c9d42b0)
+SecondScriptExample:main(): [INFO ] EXPERIMENT SUCCESS!
+
+BEGIN CHAOSEXPERIMENT NR 3 EXPERIMENTNAME: CSMANodefaultinject
+Logged from file Logs.py, line 163
+UdpEchoServerApplication:UdpEchoServer(0x56415d5ae2b0)
+UdpEchoServerApplication:StartApplication(0x56415d5ae2b0)
+UdpEchoServerApplication:HandleRead(0x56415d5ae2b0, 0x56415d4f3840)
+UdpEchoServerApplication:DoDispose(0x56415d5ae2b0)
+UdpEchoServerApplication:~UdpEchoServer(0x56415d5ae2b0)
+SecondScriptExample:main(): [INFO ] EXPERIMENT SUCCESS!
+
+BEGIN CHAOSEXPERIMENT NR 4 EXPERIMENTNAME: CSMADevicefaultinject
+Logged from file Logs.py, line 163
+UdpEchoServerApplication:UdpEchoServer(0x5593771f12b0)
+UdpEchoServerApplication:StartApplication(0x5593771f12b0)
+UdpEchoServerApplication:HandleRead(0x5593771f12b0, 0x559377136840)
+UdpEchoServerApplication:DoDispose(0x5593771f12b0)
+UdpEchoServerApplication:~UdpEchoServer(0x5593771f12b0)
+SecondScriptExample:main(): [INFO ] EXPERIMENT SUCCESS!
+
+BEGIN CHAOSEXPERIMENT NR 5 EXPERIMENTNAME: STANodefaultinject
+Logged from file Logs.py, line 163
+UdpEchoServerApplication:UdpEchoServer(0x55ef308e32b0)
+UdpEchoServerApplication:StartApplication(0x55ef308e32b0)
+Node nr 0 have been destroyed at time 2.004
+Command ['/home/tai/reposnew/ns-3-allinone/ns-3-dev/build/scratch/thirdchaos', '--DoingChaosExperiment=1', '--STANodefaultinject=1'] terminated with signal SIGSEGV. Run it under a debugger to get more information (./waf --run <program> --command-template="gdb --args %s <args>").
+EXPERIMENT FAILED! A BUG WAS FOUND!
+
