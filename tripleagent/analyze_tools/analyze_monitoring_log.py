@@ -73,7 +73,14 @@ def analyze_log(filepath):
         exception_type = match.group(4)
         return {"class_name": class_name, "method_name": method_name, "method_signature": method_signature, "exception_type": exception_type}
 
-    stackinfo_pattern = re.compile(r'\[Monitoring Agent\] Stack info \d+, class: ([\w/\$\<\>]+), method: ([\w\$\<\>]+), signature: ([\S]+)')
+    def analyze_stack_info(log_str):
+        stackinfo_pattern = re.compile(r'\[Monitoring Agent\] Stack info \d+, class: ([\w/\$\<\>]+), method: ([\w\$\<\>]+), signature: ([\S]+)')
+        match = stackinfo_pattern.search(log_str)
+        class_name = match.group(1)
+        method_name = match.group(2)
+        method_signature = match.group(3)
+        return {"class_name": class_name, "method_name": method_name, "method_signature": method_signature}
+
     handling_pattern = re.compile(r'is handled by class: ([\w/\$\<\>]+), method: ([\w\$\<\>]+), signature: ([\S]+)')
     total_count = 0
     result = dict()
@@ -112,10 +119,10 @@ def analyze_log(filepath):
                 # this means that the second layer in the stack is the original exception site
                 if injected_exception:
                     del stack_layers[0]
-                    match = stackinfo_pattern.search(stack_layers[0])
-                    exception_info["class_name"] = match.group(1)
-                    exception_info["method_name"] = match.group(2)
-                    exception_info["method_signature"] = match.group(3)
+                    stack_info = analyze_stack_info(stack_layers[0])
+                    exception_info["class_name"] = stack_info["class_name"]
+                    exception_info["method_name"] = stack_info["method_name"]
+                    exception_info["method_signature"] = stack_info["method_signature"]
 
                 # when while loop ends, the last line should be handling result
                 match = handling_pattern.search(stackinfo)
@@ -128,14 +135,14 @@ def analyze_log(filepath):
                     for layer in stack_layers:
                         # since the original handling layer has a corresponding try-catch, it together with the next ones can't be a fo_point 
                         if handler_class_name in layer and handler_method_name in layer: break
-                        layer_info = stackinfo_pattern.search(layer)
-                        fo_point.append(str(distance) + ": " + layer_info.group(1) + "/" + layer_info.group(2) + " - " + layer_info.group(3))
+                        layer_info = analyze_stack_info(layer)
+                        fo_point.append(str(distance) + ": " + layer_info["class_name"] + "/" + layer_info["method_name"] + " - " + layer_info["method_signature"])
                         distance = distance + 1
                 else:
                     handled_by = "not handled"
                     for index, layer in enumerate(stack_layers):
-                        layer_info = stackinfo_pattern.search(layer)
-                        fo_point.append(str(index) + ": " + layer_info.group(1) + "/" + layer_info.group(2) + " - " + layer_info.group(3))
+                        layer_info = analyze_stack_info(layer)
+                        fo_point.append(str(index) + ": " + layer_info["class_name"] + "/" + layer_info["method_name"] + " - " + layer_info["method_signature"])
 
                 key = get_md5_key(exception_info["class_name"] + exception_info["method_name"] + exception_info["exception_type"] + handled_by + str(injected_exception))
                 if key in result:
