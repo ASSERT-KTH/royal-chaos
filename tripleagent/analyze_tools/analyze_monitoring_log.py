@@ -81,7 +81,20 @@ def analyze_log(filepath):
         method_signature = match.group(3)
         return {"class_name": class_name, "method_name": method_name, "method_signature": method_signature}
 
-    handling_pattern = re.compile(r'is handled by class: ([\w/\$\<\>]+), method: ([\w\$\<\>]+), signature: ([\S]+)')
+    def analyze_handler_info(log_str):
+        handling_pattern = re.compile(r'is handled by class: ([\w/\$\<\>]+), method: ([\w\$\<\>]+), signature: ([\S]+)')
+        match = handling_pattern.search(log_str)
+        class_name = ""
+        method_name = ""
+        method_signature = ""
+        is_handled = False
+        if (match):
+            class_name = match.group(1)
+            method_name = match.group(2)
+            method_signature = match.group(3)
+            is_handled = True
+        return {"class_name": class_name, "method_name": method_name, "method_signature": method_signature, "is_handled": is_handled}
+
     total_count = 0
     result = dict()
 
@@ -125,16 +138,13 @@ def analyze_log(filepath):
                     exception_info["method_signature"] = stack_info["method_signature"]
 
                 # when while loop ends, the last line should be handling result
-                match = handling_pattern.search(stackinfo)
+                handler_info = analyze_handler_info(stackinfo)
                 distance = 0
-                if (match):
-                    handler_class_name = match.group(1)
-                    handler_method_name = match.group(2)
-                    handler_method_signature = match.group(3)
-                    handled_by = handler_class_name + "/" + handler_method_name + " - " + handler_method_signature
+                if (handler_info["is_handled"]):
+                    handled_by = handler_info["class_name"] + "/" + handler_info["method_name"] + " - " + handler_info["method_signature"]
                     for layer in stack_layers:
                         # since the original handling layer has a corresponding try-catch, it together with the next ones can't be a fo_point 
-                        if handler_class_name in layer and handler_method_name in layer: break
+                        if handler_info["class_name"] in layer and handler_info["method_name"] in layer: break
                         layer_info = analyze_stack_info(layer)
                         fo_point.append(str(distance) + ": " + layer_info["class_name"] + "/" + layer_info["method_name"] + " - " + layer_info["method_signature"])
                         distance = distance + 1
