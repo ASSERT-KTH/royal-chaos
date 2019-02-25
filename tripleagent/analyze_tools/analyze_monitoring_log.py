@@ -99,10 +99,6 @@ def analyze_log(filepath):
     result = dict()
 
     with open(filepath, 'rt') as logfile:
-        class_name = ""
-        method_name = ""
-        method_signature = ""
-        exception_type = ""
         count = 0
         handled_by = ""
         distance = 0
@@ -111,10 +107,6 @@ def analyze_log(filepath):
         for line in logfile:
             if "Got an exception from " in line:
                 exception_info = analyze_exception_info(line)
-                # class_name = match.group(1)
-                # method_name = match.group(2)
-                # method_signature = match.group(3)
-                # exception_type = match.group(4)
                 total_count = total_count + 1
                 injected_exception = False
                 if exception_info["class_name"] == "se/kth/chaos/pagent/PAgent":
