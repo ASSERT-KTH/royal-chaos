@@ -24,9 +24,8 @@ public class PerturbationPoint {
         this.perturbationCountdown = perturbationCountdown;
         this.chanceOfFailure = chanceOfFailure;
 
-        MessageDigest mDigest = null;
         try {
-            mDigest = MessageDigest.getInstance("MD5");
+            MessageDigest mDigest = MessageDigest.getInstance("MD5");
             this.key = byteArrayToHex(mDigest.digest((className + methodName + indexNumber).getBytes()));
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
