@@ -33,7 +33,7 @@ public class PerturbationAgent {
     }
 
     /* Duplicate of premain(), needed for ea-agent-loader in tests */
-    public static void agentmain(String agentArguments, Instrumentation instrumentation) throws UnmodifiableClassException {
+    public static void agentmain(String agentArguments, Instrumentation instrumentation) {
         premain(agentArguments, instrumentation);
     }
 }
