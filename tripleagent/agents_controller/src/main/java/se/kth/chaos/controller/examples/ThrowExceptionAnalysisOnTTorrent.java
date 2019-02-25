@@ -11,12 +11,10 @@ public class ThrowExceptionAnalysisOnTTorrent {
         Process process = null;
         String rootPath = "ttorrent_evaluation_1.5/throw_exception_typical";
         String javaagentPath = System.getProperty("user.dir") + "/../perturbation_agent/target/foagent-perturbation-jar-with-dependencies.jar";
-        String monitoringAgentPath = System.getProperty("user.dir") + "/../monitoring_agent/src/main/cpp/foagent.so";
         String endingPattern = "BitTorrent client signing off";
         String threadName = "ttorrent-1.5-client.jar";
         String analysisFilter = "com/turn/ttorrent";
         String targetCsv = "perturbationPointsList.csv";
-        String correctChecksum = "812ac191b8898b33aed4aef9ab066b5a";
         int timeout = 240;
         String osName = System.getProperty("os.name");
         AgentsController controller = new AgentsController("localhost", 11211);
@@ -49,7 +47,6 @@ public class ThrowExceptionAnalysisOnTTorrent {
                 InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
                 BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
                 String line = null;
-                int normalExecutions = 0;
                 while ((line = bufferedReader.readLine()) != null) {
                     if (line.startsWith("INFO PAgent a method which throws an exception executed")) {
                         String key = line.split("key: ")[1];
