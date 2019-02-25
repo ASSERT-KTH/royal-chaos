@@ -58,11 +58,6 @@ def print_help_info():
     print('    analyze_monitoring_log.py -l <log_file_path> [-o <outputfile>]')
     print('or: analyze_monitoring_log.py --log=<log_file_path> [--outfile=<outputfile>]')
 
-def get_md5_key(src):
-    m = hashlib.md5()
-    m.update(src.encode('UTF-8'))
-    return m.hexdigest()
-
 def analyze_log(filepath):
     def analyze_exception_info(log_str):
         finding_pattern = re.compile(r'class: ([\w/\$\<\>]+), method: ([\w\$\<\>]+), signature: ([\S]+), type: ([\w/\$]+)')
@@ -94,6 +89,11 @@ def analyze_log(filepath):
             method_signature = match.group(3)
             is_handled = True
         return {"class_name": class_name, "method_name": method_name, "method_signature": method_signature, "is_handled": is_handled}
+
+    def get_md5_key(src):
+        m = hashlib.md5()
+        m.update(src.encode('UTF-8'))
+        return m.hexdigest()
 
     total_count = 0
     result = dict()
