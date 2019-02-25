@@ -14,8 +14,6 @@ public class AgentArguments {
     private FilterByClassAndMethodName filter;
     private FilterByExceptionType exceptionFilter;
     private String configFile;
-    private String memcachedHost;
-    private int memcachedPort;
     private String csvfilepath;
     private String defaultMode;
     private int perturbationCountdown;
@@ -28,8 +26,6 @@ public class AgentArguments {
         this.filter = new FilterByClassAndMethodName(configuration.getOrDefault("filter", ".*"));
         this.exceptionFilter = new FilterByExceptionType(configuration.getOrDefault("efilter", ".*"));
         this.configFile = configuration.getOrDefault("config", null);
-        this.memcachedHost = configuration.getOrDefault("memcachedHost", "localhost");
-        this.memcachedPort = Integer.valueOf(configuration.getOrDefault("memcachedPort", "11211"));
         this.csvfilepath = configuration.getOrDefault("csvfilepath", "perturbationPointsList.csv");
         this.defaultMode = configuration.getOrDefault("defaultMode", "off");
         this.perturbationCountdown = Integer.valueOf(configuration.getOrDefault("countdown", "1"));
@@ -71,8 +67,6 @@ public class AgentArguments {
             this.chanceOfFailure = Double.valueOf(p.getProperty("rate", "1"));
             this.filter = new FilterByClassAndMethodName(p.getProperty("filter", ".*"));
             this.exceptionFilter = new FilterByExceptionType(p.getProperty("efilter", ".*"));
-            this.memcachedHost = p.getProperty("memcachedHost", "localhost");
-            this.memcachedPort = Integer.valueOf(p.getProperty("memcachedPort", "11211"));
             this.csvfilepath = p.getProperty("csvfilepath", "perturbationPointsList.csv");
             this.defaultMode = p.getProperty("defaultMode", "off");
             this.perturbationCountdown = Integer.valueOf(p.getProperty("countdown", "1"));
@@ -115,20 +109,6 @@ public class AgentArguments {
             refreshConfig();
         }
         return exceptionFilter;
-    }
-
-    public String memcachedHost() {
-        if (this.configFile != null) {
-            refreshConfig();
-        }
-        return memcachedHost;
-    }
-
-    public int memcachedPort() {
-        if (this.configFile != null) {
-            refreshConfig();
-        }
-        return memcachedPort;
     }
 
     public String csvfilepath() {
