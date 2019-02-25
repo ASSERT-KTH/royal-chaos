@@ -64,7 +64,15 @@ def get_md5_key(src):
     return m.hexdigest()
 
 def analyze_log(filepath):
-    finding_pattern = re.compile(r'class: ([\w/\$\<\>]+), method: ([\w\$\<\>]+), signature: ([\S]+), type: ([\w/\$]+)')
+    def analyze_exception_info(log_str):
+        finding_pattern = re.compile(r'class: ([\w/\$\<\>]+), method: ([\w\$\<\>]+), signature: ([\S]+), type: ([\w/\$]+)')
+        match = finding_pattern.search(log_str)
+        class_name = match.group(1)
+        method_name = match.group(2)
+        method_signature = match.group(3)
+        exception_type = match.group(4)
+        return {"class_name": class_name, "method_name": method_name, "method_signature": method_signature, "exception_type": exception_type}
+
     stackinfo_pattern = re.compile(r'\[Monitoring Agent\] Stack info \d+, class: ([\w/\$\<\>]+), method: ([\w\$\<\>]+), signature: ([\S]+)')
     handling_pattern = re.compile(r'is handled by class: ([\w/\$\<\>]+), method: ([\w\$\<\>]+), signature: ([\S]+)')
     total_count = 0
@@ -82,14 +90,14 @@ def analyze_log(filepath):
 
         for line in logfile:
             if "Got an exception from " in line:
-                match = finding_pattern.search(line)
-                class_name = match.group(1)
-                method_name = match.group(2)
-                method_signature = match.group(3)
-                exception_type = match.group(4)
+                exception_info = analyze_exception_info(line)
+                # class_name = match.group(1)
+                # method_name = match.group(2)
+                # method_signature = match.group(3)
+                # exception_type = match.group(4)
                 total_count = total_count + 1
                 injected_exception = False
-                if class_name == "se/kth/chaos/pagent/PAgent":
+                if exception_info["class_name"] == "se/kth/chaos/pagent/PAgent":
                     injected_exception = True
 
                 stackinfo = logfile.readline()
@@ -105,9 +113,9 @@ def analyze_log(filepath):
                 if injected_exception:
                     del stack_layers[0]
                     match = stackinfo_pattern.search(stack_layers[0])
-                    class_name = match.group(1)
-                    method_name = match.group(2)
-                    method_signature = match.group(3)
+                    exception_info["class_name"] = match.group(1)
+                    exception_info["method_name"] = match.group(2)
+                    exception_info["method_signature"] = match.group(3)
 
                 # when while loop ends, the last line should be handling result
                 match = handling_pattern.search(stackinfo)
@@ -129,7 +137,7 @@ def analyze_log(filepath):
                         layer_info = stackinfo_pattern.search(layer)
                         fo_point.append(str(index) + ": " + layer_info.group(1) + "/" + layer_info.group(2) + " - " + layer_info.group(3))
 
-                key = get_md5_key(class_name + method_name + exception_type + handled_by + str(injected_exception))
+                key = get_md5_key(exception_info["class_name"] + exception_info["method_name"] + exception_info["exception_type"] + handled_by + str(injected_exception))
                 if key in result:
                     count = result[key][5]
                     count = count + 1
@@ -138,10 +146,10 @@ def analyze_log(filepath):
                     count = 1
                     result[key] = list()
                     result[key].append(os.path.splitext(os.path.basename(filepath))[0])
-                    result[key].append(class_name)
-                    result[key].append(method_name)
-                    result[key].append(method_signature)
-                    result[key].append(exception_type)
+                    result[key].append(exception_info["class_name"])
+                    result[key].append(exception_info["method_name"])
+                    result[key].append(exception_info["method_signature"])
+                    result[key].append(exception_info["exception_type"])
                     result[key].append(count)
                     result[key].append(handled_by)
                     result[key].append(distance)
