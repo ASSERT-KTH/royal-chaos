@@ -12,8 +12,6 @@ public class AgentArguments {
     private OperationMode operationMode;
     private FilterByClassAndMethodName filter;
     private String configFile;
-    private String memcachedHost;
-    private int memcachedPort;
     private String csvfilepath;
     private String defaultMode;
 
@@ -23,8 +21,6 @@ public class AgentArguments {
         this.operationMode = OperationMode.fromLowerCase(configuration.getOrDefault("mode", OperationMode.FO.name()));
         this.filter = new FilterByClassAndMethodName(configuration.getOrDefault("filter", ".*"));
         this.configFile = configuration.getOrDefault("config", null);
-        this.memcachedHost = configuration.getOrDefault("memcachedHost", "localhost");
-        this.memcachedPort = Integer.valueOf(configuration.getOrDefault("memcachedPort", "11211"));
         this.csvfilepath = configuration.getOrDefault("csvfilepath", "failureObliviousPointsList.csv");
         this.defaultMode = configuration.getOrDefault("defaultMode", "fo");
 
@@ -63,8 +59,6 @@ public class AgentArguments {
             this.tcIndex = Integer.valueOf(p.getProperty("tcindex", "-1"));
             this.operationMode = OperationMode.fromLowerCase(p.getProperty("mode", OperationMode.FO.name()));
             this.filter = new FilterByClassAndMethodName(p.getProperty("filter", ".*"));
-            this.memcachedHost = p.getProperty("memcachedHost", "localhost");
-            this.memcachedPort = Integer.valueOf(p.getProperty("memcachedPort", "11211"));
             this.csvfilepath = p.getProperty("csvfilepath", "failureObliviousPointsList.csv");
             this.defaultMode = p.getProperty("defaultMode", "fo");
             inputStream.close();
@@ -92,20 +86,6 @@ public class AgentArguments {
             refreshConfig();
         }
         return filter;
-    }
-
-    public String memcachedHost() {
-        if (this.configFile != null) {
-            refreshConfig();
-        }
-        return memcachedHost;
-    }
-
-    public int memcachedPort() {
-        if (this.configFile != null) {
-            refreshConfig();
-        }
-        return memcachedPort;
     }
 
     public String csvfilepath() {

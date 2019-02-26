@@ -13,7 +13,6 @@ public class ThrowExceptionFoOnTTorrent {
         Process process = null;
         String rootPath = "ttorrent_evaluation_1.5/throw_exception_fo";
         String javaagentPath = System.getProperty("user.dir") + "/../perturbation_agent/target/foagent-perturbation-jar-with-dependencies.jar";
-        String monitoringAgentPath = System.getProperty("user.dir") + "/../monitoring_agent/src/main/cpp/foagent.so";
         String failureObliviousAgentPath = System.getProperty("user.dir") + "/../failure_oblivious_agent/target/foagent-fo-jar-with-dependencies.jar";
         String endingPattern = "BitTorrent client signing off";
         String threadName = "ttorrent-1.5-client.jar";

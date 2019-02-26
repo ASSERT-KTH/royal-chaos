@@ -14,7 +14,6 @@ public class ThrowExceptionAnalysisOnMemcached {
         String threadName[] = {"memcachedBenchmark_javamemcached.jar", "memcachedBenchmark_spymemcached.jar", "memcachedBenchmark_xmemcached.jar"};
         String javaagentPath = System.getProperty("user.dir") + "/../perturbation_agent/target/foagent-perturbation-jar-with-dependencies.jar";
         String endingPattern = "threads=10,repeats=5000,valueLength=16384";
-        String monitoringAgentPath = System.getProperty("user.dir") + "/../monitoring_agent/src/main/cpp/foagent.so";
         String targetCsv = "perturbationPointsList.csv";
         String osName = System.getProperty("os.name");
         AgentsController controller = new AgentsController("localhost", 11211);
@@ -48,7 +47,6 @@ public class ThrowExceptionAnalysisOnMemcached {
                     InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
                     BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
                     String line = null;
-                    int normalExecutions = 0;
                     while ((line = bufferedReader.readLine()) != null) {
                         if (line.startsWith("INFO PAgent a method which throws an exception executed")) {
                             String key = line.split("key: ")[1];
