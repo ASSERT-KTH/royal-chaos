@@ -97,6 +97,13 @@ public class TryCatchTestObject {
         return result.toString();
     }
 
+    public void voidMethodThrowsException() throws NullPointerException, ArithmeticException {
+        System.out.println("I'm a void method.");
+        System.out.println("I'll throw an Exception right away!");
+        String test = null;
+        test.length();
+    }
+
     private String getProperty(String key, Boolean isCacheActivated) throws MissingPropertyException {
         return null;
     }
