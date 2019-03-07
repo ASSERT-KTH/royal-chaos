@@ -27,7 +27,7 @@ public class ThrowExceptionAnalysisOnTTorrent {
 
             try {
                 String command = String.format("timeout --signal=9 %s java -noverify -javaagent:%s=mode:throw_e," +
-                                "defaultMode:analysis,filter:%s -jar %s -o . -s 0 ubuntu-14.04.5-server-i386.iso.torrent 2>&1",
+                                "defaultMode:off,filter:%s,lineNumber:* -jar %s -o . -s 0 ubuntu-14.04.5-server-i386.iso.torrent 2>&1",
                         timeout, javaagentPath, analysisFilter.replace("$", "\\$"), threadName);
                 System.out.println("[AGENT_CONTROLLER] command: " + command);
                 process = Runtime.getRuntime().exec(new String[]{"bash", "-c", command}, null, new File(rootPath));
@@ -92,8 +92,8 @@ public class ThrowExceptionAnalysisOnTTorrent {
             for (int i = 1; i < tasksInfo.size(); i++) {
                 task = new ArrayList<>(Arrays.asList(tasksInfo.get(i)));
                 if (pointsMap.containsKey(task.get(0))) {
-                    task.set(9, "yes");
-                    task.set(10, pointsMap.get(task.get(0)).toString());
+                    task.set(10, "yes");
+                    task.set(11, pointsMap.get(task.get(0)).toString());
                     tasksInfo.set(i, task.toArray(new String[task.size()]));
                 }
             }
@@ -105,10 +105,10 @@ public class ThrowExceptionAnalysisOnTTorrent {
     public static List checkHeaders(AgentsController controller, String filepath) {
         List<String[]> tasksInfo = controller.readInfoFromFile(filepath);
         List<String> task = new ArrayList<>(Arrays.asList(tasksInfo.get(0)));
-        if (task.size() < 10) {
+        if (task.size() <= 10) {
             // need to add some headers
-            task.add("covered"); // index should be 9
-            task.add("run times in normal"); // index should be 10
+            task.add("covered"); // index should be 10
+            task.add("run times in normal"); // index should be 11
             task.add("run times in injection");
             task.add("injection captured in the business log");
             task.add("downloaded the file");
