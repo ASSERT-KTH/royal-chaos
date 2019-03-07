@@ -9,38 +9,40 @@ public class PerturbationPoint {
     public String methodName;
     public String methodSignature;
     public String exceptionType;
-    public int indexNumber;
+    public int exceptionIndexNumber;
+    public int lineIndexNumber;
     public String mode;
     public int perturbationCountdown;
     public double chanceOfFailure;
 
-    public PerturbationPoint(String className, String methodName, String methodSignature, int indexNumber,
+    public PerturbationPoint(String className, String methodName, String methodSignature, int exceptionIndexNumber,
                              String defaultMode, int perturbationCountdown, double chanceOfFailure) {
         this.className = className;
         this.methodName = methodName;
         this.methodSignature = methodSignature;
-        this.indexNumber = indexNumber;
+        this.exceptionIndexNumber = exceptionIndexNumber;
         this.mode = defaultMode;
         this.perturbationCountdown = perturbationCountdown;
         this.chanceOfFailure = chanceOfFailure;
 
         try {
             MessageDigest mDigest = MessageDigest.getInstance("MD5");
-            this.key = byteArrayToHex(mDigest.digest((className + methodName + indexNumber).getBytes()));
+            this.key = byteArrayToHex(mDigest.digest((className + methodName + exceptionIndexNumber).getBytes()));
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
     }
 
-    public PerturbationPoint(String className, String methodName, String methodSignature, int indexNumber, String exceptionType,
-                             String defaultMode, int perturbationCountdown, double chanceOfFailure) {
-        this(className, methodName, methodSignature, indexNumber, defaultMode, perturbationCountdown, chanceOfFailure);
+    public PerturbationPoint(String className, String methodName, String methodSignature, int exceptionIndexNumber, String exceptionType,
+                             int lineIndexNumber, String defaultMode, int perturbationCountdown, double chanceOfFailure) {
+        this(className, methodName, methodSignature, exceptionIndexNumber, defaultMode, perturbationCountdown, chanceOfFailure);
         this.exceptionType = exceptionType;
-        // for throw_e strategy, we use className+methodName+exceptionType to calculate the key
+        this.lineIndexNumber = lineIndexNumber;
+        // for throw_e strategy, we use className+methodName+exceptionType+lineIndexNumber to calculate the key
         MessageDigest mDigest = null;
         try {
             mDigest = MessageDigest.getInstance("MD5");
-            this.key = byteArrayToHex(mDigest.digest((className + methodName + exceptionType).getBytes()));
+            this.key = byteArrayToHex(mDigest.digest((className + methodName + exceptionIndexNumber + lineIndexNumber).getBytes()));
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }

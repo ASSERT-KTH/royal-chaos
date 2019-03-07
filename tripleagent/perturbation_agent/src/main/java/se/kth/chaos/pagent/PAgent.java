@@ -37,17 +37,20 @@ public class PAgent {
 
         if (perturbationPoint != null) {
             if (perturbationPoint.mode.equals("analysis")) {
-                System.out.printf("INFO PAgent a method which throws an exception executed in %s/%s(%s), key: %s\n",
-                        perturbationPoint.className, perturbationPoint.methodName, perturbationPoint.exceptionType, perturbationPoint.key);
+                System.out.printf("INFO PAgent a method which throws an exception executed in %s/%s(%s), key: %s, lineNumber: %s\n",
+                        perturbationPoint.className, perturbationPoint.methodName, perturbationPoint.exceptionType,
+                        perturbationPoint.key, perturbationPoint.lineIndexNumber);
             } else if (perturbationPoint.mode.equals("throw_e")) {
                 if (perturbationPoint.perturbationCountdown > 0 && shouldActivate(perturbationPoint.chanceOfFailure)) {
-                    System.out.printf("INFO PAgent throw exception perturbation activated in %s/%s(%s), countDown: %d\n",
-                            perturbationPoint.className, perturbationPoint.methodName, perturbationPoint.exceptionType, perturbationPoint.perturbationCountdown);
+                    System.out.printf("INFO PAgent throw exception perturbation activated in %s/%s(%s), lineNumber: %s, countDown: %d\n",
+                            perturbationPoint.className, perturbationPoint.methodName, perturbationPoint.exceptionType,
+                            perturbationPoint.lineIndexNumber, perturbationPoint.perturbationCountdown);
                     perturbationPoint.perturbationCountdown = perturbationPoint.perturbationCountdown - 1;
                     throw throwOrDefault(perturbationPoint);
                 } else {
-                    System.out.printf("INFO PAgent throw exception perturbation executed normally in %s/%s(%s), countDown: %d\n",
-                            perturbationPoint.className, perturbationPoint.methodName, perturbationPoint.exceptionType, perturbationPoint.perturbationCountdown);
+                    System.out.printf("INFO PAgent throw exception perturbation executed normally in %s/%s(%s), lineNumber: %s, countDown: %d\n",
+                            perturbationPoint.className, perturbationPoint.methodName, perturbationPoint.exceptionType,
+                            perturbationPoint.lineIndexNumber, perturbationPoint.perturbationCountdown);
                 }
             }
         }
@@ -129,16 +132,16 @@ public class PAgent {
                 PrintWriter out = null;
                 if (csvFile.exists()) {
                     out = new PrintWriter(new FileWriter(csvFile, true));
-                    out.println(String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s", perturbationPoint.key, perturbationPoint.className,
-                            perturbationPoint.methodName, perturbationPoint.methodSignature, perturbationPoint.exceptionType, perturbationPoint.indexNumber,
-                            perturbationPoint.perturbationCountdown, perturbationPoint.chanceOfFailure, perturbationPoint.mode));
+                    out.println(String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s", perturbationPoint.key, perturbationPoint.className,
+                            perturbationPoint.methodName, perturbationPoint.methodSignature, perturbationPoint.exceptionType, perturbationPoint.exceptionIndexNumber,
+                            perturbationPoint.lineIndexNumber, perturbationPoint.perturbationCountdown, perturbationPoint.chanceOfFailure, perturbationPoint.mode));
                 } else {
                     csvFile.createNewFile();
                     out = new PrintWriter(new FileWriter(csvFile));
-                    out.println("key,className,methodName,methodSignature,exceptionType,indexNumber,countdown,rate,mode");
-                    out.println(String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s", perturbationPoint.key, perturbationPoint.className,
-                            perturbationPoint.methodName, perturbationPoint.methodSignature, perturbationPoint.exceptionType, perturbationPoint.indexNumber,
-                            perturbationPoint.perturbationCountdown, perturbationPoint.chanceOfFailure, perturbationPoint.mode));
+                    out.println("key,className,methodName,methodSignature,exceptionType,exceptionIndexNumber,lineIndexNumber,countdown,rate,mode");
+                    out.println(String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s", perturbationPoint.key, perturbationPoint.className,
+                            perturbationPoint.methodName, perturbationPoint.methodSignature, perturbationPoint.exceptionType, perturbationPoint.exceptionIndexNumber,
+                            perturbationPoint.lineIndexNumber, perturbationPoint.perturbationCountdown, perturbationPoint.chanceOfFailure, perturbationPoint.mode));
                 }
                 out.flush();
                 out.close();
