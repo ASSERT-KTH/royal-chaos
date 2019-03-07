@@ -45,8 +45,7 @@ public class FoMethodVisitor extends MethodVisitor {
     @Override
     public void visitCode() {
         super.visitCode();
-        // TODO now we temporarily focus on void methods, remove methodDesc.endsWith("V") later
-        if (arguments.filter().matchFullName(className, methodName) && methodDesc.endsWith("V")) {
+        if (arguments.filter().matchFullName(className, methodName)) {
             lTryBlockStart = new Label();
             lTryBlockEnd = new Label();
             lCatchBlockStart = new Label();
@@ -62,8 +61,7 @@ public class FoMethodVisitor extends MethodVisitor {
 
     @Override
     public void visitInsn(int opcode) {
-        // TODO now we temporarily focus on void methods, remove methodDesc.endsWith("V") later
-        if (arguments.filter().matchFullName(className, methodName) && methodDesc.endsWith("V")) {
+        if (arguments.filter().matchFullName(className, methodName)) {
             if ((opcode >= IRETURN && opcode <= RETURN)) { // || opcode == ATHROW) {
                 // TODO we need to consider void methods with a ATHROW in the end of body later
                 // closing the try block and opening the catch block
@@ -87,9 +85,34 @@ public class FoMethodVisitor extends MethodVisitor {
                         "(Ljava/lang/String;Ljava/lang/Throwable;)V",
                         false);
 
-                // if the method has a return value, we should add another return in catch block
-                if (!methodDesc.endsWith("V")) {
-
+                // different method has different default return value
+                if (methodDesc.endsWith("V")) {
+                    // nothing to return
+                } else if (methodDesc.endsWith("I")) {
+                    // methods which return an integer
+                    // note that here we need to use super.visitInsn, otherwise it causes recursion
+                    super.visitInsn(ICONST_0);
+                    super.visitInsn(IRETURN);
+                } else if (methodDesc.endsWith("F")) {
+                    // methods which return a float
+                    super.visitInsn(FCONST_0);
+                    super.visitInsn(FRETURN);
+                } else if (methodDesc.endsWith("D")) {
+                    // methods which return a double
+                    super.visitInsn(DCONST_0);
+                    super.visitInsn(DRETURN);
+                } else if (methodDesc.endsWith("J")) {
+                    // methods which return a long
+                    super.visitInsn(LCONST_0);
+                    super.visitInsn(LRETURN);
+                } else if (methodDesc.endsWith("Z")) {
+                    // methods which return a boolean
+                    super.visitInsn(ICONST_0);
+                    super.visitInsn(IRETURN);
+                } else {
+                    // methods which return an object
+                    super.visitInsn(ACONST_NULL);
+                    super.visitInsn(ARETURN);
                 }
 
                 // exception handler ends here:

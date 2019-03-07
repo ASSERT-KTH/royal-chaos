@@ -13,6 +13,7 @@ public class AgentArguments {
     private double chanceOfFailure;
     private FilterByClassAndMethodName filter;
     private FilterByExceptionType exceptionFilter;
+    private String lineNumber;
     private String configFile;
     private String csvfilepath;
     private String defaultMode;
@@ -25,6 +26,7 @@ public class AgentArguments {
         this.chanceOfFailure = Double.valueOf(configuration.getOrDefault("rate", "1"));
         this.filter = new FilterByClassAndMethodName(configuration.getOrDefault("filter", ".*"));
         this.exceptionFilter = new FilterByExceptionType(configuration.getOrDefault("efilter", ".*"));
+        this.lineNumber = configuration.getOrDefault("lineNumber", "*");
         this.configFile = configuration.getOrDefault("config", null);
         this.csvfilepath = configuration.getOrDefault("csvfilepath", "perturbationPointsList.csv");
         this.defaultMode = configuration.getOrDefault("defaultMode", "off");
@@ -67,6 +69,7 @@ public class AgentArguments {
             this.chanceOfFailure = Double.valueOf(p.getProperty("rate", "1"));
             this.filter = new FilterByClassAndMethodName(p.getProperty("filter", ".*"));
             this.exceptionFilter = new FilterByExceptionType(p.getProperty("efilter", ".*"));
+            this.lineNumber = p.getProperty("lineNumber", "*");
             this.csvfilepath = p.getProperty("csvfilepath", "perturbationPointsList.csv");
             this.defaultMode = p.getProperty("defaultMode", "off");
             this.perturbationCountdown = Integer.valueOf(p.getProperty("countdown", "1"));
@@ -109,6 +112,13 @@ public class AgentArguments {
             refreshConfig();
         }
         return exceptionFilter;
+    }
+
+    public String lineNumber() {
+        if (this.configFile != null) {
+            refreshConfig();
+        }
+        return lineNumber;
     }
 
     public String csvfilepath() {

@@ -97,6 +97,61 @@ public class TryCatchTestObject {
         return result.toString();
     }
 
+    public void voidMethodThrowsException() throws NullPointerException {
+        System.out.println("I'm a void method.");
+        System.out.println("I'll throw an Exception right away!");
+        String test = null;
+        test.length();
+    }
+
+    public String returnObjectMethodThrowsException() throws NullPointerException {
+        System.out.println("I'm a method which returns an object.");
+        System.out.println("I'll throw an Exception right away!");
+        String test = null;
+        test.length();
+        return "This is my original return value.";
+    }
+
+    public int returnIntegerMethodThrowsException() throws NullPointerException {
+        System.out.println("I'm a method which returns an integer.");
+        System.out.println("I'll throw an Exception right away!");
+        String test = null;
+        test.length();
+        return 1;
+    }
+
+    public float returnFloatMethodThrowsException() throws NullPointerException {
+        System.out.println("I'm a method which returns a float.");
+        System.out.println("I'll throw an Exception right away!");
+        String test = null;
+        test.length();
+        return 1.0F;
+    }
+
+    public double returnDoubleMethodThrowsException() throws NullPointerException {
+        System.out.println("I'm a method which returns a double.");
+        System.out.println("I'll throw an Exception right away!");
+        String test = null;
+        test.length();
+        return 1.0D;
+    }
+
+    public long returnLongMethodThrowsException() throws NullPointerException {
+        System.out.println("I'm a method which returns a long.");
+        System.out.println("I'll throw an Exception right away!");
+        String test = null;
+        test.length();
+        return 1L;
+    }
+
+    public boolean returnBooleanMethodThrowsException() throws NullPointerException {
+        System.out.println("I'm a method which returns a boolean.");
+        System.out.println("I'll throw an Exception right away!");
+        String test = null;
+        test.length();
+        return true;
+    }
+
     private String getProperty(String key, Boolean isCacheActivated) throws MissingPropertyException {
         return null;
     }
