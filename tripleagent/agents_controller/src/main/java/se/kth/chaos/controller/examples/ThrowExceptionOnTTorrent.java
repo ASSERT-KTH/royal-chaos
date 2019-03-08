@@ -134,7 +134,7 @@ public class ThrowExceptionOnTTorrent {
 
                     System.out.println("[AGENT_CONTROLLER] normal execution times: " + normalExecutions);
                     System.out.println("[AGENT_CONTROLLER] injection execution times: " + injectionExecutions);
-                    System.out.println("[AGENT_CONTROLLER] whether successfully downloaded the file: " + task.get(13));
+                    System.out.println("[AGENT_CONTROLLER] whether successfully downloaded the file: " + task.get(14));
                     System.out.println("[AGENT_CONTROLLER] exit status: " + (endingFound ? "0" : String.valueOf(exitValue)));
                     System.out.println("[AGENT_CONTROLLER] process cpu time(in seconds): " + JMXMonitoringTool.processCpuTime / 1000000000);
                     System.out.println("[AGENT_CONTROLLER] average memory usage(in MB): " + JMXMonitoringTool.averageMemoryUsage / 1000000);
