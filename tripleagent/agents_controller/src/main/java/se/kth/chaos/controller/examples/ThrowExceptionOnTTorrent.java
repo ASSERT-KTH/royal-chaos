@@ -58,15 +58,15 @@ public class ThrowExceptionOnTTorrent {
                         monitoringAgentOn = true;
                         command = String.format("timeout --signal=9 %s java -noverify -agentpath:%s -javaagent:%s=mode:throw_e," +
                                         "defaultMode:%s,filter:%s,efilter:%s,lineNumber:%s,countdown:%s,rate:%s " +
-                                        "-jar %s -o . --max-download 1024 -s 0 ubuntu-14.04.5-server-i386.iso.torrent 2>&1",
+                                        "-jar %s -o . --max-download 1024 -s 0 %s 2>&1",
                                 timeout, monitoringAgentPath, javaagentPath, mode, filter.replace("$", "\\$"),
-                                exceptionType, lineIndexNumber, injections, rate, threadName);
+                                exceptionType, lineIndexNumber, injections, rate, threadName, torrentFile);
                     } else {
                         command = String.format("timeout --signal=9 %s java -noverify -javaagent:%s=mode:throw_e," +
                                         "defaultMode:%s,filter:%s,efilter:%s,lineNumber:%s,countdown:%s,rate:%s " +
-                                        "-jar %s -o . --max-download 1024 -s 0 ubuntu-14.04.5-server-i386.iso.torrent 2>&1",
+                                        "-jar %s -o . --max-download 1024 -s 0 %s 2>&1",
                                 timeout, javaagentPath, mode, filter.replace("$", "\\$"), exceptionType,
-                                lineIndexNumber, injections, rate, threadName);
+                                lineIndexNumber, injections, rate, threadName, torrentFile);
                     }
                     System.out.println("[AGENT_CONTROLLER] command: " + command);
 
