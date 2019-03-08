@@ -31,10 +31,10 @@ public class ThrowExceptionOnTTorrent {
             for (int i = 1; i < tasksInfo.size(); i++) {
                 task = new ArrayList<>(Arrays.asList(tasksInfo.get(i)));
                 // delete the downloaded file
-                targetFile = new File(rootPath + "/" + torrentFile.split(".")[0]);
+                targetFile = new File(rootPath + "/" + torrentFile.split("\\.")[0]);
                 if (targetFile.exists()) {
                     try {
-                        process = Runtime.getRuntime().exec(new String[]{"rm", "-rf", torrentFile.split(".")[0]}, null, new File(rootPath));
+                        process = Runtime.getRuntime().exec(new String[]{"rm", "-rf", torrentFile.split("\\.")[0]}, null, new File(rootPath));
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
