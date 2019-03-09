@@ -133,38 +133,34 @@ public class PerturbationAgentClassTransformer implements ClassFileTransformer {
                                         for (int i = 0; i < originalInsnList.size(); i++) {
                                             AbstractInsnNode currentNode = originalInsnList.get(i);
                                             if (currentNode instanceof LineNumberNode) {
-                                                PerturbationPoint perturbationPoint = new PerturbationPoint(classNode.name, method.name, method.desc, exceptionIndexNumber, exception, ((LineNumberNode)currentNode).line,
-                                                        arguments.defaultMode(), arguments.countdown(), arguments.chanceOfFailure());
-                                                PAgent.registerPerturbationPoint(perturbationPoint, arguments);
-                                                InsnList newInstructions = arguments.operationMode().generateByteCode(classNode, method, arguments, perturbationPoint);
-                                                method.instructions.insertBefore(currentNode, newInstructions);
+                                                method.instructions.insertBefore(currentNode,
+                                                        this.constructPerturbationPoints(classNode, method,
+                                                                exceptionIndexNumber, exception,
+                                                                ((LineNumberNode)currentNode).line));
                                             }
                                         }
                                         break;
                                     }
 
                                     case "0": {
-                                        PerturbationPoint perturbationPoint = new PerturbationPoint(classNode.name, method.name, method.desc, exceptionIndexNumber, exception, 0,
-                                                arguments.defaultMode(), arguments.countdown(), arguments.chanceOfFailure());
-                                        PAgent.registerPerturbationPoint(perturbationPoint, arguments);
-                                        InsnList newInstructions = arguments.operationMode().generateByteCode(classNode, method, arguments, perturbationPoint);
-                                        method.instructions.insertBefore(originalInsnList.getFirst(), newInstructions);
+                                        AbstractInsnNode firstLineNumberNode = this.getFirstOrLastLineNumberNode(originalInsnList, false);
+                                        if (firstLineNumberNode != null) {
+                                            method.instructions.insertBefore(firstLineNumberNode,
+                                                    this.constructPerturbationPoints(classNode, method,
+                                                            exceptionIndexNumber, exception,
+                                                            ((LineNumberNode)firstLineNumberNode).line));
+                                        }
                                         break;
                                     }
 
                                     case "$": {
-                                        AbstractInsnNode lastLineNumberNode = null;
-                                        for (int i = 0; i < originalInsnList.size(); i++) {
-                                            AbstractInsnNode currentNode = originalInsnList.get(i);
-                                            if (currentNode instanceof LineNumberNode) {
-                                                lastLineNumberNode = currentNode;
-                                            }
+                                        AbstractInsnNode lastLineNumberNode = this.getFirstOrLastLineNumberNode(originalInsnList, true);
+                                        if (lastLineNumberNode != null) {
+                                            method.instructions.insertBefore(lastLineNumberNode,
+                                                    this.constructPerturbationPoints(classNode, method,
+                                                            exceptionIndexNumber, exception,
+                                                            ((LineNumberNode)lastLineNumberNode).line));
                                         }
-                                        PerturbationPoint perturbationPoint = new PerturbationPoint(classNode.name, method.name, method.desc, exceptionIndexNumber, exception, -1,
-                                                arguments.defaultMode(), arguments.countdown(), arguments.chanceOfFailure());
-                                        PAgent.registerPerturbationPoint(perturbationPoint, arguments);
-                                        InsnList newInstructions = arguments.operationMode().generateByteCode(classNode, method, arguments, perturbationPoint);
-                                        method.instructions.insertBefore(lastLineNumberNode, newInstructions);
                                         break;
                                     }
 
@@ -174,11 +170,10 @@ public class PerturbationAgentClassTransformer implements ClassFileTransformer {
                                             if (currentNode instanceof LineNumberNode) {
                                                 int line = ((LineNumberNode)currentNode).line;
                                                 if (arguments.lineNumber().equals(line + "")) {
-                                                    PerturbationPoint perturbationPoint = new PerturbationPoint(classNode.name, method.name, method.desc, exceptionIndexNumber, exception, line,
-                                                            arguments.defaultMode(), arguments.countdown(), arguments.chanceOfFailure());
-                                                    PAgent.registerPerturbationPoint(perturbationPoint, arguments);
-                                                    InsnList newInstructions = arguments.operationMode().generateByteCode(classNode, method, arguments, perturbationPoint);
-                                                    method.instructions.insertBefore(currentNode, newInstructions);
+                                                    method.instructions.insertBefore(currentNode,
+                                                            this.constructPerturbationPoints(classNode, method,
+                                                                    exceptionIndexNumber, exception,
+                                                                    line));
                                                 }
                                             }
                                         }
@@ -249,5 +244,26 @@ public class PerturbationAgentClassTransformer implements ClassFileTransformer {
             result.add(origin.get(i));
         }
         return result;
+    }
+
+    private AbstractInsnNode getFirstOrLastLineNumberNode(InsnList insnList, boolean reverse) {
+        AbstractInsnNode result = null;
+        for (int i = 0; i < insnList.size(); i++) {
+            AbstractInsnNode currentNode = insnList.get(i);
+            if (currentNode instanceof LineNumberNode) {
+                result = currentNode;
+                if (!reverse) break;
+            }
+        }
+        return result;
+    }
+
+    private InsnList constructPerturbationPoints(ClassNode classNode, MethodNode method, int exceptionIndexNumber,
+            String exceptionType, int lineNumberIndex) {
+        PerturbationPoint perturbationPoint = new PerturbationPoint(classNode.name, method.name, method.desc,
+                exceptionIndexNumber, exceptionType, lineNumberIndex, arguments.defaultMode(),
+                arguments.countdown(), arguments.chanceOfFailure());
+        PAgent.registerPerturbationPoint(perturbationPoint, arguments);
+        return arguments.operationMode().generateByteCode(classNode, method, arguments, perturbationPoint);
     }
 }

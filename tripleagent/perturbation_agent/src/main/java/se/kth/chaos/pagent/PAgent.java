@@ -37,9 +37,17 @@ public class PAgent {
 
         if (perturbationPoint != null) {
             if (perturbationPoint.mode.equals("analysis")) {
-                System.out.printf("INFO PAgent a method which throws an exception executed in %s/%s(%s), key: %s, lineNumber: %s\n",
+                System.out.printf("INFO PAgent a method which throws an exception executed in %s/%s(%s), lineNumber: %s, key: %s\n",
                         perturbationPoint.className, perturbationPoint.methodName, perturbationPoint.exceptionType,
-                        perturbationPoint.key, perturbationPoint.lineIndexNumber);
+                        perturbationPoint.lineIndexNumber, perturbationPoint.key);
+            } else if (perturbationPoint.mode.equals("coverage")) {
+                // coverage information only needs to output once
+                if (perturbationPoint.covered == false) {
+                    System.out.printf("INFO PAgent a method which throws an exception executed in %s/%s(%s), lineNumber: %s, key: %s\n",
+                            perturbationPoint.className, perturbationPoint.methodName, perturbationPoint.exceptionType,
+                            perturbationPoint.lineIndexNumber, perturbationPoint.key);
+                    perturbationPoint.covered = true;
+                }
             } else if (perturbationPoint.mode.equals("throw_e")) {
                 if (perturbationPoint.perturbationCountdown > 0 && shouldActivate(perturbationPoint.chanceOfFailure)) {
                     System.out.printf("INFO PAgent throw exception perturbation activated in %s/%s(%s), lineNumber: %s, countDown: %d\n",
@@ -193,7 +201,7 @@ public class PAgent {
             String[] line = perturbationPoints.get(i);
             PerturbationPoint perturbationPoint = perturbationPointsMap.get(line[0]);
             if (perturbationPoint != null) {
-                perturbationPoint.mode = line[8];
+                perturbationPoint.mode = line[9];
                 perturbationPointsMap.put(line[0], perturbationPoint);
             }
         }

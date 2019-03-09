@@ -13,6 +13,7 @@ public class ThrowExceptionAnalysisOnTTorrent {
         String javaagentPath = System.getProperty("user.dir") + "/../perturbation_agent/target/foagent-perturbation-jar-with-dependencies.jar";
         String endingPattern = "BitTorrent client signing off";
         String threadName = "ttorrent-1.5-client.jar";
+        String torrentFile = "CentOS-7-x86_64-NetInstall-1810.torrent";
         String analysisFilter = "com/turn/ttorrent";
         String targetCsv = "perturbationPointsList.csv";
         int timeout = 240;
@@ -27,8 +28,8 @@ public class ThrowExceptionAnalysisOnTTorrent {
 
             try {
                 String command = String.format("timeout --signal=9 %s java -noverify -javaagent:%s=mode:throw_e," +
-                                "defaultMode:analysis,filter:%s -jar %s -o . -s 0 ubuntu-14.04.5-server-i386.iso.torrent 2>&1",
-                        timeout, javaagentPath, analysisFilter.replace("$", "\\$"), threadName);
+                                "defaultMode:coverage,filter:%s,lineNumber:* -jar %s -o . -s 0 %s 2>&1",
+                        timeout, javaagentPath, analysisFilter.replace("$", "\\$"), threadName, torrentFile);
                 System.out.println("[AGENT_CONTROLLER] command: " + command);
                 process = Runtime.getRuntime().exec(new String[]{"bash", "-c", command}, null, new File(rootPath));
 
@@ -77,9 +78,9 @@ public class ThrowExceptionAnalysisOnTTorrent {
                     process = Runtime.getRuntime().exec(new String[]{"bash", "-c", "kill -9 " + pid}, null, new File(rootPath));
                 }
                 // delete the downloaded file
-                targetFile = new File(rootPath + "/ubuntu-14.04.5-server-i386.iso");
+                targetFile = new File(rootPath + "/" + torrentFile.split("\\.")[0]);
                 if (targetFile.exists()) {
-                    targetFile.delete();
+                    process = Runtime.getRuntime().exec(new String[]{"rm", "-rf", torrentFile.split("\\.")[0]}, null, new File(rootPath));
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -92,8 +93,8 @@ public class ThrowExceptionAnalysisOnTTorrent {
             for (int i = 1; i < tasksInfo.size(); i++) {
                 task = new ArrayList<>(Arrays.asList(tasksInfo.get(i)));
                 if (pointsMap.containsKey(task.get(0))) {
-                    task.set(9, "yes");
-                    task.set(10, pointsMap.get(task.get(0)).toString());
+                    task.set(10, "yes");
+                    task.set(11, pointsMap.get(task.get(0)).toString());
                     tasksInfo.set(i, task.toArray(new String[task.size()]));
                 }
             }
@@ -105,10 +106,10 @@ public class ThrowExceptionAnalysisOnTTorrent {
     public static List checkHeaders(AgentsController controller, String filepath) {
         List<String[]> tasksInfo = controller.readInfoFromFile(filepath);
         List<String> task = new ArrayList<>(Arrays.asList(tasksInfo.get(0)));
-        if (task.size() < 10) {
+        if (task.size() <= 10) {
             // need to add some headers
-            task.add("covered"); // index should be 9
-            task.add("run times in normal"); // index should be 10
+            task.add("covered"); // index should be 10
+            task.add("run times in normal"); // index should be 11
             task.add("run times in injection");
             task.add("injection captured in the business log");
             task.add("downloaded the file");

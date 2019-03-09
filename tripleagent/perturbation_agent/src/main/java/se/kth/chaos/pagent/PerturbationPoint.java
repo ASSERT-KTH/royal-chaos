@@ -14,6 +14,7 @@ public class PerturbationPoint {
     public String mode;
     public int perturbationCountdown;
     public double chanceOfFailure;
+    public boolean covered;
 
     public PerturbationPoint(String className, String methodName, String methodSignature, int exceptionIndexNumber,
                              String defaultMode, int perturbationCountdown, double chanceOfFailure) {
@@ -24,6 +25,7 @@ public class PerturbationPoint {
         this.mode = defaultMode;
         this.perturbationCountdown = perturbationCountdown;
         this.chanceOfFailure = chanceOfFailure;
+        this.covered = false;
 
         try {
             MessageDigest mDigest = MessageDigest.getInstance("MD5");
