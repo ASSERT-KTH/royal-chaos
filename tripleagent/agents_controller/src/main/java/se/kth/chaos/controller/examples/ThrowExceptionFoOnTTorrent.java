@@ -50,7 +50,7 @@ public class ThrowExceptionFoOnTTorrent {
                     String injections = task.get(7);
                     String rate = task.get(8);
                     String mode = task.get(9);
-                    String foFilter = task.get(22);
+                    String foFilter = task.get(22).replace(" ", "").split("-")[0];
                     System.out.println("[AGENT_CONTROLLER] start an experiment at " + filter);
                     System.out.println(String.format("[AGENT_CONTROLLER] exceptionType: %s, injections: %s, rate: %s, mode: %s, foPoint: %s", exceptionType, injections, rate, mode, foFilter));
 
