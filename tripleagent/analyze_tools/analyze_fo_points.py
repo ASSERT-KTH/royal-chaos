@@ -8,6 +8,7 @@ import getopt
 import time
 import logging
 import re
+import copy
 
 PERTURBATION_POINTS_FILE = ''
 MONITORING_LOG_FOLDER = '' # default: .
@@ -31,7 +32,7 @@ def main():
             row["distance"] = distance
             row["stackHeight"] = stack_height
             row["foPoint"] = point
-            result.append(row)
+            result.append(copy.copy(row))
     
     # write result to OUTPUTFILE
     write2csv(OUTPUTFILE, headers, result)
