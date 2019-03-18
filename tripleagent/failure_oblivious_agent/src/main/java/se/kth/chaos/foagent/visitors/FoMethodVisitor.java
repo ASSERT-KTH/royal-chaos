@@ -45,7 +45,7 @@ public class FoMethodVisitor extends MethodVisitor {
     @Override
     public void visitCode() {
         super.visitCode();
-        if (arguments.filter().matchFullName(className, methodName)) {
+        if (arguments.filter().matchFullName(className, methodName) && arguments.methodDesc().matches(methodDesc)) {
             lTryBlockStart = new Label();
             lTryBlockEnd = new Label();
             lCatchBlockStart = new Label();
@@ -54,14 +54,14 @@ public class FoMethodVisitor extends MethodVisitor {
             // started the try block
             visitLabel(lTryBlockStart);
 
-            foPoint = new FailureObliviousPoint(className, methodName, arguments.defaultMode());
+            foPoint = new FailureObliviousPoint(className, methodName, methodDesc, arguments.defaultMode());
             FOAgent.registerFailureObliviousPoint(foPoint, arguments);
         }
     }
 
     @Override
     public void visitInsn(int opcode) {
-        if (arguments.filter().matchFullName(className, methodName)) {
+        if (arguments.filter().matchFullName(className, methodName) && arguments.methodDesc().matches(methodDesc)) {
             if ((opcode >= IRETURN && opcode <= RETURN)) { // || opcode == ATHROW) {
                 // TODO we need to consider void methods with a ATHROW in the end of body later
                 // closing the try block and opening the catch block

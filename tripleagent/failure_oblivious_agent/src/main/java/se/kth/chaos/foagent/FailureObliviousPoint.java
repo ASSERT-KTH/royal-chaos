@@ -7,17 +7,19 @@ public class FailureObliviousPoint {
     public String key;
     public String className;
     public String methodName;
+    public String methodDesc;
     public String mode;
 
-    public FailureObliviousPoint(String className, String methodName, String defaultMode) {
+    public FailureObliviousPoint(String className, String methodName, String methodDesc, String defaultMode) {
         this.className = className;
         this.methodName = methodName;
+        this.methodDesc = methodDesc;
         this.mode = defaultMode;
 
         MessageDigest mDigest = null;
         try {
             mDigest = MessageDigest.getInstance("MD5");
-            this.key = byteArrayToHex(mDigest.digest((className + methodName).getBytes()));
+            this.key = byteArrayToHex(mDigest.digest((className + methodName + methodDesc).getBytes()));
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
