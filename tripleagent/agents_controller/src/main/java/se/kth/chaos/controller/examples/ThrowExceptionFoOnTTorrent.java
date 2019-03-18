@@ -57,7 +57,7 @@ public class ThrowExceptionFoOnTTorrent {
 
                     try {
                         String command = String.format("timeout --signal=9 %s java -noverify -javaagent:%s=mode:throw_e," +
-                                        "defaultMode:%s,filter:%s,efilter:%s,lineNumber:%s,countdown:%s,rate:%s -javaagent:%s=mode:fo,defaultMode:fo,filter:%s,methodDesc:%s " +
+                                        "defaultMode:%s,filter:%s,efilter:%s,lineNumber:%s,countdown:%s,rate:%s -javaagent:%s=mode:fo,defaultMode:fo,filter:%s,methodDesc:'%s' " +
                                         "-jar %s -o . --max-download 1024 -s 0 %s 2>&1",
                                 timeout, javaagentPath, mode, filter.replace("$", "\\$"), exceptionType,
                                 lineIndexNumber, injections, rate, failureObliviousAgentPath,
