@@ -16,5 +16,6 @@ public class VoidMethodFOTest {
     public void voidMethodFailureObliviousTest() {
         TryCatchTestObject tcTest = new TryCatchTestObject();
         tcTest.voidMethodThrowsException();
+        tcTest.voidMethodThrowsException("test_str");
     }
 }

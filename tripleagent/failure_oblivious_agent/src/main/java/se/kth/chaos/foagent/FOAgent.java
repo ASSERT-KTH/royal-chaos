@@ -69,12 +69,12 @@ public class FOAgent {
                 PrintWriter out = null;
                 if (csvFile.exists()) {
                     out = new PrintWriter(new FileWriter(csvFile, true));
-                    out.println(String.format("%s,%s,%s,%s", foPoint.key, foPoint.className, foPoint.methodName, foPoint.mode));
+                    out.println(String.format("%s,%s,%s,%s,%s", foPoint.key, foPoint.className, foPoint.methodName, foPoint.methodDesc, foPoint.mode));
                 } else {
                     csvFile.createNewFile();
                     out = new PrintWriter(new FileWriter(csvFile));
-                    out.println("key,className,methodName,mode");
-                    out.println(String.format("%s,%s,%s,%s", foPoint.key, foPoint.className, foPoint.methodName, foPoint.mode));
+                    out.println("key,className,methodName,methodDesc,mode");
+                    out.println(String.format("%s,%s,%s,%s,%s", foPoint.key, foPoint.className, foPoint.methodName, foPoint.methodDesc, foPoint.mode));
                 }
                 out.flush();
                 out.close();
@@ -126,7 +126,7 @@ public class FOAgent {
             String[] line = foPoints.get(i);
             FailureObliviousPoint foPoint = foPointsMap.get(line[0]);
             if (foPoint != null) {
-                foPoint.mode = line[3];
+                foPoint.mode = line[4];
                 foPointsMap.put(line[0], foPoint);
             }
         }

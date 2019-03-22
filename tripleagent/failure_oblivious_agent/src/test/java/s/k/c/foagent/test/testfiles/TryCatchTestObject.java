@@ -104,6 +104,13 @@ public class TryCatchTestObject {
         test.length();
     }
 
+    public void voidMethodThrowsException(String str) throws NullPointerException {
+        System.out.println("I'm a void method.");
+        System.out.println("I'll throw an Exception right away!");
+        String test = null;
+        test.length();
+    }
+
     public String returnObjectMethodThrowsException() throws NullPointerException {
         System.out.println("I'm a method which returns an object.");
         System.out.println("I'll throw an Exception right away!");

@@ -51,17 +51,18 @@ public class ThrowExceptionFoOnTTorrent {
                     String rate = task.get(8);
                     String mode = task.get(9);
                     String foFilter = task.get(22).replace(" ", "").split("-")[0];
+                    String methodDesc = task.get(22).replace(" ", "").split("-")[1];
                     System.out.println("[AGENT_CONTROLLER] start an experiment at " + filter);
-                    System.out.println(String.format("[AGENT_CONTROLLER] exceptionType: %s, injections: %s, rate: %s, mode: %s, foPoint: %s", exceptionType, injections, rate, mode, foFilter));
+                    System.out.println(String.format("[AGENT_CONTROLLER] exceptionType: %s, injections: %s, rate: %s, mode: %s, foPoint: %s", exceptionType, injections, rate, mode, task.get(22)));
 
                     try {
                         String command = String.format("timeout --signal=9 %s java -noverify -javaagent:%s=mode:throw_e," +
-                                        "defaultMode:%s,filter:%s,efilter:%s,lineNumber:%s,countdown:%s,rate:%s -javaagent:%s=mode:fo,defaultMode:fo,filter:%s " +
+                                        "defaultMode:%s,filter:%s,efilter:%s,lineNumber:%s,countdown:%s,rate:%s -javaagent:%s=mode:fo,defaultMode:fo,filter:%s,methodDesc:'%s' " +
                                         "-jar %s -o . --max-download 1024 -s 0 %s 2>&1",
                                 timeout, javaagentPath, mode, filter.replace("$", "\\$"), exceptionType,
                                 lineIndexNumber, injections, rate, failureObliviousAgentPath,
                                 foFilter.replace("$", "\\$").replace("<", "\\<").replace(">", "\\>"),
-                                threadName, torrentFile);
+                                methodDesc.replace("$", "\\$"), threadName, torrentFile);
 
                         System.out.println("[AGENT_CONTROLLER] command: " + command);
                         process = Runtime.getRuntime().exec(new String[]{"bash", "-c", command}, null, new File(rootPath));
