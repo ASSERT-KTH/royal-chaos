@@ -8,7 +8,9 @@ public class FilterByMethodDescription {
 
     public FilterByMethodDescription(String regex) {
         this.regex = regex;
-        this.pattern = Pattern.compile(regex.replace("(", "\\(").replace(")", "\\)"));
+        this.pattern = Pattern.compile(
+                regex.replace("(", "\\(").replace(")", "\\)")
+                .replace("$", "\\$").replace("[", "\\["));
     }
 
     public boolean matches(String methodDesc) {
