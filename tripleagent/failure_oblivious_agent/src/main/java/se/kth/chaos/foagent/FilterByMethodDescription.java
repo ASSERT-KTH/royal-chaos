@@ -10,6 +10,7 @@ public class FilterByMethodDescription {
         this.regex = regex;
         this.pattern = Pattern.compile(
                 regex.replace("(", "\\(").replace(")", "\\)")
+                .replace("<", "\\<").replace(">", "\\>")
                 .replace("$", "\\$").replace("[", "\\["));
     }
 
