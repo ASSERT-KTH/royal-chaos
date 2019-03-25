@@ -22,7 +22,7 @@ public class ThrowExceptionAnalysisOnHedwig {
         String applicationLogName = "app.console";
         String applicationPidFile = "/home/gluckzhang/development/hedwig-0.7/hedwig-0.7-binary/bin/app.pid";
         String monitoringAgentLogPath = "/home/gluckzhang/development/hedwig-0.7/hedwig-0.7-binary/bin";
-        String monitoringAgentLogName = "monitoring_agent";
+        String monitoringAgentLogName = "monitoring_agent.log";
         String perturbationPointsCsvPath = "/home/gluckzhang/development/hedwig-0.7/hedwig-0.7-binary/bin/perturbationPointsList.csv";
         AgentsController controller = new AgentsController("localhost", 11211);
 
@@ -162,6 +162,7 @@ public class ThrowExceptionAnalysisOnHedwig {
                     tasksInfo.set(i, task.toArray(new String[task.size()]));
                     controller.write2csvfile(perturbationPointsCsvPath, tasksInfo);
 
+                    System.out.println("[AGENT_CONTROLLER] ------");
                     try {
                         Thread.currentThread().sleep(5000);
                     } catch (InterruptedException e) {
