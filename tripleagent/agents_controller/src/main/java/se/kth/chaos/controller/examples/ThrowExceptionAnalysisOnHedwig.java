@@ -9,6 +9,8 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeUtility;
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.*;
 
 public class ThrowExceptionAnalysisOnHedwig {
@@ -154,7 +156,7 @@ public class ThrowExceptionAnalysisOnHedwig {
                     System.out.println("[AGENT_CONTROLLER] peak thread count: " + JMXMonitoringTool.peakThreadCount);
 
                     logFile = new File(monitoringAgentLogPath + "/" + monitoringAgentLogName);
-                    logFile.renameTo(new File(monitoringAgentLogPath + "/" + task.get(0) + ".log"));
+                    Files.copy(logFile.toPath(), new File(monitoringAgentLogPath + "/" + task.get(0) + ".log").toPath());
 
                     task.set(9, "off");
                     tasksInfo.set(i, task.toArray(new String[task.size()]));
