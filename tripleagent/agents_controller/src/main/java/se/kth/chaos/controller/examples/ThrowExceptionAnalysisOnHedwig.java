@@ -10,7 +10,6 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeUtility;
 import java.io.*;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.*;
 
 public class ThrowExceptionAnalysisOnHedwig {
@@ -45,6 +44,7 @@ public class ThrowExceptionAnalysisOnHedwig {
             }
 
             System.out.println("[AGENT_CONTROLLER] Conducting a single experiment now.");
+            emptyTheFile(applicationLogPath + "/" + applicationLogName);
             boolean emailDiff = conductSingleExperiment();
             System.out.println("[AGENT_CONTROLLER] Email verified: " + emailDiff);
 
@@ -115,7 +115,8 @@ public class ThrowExceptionAnalysisOnHedwig {
                     }
 
                     System.out.println("[AGENT_CONTROLLER] Perturbation-only experiment at: " + task.get(1) + "/" + task.get(2));
-                    System.out.println(String.format("[AGENT_CONTROLLER] exceptionType: %s, lineIndexNumber: %s, injections: %s, rate: %s", task.get(4), task.get(6), task.get(7), task.get(8)));
+                    System.out.println(String.format("[AGENT_CONTROLLER] key: %s, exceptionType: %s, lineIndexNumber: %s, injections: %s, rate: %s",
+                            task.get(0), task.get(4), task.get(6), task.get(7), task.get(8)));
                     boolean emailDiff = conductSingleExperiment();
                     System.out.println("[AGENT_CONTROLLER] Email verified: " + emailDiff);
 
@@ -310,7 +311,7 @@ public class ThrowExceptionAnalysisOnHedwig {
             if(!file.exists()) {
                 file.createNewFile();
             }
-            FileWriter fileWriter =new FileWriter(file);
+            FileWriter fileWriter = new FileWriter(file);
             fileWriter.write("");
             fileWriter.flush();
             fileWriter.close();
