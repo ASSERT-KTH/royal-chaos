@@ -154,6 +154,27 @@ public class JMXMonitoringTool {
         return pid;
     }
 
+    public static int getPidFromFile(String filePath) {
+        int pid = -1;
+        String pid_str = null;
+
+        try {
+            FileInputStream inputStream = new FileInputStream(filePath);
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            pid_str = bufferedReader.readLine();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        if (pid_str != null) {
+            pid = Integer.valueOf(pid_str);
+        }
+
+        return pid;
+    }
+
     private static void startManagementAgent(int pid) throws IOException {
         /*
          * JAR file normally in ${java.home}/jre/lib but may be in ${java.home}/lib

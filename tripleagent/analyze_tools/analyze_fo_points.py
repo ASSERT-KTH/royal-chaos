@@ -138,7 +138,7 @@ def analyze_log(filepath):
                     handled_by = handler_info["class_name"] + "/" + handler_info["method_name"] + " - " + handler_info["method_signature"]
                     for layer in stack_layers:
                         # since the original handling layer has a corresponding try-catch, it together with the next ones can't be fo_points
-                        if handler_info["class_name"] in layer and handler_info["method_name"] in layer: break
+                        if "class: %s, method: %s, signature: %s"%(handler_info["class_name"], handler_info["method_name"], handler_info["method_signature"]) in layer: break
                         layer_info = analyze_stack_info(layer)
                         fo_points.append(layer_info["class_name"] + "/" + layer_info["method_name"] + " - " + layer_info["method_signature"])
                         distance = distance + 1
