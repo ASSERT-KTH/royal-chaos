@@ -264,10 +264,13 @@ public class ThrowExceptionAnalysisOnHedwig {
         folder.open(Folder.READ_ONLY);
         Message[] messages = folder.getMessages();
 
-        IMAPMessage msg = (IMAPMessage) messages[messages.length - 1];
-        String subject = MimeUtility.decodeText(msg.getSubject());
-        String message = MimeUtility.decodeText(msg.getContent().toString());
-
+        String subject = "";
+        String message = "";
+        if (messages.length > 0) {
+            IMAPMessage msg = (IMAPMessage) messages[messages.length - 1];
+            subject = MimeUtility.decodeText(msg.getSubject());
+            message = MimeUtility.decodeText(msg.getContent().toString());
+        }
         result.put("subject", subject);
         result.put("message", message);
 
