@@ -266,10 +266,12 @@ public class ThrowExceptionAnalysisOnHedwig {
 
         String subject = "";
         String message = "";
-        if (messages.length > 0) {
+        try {
             IMAPMessage msg = (IMAPMessage) messages[messages.length - 1];
             subject = MimeUtility.decodeText(msg.getSubject());
             message = MimeUtility.decodeText(msg.getContent().toString());
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         result.put("subject", subject);
         result.put("message", message);
