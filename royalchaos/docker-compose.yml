@@ -1,0 +1,35 @@
+version: '3.7'
+
+volumes:
+    prometheus_data: {}
+
+networks:
+  front-tier:
+  back-tier:
+
+services:
+  royalorc:
+    build: ./royalorc
+    volumes:
+      - ./prometheus/:/prometheus # Sharing the file_sd_config.json file.
+      - /var/run/docker.sock:/var/run/docker.sock # We require the docker socket.
+    ports:
+      - 12300:12300
+    networks:
+      - back-tier
+  prometheus:
+    image: prom/prometheus:v2.8.0
+    volumes:
+      - ./prometheus/:/etc/prometheus/
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+      - '--web.console.templates=/usr/share/prometheus/consoles'
+    ports:
+      - 9090:9090
+    networks:
+      - back-tier
+      - front-tier
+    restart: always
