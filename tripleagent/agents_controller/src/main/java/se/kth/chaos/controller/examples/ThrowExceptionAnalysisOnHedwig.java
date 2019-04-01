@@ -181,6 +181,7 @@ public class ThrowExceptionAnalysisOnHedwig {
         String smtpPort = "30025";
         String imapHost = "localhost";
         String imapPort = "30143";
+        String timeout = "5000";
         String username = "longz@localhost";
         String password = "123456";
         String sender = "longz@localhost";
@@ -194,8 +195,8 @@ public class ThrowExceptionAnalysisOnHedwig {
         boolean result = false;
 
         try {
-            sendEmail(smtpHost, smtpPort, sender, receivers, subject, message);
-        } catch (MessagingException e) { }
+            sendEmail(smtpHost, smtpPort, timeout, sender, receivers, subject, message);
+        } catch (Exception e) { e.printStackTrace(); }
         System.out.println("[AGENT_CONTROLLER] An email has been sent");
 
         try {
@@ -204,25 +205,22 @@ public class ThrowExceptionAnalysisOnHedwig {
 
         System.out.println("[AGENT_CONTROLLER] Fetch the latest email and diff");
         try {
-            Map<String, String> latestEmail = fetchLatestEmail(imapHost, imapPort, username, password);
+            Map<String, String> latestEmail = fetchLatestEmail(imapHost, imapPort, timeout, username, password);
             if (latestEmail.get("subject").equals(subject) && latestEmail.get("message").equals(message)) {
                 result = true;
             }
-        } catch (MessagingException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        } catch (Exception e) { e.printStackTrace(); }
 
         return result;
     }
 
-    private static void sendEmail(String host, String port, String sender, String receivers[], String subject,
-                                    String message) throws MessagingException {
+    private static void sendEmail(String host, String port, String timeout, String sender, String receivers[],
+                                  String subject, String message) throws MessagingException {
         //Set the host smtp address
         Properties props = new Properties();
         props.put("mail.smtp.host", host);
         props.put("mail.smtp.port", port);
+        props.put("mail.smtp.timeout", timeout);
 
         // create some properties and get the default Session
         Session session = Session.getDefaultInstance(props, null);
@@ -247,14 +245,15 @@ public class ThrowExceptionAnalysisOnHedwig {
         Transport.send(msg);
     }
 
-    private static Map<String, String> fetchLatestEmail(String host, String port, String username, String password)
-            throws MessagingException, IOException {
+    private static Map<String, String> fetchLatestEmail(String host, String port, String timeout,
+            String username,String password) throws MessagingException {
         Map<String, String> result = new HashMap<String, String>();
 
         Properties props = new Properties();
         props.setProperty("mail.store.protocol", "imap");
         props.setProperty("mail.imap.host", host);
         props.setProperty("mail.imap.port", port);
+        props.setProperty("mail.imap.timeout", timeout);
 
         Session session = Session.getInstance(props);
         Store store = session.getStore("imap");
