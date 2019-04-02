@@ -13,7 +13,7 @@ docker_client = docker.from_env()
 # Temporary global variables
 monitoring_network_name = 'royalchaos_back-tier'
 monitoring_default_port = '12301'
-base_name = 'se.kth.royalchaos'
+base_name = 'se.kth.chaosorca'
 base_name_netm = base_name + '.netm'
 base_name_sysm = base_name + '.sysm'
 
@@ -29,7 +29,7 @@ def getIpFromContainer(container):
 def startMonitoringNetworkContainer(container_name, container_ip):
     '''Starts the network monitoring on a given container'''
     return docker_client.containers.run(
-        'jsimo2/royalnetm',
+        'chaosorca/netm',
         detach=True,
         environment=['ROYALNETM_IP='+container_ip],
         name=base_name_netm+'.'+container_name,
@@ -40,7 +40,7 @@ def startMonitoringNetworkContainer(container_name, container_ip):
 def startMonitoringSyscallContainer(container_name, pid_to_monitor):
     '''Starts the syscall monitoring on a given container & PID'''
     return docker_client.containers.run(
-        'jsimo2/royalsysm',
+        'chaosorca/sysm',
         cap_add=['SYS_PTRACE'],
         detach=True,
         environment=['SYSM_PID='+pid_to_monitor],

@@ -40,7 +40,7 @@ def getContainer(name):
 def hasMonitoring(name):
     '''Returns True if container has monitoring'''
     containers = docker_client.containers.list(
-        filters={'name': 'se.kth.royalchaos.*.%s' % name})
+        filters={'name': 'se.kth.chaosorca.*.%s' % name})
     return len(containers) != 0
 
 
@@ -48,5 +48,5 @@ def hasMonitoring(name):
 def list():
     '''List all containers relevant to royal currently running'''
     containers = docker_client.containers.list(
-        filters={'name': 'se.kth.royalchaos'})
+        filters={'name': 'se.kth.chaosorca'})
     return containers

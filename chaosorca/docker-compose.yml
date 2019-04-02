@@ -8,8 +8,8 @@ networks:
   back-tier:
 
 services:
-  royalorc:
-    build: ./royalorc
+  orc:
+    build: ./orc
     volumes:
       - ./prometheus/:/prometheus # Sharing the file_sd_config.json file.
       - /var/run/docker.sock:/var/run/docker.sock # We require the docker socket.
