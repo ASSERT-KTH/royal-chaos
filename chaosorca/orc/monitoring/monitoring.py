@@ -5,7 +5,7 @@ import time
 import docker
 
 # Local import
-import prometheus
+import monitoring.prometheus as prometheus
 import container_api
 
 docker_client = docker.from_env()
@@ -113,39 +113,33 @@ def stopMonitoring(container):
     print('Cleaning out prometheus targets ')
     prometheus.removeTarget(container.name)
 
-def stopMonitoringNetwork(container):
-    '''Stops the network monitoring on the given container.'''
+
+def stopMonitoringContainer(container, network_container):
+    '''Stops the given monitoring container and removes network.'''
     #1 Disconnect container from prometheus network.
     print('Detaching network ', end='', flush=True)
     try:
-        docker_client.networks.get(monitoring_network_name).disconnect(container.name)
+        docker_client.networks.get(monitoring_network_name).disconnect(network_container.name)
         print(SUCCESS)
     except Exception:
         print(FAILED)
-    #2 Stop network container.
-    print('Stopping network monitoring ', end='', flush=True)
+    #2 Stop container.
+    print('Stopping %s ' % container.name, end='', flush=True)
     try:
-        docker_client.containers.get(base_name_netm+'.'+container.name).stop()
+        container.stop()
         print(SUCCESS)
     except Exception:
         print(FAILED)
 
+def stopMonitoringNetwork(container):
+    '''Stops the network monitoring on the given container.'''
+    netm_container = docker_client.containers.get(base_name_netm+'.'+container.name)
+    stopMonitoringContainer(netm_container, container)
+
 def stopMonitoringSyscall(container):
     '''Stops the network monitoring on the given container.'''
-    #1 Disconnect container from prometheus network.
-    print('Detaching network ', end='', flush=True)
-    try:
-        docker_client.networks.get(monitoring_network_name).disconnect(base_name_sysm+'.'+container.name)
-        print(SUCCESS)
-    except Exception:
-        print(FAILED)
-    #2. Stop syscall container.
-    print('Stopping syscall monitoring ', end='', flush=True)
-    try:
-        docker_client.containers.get(base_name_sysm+'.'+container.name).stop()
-        print(SUCCESS)
-    except Exception:
-        print(FAILED)
+    syscall_container = docker_client.containers.get(base_name_sysm+'.'+container.name)
+    stopMonitoringContainer(syscall_container, syscall_container)
 
 def waitForMonitoring(address):
     '''Recursively waits for address to be up'''

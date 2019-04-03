@@ -5,7 +5,7 @@ import time
 import click
 
 # Local imports
-import monitoring
+from monitoring import monitoring
 import prometheus_api
 import container_api
 
