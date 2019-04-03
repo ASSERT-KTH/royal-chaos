@@ -3,8 +3,10 @@ import os
 # Package import
 import docker
 
+# Local import
+import config
+
 docker_client = docker.from_env()
-prometheus_name = 'se.kth.chaosorca.prometheus'
 dir_name = os.path.dirname(os.path.abspath(__file__))
 
 def start():
@@ -21,10 +23,10 @@ def start():
       	'--web.console.libraries=/usr/share/prometheus/console_libraries',
       	'--web.console.templates=/usr/share/prometheus/consoles'],
         detach=True,
-        name=prometheus_name,
-        ports={'9090': 9091}, # <inside-port>:<outside-port>
+        name=config.PROMETHEUS_NAME,
+        ports={'9090': config.PROMETHEUS_PORT}, # <inside-port>:<outside-port>
         remove=True,
-        volumes={dir_name+'/prometheus/': {'bind': '/etc/prometheus/', 'mode': 'rw'}, 
+        volumes={dir_name+'/prometheus/': {'bind': '/etc/prometheus/', 'mode': 'rw'},
         'prometheus_data': {'bind':'/prometheus', 'mode': 'rw'}})
 	print('Created prometheus instance')
 
@@ -43,14 +45,14 @@ def start():
 def getContainer():
 	'''Returns the running container else None.'''
 	try:
-		return docker_client.containers.get(prometheus_name)
+		return docker_client.containers.get(config.PROMETHEUS_NAME)
 	except Exception:
 		return None
 
 def getNetwork():
 	'''Returns the prometheus network, else None.'''
 	try:
-		return docker_client.networks.get(prometheus_name)
+		return docker_client.networks.get(config.PROMETHEUS_NAME)
 	except Exception:
 		return None
 

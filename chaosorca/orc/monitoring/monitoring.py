@@ -5,20 +5,20 @@ import time
 import docker
 
 # Local import
-import monitoring.prometheus_targets as monitoring_targets
+import config
 import container_api
+import monitoring.prometheus_targets as monitoring_targets
 
 docker_client = docker.from_env()
 
 # Temporary global variables
-monitoring_network_name = 'se.kth.chaosorca.prometheus'
-monitoring_default_port = '12301'
-base_name = 'se.kth.chaosorca'
-base_name_netm = base_name + '.netm'
-base_name_sysm = base_name + '.sysm'
+monitoring_network_name = config.MONITORING_NETWORK_NAME
+monitoring_default_port = config.MONITORING_DEFAULT_PORT
+base_name_netm = config.NETM_NAME
+base_name_sysm = config.SYSM_NAME
 
-FAILED = '❌ FAILED'
-SUCCESS = '✔️ SUCCESS'
+FAILED = config.LOG_FAILED
+SUCCESS = config.LOG_SUCCESS
 
 def getIpFromContainerAttachedNetwork(container, network_name):
     return container.attrs['NetworkSettings']['Networks'][network_name]['IPAddress']

@@ -73,6 +73,7 @@ def stop():
 @click.option('--name', prompt='Container name?')
 def procs_local(name):
     '''prints a containers local processes using the pid-values in their namespace'''
+    # For each process it takes the first and last argument and puts it in a list.
     print(['%s %s' % (p[0], p[-1]) for p in container_api.getProcesses(name)['processes']])
 
 if __name__ == '__main__':
