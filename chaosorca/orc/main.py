@@ -6,6 +6,7 @@ import click
 
 # Local imports
 from monitoring import monitoring
+from monitoring import prometheus
 import prometheus_api
 import container_api
 
@@ -14,7 +15,17 @@ def main():
     '''RoyalChaos - Tool made by JSimo'''
     pass
 
-@main.command()
+@main.group(invoke_without_command=False)
+def prom():
+    '''Commands to start/stop prometheus instance'''
+    pass
+
+@main.group(invoke_without_command=False)
+def monit():
+    '''Commands to start/stop monitoring'''
+    pass
+
+@monit.command()
 @click.option('--name', prompt='Container name?')
 def start(name):
     '''Start to monitor container with given name'''
@@ -27,12 +38,17 @@ def start(name):
     # Now start monitoring.
     monitoring.startMonitoring(container)
 
-@main.command()
+@monit.command()
 @click.option('--name', prompt='Container name?')
 def stop(name):
     '''Stop to monitor container with given name'''
     container = container_api.getContainer(name)
     monitoring.stopMonitoring(container)
+
+@monit.command()
+@click.option('--name', prompt='Container name?')
+def hasMonitoring(name):
+    print(container_api.hasMonitoring(name))
 
 @main.command()
 def list():
@@ -40,13 +56,18 @@ def list():
     print([c.name for c in container_api.list()])
 
 @main.command()
-@click.option('--name', prompt='Container name?')
-def test(name):
-    print(container_api.hasMonitoring(name))
-
-@main.command()
 def m():
     print(prometheus_api.testQuery())
+
+@prom.command()
+def start():
+    '''Starts prometheus'''
+    prometheus.start()
+
+@prom.command()
+def stop():
+    '''Stops prometheus'''
+    prometheus.stop()
 
 @main.command()
 @click.option('--name', prompt='Container name?')

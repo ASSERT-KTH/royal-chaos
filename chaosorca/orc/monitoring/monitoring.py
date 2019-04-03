@@ -5,13 +5,13 @@ import time
 import docker
 
 # Local import
-import monitoring.prometheus as prometheus
+import monitoring.prometheus_targets as monitoring_targets
 import container_api
 
 docker_client = docker.from_env()
 
 # Temporary global variables
-monitoring_network_name = 'royalchaos_back-tier'
+monitoring_network_name = 'se.kth.chaosorca.prometheus'
 monitoring_default_port = '12301'
 base_name = 'se.kth.chaosorca'
 base_name_netm = base_name + '.netm'
@@ -70,7 +70,7 @@ def connectContainerToMonitoringNetwork(container, job_name):
     container.reload() # Refresh container variable with new IPAddress content.
     container_monit_ip = getIpFromContainerAttachedNetwork(container, monitoring_network_name)
 
-    prometheus.addTarget(container_monit_ip +':'+ monitoring_default_port, job_name)
+    monitoring_targets.add(container_monit_ip +':'+ monitoring_default_port, job_name)
     return container_monit_ip
 
 def startMonitoring(container):
@@ -111,7 +111,7 @@ def stopMonitoring(container):
     stopMonitoringSyscall(container)
 
     print('Cleaning out prometheus targets ')
-    prometheus.removeTarget(container.name)
+    monitoring_targets.remove(container.name)
 
 
 def stopMonitoringContainer(container, network_container):
