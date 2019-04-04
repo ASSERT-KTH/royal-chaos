@@ -7,6 +7,7 @@ import click
 # Local imports
 from monitoring import monitoring
 from monitoring import prometheus
+from perturbations import syscall as sysfault
 import prometheus_api
 import container_api
 
@@ -23,6 +24,11 @@ def prom():
 @main.group(invoke_without_command=False)
 def monit():
     '''Commands to start/stop monitoring'''
+    pass
+
+@main.group(invoke_without_command=False)
+def fault():
+    '''Commands to do fault injection'''
     pass
 
 @monit.command()
@@ -68,6 +74,10 @@ def start():
 def stop():
     '''Stops prometheus'''
     prometheus.stop()
+
+@fault.command()
+def test():
+    print(sysfault.testSyscall())
 
 @main.command()
 @click.option('--name', prompt='Container name?')
