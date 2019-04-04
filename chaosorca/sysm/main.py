@@ -32,9 +32,14 @@ def main():
         print('Missing required PID parameter')
         exit()
     pid = os.environ['SYSM_PID']
+    cmd = ['strace', '-p', pid]
+
+    if 'SYSM_FAULT' in os.environ:
+        sysm_fault = os.environ['SYSM_FAULT']
+        cmd = cmd + ['-e', 'inject=%s' % sysm_fault]
 
     proc = subprocess.Popen(
-        ['strace', '-p', pid],
+        cmd,
         stderr=subprocess.PIPE,
         universal_newlines=True,
         preexec_fn=os.setsid)

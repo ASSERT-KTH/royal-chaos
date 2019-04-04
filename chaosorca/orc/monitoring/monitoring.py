@@ -37,13 +37,13 @@ def startMonitoringNetworkContainer(container_name, container_ip):
         remove=True
         )
 
-def startMonitoringSyscallContainer(container_name, pid_to_monitor):
+def startMonitoringSyscallContainer(container_name, pid_to_monitor, fault_string=''):
     '''Starts the syscall monitoring on a given container & PID'''
     return docker_client.containers.run(
         'chaosorca/sysm',
         cap_add=['SYS_PTRACE'],
         detach=True,
-        environment=['SYSM_PID='+pid_to_monitor],
+        environment=['SYSM_PID='+pid_to_monitor, 'SYSM_FAULT='+fault_string],
         name=base_name_sysm+'.'+container_name,
         pid_mode="container:"+container_name,
         remove=True)
