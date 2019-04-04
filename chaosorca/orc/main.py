@@ -5,9 +5,8 @@ import time
 import click
 
 # Local imports
-from monitoring import monitoring
-from monitoring import prometheus
-from perturbations import syscall as sysfault
+from perturbations import commands as p_cmd
+from monitoring import commands as c_cmd
 import prometheus_api
 import container_api
 
@@ -15,46 +14,6 @@ import container_api
 def main():
     '''RoyalChaos - Tool made by JSimo'''
     pass
-
-@main.group(invoke_without_command=False)
-def prom():
-    '''Commands to start/stop prometheus instance'''
-    pass
-
-@main.group(invoke_without_command=False)
-def monit():
-    '''Commands to start/stop monitoring'''
-    pass
-
-@main.group(invoke_without_command=False)
-def fault():
-    '''Commands to do fault injection'''
-    pass
-
-@monit.command()
-@click.option('--name', prompt='Container name?')
-def start(name):
-    '''Start to monitor container with given name'''
-    # First do some simple verification of command.
-    container = container_api.getContainer(name)
-
-    if container_api.hasMonitoring(name):
-        print('Container %s already has monitoring' % name)
-        return
-    # Now start monitoring.
-    monitoring.startMonitoring(container)
-
-@monit.command()
-@click.option('--name', prompt='Container name?')
-def stop(name):
-    '''Stop to monitor container with given name'''
-    container = container_api.getContainer(name)
-    monitoring.stopMonitoring(container)
-
-@monit.command()
-@click.option('--name', prompt='Container name?')
-def hasMonitoring(name):
-    print(container_api.hasMonitoring(name))
 
 @main.command()
 def list():
@@ -65,26 +24,16 @@ def list():
 def m():
     print(prometheus_api.testQuery())
 
-@prom.command()
-def start():
-    '''Starts prometheus'''
-    prometheus.start()
-
-@prom.command()
-def stop():
-    '''Stops prometheus'''
-    prometheus.stop()
-
-@fault.command()
-def test():
-    print(sysfault.testSyscall())
-
 @main.command()
 @click.option('--name', prompt='Container name?')
 def procs_local(name):
     '''prints a containers local processes using the pid-values in their namespace'''
     # For each process it takes the first and last argument and puts it in a list.
     print(['%s %s' % (p[0], p[-1]) for p in container_api.getProcesses(name)['processes']])
+
+main.add_command(p_cmd.fault) # Fault injection commands.
+main.add_command(c_cmd.prom) # Prometheus start/stop/more.
+main.add_command(c_cmd.monit) # Monitoring start/stop/more.
 
 if __name__ == '__main__':
     main()
