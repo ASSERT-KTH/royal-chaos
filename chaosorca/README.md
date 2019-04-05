@@ -1,4 +1,7 @@
-# RoyalChaos
+# ChaosOrca
+
+## Install
+1. Rename `file_sd_config.json.sample` to `file_sd_config.json`
 
 `apk --no-cache add tcpflow`
 # or use tshark (wireshark commandline?)
@@ -11,6 +14,3 @@
 ## use another containes namespace
 --pid=container:abc123
 --network=container:abc123
-
-# ChaosOrca
-As in ChaosWhale :>

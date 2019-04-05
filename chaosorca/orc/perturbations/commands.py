@@ -17,11 +17,23 @@ def test():
 
 @fault.command()
 @click.option('--name', prompt='Container name?')
-def start(name):
+@click.option('--delay-enter', type=int, default=None)
+@click.option('--delay-exit', type=int, default=None)
+@click.option('--error', default=None)
+@click.option('--signal', default=None)
+@click.option('--syscall', prompt='What syscall?')
+@click.option('--when', default=None)
+def start(name, delay_enter, delay_exit, error, signal, syscall, when):
     container = container_api.getContainer(name)
     # Injects the fault 'Error NO ENTity' on open the first time and every second time after after that.
-    sysfault.applyFault(container, sysfault.Fault(syscall='open', error='ENOENT', when='1+2'))
-    print('Started sysfault on %s' % container.name)
+    fault = sysfault.Fault(delay_enter=delay_enter,
+        delay_exit=delay_exit,
+        error=error,
+        signal=signal,
+        syscall=syscall,
+        when=when)
+    sysfault.applyFault(container, fault)#sysfault.Fault(syscall='open', error='ENOENT', when='1+2'))
+    print('Started sysfault %s on %s' % (fault, container.name))
 
 @fault.command()
 @click.option('--name', prompt='Container name?')

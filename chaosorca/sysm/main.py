@@ -34,10 +34,11 @@ def main():
     pid = os.environ['SYSM_PID']
     cmd = ['strace', '-p', pid]
 
-    if 'SYSM_FAULT' in os.environ:
+    if 'SYSM_FAULT' in os.environ and os.environ['SYSM_FAULT'] is not '':
         sysm_fault = os.environ['SYSM_FAULT']
         cmd = cmd + ['-e', 'inject=%s' % sysm_fault]
 
+    print('Starting strace: %s' % cmd)
     proc = subprocess.Popen(
         cmd,
         stderr=subprocess.PIPE,
