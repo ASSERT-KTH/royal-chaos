@@ -12,7 +12,7 @@ import container_api
 
 @click.group()
 def main():
-    '''RoyalChaos - Tool made by JSimo'''
+    '''ChaosOrca - Tool made by JSimo'''
     pass
 
 @main.command()
