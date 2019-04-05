@@ -1,4 +1,4 @@
-# Royal Chaos engineering systems invented at KTH Royal Institute of Technology
+# Royal Chaos
 
 This repo contains chaos engineering systems invented at KTH Royal Institute of Technology. Every tool is organized in a separate folder in this repo, with a detailed README file inside.
 
