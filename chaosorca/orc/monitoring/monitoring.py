@@ -7,6 +7,7 @@ import docker
 # Local import
 import config
 import container_api
+import monitoring.common_helpers as common
 import monitoring.prometheus_targets as monitoring_targets
 
 docker_client = docker.from_env()
@@ -19,12 +20,6 @@ base_name_sysm = config.SYSM_NAME
 
 FAILED = config.LOG_FAILED
 SUCCESS = config.LOG_SUCCESS
-
-def getIpFromContainerAttachedNetwork(container, network_name):
-    return container.attrs['NetworkSettings']['Networks'][network_name]['IPAddress']
-
-def getIpFromContainer(container):
-    return container.attrs['NetworkSettings']['IPAddress']
 
 def startMonitoringNetworkContainer(container_name, container_ip):
     '''Starts the network monitoring on a given container'''
@@ -68,7 +63,7 @@ def connectContainerToMonitoringNetwork(container, job_name):
     '''Connects the container to the monitoring network'''
     docker_client.networks.get(monitoring_network_name).connect(container.name)
     container.reload() # Refresh container variable with new IPAddress content.
-    container_monit_ip = getIpFromContainerAttachedNetwork(container, monitoring_network_name)
+    container_monit_ip = common.getIpFromContainerAttachedNetwork(container, monitoring_network_name)
 
     monitoring_targets.add(container_monit_ip +':'+ monitoring_default_port, job_name)
     return container_monit_ip
@@ -77,7 +72,7 @@ def startMonitoring(container):
     '''Start monitoring on the given container'''
 
     # Variables:
-    container_ip = getIpFromContainer(container)
+    container_ip = common.getIpFromContainer(container)
 
     #1. Launch network monitoring utilizing the same networking namespace/stack.
     startMonitoringNetworkContainer(container.name, container_ip)

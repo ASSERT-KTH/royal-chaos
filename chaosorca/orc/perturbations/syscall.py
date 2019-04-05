@@ -86,8 +86,10 @@ def applyFault(container, fault):
     # Stop the previous sysm container and replace it with one that will do fault injection as well.
     pid = getSysmPid(sysm_container)
     sysm_container.stop()
-    return monitoring.startMonitoringSyscallContainer(container.name, pid, fault_string=str(fault))
+    sysm_container = monitoring.startMonitoringSyscallContainer(container.name, pid, fault_string=str(fault))
+    monitoring.connectContainerToMonitoringNetwork(sysm_container, container.name)
 
+    return sysm_container
 
 def clearFaults(container):
     '''Removes any fault injection'''

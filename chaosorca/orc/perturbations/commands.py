@@ -19,7 +19,7 @@ def test():
 @click.option('--name', prompt='Container name?')
 @click.option('--delay-enter', type=int, default=None)
 @click.option('--delay-exit', type=int, default=None)
-@click.option('--error', default=None)
+@click.option('--error', default='EPERM')
 @click.option('--signal', default=None)
 @click.option('--syscall', prompt='What syscall?')
 @click.option('--when', default=None)

@@ -3,6 +3,7 @@ import click
 # Local imports
 from monitoring import monitoring
 from monitoring import prometheus
+from monitoring import cadvisor
 
 import container_api
 
@@ -43,10 +44,12 @@ def hasMonitoring(name):
 
 @prom.command()
 def start():
-    '''Starts prometheus'''
+    '''Starts prometheus & cadvisor'''
     prometheus.start()
+    cadvisor.start()
 
 @prom.command()
 def stop():
-    '''Stops prometheus'''
+    '''Stops prometheus & cadvisor'''
+    cadvisor.stop()
     prometheus.stop()
