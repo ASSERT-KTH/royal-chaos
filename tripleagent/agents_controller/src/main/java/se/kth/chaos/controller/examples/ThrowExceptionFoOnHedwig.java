@@ -9,98 +9,50 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeUtility;
 import java.io.*;
-import java.nio.file.Files;
 import java.util.*;
 
-public class ThrowExceptionAnalysisOnHedwig {
-
+public class ThrowExceptionFoOnHedwig {
     public static void main(String[] args) {
         Process process = null;
         String osName = System.getProperty("os.name");
         String applicationLogPath = "/home/gluckzhang/development/hedwig-0.7/hedwig-0.7-binary/bin";
         String applicationLogName = "app.console";
         String applicationPidFile = "/home/gluckzhang/development/hedwig-0.7/hedwig-0.7-binary/bin/app.pid";
-        String monitoringAgentLogPath = "/home/gluckzhang/development/hedwig-0.7/hedwig-0.7-binary/bin";
-        String monitoringAgentLogName = "monitoring_agent.log";
         String perturbationPointsCsvPath = "/home/gluckzhang/development/hedwig-0.7/hedwig-0.7-binary/bin/perturbationPointsList.csv";
+        String failureObliviousPointsCsvPath = "/home/gluckzhang/development/hedwig-0.7/hedwig-0.7-binary/bin/failureObliviousPointsList.csv";
+        String taskCsv = "hedwig_evaluation_0.7/perturbationAndFoPointsList_tasks.csv";
         AgentsController controller = new AgentsController("localhost", 11211);
 
         if (osName.contains("Windows")) {return;}
 
-        List<String[]> tasksInfo = null;
+        System.out.println(conductSingleExperiment());
+        List<String[]> tasksInfo = checkHeaders(controller, taskCsv);
 
-        // Step 0: analysis experiment, calculate perturbation points coverage
-        System.out.println("[AGENT_CONTROLLER] analysis experiment begins");
-        try {
-            int input_pid = JMXMonitoringTool.getPidFromFile(applicationPidFile);
-            Thread jmxMonitoring = null;
-
-            if (input_pid > 0) {
-                jmxMonitoring = new Thread(() -> {
-                    JMXMonitoringTool.MONITORING_SWITCH = true;
-                    JMXMonitoringTool.monitorProcessByPid(input_pid, 1000);
-                });
-                jmxMonitoring.start();
-            }
-
-            System.out.println("[AGENT_CONTROLLER] Conducting a single experiment now.");
-            emptyTheFile(applicationLogPath + "/" + applicationLogName);
-            boolean emailDiff = conductSingleExperiment();
-            System.out.println("[AGENT_CONTROLLER] Email verified: " + emailDiff);
-
-            JMXMonitoringTool.MONITORING_SWITCH = false;
-            if (jmxMonitoring != null) {
-                jmxMonitoring.join();
-            }
-
-            File logFile = new File(applicationLogPath + "/" + applicationLogName);
-            BufferedReader logReader = new BufferedReader(new FileReader(logFile));
-            Map<String, Integer> pointsMap = new HashMap<>();
-            String line = null;
-            while ((line = logReader.readLine()) != null) {
-                if (line.startsWith("INFO PAgent a method which throws an exception executed")) {
-                    String key = line.split("key: ")[1];
-                    if (pointsMap.containsKey(key)) {
-                        pointsMap.put(key, pointsMap.get(key) + 1);
-                    } else {
-                        pointsMap.put(key, 1);
-                    }
-                }
-            }
-            logReader.close();
-
-            System.out.println("[AGENT_CONTROLLER] process cpu time(in seconds): " + JMXMonitoringTool.processCpuTime / 1000000000);
-            System.out.println("[AGENT_CONTROLLER] average memory usage(in MB): " + JMXMonitoringTool.averageMemoryUsage / 1000000);
-            System.out.println("[AGENT_CONTROLLER] peak thread count: " + JMXMonitoringTool.peakThreadCount);
-
-            tasksInfo = checkHeaders(controller, perturbationPointsCsvPath);
-            List<String> task = null;
-            for (int i = 1; i < tasksInfo.size(); i++) {
-                task = new ArrayList<>(Arrays.asList(tasksInfo.get(i)));
-                if (pointsMap.containsKey(task.get(0))) {
-                    task.set(10, "yes");
-                    task.set(11, pointsMap.get(task.get(0)).toString());
-                    tasksInfo.set(i, task.toArray(new String[task.size()]));
-                }
-            }
-            controller.write2csvfile(perturbationPointsCsvPath, tasksInfo);
-            System.out.println("[AGENT_CONTROLLER] analysis experiment finished");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        // Step 1: perturbation-only experiments, only inject 1 exception
         try {
             List<String> task = null;
             for (int i = 1; i < tasksInfo.size(); i++) {
                 task = new ArrayList<>(Arrays.asList(tasksInfo.get(i)));
                 if (task.get(10).equals("yes")) {
                     emptyTheFile(applicationLogPath + "/" + applicationLogName);
-                    emptyTheFile(monitoringAgentLogPath + "/" + monitoringAgentLogName);
+
+                    String filter = task.get(1) + "/" + task.get(2);
+                    String exceptionType = task.get(4);
+                    String lineIndexNumber = task.get(6);
+                    String injections = task.get(7);
+                    String rate = task.get(8);
+                    String mode = task.get(9);
+                    String foFilter = task.get(22).replace(" ", "").split("-")[0];
+                    String foClass = foFilter.substring(0, foFilter.lastIndexOf("/"));
+                    String foMethod = foFilter.substring(foFilter.lastIndexOf("/") + 1);
+                    String methodDesc = task.get(22).replace(" ", "").split("-")[1];
 
                     task.set(9, "throw_e");
-                    tasksInfo.set(i, task.toArray(new String[task.size()]));
-                    controller.write2csvfile(perturbationPointsCsvPath, tasksInfo);
+                    updateAgentMode(perturbationPointsCsvPath, tasksInfo.get(0), task.toArray(new String[task.size()]), controller);
+                    updateAgentMode(failureObliviousPointsCsvPath,
+                            new String[] {"key", "className", "methodName", "methodDesc", "mode"},
+                            new String[] {"-", foClass, foMethod, methodDesc, "fo"},
+                            controller);
+                    try { Thread.currentThread().sleep(2000); } catch (InterruptedException e) { }
 
                     int input_pid = JMXMonitoringTool.getPidFromFile(applicationPidFile);
                     int exitValue = 0;
@@ -114,9 +66,8 @@ public class ThrowExceptionAnalysisOnHedwig {
                         jmxMonitoring.start();
                     }
 
-                    System.out.println("[AGENT_CONTROLLER] Perturbation-only experiment at: " + task.get(1) + "/" + task.get(2));
-                    System.out.println(String.format("[AGENT_CONTROLLER] key: %s, exceptionType: %s, lineIndexNumber: %s, injections: %s, rate: %s",
-                            task.get(0), task.get(4), task.get(6), task.get(7), task.get(8)));
+                    System.out.println("[AGENT_CONTROLLER] FO experiment at: " + filter);
+                    System.out.println(String.format("[AGENT_CONTROLLER] exceptionType: %s, injections: %s, rate: %s, mode: %s, foPoint: %s", exceptionType, injections, rate, mode, task.get(22)));
                     boolean emailDiff = conductSingleExperiment();
 
                     File logFile = new File(applicationLogPath + "/" + applicationLogName);
@@ -125,9 +76,12 @@ public class ThrowExceptionAnalysisOnHedwig {
                     String line = null;
                     int normalExecutions = 0;
                     int injectionExecutions = 0;
+                    int foExecutions = 0;
                     while ((line = logReader.readLine()) != null) {
                         if (line.startsWith("INFO PAgent throw exception perturbation activated")) {
                             injectionExecutions++;
+                        } else if (line.startsWith("INFO FOAgent failure oblivious mode is on, ignore the following exception")) {
+                            foExecutions++;
                         } else if (line.startsWith("INFO PAgent a method which throws an exception executed")
                                 || line.startsWith("INFO PAgent throw exception perturbation executed normally")) {
                             normalExecutions++;
@@ -140,34 +94,34 @@ public class ThrowExceptionAnalysisOnHedwig {
                         jmxMonitoring.join();
                     }
 
-                    task.set(12, injectionExecutions + "; normal: " + normalExecutions);
-                    task.set(14, String.valueOf(emailDiff));
-                    task.set(16, String.valueOf(JMXMonitoringTool.processCpuTime / 1000000000));
-                    task.set(17, String.valueOf(JMXMonitoringTool.averageMemoryUsage / 1000000));
-                    task.set(18, String.valueOf(JMXMonitoringTool.peakThreadCount));
+                    task.set(23, String.format("%d(fo %d); normal: %d", injectionExecutions, foExecutions, normalExecutions));
+                    task.set(24, String.valueOf(emailDiff));
+                    task.set(26, String.valueOf(JMXMonitoringTool.processCpuTime / 1000000000));
+                    task.set(27, String.valueOf(JMXMonitoringTool.averageMemoryUsage / 1000000));
+                    task.set(28, String.valueOf(JMXMonitoringTool.peakThreadCount));
+
+                    task.set(9, "off");
+                    updateAgentMode(perturbationPointsCsvPath, tasksInfo.get(0), task.toArray(new String[task.size()]), controller);
+                    updateAgentMode(failureObliviousPointsCsvPath,
+                            new String[] {"key", "className", "methodName", "methodDesc", "mode"},
+                            new String[] {"-", foClass, foMethod, methodDesc, "off"},
+                            controller);
+
                     tasksInfo.set(i, task.toArray(new String[task.size()]));
+                    controller.write2csvfile(taskCsv, tasksInfo);
 
                     System.out.println("[AGENT_CONTROLLER] normal execution times: " + normalExecutions);
                     System.out.println("[AGENT_CONTROLLER] injection execution times: " + injectionExecutions);
+                    System.out.println("[AGENT_CONTROLLER] fo execution times: " + foExecutions);
                     System.out.println("[AGENT_CONTROLLER] Email verified: " + emailDiff);
                     System.out.println("[AGENT_CONTROLLER] exit status: TODO");
                     System.out.println("[AGENT_CONTROLLER] process cpu time(in seconds): " + JMXMonitoringTool.processCpuTime / 1000000000);
                     System.out.println("[AGENT_CONTROLLER] average memory usage(in MB): " + JMXMonitoringTool.averageMemoryUsage / 1000000);
                     System.out.println("[AGENT_CONTROLLER] peak thread count: " + JMXMonitoringTool.peakThreadCount);
 
-                    logFile = new File(monitoringAgentLogPath + "/" + monitoringAgentLogName);
-                    Files.copy(logFile.toPath(), new File(monitoringAgentLogPath + "/" + task.get(0) + ".log").toPath());
-
-                    task.set(9, "off");
-                    tasksInfo.set(i, task.toArray(new String[task.size()]));
-                    controller.write2csvfile(perturbationPointsCsvPath, tasksInfo);
-
+                    System.out.println("[AGENT_CONTROLLER] finish the experiment at " + filter);
                     System.out.println("[AGENT_CONTROLLER] ------");
-                    try {
-                        Thread.currentThread().sleep(5000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+                    try { Thread.currentThread().sleep(5000); } catch (InterruptedException e) { }
                 }
             }
         } catch (Exception e) {
@@ -245,7 +199,7 @@ public class ThrowExceptionAnalysisOnHedwig {
     }
 
     private static Map<String, String> fetchLatestEmail(String host, String port, String timeout,
-            String username,String password) throws MessagingException {
+                                                        String username,String password) throws MessagingException {
         Map<String, String> result = new HashMap<String, String>();
 
         Properties props = new Properties();
@@ -277,25 +231,22 @@ public class ThrowExceptionAnalysisOnHedwig {
         return result;
     }
 
-    private static List checkHeaders(AgentsController controller, String filepath) {
+    public static List checkHeaders(AgentsController controller, String filepath) {
         List<String[]> tasksInfo = controller.readInfoFromFile(filepath);
         List<String> task = new ArrayList<>(Arrays.asList(tasksInfo.get(0)));
-        if (task.size() <= 10) {
+        if (task.size() <= 23) {
             // need to add some headers
-            task.add("covered"); // index should be 10
-            task.add("run times in normal"); // index should be 11
-            task.add("run times in injection");
-            task.add("injection captured in the business log");
+            task.add("run times in fo"); // index should be 23
             task.add("successfully send the mail");
-            task.add("exit status");
-            task.add("process cpu time(in seconds)");
-            task.add("average memory usage(in MB)");
-            task.add("peak thread count");
+            task.add("exit status in fo");
+            task.add("process cpu time(in seconds) in fo");
+            task.add("average memory usage(in MB) in fo");
+            task.add("peak thread count in fo");
             tasksInfo.set(0, task.toArray(new String[task.size()]));
 
             for (int i = 1; i < tasksInfo.size(); i++) {
                 task = new ArrayList<>(Arrays.asList(tasksInfo.get(i)));
-                for (int j = 0; j < 9; j++) {
+                for (int j = 0; j < 6; j++) {
                     task.add("-");
                 }
                 tasksInfo.set(i, task.toArray(new String[task.size()]));
@@ -321,5 +272,12 @@ public class ThrowExceptionAnalysisOnHedwig {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private static void updateAgentMode(String csvPath, String[] header, String[] task, AgentsController controller) {
+        List<String[]> data = new ArrayList<>();
+        data.add(header);
+        data.add(task);
+        controller.write2csvfile(csvPath, data);
     }
 }

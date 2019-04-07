@@ -25,6 +25,18 @@ public class FailureObliviousPoint {
         }
     }
 
+    public static String calculateKey(String className, String methodName, String methodDesc) {
+        MessageDigest mDigest = null;
+        String result = null;
+        try {
+            mDigest = MessageDigest.getInstance("MD5");
+            result = byteArrayToHex(mDigest.digest((className + methodName + methodDesc).getBytes()));
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
     private static String byteArrayToHex(byte[] byteArray) {
         char[] hexDigits = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
         char[] resultCharArray = new char[byteArray.length * 2];

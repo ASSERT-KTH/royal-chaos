@@ -62,7 +62,7 @@ public class ThrowExceptionFoOnTTorrent {
                                 timeout, javaagentPath, mode, filter.replace("$", "\\$"), exceptionType,
                                 lineIndexNumber, injections, rate, failureObliviousAgentPath,
                                 foFilter.replace("$", "\\$").replace("<", "\\<").replace(">", "\\>"),
-                                methodDesc.replace("$", "\\$"), threadName, torrentFile);
+                                methodDesc, threadName, torrentFile);
 
                         System.out.println("[AGENT_CONTROLLER] command: " + command);
                         process = Runtime.getRuntime().exec(new String[]{"bash", "-c", command}, null, new File(rootPath));

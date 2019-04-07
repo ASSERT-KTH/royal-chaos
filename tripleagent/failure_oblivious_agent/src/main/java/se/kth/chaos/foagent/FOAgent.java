@@ -124,10 +124,15 @@ public class FOAgent {
         Map<String, String> kv = new HashMap<String, String>();
         for (int i = 1; i < foPoints.size(); i++) {
             String[] line = foPoints.get(i);
-            FailureObliviousPoint foPoint = foPointsMap.get(line[0]);
+            String pointKey = line[0];
+            if (line[0].equals("-")) {
+                pointKey = FailureObliviousPoint.calculateKey(line[1], line[2], line[3]);
+            }
+
+            FailureObliviousPoint foPoint = foPointsMap.get(pointKey);
             if (foPoint != null) {
                 foPoint.mode = line[4];
-                foPointsMap.put(line[0], foPoint);
+                foPointsMap.put(pointKey, foPoint);
             }
         }
     }
