@@ -1,6 +1,6 @@
-# Chaos engineering systems invented at KTH Royal Institute of Technology
+# Royal Chaos
 
-Every tool is organized in a separate folder in this repo, with a detailed README file inside.
+This repo contains chaos engineering systems invented at KTH Royal Institute of Technology. Every tool is organized in a separate folder in this repo, with a detailed README file inside.
 
 ## Chaos Machine
 Chaos machine is a tool to do chaos engineering on the JVM level. In particular, it concentrates on analyzing the error-handling ability of each try-catch block involved in the application by injecting exceptions.
