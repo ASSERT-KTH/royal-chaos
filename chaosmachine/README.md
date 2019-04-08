@@ -13,6 +13,79 @@ More details in the Arxiv paper: [A Chaos Engineering System for Live Analysis a
 - [Stockholm Chaos Engineering Meetup, Stockholm, Sweden, Tuesday, June 19, 2018](https://www.meetup.com/Stockholm-Chaos-Engineering-Community/events/250982413/)
 - [2nd European Chaos Engineering Day, Stockholm, Sweden, Wednesday, December 05, 2018](https://www.chaos.conf.kth.se/)
 
+## The Usage of ChaosMachineAnnotationProcessor
+
+With the help of [Spoon](http://spoon.gforge.inria.fr/), ChaosMachine provides an AnnotationProcessor. If sourcecode is avaliable, developers could use annotations to mark try-catch blocks for their convenience. Then the processor will generate a configuration file for ChaosMachine's experiments.
+
+First of all, you need to package the annotation processor by running:
+
+```
+cd annotation_processor && mvn package
+```
+
+In the `target` folder you will get `chaosmachine-annotation-processor.jar`, which developers need to import into their project in order to use the annotation `ChaosMachinePerturbationPoint`. It will be even more convenient after the ChaosMachine components are registered to Maven Central Repository.
+
+Currently, developers need to add the following part into `pom.xml`.
+
+```
+<plugins>
+	<plugin>
+		<groupId>fr.inria.gforge.spoon</groupId>
+		<artifactId>spoon-maven-plugin</artifactId>
+		<version>3.1</version>
+		<executions>
+			<execution>
+				<phase>generate-sources</phase>
+				<goals>
+					<goal>generate</goal>
+				</goals>
+			</execution>
+		</executions>
+		<configuration>
+			<processors>
+				<processor>
+					se.kth.chaos.ChaosMachineAnnotationProcessor
+				</processor>
+			</processors>
+			<!-- setup of configurationFilePath is not mandatory, the default value is ./chaosmachine_config.csv -->
+			<processorProperties>
+				<processorProperty>
+					<name>se.kth.chaos.ChaosMachineAnnotationProcessor</name>
+				<properties>
+					<property>
+						<name>configurationFilePath</name>
+						<value>./perturbationPoints.csv</value>
+					</property>
+				</properties>
+				</processorProperty>
+				</processorProperties>
+			<skipGeneratedSources>true</skipGeneratedSources>
+		</configuration>
+		<dependencies>
+			<dependency>
+				<groupId>fr.inria.gforge.spoon</groupId>
+				<artifactId>spoon-core</artifactId>
+				<version>7.4.0-beta-12</version>
+			</dependency>
+		</dependencies>
+	</plugin>
+</plugins>
+```
+
+Now enjoy, developers could use the annotation like this:
+
+```
+try {
+    ...
+} catch (@ChaosMachinePerturbationPoint(hypothesis = Hypothesis.RESILIENT) MissingPropertyException e) {
+    ...
+} catch (@ChaosMachinePerturbationPoint(hypothesis = {Hypothesis.DEBUG, Hypothesis.OBSERVABLE}) Exception e) {
+    ...
+}
+```
+
+And when the project is compiled, a configuration file for ChaosMachine is automatically generated.
+
 ## How to conduct a chaos experiment using Chaos Machine
 
 Run the following command in root directory:
