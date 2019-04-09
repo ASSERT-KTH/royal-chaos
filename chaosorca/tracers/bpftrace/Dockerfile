@@ -36,7 +36,7 @@ RUN apt-get -y install \
     zlib1g-dev \
     libelf-dev
 RUN git clone https://github.com/iovisor/bcc.git
-RUN cd bcc && git checkout v0.8.0
+RUN cd bcc && git checkout v0.9.0
 RUN mkdir bcc/build
 RUN cd bcc/build && cmake .. -DCMAKE_INSTALL_PREFIX=/usr
 RUN cd bcc/build && make
