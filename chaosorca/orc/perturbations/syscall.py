@@ -5,7 +5,10 @@ import docker
 
 # Local imports
 import config
+import container_api
+from monitoring import common_helpers as common
 from monitoring import monitoring
+import monitoring.prometheus_targets as monitoring_targets
 
 # Strace documentation
 # http://man7.org/linux/man-pages/man1/strace.1.html
@@ -65,43 +68,53 @@ class Fault:
 # Variables
 docker_client = docker.from_env()
 
-def getSysmPid(sysm_container):
-    '''Returns the PID value currently used in the sysm_contaier'''
-    output = sysm_container.exec_run(['sh', '-c', 'env | grep SYSM_PID']).output.decode("utf-8").rstrip()
-    return output.split('=')[1]
-
-
 def applyFault(container, fault):
     '''Appplies the given fault to the given container'''
 
-    # Check and kill the syscall monitoring container as we need to reuse it.
+    # Handle already running fault injection containers.
     try:
-        sysm_container = docker_client.containers.get(config.SYSM_NAME+'.'+container.name)
+        testc = docker_client.containers.get(config.SYSC_NAME+'.'+container.name)
+        # Fault container already running, remove it first.
+        clearFaults(container)
     except Exception:
-        # TODO: allow perturbations without monitoring being run?
-        # (problem is that is more complex as for syscall we require the same container)
-        print('Missing monitoring, please start monitoring first')
-        exit()
+        pass
 
-    # Stop the previous sysm container and replace it with one that will do fault injection as well.
-    pid = getSysmPid(sysm_container)
-    sysm_container.stop()
-    sysm_container = monitoring.startMonitoringSyscallContainer(container.name, pid, fault_string=str(fault))
-    monitoring.connectContainerToMonitoringNetwork(sysm_container, container.name)
+    # Get local PID's
+    processes = container_api.getProcesses(container.name)['processes']
 
-    return sysm_container
+    if len(processes) == 1:
+        # Easy case, just select that one for monitoring.
+        pid_to_perturb = processes[0][0] # First process, where the first value is the PID.
+    elif len(processes) > 1:
+        # Harder case, ask to select one.
+        print('Multiple processes to choose from, please select 1.')
+        print('\n'.join(["PID:%s %s" % (proc[0], proc[-1]) for proc in processes]))
+        pid_to_perturb = input('Input PID to perturb: ')
+
+    sysc_container = docker_client.containers.run(
+        'chaosorca/sysc',
+        cap_add=['SYS_PTRACE'],
+        detach=True,
+        environment=['SYSC_PID='+pid_to_perturb, 'SYSC_FAULT='+str(fault)],
+        name=config.SYSC_NAME+'.'+container.name,
+        pid_mode="container:"+container.name,
+        remove=True)
+
+    docker_client.networks.get(config.MONITORING_NETWORK_NAME).connect(sysc_container.name)
+    sysc_container.reload() # Refresh container variable with new IPAddress content.
+    sysc_container_monit_ip = common.getIpFromContainerAttachedNetwork(sysc_container, config.MONITORING_NETWORK_NAME)
+
+    monitoring_targets.add(sysc_container_monit_ip +':'+ config.MONITORING_DEFAULT_PORT, container.name+'.c')
+    return sysc_container
 
 def clearFaults(container):
     '''Removes any fault injection'''
     try:
-        sysm_container = docker_client.containers.get(config.SYSM_NAME+'.'+container.name)
+        sysc_container = docker_client.containers.get(config.SYSC_NAME+'.'+container.name)
     except Exception:
-        # TODO: allow perturbations without monitoring being run?
-        # (problem is that is more complex as for syscall we require the same container)
-        print('No container to clear, please start monitoring first')
+        print('No syscall fault injection currently running')
         exit()
 
-    # Start monitoring again.
-    pid = getSysmPid(sysm_container)
-    sysm_container.stop()
-    monitoring.startMonitoringSyscallContainer(container.name, pid)
+    #Stop perturbation container.
+    monitoring_targets.remove(container.name+'.c')
+    return sysc_container.stop()

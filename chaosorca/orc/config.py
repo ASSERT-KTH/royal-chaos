@@ -2,6 +2,7 @@
 BASE_NAME = 'se.kth.chaosorca'
 NETM_NAME = '%s.netm' % BASE_NAME
 SYSM_NAME = '%s.sysm' % BASE_NAME
+SYSC_NAME = '%s.sysc' % BASE_NAME
 
 PROMETHEUS_NAME = '%s.prometheus' % BASE_NAME
 PROMETHEUS_PORT = '9090'

@@ -1,1 +1,1 @@
-docker build . -t bpftrace
+docker build . -t jsimo2/bpftrace

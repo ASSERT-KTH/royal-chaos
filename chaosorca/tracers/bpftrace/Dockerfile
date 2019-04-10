@@ -43,7 +43,7 @@ RUN cd bcc/build && make
 RUN cd bcc/build && make install
 
 RUN git clone https://github.com/iovisor/bpftrace
-RUN cd bpftrace && git checkout c7425a0d242175bf1c057a09b113614f3f1c8450
+RUN cd bpftrace && git checkout v0.9
 RUN mkdir bpftrace/build; cd bpftrace/build; cmake -DCMAKE_BUILD_TYPE=Release ..
 RUN cd bpftrace/build && make -j8
 RUN cd bpftrace/build && make install

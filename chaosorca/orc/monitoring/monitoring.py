@@ -32,27 +32,28 @@ def startMonitoringNetworkContainer(container_name, container_ip):
         remove=True
         )
 
-def startMonitoringSyscallContainer(container_name, pid_to_monitor, fault_string=''):
+def startMonitoringSyscallContainer(container_name, pid_to_monitor):
     '''Starts the syscall monitoring on a given container & PID'''
     return docker_client.containers.run(
         'chaosorca/sysm',
-        cap_add=['SYS_PTRACE'],
+        cap_add=['SYS_ADMIN'],
         detach=True,
-        environment=['SYSM_PID='+pid_to_monitor, 'SYSM_FAULT='+fault_string],
+        environment=['SYSM_PID='+pid_to_monitor],
         name=base_name_sysm+'.'+container_name,
         pid_mode="container:"+container_name,
-        remove=True)
+        remove=True,
+        volumes={'/sys/kernel/debug': {'bind': '/sys/kernel/debug', 'mode': 'ro'}})
 
 def selectProcessInsideContainer(container):
     '''Selects a local process inside a container'''
-    processes = container_api.getProcesses(container.name)['processes']
+    processes = container.top()['Processes']#container_api.getProcesses(container.name)['processes']
     if len(processes) == 1:
         # Easy case, just select that one for monitoring.
         return processes[0][0] # First process, where the first value is the PID.
     elif len(processes) > 1:
         # Harder case, ask to select one.
         print('Multiple processes to choose from, please select 1.')
-        print(processes)
+        print(["%s PID:%s" % (proc[-1], proc[1]) for proc in processes])
         pid_to_monitor = input('Input PID to monitor: ')
         return pid_to_monitor
     else:

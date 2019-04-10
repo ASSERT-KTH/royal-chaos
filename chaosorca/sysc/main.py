@@ -10,7 +10,7 @@ from prometheus_client import Counter, start_http_server
 syscall_counter = Counter(
     'syscall_counter',
     '<description/>',
-    ['syscall'])
+    ['syscall', 'params'])
 
 procs_to_kill = []
 def signal_handler(signal, frame):
@@ -28,35 +28,43 @@ def main():
     start_http_server(12301)
 
     # Parse variables.
-    if 'SYSM_PID' not in os.environ:
+    if 'SYSC_PID' not in os.environ:
         print('Missing required PID parameter')
         exit()
-    pid = os.environ['SYSM_PID']
 
-    cmd = ['./trace_command.sh', pid]
+    if 'SYSC_FAULT' in os.environ and os.environ['SYSC_FAULT'] is not '':
+        print('Missing required fault parameter')
 
-    print('Starting bpftrace: %s' % ' '.join(cmd))
+    sysm_fault = os.environ['SYSC_FAULT']
+    pid = os.environ['SYSC_PID']
+    cmd = ['strace', '-p', pid]
+    cmd = cmd + ['-e', 'inject=%s' % sysm_fault]
+
+    print('Starting strace: %s' % cmd)
     proc = subprocess.Popen(
         cmd,
-        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
         universal_newlines=True,
         preexec_fn=os.setsid)
     # Adds process to kill list.
     procs_to_kill.append(proc)
 
     while True:
-        line = proc.stdout.readline()
+        line = proc.stderr.readline()
         if line != '':
             line = line.rstrip()
-            #Split outputs
-            items = line.split()
-            if len(items) == 2:
-                count = items[1]
-                #[...syscall_enter_<syscall>]:
-                syscall = items[0].split('_')[-1][:-2]
-                #print(syscall, 'executed', count, 'times')
-                syscall_counter.labels(
-                    syscall=syscall).inc(int(count))
+            #the real code does filtering here
+            splitline = line.split('(')
+            syscall = splitline[0]
+            params = ''.join(splitline[1:]) #everything but the syscall itself.
+
+            # TODO: filter out all but the syscall under perturbation.
+            syscall_counter.labels(
+                syscall=syscall,
+                params=params).inc()
 
 if __name__ == '__main__':
     main()
+
+
+
