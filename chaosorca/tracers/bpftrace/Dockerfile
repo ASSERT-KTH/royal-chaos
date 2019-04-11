@@ -1,4 +1,4 @@
-FROM ubuntu:bionic
+FROM ubuntu:bionic as bpf-build
 RUN apt-get update
 RUN apt-get install -y \
     wget \
@@ -47,3 +47,15 @@ RUN cd bpftrace && git checkout v0.9
 RUN mkdir bpftrace/build; cd bpftrace/build; cmake -DCMAKE_BUILD_TYPE=Release ..
 RUN cd bpftrace/build && make -j8
 RUN cd bpftrace/build && make install
+
+FROM ubuntu:bionic as bpf-run
+RUN apt-get update && apt-get install -y \
+    llvm-6.0-runtime \
+    libclang-6.0-dev \
+    libelf-dev
+COPY --from=bpf-build /usr/share/bcc /usr/share/bcc
+COPY --from=bpf-build /usr/include/bcc /usr/include/bcc
+COPY --from=bpf-build /usr/lib/x86_64-linux-gnu/libbcc* /usr/lib/x86_64-linux-gnu/
+COPY --from=bpf-build /usr/local/share/bpftrace /usr/local/share/bpftrace
+COPY --from=bpf-build /usr/local/bin/bpftrace /usr/local/bin/bpftrace
+

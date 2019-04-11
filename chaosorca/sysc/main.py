@@ -32,12 +32,14 @@ def main():
         print('Missing required PID parameter')
         exit()
 
-    if 'SYSC_FAULT' in os.environ and os.environ['SYSC_FAULT'] is not '':
+    if 'SYSC_FAULT' not in os.environ and os.environ['SYSC_FAULT'] is not '':
         print('Missing required fault parameter')
 
+    syscall = os.environ['SYSC_FAULT'].split(':')[0]
     sysm_fault = os.environ['SYSC_FAULT']
     pid = os.environ['SYSC_PID']
     cmd = ['strace', '-p', pid]
+    cmd = cmd + ['-e', 'trace=%s' % syscall]
     cmd = cmd + ['-e', 'inject=%s' % sysm_fault]
 
     print('Starting strace: %s' % cmd)
