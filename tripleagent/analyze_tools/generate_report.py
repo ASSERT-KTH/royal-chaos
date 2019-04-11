@@ -28,8 +28,12 @@ def main():
     result = dict()
     p_point_analysis = dict()
     fo_point_analysis = dict()
-    p_result_column_name = "downloaded the file"
-    fo_result_column_name = "downloaded the file in fo"
+    # column name for TTorrent
+    # p_result_column_name = "downloaded the file"
+    # fo_result_column_name = "downloaded the file in fo"
+    # column name for HedWig
+    p_result_column_name = "successfully send the mail"
+    fo_result_column_name = "successfully send the mail in fo"
 
     for row in rows:
         if row["covered"] != "yes": continue
