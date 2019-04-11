@@ -17,7 +17,7 @@ OUTPUTFILE = '' # default: perturbationAndFoPointsList_tasks.csv
 def main():
     handle_args(sys.argv[1:])
 
-    # load perturbationAndFoPointsList
+    # load perturbationPointsList
     headers, rows = read_from_csv(PERTURBATION_POINTS_FILE)
     headers.extend(["handledBy", "distance", "stackHeight", "foPoint"])
 
