@@ -12,7 +12,7 @@ import json
 import numpy
 
 FO_EXPERIMENTS_RESULT = ''
-PERTURBATION_POINTS_FILE = '' # this is for analyzing perturbation points without fo methods
+PERTURBATION_POINTS_FILE = '' # this is for analyzing perturbation points which don't have fo methods
 OUTPUTFILE = '' # default: statistic_result.json
 
 def main():
@@ -38,7 +38,7 @@ def main():
                 "methodSignature": row["methodSignature"], "exceptionType": row["exceptionType"], "lineIndexNumber": row["lineIndexNumber"], 
                 "runTimesInInjection": row["run times in injection"], "exitStatus": row["exit status"], "cpuTime(in_seconds)": row["process cpu time(in seconds)"],
                 "averageMemoryUsage(in_MB)": row["average memory usage(in MB)"], "peakThreadCount": row["peak thread count"], "handledBy": row["handledBy"],
-                "distance": row["distance"], "stackHeight": row["stackHeight"], "pointType": "TBD", "foMethodsCount": 1,
+                "distance": row["distance"], "stackHeight": row["stackHeight"], "pointType": "TBD", "foMethodsCount": 1, "improvement": "",
                 "foMethods": {row["foPoint"]: {"runTimesInFO": row["run times in fo"], "exitStatusInFO": row["exit status in fo"],
                     "cpuTimeInFO": row["process cpu time(in seconds) in fo"], "averageMemoryUsageInFO": row["average memory usage(in MB) in fo"],
                     "peakThreadCountInFO": row["peak thread count in fo"], "foPointType": "TBD"}}}
@@ -93,7 +93,9 @@ def main():
     fragile_count = 0
     sensitive_count = 0
     immunized_count = 0
+    fo_score_ref = {"FRAGILE": 0, "SENSITIVE": 1, "IMMUNIZED": 3}
     fo_count = list()
+    improvement_stat = {"FRAGILE->SENSITIVE": list(), "FRAGILE->IMMUNIZED": list(), "SENSITIVE->IMMUNIZED": list()}
     for point in result:
         fo_count.append(len(result[point]["foMethods"]))
         if p_point_analysis[point]["fail"] > 0 and p_point_analysis[point]["success"] == 0:
@@ -116,7 +118,19 @@ def main():
             else:
                 logging.warning("Please check the following foMethod: %s"%(fo_point_analysis[point][foMethod]))
                 logging.warning(point + ", " + foMethod)
-    
+            if result[point]["improvement"] == "" or fo_score_ref[result[point]["foMethods"][foMethod]["foPointType"]] > fo_score_ref[result[point]["improvement"]]:
+                result[point]["improvement"] = result[point]["foMethods"][foMethod]["foPointType"]
+
+        if len(result[point]["foMethods"]) > 0:
+            ori_score = fo_score_ref[result[point]["pointType"]]
+            improved_score = fo_score_ref[result[point]["improvement"]]
+            if improved_score - ori_score == 1:
+                improvement_stat["FRAGILE->SENSITIVE"].append(point)
+            elif improved_score - ori_score == 3:
+                improvement_stat["FRAGILE->IMMUNIZED"].append(point)
+            elif improved_score - ori_score == 2:
+                improvement_stat["SENSITIVE->IMMUNIZED"].append(point)
+
     # write result to OUTPUTFILE
     write2json(OUTPUTFILE, result)
 
@@ -127,8 +141,11 @@ def main():
     logging.info("IMMUNIZED: %d"%immunized_count)
     logging.info("Total number: %d"%len(result))
     logging.info("For failure-oblivious experiments, TripleAgent detected:")
-    logging.info("Total number: %d"%len(fo_count))
+    logging.info("Potential failure-oblivious methods: %d"%sum(fo_count))
     logging.info("Minimum, mean, Maximum: %d,%d,%d"%(min(fo_count), numpy.mean(fo_count), max(fo_count)))
+    logging.info("Improvement")
+    for improvement in improvement_stat:
+        logging.info("%s: %d"%(improvement, len(improvement_stat[improvement])))
 
 def handle_args(argv):
     global FO_EXPERIMENTS_RESULT
