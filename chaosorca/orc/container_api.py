@@ -40,7 +40,7 @@ def getContainer(name):
 def hasMonitoring(name):
     '''Returns True if container has monitoring'''
     containers = docker_client.containers.list(
-        filters={'name': 'se.kth.chaosorca.*.%s' % name})
+        filters={'name': 'se.kth.chaosorca.*m.%s' % name})
     return len(containers) != 0
 
 

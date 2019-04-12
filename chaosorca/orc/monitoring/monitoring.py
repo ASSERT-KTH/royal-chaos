@@ -53,8 +53,20 @@ def selectProcessInsideContainer(container):
     elif len(processes) > 1:
         # Harder case, ask to select one.
         print('Multiple processes to choose from, please select 1.')
-        print(["%s PID:%s" % (proc[-1], proc[1]) for proc in processes])
-        pid_to_monitor = input('Input PID to monitor: ')
+        pids = [int(proc[1]) for proc in processes]
+        pid_and_name = ["%s PID:%s" % (proc[-1], proc[1]) for proc in processes]
+        while True:
+            print(pid_and_name)
+            pid_to_monitor = input('Input PID to monitor: ')
+            try:
+                if int(pid_to_monitor) in pids:
+                    # We have a valid pid, continue with other stuff.
+                    break
+            except ValueError:
+                pass
+            print(pids, pid_to_monitor)
+            print('Invalid pid, try again')
+
         return pid_to_monitor
     else:
         # This _should_ never happen.
@@ -129,12 +141,20 @@ def stopMonitoringContainer(container, network_container):
 
 def stopMonitoringNetwork(container):
     '''Stops the network monitoring on the given container.'''
-    netm_container = docker_client.containers.get(base_name_netm+'.'+container.name)
+    try:
+        netm_container = docker_client.containers.get(base_name_netm+'.'+container.name)
+    except Exception:
+        print('No network monitoring container to stop')
+        return
     stopMonitoringContainer(netm_container, container)
 
 def stopMonitoringSyscall(container):
     '''Stops the network monitoring on the given container.'''
-    syscall_container = docker_client.containers.get(base_name_sysm+'.'+container.name)
+    try:
+        syscall_container = docker_client.containers.get(base_name_sysm+'.'+container.name)
+    except Exception:
+        print('No syscall monitoring container to stop')
+        return
     stopMonitoringContainer(syscall_container, syscall_container)
 
 def waitForMonitoring(address):
