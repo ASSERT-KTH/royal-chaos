@@ -33,10 +33,10 @@ public class ThrowExceptionOnTTorrent20 {
             for (int i = 1; i < tasksInfo.size(); i++) {
                 task = new ArrayList<>(Arrays.asList(tasksInfo.get(i)));
                 // delete the downloaded file
-                targetFile = new File(rootPath + "/" + torrentFile.split("\\.")[0]);
+                targetFile = new File(rootPath + "/CentOS-7-x86_64-NetInstall-1810.iso");
                 if (targetFile.exists()) {
                     try {
-                        process = Runtime.getRuntime().exec(new String[]{"rm", "-rf", torrentFile.split("\\.")[0]}, null, new File(rootPath));
+                        process = Runtime.getRuntime().exec(new String[]{"rm", "-rf", "CentOS-7-x86_64-NetInstall-1810.iso"}, null, new File(rootPath));
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -55,8 +55,6 @@ public class ThrowExceptionOnTTorrent20 {
                 System.out.println(String.format("[AGENT_CONTROLLER] exceptionType: %s, injections: %s, rate: %s, mode: %s", exceptionType, injections, rate, mode));
 
                 try {
-                    targetFile = new File(rootPath + "/" + torrentFile.split("\\.")[0]);
-                    targetFile.mkdir();
                     String command = null;
                     if (injections.equals("1")) {
                         monitoringAgentOn = true;
@@ -114,9 +112,9 @@ public class ThrowExceptionOnTTorrent20 {
 
                     exitValue = process.waitFor();
                     task.set(12, injectionExecutions + "; normal: " + normalExecutions);
-                    targetFile = new File(rootPath + "/CentOS-7-x86_64-NetInstall-1810/CentOS-7-x86_64-NetInstall-1810.iso");
+                    targetFile = new File(rootPath + "/CentOS-7-x86_64-NetInstall-1810.iso");
                     if (targetFile.exists()) {
-                        process = Runtime.getRuntime().exec("sha256sum ./CentOS-7-x86_64-NetInstall-1810/CentOS-7-x86_64-NetInstall-1810.iso", null, new File(rootPath));
+                        process = Runtime.getRuntime().exec("sha256sum ./CentOS-7-x86_64-NetInstall-1810.iso", null, new File(rootPath));
                         inputStream = process.getInputStream();
                         inputStreamReader = new InputStreamReader(inputStream);
                         bufferedReader = new BufferedReader(inputStreamReader);
