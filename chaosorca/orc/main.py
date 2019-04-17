@@ -7,7 +7,7 @@ import click
 # Local imports
 from perturbations import commands as p_cmd
 from monitoring import commands as c_cmd
-import prometheus_api
+from metrics import commands as m_cmd
 import container_api
 
 @click.group()
@@ -21,10 +21,6 @@ def list():
     print([c.name for c in container_api.list()])
 
 @main.command()
-def m():
-    print(prometheus_api.testQuery())
-
-@main.command()
 @click.option('--name', prompt='Container name?')
 def procs_local(name):
     '''prints a containers local processes using the pid-values in their namespace'''
@@ -34,6 +30,7 @@ def procs_local(name):
 main.add_command(p_cmd.fault) # Fault injection commands.
 main.add_command(c_cmd.prom) # Prometheus start/stop/more.
 main.add_command(c_cmd.monit) # Monitoring start/stop/more.
+main.add_command(m_cmd.metric) # Metrics export from Prometheus.
 
 if __name__ == '__main__':
     main()
