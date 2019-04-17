@@ -64,13 +64,13 @@ public class ThrowExceptionOnTTorrent20 {
                                         "defaultMode:%s,filter:%s,efilter:%s,lineNumber:%s,countdown:%s,rate:%s " +
                                         "-jar %s -o %s --max-download 1024 -s 0 %s 2>&1",
                                 timeout, monitoringAgentPath, javaagentPath, mode, filter.replace("$", "\\$"),
-                                exceptionType, lineIndexNumber, injections, rate, threadName, targetFile.getPath(), torrentFile);
+                                exceptionType, lineIndexNumber, injections, rate, threadName, targetFile.getAbsolutePath(), torrentFile);
                     } else {
                         command = String.format("timeout --signal=9 %s java -noverify -javaagent:%s=mode:throw_e," +
                                         "defaultMode:%s,filter:%s,efilter:%s,lineNumber:%s,countdown:%s,rate:%s " +
                                         "-jar %s -o %s --max-download 1024 -s 0 %s 2>&1",
                                 timeout, javaagentPath, mode, filter.replace("$", "\\$"), exceptionType,
-                                lineIndexNumber, injections, rate, threadName, targetFile.getPath(), torrentFile);
+                                lineIndexNumber, injections, rate, threadName, targetFile.getAbsolutePath(), torrentFile);
                     }
                     System.out.println("[AGENT_CONTROLLER] command: " + command);
 
