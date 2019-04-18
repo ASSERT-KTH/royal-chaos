@@ -17,15 +17,8 @@ def main():
 
 @main.command()
 def list():
-    '''List all containers relevant to royal currently running'''
+    '''List all containers relevant to chaosorca currently running'''
     print([c.name for c in container_api.list()])
-
-@main.command()
-@click.option('--name', prompt='Container name?')
-def procs_local(name):
-    '''prints a containers local processes using the pid-values in their namespace'''
-    # For each process it takes the first and last argument and puts it in a list.
-    print(['%s %s' % (p[0], p[-1]) for p in container_api.getProcesses(name)['processes']])
 
 main.add_command(p_cmd.fault) # Fault injection commands.
 main.add_command(c_cmd.prom) # Prometheus start/stop/more.
