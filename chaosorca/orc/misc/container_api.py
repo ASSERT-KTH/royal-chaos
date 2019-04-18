@@ -43,10 +43,15 @@ def hasMonitoring(name):
         filters={'name': 'se.kth.chaosorca.*m.%s' % name})
     return len(containers) != 0
 
-
-
 def list():
     '''List all containers relevant to royal currently running'''
     containers = docker_client.containers.list(
         filters={'name': 'se.kth.chaosorca'})
     return containers
+
+def filteredList():
+    '''List all containers that are not us, as in container we are able to do stuff on'''
+    all_containers = docker_client.containers.list()
+    excluded_containers = list()
+    filtered_containers = [c for c in all_containers if c not in excluded_containers]
+    return filtered_containers

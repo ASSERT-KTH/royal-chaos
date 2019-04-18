@@ -8,7 +8,8 @@ import click
 from perturbations import commands as p_cmd
 from monitoring import commands as c_cmd
 from metrics import commands as m_cmd
-import container_api
+from misc import container_api
+from misc import click_autocompletion as cauto
 
 @click.group()
 def main():
@@ -19,6 +20,11 @@ def main():
 def list():
     '''List all containers relevant to chaosorca currently running'''
     print([c.name for c in container_api.list()])
+
+@main.command()
+def flist():
+    '''List all container that can be attacked.'''
+    print([c.name for c in container_api.filteredList()])
 
 main.add_command(p_cmd.fault) # Fault injection commands.
 main.add_command(c_cmd.prom) # Prometheus start/stop/more.

@@ -5,7 +5,8 @@ from monitoring import monitoring
 from monitoring import prometheus
 from monitoring import cadvisor
 
-import container_api
+from misc import click_autocompletion as cauto
+from misc import container_api
 
 @click.group(invoke_without_command=False)
 def prom():
@@ -18,7 +19,7 @@ def monit():
     pass
 
 @monit.command()
-@click.option('--name', prompt='Container name?')
+@click.option('--name', prompt='Container name?', autocompletion=cauto.getContainers)
 def start(name):
     '''Start to monitor container with given name'''
     # First do some simple verification of command.
@@ -31,14 +32,14 @@ def start(name):
     monitoring.startMonitoring(container)
 
 @monit.command()
-@click.option('--name', prompt='Container name?')
+@click.option('--name', prompt='Container name?', autocompletion=cauto.getContainers)
 def stop(name):
     '''Stop to monitor container with given name'''
     container = container_api.getContainer(name)
     monitoring.stopMonitoring(container)
 
 @monit.command()
-@click.option('--name', prompt='Container name?')
+@click.option('--name', prompt='Container name?', autocompletion=cauto.getContainers)
 def hasMonitoring(name):
     print(container_api.hasMonitoring(name))
 

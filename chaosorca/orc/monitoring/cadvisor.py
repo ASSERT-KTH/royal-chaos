@@ -3,7 +3,7 @@ import docker
 
 # Local import
 import config
-import monitoring.common_helpers as common
+from misc import common_helpers as common
 import monitoring.prometheus_targets as monitoring_targets
 
 docker_client = docker.from_env()

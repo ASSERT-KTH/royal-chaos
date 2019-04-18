@@ -5,8 +5,8 @@ import docker
 
 # Local imports
 import config
-import container_api
-from monitoring import common_helpers as common
+from misc import container_api
+from misc import common_helpers as common
 from monitoring import monitoring
 import monitoring.prometheus_targets as monitoring_targets
 

@@ -6,8 +6,8 @@ import docker
 
 # Local import
 import config
-import container_api
-import monitoring.common_helpers as common
+from misc import container_api
+from misc import common_helpers as common
 import monitoring.prometheus_targets as monitoring_targets
 
 docker_client = docker.from_env()
