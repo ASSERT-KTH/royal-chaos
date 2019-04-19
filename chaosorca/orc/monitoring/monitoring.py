@@ -96,20 +96,12 @@ def startMonitoring(container):
 
     #2. Launch syscall monitoring.
     pid_to_monitor = selectProcessInsideContainer(container)
+    print('Launching monitoring for PID', pid_to_monitor)
     sysm_container = startMonitoringSyscallContainer(container.name, pid_to_monitor)
     # Connect container to monitoring network.
     connectContainerToMonitoringNetwork(sysm_container, container.name)
 
-    #3. Container ports, work-in-progress.
-    # sends a simple http request to each open port.
-    container_ports = container.attrs['NetworkSettings']['Ports']
-    for inside_port in container_ports:
-        for outside in container_ports[inside_port]:
-            #print('open port', outside['HostPort'])
-            # Ignore return value, just to send traffic to verify monitoring working.
-            requests.get(url='http://localhost:'+outside['HostPort'])
-
-    #4. Done, ready for perturbations.
+    #3. Done, ready for perturbations.
     print(SUCCESS, 'Monitoring launched')
     return container
 
@@ -156,15 +148,3 @@ def stopMonitoringSyscall(container):
         print('No syscall monitoring container to stop')
         return
     stopMonitoringContainer(syscall_container, syscall_container)
-
-def waitForMonitoring(address):
-    '''Recursively waits for address to be up'''
-    # TODO: Can get stuck here if the address does not exist, rewrite to handle this.
-    print('.', end='', flush=True)
-    try:
-        requests.get(address)
-        print('monitoring is up!')
-    except Exception:
-        # try again
-        time.sleep(0.05)
-        waitForMonitoring(address)

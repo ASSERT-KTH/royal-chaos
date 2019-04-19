@@ -2,6 +2,7 @@ import csv
 import requests
 import sys
 import time
+import datetime
 
 PROMETHEUS_URL = 'http://localhost:9090/api/v1/%s'
 PROMETHEUS_QUERY = PROMETHEUS_URL % 'query'
@@ -32,16 +33,28 @@ def toCsv(json):
 
     # Convert the values to a more compact csv, where each
     # column represents one type of systemcall.
+
+    for res in results:
+        print(res['metric'].values(), len(res['values']))
+
     length = len(results[0]['values'])
     for index in range(length):
+        # Reverse index loop as to keep any new metrics appearing in the correct
+        # order. This will make sure new data is put in the correct part of the output
+        # and older nonexisting data zeroed.
+        reverse_index = length - index - 1
         dictobj = {}
-        time = results[0]['values'][index][0]
+        time = results[0]['values'][reverse_index][0]
         dictobj['timestamp'] = time
+        print(datetime.datetime.fromtimestamp(time))
         for res in results:
             name = list(res['metric'].values())[0]
-            dictobj[name] = res['values'][index][1:][0]
+            try:
+                dictobj[name] = res['values'][reverse_index][1:][0]
+            except Exception:
+                dictobj[name] = 0
+                print('Error: missmatching data lengths', name)
         writer.writerow(dictobj)
-
 
 # Syscalls & HTTP networking queries.
 
