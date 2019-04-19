@@ -33,13 +33,11 @@ public class ThrowExceptionOnTTorrent20 {
             for (int i = 1; i < tasksInfo.size(); i++) {
                 task = new ArrayList<>(Arrays.asList(tasksInfo.get(i)));
                 // delete the downloaded file
-                targetFile = new File(rootPath + "/CentOS-7-x86_64-NetInstall-1810.iso");
-                if (targetFile.exists()) {
-                    try {
-                        process = Runtime.getRuntime().exec(new String[]{"rm", "-rf", "CentOS-7-x86_64-NetInstall-1810.iso"}, null, new File(rootPath));
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                try {
+                    process = Runtime.getRuntime().exec(new String[]{"bash", "-c", "rm -f CentOS-7-x86_64-NetInstall-1810.iso*"}, null, new File(rootPath));
+                    process = Runtime.getRuntime().exec(new String[]{"bash", "-c", "rm -f sha256sum.*"}, null, new File(rootPath));
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
 
                 if (!task.get(10).equals("yes")) continue;
@@ -60,15 +58,15 @@ public class ThrowExceptionOnTTorrent20 {
                         monitoringAgentOn = true;
                         command = String.format("timeout --signal=9 %s java -noverify -agentpath:%s -javaagent:%s=mode:throw_e," +
                                         "defaultMode:%s,filter:%s,efilter:%s,lineNumber:%s,countdown:%s,rate:%s " +
-                                        "-jar %s -o %s --max-download 1024 -s 0 %s 2>&1",
+                                        "-jar %s -o . --max-download 1024 -s 0 %s 2>&1",
                                 timeout, monitoringAgentPath, javaagentPath, mode, filter.replace("$", "\\$"),
-                                exceptionType, lineIndexNumber, injections, rate, threadName, targetFile.getAbsolutePath(), torrentFile);
+                                exceptionType, lineIndexNumber, injections, rate, threadName, torrentFile);
                     } else {
                         command = String.format("timeout --signal=9 %s java -noverify -javaagent:%s=mode:throw_e," +
                                         "defaultMode:%s,filter:%s,efilter:%s,lineNumber:%s,countdown:%s,rate:%s " +
-                                        "-jar %s -o %s --max-download 1024 -s 0 %s 2>&1",
+                                        "-jar %s -o . --max-download 1024 -s 0 %s 2>&1",
                                 timeout, javaagentPath, mode, filter.replace("$", "\\$"), exceptionType,
-                                lineIndexNumber, injections, rate, threadName, targetFile.getAbsolutePath(), torrentFile);
+                                lineIndexNumber, injections, rate, threadName, torrentFile);
                     }
                     System.out.println("[AGENT_CONTROLLER] command: " + command);
 
@@ -148,6 +146,8 @@ public class ThrowExceptionOnTTorrent20 {
                     }
                     if (monitoringAgentOn) {
                         // rename the monitoring agent log
+                        targetFile = new File(rootPath + "/" + task.get(0) + ".log");
+                        if (targetFile.exists()) { targetFile.delete(); }
                         targetFile = new File(rootPath + "/monitoring_agent.log");
                         targetFile.renameTo(new File(rootPath + "/" + task.get(0) + ".log"));
                     }
