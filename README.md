@@ -18,3 +18,10 @@ More details in the paper: [TripleAgent: Monitoring, Perturbation And Failure-ob
 We seek to attain a simplified illustration about chaos engineering applied on a simulated Netflix environment in ns-3 with the intention to provide some enlightenment for the principles of chaos engineering and in addition to this we will also present a suggestion about how to infer an unknown system as a possible application, derived from the knowledges acquired from our chaos journey.
 
 More details in the paper: [Simulation of Chaos Engineering for Internet-scale Software with NS-3 (Zubayer Anton, Luong Tai, DiVA, 2018)](http://www.diva-portal.org/smash/record.jsf?pid=diva2%3A1216905&dswid=-2200)
+
+## ChaosOrca
+ChaosOrca is a tool for doing Chaos Engineering on containers by perturbing system calls for processes inside containers. Where monitoring/observability is a key part of the system to be able to reason about the given perturbations effect on the container. The system utilises strace built in system call fault injections, as such it can add delays, return error codes, do so intermittenly and more. Metrics recorded are System calls, HTTP, Logs and Performance related ones. 
+
+More details to come.
+
+
