@@ -63,7 +63,10 @@ class Fault:
                         self.signal,
                         self.when])))
         # Syscall should be the first argument and without the equals part.
-        return '%s:%s' % (self.syscall.value, cmds)
+        if self.syscall != None:
+            return '%s:%s' % (self.syscall.value, cmds)
+        else:
+            return cmds
 
 # Variables
 docker_client = docker.from_env()

@@ -20,7 +20,7 @@ def test():
 @click.option('--name', prompt='Container name?', autocompletion=cauto.getContainers)
 @click.option('--delay-enter', type=int, default=None)
 @click.option('--delay-exit', type=int, default=None)
-@click.option('--error', default='EPERM', autocompletion=cauto.getErrno)
+@click.option('--error', default=None, autocompletion=cauto.getErrno)
 @click.option('--signal', default=None)
 @click.option('--syscall', prompt='What syscall?', autocompletion=cauto.getSyscalls)
 @click.option('--when', default=None)
@@ -34,7 +34,7 @@ def start(name, delay_enter, delay_exit, error, signal, syscall, when):
         signal=signal,
         syscall=syscall,
         when=when)
-    sysfault.applyFault(container, fault)#sysfault.Fault(syscall='open', error='ENOENT', when='1+2'))
+    sysfault.applyFault(container, fault)
     print('Started sysfault %s on %s' % (fault, container.name))
 
 @fault.command()
