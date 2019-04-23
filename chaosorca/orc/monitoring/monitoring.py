@@ -23,6 +23,7 @@ SUCCESS = config.LOG_SUCCESS
 
 def startMonitoringNetworkContainer(container_name, container_ip):
     '''Starts the network monitoring on a given container'''
+    print('starting network monitor with ip %s' % container_ip)
     return docker_client.containers.run(
         'chaosorca/netm',
         detach=True,
@@ -86,6 +87,7 @@ def startMonitoring(container):
 
     # Variables:
     container_ip = common.getIpFromContainer(container)
+    print('container ip=', container_ip)
 
     #1. Launch network monitoring utilizing the same networking namespace/stack.
     startMonitoringNetworkContainer(container.name, container_ip)
