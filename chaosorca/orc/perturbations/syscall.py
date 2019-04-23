@@ -2,6 +2,7 @@ from functools import reduce
 
 # Package import
 import docker
+import click
 
 # Local imports
 import config
@@ -33,7 +34,20 @@ class FaultObject:
         '''Returns the representation %s=%s'''
         return '%s=%s' % (self.name, self.value)
 
-class Fault:
+class Fault(click.ParamType):
+    name="fault"
+
+    def convert(self, value, param, ctx):
+        '''Converts : separated string to instance of Fault'''
+        value_split = value.split(':')
+        syscall = value_split[0]
+        value_dict = {'syscall':syscall}
+        for v in value_split[1:]:
+            v_split = v.split('=')
+            value_dict[v_split[0]] = v_split[1]
+
+        return Fault(**value_dict)
+
     def __init__(self,
         delay_enter=None,
         delay_exit=None,
@@ -43,8 +57,8 @@ class Fault:
         when=None):
 
         # Initalise delay with *1000 to use milliseconds instead of microseconds.
-        self.delay_enter = FaultObject('delay_enter', delay_enter*1000 if delay_enter else None)
-        self.delay_exit = FaultObject('delay_exit', delay_exit*1000 if delay_exit else None)
+        self.delay_enter = FaultObject('delay_enter', int(delay_enter)*1000 if delay_enter else None)
+        self.delay_exit = FaultObject('delay_exit', int(delay_exit)*1000 if delay_exit else None)
         self.error = FaultObject('error', error)
         self.signal = FaultObject('signal', signal)
         self.syscall = FaultObject('syscall', syscall)

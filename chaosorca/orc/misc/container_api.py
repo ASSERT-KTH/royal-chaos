@@ -55,3 +55,9 @@ def filteredList():
     excluded_containers = list()
     filtered_containers = [c for c in all_containers if c not in excluded_containers]
     return filtered_containers
+
+def getChaosContainers():
+    '''Return all containers with chaos in them'''
+    chaos_list = docker_client.containers.list(
+        filters={'name': 'se.kth.chaosorca.*.sysc.*'})
+    return chaos_list

@@ -38,9 +38,22 @@ def start(name, delay_enter, delay_exit, error, signal, syscall, when):
     print('Started sysfault %s on %s' % (fault, container.name))
 
 @fault.command()
-@click.option('--name', prompt='Container name?', autocompletion=cauto.getContainers)
-def stop(name):
+@click.option('--name', autocompletion=cauto.getContainers)
+@click.option('--all', is_flag=True)
+def stop(name, all):
     '''Stop syscall perturbation on container'''
+    if all is True:
+        all_names = [c.name for c in container_api.getChaosContainers()]
+        for name in all_names:
+            name = name.split('se.kth.chaosorca.sysc.')[-1]
+            stopChaos(name)
+    elif name:
+        stopChaos(name)
+    else:
+        print('Error: missing parameters')
+        return
+def stopChaos(name):
+    '''Stops sysfault on container with given name'''
     container = container_api.getContainer(name)
     sysfault.clearFaults(container)
     print('Stopped sysfault on %s' % container.name)
@@ -59,12 +72,10 @@ class Premade():
     for s in syscalls:
         for e in errors:
             for d in delays:
-                if e is None and d is None: #or (d is not None and e is not None):
+                if e is None and d is None:
                     continue #Skip, as these are the ones with no effect.
-                fault_string = '-'.join(map(str, filter(
-                                lambda elem : elem is not None, [s,e,d])))
                 faults.append((
-                    fault_string,
+                    #fault_string,
                     sysfault.Fault(syscall=s, error=e, delay_enter=d)))
 
     def getCombinations(self):
@@ -74,14 +85,16 @@ class Premade():
 
 autocomplete_faults = Premade().getCombinations()
 def autocompleteFaults(ctx, args, incomplete):
-    return [f for f in autocomplete_faults if incomplete in f[0]]
+    return [f for f in autocomplete_faults if incomplete in str(f)]
 
 @fault.command()
 @click.option('--name', prompt='Container name?', autocompletion=cauto.getContainers)
-@click.option('--cmd', prompt='True', autocompletion=autocompleteFaults)
+@click.option('--cmd', autocompletion=autocompleteFaults, type=sysfault.Fault())
 def premade(name, cmd):
     '''A bunch of premade auto completed perturbation'''
-    print(len(faults))
-    sysfault.applyFault(container, fault)
-    print('Started sysfault %s on %s' % (fault, container.name))
-
+    container = container_api.getContainer(name)
+    if not cmd:
+        print('Invalid cmd %s' % cmd)
+        exit()
+    sysfault.applyFault(container, cmd)
+    print('Started sysfault %s on %s' % (cmd, container.name))
