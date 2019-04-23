@@ -1,7 +1,6 @@
 import csv
 import requests
 import sys
-import time
 import datetime
 
 PROMETHEUS_URL = 'http://localhost:9090/api/v1/%s'
@@ -34,9 +33,6 @@ def toCsv(json):
     # Convert the values to a more compact csv, where each
     # column represents one type of systemcall.
 
-    for res in results:
-        print(res['metric'].values(), len(res['values']))
-
     length = len(results[0]['values'])
     for index in range(length):
         # Reverse index loop as to keep any new metrics appearing in the correct
@@ -45,8 +41,7 @@ def toCsv(json):
         reverse_index = length - index - 1
         dictobj = {}
         time = results[0]['values'][reverse_index][0]
-        dictobj['timestamp'] = time
-        print(datetime.datetime.fromtimestamp(time))
+        dictobj['timestamp'] = datetime.datetime.fromtimestamp(time)
         for res in results:
             name = list(res['metric'].values())[0]
             try:
@@ -58,11 +53,9 @@ def toCsv(json):
 
 # Syscalls & HTTP networking queries.
 
-def syscallQuery(name, timespan=15*60, rate=60, step=3):
+def syscallQuery(name, end_time, timespan=15*60, rate=60, step=3):
     '''Queries prometheus for the rate of syscall queries.'''
-    current_time = int(round(time.time()))
-    end_time = current_time
-    start_time = current_time - timespan
+    start_time = end_time - timespan
     if (end_time - start_time) / step > 10000:
         print('Please do a shorter range')
         # As maximum sample size in prometheus is 11000.
@@ -74,11 +67,9 @@ def syscallQuery(name, timespan=15*60, rate=60, step=3):
     res_json = r.json()
     toCsv(res_json)
 
-def networkQuery(name, timespan=15*60, rate=60, step=3):
+def networkQuery(name, end_time, timespan=15*60, rate=60, step=3):
     '''Queries prometheus for the network.'''
-    current_time = int(round(time.time()))
-    end_time = current_time
-    start_time = current_time - timespan
+    start_time = end_time - timespan
     if (end_time - start_time) / step > 10000:
         print('Please do a shorter range')
         # As maximum sample size in prometheus is 11000.
@@ -96,10 +87,8 @@ def networkQuery(name, timespan=15*60, rate=60, step=3):
 # - Memory usage
 # - IO activity
 
-def systemQuery(query, timespan, step):
-    current_time = int(round(time.time()))
-    end_time = current_time
-    start_time = current_time - timespan
+def systemQuery(query, end_time, timespan, step):
+    start_time = end_time - timespan
 
     if (end_time - start_time) / step > 10000:
         print('Please do a shorter range')
@@ -111,32 +100,32 @@ def systemQuery(query, timespan, step):
     res_json = r.json()
     return res_json
 
-def cpuQuery(name, timespan=15*60, rate=60, step=3):
+def cpuQuery(name, end_time, timespan=15*60, rate=60, step=3):
     '''Queries Prometheus for the cpu usage'''
     query = RATEQUERY_SYSTEM_CPU % (name, rate)
-    res_json = systemQuery(query, timespan, step)
+    res_json = systemQuery(query, timespan, step, end_time)
     toCsv(res_json)
 
-def memQuery(name, timespan=15*60, step=3):
+def memQuery(name, end_time, timespan=15*60, step=3):
     '''Queries Prometheus for the memory usage'''
     query = QUERY_SYSTEM_MEM % (name)
-    res_json = systemQuery(query, timespan, step)
+    res_json = systemQuery(query, end_time, timespan, step)
     toCsv(res_json)
 
-def netreceiveQuery(name, timespan=15*60, rate=60, step=3):
+def netreceiveQuery(name, end_time, timespan=15*60, rate=60, step=3):
     '''Queries Prometheus for the incoming network activity'''
     query = RATEQUERY_NETWORK_RECEIVE % (name, rate)
-    res_json = systemQuery(query, timespan, step)
+    res_json = systemQuery(query, end_time, timespan, step)
     toCsv(res_json)
 
-def nettransmitQuery(name, timespan=15*60, rate=60, step=3):
+def nettransmitQuery(name, end_time, timespan=15*60, rate=60, step=3):
     '''Queries Prometheus for the outgoing network activity'''
     query = RATEQUERY_NETWORK_TRANSMIT % (name, rate)
-    res_json = systemQuery(query, timespan, step)
+    res_json = systemQuery(query, end_time, timespan, step)
     toCsv(res_json)
 
-def ioQuery(name, timespan=15*60, rate=60, step=3):
+def ioQuery(name, end_time, timespan=15*60, rate=60, step=3):
     '''Queries Prometheus for the container io activity'''
     query = RATEQUERY_SYSTEM_IO % (name, rate)
-    res_json = systemQuery(query, timespan, step)
+    res_json = systemQuery(query, end_time, timespan, step)
     toCsv(res_json)
