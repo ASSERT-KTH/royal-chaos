@@ -21,8 +21,7 @@ def main():
     start_http_server(12301)
 
     #Setup of pyshark
-    # TODO: move interface and ip to environment variables...
-    capture = pyshark.LiveCapture(interface='eth0',  bpf_filter='host ' + os.environ['ROYALNETM_IP'] + ' and not port 12301')#, display_filter='http')
+    capture = pyshark.LiveCapture(interface='eth0', display_filter='http', bpf_filter='host ' + os.environ['ROYALNETM_IP'] + ' and not port 12301')#, display_filter='http')
     capture.set_debug()
     capture
 
@@ -48,7 +47,7 @@ def process_http_response(response):
     response_time = float(response.time)*1000
     http_request_latency.observe(float(response.time))
     http_inprogress_requests.dec()
-    request = HTTP_REQUESTS[int(response.response_number)-1]
+    request = HTTP_REQUESTS.pop(0)
     print("METHOD={}".format(request.request_method))
     print("URI={}".format(request.request_uri))
     print("RESPONSE_TIME={:.2f}ms".format(response_time))
