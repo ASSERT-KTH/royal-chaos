@@ -1,6 +1,8 @@
 # python imports
-import time
 import os
+import signal
+import sys
+import time
 
 # package import
 import click
@@ -28,6 +30,17 @@ def printSleep(seconds, info_str=''):
         time.sleep(1)
     print('\r🦀 sleeping %s/%ss %s' % (seconds, seconds, info_str))
 
+def experimentCleanup(container):
+    '''Cleanup for experiments'''
+    perturbs.stopChaos(container.name)
+    monitoring.stopMonitoring(container)
+    print('🦀🦀🦀 experiments aborted, cleaned up')
+
+container_to_cleanup = []
+def signalCleanup(signal, frame):
+    experimentCleanup(container_to_cleanup[0])
+    sys.exit()
+
 @experiment.command()
 @click.option('--name', prompt='Container name?', autocompletion=cauto.getContainers)
 @click.option('--exp-time', default=60, type=int)
@@ -37,6 +50,9 @@ def start(name, exp_time, pid):
     container_name = name
     container = container_api.getContainer(container_name)
     perturbations = perturbs.getPremadeFaults()
+    container_to_cleanup.append(container)
+    signal.signal(signal.SIGTERM, signalCleanup)
+    signal.signal(signal.SIGINT, signalCleanup)
 
     #0. Create experiment directory
     realpath = os.path.realpath('')
