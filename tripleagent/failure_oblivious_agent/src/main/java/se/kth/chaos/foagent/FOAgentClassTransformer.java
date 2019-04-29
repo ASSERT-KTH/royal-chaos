@@ -109,7 +109,11 @@ public class FOAgentClassTransformer implements ClassFileTransformer {
                 // nothing now
                 break;
         }
-
+        
+//        if (classWriter != null) {
+//            writeIntoClassFile(classNode.name + "(ori)", classFileBuffer);
+//            writeIntoClassFile(classNode.name, classWriter.toByteArray());
+//        }
         return classWriter != null ? classWriter.toByteArray() : classFileBuffer;
     }
 
