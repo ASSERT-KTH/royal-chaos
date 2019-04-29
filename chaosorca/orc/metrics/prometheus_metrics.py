@@ -9,7 +9,7 @@ PROMETHEUS_QUERY_RANGE = PROMETHEUS_URL % 'query_range'
 RATEQUERY_SYSCALL = 'sum by (syscall) (rate(syscall_counter_total{job="%s"}[%ss]))'
 RATEQUERY_NETWORK = 'sum by (response_code) (rate(http_request_total{job="%s"}[%ss]))'
 
-RATEQUERY_SYSTEM_CPU = 'sum by (name) (rate(container_cpu_user_seconds_total{name="%s"}[%ss]))'
+RATEQUERY_SYSTEM_CPU = 'sum by (name) (rate(container_cpu_usage_seconds_total{name="%s"}[%ss]))'
 QUERY_SYSTEM_MEM = 'container_memory_usage_bytes{name="%s"}'
 RATEQUERY_NETWORK_RECEIVE = 'sum by (name) (rate(container_network_receive_bytes_total{name="%s"}[%ss]))'
 RATEQUERY_NETWORK_TRANSMIT = 'sum by (name) (rate(container_network_transmit_bytes_total{name="%s"}[%ss]))'
@@ -53,7 +53,6 @@ def toCsv(json, csvfile):
                 dictobj[name] = res['values'][reverse_index][1:][0]
             except Exception:
                 dictobj[name] = 0
-                #print('Error: missmatching data lengths', name)
         writer.writerow(dictobj)
 
 # Syscalls & HTTP networking queries.
@@ -108,7 +107,7 @@ def systemQuery(query, end_time, timespan, step):
 def cpuQuery(name, end_time, timespan=15*60, rate=60, step=3, csvfile=sys.stdout):
     '''Queries Prometheus for the cpu usage'''
     query = RATEQUERY_SYSTEM_CPU % (name, rate)
-    res_json = systemQuery(query, timespan, step, end_time)
+    res_json = systemQuery(query, end_time, timespan, step)
     toCsv(res_json, csvfile)
 
 def memQuery(name, end_time, timespan=15*60, step=3, csvfile=sys.stdout):

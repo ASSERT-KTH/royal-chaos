@@ -54,14 +54,14 @@ def netr(name, time):
 @metric.command()
 @click.option('--time', default=currentTime())
 @click.option('--name', prompt='Container name?', autocompletion=cauto.getContainers)
-def nets(name):
+def nets(name, time):
     '''Returns csv data from prometheus for network send'''
     prometheus_metrics.nettransmitQuery(name, end_time=time)
 
 @metric.command()
 @click.option('--time', default=currentTime())
 @click.option('--name', prompt='Container name?', autocompletion=cauto.getContainers)
-def io(name):
+def io(name, time):
     '''Returns csv data from prometheus for io activity'''
     prometheus_metrics.ioQuery(name, end_time=time)
 
