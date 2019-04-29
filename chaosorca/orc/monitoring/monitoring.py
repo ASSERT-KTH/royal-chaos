@@ -27,7 +27,7 @@ def startMonitoringNetworkContainer(container_name, container_ip):
     return docker_client.containers.run(
         'chaosorca/netm',
         detach=True,
-        environment=['ROYALNETM_IP='+container_ip],
+        environment=['NETM_IP='+container_ip],
         name=base_name_netm+'.'+container_name,
         network_mode='container:'+container_name,
         remove=True

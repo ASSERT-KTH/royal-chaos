@@ -66,11 +66,11 @@ def process_http_response(response):
         method=request.request_method,
         uri=request.request_uri,
         response_code=response.response_code,
-        response_time=response_time).inc()
+        response_time=round(response_time, 3)).inc()
 
     http_response_counter.labels(
         response_code=response.response_code,
-        response_time=response_time).inc()
+        response_time=round(response_time, 3)).inc()
 
 if __name__ == '__main__':
     main()

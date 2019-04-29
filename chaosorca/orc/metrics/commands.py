@@ -65,3 +65,10 @@ def io(name, time):
     '''Returns csv data from prometheus for io activity'''
     prometheus_metrics.ioQuery(name, end_time=time)
 
+@metric.command()
+@click.option('--time', default=currentTime())
+@click.option('--name', prompt='Container name?', autocompletion=cauto.getContainers)
+def latency(name, time):
+    '''Returns csv data from prometheus for http latency'''
+    prometheus_metrics.latencyQuery(name, end_time=time)
+

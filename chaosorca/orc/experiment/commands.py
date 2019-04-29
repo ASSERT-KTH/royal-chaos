@@ -108,10 +108,16 @@ def start(name, exp_time, pid):
 
         # DISK IO
         with open(filename + '_io.csv', 'w', newline='') as file:
-            metrics.nettransmitQuery(name, end_time, timespan=time_span, csvfile=file)
+            metrics.ioQuery(name, end_time, timespan=time_span, csvfile=file)
+
+        # HTTP LATENCY
+        with open(filename + '_latency.csv', 'w', newline='') as file:
+            metrics.latencyQuery(name, end_time, timespan=time_span, csvfile=file)
 
         #8. if not done, goto #2 and repeat #2-#7
+        # loop, so happen by default.
+
     print('🦀 stopping monitoring')
     monitoring.stopMonitoring(container)
-    print('🦀 experiments completed')
+    print('🦀🦀🦀 experiments completed')
 

@@ -8,6 +8,7 @@ PROMETHEUS_QUERY = PROMETHEUS_URL % 'query'
 PROMETHEUS_QUERY_RANGE = PROMETHEUS_URL % 'query_range'
 RATEQUERY_SYSCALL = 'sum by (syscall) (rate(syscall_counter_total{job="%s"}[%ss]))'
 RATEQUERY_NETWORK = 'sum by (response_code) (rate(http_request_total{job="%s"}[%ss]))'
+RATEQUERY_LATENCY = 'sum by (job) (rate(http_request_latency_ms_sum{job="%s"}[%ss]))'
 
 RATEQUERY_SYSTEM_CPU = 'sum by (name) (rate(container_cpu_usage_seconds_total{name="%s"}[%ss]))'
 QUERY_SYSTEM_MEM = 'container_memory_usage_bytes{name="%s"}'
@@ -131,5 +132,11 @@ def nettransmitQuery(name, end_time, timespan=15*60, rate=60, step=3, csvfile=sy
 def ioQuery(name, end_time, timespan=15*60, rate=60, step=3, csvfile=sys.stdout):
     '''Queries Prometheus for the container io activity'''
     query = RATEQUERY_SYSTEM_IO % (name, rate)
+    res_json = systemQuery(query, end_time, timespan, step)
+    toCsv(res_json, csvfile)
+
+def latencyQuery(name, end_time, timespan=15*60, rate=60, step=3, csvfile=sys.stdout):
+    '''Queries Prometheus for the container http latency'''
+    query = RATEQUERY_LATENCY % (name, rate)
     res_json = systemQuery(query, end_time, timespan, step)
     toCsv(res_json, csvfile)
