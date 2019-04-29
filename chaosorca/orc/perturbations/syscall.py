@@ -85,7 +85,7 @@ class Fault(click.ParamType):
 # Variables
 docker_client = docker.from_env()
 
-def applyFault(container, fault):
+def applyFault(container, fault, pid):
     '''Appplies the given fault to the given container'''
 
     # Handle already running fault injection containers.
@@ -97,16 +97,19 @@ def applyFault(container, fault):
         pass
 
     # Get local PID's
-    processes = container_api.getProcesses(container.name)['processes']
+    if pid is None:
+        processes = container_api.getProcesses(container.name)['processes']
 
-    if len(processes) == 1:
-        # Easy case, just select that one for monitoring.
-        pid_to_perturb = processes[0][0] # First process, where the first value is the PID.
-    elif len(processes) > 1:
-        # Harder case, ask to select one.
-        print('Multiple processes to choose from, please select 1.')
-        print('\n'.join(["PID:%s %s" % (proc[0], proc[-1]) for proc in processes]))
-        pid_to_perturb = input('Input PID to perturb: ')
+        if len(processes) == 1:
+            # Easy case, just select that one for monitoring.
+            pid_to_perturb = processes[0][0] # First process, where the first value is the PID.
+        elif len(processes) > 1:
+            # Harder case, ask to select one.
+            print('Multiple processes to choose from, please select 1.')
+            print('\n'.join(["PID:%s %s" % (proc[0], proc[-1]) for proc in processes]))
+            pid_to_perturb = input('Input PID to perturb: ')
+    else:
+        pid_to_perturb = pid
 
     sysc_container = docker_client.containers.run(
         'chaosorca/sysc',

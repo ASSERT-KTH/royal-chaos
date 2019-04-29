@@ -87,14 +87,21 @@ autocomplete_faults = Premade().getCombinations()
 def autocompleteFaults(ctx, args, incomplete):
     return [f for f in autocomplete_faults if incomplete in str(f)]
 
+def getPremadeFaults():
+    '''Returns the premade syscall perturbations'''
+    return Premade().getCombinations()
+
 @fault.command()
 @click.option('--name', prompt='Container name?', autocompletion=cauto.getContainers)
 @click.option('--cmd', autocompletion=autocompleteFaults, type=sysfault.Fault())
 def premade(name, cmd):
+    premade_external(name, cmd)
+
+def premade_external(name, cmd, pid=None):
     '''A bunch of premade auto completed perturbation'''
     container = container_api.getContainer(name)
     if not cmd:
         print('Invalid cmd %s' % cmd)
         exit()
-    sysfault.applyFault(container, cmd)
+    sysfault.applyFault(container, cmd, pid)
     print('Started sysfault %s on %s' % (cmd, container.name))
