@@ -21,6 +21,7 @@ public class ThrowExceptionFoOnHedwig {
         String perturbationPointsCsvPath = "/home/gluckzhang/development/hedwig-0.7/hedwig-0.7-binary/bin/perturbationPointsList.csv";
         String failureObliviousPointsCsvPath = "/home/gluckzhang/development/hedwig-0.7/hedwig-0.7-binary/bin/failureObliviousPointsList.csv";
         String taskCsv = "hedwig_evaluation_0.7/perturbationAndFoPointsList_tasks.csv";
+        String restartScript = "/home/gluckzhang/development/chaos-engineering-research-forked/tripleagent/agents_controller/hedwig_evaluation_0.7/restart_hedwig.sh";
         AgentsController controller = new AgentsController("localhost", 11211);
 
         if (osName.contains("Windows")) {return;}
@@ -82,8 +83,7 @@ public class ThrowExceptionFoOnHedwig {
                             injectionExecutions++;
                         } else if (line.startsWith("INFO FOAgent failure oblivious mode is on, ignore the following exception")) {
                             foExecutions++;
-                        } else if (line.startsWith("INFO PAgent a method which throws an exception executed")
-                                || line.startsWith("INFO PAgent throw exception perturbation executed normally")) {
+                        } else if (line.startsWith("INFO PAgent throw exception perturbation executed normally")) {
                             normalExecutions++;
                         }
                     }
@@ -121,6 +121,15 @@ public class ThrowExceptionFoOnHedwig {
 
                     System.out.println("[AGENT_CONTROLLER] finish the experiment at " + filter);
                     System.out.println("[AGENT_CONTROLLER] ------");
+
+                    System.out.println("[AGENT_CONTROLLER] check server status");
+                    if (!conductSingleExperiment()) {
+                        System.out.println("[AGENT_CONTROLLER] unstable status detected");
+                        process = Runtime.getRuntime().exec(new String[]{"bash", "-c", restartScript}, null);
+                        System.out.println("[AGENT_CONTROLLER] restart server, bash exit value: " + process.waitFor());
+                    }
+                    System.out.println("[AGENT_CONTROLLER] ------");
+
                     try { Thread.currentThread().sleep(5000); } catch (InterruptedException e) { }
                 }
             }
