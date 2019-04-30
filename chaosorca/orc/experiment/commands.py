@@ -77,7 +77,7 @@ def start(name, exp_time, pid):
         os.mkdir(output_dir) #create output directory.
 
         #3. wait predetermined amount of time.
-        printSleep(exp_time, info_str='for baseline#1')
+        printSleep(int(round(exp_time/2)), info_str='for baseline#1')
 
         #4. start perturbation.
         print(container_name, p, pid)
@@ -89,7 +89,7 @@ def start(name, exp_time, pid):
         #6. stop perturbation.
         print('🦀 finished perturbing')
         perturbs.stopChaos(container_name)
-        printSleep(exp_time, info_str='for baseline#2')
+        printSleep(int(round(exp_time/2)), info_str='for baseline#2')
 
         #7. log results to files for future processing.
         print('🦀 logging files')
