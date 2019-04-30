@@ -13,13 +13,13 @@ http_request_latency = Histogram('http_request_latency_ms', '<description/>')
 http_counter = Counter(
     'http_request_total',
     '<description/>',
-    ['method', 'uri', 'response_code', 'response_time'])
+    ['method', 'uri', 'response_code'])
 
 # Counters separated
 http_response_counter = Counter(
     'http_response_counter',
     '<description/>',
-    ['response_code', 'response_time'])
+    ['response_code'])
 http_request_counter = Counter(
     'http_request_counter',
     '<description/>',
@@ -65,12 +65,10 @@ def process_http_response(response):
     http_counter.labels(
         method=request.request_method,
         uri=request.request_uri,
-        response_code=response.response_code,
-        response_time=round(response_time, 3)).inc()
+        response_code=response.response_code).inc()
 
     http_response_counter.labels(
-        response_code=response.response_code,
-        response_time=round(response_time, 3)).inc()
+        response_code=response.response_code).inc()
 
 if __name__ == '__main__':
     main()
