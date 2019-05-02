@@ -50,6 +50,7 @@ def start(name, exp_time, pid):
     container_name = name
     container = container_api.getContainer(container_name)
     perturbations = perturbs.getPremadeFaults()
+    enumerated_perturbations = enumerate(perturbations)
     container_to_cleanup.append(container)
     signal.signal(signal.SIGTERM, signalCleanup)
     signal.signal(signal.SIGINT, signalCleanup)
@@ -60,8 +61,17 @@ def start(name, exp_time, pid):
     try:
         os.mkdir(experiment_dir)
     except FileExistsError:
-        experiment_dir = experiment_dir + '_' + str(currentTimeS())
-        os.mkdir(experiment_dir)
+        # Existing experiment run found, can we continue it?
+        # List all directories.
+        folders = os.listdir(experiment_dir)
+        # Convert to int as to be able to sort.
+        folders = list(map(int, folders))
+        folders.sort()
+        newest = int(folders[-1]) + 1
+        # Skip perturbations already completed.
+        enumerated_perturbations = enumerate(perturbations[newest:], newest)
+        print('🦀 Existing experiment detected, continuing from %s/%s' % (newest, perturbations[newest]))
+
 
     #1. start monitoring.
     monitoring.stopMonitoring(container)
@@ -70,11 +80,9 @@ def start(name, exp_time, pid):
 
     #2. select perturbation
     length = len(perturbations)
-    for index, p in enumerate(perturbations):
+    for index, p in enumerated_perturbations:
         print('🦀🦀🦀 %d/%d running experiment perturbation %s' % (index+1, length, p))
         start_time = currentTimeS()
-        output_dir = '%s/%s' % (experiment_dir, index)
-        os.mkdir(output_dir) #create output directory.
 
         #3. wait predetermined amount of time.
         printSleep(int(round(exp_time/2)), info_str='for baseline#1')
@@ -96,7 +104,9 @@ def start(name, exp_time, pid):
         end_time = currentTimeS()
         time_span = end_time - start_time
 
-        filename = '%s/%d_%s_%s' % (output_dir, index, container_name, p)
+        output_dir = '%s/%s' % (experiment_dir, index)
+        os.mkdir(output_dir) #create output directory.
+        filename = '%s/%s' % (output_dir, p)
 
         # SYSCALL
         with open(filename + '_syscall.csv', 'w', newline='') as file:
