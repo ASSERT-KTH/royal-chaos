@@ -38,7 +38,7 @@ def main():
     syscall = os.environ['SYSC_FAULT'].split(':')[0]
     sysm_fault = os.environ['SYSC_FAULT']
     pid = os.environ['SYSC_PID']
-    cmd = ['strace', '-p', pid]
+    cmd = ['strace', '-fp', pid]
     cmd = cmd + ['-e', 'trace=%s' % syscall]
     cmd = cmd + ['-e', 'inject=%s' % sysm_fault]
 

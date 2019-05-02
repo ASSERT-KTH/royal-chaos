@@ -2,6 +2,7 @@ from functools import reduce
 
 # Package import
 import docker
+import click
 
 # Local imports
 import config
@@ -33,7 +34,20 @@ class FaultObject:
         '''Returns the representation %s=%s'''
         return '%s=%s' % (self.name, self.value)
 
-class Fault:
+class Fault(click.ParamType):
+    name="fault"
+
+    def convert(self, value, param, ctx):
+        '''Converts : separated string to instance of Fault'''
+        value_split = value.split(':')
+        syscall = value_split[0]
+        value_dict = {'syscall':syscall}
+        for v in value_split[1:]:
+            v_split = v.split('=')
+            value_dict[v_split[0]] = v_split[1]
+
+        return Fault(**value_dict)
+
     def __init__(self,
         delay_enter=None,
         delay_exit=None,
@@ -43,8 +57,8 @@ class Fault:
         when=None):
 
         # Initalise delay with *1000 to use milliseconds instead of microseconds.
-        self.delay_enter = FaultObject('delay_enter', delay_enter*1000 if delay_enter else None)
-        self.delay_exit = FaultObject('delay_exit', delay_exit*1000 if delay_exit else None)
+        self.delay_enter = FaultObject('delay_enter', int(delay_enter)*1000 if delay_enter else None)
+        self.delay_exit = FaultObject('delay_exit', int(delay_exit)*1000 if delay_exit else None)
         self.error = FaultObject('error', error)
         self.signal = FaultObject('signal', signal)
         self.syscall = FaultObject('syscall', syscall)
@@ -63,12 +77,15 @@ class Fault:
                         self.signal,
                         self.when])))
         # Syscall should be the first argument and without the equals part.
-        return '%s:%s' % (self.syscall.value, cmds)
+        if self.syscall != None:
+            return '%s:%s' % (self.syscall.value, cmds)
+        else:
+            return cmds
 
 # Variables
 docker_client = docker.from_env()
 
-def applyFault(container, fault):
+def applyFault(container, fault, pid):
     '''Appplies the given fault to the given container'''
 
     # Handle already running fault injection containers.
@@ -80,16 +97,19 @@ def applyFault(container, fault):
         pass
 
     # Get local PID's
-    processes = container_api.getProcesses(container.name)['processes']
+    if pid is None:
+        processes = container_api.getProcesses(container.name)['processes']
 
-    if len(processes) == 1:
-        # Easy case, just select that one for monitoring.
-        pid_to_perturb = processes[0][0] # First process, where the first value is the PID.
-    elif len(processes) > 1:
-        # Harder case, ask to select one.
-        print('Multiple processes to choose from, please select 1.')
-        print('\n'.join(["PID:%s %s" % (proc[0], proc[-1]) for proc in processes]))
-        pid_to_perturb = input('Input PID to perturb: ')
+        if len(processes) == 1:
+            # Easy case, just select that one for monitoring.
+            pid_to_perturb = processes[0][0] # First process, where the first value is the PID.
+        elif len(processes) > 1:
+            # Harder case, ask to select one.
+            print('Multiple processes to choose from, please select 1.')
+            print('\n'.join(["PID:%s %s" % (proc[0], proc[-1]) for proc in processes]))
+            pid_to_perturb = input('Input PID to perturb: ')
+    else:
+        pid_to_perturb = pid
 
     sysc_container = docker_client.containers.run(
         'chaosorca/sysc',

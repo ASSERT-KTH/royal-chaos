@@ -5,6 +5,7 @@ import time
 import click
 
 # Local imports
+from experiment import commands as e_cmd
 from perturbations import commands as p_cmd
 from monitoring import commands as c_cmd
 from metrics import commands as m_cmd
@@ -30,6 +31,7 @@ main.add_command(p_cmd.fault) # Fault injection commands.
 main.add_command(c_cmd.prom) # Prometheus start/stop/more.
 main.add_command(c_cmd.monit) # Monitoring start/stop/more.
 main.add_command(m_cmd.metric) # Metrics export from Prometheus.
+main.add_command(e_cmd.experiment) # Experiment running.
 
 if __name__ == '__main__':
     main()

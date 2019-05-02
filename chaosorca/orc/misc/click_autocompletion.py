@@ -28,4 +28,3 @@ def getErrno(ctx, args, incomplete):
 def getSyscalls(ctx, args, incomplete):
     '''List of syscalls for click autocomlete'''
     return [sys for sys in syscalls if incomplete in sys]
-
