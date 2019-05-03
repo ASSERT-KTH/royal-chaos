@@ -4,6 +4,20 @@ import docker
 # Create docker client
 docker_client = docker.from_env()
 
+def getProcessesByNameLocal(container_name, pid_name):
+    ''' Returns the process running inside a container with a given name'''
+    procs = getProcesses(container_name)['processes']
+    return [p for p in procs if pid_name in p[-1]]
+
+def getProcessesByNameExternal(container_name, pid_name):
+    procs = getProcessesExternal(container_name)
+    return [p for p in procs if pid_name in p[-1]]
+
+def getProcessesExternal(name):
+    container = getContainer(name)
+    processes = container.top()['Processes']
+    return processes
+
 def getProcesses(name):
     ''' Returns the processes running inside a container, in contrary to docker sdk it return the namespaced values.'''
     container = getContainer(name)

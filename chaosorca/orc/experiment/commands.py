@@ -1,6 +1,7 @@
 # python imports
 import os
 import signal
+import subprocess
 import sys
 import time
 
@@ -30,10 +31,12 @@ def printSleep(seconds, info_str=''):
         time.sleep(1)
     print('\r🦀 sleeping %s/%ss %s' % (seconds, seconds, info_str))
 
-def experimentCleanup(container):
+def experimentCleanup(container_name):
     '''Cleanup for experiments'''
-    perturbs.stopChaos(container.name)
+    perturbs.stopChaos(container_name)
+    container = container_api.getContainer(container_name)
     monitoring.stopMonitoring(container)
+    container.stop()
     print('🦀🦀🦀 experiments aborted, cleaned up')
 
 container_to_cleanup = []
@@ -41,17 +44,34 @@ def signalCleanup(signal, frame):
     experimentCleanup(container_to_cleanup[0])
     sys.exit()
 
+@experiment.command() #@click.option('--cmd', prompt='cmd?')
+def test():
+    '''test run cmd'''
+    runCmd("docker stop hello_world".split(' '))
+    #print(container_api.getProcessesByNameExternal("hello_world", "nginx: worker process"))
+
+def runCmd(cmd):
+    '''Run a given cmd'''
+    proc = subprocess.Popen(
+        cmd,
+        stdout=subprocess.PIPE,
+        universal_newlines=True,
+        close_fds=True,
+        preexec_fn=os.setsid)
+    return proc
+
 @experiment.command()
 @click.option('--name', prompt='Container name?', autocompletion=cauto.getContainers)
-@click.option('--exp-time', default=60, type=int)
-@click.option('--pid')
-def start(name, exp_time, pid):
+@click.option('--exp-time', default=120, type=int)
+@click.option('--pid-name')
+@click.option('--start-cmd', prompt='Start cmd?')
+@click.option('--stop-cmd', default='')
+def start(name, exp_time, pid_name, start_cmd, stop_cmd):
     '''Run experiments'''
     container_name = name
-    container = container_api.getContainer(container_name)
     perturbations = perturbs.getPremadeFaults()
     enumerated_perturbations = enumerate(perturbations)
-    container_to_cleanup.append(container)
+    container_to_cleanup.append(container_name)
     signal.signal(signal.SIGTERM, signalCleanup)
     signal.signal(signal.SIGINT, signalCleanup)
 
@@ -67,29 +87,44 @@ def start(name, exp_time, pid):
         # Convert to int as to be able to sort.
         folders = list(map(int, folders))
         folders.sort()
-        newest = int(folders[-1]) + 1
+        if len(folders) is 0:
+            newest = 0
+        else:
+            newest = int(folders[-1]) + 1
         # Skip perturbations already completed.
         enumerated_perturbations = enumerate(perturbations[newest:], newest)
         print('🦀 Existing experiment detected, continuing from %s/%s' % (newest, perturbations[newest]))
 
 
     #1. start monitoring.
-    monitoring.stopMonitoring(container)
-    container.reload()
-    monitoring.startMonitoring(container)
+    #monitoring.stopMonitoring(container)
+    #container.reload()
+    #monitoring.startMonitoring(container)
 
     #2. select perturbation
     length = len(perturbations)
     for index, p in enumerated_perturbations:
         print('🦀🦀🦀 %d/%d running experiment perturbation %s' % (index+1, length, p))
+
+        # A) start container.
+        start_proc = runCmd(start_cmd.split(' '))
+        # B) assume we need to wait a bit for the above to start.
+        time.sleep(10)
+        # C) start monitoring
+        container = container_api.getContainer(container_name)
+        # first process, second one is pid.
+        pid_to_monitor = container_api.getProcessesByNameExternal(container_name, pid_name)[0][1]
+        monitoring.startMonitoring(container, pid_to_monitor)
+
         start_time = currentTimeS()
 
         #3. wait predetermined amount of time.
         printSleep(int(round(exp_time/2)), info_str='for baseline#1')
 
         #4. start perturbation.
-        print(container_name, p, pid)
-        perturbs.premade_external(container_name, p, pid=pid)
+        # first process, first one is pid.
+        pid_to_perturb = container_api.getProcessesByNameLocal(container_name, pid_name)[0][0]
+        perturbs.premade_external(container_name, p, pid=pid_to_perturb)
 
         #5. wait predetermined amount of time.
         printSleep(exp_time, info_str='for perturbation')
@@ -139,6 +174,15 @@ def start(name, exp_time, pid):
         # HTTP LATENCY
         with open(filename + '_latency.csv', 'w', newline='') as file:
             metrics.latencyQuery(name, end_time, timespan=time_span, csvfile=file)
+
+        # E) Stop monitoring
+        monitoring.stopMonitoring(container)
+        # D) Stop command
+        start_proc.kill()
+        if stop_cmd is not '':
+            print(stop_cmd)
+            stop_proc = runCmd(stop_cmd.split(' '))
+            stop_proc.wait()
 
         #8. if not done, goto #2 and repeat #2-#7
         # loop, so happen by default.
