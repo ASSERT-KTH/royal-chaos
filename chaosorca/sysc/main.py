@@ -4,7 +4,7 @@ import sys
 import signal
 import atexit
 
-from prometheus_client import Counter, start_http_server
+from prometheus_client import Counter, Info, start_http_server
 
 # Prometheus counter
 syscall_counter = Counter(
@@ -21,6 +21,8 @@ def signal_handler(signal, frame):
     sys.exit(0)
 signal.signal(signal.SIGTERM, signal_handler)
 signal.signal(signal.SIGINT, signal_handler)
+
+EXPERIMENT_INFO = Info('experiment_info', '<description/>')
 
 def main():
     '''Syscall monitoring, only support one PID currently.'''
@@ -41,6 +43,9 @@ def main():
     cmd = ['strace', '-fp', pid]
     cmd = cmd + ['-e', 'trace=%s' % syscall]
     cmd = cmd + ['-e', 'inject=%s' % sysm_fault]
+
+    # Add information endpoint for current sysfault
+    EXPERIMENT_INFO.info({'syscall': syscall, 'experiment_perturbation': sysm_fault})
 
     print('Starting strace: %s' % cmd)
     proc = subprocess.Popen(
