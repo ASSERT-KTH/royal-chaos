@@ -64,12 +64,8 @@ public class ThrowExceptionFoOverheadOnHedwig {
                                 new String[]{"key", "className", "methodName", "methodDesc", "mode"},
                                 new String[]{"-", foClass, foMethod, methodDesc, "fo"},
                                 controller);
-                        try {
-                            Thread.currentThread().sleep(2000);
-                        } catch (InterruptedException e) {
-                        }
+                        try { Thread.currentThread().sleep(2000); } catch (InterruptedException e) { }
 
-                        startTime = System.currentTimeMillis();
                         int input_pid = JMXMonitoringTool.getPidFromFile(applicationPidFile);
                         int exitValue = 0;
                         Thread jmxMonitoring = null;
@@ -77,15 +73,25 @@ public class ThrowExceptionFoOverheadOnHedwig {
                         if (input_pid > 0) {
                             jmxMonitoring = new Thread(() -> {
                                 JMXMonitoringTool.MONITORING_SWITCH = true;
-                                JMXMonitoringTool.monitorProcessByPid(input_pid, 1000);
+                                JMXMonitoringTool.monitorProcessByPid(input_pid, 500);
                             });
                             jmxMonitoring.start();
                         }
 
+                        try { Thread.currentThread().sleep(1000); } catch (InterruptedException e) { }
                         System.out.println("[AGENT_CONTROLLER] FO experiment at: " + filter);
                         System.out.println(String.format("[AGENT_CONTROLLER] exceptionType: %s, injections: %s, rate: %s, mode: %s, foPoint: %s", exceptionType, injections, rate, mode, task.get(22)));
+                        startTime = System.currentTimeMillis();
+                        long processCpuTimeStart = JMXMonitoringTool.processCpuTime / 1000000;
                         boolean emailDiff = conductSingleExperiment();
+                        long processCpuTimeEnd = JMXMonitoringTool.processCpuTime / 1000000;
                         endTime = System.currentTimeMillis();
+                        long processCpuTime = processCpuTimeEnd - processCpuTimeStart;
+
+                        JMXMonitoringTool.MONITORING_SWITCH = false;
+                        if (jmxMonitoring != null) {
+                            jmxMonitoring.join();
+                        }
 
                         File logFile = new File(applicationLogPath + "/" + applicationLogName);
                         BufferedReader logReader = new BufferedReader(new FileReader(logFile));
@@ -105,14 +111,9 @@ public class ThrowExceptionFoOverheadOnHedwig {
                         }
                         logReader.close();
 
-                        JMXMonitoringTool.MONITORING_SWITCH = false;
-                        if (jmxMonitoring != null) {
-                            jmxMonitoring.join();
-                        }
-
                         task.set(23, String.format("%d(fo %d); normal: %d", injectionExecutions, foExecutions, normalExecutions));
                         task.set(24, String.valueOf(emailDiff));
-                        task.set(26, String.valueOf(JMXMonitoringTool.processCpuTime / 1000000000));
+                        task.set(26, String.valueOf(processCpuTime));
                         task.set(27, String.valueOf(JMXMonitoringTool.averageMemoryUsage / 1000000));
                         task.set(28, String.valueOf(JMXMonitoringTool.peakThreadCount));
 
@@ -131,11 +132,11 @@ public class ThrowExceptionFoOverheadOnHedwig {
                         System.out.println("[AGENT_CONTROLLER] fo execution times: " + foExecutions);
                         System.out.println("[AGENT_CONTROLLER] Email verified: " + emailDiff);
                         System.out.println("[AGENT_CONTROLLER] exit status: TODO");
-                        System.out.println("[AGENT_CONTROLLER] process cpu time(in seconds): " + JMXMonitoringTool.processCpuTime / 1000000000);
+                        System.out.println("[AGENT_CONTROLLER] process cpu time(in ms): " + processCpuTime);
                         System.out.println("[AGENT_CONTROLLER] average memory usage(in MB): " + JMXMonitoringTool.averageMemoryUsage / 1000000);
                         System.out.println("[AGENT_CONTROLLER] peak thread count: " + JMXMonitoringTool.peakThreadCount);
 
-                        totalProcessCpuTime = totalProcessCpuTime + JMXMonitoringTool.processCpuTime / 1000000000;
+                        totalProcessCpuTime = totalProcessCpuTime + processCpuTime;
                         totalAverageMemoryUsage = totalAverageMemoryUsage + JMXMonitoringTool.averageMemoryUsage / 1000000;
                         totalPeakThreadCount = totalPeakThreadCount + JMXMonitoringTool.peakThreadCount;
                         totalExecutionTime = totalExecutionTime + (endTime - startTime);
@@ -156,6 +157,11 @@ public class ThrowExceptionFoOverheadOnHedwig {
                         } catch (InterruptedException e) { }
                     }
                 }
+                System.out.println("summary:");
+                System.out.println("process cpu time(in ms): " + totalProcessCpuTime / loopCount);
+                System.out.println("average memory usage(in MB): " + totalAverageMemoryUsage / loopCount);
+                System.out.println("peak thread count: " + totalPeakThreadCount / loopCount);
+                System.out.println("execution time(in ms): " + totalExecutionTime / loopCount);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -272,7 +278,7 @@ public class ThrowExceptionFoOverheadOnHedwig {
             task.add("run times in fo"); // index should be 23
             task.add("successfully send the mail");
             task.add("exit status in fo");
-            task.add("process cpu time(in seconds) in fo");
+            task.add("process cpu time(in ms) in fo");
             task.add("average memory usage(in MB) in fo");
             task.add("peak thread count in fo");
             tasksInfo.set(0, task.toArray(new String[task.size()]));

@@ -19,7 +19,7 @@ public class ThrowExceptionFoOverheadOnTTorrent {
         String torrentFile = "CentOS-7-x86_64-NetInstall-1810.torrent";
         String taskCsv = "perturbationAndFoPointsList_tasks.csv";
         String correctChecksum = "19d94274ef856c4dfcacb2e7cfe4be73e442a71dd65cc3fb6e46db826040b56e";
-        int timeout = 240;
+        int timeout = 300;
         String osName = System.getProperty("os.name");
         AgentsController controller = new AgentsController("localhost", 11211);
 
@@ -73,6 +73,8 @@ public class ThrowExceptionFoOverheadOnTTorrent {
                                     lineIndexNumber, injections, rate, failureObliviousAgentPath,
                                     foFilter.replace("$", "\\$").replace("<", "\\<").replace(">", "\\>"),
                                     methodDesc, threadName, torrentFile);
+//                            String command = String.format("timeout --signal=9 %s java -jar %s -o . --max-download 1024 -s 0 %s 2>&1",
+//                                    timeout, threadName, torrentFile);
 
                             System.out.println("[AGENT_CONTROLLER] command: " + command);
                             startTime = System.currentTimeMillis();
@@ -137,7 +139,7 @@ public class ThrowExceptionFoOverheadOnTTorrent {
                                 task.set(24, "no");
                             }
                             task.set(25, endingFound ? "0" : String.valueOf(exitValue));
-                            task.set(26, String.valueOf(JMXMonitoringTool.processCpuTime / 1000000000));
+                            task.set(26, String.valueOf(JMXMonitoringTool.processCpuTime / 1000000));
                             task.set(27, String.valueOf(JMXMonitoringTool.averageMemoryUsage / 1000000));
                             task.set(28, String.valueOf(JMXMonitoringTool.peakThreadCount));
                             tasksInfo.set(i, task.toArray(new String[task.size()]));
@@ -147,11 +149,11 @@ public class ThrowExceptionFoOverheadOnTTorrent {
                             System.out.println("[AGENT_CONTROLLER] fo execution times: " + foExecutions);
                             System.out.println("[AGENT_CONTROLLER] whether successfully downloaded the file: " + task.get(24));
                             System.out.println("[AGENT_CONTROLLER] exit status: " + (endingFound ? "0" : String.valueOf(exitValue)));
-                            System.out.println("[AGENT_CONTROLLER] process cpu time(in seconds): " + JMXMonitoringTool.processCpuTime / 1000000000);
+                            System.out.println("[AGENT_CONTROLLER] process cpu time(in ms): " + JMXMonitoringTool.processCpuTime / 1000000);
                             System.out.println("[AGENT_CONTROLLER] average memory usage(in MB): " + JMXMonitoringTool.averageMemoryUsage / 1000000);
                             System.out.println("[AGENT_CONTROLLER] peak thread count: " + JMXMonitoringTool.peakThreadCount);
 
-                            totalProcessCpuTime = totalProcessCpuTime + JMXMonitoringTool.processCpuTime / 1000000000;
+                            totalProcessCpuTime = totalProcessCpuTime + JMXMonitoringTool.processCpuTime / 1000000;
                             totalAverageMemoryUsage = totalAverageMemoryUsage + JMXMonitoringTool.averageMemoryUsage / 1000000;
                             totalPeakThreadCount = totalPeakThreadCount + JMXMonitoringTool.peakThreadCount;
                             totalDownloadingTime = totalDownloadingTime + (endTime - startTime);
@@ -180,7 +182,7 @@ public class ThrowExceptionFoOverheadOnTTorrent {
                     }
                 }
                 System.out.println("summary:");
-                System.out.println("process cpu time(in seconds): " + totalProcessCpuTime / loopCount);
+                System.out.println("process cpu time(in ms): " + totalProcessCpuTime / loopCount);
                 System.out.println("average memory usage(in MB): " + totalAverageMemoryUsage / loopCount);
                 System.out.println("peak thread count: " + totalPeakThreadCount / loopCount);
                 System.out.println("downloading time(in ms): " + totalDownloadingTime / loopCount);
@@ -196,7 +198,7 @@ public class ThrowExceptionFoOverheadOnTTorrent {
             task.add("run times in fo"); // index should be 23
             task.add("downloaded the file in fo");
             task.add("exit status in fo");
-            task.add("process cpu time(in seconds) in fo");
+            task.add("process cpu time(in ms) in fo");
             task.add("average memory usage(in MB) in fo");
             task.add("peak thread count in fo");
             tasksInfo.set(0, task.toArray(new String[task.size()]));
