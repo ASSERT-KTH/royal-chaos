@@ -18,6 +18,7 @@ public class AgentArguments {
     private String csvfilepath;
     private String defaultMode;
     private int perturbationCountdown;
+    private int interval;
 
     public AgentArguments(String args) {
         Map<String, String> configuration = argumentMap(args == null ? "" : args);
@@ -30,7 +31,8 @@ public class AgentArguments {
         this.configFile = configuration.getOrDefault("config", null);
         this.csvfilepath = configuration.getOrDefault("csvfilepath", "perturbationPointsList.csv");
         this.defaultMode = configuration.getOrDefault("defaultMode", "off");
-        this.perturbationCountdown = Integer.valueOf(configuration.getOrDefault("countdown", "1"));
+        this.perturbationCountdown = Integer.valueOf(configuration.getOrDefault("countdown", "-1"));
+        this.interval = Integer.valueOf(configuration.getOrDefault("interval", "1"));
 
         if (this.configFile != null) {
             refreshConfig();
@@ -73,6 +75,7 @@ public class AgentArguments {
             this.csvfilepath = p.getProperty("csvfilepath", "perturbationPointsList.csv");
             this.defaultMode = p.getProperty("defaultMode", "off");
             this.perturbationCountdown = Integer.valueOf(p.getProperty("countdown", "1"));
+            this.interval = Integer.valueOf(p.getProperty("interval", "1"));
             inputStream.close();
         } catch (Exception e) {
             e.printStackTrace();
@@ -140,5 +143,12 @@ public class AgentArguments {
             refreshConfig();
         }
         return perturbationCountdown;
+    }
+
+    public int interval() {
+        if (this.configFile != null) {
+            refreshConfig();
+        }
+        return interval;
     }
 }

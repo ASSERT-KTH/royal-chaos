@@ -13,6 +13,8 @@ public class PerturbationPoint {
     public int lineIndexNumber;
     public String mode;
     public int perturbationCountdown;
+    public int invocationCount;
+    public int interval;
     public double chanceOfFailure;
     public boolean covered;
 
@@ -26,6 +28,7 @@ public class PerturbationPoint {
         this.perturbationCountdown = perturbationCountdown;
         this.chanceOfFailure = chanceOfFailure;
         this.covered = false;
+        this.invocationCount = 0;
 
         try {
             MessageDigest mDigest = MessageDigest.getInstance("MD5");
