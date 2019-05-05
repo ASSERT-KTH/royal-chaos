@@ -57,17 +57,24 @@ def process_http_request(request):
 
 # Process response and monitor appropriately.
 def process_http_response(response):
-    request = HTTP_REQUESTS.pop(0)
     if 'time' not in response.field_names:
         return
     response_time = float(response.time)*1000
     http_request_latency.observe(float(response.time))
     http_inprogress_requests.dec()
 
-    http_counter.labels(
-        method=request.request_method,
-        uri=request.request_uri,
-        response_code=response.response_code).inc()
+    if len(HTTP_REQUESTS) is 0:
+        http_counter.labels(
+            method='',
+            uri='',
+            response_code=response.response_code).inc()
+    else:
+        request = HTTP_REQUESTS.pop(0)
+        http_counter.labels(
+            method=request.request_method,
+            uri=request.request_uri,
+            response_code=response.response_code).inc()
+
 
     http_response_counter.labels(
         response_code=response.response_code).inc()

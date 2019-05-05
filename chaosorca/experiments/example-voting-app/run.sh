@@ -1,4 +1,3 @@
 #!/bin/bash
-git clone https://github.com/dockersamples/example-voting-app.git
-cd example-voting-app
-docker-compose up -d
+docker-compose -f example-voting-app/docker-compose.yml up -d
+screen -dm -S goreplay-example-voting-app bash -c "goreplay --input-file 'goreplay_0.gor|1000%' --input-file-loop --output-http='http://localhost:5000'"

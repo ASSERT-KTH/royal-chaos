@@ -21,12 +21,17 @@ def getProcessesExternal(name):
 def getProcesses(name):
     ''' Returns the processes running inside a container, in contrary to docker sdk it return the namespaced values.'''
     container = getContainer(name)
-    cmd = 'ps'
-    output = container.exec_run(cmd)
+    cmd = 'ps -aux'
+    output = docker_client.containers.run('ubuntu',
+        command='ps -aux',
+        pid_mode='container:%s' % name,
+        remove=True)
+    #output = container.exec_run(cmd)
+    #print(output)
 
     # Parse the output
-    return_code = output[0]
-    processes = output[1]
+    #return_code = output[0]
+    processes = output
     processes = processes.decode('UTF-8').split('\n')
 
     titles = processes[0].split()

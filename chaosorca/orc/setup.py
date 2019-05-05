@@ -7,7 +7,7 @@ from setuptools.command.egg_info import egg_info as _egg_info
 
 def post_install():
     print("hello from postinstall?")
-    call(['./common/install_autocomplete.sh'])
+    call(['./misc/install_autocomplete.sh'])
 
 class install(_install):
     def run(self):

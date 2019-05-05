@@ -28,7 +28,7 @@ def startMonitoringNetworkContainer(container_name, container_ip):
         'chaosorca/netm',
         detach=True,
         environment=['NETM_IP='+container_ip],
-        name=base_name_netm+'.'+container_name,
+        name=base_name_netm+'.'+container_name, #+'.'+str(time.time()),
         network_mode='container:'+container_name,
         remove=True
         )

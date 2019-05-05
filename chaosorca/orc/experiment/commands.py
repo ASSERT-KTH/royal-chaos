@@ -47,7 +47,8 @@ def signalCleanup(signal, frame):
 @experiment.command() #@click.option('--cmd', prompt='cmd?')
 def test():
     '''test run cmd'''
-    runCmd("docker stop hello_world".split(' '))
+    print(container_api.getProcessesByNameLocal('consul_productpage-v1_1','/usr/local/bin/python productpage.py 9080'))
+    #runCmd("docker stop hello_world".split(' '))
     #print(container_api.getProcessesByNameExternal("hello_world", "nginx: worker process"))
 
 def runCmd(cmd):
@@ -96,7 +97,7 @@ def start(name, exp_time, pid_name, start_cmd, stop_cmd):
         print('🦀 Existing experiment detected, continuing from %s/%s' % (newest, perturbations[newest]))
 
 
-    #1. start monitoring.
+    #1. start monitoring. (moved into loop)
     #monitoring.stopMonitoring(container)
     #container.reload()
     #monitoring.startMonitoring(container)
@@ -109,7 +110,7 @@ def start(name, exp_time, pid_name, start_cmd, stop_cmd):
         # A) start container.
         start_proc = runCmd(start_cmd.split(' '))
         # B) assume we need to wait a bit for the above to start.
-        time.sleep(10)
+        time.sleep(20)
         # C) start monitoring
         container = container_api.getContainer(container_name)
         # first process, second one is pid.
@@ -119,11 +120,11 @@ def start(name, exp_time, pid_name, start_cmd, stop_cmd):
         start_time = currentTimeS()
 
         #3. wait predetermined amount of time.
-        printSleep(int(round(exp_time/2)), info_str='for baseline#1')
+        printSleep(exp_time, info_str='for baseline#1')
 
         #4. start perturbation.
         # first process, first one is pid.
-        pid_to_perturb = container_api.getProcessesByNameLocal(container_name, pid_name)[0][0]
+        pid_to_perturb = container_api.getProcessesByNameLocal(container_name, pid_name)[0][1]
         perturbs.premade_external(container_name, p, pid=pid_to_perturb)
 
         #5. wait predetermined amount of time.
@@ -132,7 +133,7 @@ def start(name, exp_time, pid_name, start_cmd, stop_cmd):
         #6. stop perturbation.
         print('🦀 finished perturbing')
         perturbs.stopChaos(container_name)
-        printSleep(int(round(exp_time/2)), info_str='for baseline#2')
+        printSleep(exp_time, info_str='for baseline#2')
 
         #7. log results to files for future processing.
         print('🦀 logging files')
