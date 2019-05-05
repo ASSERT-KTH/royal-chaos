@@ -48,6 +48,11 @@ public class ThrowExceptionOnTTorrent20 {
                 String injections = task.get(7);
                 String rate = task.get(8);
                 String mode = task.get(9);
+                String interval = "1";
+                if (injections.equals("-1")) {
+                    // no limit for total injected exceptions
+                    interval = "2";
+                }
                 boolean monitoringAgentOn = false;
                 System.out.println("[AGENT_CONTROLLER] start an experiment at " + filter);
                 System.out.println(String.format("[AGENT_CONTROLLER] exceptionType: %s, injections: %s, rate: %s, mode: %s", exceptionType, injections, rate, mode));
@@ -57,16 +62,16 @@ public class ThrowExceptionOnTTorrent20 {
                     if (injections.equals("1")) {
                         monitoringAgentOn = true;
                         command = String.format("timeout --signal=9 %s java -noverify -agentpath:%s -javaagent:%s=mode:throw_e," +
-                                        "defaultMode:%s,filter:%s,efilter:%s,lineNumber:%s,countdown:%s,rate:%s " +
+                                        "defaultMode:%s,filter:%s,efilter:%s,lineNumber:%s,countdown:%s,rate:%s,interval:%s " +
                                         "-jar %s -o . --max-download 1024 -s 0 %s 2>&1",
                                 timeout, monitoringAgentPath, javaagentPath, mode, filter.replace("$", "\\$"),
-                                exceptionType, lineIndexNumber, injections, rate, threadName, torrentFile);
+                                exceptionType, lineIndexNumber, injections, rate, interval, threadName, torrentFile);
                     } else {
                         command = String.format("timeout --signal=9 %s java -noverify -javaagent:%s=mode:throw_e," +
-                                        "defaultMode:%s,filter:%s,efilter:%s,lineNumber:%s,countdown:%s,rate:%s " +
+                                        "defaultMode:%s,filter:%s,efilter:%s,lineNumber:%s,countdown:%s,rate:%s,interval:%s " +
                                         "-jar %s -o . --max-download 1024 -s 0 %s 2>&1",
                                 timeout, javaagentPath, mode, filter.replace("$", "\\$"), exceptionType,
-                                lineIndexNumber, injections, rate, threadName, torrentFile);
+                                lineIndexNumber, injections, rate, interval, threadName, torrentFile);
                     }
                     System.out.println("[AGENT_CONTROLLER] command: " + command);
 
