@@ -114,6 +114,9 @@ def start(name, exp_time, pid_name, start_cmd, stop_cmd):
         # C) start monitoring
         container = container_api.getContainer(container_name)
         # first process, second one is pid.
+        while not container:
+            time.sleep(1)
+            container = container_api_.getContainer(container_name)
         pid_to_monitor = container_api.getProcessesByNameExternal(container_name, pid_name)[0][1]
         monitoring.startMonitoring(container, pid_to_monitor)
 

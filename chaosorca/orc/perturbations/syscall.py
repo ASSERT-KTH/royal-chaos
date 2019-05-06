@@ -133,7 +133,7 @@ def clearFaults(container):
         sysc_container = docker_client.containers.get(config.SYSC_NAME+'.'+container.name)
     except Exception:
         print('No syscall fault injection currently running')
-        exit()
+        return
 
     #Stop perturbation container.
     monitoring_targets.remove(container.name+'.c')
