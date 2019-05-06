@@ -21,7 +21,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 2,
-  "iteration": 1557152248018,
+  "iteration": 1557172896705,
   "links": [],
   "panels": [
     {
@@ -638,8 +638,8 @@
         "allValue": null,
         "current": {
           "tags": [],
-          "text": "hello_world",
-          "value": "hello_world"
+          "text": "example-voting-app_vote_1",
+          "value": "example-voting-app_vote_1"
         },
         "hide": 0,
         "includeAll": false,
@@ -648,27 +648,17 @@
         "name": "container",
         "options": [
           {
-            "selected": true,
+            "selected": false,
             "text": "hello_world",
             "value": "hello_world"
           },
           {
-            "selected": false,
-            "text": "",
-            "value": ""
-          },
-          {
-            "selected": false,
+            "selected": true,
             "text": "example-voting-app_vote_1",
             "value": "example-voting-app_vote_1"
-          },
-          {
-            "selected": false,
-            "text": "",
-            "value": ""
           }
         ],
-        "query": "hello_world, , example-voting-app_vote_1,",
+        "query": "hello_world, example-voting-app_vote_1",
         "skipUrlSync": false,
         "type": "custom"
       },
@@ -723,10 +713,9 @@
       },
       {
         "current": {
-          "selected": true,
           "tags": [],
-          "text": "Prometheus-2",
-          "value": "Prometheus-2"
+          "text": "Prometheus-3-localbrow",
+          "value": "Prometheus-3-localbrow"
         },
         "hide": 0,
         "label": null,
@@ -741,7 +730,7 @@
     ]
   },
   "time": {
-    "from": "now-30m",
+    "from": "now-15m",
     "to": "now"
   },
   "timepicker": {
@@ -772,5 +761,5 @@
   "timezone": "",
   "title": "Experiment dashboard2",
   "uid": "FR3XTzmZ2",
-  "version": 3
+  "version": 5
 }
