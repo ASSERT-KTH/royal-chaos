@@ -50,15 +50,20 @@ public class ThrowExceptionFoOnTTorrent20 {
                     String mode = task.get(9);
                     String foFilter = task.get(22).replace(" ", "").split("-")[0];
                     String methodDesc = task.get(22).replace(" ", "").split("-")[1];
+                    String interval = "1";
+                    if (injections.equals("-1")) {
+                        // no limit for total injected exceptions
+                        interval = "2";
+                    }
                     System.out.println("[AGENT_CONTROLLER] start an experiment at " + filter);
                     System.out.println(String.format("[AGENT_CONTROLLER] exceptionType: %s, injections: %s, rate: %s, mode: %s, foPoint: %s", exceptionType, injections, rate, mode, task.get(22)));
 
                     try {
                         String command = String.format("timeout --signal=9 %s java -noverify -javaagent:%s=mode:throw_e," +
-                                        "defaultMode:%s,filter:%s,efilter:%s,lineNumber:%s,countdown:%s,rate:%s -javaagent:%s=mode:fo,defaultMode:fo,filter:%s,methodDesc:'%s' " +
+                                        "defaultMode:%s,filter:%s,efilter:%s,lineNumber:%s,countdown:%s,rate:%s,interval:%s -javaagent:%s=mode:fo,defaultMode:fo,filter:%s,methodDesc:'%s' " +
                                         "-jar %s -o . --max-download 1024 -s 0 %s 2>&1",
                                 timeout, javaagentPath, mode, filter.replace("$", "\\$"), exceptionType,
-                                lineIndexNumber, injections, rate, failureObliviousAgentPath,
+                                lineIndexNumber, injections, rate, interval, failureObliviousAgentPath,
                                 foFilter.replace("$", "\\$").replace("<", "\\<").replace(">", "\\>"),
                                 methodDesc, threadName, torrentFile);
 
