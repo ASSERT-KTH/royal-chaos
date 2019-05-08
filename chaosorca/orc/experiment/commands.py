@@ -91,7 +91,9 @@ def start(name, exp_time, pid_name, start_cmd, stop_cmd):
         if len(folders) is 0:
             newest = 0
         else:
-            newest = int(folders[-1]) + 1
+            goal_list_of_folders = set(list(range(0,180)))
+            current_list_of_folders = set(folders)
+            newest = sorted(goal_list_of_folders - current_list_of_folders)[0]
         # Skip perturbations already completed.
         enumerated_perturbations = enumerate(perturbations[newest:], newest)
         print('🦀 Existing experiment detected, continuing from %s/%s' % (newest, perturbations[newest]))
@@ -106,6 +108,10 @@ def start(name, exp_time, pid_name, start_cmd, stop_cmd):
     length = len(perturbations)
     for index, p in enumerated_perturbations:
         print('🦀🦀🦀 %d/%d running experiment perturbation %s' % (index+1, length, p))
+        if folders is not None and index in folders:
+            # Skip this one as output folder already exists.
+            print('🦀 already done, skipping')
+            continue
 
         # A) start container.
         start_proc = runCmd(start_cmd.split(' '))
