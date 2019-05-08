@@ -96,7 +96,7 @@ public class ThrowExceptionFoOnHedwig {
 
                     task.set(23, String.format("%d(fo %d); normal: %d", injectionExecutions, foExecutions, normalExecutions));
                     task.set(24, String.valueOf(emailDiff));
-                    task.set(26, String.valueOf(JMXMonitoringTool.processCpuTime / 1000000000));
+                    task.set(26, String.valueOf(JMXMonitoringTool.processCpuTime / 1000000));
                     task.set(27, String.valueOf(JMXMonitoringTool.averageMemoryUsage / 1000000));
                     task.set(28, String.valueOf(JMXMonitoringTool.peakThreadCount));
 
@@ -115,7 +115,7 @@ public class ThrowExceptionFoOnHedwig {
                     System.out.println("[AGENT_CONTROLLER] fo execution times: " + foExecutions);
                     System.out.println("[AGENT_CONTROLLER] Email verified: " + emailDiff);
                     System.out.println("[AGENT_CONTROLLER] exit status: TODO");
-                    System.out.println("[AGENT_CONTROLLER] process cpu time(in seconds): " + JMXMonitoringTool.processCpuTime / 1000000000);
+                    System.out.println("[AGENT_CONTROLLER] process cpu time(in ms): " + JMXMonitoringTool.processCpuTime / 1000000);
                     System.out.println("[AGENT_CONTROLLER] average memory usage(in MB): " + JMXMonitoringTool.averageMemoryUsage / 1000000);
                     System.out.println("[AGENT_CONTROLLER] peak thread count: " + JMXMonitoringTool.peakThreadCount);
 

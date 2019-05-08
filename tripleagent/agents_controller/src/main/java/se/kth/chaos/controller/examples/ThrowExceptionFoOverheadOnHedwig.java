@@ -31,7 +31,7 @@ public class ThrowExceptionFoOverheadOnHedwig {
         long totalAverageMemoryUsage = 0;
         int totalPeakThreadCount = 0;
         long totalExecutionTime = 0;
-        int loopCount = 5;
+        int loopCount = 30;
 
         if (osName.contains("Windows")) {return;}
 

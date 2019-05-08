@@ -131,7 +131,7 @@ public class ThrowExceptionOnTTorrent20 {
                         task.set(14, "no");
                     }
                     task.set(15, endingFound ? "0" : String.valueOf(exitValue));
-                    task.set(16, String.valueOf(JMXMonitoringTool.processCpuTime / 1000000000));
+                    task.set(16, String.valueOf(JMXMonitoringTool.processCpuTime / 1000000));
                     task.set(17, String.valueOf(JMXMonitoringTool.averageMemoryUsage / 1000000));
                     task.set(18, String.valueOf(JMXMonitoringTool.peakThreadCount));
                     tasksInfo.set(i, task.toArray(new String[task.size()]));
@@ -140,7 +140,7 @@ public class ThrowExceptionOnTTorrent20 {
                     System.out.println("[AGENT_CONTROLLER] injection execution times: " + injectionExecutions);
                     System.out.println("[AGENT_CONTROLLER] whether successfully downloaded the file: " + task.get(14));
                     System.out.println("[AGENT_CONTROLLER] exit status: " + (endingFound ? "0" : String.valueOf(exitValue)));
-                    System.out.println("[AGENT_CONTROLLER] process cpu time(in seconds): " + JMXMonitoringTool.processCpuTime / 1000000000);
+                    System.out.println("[AGENT_CONTROLLER] process cpu time(in ms): " + JMXMonitoringTool.processCpuTime / 1000000);
                     System.out.println("[AGENT_CONTROLLER] average memory usage(in MB): " + JMXMonitoringTool.averageMemoryUsage / 1000000);
                     System.out.println("[AGENT_CONTROLLER] peak thread count: " + JMXMonitoringTool.peakThreadCount);
 

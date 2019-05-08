@@ -69,7 +69,7 @@ public class ThrowExceptionAnalysisOnHedwig {
             }
             logReader.close();
 
-            System.out.println("[AGENT_CONTROLLER] process cpu time(in seconds): " + JMXMonitoringTool.processCpuTime / 1000000000);
+            System.out.println("[AGENT_CONTROLLER] process cpu time(in ms): " + JMXMonitoringTool.processCpuTime / 1000000);
             System.out.println("[AGENT_CONTROLLER] average memory usage(in MB): " + JMXMonitoringTool.averageMemoryUsage / 1000000);
             System.out.println("[AGENT_CONTROLLER] peak thread count: " + JMXMonitoringTool.peakThreadCount);
 
@@ -142,7 +142,7 @@ public class ThrowExceptionAnalysisOnHedwig {
 
                     task.set(12, injectionExecutions + "; normal: " + normalExecutions);
                     task.set(14, String.valueOf(emailDiff));
-                    task.set(16, String.valueOf(JMXMonitoringTool.processCpuTime / 1000000000));
+                    task.set(16, String.valueOf(JMXMonitoringTool.processCpuTime / 1000000));
                     task.set(17, String.valueOf(JMXMonitoringTool.averageMemoryUsage / 1000000));
                     task.set(18, String.valueOf(JMXMonitoringTool.peakThreadCount));
                     tasksInfo.set(i, task.toArray(new String[task.size()]));
@@ -151,7 +151,7 @@ public class ThrowExceptionAnalysisOnHedwig {
                     System.out.println("[AGENT_CONTROLLER] injection execution times: " + injectionExecutions);
                     System.out.println("[AGENT_CONTROLLER] Email verified: " + emailDiff);
                     System.out.println("[AGENT_CONTROLLER] exit status: TODO");
-                    System.out.println("[AGENT_CONTROLLER] process cpu time(in seconds): " + JMXMonitoringTool.processCpuTime / 1000000000);
+                    System.out.println("[AGENT_CONTROLLER] process cpu time(in ms): " + JMXMonitoringTool.processCpuTime / 1000000);
                     System.out.println("[AGENT_CONTROLLER] average memory usage(in MB): " + JMXMonitoringTool.averageMemoryUsage / 1000000);
                     System.out.println("[AGENT_CONTROLLER] peak thread count: " + JMXMonitoringTool.peakThreadCount);
 
