@@ -19,7 +19,7 @@ public class ThrowExceptionOnHedwig {
         String applicationLogName = "app.console";
         String applicationPidFile = "/home/gluckzhang/development/hedwig-0.7/hedwig-0.7-binary/bin/app.pid";
         String perturbationPointsCsvPath = "/home/gluckzhang/development/hedwig-0.7/hedwig-0.7-binary/bin/perturbationPointsList.csv";
-        String taskCsv = "hedwig_evaluation_0.7/perturbationAndFoPointsList_tasks.csv";
+        String taskCsv = "hedwig_evaluation_0.7/perturbationPointsList_tasks.csv";
         String restartScript = "/home/gluckzhang/development/chaos-engineering-research-forked/tripleagent/agents_controller/hedwig_evaluation_0.7/restart_hedwig.sh";
         AgentsController controller = new AgentsController("localhost", 11211);
 
