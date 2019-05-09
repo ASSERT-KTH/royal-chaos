@@ -79,6 +79,7 @@ def start(name, exp_time, pid_name, start_cmd, stop_cmd):
     #0. Create experiment directory
     realpath = os.path.realpath('')
     experiment_dir = '%s/%s' % (realpath, container_name+'_exp')
+    folders = None
     try:
         os.mkdir(experiment_dir)
     except FileExistsError:
@@ -122,7 +123,8 @@ def start(name, exp_time, pid_name, start_cmd, stop_cmd):
         # first process, second one is pid.
         while not container:
             time.sleep(1)
-            container = container_api_.getContainer(container_name)
+            container = container_api.getContainer(container_name)
+        print("container=",container)
         pid_to_monitor = container_api.getProcessesByNameExternal(container_name, pid_name)[0][1]
         monitoring.startMonitoring(container, pid_to_monitor)
 

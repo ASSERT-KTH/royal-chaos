@@ -26,11 +26,8 @@ def getProcesses(name):
         command='ps -aux',
         pid_mode='container:%s' % name,
         remove=True)
-    #output = container.exec_run(cmd)
-    #print(output)
 
     # Parse the output
-    #return_code = output[0]
     processes = output
     processes = processes.decode('UTF-8').split('\n')
 
