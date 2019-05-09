@@ -206,9 +206,10 @@ public class PAgent {
             String[] line = perturbationPoints.get(i);
             PerturbationPoint perturbationPoint = perturbationPointsMap.get(line[0]);
             if (perturbationPoint != null && !perturbationPoint.mode.equals(line[9])) {
-                // we only update countdown and chanceOfFailure when mode changes
+                // we only update countdown, chanceOfFailure and invocationCount when mode changes
                 perturbationPoint.perturbationCountdown = Integer.valueOf(line[7]);
                 perturbationPoint.chanceOfFailure = Double.valueOf(line[8]);
+                perturbationPoint.invocationCount = 0;
                 perturbationPoint.mode = line[9];
                 perturbationPointsMap.put(line[0], perturbationPoint);
             }
