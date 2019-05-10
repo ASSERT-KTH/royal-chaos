@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build . -t chaosorca/ttorrent-ubuntu-loop
+docker build . -t chaosorca/ttorrent-ubuntu
