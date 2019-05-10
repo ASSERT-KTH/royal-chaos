@@ -21,7 +21,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 2,
-  "iteration": 1557172896705,
+  "iteration": 1557470069959,
   "links": [],
   "panels": [
     {
@@ -180,7 +180,7 @@
       },
       "yaxes": [
         {
-          "format": "decbytes",
+          "format": "decbits",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -637,9 +637,8 @@
       {
         "allValue": null,
         "current": {
-          "tags": [],
-          "text": "example-voting-app_vote_1",
-          "value": "example-voting-app_vote_1"
+          "text": "ttorrent-ubuntu",
+          "value": "ttorrent-ubuntu"
         },
         "hide": 0,
         "includeAll": false,
@@ -653,7 +652,7 @@
             "value": "hello_world"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "example-voting-app_vote_1",
             "value": "example-voting-app_vote_1"
           }
@@ -667,7 +666,6 @@
         "auto_count": 30,
         "auto_min": "10s",
         "current": {
-          "tags": [],
           "text": "30s",
           "value": "30s"
         },
@@ -713,9 +711,9 @@
       },
       {
         "current": {
-          "tags": [],
-          "text": "Prometheus-3-localbrow",
-          "value": "Prometheus-3-localbrow"
+          "selected": true,
+          "text": "Prometheus-2",
+          "value": "Prometheus-2"
         },
         "hide": 0,
         "label": null,
@@ -761,5 +759,5 @@
   "timezone": "",
   "title": "Experiment dashboard2",
   "uid": "FR3XTzmZ2",
-  "version": 5
+  "version": 6
 }
