@@ -16,9 +16,9 @@ public class ThrowExceptionOnTTorrent20 {
         String monitoringAgentPath = System.getProperty("user.dir") + "/../monitoring_agent/src/main/cpp/foagent.so";
         String endingPattern = "BitTorrent client signing off";
         String threadName = "ttorrent-2.0-client.jar";
-        String torrentFile = "CentOS-7-x86_64-NetInstall-1810.torrent";
+        String torrentFile = "debian-9.9.0-amd64-netinst.iso.torrent";
         String targetCsv = "perturbationPointsList_tasks.csv";
-        String correctChecksum = "19d94274ef856c4dfcacb2e7cfe4be73e442a71dd65cc3fb6e46db826040b56e";
+        String correctChecksum = "d4a22c81c76a66558fb92e690ef70a5d67c685a08216701b15746586520f6e8e";
         int timeout = 240;
         String osName = System.getProperty("os.name");
         AgentsController controller = new AgentsController("localhost", 11211);
@@ -34,8 +34,7 @@ public class ThrowExceptionOnTTorrent20 {
                 task = new ArrayList<>(Arrays.asList(tasksInfo.get(i)));
                 // delete the downloaded file
                 try {
-                    process = Runtime.getRuntime().exec(new String[]{"bash", "-c", "rm -f CentOS-7-x86_64-NetInstall-1810.iso*"}, null, new File(rootPath));
-                    process = Runtime.getRuntime().exec(new String[]{"bash", "-c", "rm -f sha256sum.*"}, null, new File(rootPath));
+                    process = Runtime.getRuntime().exec(new String[]{"bash", "-c", "rm -f debian-9.9.0-amd64-netinst.iso*"}, null, new File(rootPath));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -115,9 +114,9 @@ public class ThrowExceptionOnTTorrent20 {
 
                     exitValue = process.waitFor();
                     task.set(12, injectionExecutions + "; normal: " + normalExecutions);
-                    targetFile = new File(rootPath + "/CentOS-7-x86_64-NetInstall-1810.iso");
+                    targetFile = new File(rootPath + "/debian-9.9.0-amd64-netinst.iso");
                     if (targetFile.exists()) {
-                        process = Runtime.getRuntime().exec("sha256sum ./CentOS-7-x86_64-NetInstall-1810.iso", null, new File(rootPath));
+                        process = Runtime.getRuntime().exec("sha256sum ./debian-9.9.0-amd64-netinst.iso", null, new File(rootPath));
                         inputStream = process.getInputStream();
                         inputStreamReader = new InputStreamReader(inputStream);
                         bufferedReader = new BufferedReader(inputStreamReader);
