@@ -48,10 +48,10 @@ public class ThrowExceptionOnTTorrent20 {
                 String rate = task.get(8);
                 String mode = task.get(9);
                 String interval = "1";
-                if (injections.equals("-1")) {
-                    // no limit for total injected exceptions
-                    interval = "2";
-                }
+//                if (injections.equals("-1")) {
+//                    // no limit for total injected exceptions
+//                    interval = "2";
+//                }
                 boolean monitoringAgentOn = false;
                 System.out.println("[AGENT_CONTROLLER] start an experiment at " + filter);
                 System.out.println(String.format("[AGENT_CONTROLLER] exceptionType: %s, injections: %s, rate: %s, mode: %s", exceptionType, injections, rate, mode));
