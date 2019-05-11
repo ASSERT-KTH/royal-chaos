@@ -16,10 +16,10 @@ public class ThrowExceptionOnTTorrent20 {
         String monitoringAgentPath = System.getProperty("user.dir") + "/../monitoring_agent/src/main/cpp/foagent.so";
         String endingPattern = "BitTorrent client signing off";
         String threadName = "ttorrent-2.0-client.jar";
-        String torrentFile = "debian-9.9.0-amd64-netinst.iso.torrent";
+        String torrentFile = "debian-9.9.0-amd64-netinst.torrent";
         String targetCsv = "perturbationPointsList_tasks.csv";
         String correctChecksum = "d4a22c81c76a66558fb92e690ef70a5d67c685a08216701b15746586520f6e8e";
-        int timeout = 240;
+        int timeout = 60;
         String osName = System.getProperty("os.name");
         AgentsController controller = new AgentsController("localhost", 11211);
 
