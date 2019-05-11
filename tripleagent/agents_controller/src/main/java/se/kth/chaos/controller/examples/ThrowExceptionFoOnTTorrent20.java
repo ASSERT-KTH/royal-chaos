@@ -16,10 +16,10 @@ public class ThrowExceptionFoOnTTorrent20 {
         String failureObliviousAgentPath = System.getProperty("user.dir") + "/../failure_oblivious_agent/target/foagent-fo-jar-with-dependencies.jar";
         String endingPattern = "BitTorrent client signing off";
         String threadName = "ttorrent-2.0-client.jar";
-        String torrentFile = "CentOS-7-x86_64-NetInstall-1810.torrent";
+        String torrentFile = "debian-9.9.0-amd64-netinst.torrent";
         String taskCsv = "perturbationAndFoPointsList_tasks.csv";
-        String correctChecksum = "19d94274ef856c4dfcacb2e7cfe4be73e442a71dd65cc3fb6e46db826040b56e";
-        int timeout = 240;
+        String correctChecksum = "d4a22c81c76a66558fb92e690ef70a5d67c685a08216701b15746586520f6e8e";
+        int timeout = 60;
         String osName = System.getProperty("os.name");
         AgentsController controller = new AgentsController("localhost", 11211);
 
@@ -35,8 +35,7 @@ public class ThrowExceptionFoOnTTorrent20 {
 
                 // delete the downloaded file
                 try {
-                    process = Runtime.getRuntime().exec(new String[]{"bash", "-c", "rm -f CentOS-7-x86_64-NetInstall-1810.iso*"}, null, new File(rootPath));
-                    process = Runtime.getRuntime().exec(new String[]{"bash", "-c", "rm -f sha256sum.*"}, null, new File(rootPath));
+                    process = Runtime.getRuntime().exec(new String[]{"bash", "-c", "rm -f debian-9.9.0-amd64-netinst.iso*"}, null, new File(rootPath));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -51,10 +50,10 @@ public class ThrowExceptionFoOnTTorrent20 {
                     String foFilter = task.get(22).replace(" ", "").split("-")[0];
                     String methodDesc = task.get(22).replace(" ", "").split("-")[1];
                     String interval = "1";
-                    if (injections.equals("-1")) {
-                        // no limit for total injected exceptions
-                        interval = "2";
-                    }
+//                    if (injections.equals("-1")) {
+//                        // no limit for total injected exceptions
+//                        interval = "2";
+//                    }
                     System.out.println("[AGENT_CONTROLLER] start an experiment at " + filter);
                     System.out.println(String.format("[AGENT_CONTROLLER] exceptionType: %s, injections: %s, rate: %s, mode: %s, foPoint: %s", exceptionType, injections, rate, mode, task.get(22)));
 
@@ -111,9 +110,9 @@ public class ThrowExceptionFoOnTTorrent20 {
 
                         exitValue = process.waitFor();
                         task.set(23, String.format("%d(fo %d); normal: %d", injectionExecutions, foExecutions, normalExecutions));
-                        targetFile = new File(rootPath + "/CentOS-7-x86_64-NetInstall-1810.iso");
+                        targetFile = new File(rootPath + "/debian-9.9.0-amd64-netinst.iso");
                         if (targetFile.exists()) {
-                            process = Runtime.getRuntime().exec("sha256sum ./CentOS-7-x86_64-NetInstall-1810.iso", null, new File(rootPath));
+                            process = Runtime.getRuntime().exec("sha256sum ./debian-9.9.0-amd64-netinst.iso", null, new File(rootPath));
                             inputStream = process.getInputStream();
                             inputStreamReader = new InputStreamReader(inputStream);
                             bufferedReader = new BufferedReader(inputStreamReader);
