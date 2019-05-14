@@ -98,7 +98,7 @@ def startMonitoring(container, pid=None):
 
     #2. Launch syscall monitoring.
     if pid is None:
-        pid_to_monitor = selectProcessInsideContainer(container)
+        pid_to_monitor = getProcessByName(container)
     else:
         pid_to_monitor = pid
     print('Launching monitoring for PID', pid_to_monitor)
