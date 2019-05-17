@@ -28,7 +28,7 @@ def startMonitoringNetworkContainer(container_name, container_ip):
         'chaosorca/netm',
         detach=True,
         environment=['NETM_IP='+container_ip],
-        name=base_name_netm+'.'+container_name,
+        name=base_name_netm+'.'+container_name, #+'.'+str(time.time()),
         network_mode='container:'+container_name,
         remove=True
         )
@@ -45,9 +45,9 @@ def startMonitoringSyscallContainer(container_name, pid_to_monitor):
         remove=True,
         volumes={'/sys/kernel/debug': {'bind': '/sys/kernel/debug', 'mode': 'ro'}})
 
-def selectProcessInsideContainer(container):
+def getProcessByName(container):
     '''Selects a local process inside a container'''
-    processes = container.top()['Processes']#container_api.getProcesses(container.name)['processes']
+    processes = container.top()['Processes']
     if len(processes) == 1:
         # Easy case, just select that one for monitoring.
         return processes[0][0] # First process, where the first value is the PID.
@@ -82,7 +82,7 @@ def connectContainerToMonitoringNetwork(container, job_name):
     monitoring_targets.add(container_monit_ip +':'+ monitoring_default_port, job_name)
     return container_monit_ip
 
-def startMonitoring(container):
+def startMonitoring(container, pid=None):
     '''Start monitoring on the given container'''
 
     # Variables:
@@ -97,7 +97,10 @@ def startMonitoring(container):
     print('Added to monitoring network')
 
     #2. Launch syscall monitoring.
-    pid_to_monitor = selectProcessInsideContainer(container)
+    if pid is None:
+        pid_to_monitor = getProcessByName(container)
+    else:
+        pid_to_monitor = pid
     print('Launching monitoring for PID', pid_to_monitor)
     sysm_container = startMonitoringSyscallContainer(container.name, pid_to_monitor)
     # Connect container to monitoring network.
