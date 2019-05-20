@@ -21,6 +21,7 @@ public class ThrowExceptionFoOnHedwig {
         String perturbationPointsCsvPath = "/home/gluckzhang/development/hedwig-0.7/hedwig-0.7-binary/bin/perturbationPointsList.csv";
         String failureObliviousPointsCsvPath = "/home/gluckzhang/development/hedwig-0.7/hedwig-0.7-binary/bin/failureObliviousPointsList.csv";
         String taskCsv = "hedwig_evaluation_0.7/perturbationAndFoPointsList_tasks.csv";
+        String restartScript = "/home/gluckzhang/development/chaos-engineering-research-forked/tripleagent/agents_controller/hedwig_evaluation_0.7/restart_hedwig.sh";
         AgentsController controller = new AgentsController("localhost", 11211);
 
         if (osName.contains("Windows")) {return;}
@@ -82,8 +83,7 @@ public class ThrowExceptionFoOnHedwig {
                             injectionExecutions++;
                         } else if (line.startsWith("INFO FOAgent failure oblivious mode is on, ignore the following exception")) {
                             foExecutions++;
-                        } else if (line.startsWith("INFO PAgent a method which throws an exception executed")
-                                || line.startsWith("INFO PAgent throw exception perturbation executed normally")) {
+                        } else if (line.startsWith("INFO PAgent throw exception perturbation executed normally")) {
                             normalExecutions++;
                         }
                     }
@@ -96,7 +96,7 @@ public class ThrowExceptionFoOnHedwig {
 
                     task.set(23, String.format("%d(fo %d); normal: %d", injectionExecutions, foExecutions, normalExecutions));
                     task.set(24, String.valueOf(emailDiff));
-                    task.set(26, String.valueOf(JMXMonitoringTool.processCpuTime / 1000000000));
+                    task.set(26, String.valueOf(JMXMonitoringTool.processCpuTime / 1000000));
                     task.set(27, String.valueOf(JMXMonitoringTool.averageMemoryUsage / 1000000));
                     task.set(28, String.valueOf(JMXMonitoringTool.peakThreadCount));
 
@@ -115,12 +115,21 @@ public class ThrowExceptionFoOnHedwig {
                     System.out.println("[AGENT_CONTROLLER] fo execution times: " + foExecutions);
                     System.out.println("[AGENT_CONTROLLER] Email verified: " + emailDiff);
                     System.out.println("[AGENT_CONTROLLER] exit status: TODO");
-                    System.out.println("[AGENT_CONTROLLER] process cpu time(in seconds): " + JMXMonitoringTool.processCpuTime / 1000000000);
+                    System.out.println("[AGENT_CONTROLLER] process cpu time(in ms): " + JMXMonitoringTool.processCpuTime / 1000000);
                     System.out.println("[AGENT_CONTROLLER] average memory usage(in MB): " + JMXMonitoringTool.averageMemoryUsage / 1000000);
                     System.out.println("[AGENT_CONTROLLER] peak thread count: " + JMXMonitoringTool.peakThreadCount);
 
                     System.out.println("[AGENT_CONTROLLER] finish the experiment at " + filter);
                     System.out.println("[AGENT_CONTROLLER] ------");
+
+                    System.out.println("[AGENT_CONTROLLER] check server status");
+                    if (!conductSingleExperiment()) {
+                        System.out.println("[AGENT_CONTROLLER] unstable status detected");
+                        process = Runtime.getRuntime().exec(new String[]{"bash", "-c", restartScript}, null);
+                        System.out.println("[AGENT_CONTROLLER] restart server, bash exit value: " + process.waitFor());
+                    }
+                    System.out.println("[AGENT_CONTROLLER] ------");
+
                     try { Thread.currentThread().sleep(5000); } catch (InterruptedException e) { }
                 }
             }

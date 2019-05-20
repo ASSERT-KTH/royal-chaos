@@ -16,10 +16,10 @@ public class ThrowExceptionFoOnTTorrent20 {
         String failureObliviousAgentPath = System.getProperty("user.dir") + "/../failure_oblivious_agent/target/foagent-fo-jar-with-dependencies.jar";
         String endingPattern = "BitTorrent client signing off";
         String threadName = "ttorrent-2.0-client.jar";
-        String torrentFile = "CentOS-7-x86_64-NetInstall-1810.torrent";
+        String torrentFile = "debian-9.9.0-amd64-netinst.torrent";
         String taskCsv = "perturbationAndFoPointsList_tasks.csv";
-        String correctChecksum = "19d94274ef856c4dfcacb2e7cfe4be73e442a71dd65cc3fb6e46db826040b56e";
-        int timeout = 240;
+        String correctChecksum = "d4a22c81c76a66558fb92e690ef70a5d67c685a08216701b15746586520f6e8e";
+        int timeout = 60;
         String osName = System.getProperty("os.name");
         AgentsController controller = new AgentsController("localhost", 11211);
 
@@ -35,8 +35,7 @@ public class ThrowExceptionFoOnTTorrent20 {
 
                 // delete the downloaded file
                 try {
-                    process = Runtime.getRuntime().exec(new String[]{"bash", "-c", "rm -f CentOS-7-x86_64-NetInstall-1810.iso*"}, null, new File(rootPath));
-                    process = Runtime.getRuntime().exec(new String[]{"bash", "-c", "rm -f sha256sum.*"}, null, new File(rootPath));
+                    process = Runtime.getRuntime().exec(new String[]{"bash", "-c", "rm -f debian-9.9.0-amd64-netinst.iso*"}, null, new File(rootPath));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -50,15 +49,20 @@ public class ThrowExceptionFoOnTTorrent20 {
                     String mode = task.get(9);
                     String foFilter = task.get(22).replace(" ", "").split("-")[0];
                     String methodDesc = task.get(22).replace(" ", "").split("-")[1];
+                    String interval = "1";
+//                    if (injections.equals("-1")) {
+//                        // no limit for total injected exceptions
+//                        interval = "2";
+//                    }
                     System.out.println("[AGENT_CONTROLLER] start an experiment at " + filter);
                     System.out.println(String.format("[AGENT_CONTROLLER] exceptionType: %s, injections: %s, rate: %s, mode: %s, foPoint: %s", exceptionType, injections, rate, mode, task.get(22)));
 
                     try {
                         String command = String.format("timeout --signal=9 %s java -noverify -javaagent:%s=mode:throw_e," +
-                                        "defaultMode:%s,filter:%s,efilter:%s,lineNumber:%s,countdown:%s,rate:%s -javaagent:%s=mode:fo,defaultMode:fo,filter:%s,methodDesc:'%s' " +
+                                        "defaultMode:%s,filter:%s,efilter:%s,lineNumber:%s,countdown:%s,rate:%s,interval:%s -javaagent:%s=mode:fo,defaultMode:fo,filter:%s,methodDesc:'%s' " +
                                         "-jar %s -o . --max-download 1024 -s 0 %s 2>&1",
                                 timeout, javaagentPath, mode, filter.replace("$", "\\$"), exceptionType,
-                                lineIndexNumber, injections, rate, failureObliviousAgentPath,
+                                lineIndexNumber, injections, rate, interval, failureObliviousAgentPath,
                                 foFilter.replace("$", "\\$").replace("<", "\\<").replace(">", "\\>"),
                                 methodDesc, threadName, torrentFile);
 
@@ -106,9 +110,9 @@ public class ThrowExceptionFoOnTTorrent20 {
 
                         exitValue = process.waitFor();
                         task.set(23, String.format("%d(fo %d); normal: %d", injectionExecutions, foExecutions, normalExecutions));
-                        targetFile = new File(rootPath + "/CentOS-7-x86_64-NetInstall-1810.iso");
+                        targetFile = new File(rootPath + "/debian-9.9.0-amd64-netinst.iso");
                         if (targetFile.exists()) {
-                            process = Runtime.getRuntime().exec("sha256sum ./CentOS-7-x86_64-NetInstall-1810.iso", null, new File(rootPath));
+                            process = Runtime.getRuntime().exec("sha256sum ./debian-9.9.0-amd64-netinst.iso", null, new File(rootPath));
                             inputStream = process.getInputStream();
                             inputStreamReader = new InputStreamReader(inputStream);
                             bufferedReader = new BufferedReader(inputStreamReader);
@@ -122,7 +126,7 @@ public class ThrowExceptionFoOnTTorrent20 {
                             task.set(24, "no");
                         }
                         task.set(25, endingFound ? "0" : String.valueOf(exitValue));
-                        task.set(26, String.valueOf(JMXMonitoringTool.processCpuTime / 1000000000));
+                        task.set(26, String.valueOf(JMXMonitoringTool.processCpuTime / 1000000));
                         task.set(27, String.valueOf(JMXMonitoringTool.averageMemoryUsage / 1000000));
                         task.set(28, String.valueOf(JMXMonitoringTool.peakThreadCount));
                         tasksInfo.set(i, task.toArray(new String[task.size()]));
@@ -132,7 +136,7 @@ public class ThrowExceptionFoOnTTorrent20 {
                         System.out.println("[AGENT_CONTROLLER] fo execution times: " + foExecutions);
                         System.out.println("[AGENT_CONTROLLER] whether successfully downloaded the file: " + task.get(24));
                         System.out.println("[AGENT_CONTROLLER] exit status: " + (endingFound ? "0" : String.valueOf(exitValue)));
-                        System.out.println("[AGENT_CONTROLLER] process cpu time(in seconds): " + JMXMonitoringTool.processCpuTime / 1000000000);
+                        System.out.println("[AGENT_CONTROLLER] process cpu time(in ms): " + JMXMonitoringTool.processCpuTime / 1000000);
                         System.out.println("[AGENT_CONTROLLER] average memory usage(in MB): " + JMXMonitoringTool.averageMemoryUsage / 1000000);
                         System.out.println("[AGENT_CONTROLLER] peak thread count: " + JMXMonitoringTool.peakThreadCount);
 

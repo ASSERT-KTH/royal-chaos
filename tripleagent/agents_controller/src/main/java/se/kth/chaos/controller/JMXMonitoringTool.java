@@ -26,7 +26,6 @@ public class JMXMonitoringTool {
     }
 
     public static void monitorProcessByPid(int pid, int interval) {
-        processCpuTime = 0;
         averageMemoryUsage = 0;
         peakThreadCount = 0;
 
@@ -84,7 +83,7 @@ public class JMXMonitoringTool {
                 tempMemory = tempMemory + Long.parseLong(cd.get("used").toString());
 
                 osMbean = jmxc.getMBeanServerConnection().getAttribute(new ObjectName("java.lang:type=OperatingSystem"),"ProcessCpuTime");
-                processCpuTime += Long.parseLong(osMbean.toString());
+                processCpuTime = Long.parseLong(osMbean.toString());
 
                 threadMbean = jmxc.getMBeanServerConnection().getAttribute(new ObjectName("java.lang:type=Threading"),"ThreadCount");
                 int tPeakThreadCount = Integer.valueOf(threadMbean.toString());

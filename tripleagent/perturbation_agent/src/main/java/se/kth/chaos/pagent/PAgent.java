@@ -36,6 +36,7 @@ public class PAgent {
         PerturbationPoint perturbationPoint = perturbationPointsMap.getOrDefault(perturbationPointKey, null);
 
         if (perturbationPoint != null) {
+            perturbationPoint.invocationCount = perturbationPoint.invocationCount + 1;
             if (perturbationPoint.mode.equals("analysis")) {
                 System.out.printf("INFO PAgent a method which throws an exception executed in %s/%s(%s), lineNumber: %s, key: %s\n",
                         perturbationPoint.className, perturbationPoint.methodName, perturbationPoint.exceptionType,
@@ -49,12 +50,16 @@ public class PAgent {
                     perturbationPoint.covered = true;
                 }
             } else if (perturbationPoint.mode.equals("throw_e")) {
-                if (perturbationPoint.perturbationCountdown > 0 && shouldActivate(perturbationPoint.chanceOfFailure)) {
-                    System.out.printf("INFO PAgent throw exception perturbation activated in %s/%s(%s), lineNumber: %s, countDown: %d\n",
+                if (perturbationPoint.perturbationCountdown != 0
+                    && shouldActivate(perturbationPoint.chanceOfFailure)
+                    && (perturbationPoint.interval == 1 || perturbationPoint.invocationCount % perturbationPoint.interval == 1)) {
+                        System.out.printf("INFO PAgent throw exception perturbation activated in %s/%s(%s), lineNumber: %s, countDown: %d\n",
                             perturbationPoint.className, perturbationPoint.methodName, perturbationPoint.exceptionType,
                             perturbationPoint.lineIndexNumber, perturbationPoint.perturbationCountdown);
-                    perturbationPoint.perturbationCountdown = perturbationPoint.perturbationCountdown - 1;
-                    throw throwOrDefault(perturbationPoint);
+                        if (perturbationPoint.perturbationCountdown > 0) {
+                            perturbationPoint.perturbationCountdown = perturbationPoint.perturbationCountdown - 1;
+                        }
+                        throw throwOrDefault(perturbationPoint);
                 } else {
                     System.out.printf("INFO PAgent throw exception perturbation executed normally in %s/%s(%s), lineNumber: %s, countDown: %d\n",
                             perturbationPoint.className, perturbationPoint.methodName, perturbationPoint.exceptionType,
@@ -201,9 +206,10 @@ public class PAgent {
             String[] line = perturbationPoints.get(i);
             PerturbationPoint perturbationPoint = perturbationPointsMap.get(line[0]);
             if (perturbationPoint != null && !perturbationPoint.mode.equals(line[9])) {
-                // we only update countdown and chanceOfFailure when mode changes
+                // we only update countdown, chanceOfFailure and invocationCount when mode changes
                 perturbationPoint.perturbationCountdown = Integer.valueOf(line[7]);
                 perturbationPoint.chanceOfFailure = Double.valueOf(line[8]);
+                perturbationPoint.invocationCount = 0;
                 perturbationPoint.mode = line[9];
                 perturbationPointsMap.put(line[0], perturbationPoint);
             }

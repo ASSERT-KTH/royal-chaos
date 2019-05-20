@@ -1,0 +1,836 @@
+summary:
+process cpu time(in ms): 18336
+average memory usage(in MB): 49
+peak thread count: 32
+downloading time(in ms): 21137
+
+---- normal execution ----
+summary:
+process cpu time(in ms): 15008
+average memory usage(in MB): 47
+peak thread count: 30
+downloading time(in ms): 20416
+
+
+[INFO] 
+[INFO] --- exec-maven-plugin:1.6.0:java (default) @ foagent-controller ---
+[AGENT_CONTROLLER] Let's begin our experiment!
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -noverify -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../perturbation_agent/target/foagent-perturbation-jar-with-dependencies.jar=mode:throw_e,defaultMode:throw_e,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,efilter:java/net/ConnectException,lineNumber:235,countdown:-1,rate:1,interval:1 -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../failure_oblivious_agent/target/foagent-fo-jar-with-dependencies.jar=mode:fo,defaultMode:fo,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,methodDesc:'(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V' -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 2
+[AGENT_CONTROLLER] fo execution times: 4
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 19090
+[AGENT_CONTROLLER] average memory usage(in MB): 66
+[AGENT_CONTROLLER] peak thread count: 32
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -noverify -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../perturbation_agent/target/foagent-perturbation-jar-with-dependencies.jar=mode:throw_e,defaultMode:throw_e,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,efilter:java/net/ConnectException,lineNumber:235,countdown:-1,rate:1,interval:1 -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../failure_oblivious_agent/target/foagent-fo-jar-with-dependencies.jar=mode:fo,defaultMode:fo,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,methodDesc:'(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V' -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 2
+[AGENT_CONTROLLER] fo execution times: 4
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 20020
+[AGENT_CONTROLLER] average memory usage(in MB): 37
+[AGENT_CONTROLLER] peak thread count: 32
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -noverify -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../perturbation_agent/target/foagent-perturbation-jar-with-dependencies.jar=mode:throw_e,defaultMode:throw_e,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,efilter:java/net/ConnectException,lineNumber:235,countdown:-1,rate:1,interval:1 -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../failure_oblivious_agent/target/foagent-fo-jar-with-dependencies.jar=mode:fo,defaultMode:fo,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,methodDesc:'(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V' -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 2
+[AGENT_CONTROLLER] fo execution times: 4
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 18750
+[AGENT_CONTROLLER] average memory usage(in MB): 35
+[AGENT_CONTROLLER] peak thread count: 32
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -noverify -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../perturbation_agent/target/foagent-perturbation-jar-with-dependencies.jar=mode:throw_e,defaultMode:throw_e,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,efilter:java/net/ConnectException,lineNumber:235,countdown:-1,rate:1,interval:1 -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../failure_oblivious_agent/target/foagent-fo-jar-with-dependencies.jar=mode:fo,defaultMode:fo,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,methodDesc:'(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V' -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -noverify -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../perturbation_agent/target/foagent-perturbation-jar-with-dependencies.jar=mode:throw_e,defaultMode:throw_e,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,efilter:java/net/ConnectException,lineNumber:235,countdown:-1,rate:1,interval:1 -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../failure_oblivious_agent/target/foagent-fo-jar-with-dependencies.jar=mode:fo,defaultMode:fo,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,methodDesc:'(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V' -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 2
+[AGENT_CONTROLLER] fo execution times: 4
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 19520
+[AGENT_CONTROLLER] average memory usage(in MB): 46
+[AGENT_CONTROLLER] peak thread count: 32
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -noverify -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../perturbation_agent/target/foagent-perturbation-jar-with-dependencies.jar=mode:throw_e,defaultMode:throw_e,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,efilter:java/net/ConnectException,lineNumber:235,countdown:-1,rate:1,interval:1 -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../failure_oblivious_agent/target/foagent-fo-jar-with-dependencies.jar=mode:fo,defaultMode:fo,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,methodDesc:'(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V' -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 2
+[AGENT_CONTROLLER] fo execution times: 3
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 17740
+[AGENT_CONTROLLER] average memory usage(in MB): 50
+[AGENT_CONTROLLER] peak thread count: 32
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -noverify -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../perturbation_agent/target/foagent-perturbation-jar-with-dependencies.jar=mode:throw_e,defaultMode:throw_e,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,efilter:java/net/ConnectException,lineNumber:235,countdown:-1,rate:1,interval:1 -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../failure_oblivious_agent/target/foagent-fo-jar-with-dependencies.jar=mode:fo,defaultMode:fo,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,methodDesc:'(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V' -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 2
+[AGENT_CONTROLLER] fo execution times: 4
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 18840
+[AGENT_CONTROLLER] average memory usage(in MB): 44
+[AGENT_CONTROLLER] peak thread count: 32
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -noverify -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../perturbation_agent/target/foagent-perturbation-jar-with-dependencies.jar=mode:throw_e,defaultMode:throw_e,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,efilter:java/net/ConnectException,lineNumber:235,countdown:-1,rate:1,interval:1 -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../failure_oblivious_agent/target/foagent-fo-jar-with-dependencies.jar=mode:fo,defaultMode:fo,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,methodDesc:'(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V' -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 2
+[AGENT_CONTROLLER] fo execution times: 3
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 18170
+[AGENT_CONTROLLER] average memory usage(in MB): 53
+[AGENT_CONTROLLER] peak thread count: 32
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -noverify -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../perturbation_agent/target/foagent-perturbation-jar-with-dependencies.jar=mode:throw_e,defaultMode:throw_e,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,efilter:java/net/ConnectException,lineNumber:235,countdown:-1,rate:1,interval:1 -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../failure_oblivious_agent/target/foagent-fo-jar-with-dependencies.jar=mode:fo,defaultMode:fo,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,methodDesc:'(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V' -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 2
+[AGENT_CONTROLLER] fo execution times: 4
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 18700
+[AGENT_CONTROLLER] average memory usage(in MB): 53
+[AGENT_CONTROLLER] peak thread count: 32
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -noverify -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../perturbation_agent/target/foagent-perturbation-jar-with-dependencies.jar=mode:throw_e,defaultMode:throw_e,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,efilter:java/net/ConnectException,lineNumber:235,countdown:-1,rate:1,interval:1 -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../failure_oblivious_agent/target/foagent-fo-jar-with-dependencies.jar=mode:fo,defaultMode:fo,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,methodDesc:'(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V' -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 2
+[AGENT_CONTROLLER] fo execution times: 4
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 21150
+[AGENT_CONTROLLER] average memory usage(in MB): 54
+[AGENT_CONTROLLER] peak thread count: 32
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -noverify -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../perturbation_agent/target/foagent-perturbation-jar-with-dependencies.jar=mode:throw_e,defaultMode:throw_e,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,efilter:java/net/ConnectException,lineNumber:235,countdown:-1,rate:1,interval:1 -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../failure_oblivious_agent/target/foagent-fo-jar-with-dependencies.jar=mode:fo,defaultMode:fo,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,methodDesc:'(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V' -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 2
+[AGENT_CONTROLLER] fo execution times: 4
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 21630
+[AGENT_CONTROLLER] average memory usage(in MB): 72
+[AGENT_CONTROLLER] peak thread count: 32
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -noverify -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../perturbation_agent/target/foagent-perturbation-jar-with-dependencies.jar=mode:throw_e,defaultMode:throw_e,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,efilter:java/net/ConnectException,lineNumber:235,countdown:-1,rate:1,interval:1 -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../failure_oblivious_agent/target/foagent-fo-jar-with-dependencies.jar=mode:fo,defaultMode:fo,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,methodDesc:'(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V' -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 2
+[AGENT_CONTROLLER] fo execution times: 4
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 19830
+[AGENT_CONTROLLER] average memory usage(in MB): 47
+[AGENT_CONTROLLER] peak thread count: 32
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -noverify -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../perturbation_agent/target/foagent-perturbation-jar-with-dependencies.jar=mode:throw_e,defaultMode:throw_e,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,efilter:java/net/ConnectException,lineNumber:235,countdown:-1,rate:1,interval:1 -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../failure_oblivious_agent/target/foagent-fo-jar-with-dependencies.jar=mode:fo,defaultMode:fo,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,methodDesc:'(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V' -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 2
+[AGENT_CONTROLLER] fo execution times: 4
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 17340
+[AGENT_CONTROLLER] average memory usage(in MB): 47
+[AGENT_CONTROLLER] peak thread count: 32
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -noverify -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../perturbation_agent/target/foagent-perturbation-jar-with-dependencies.jar=mode:throw_e,defaultMode:throw_e,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,efilter:java/net/ConnectException,lineNumber:235,countdown:-1,rate:1,interval:1 -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../failure_oblivious_agent/target/foagent-fo-jar-with-dependencies.jar=mode:fo,defaultMode:fo,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,methodDesc:'(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V' -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 2
+[AGENT_CONTROLLER] fo execution times: 4
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 20120
+[AGENT_CONTROLLER] average memory usage(in MB): 41
+[AGENT_CONTROLLER] peak thread count: 32
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -noverify -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../perturbation_agent/target/foagent-perturbation-jar-with-dependencies.jar=mode:throw_e,defaultMode:throw_e,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,efilter:java/net/ConnectException,lineNumber:235,countdown:-1,rate:1,interval:1 -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../failure_oblivious_agent/target/foagent-fo-jar-with-dependencies.jar=mode:fo,defaultMode:fo,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,methodDesc:'(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V' -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 2
+[AGENT_CONTROLLER] fo execution times: 4
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 17880
+[AGENT_CONTROLLER] average memory usage(in MB): 48
+[AGENT_CONTROLLER] peak thread count: 32
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -noverify -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../perturbation_agent/target/foagent-perturbation-jar-with-dependencies.jar=mode:throw_e,defaultMode:throw_e,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,efilter:java/net/ConnectException,lineNumber:235,countdown:-1,rate:1,interval:1 -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../failure_oblivious_agent/target/foagent-fo-jar-with-dependencies.jar=mode:fo,defaultMode:fo,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,methodDesc:'(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V' -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 2
+[AGENT_CONTROLLER] fo execution times: 4
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 18060
+[AGENT_CONTROLLER] average memory usage(in MB): 36
+[AGENT_CONTROLLER] peak thread count: 32
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -noverify -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../perturbation_agent/target/foagent-perturbation-jar-with-dependencies.jar=mode:throw_e,defaultMode:throw_e,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,efilter:java/net/ConnectException,lineNumber:235,countdown:-1,rate:1,interval:1 -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../failure_oblivious_agent/target/foagent-fo-jar-with-dependencies.jar=mode:fo,defaultMode:fo,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,methodDesc:'(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V' -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 2
+[AGENT_CONTROLLER] fo execution times: 4
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 18620
+[AGENT_CONTROLLER] average memory usage(in MB): 87
+[AGENT_CONTROLLER] peak thread count: 32
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -noverify -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../perturbation_agent/target/foagent-perturbation-jar-with-dependencies.jar=mode:throw_e,defaultMode:throw_e,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,efilter:java/net/ConnectException,lineNumber:235,countdown:-1,rate:1,interval:1 -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../failure_oblivious_agent/target/foagent-fo-jar-with-dependencies.jar=mode:fo,defaultMode:fo,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,methodDesc:'(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V' -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 2
+[AGENT_CONTROLLER] fo execution times: 4
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 18850
+[AGENT_CONTROLLER] average memory usage(in MB): 48
+[AGENT_CONTROLLER] peak thread count: 32
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -noverify -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../perturbation_agent/target/foagent-perturbation-jar-with-dependencies.jar=mode:throw_e,defaultMode:throw_e,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,efilter:java/net/ConnectException,lineNumber:235,countdown:-1,rate:1,interval:1 -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../failure_oblivious_agent/target/foagent-fo-jar-with-dependencies.jar=mode:fo,defaultMode:fo,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,methodDesc:'(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V' -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 2
+[AGENT_CONTROLLER] fo execution times: 4
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 18660
+[AGENT_CONTROLLER] average memory usage(in MB): 40
+[AGENT_CONTROLLER] peak thread count: 32
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -noverify -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../perturbation_agent/target/foagent-perturbation-jar-with-dependencies.jar=mode:throw_e,defaultMode:throw_e,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,efilter:java/net/ConnectException,lineNumber:235,countdown:-1,rate:1,interval:1 -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../failure_oblivious_agent/target/foagent-fo-jar-with-dependencies.jar=mode:fo,defaultMode:fo,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,methodDesc:'(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V' -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 2
+[AGENT_CONTROLLER] fo execution times: 3
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 15380
+[AGENT_CONTROLLER] average memory usage(in MB): 45
+[AGENT_CONTROLLER] peak thread count: 32
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -noverify -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../perturbation_agent/target/foagent-perturbation-jar-with-dependencies.jar=mode:throw_e,defaultMode:throw_e,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,efilter:java/net/ConnectException,lineNumber:235,countdown:-1,rate:1,interval:1 -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../failure_oblivious_agent/target/foagent-fo-jar-with-dependencies.jar=mode:fo,defaultMode:fo,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,methodDesc:'(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V' -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 2
+[AGENT_CONTROLLER] fo execution times: 3
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 16570
+[AGENT_CONTROLLER] average memory usage(in MB): 44
+[AGENT_CONTROLLER] peak thread count: 32
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -noverify -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../perturbation_agent/target/foagent-perturbation-jar-with-dependencies.jar=mode:throw_e,defaultMode:throw_e,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,efilter:java/net/ConnectException,lineNumber:235,countdown:-1,rate:1,interval:1 -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../failure_oblivious_agent/target/foagent-fo-jar-with-dependencies.jar=mode:fo,defaultMode:fo,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,methodDesc:'(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V' -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 2
+[AGENT_CONTROLLER] fo execution times: 3
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 15420
+[AGENT_CONTROLLER] average memory usage(in MB): 54
+[AGENT_CONTROLLER] peak thread count: 32
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -noverify -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../perturbation_agent/target/foagent-perturbation-jar-with-dependencies.jar=mode:throw_e,defaultMode:throw_e,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,efilter:java/net/ConnectException,lineNumber:235,countdown:-1,rate:1,interval:1 -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../failure_oblivious_agent/target/foagent-fo-jar-with-dependencies.jar=mode:fo,defaultMode:fo,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,methodDesc:'(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V' -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 2
+[AGENT_CONTROLLER] fo execution times: 3
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 17070
+[AGENT_CONTROLLER] average memory usage(in MB): 42
+[AGENT_CONTROLLER] peak thread count: 32
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -noverify -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../perturbation_agent/target/foagent-perturbation-jar-with-dependencies.jar=mode:throw_e,defaultMode:throw_e,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,efilter:java/net/ConnectException,lineNumber:235,countdown:-1,rate:1,interval:1 -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../failure_oblivious_agent/target/foagent-fo-jar-with-dependencies.jar=mode:fo,defaultMode:fo,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,methodDesc:'(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V' -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 2
+[AGENT_CONTROLLER] fo execution times: 4
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 20400
+[AGENT_CONTROLLER] average memory usage(in MB): 80
+[AGENT_CONTROLLER] peak thread count: 32
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -noverify -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../perturbation_agent/target/foagent-perturbation-jar-with-dependencies.jar=mode:throw_e,defaultMode:throw_e,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,efilter:java/net/ConnectException,lineNumber:235,countdown:-1,rate:1,interval:1 -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../failure_oblivious_agent/target/foagent-fo-jar-with-dependencies.jar=mode:fo,defaultMode:fo,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,methodDesc:'(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V' -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 2
+[AGENT_CONTROLLER] fo execution times: 3
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 17080
+[AGENT_CONTROLLER] average memory usage(in MB): 70
+[AGENT_CONTROLLER] peak thread count: 32
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -noverify -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../perturbation_agent/target/foagent-perturbation-jar-with-dependencies.jar=mode:throw_e,defaultMode:throw_e,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,efilter:java/net/ConnectException,lineNumber:235,countdown:-1,rate:1,interval:1 -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../failure_oblivious_agent/target/foagent-fo-jar-with-dependencies.jar=mode:fo,defaultMode:fo,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,methodDesc:'(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V' -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 2
+[AGENT_CONTROLLER] fo execution times: 3
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 16210
+[AGENT_CONTROLLER] average memory usage(in MB): 63
+[AGENT_CONTROLLER] peak thread count: 32
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -noverify -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../perturbation_agent/target/foagent-perturbation-jar-with-dependencies.jar=mode:throw_e,defaultMode:throw_e,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,efilter:java/net/ConnectException,lineNumber:235,countdown:-1,rate:1,interval:1 -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../failure_oblivious_agent/target/foagent-fo-jar-with-dependencies.jar=mode:fo,defaultMode:fo,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,methodDesc:'(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V' -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 2
+[AGENT_CONTROLLER] fo execution times: 3
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 17020
+[AGENT_CONTROLLER] average memory usage(in MB): 41
+[AGENT_CONTROLLER] peak thread count: 32
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -noverify -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../perturbation_agent/target/foagent-perturbation-jar-with-dependencies.jar=mode:throw_e,defaultMode:throw_e,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,efilter:java/net/ConnectException,lineNumber:235,countdown:-1,rate:1,interval:1 -javaagent:/home/ubuntu/development/chaos-engineering-research/tripleagent/agents_controller/../failure_oblivious_agent/target/foagent-fo-jar-with-dependencies.jar=mode:fo,defaultMode:fo,filter:com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce,methodDesc:'(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V' -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 2
+[AGENT_CONTROLLER] fo execution times: 4
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 16160
+[AGENT_CONTROLLER] average memory usage(in MB): 41
+[AGENT_CONTROLLER] peak thread count: 32
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+summary:
+process cpu time(in ms): 18336
+average memory usage(in MB): 49
+peak thread count: 32
+downloading time(in ms): 21137
+
+--------------- normal ---------------
+[INFO] 
+[INFO] --- exec-maven-plugin:1.6.0:java (default) @ foagent-controller ---
+[AGENT_CONTROLLER] Let's begin our experiment!
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 0
+[AGENT_CONTROLLER] fo execution times: 0
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 17680
+[AGENT_CONTROLLER] average memory usage(in MB): 66
+[AGENT_CONTROLLER] peak thread count: 30
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 0
+[AGENT_CONTROLLER] fo execution times: 0
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 18760
+[AGENT_CONTROLLER] average memory usage(in MB): 26
+[AGENT_CONTROLLER] peak thread count: 30
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 0
+[AGENT_CONTROLLER] fo execution times: 0
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 16160
+[AGENT_CONTROLLER] average memory usage(in MB): 59
+[AGENT_CONTROLLER] peak thread count: 30
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 0
+[AGENT_CONTROLLER] fo execution times: 0
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 14440
+[AGENT_CONTROLLER] average memory usage(in MB): 65
+[AGENT_CONTROLLER] peak thread count: 30
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 0
+[AGENT_CONTROLLER] fo execution times: 0
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 15860
+[AGENT_CONTROLLER] average memory usage(in MB): 50
+[AGENT_CONTROLLER] peak thread count: 30
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 0
+[AGENT_CONTROLLER] fo execution times: 0
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 14420
+[AGENT_CONTROLLER] average memory usage(in MB): 36
+[AGENT_CONTROLLER] peak thread count: 30
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 0
+[AGENT_CONTROLLER] fo execution times: 0
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 14220
+[AGENT_CONTROLLER] average memory usage(in MB): 34
+[AGENT_CONTROLLER] peak thread count: 30
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 0
+[AGENT_CONTROLLER] fo execution times: 0
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 13690
+[AGENT_CONTROLLER] average memory usage(in MB): 56
+[AGENT_CONTROLLER] peak thread count: 30
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 0
+[AGENT_CONTROLLER] fo execution times: 0
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 17220
+[AGENT_CONTROLLER] average memory usage(in MB): 26
+[AGENT_CONTROLLER] peak thread count: 30
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 0
+[AGENT_CONTROLLER] fo execution times: 0
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 16390
+[AGENT_CONTROLLER] average memory usage(in MB): 37
+[AGENT_CONTROLLER] peak thread count: 30
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 0
+[AGENT_CONTROLLER] fo execution times: 0
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 14120
+[AGENT_CONTROLLER] average memory usage(in MB): 79
+[AGENT_CONTROLLER] peak thread count: 30
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 0
+[AGENT_CONTROLLER] fo execution times: 0
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 14550
+[AGENT_CONTROLLER] average memory usage(in MB): 32
+[AGENT_CONTROLLER] peak thread count: 30
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 0
+[AGENT_CONTROLLER] fo execution times: 0
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 12950
+[AGENT_CONTROLLER] average memory usage(in MB): 55
+[AGENT_CONTROLLER] peak thread count: 30
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 0
+[AGENT_CONTROLLER] fo execution times: 0
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 13770
+[AGENT_CONTROLLER] average memory usage(in MB): 49
+[AGENT_CONTROLLER] peak thread count: 30
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 0
+[AGENT_CONTROLLER] fo execution times: 0
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 15220
+[AGENT_CONTROLLER] average memory usage(in MB): 27
+[AGENT_CONTROLLER] peak thread count: 30
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 0
+[AGENT_CONTROLLER] fo execution times: 0
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 14030
+[AGENT_CONTROLLER] average memory usage(in MB): 49
+[AGENT_CONTROLLER] peak thread count: 30
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 0
+[AGENT_CONTROLLER] fo execution times: 0
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 14420
+[AGENT_CONTROLLER] average memory usage(in MB): 62
+[AGENT_CONTROLLER] peak thread count: 30
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 0
+[AGENT_CONTROLLER] fo execution times: 0
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 12500
+[AGENT_CONTROLLER] average memory usage(in MB): 68
+[AGENT_CONTROLLER] peak thread count: 30
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 0
+[AGENT_CONTROLLER] fo execution times: 0
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 12670
+[AGENT_CONTROLLER] average memory usage(in MB): 50
+[AGENT_CONTROLLER] peak thread count: 30
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 0
+[AGENT_CONTROLLER] fo execution times: 0
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 16350
+[AGENT_CONTROLLER] average memory usage(in MB): 28
+[AGENT_CONTROLLER] peak thread count: 30
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 0
+[AGENT_CONTROLLER] fo execution times: 0
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 15620
+[AGENT_CONTROLLER] average memory usage(in MB): 35
+[AGENT_CONTROLLER] peak thread count: 30
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 0
+[AGENT_CONTROLLER] fo execution times: 0
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 19530
+[AGENT_CONTROLLER] average memory usage(in MB): 64
+[AGENT_CONTROLLER] peak thread count: 30
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 0
+[AGENT_CONTROLLER] fo execution times: 0
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 14410
+[AGENT_CONTROLLER] average memory usage(in MB): 55
+[AGENT_CONTROLLER] peak thread count: 30
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 0
+[AGENT_CONTROLLER] fo execution times: 0
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 16080
+[AGENT_CONTROLLER] average memory usage(in MB): 38
+[AGENT_CONTROLLER] peak thread count: 30
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 0
+[AGENT_CONTROLLER] fo execution times: 0
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 13860
+[AGENT_CONTROLLER] average memory usage(in MB): 57
+[AGENT_CONTROLLER] peak thread count: 30
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 0
+[AGENT_CONTROLLER] fo execution times: 0
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 14070
+[AGENT_CONTROLLER] average memory usage(in MB): 42
+[AGENT_CONTROLLER] peak thread count: 30
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 0
+[AGENT_CONTROLLER] fo execution times: 0
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 12690
+[AGENT_CONTROLLER] average memory usage(in MB): 42
+[AGENT_CONTROLLER] peak thread count: 30
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 0
+[AGENT_CONTROLLER] fo execution times: 0
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 14760
+[AGENT_CONTROLLER] average memory usage(in MB): 39
+[AGENT_CONTROLLER] peak thread count: 30
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 0
+[AGENT_CONTROLLER] fo execution times: 0
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 12630
+[AGENT_CONTROLLER] average memory usage(in MB): 61
+[AGENT_CONTROLLER] peak thread count: 30
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+[AGENT_CONTROLLER] start an experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+[AGENT_CONTROLLER] exceptionType: java/net/ConnectException, injections: -1, rate: 1, mode: throw_e, foPoint: com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce-(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Lcom/turn/ttorrent/client/announce/HTTPTrackerClient$ResponseParser;)V
+[AGENT_CONTROLLER] command: timeout --signal=9 60 java -jar ttorrent-2.0-client.jar -o . --max-download 1024 -s 0 debian-9.9.0-amd64-netinst.torrent 2>&1
+Loading /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar into target VM ...
+[AGENT_CONTROLLER] normal execution times: 0
+[AGENT_CONTROLLER] injection execution times: 0
+[AGENT_CONTROLLER] fo execution times: 0
+[AGENT_CONTROLLER] whether successfully downloaded the file: yes
+[AGENT_CONTROLLER] exit status: 0
+[AGENT_CONTROLLER] process cpu time(in ms): 17170
+[AGENT_CONTROLLER] average memory usage(in MB): 38
+[AGENT_CONTROLLER] peak thread count: 30
+[AGENT_CONTROLLER] finish the experiment at com/turn/ttorrent/client/announce/HTTPTrackerClient/sendAnnounce
+----
+summary:
+process cpu time(in ms): 15008
+average memory usage(in MB): 47
+peak thread count: 30
+downloading time(in ms): 20416

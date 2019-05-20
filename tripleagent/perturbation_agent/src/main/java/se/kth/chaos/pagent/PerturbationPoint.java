@@ -13,11 +13,13 @@ public class PerturbationPoint {
     public int lineIndexNumber;
     public String mode;
     public int perturbationCountdown;
+    public int invocationCount;
+    public int interval;
     public double chanceOfFailure;
     public boolean covered;
 
     public PerturbationPoint(String className, String methodName, String methodSignature, int exceptionIndexNumber,
-                             String defaultMode, int perturbationCountdown, double chanceOfFailure) {
+                             String defaultMode, int perturbationCountdown, double chanceOfFailure, int interval) {
         this.className = className;
         this.methodName = methodName;
         this.methodSignature = methodSignature;
@@ -26,6 +28,8 @@ public class PerturbationPoint {
         this.perturbationCountdown = perturbationCountdown;
         this.chanceOfFailure = chanceOfFailure;
         this.covered = false;
+        this.invocationCount = 0;
+        this.interval = interval;
 
         try {
             MessageDigest mDigest = MessageDigest.getInstance("MD5");
@@ -36,8 +40,8 @@ public class PerturbationPoint {
     }
 
     public PerturbationPoint(String className, String methodName, String methodSignature, int exceptionIndexNumber, String exceptionType,
-                             int lineIndexNumber, String defaultMode, int perturbationCountdown, double chanceOfFailure) {
-        this(className, methodName, methodSignature, exceptionIndexNumber, defaultMode, perturbationCountdown, chanceOfFailure);
+                             int lineIndexNumber, String defaultMode, int perturbationCountdown, double chanceOfFailure, int interval) {
+        this(className, methodName, methodSignature, exceptionIndexNumber, defaultMode, perturbationCountdown, chanceOfFailure, interval);
         this.exceptionType = exceptionType;
         this.lineIndexNumber = lineIndexNumber;
         // for throw_e strategy, we use className+methodName+exceptionType+lineIndexNumber to calculate the key

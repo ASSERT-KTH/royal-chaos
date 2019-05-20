@@ -1,0 +1,146 @@
+<!-- Code from d3-graph-gallery.com -->
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<!-- Load d3.js -->
+<script src="http://d3js.org/d3.v4.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+<script src="js/FileSaver.min.js"></script>
+
+<!-- Create a div where the graph will take place -->
+<div id="my_dataviz"></div>
+<button id="generate">Save as SVG</button>
+
+<script>
+
+// set the dimensions and margins of the graph
+var margin = {top: 10, right: 10, bottom: 10, left: 10},
+    width = 800 - margin.left - margin.right,
+    height = 320 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+var svg = d3.select("#my_dataviz")
+  .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
+//Read the data
+d3.csv("./data.csv", function(data) {
+
+  // Add X axis
+  var x = d3.scaleLinear()
+    .domain([0, 8])
+    .range([0, width]);
+  svg.append("g")
+    .attr("transform", "translate(0," + height + ")")
+    .call(d3.axisBottom(x).tickSize(0))
+    .selectAll("text").remove();
+
+  // Add Y axis
+  var y = d3.scaleLinear()
+    .domain([0, 2])
+    .range([height, 0]);
+  svg.append("g")
+    .call(d3.axisLeft(y).tickSize(0))
+    .selectAll("text").remove();
+
+  // Add a scale for bubble size
+  var z = d3.scaleLinear()
+    .domain([0, 30])
+    .range([0, 130]);
+
+  // Add dots
+  svg.append('g')
+    .selectAll("dot")
+    .data(data)
+    .enter()
+    .append("circle")
+      .attr("cx", function (d) { return x(d.x); } )
+      .attr("cy", function (d) { return y(d.y); } )
+      .attr("r", function (d) { return z(d.z); } )
+      .style("fill", function (d) { return d.color; })
+      .style("opacity", "1");
+
+  svg.append('text')
+    .attr("x", x(1.5))
+    .attr("y", y(0.2))
+    .text("a) 559")
+    .attr("font-family", "sans-serif")
+    .attr("font-size", "20px");
+
+  svg.append('text')
+    .attr("x", x(0.85))
+    .attr("y", y(0.76))
+    .text("b) 13")
+    .attr("font-family", "sans-serif")
+    .attr("font-size", "20px");
+
+  svg.append('text')
+    .attr("x", x(1.85))
+    .attr("y", y(0.76))
+    .text("c) 70")
+    .attr("font-family", "sans-serif")
+    .attr("font-size", "20px");
+
+  svg.append('text')
+    .attr("x", x(4.17))
+    .attr("y", y(0.37))
+    .text("d) 141")
+    .attr("font-family", "sans-serif")
+    .attr("font-size", "20px");
+
+  svg.append('text')
+    .attr("x", x(4.05))
+    .attr("y", y(0.8))
+    .text("e) 155")
+    .attr("font-family", "sans-serif")
+    .attr("font-size", "20px");
+
+  svg.append('text')
+    .attr("x", x(6.2))
+    .attr("y", y(0.76))
+    .text("f) 108")
+    .attr("font-family", "sans-serif")
+    .attr("font-size", "20px");
+
+  var ordinal = d3.scaleOrdinal()
+    .domain(["Fragile", "Sensitive", "Immunized"])
+    .range(["#4285f4", "#ff6d00", "#0f9d58"]);
+
+  svg.append("g")
+    .attr("class", "legendOrdinal")
+    .attr("transform", "translate(50,15)");
+
+  var legendOrdinal = d3.legendColor()
+    .shape("path", d3.symbol().type(d3.symbolCircle).size(350)())
+    .shapePadding(65)
+    .orient('horizontal')
+    .scale(ordinal);
+
+  svg.select(".legendOrdinal")
+    .call(legendOrdinal);
+})
+
+d3.select("#generate")
+    .on("click", writeDownloadLink);
+
+function writeDownloadLink(){
+    try {
+        var isFileSaverSupported = !!new Blob();
+    } catch (e) {
+        alert("blob not supported");
+    }
+
+    var html = d3.select("svg")
+        .attr("title", "Resilience Improvement")
+        .attr("version", 1.1)
+        .attr("xmlns", "http://www.w3.org/2000/svg")
+        .node().parentNode.innerHTML;
+
+    var blob = new Blob([html], {type: "image/svg+xml"});
+    saveAs(blob, "improvement.svg");
+};
+</script>
