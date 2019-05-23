@@ -102,11 +102,11 @@ def applyFault(container, fault, pid):
 
         if len(processes) == 1:
             # Easy case, just select that one for monitoring.
-            pid_to_perturb = processes[0][0] # First process, where the first value is the PID.
+            pid_to_perturb = processes[0][1] # First process, where the first value is the PID.
         elif len(processes) > 1:
             # Harder case, ask to select one.
             print('Multiple processes to choose from, please select 1.')
-            print('\n'.join(["PID:%s %s" % (proc[0], proc[-1]) for proc in processes]))
+            print('\n'.join(["PID:%s %s" % (proc[1], proc[-1]) for proc in processes]))
             pid_to_perturb = input('Input PID to perturb: ')
     else:
         pid_to_perturb = pid
