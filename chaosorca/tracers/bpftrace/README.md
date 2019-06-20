@@ -10,3 +10,6 @@ bpftrace -e 'tracepoint:syscalls:sys_enter_* /pid == 8556/ {  printf("%s %s\n", 
 To avoid missing any syscalls lets do some work inside the kernel, and only export every 1s.
 `bpftrace -e 'tracepoint:syscalls:sys_enter_* /pid == 13471/{ @[probe] = count(); } interval:s:1 { print(@); clear(@); }'`
 speedtest: `dd if=/dev/zero of=/dev/null bs=1 count=500k &> output.txt`
+
+## Note
+The Dockerfile is quite large and work can be done to minimize it.

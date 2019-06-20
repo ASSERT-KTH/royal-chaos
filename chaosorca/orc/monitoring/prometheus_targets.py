@@ -4,6 +4,8 @@ import os
 dir_name = os.path.dirname(os.path.abspath(__file__))
 path_to_prometheus_file = dir_name + '/prometheus/file_sd_config.json'
 
+# Responsible for modifying the json file Prometheus is configured to look in for targets.
+
 def add(target, name):
     '''Adds target with name to the prometheus for autodiscovery.'''
     with open(path_to_prometheus_file) as f:

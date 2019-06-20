@@ -44,13 +44,6 @@ def signalCleanup(signal, frame):
     experimentCleanup(container_to_cleanup[0])
     sys.exit()
 
-@experiment.command() #@click.option('--cmd', prompt='cmd?')
-def test():
-    '''test run cmd'''
-    print(container_api.getProcessesByNameLocal('consul_productpage-v1_1','/usr/local/bin/python productpage.py 9080'))
-    #runCmd("docker stop hello_world".split(' '))
-    #print(container_api.getProcessesByNameExternal("hello_world", "nginx: worker process"))
-
 def runCmd(cmd):
     '''Run a given cmd'''
     proc = subprocess.Popen(
@@ -100,12 +93,7 @@ def start(name, exp_time, pid_name, start_cmd, stop_cmd):
         print('🦀 Existing experiment detected, continuing from %s/%s' % (newest, perturbations[newest]))
 
 
-    #1. start monitoring. (moved into loop)
-    #monitoring.stopMonitoring(container)
-    #container.reload()
-    #monitoring.startMonitoring(container)
-
-    #2. select perturbation
+    #1. select perturbation & start monitoring
     length = len(perturbations)
     for index, p in enumerated_perturbations:
         print('🦀🦀🦀 %d/%d running experiment perturbation %s' % (index+1, length, p))
@@ -121,32 +109,28 @@ def start(name, exp_time, pid_name, start_cmd, stop_cmd):
         # C) start monitoring
         container = container_api.getContainer(container_name)
         # first process, second one is pid.
-        while not container:
-            time.sleep(1)
-            container = container_api.getContainer(container_name)
-        print("container=",container)
         pid_to_monitor = container_api.getProcessesByNameExternal(container_name, pid_name)[0][1]
         monitoring.startMonitoring(container, pid_to_monitor)
 
         start_time = currentTimeS()
 
-        #3. wait predetermined amount of time.
+        #2. wait predetermined amount of time.
         printSleep(exp_time, info_str='for baseline#1')
 
-        #4. start perturbation.
+        #3. start perturbation.
         # first process, first one is pid.
         pid_to_perturb = container_api.getProcessesByNameLocal(container_name, pid_name)[0][1]
         perturbs.premade_external(container_name, p, pid=pid_to_perturb)
 
-        #5. wait predetermined amount of time.
+        #4. wait predetermined amount of time.
         printSleep(exp_time, info_str='for perturbation')
 
-        #6. stop perturbation.
+        #5. stop perturbation.
         print('🦀 finished perturbing')
         perturbs.stopChaos(container_name)
         printSleep(exp_time, info_str='for baseline#2')
 
-        #7. log results to files for future processing.
+        #6. log results to files for future processing.
         print('🦀 logging files')
         end_time = currentTimeS()
         time_span = end_time - start_time
@@ -196,7 +180,7 @@ def start(name, exp_time, pid_name, start_cmd, stop_cmd):
             stop_proc = runCmd(stop_cmd.split(' '))
             stop_proc.wait()
 
-        #8. if not done, goto #2 and repeat #2-#7
+        #7. if not done, goto #2 and repeat #2-#7
         # loop, so happen by default.
 
     print('🦀 stopping monitoring')

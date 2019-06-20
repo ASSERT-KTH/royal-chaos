@@ -16,7 +16,7 @@ def start():
         'google/cadvisor:latest',
         detach=True,
         name=cadvisor_name,
-        #publish= No need to publish will share network instead.
+        #publish= No need to publish ports, as it will later share a network with Prometheus.
         remove=True,
         volumes={
         '/': {'bind': '/rootfs', 'mode': 'ro'},
