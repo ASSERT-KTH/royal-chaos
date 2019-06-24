@@ -1,0 +1,28 @@
+System call perturbation,HTTP requests,System Calls,Other observations
+Open + D,Few to none,Normal and spike after,normal
+Open + E,Very few,Increase and spike/normal after,Increased memory
+Open + E + D,No requests,Normal/Fewer and spike after,Big increase memory for high delay
+Write + D,-,-,normal
+Write + E,-,-,normal
+Write + E + D,-,-,normal
+Writev + D,No requests,Fewer and spike after,Both CPU and Network IO is small during and spike after
+Writev + E,No requests,Increased,Smaller Network IO. Increased CPU.
+Writev + E + D,No requests,Normal and spike after,Both CPU and Network IO is small during and spike after
+Read + D,No requests,Norma. EINTR fewer and spike after,Both CPU and Network IO is smaller and spike. EINTR tiny+spike for network IO{,} increased CPU + memory usage.
+Read + E,No requests,Normal,Both CPU and Network IO is smaller.
+Read + E + D,No requests,Normal{,} fewer+spike for higher delay,Both smaller or small/tiny+spike.
+Readv + D,-,-,normal
+Readv + E,-,-,normal
+Readv + E + D,-,-,normal
+Sendfile + D,-,-,normal
+Sendfile + E,-,-,normal
+Sendfile + E + D,-,-,normal
+Sendfile64 + D,-,-,normal
+Sendfile64 + E,-,-,normal
+Sendfile64 + E + D,-,-,normal
+Poll + D,No requests,Normal to fewer and spike,Both CPU and Network IO is smaller and spike after.
+Poll + E,No requests,Fewer and spike after,Same as above. 
+Poll + E + D,No requests,Increased and spike after,Same as above. Huge memory usage
+Select + D,No requests,Fewer and spike after,Both CPU and Network IO small and spike afte
+Select + E,Crash,Except for EINTR{,} Futex/Newstat only during,Increased CPU usage and tiny network IO
+Select + E + D,Crash,Very few{,} then none.,Crash after perturbation for EINTR

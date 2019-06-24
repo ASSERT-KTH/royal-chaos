@@ -1,0 +1,181 @@
+syscall,error,delay,http req.,latency,syscall,network IO,cpu usage,mem usage
+open,-,1s,200(fewer),increase 20ms,normal{,} spike,smaller{,} spike,normal{,} spike,normal
+open,-,5s,0,up after 5ms,normal{,} spike,small{,} spike,normal{,} spike,increase
+open,EACESS,-,0,up after 3ms,normal{,} spike,small{,} spike,normal{,} spike,increase
+open,EACESS,1s,0,up after 4ms,fewer{,} spike,small{,} spike,normal{,} spike,increase
+open,EACESS,5s,0,up after 4ms,fewer{,} spike,small{,} spike,normal{,} spike,big increase
+open,EPERM,-,200(FEW),0,increase{,} normal,increase,increased,increase
+open ,EPERM,1s,0,up after 3ms,normal{,} spike,small{,} spike,normal{,} spike,increase
+open,EPERM,5s,0,up after 6ms,normal{,} spike,small{,} spike,normal{,} spike,big increase
+open,ENOENT,-,0,up after 3ms,increase{,} spike,small{,} spike,up{,} spike,increase
+open,ENOENT,1s,0,up after 3ms,normal{,} spike,small{,} spike,normal{,} spike,increase
+open,ENOENT,5s,0,up after 4ms,fewer{,} spike,small{,} spike,normal{,} spike,big increase
+open,EIO,-,200(FEW),0,increase{,} spike,increase,increased,increase
+open,EIO,1s,0,up after 3ms,normal{,} spike,small{,} spike,normal{,} spike,increase
+open,EIO,5s,0,0,fewer{,} spike,small{,} spike,normal{,} spike,big increase
+open,EINTR,-,0,0,increase{,} spike,increase,increased,increase
+open,EINTR,1s,0,up after 3ms,fewer{,} spike,small{,} spike,normal{,} spike,increase
+open,EINTR,5s,0,up after 6ms,fewer{,} spike,small{,} spike,normal{,} spike,big increase
+open,ENOSYS,-,200 (FEW),0,increase{,} normal,increase,increased,increase
+open,ENOSYS,1s,0,up after 2ms,fewer{,} spike,small{,} spike,normal{,} spike,increase
+open,ENOSYS,5s,0,up after 6ms,normal{,} spike,small{,} spike,normal{,} spike,big increase
+write,-,1s,200,0,normal,normal,increase,normal
+write,-,5s,200,0,normal,normal,increase,normal
+write,EACESS,-,200,0,normal,normal,increase,normal
+write,EACESS,1s,200,0,normal,normal,increase,normal
+write,EACESS,5s,200,0,increase,normal,increase,normal
+write,EPERM,-,200,0,normal,normal,increase,normal
+write,EPERM,1s,200,0,normal,normal,increase,normal
+write,EPERM,5s,200,0,normal,normal,increase,normal
+write,ENOENT,-,200,0,normal{,} spike,normal,increase,normal
+write,ENOENT,1s,200,0,normal,normal,increase,normal
+write,ENOENT,5s,200,0,normal,normal,increase,normal
+write,EIO,-,200,0,normal,normal,increase,normal
+write,EIO,1s,200,0,normal,normal,increase,normal
+write ,EIO,5s,200,0,normal,normal,increase,normal
+write,EINTR,-,200,0,normal,normal,increase,normal
+write,EINTR,1s,200,0,normal,normal,increase,normal
+write,EINTR,5s,200,0,normal,normal,increase,normal
+write,ENOSYS,-,200,0,normal,normal,increase,normal
+write,ENOSYS,1s,200,0,normal,normal,increase,normal
+write ,ENOSYS,5s,200,0,normal,normal,increase,normal
+writev,-,1s,0,up after 22ms,fewer{,} spike,small{,} spike,smaller{,} spike,increase
+writev,-,5s,0,up after 19ms,fewer{,} spike,small{,} spike,smaller{,} spike,increase
+writev,EACESS,-,0,0,increase,smaller,increased,increase
+writev,EACESS,1s,0,up after 32ms,normal{,} spike,small{,} spike,smaller{,} spike,increase
+writev,EACESS,5s,0,up after 36ms,normal{,} spike,small{,} spike,smaller{,} spike,increase
+writev,EPERM,-,0,0,increase,smaller,increased,increase
+writev,EPERM,1s,0,up after 12ms,normal{,} spike,small{,} spike,smaller{,} spike,increase
+writev,EPERM,5s,0,up after 18ms,normal{,} spike,small{,} spike,smaller{,} spike,increase
+writev ,ENOENT,-,0,0,increase,smaller,increased,increase
+writev,ENOENT,1s,0,up after 35ms,normal{,} spike,small{,} spike,smaller{,} spike,increase
+writev,ENOENT,5s,0,up after 25ms,normal{,} spike,small{,} spike,smaller{,} spike,increase
+writev,EIO,-,0,0,increase,smaller,increased,increase
+writev,EIO,1s,0,up after 20ms,normal{,} spike,small{,} spike,smaller{,} spike,increase
+writev,EIO,5s,0,up after 25ms,normal{,} spike,small{,} spike,smaller{,} spike,increase
+writev,EINTR,-,0,0,increase,smaller,increased,increase
+writev,EINTR,1s,0,up after 26ms,normal{,} spike,small{,} spike,smaller{,} spike,increase
+writev,EINTR,5s,0,up after 27ms,normal{,} spike,small{,} spike,smaller{,} spike,increase
+writev,ENOSYS,-,0,0,increase,smaller,increased,increase
+writev,ENOSYS,1s,0,up after 22ms,normal{,} spike,small{,} spike,smaller{,} spike,increase
+writev,ENOSYS,5s,0,up after 33ms,normal{,} spike,small{,} spike,smaller{,} spike,increase
+read,-,1s,0,up after 4ms,normal{,} spike,small{,} spike,smaller{,} spike,increase
+read,-,5s,0,up after 4ms,normal{,} spike,small{,} spike,smaller{,} spike,increase
+read,EACESS,-,0,0,normal,smaller,smaller,normal
+read,EACESS,1s,0,0,normal,smaller,smaller,normal
+read,EACESS,5s,0,up after 3ms,fewer{,} spike,small{,} spike,small{,} spike,normal
+read,EPERM,-,0,0,normal,smaller,smaller,normal
+read,EPERM,1s,0,0,normal,smaller,smaller,normal
+read,EPERM,5s,0,up after 2ms,fewer{,} spike,small{,} spike,small{,} spike,normal
+read,ENOENT,-,0,0,normal,smaller,smaller,normal
+read,ENOENT,1s,0,0,normal,smaller,smaller,normal
+read,ENOENT,5s,0, up after 3ms,fewer{,} spike,small{,} spike,small{,} spike,normal
+read,EIO,-,0,0,normal,smaller,smaller,normal
+read,EIO,1s,0,0,normal,smaller,smaller,normal
+read,EIO,5s,0,up after 3ms,fewer{,} spike,small{,} spike,small{,} spike,normal
+read,EINTR,-,0,up after 18ms,fewer{,} spike,tiny{,} spike,increased,increase
+read,EINTR,1s,0,up after 3ms,fewer{,} spike,tiny{,} spike,small{,} spike,slight increase
+read,EINTR,5s,0,up after 3ms,fewer{,} spike,tiny{,} spike,small{,} spike,slight increase
+Nor,ENOSYS,-,0,0,normal,small,smaller,normal
+read,ENOSYS,1s,0,0,normal,small,smaller,normal
+read,ENOSYS,5s,0,up after 2ms,fewer{,} spike,tiny{,} spike,smaller{,} spike,normal
+readv,-,1s,200,0,normal,normal,increase,normal
+readv,-,5s,200,0,normal,normal,increase,normal
+readv,EACESS,-,200,0,normal,normal,increase,normal
+readv,EACESS,1s,200,0,normal,normal,increase,normal
+readv,EACESS,5s,200,0,normal,normal,increase,normal
+readv,EPERM,-,200,0,normal,normal,increase,normal
+readv,EPERM,1s,200,0,normal,normal,increase,normal
+readv,EPERM,5s,200,0,normal,normal,increase,normal
+readv,ENOENT,-,200,0,normal,normal,increase,normal
+readv,ENOENT,1s,200,0,normal,normal,increase,normal
+readv,ENOENT,5s,200,0,normal,normal,increase,normal
+readv,EIO,-,200,0,normal,normal,increase,normal
+readv,EIO,1s,200,0,normal,normal,increase,normal
+readv,EIO,5s,200,0,normal,normal,increase,normal
+readv,EINTR,-,200,0,normal,normal,increase,normal
+readv,EINTR,1s,200,0,normal,normal,increase,normal
+readv,EINTR,5s,200,0,normal,normal,increase,normal
+readv,ENOSYS,-,200,0,normal,normal,increase,normal
+readv,ENOSYS,1s,200,0,normal,normal,increase,normal
+readv,ENOSYS,5s,200,0,normal,normal,increase,normal
+sendfile,-,1s,200,0,normal,normal,increase,normal
+sendfile,-,5s,200,0,normal,normal,increase,normal
+sendfile,EACESS,-,200,0,normal,normal,increase,normal
+sendfile,EACESS,1s,200,0,normal,normal,increase,normal
+sendfile,EACESS,5s,200,0,normal,normal,increase,normal
+sendfile,EPERM,-,200,0,normal,normal,increase,normal
+sendfile,EPERM,1s,200,0,normal,normal,increase,normal
+sendfile,EPERM,5s,200,0,normal,normal,increase,normal
+sendfile,ENOENT,-,200,0,normal,normal,increase,normal
+sendfile,ENOENT,1s,200,0,normal,normal,increase,normal
+sendfile,ENOENT,5s,200,0,normal,normal,increase,normal
+sendfile,EIO,-,200,0,normal,normal,increase,normal
+sendfile,EIO,1s,200,0,normal,normal,increase,normal
+sendfile,EIO,5s,200,0,normal,normal,increase,normal
+sendfile,EINTR,-,200,0,normal,normal,increase,normal
+sendfile,EINTR,1s,200,0,normal,normal,increase,normal
+sendfile,EINTR,5s,200,0,normal,normal,increase,normal
+sendfile,ENOSYS,-,200,0,normal,normal,increase,normal
+sendfile,ENOSYS,1s,200,0,normal,normal,increase,normal
+sendfile,ENOSYS,5s,200,0,normal,normal,increase,normal
+sendfile64,-,1s,200,0,normal,normal,increase,normal
+sendfile64,-,5s,200,0,normal,normal,increase,normal
+sendfile64,EACESS,-,200,0,normal,normal,increase,normal
+sendfile64,EACESS,1s,200,0,normal,normal,increase,normal
+sendfile64,EACESS,5s,200,0,normal,normal,increase,normal
+sendfile64,EPERM,-,200,0,normal,normal,increase,normal
+sendfile64,EPERM,1s,200,0,normal,normal,increase,normal
+sendfile64,EPERM,5s,200,0,normal,normal,increase,normal
+sendfile64,ENOENT,-,200,0,normal,normal,increase,normal
+sendfile64,ENOENT,1s,200,0,normal,normal,increase,normal
+sendfile64,ENOENT,5s,200,0,normal,normal,increase,normal
+sendfile64,EIO,-,200,0,normal,normal,increase,normal
+sendfile64,EIO,1s,200,0,normal,normal,increase,normal
+sendfile64,EIO,5s,200,0,normal,normal,increase,normal
+sendfile64,EINTR,-,200,0,normal,normal,increase,normal
+sendfile64,EINTR,1s,200,0,normal,normal,increase,normal
+sendfile64,EINTR,5s,200,0,normal,normal,increase,normal
+sendfile64,ENOSYS,-,200,0,normal,normal,increase,normal
+sendfile64,ENOSYS,1s,200,0,normal,normal,increase,normal
+sendfile64,ENOSYS,5s,200,0,normal,normal,increase,normal
+poll,-,1s,0,up after 3ms,normal{,} spike,small{,} spike,smaller{,} spike,increase
+poll,-,5s,0,up after 7ms,fewer{,} spike,small{,} spike,smaller{,} spike,increase
+poll,EACESS,-,0,up after 10ms,fewer{,} spike,tiny{,} spike,increase{,} spike,increase
+poll,EACESS,1s,0,up after 4ms,increase{,} spike,small{,} spike,increase{,} spike,super increase
+poll,EACESS,5s,0,up after 5ms,increase{,} spike,small{,} spike,increase{,} spike,super increase
+poll,EPERM,-,0,up after 5ms,fewer{,} spike,tiny{,} spike,increase{,} spike,increase
+poll,EPERM,1s,0,up after 6ms,increase{,} spike,small{,} spike,increase{,} spike,super increase
+poll,EPERM,5s,0,up after 6ms,increase{,} spike,small{,} spike,increase{,} spike,super increase
+poll,ENOENT,-,0,up after 17ms,fewer{,} spike,tiny{,} spike,increase{,} spike,increase
+poll,ENOENT,1s,0,up after 6ms,increase{,} spike,small{,} spike,increase{,} spike,super increase
+poll,ENOENT,5s,0,up after 6ms,increase{,} spike,small{,} spike,increase{,} spike,super increase
+poll,EIO,-,0,up after 10ms,fewer{,} spike,tiny{,} spike,increase{,} spike,increase
+poll,EIO,1s,0,up after 4ms,increase{,} spike,small{,} spike,increase{,} spike,super increase
+poll,EIO,5s,0 A,up after 3ms,increase{,} spike,small{,} spike,increase{,} spike,super increase
+poll,EINTR,-,0 A,up after 11ms,fewer{,} spike,tiny{,} spike,increase{,} spike,increase
+poll,EINTR,1s,0,up after 6ms,increase{,} spike,small{,} spike,increase{,} spike,super increase
+poll,EINTR,5s,0,up after 4ms,increase{,} spike,small{,} spike,increase{,} spike,super increase
+poll,ENOSYS,-,0,up after 6ms,fewer{,} spike,tiny{,} spike,increase{,} spike,increase
+poll,ENOSYS,1s,0,up after 5ms,increase{,} spike,small{,} spike,increase{,} spike,super increase
+poll,ENOSYS,5s,0,up after 5ms,increase{,} spike,small{,} spike,increase{,} spike,super increase
+select,-,1s,0,up after 10ms,fewer{,} spike,small{,} spike,small{,} spike,normal
+select,-,5s,0,up after 8ms,fewer{,} spike,tiny{,} spike,tiny{,} spike,normal
+select,EACESS,-,crash,,,,,
+select,EACESS,1s,crash,,,,,
+select,EACESS,5s,crash,,,,,
+select,EPERM,-,crash,,,,,
+select,EPERM,1s,crash,,,,,
+select,EPERM,5s,crash,,,,,
+select,ENOENT,-,crash,,,,,
+select,ENOENT,1s,crash,,,,,
+select,ENOENT,5s,crash,,,,,
+select,EIO,-,crash,,,,,
+select,EIO,1s,crash,,,,,
+select,EIO,5s,crash,,,,,
+select,EINTR,-,0{,}0 after,0{,} nothing after,increase{,} decrease,tiny,increase,normal
+select,EINTR,1s,0{,}0 after,0{,} nothing after,fewer{,} nothing,tiny,tiny,normal
+select,EINTR,5s,0{,}0 after,0{,} nothing after,fewer{,} nothing,tiny,tiny,normal
+select,ENOSYS,-,crash,,,,,
+select,ENOSYS,1s,crash,,,,,
+select,ENOSYS,5s,crash,,,,,

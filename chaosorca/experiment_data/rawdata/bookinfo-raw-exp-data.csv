@@ -1,0 +1,181 @@
+syscall,error,delay,http req.,latency,syscall,network IO,cpu usage,mem usage
+open,-,1s,200 / 302,increase 5ms,normal,normal,increase,normal
+open,-,5s,200(lower) / 302,up after 2ms,increase,normal,increase,increase
+open,EACESS,-,200(lower) / 302,0,fewer{,} up,smaller,increase,normal
+open,EACESS,1s,200(lower) / 302,increase 6ms,normal,smaller,increase,normal
+open,EACESS,5s,200(LOW) / 302,up after 1ms,increase{,} spike,small,increase,increase
+open,EPERM,-,200(lower) / 302,0,normal,smaller,increase,normal
+open ,EPERM,1s,200(lower) / 302,increase 6ms,increase,smaller,increase,slight increase
+open,EPERM,5s,200(LOW) / 302,up after 1ms,increase{,} spike,small,increase,increase
+open,ENOENT,-,200(lower) / 302,0,normal,smaller,increase,normal
+open,ENOENT,1s,200(lower) / 302,increase 6ms,normal,smaller,increase,slight increase
+open,ENOENT,5s,200(LOW) / 302,up after 2ms,increase{,} spike,small,increase,increase
+open,EIO,-,200(lower) / 302,0,normal,smaller,increase,normal
+open,EIO,1s,200(lower) / 302,increase 6ms,increase,smaller,increase,slight increase
+open,EIO,5s,200(LOW) / 302,up after 3ms,increase{,} spike,small,increase,increase
+open,EINTR,-,200(lower) / 302,0,normal,smaller,increase,normal
+open,EINTR,1s,200(lower) / 302,increase 6ms,increase,smaller,increase,slight increase
+open,EINTR,5s,200(LOW) / 302,up after 1ms,increase{,} spike,small,increase,increase
+open,ENOSYS,-,200(lower) / 302,0,normal,smaller,increase,normal
+open,ENOSYS,1s,200(lower) / 302,increase 6ms,increase,smaller,increase,slight increase
+open,ENOSYS,5s,200(LOW) / 302,up after 2ms,normal{,} spike,small,increase,increase
+write,-,1s,200(LOW) / 302(0) A,up after 24ms,normal{,} spike,small{,} spike,normal{,} spike,increase
+write,-,5s,0 A,up after 20ms,normal{,} spike,small{,} spike,normal{,} spike,increase
+write,EACESS,-,200(lower) / 302(0),0,normal,smaller,increase,normal
+write,EACESS,1s,0 A,up after 30ms,normal{,} spike,small{,} spike,normal{,} spike,increase
+write,EACESS,5s,0 A,up after 42ms,normal{,} spike,small{,} spike,normal{,} spike,increase
+write,EPERM,-,200(lower) / 302(0),0,increase,smaller,increase,normal
+write,EPERM,1s,0 A,up after 24ms,normal{,} spike,small{,} spike,normal{,} spike,increase
+write,EPERM,5s,0 A,up after 40ms,normal{,} spike,small{,} spike,normal{,} spike,increase
+write,ENOENT,-,200(lower) / 302(0),0,increase,smaller,increase,normal
+write,ENOENT,1s,0 A,up after 34ms,normal{,} spike,small{,} spike,normal{,} spike,increase
+write,ENOENT,5s,0 A,up after 52ms,normal{,} spike,small{,} spike,normal{,} spike,increase
+write,EIO,-,200(lower) / 302(0),0,normal,smaller,increase,normal
+write,EIO,1s,0 A,up after 18ms,normal{,} spike,small{,} spike,normal{,} spike,increase
+write ,EIO,5s,0 A,up after 35ms,normal{,} spike,small{,} spike,normal{,} spike,increase
+write,EINTR,-,200(lower) / 302(0),0,increase,smaller,increase,normal
+write,EINTR,1s,0 A,up after 22ms,normal{,} spike,small{,} spike,normal{,} spike,increase
+write,EINTR,5s,0 A,up after 32ms,normal{,} spike,small{,} spike,normal{,} spike,increase
+write,ENOSYS,-,200(lower) / 302(0),0,increase,smaller,increase,normal
+write,ENOSYS,1s,0 A,up after 25ms,normal{,} spike,small{,} spike,normal{,} spike,increase
+write ,ENOSYS,5s,0 A,up after 10ms,normal{,} spike,small{,} spike,normal{,} spike,increase
+writev,-,1s,200 / 302,0,normal,normal,increase,normal
+writev,-,5s,200 / 302,0,normal,normal,increase,normal
+writev,EACESS,-,200 / 302,0,normal,normal,increase,normal
+writev,EACESS,1s,200 / 302,0,normal,normal,increase,normal
+writev,EACESS,5s,200 / 302,0,normal,normal,increase,normal
+writev,EPERM,-,200 / 302,0,normal,normal,increase,normal
+writev,EPERM,1s,200 / 302,0,increase,normal,increase,normal
+writev,EPERM,5s,200 / 302,0,normal,normal,increase,normal
+writev ,ENOENT,-,200 / 302,0,normal,normal,increase,normal
+writev,ENOENT,1s,200 / 302,0,normal,normal,increase,normal
+writev,ENOENT,5s,200 / 302,0,normal,normal,increase,normal
+writev,EIO,-,200 / 302,0,normal,normal,increase,normal
+writev,EIO,1s,200 / 302,0,normal,normal,increase,normal
+writev,EIO,5s,200 / 302,0,normal,normal,increase,normal
+writev,EINTR,-,200 / 302,0,normal,normal,increase,normal
+writev,EINTR,1s,200 / 302,0,normal,normal,increase,normal
+writev,EINTR,5s,200 / 302,0,normal,normal,increase,normal
+writev,ENOSYS,-,200 / 302,0,normal,normal,increase,normal
+writev,ENOSYS,1s,200 / 302,0,normal,normal,increase,normal
+writev,ENOSYS,5s,200 / 302,0,normal,normal,increase,normal
+read,-,1s,200(fewer) / 302,increasing 2ms,increase,smaller,increase,increase
+read,-,5s,200(FEW) / 302(0) A,up after 4ms,increase{,} spike,small{,} spike,increase{,} spike,increase
+read,EACESS,-,0,0,normal,small,smaller,normal
+read,EACESS,1s,0 A,up after 1ms,increase{,} spike,small{,} spike,smaller{,} spike,increase
+read,EACESS,5s,0 A,up after 1ms,normal{,} spike,small{,} spike,smaller{,} spike,increase
+read,EPERM,-,0,0,normal,small,normal,normal
+read,EPERM,1s,0 A,up after 1ms,normal{,} spike,small{,} spike,smaller{,} spike,increase
+read,EPERM,5s,0 A,up after 1ms,normal{,} spike,small{,} spike,smaller{,} spike,increase
+read,ENOENT,-,0,0,normal,small,normal,normal
+read,ENOENT,1s,0 A,up after 1ms,normal{,} spike,small{,} spike,smaller{,} spike,increase
+read,ENOENT,5s,0 A,up after 1ms,normal{,} spike,small{,} spike,smaller{,} spike,increase
+read,EIO,-,0,0,fewer,small,normal,normal
+read,EIO,1s,0 A,up after 1ms,normal{,} spike,small{,} spike,smaller{,} spike,increase
+read,EIO,5s,0 A,up after 1ms,normal{,} spike,small{,} spike,smaller{,} spike,increase
+read,EINTR,-,0 A,up after 25ms,increase{,} spike,small{,} spike,increase,increase
+read,EINTR,1s,0 A,up after 1ms,fewer{,} spike,small{,} spike,normal{,} spike,increase
+read,EINTR,5s,0 A,up after 1ms,normal{,} spike,small{,} spike,normal{,} spike,increase
+read,ENOSYS,-,0,0,normal,small,small,normal
+read,ENOSYS,1s,0 A,up after 1ms,fewer{,} spike,small{,} spike,small{,} spike,increase
+read,ENOSYS,5s,0 A,up after 1ms,normal{,} spike,small{,} spike,small{,} spike,increase
+readv,-,1s,200 / 302,0,normal,normal,increase,normal
+readv,-,5s,200 / 302,0,normal,normal,increase,normal
+readv,EACESS,-,200 / 302,0,normal,normal,increase,normal
+readv,EACESS,1s,200 / 302,0,normal,normal,increase,normal
+readv,EACESS,5s,200 / 302,0,normal,normal,increase,normal
+readv,EPERM,-,200 / 302,0,normal,normal,increase,normal
+readv,EPERM,1s,200 / 302,0,normal,normal,increase,normal
+readv,EPERM,5s,200 / 302,0,normal,normal,increase,normal
+readv,ENOENT,-,200 / 302,0,normal,normal,increase,normal
+readv,ENOENT,1s,200 / 302,0,normal,normal,increase,normal
+readv,ENOENT,5s,200 / 302,0,normal,normal,increase,normal
+readv,EIO,-,200 / 302,0,normal,normal,increase,normal
+readv,EIO,1s,200 / 302,0,normal,normal,increase,normal
+readv,EIO,5s,200 / 302,0,normal,normal,increase,normal
+readv,EINTR,-,200 / 302,0,increase,normal,increase,normal
+readv,EINTR,1s,200 / 302,0,normal,normal,increase,normal
+readv,EINTR,5s,200 / 302,0,normal,normal,increase,normal
+readv,ENOSYS,-,200 / 302,0,normal,normal,increase,normal
+readv,ENOSYS,1s,200 / 302,0,normal,normal,increase,normal
+readv,ENOSYS,5s,200 / 302,0,increase,normal,increase,normal
+sendfile,-,1s,200 / 302,0,normal,normal,increase,normal
+sendfile,-,5s,200 / 302,0,normal,normal,increase,normal
+sendfile,EACESS,-,200 / 302,0,normal,normal,increase,normal
+sendfile,EACESS,1s,200 / 302,0,normal,normal,increase,normal
+sendfile,EACESS,5s,200 / 302,0,normal,normal,increase,normal
+sendfile,EPERM,-,200 / 302,0,normal,normal,increase,normal
+sendfile,EPERM,1s,200 / 302,0,normal,normal,increase,normal
+sendfile,EPERM,5s,200 / 302,0,normal,normal,increase,normal
+sendfile,ENOENT,-,200 / 302,0,normal,normal,increase,normal
+sendfile,ENOENT,1s,200 / 302,0,normal,normal,increase,normal
+sendfile,ENOENT,5s,200 / 302,0,normal{,} spike,normal,increase,normal
+sendfile,EIO,-,200 / 302,0,normal,normal,increase,normal
+sendfile,EIO,1s,200 / 302,0,normal,normal,increase,normal
+sendfile,EIO,5s,200 / 302,0,normal,normal,increase,normal
+sendfile,EINTR,-,200 / 302,0,normal,normal,increase,normal
+sendfile,EINTR,1s,200 / 302,0,increase,normal,increase,normal
+sendfile,EINTR,5s,200 / 302,0,increase,normal ,increase,normal
+sendfile,ENOSYS,-,200 / 302,0,normal,normal,increase,normal
+sendfile,ENOSYS,1s,200 / 302,0,normal,normal,increase,normal
+sendfile,ENOSYS,5s,200 / 302,0,normal,normal,increase,normal
+sendfile64,-,1s,200 / 302,0,normal,normal,increase,normal
+sendfile64,-,5s,200 / 302,0,normal,normal,increase,normal
+sendfile64,EACESS,-,200 / 302,0,normal,normal,increase,normal
+sendfile64,EACESS,1s,200 / 302,0,increase,normal,increase,normal
+sendfile64,EACESS,5s,200 / 302,0,normal{,} spike,normal,increase,normal
+sendfile64,EPERM,-,200 / 302,0,normal,normal,increase,normal
+sendfile64,EPERM,1s,200 / 302,0,normal,normal,increase,normal
+sendfile64,EPERM,5s,200 / 302,0,normal,normal,increase,normal
+sendfile64,ENOENT,-,200 / 302,0,normal,normal,increase,normal
+sendfile64,ENOENT,1s,200 / 302,0,normal,normal,increase,normal
+sendfile64,ENOENT,5s,200 / 302,0,normal,normal,increase,normal
+sendfile64,EIO,-,200 / 302,0,normal,normal,increase,normal
+sendfile64,EIO,1s,200 / 302,0,normal,normal,increase,normal
+sendfile64,EIO,5s,200 / 302,0,normal,normal,increase,normal
+sendfile64,EINTR,-,200 / 302,0,normal,normal,increase,normal
+sendfile64,EINTR,1s,200 / 302,0,normal,normal,increase,normal
+sendfile64,EINTR,5s,200 / 302,0,normal,normal,increase,normal
+sendfile64,ENOSYS,-,200 / 302,0,normal,normal,increase,normal
+sendfile64,ENOSYS,1s,200 / 302,0,normal,normal,increase,normal
+sendfile64,ENOSYS,5s,200 / 302,0,normal,normal,increase,normal
+poll,-,1s,200(fewer) / 302,0,increase,smaller,increase,increase
+poll,-,5s,200(FEW) A / 302 ,0,increase{,} spike,smaller{,} spike,increase,increase
+poll,EACESS,-,200(fewer) / 302,0,fewer,smaller,increase,normal
+poll,EACESS,1s,200(FEW) A / 302,up after 3ms,increase,small,increase,increase
+poll,EACESS,5s,200(FEW) A / 302,up after 10ms,increase{,} spike,small,increase,increase
+poll,EPERM,-,200(fewer) / 302,0,normal,smaller,increase,normal
+poll,EPERM,1s,200(FEW) A / 302,up after 3ms,increase,small,increase,increase
+poll,EPERM,5s,200(FEW) A / 302,up after 3ms ,increase{,} spike,small,increase ,increase
+poll,ENOENT,-,200(fewer) / 302,0,normal,smaller,increase,normal
+poll,ENOENT,1s,200(FEW) A / 302,up after 2ms,increase,small,increase,increase
+poll,ENOENT,5s,200(FEW) A / 302,up after 5ms,increase{,} spike,small,increase,increase
+poll,EIO,-,200(fewer) / 302,0,fewer,smaller,increase,normal
+poll,EIO,1s,200(FEW) / 302,up after 2ms,increase,small,increase,increase
+poll,EIO,5s,200(FEW) A / 302,up after 16ms,increase{,} spike,small,increase,increase
+poll,EINTR,-,0 A,up after 17ms,very few{,} spike,tiny,big increase,increase
+poll,EINTR,1s,200(FEW) A / 302,up after 2ms,increase{,} spike,small,increase,increase
+poll,EINTR,5s,200(FEW) A / 302,up after 6ms,increase{,} spike,small,increase,increase
+poll,ENOSYS,-,200(fewer) / 302,0,fewer,smaller,increase,normal
+poll,ENOSYS,1s,200(FEW) A / 302,up after 2ms,increase,smaller{,} spike,increase,increase
+poll,ENOSYS,5s,200(FEW) A / 302,up after 6ms,increase{,} spike,smaller{,} spike,increase,increase
+select,-,1s,200(FEW) A / 302(0) A,up after 6ms,normal{,} spike,tiny{,} spike,smaller{,} spike,increase
+select,-,5s,0 A,up after 12ms,tiny{,} spike,tiny{,} spike,small{,} spike,increase
+select,EACESS,-,crash,,,,,
+select,EACESS,1s,crash,,,,,
+select,EACESS,5s,crash,,,,,
+select,EPERM,-,crash,,,,,
+select,EPERM,1s,crash,,,,,
+select,EPERM,5s,crash,,,,,
+select,ENOENT,-,crash,,,,,
+select,ENOENT,1s,crash,,,,,
+select,ENOENT,5s,crash,,,,,
+select,EIO,-,crash,,,,,
+select,EIO,1s,crash,,,,,
+select,EIO,5s,crash,,,,,
+select,EINTR,-,0 A,up after 21ms,increase{,} spike,tiny{,} spike,big increase,increase
+select,EINTR,1s,crash after perturbation,,,,,
+select,EINTR,5s,crash after perturbation,,,,,
+select,ENOSYS,-,crash,,,,,
+select,ENOSYS,1s,crash,,,,,
+select,ENOSYS,5s,crash,,,,,

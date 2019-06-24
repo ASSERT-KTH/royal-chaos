@@ -1,0 +1,28 @@
+System call perturbation,HTTP requests,System Calls,Other comments
+Open + D,Very few successful requests,Fewer and spike after,Both CPU and Network IO is tiny during and spike after
+Open + E,Error code differ on injected Error,Fewer,-
+Open + E + D,Fewer requests{,} error code differ on injected error,A lot less and spike after,Both CPU and Network IO is tiny during and spike after
+Write + D,No successful requests,Fewer and spike after,Both CPU and Network IO is tiny during and spike after
+Write + E,-,-,Slight increase in CPU usage
+Write + E + D,Fewer successful requests{,} 5s delay essentially none,Fewer and spike after,Both CPU and Network IO is tiny during and spike after
+Writev + D,Few successful requests,Fewer and spike after,Both CPU and Network IO is tiny during and spike after
+Writev + E,No successful requests,Normal except for EINTR with fewer and spike after,Low Network IO
+Writev + E + D,No successful requests,Fewer and spike after,Both CPU and Network IO is tiny during and spike after
+Read + D,-,-,Increased CPU usage
+Read + E,-,-,Increased CPU usage
+Read + E + D,-,-,Increased CPU usage
+Readv + D,-,-,Increased CPU usage
+Readv + E,-,-,Increased CPU usage
+Readv + E + D,-,-,Increased CPU usage
+Sendfile + D,No successful requests,Fewer and spike after,Both CPU and Network IO is tiny during and spike after
+Sendfile + E,No successful requests,Normal except for EINTR with fewer and spike after,As above except for EINTR with high cpu usage
+Sendfile + E + D,No successful requests,Fewer and spike after,Both CPU and Network IO is tiny during and spike after
+Sendfile64 + D,-,-,Increased CPU usage
+Sendfile64 + E,-,-,Increased CPU usage
+Sendfile64 + E + D,-,-,Increased CPU usage
+Poll + D,-,-,Increased CPU usage
+Poll + E,-,-,Increased CPU usage
+Poll + E + D,-,-,Increased CPU usage
+Select + D,-,-,Increased CPU usage
+Select + E,-,-,Increased CPU usage
+Select + E + D,-,-,Increased CPU usage
