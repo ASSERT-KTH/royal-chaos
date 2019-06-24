@@ -2,6 +2,9 @@
 import json
 import os
 
+# Autocompletion setup for click commands.
+# supports different kinds of autocompletion: error codes, system calls, running containers and more.
+
 # Local imports
 from misc import container_api
 

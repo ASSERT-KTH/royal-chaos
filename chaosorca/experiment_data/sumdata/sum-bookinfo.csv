@@ -1,0 +1,28 @@
+System call perturbation,HTTP requests,System Calls,Other observations
+Open + D,Lower 200,Normal{,} increase for 5s delay,Increased CPU usage
+Open + E,Lower 200,Normal or fewer,Smaller Network IO. Increased CPU.
+Open + E + D,Lower to very low 200.,Normal/increase{,} spike after,Small Network IO. Increased CPU.
+Write + D,Very low to no 200,Normal and spike after,Small network IO. Normal+spike CPU.
+Write + E,Lower 200{,} no 302,Normal/increase,Smaller network IO. Increased CPU.
+Write + E + D,None{,} up after,Normal and spike after,Smaller network IO{,} normal CPU{,} both spike after
+Writev + D,-,-,normal
+Writev + E,-,-,normal
+Writev + E + D,-,-,normal
+Read + D,Fewer to none. Up after.,Increase. +spike for 5s delay,Smaller Network IO{,} increased CPU. +spike for 5s delay
+Read + E,No request,Normal/fewer. EINTR increase spike,normal. EINTR Network IO small. CPU increase.
+Read + E + D,None{,} up after,Normal and spike after,Both Network IO and CPU small+spike.
+Readv + D,-,-,normal
+Readv + E,-,-,normal
+Readv + E + D,-,-,normal
+Sendfile + D,-,-,normal
+Sendfile + E,-,-,normal
+Sendfile + E + D,-,-,normal
+Sendfile64 + D,-,-,normal
+Sendfile64 + E,-,-,normal
+Sendf64 + E + D,-,-,normal
+Poll + D,Fewer to few 200. ,Increase. +spike for 5s delay,Smaller Network IO{,} increased CPU. +spike for 5s delay
+Poll + E,Fewer 200. None for EINTR,Fewer/normal. Very few+spike for EINTR,Smaller Network IO{,} increased CPU. big CPU+spike for EINTR
+Poll + E + D,Few 200{,} up after,Increase and spike after,Small Network IO{,} increased CPU
+Select + D,Few to none 200{,} up after,Normal/tiny and spike after,Tiny+spike Network IO{,} small+spike CPU.
+Select + E,crash. EINTR none{,} up after,EINTR increase+spike,Tiny+spike Network IO{,} huge CPU.
+Select + E + D,crash ,EINTR crash after perturb.,

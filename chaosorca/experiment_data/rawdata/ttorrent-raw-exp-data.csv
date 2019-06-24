@@ -1,0 +1,181 @@
+syscall,error,delay,http req.,latency,syscall,network IO,cpu usage,mem usage
+open,-,1s,-,-,fewer{,} spike,small dip,increase,normal
+open,-,5s,-,-,increase,dip,dip{,} increase,normal
+open,EACESS,-,-,-,increase,normal,increase,normal
+open,EACESS,1s,-,-,increase,small dip,increase,normal
+open,EACESS,5s,-,-,increase,dip,dip{,} increase,normal
+open,EPERM,-,-,-,increase,normal,normal,normal
+open ,EPERM,1s,-,-,normal,small dip,increase,normal
+open,EPERM,5s,-,-,dip,dip,dip{,} increase,normal
+open,ENOENT,-,-,-,normal,normal,increase,normal
+open,ENOENT,1s,-,-,increase,increase,increase,normal
+open,ENOENT,5s,-,-,increase,normal,increase,normal
+open,EIO,-,-,-,big increase,normal,increase,normal
+open,EIO,1s,-,-,normal,normal,increase,normal
+open,EIO,5s,-,-,dip,dip,dip{,} increase,normal
+open,EINTR,-,-,-,normal,normal,increase,normal
+open,EINTR,1s,-,-,normal,small dip,increase,normal
+open,EINTR,5s,-,-,small dip,normal,increase,normal
+open,ENOSYS,-,-,-,increase{,} spike,normal,increase,normal
+open,ENOSYS,1s,-,-,increase{,} spike,increase,increase,normal
+open,ENOSYS,5s,-,-,increase,normal,increase,normal
+write,-,1s,-,-,tiny,tiny,dip,normal
+write,-,5s,-,-,small,tiny,dip,normal
+write,EACESS,-,-,-,tiny,stops,tiny{,} tiny,normal
+write,EACESS,1s,-,-,tiny{,} tiny spike,stops,tiny{,} tiny,normal
+write,EACESS,5s,-,-,tiny{,} small spike,stops,tiny{,} tiny,normal
+write,EPERM,-,-,-,tiny,stops,tiny{,} tiny,normal
+write,EPERM,1s,-,-,tiny{,} small spike,stops,tiny{,} tiny,normal
+write,EPERM,5s,-,-,small{,} increase,tiny{,} small,tiny{,} small,normal
+write,ENOENT,-,-,-,small{,} spike,stops,tiny{,} tiny,normal
+write,ENOENT,1s,-,-,spike{,} tiny,stops,tiny{,} tiny,normal
+write,ENOENT,5s,-,-,tiny{,} small spike,stops,tiny{,} tiny,normal
+write,EIO,-,-,-,small{,} small spike,stops,tiny{,} tiny,normal
+write,EIO,1s,-,-,small{,} small spike,stops,tiny{,} tiny,normal
+write ,EIO,5s,-,-,small{,} small spike,stops,tiny{,} tiny,normal
+write,EINTR,-,-,-,big dip,tiny{,} smaller,smaller,normal
+write,EINTR,1s,-,-,small{,} increase,tiny{,} small,tiny{,} small,normal
+write,EINTR,5s,-,-,small{,} increase,tiny{,} small,tiny{,} small,normal
+write,ENOSYS,-,-,-,tiny,stops,tiny{,} tiny,normal
+write,ENOSYS,1s,-,-,tiny{,} small spike,stops,tiny{,} tiny,normal
+write ,ENOSYS,5s,-,-,tiny{,} small spike,stops,tiny{,} tiny,normal
+writev,-,1s,-,-,normal,normal,increase,normal
+writev,-,5s,-,-,normal,normal,increase,normal
+writev,EACESS,-,-,-,normal{,} spike,normal,increase,normal
+writev,EACESS,1s,-,-,normal,normal,increase,normal
+writev,EACESS,5s,-,-,normal,normal,increase,normal
+writev,EPERM,-,-,-,normal,normal,increase,normal
+writev,EPERM,1s,-,-,normal,normal,normal,normal
+writev,EPERM,5s,-,-,increase,normal,normal,normal
+writev ,ENOENT,-,-,-,small dip{,} spike,normal,increase,normal
+writev,ENOENT,1s,-,-,normal,normal,increase,normal
+writev,ENOENT,5s,-,-,normal{,} spike,normal,increase,normal
+writev,EIO,-,-,-,normal{,} spike,normal,increase,normal
+writev,EIO,1s,-,-,increase,normal,increase,normal
+writev,EIO,5s,-,-,increase,normal,increase,normal
+writev,EINTR,-,-,-,small dip{,} spike,normal,increase,normal
+writev,EINTR,1s,-,-,normal{,} spike,normal,increase,normal
+writev,EINTR,5s,-,-,increase,normal,increase,normal
+writev,ENOSYS,-,-,-,normal,normal,increase,normal
+writev,ENOSYS,1s,-,-,normal{,} spike,normal,increase,normal
+writev,ENOSYS,5s,-,-,increase{,} spike,normal,increase,normal
+read,-,1s,-,-,big dip,big dip,big dip,normal
+read,-,5s,-,-,big dip,big dip,big dip,normal
+read,EACESS,-,-,-,tiny,stops,tiny{,} tiny,normal
+read,EACESS,1s,-,-,tiny,stops,tiny{,} tiny,normal
+read,EACESS,5s,-,-,small{,} small,stops,tiny{,} tiny,normal
+read,EPERM,-,-,-,tiny,stops,tiny{,} tiny,normal
+read,EPERM,1s,-,-,tiny,stops,tiny{,} tiny,normal
+read,EPERM,5s,-,-,tiny,stops,tiny{,} tiny,normal
+read,ENOENT,-,-,-,tiny,stops,tiny{,} tiny,normal
+read,ENOENT,1s,-,-,tiny,stops,tiny{,} tiny,normal
+read,ENOENT,5s,-,-,small,stops,tiny{,} tiny,normal
+read,EIO,-,-,-,small,stops,tiny{,} tiny,normal
+read,EIO,1s,-,-,tiny{,} small spike,stops,tiny{,} tiny,normal
+read,EIO,5s,-,-,small,stops,tiny{,} tiny,normal
+read,EINTR,-,-,-,big dip,tiny{,} smaller,normal{,} smaller,normal
+read,EINTR,1s,-,-,tiny,stops,tiny{,} tiny,normal
+read,EINTR,5s,-,-,tiny{,} small spike,stops,tiny{,} tiny,normal
+big,ENOSYS,-,-,-,tiny,stops,tiny{,} tiny,normal
+read,ENOSYS,1s,-,-,tiny{,} small spike,stops,tiny{,} tiny,normal
+read,ENOSYS,5s,-,-,tiny,stops,tiny{,} tiny,normal
+readv,-,1s,-,-,small dip{,} spike,normal,increase,normal
+readv,-,5s,-,-,increase{,} spike,normal,increase,normal
+readv,EACESS,-,-,-,normal{,} spike,normal,increase,normal
+readv,EACESS,1s,-,-,normal{,} spike,normal,increase,normal
+readv,EACESS,5s,-,-,normal{,} spike,normal,increase,normal
+readv,EPERM,-,-,-,normal{,} spike,normal,increase,normal
+readv,EPERM,1s,-,-,normal{,} spike,normal,increase,normal
+readv,EPERM,5s,-,-,normal,normal,increase,normal
+readv,ENOENT,-,-,-,normal{,} spike,normal,increase,normal
+readv,ENOENT,1s,-,-,increase,normal,increase,normal
+readv,ENOENT,5s,-,-,increase{,} spike,normal,increase,normal
+readv,EIO,-,-,-,normal,normal,increase,normal
+readv,EIO,1s,-,-,normal,normal,increase,normal
+readv,EIO,5s,-,-,increase,normal,increase,normal
+readv,EINTR,-,-,-,normal,normal,increase,normal
+readv,EINTR,1s,-,-,normal{,} spike,normal,increase,normal
+readv,EINTR,5s,-,-,increase,normal,increase,normal
+readv,ENOSYS,-,-,-,small dip{,} normal,normal,increase,normal
+readv,ENOSYS,1s,-,-,normal{,} spike,normal,increase,normal
+readv,ENOSYS,5s,-,-,normal{,} spike,normal,increase,normal
+sendfile,-,1s,-,-,normal,normal,increase,normal
+sendfile,-,5s,-,-,normal,normal,increase,normal
+sendfile,EACESS,-,-,-,normal{,} spike,normal,increase,normal
+sendfile,EACESS,1s,-,-,normal{,} spike,normal,increase,normal
+sendfile,EACESS,5s,-,-,normal{,} spike,normal,increase,normal
+sendfile,EPERM,-,-,-,normal,normal,increase,normal
+sendfile,EPERM,1s,-,-,normal{,} spike,normal,increase,normal
+sendfile,EPERM,5s,-,-,normal,normal,small increase,normal
+sendfile,ENOENT,-,-,-,normal{,} spike,normal,increase,normal
+sendfile,ENOENT,1s,-,-,normal{,} spike,normal,increase,normal
+sendfile,ENOENT,5s,-,-,normal{,} spike,normal,increase,normal
+sendfile,EIO,-,-,-,normal,normal,increase,normal
+sendfile,EIO,1s,-,-,normal,normal,increase,normal
+sendfile,EIO,5s,-,-,normal{,} spike,normal,increase,normal
+sendfile,EINTR,-,-,-,normal{,} spike,normal,increase,normal
+sendfile,EINTR,1s,-,-,normal,normal,increase,normal
+sendfile,EINTR,5s,-,-,normal,normal,small increase,normal
+sendfile,ENOSYS,-,-,-,normal{,} spike,normal,increase,normal
+sendfile,ENOSYS,1s,-,-,normal{,} spike,normal,increase,normal
+sendfile,ENOSYS,5s,-,-,normal{,} spike,normal,increase,normal
+sendfile64,-,1s,-,-,normal{,} spike,normal,increase,normal
+sendfile64,-,5s,-,-,normal,normal,increase,normal
+sendfile64,EACESS,-,-,-,normal{,} spike,normal,increase,normal
+sendfile64,EACESS,1s,-,-,normal{,} spike,normal,increase,normal
+sendfile64,EACESS,5s,-,-,normal,normal,increase,normal
+sendfile64,EPERM,-,-,-,normal,normal,increase,normal
+sendfile64,EPERM,1s,-,-,normal{,} spike,normal,increase,normal
+sendfile64,EPERM,5s,-,-,normal{,} spike,normal,increase,normal
+sendfile64,ENOENT,-,-,-,normal{,} spike,normal,increase,normal
+sendfile64,ENOENT,1s,-,-,normal{,} spike,normal,increase,normal
+sendfile64,ENOENT,5s,-,-,normal{,} spike,normal,increase,normal
+sendfile64,EIO,-,-,-,normal{,} spike,normal,increase,normal
+sendfile64,EIO,1s,-,-,normal{,} spike,normal,increase,normal
+sendfile64,EIO,5s,-,-,normal{,} spike,normal,increase,normal
+sendfile64,EINTR,-,-,-,normal{,} spike,normal,increase,normal
+sendfile64,EINTR,1s,-,-,normal,normal,increase,normal
+sendfile64,EINTR,5s,-,-,normal{,} spike,normal,increase,normal
+sendfile64,ENOSYS,-,-,-,normal{,} spike,normal,increase,normal
+sendfile64,ENOSYS,1s,-,-,normal,normal,increase,normal
+sendfile64,ENOSYS,5s,-,-,normal{,} spike,normal,increase,normal
+poll,-,1s,-,-,normal{,} spike,normal,increase,normal
+poll,-,5s,-,-,normal{,} spike,normal,increase,normal
+poll,EACESS,-,-,-,normal{,} spike,normal,increase,normal
+poll,EACESS,1s,-,-,normal{,} spike,normal,increase,normal
+poll,EACESS,5s,-,-,normal{,} spike,normal,increase,normal
+poll,EPERM,-,-,-,normal{,} spike,normal,increase,normal
+poll,EPERM,1s,-,-,normal{,} spike,normal,increase,normal
+poll,EPERM,5s,-,-,normal{,} spike,normal,increase,normal
+poll,ENOENT,-,-,-,spike{,} normal,spike{,} normal,increase,normal
+poll,ENOENT,1s,-,-,spike{,} normal,spike{,} normal,increase,normal
+poll,ENOENT,5s,-,-,normal,normal,increase,normal
+poll,EIO,-,-,-,normal,normal,increase,normal
+poll,EIO,1s,-,-,normal{,} small,normal{,} tiny,increase{,} tiny,normal
+poll,EIO,5s,-,-,normal,normal,increase,normal
+poll,EINTR,-,-,-,increase{,} spike,small dip,increase,normal
+poll,EINTR,1s,-,-,increase,normal,increase,normal
+poll,EINTR,5s,-,-,increase,normal,increase,normal
+poll,ENOSYS,-,-,-,normal,normal,increase,normal
+poll,ENOSYS,1s,-,-,normal{,} spike,normal,increase,normal
+poll,ENOSYS,5s,-,-,normal,normal,increase,normal
+select,-,1s,-,-,normal{,} spike,normal,increase,normal
+select,-,5s,-,-,normal{,} spike,normal,increase,normal
+select,EACESS,-,-,-,normal,normal,increase,normal
+select,EACESS,1s,-,-,normal,normal,increase,normal
+select,EACESS,5s,-,-,normal,normal,increase,normal
+select,EPERM,-,-,-,normal{,} spike,normal,increase,normal
+select,EPERM,1s,-,-,normal{,} spike,normal,increase,normal
+select,EPERM,5s,-,-,normal{,} spike,normal,increase,normal
+select,ENOENT,-,-,-,normal{,} spike,normal,increase,normal
+select,ENOENT,1s,-,-,normal{,} spike,normal,increase,normal
+select,ENOENT,5s,-,-,normal,normal,increase,normal
+select,EIO,-,-,-,normal{,} spike,normal,increase,normal
+select,EIO,1s,-,-,normal,normal,increase,normal
+select,EIO,5s,-,-,normal,normal,increase,normal
+select,EINTR,-,-,-,normal{,} spike,normal,increase,normal
+select,EINTR,1s,-,-,normal,normal,increase,normal
+select,EINTR,5s,-,-,normal,normal,increase,normal
+select,ENOSYS,-,-,-,normal,normal,increase,normal
+select,ENOSYS,1s,-,-,normal{,} spike,normal,increase,normal
+select,ENOSYS,5s,-,-,increase,normal,increase,normal

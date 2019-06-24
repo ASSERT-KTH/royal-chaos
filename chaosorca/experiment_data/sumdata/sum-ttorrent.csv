@@ -1,0 +1,28 @@
+System call perturbation,HTTP requests,System Calls,Other comments
+Open + D,-,Increase after,Network IO dips down during
+Open + E,-,Mostly normal,Network IO normal
+Open + E + D,-,In general increase,Network IO dips with high delay. CPU increase
+Write + D,-,Fewer syscalls during,Network IO dips during
+Write + E,-,Fewer syscalls during{,} few to none after. EINTR only dips ,Network IO stops. EINTR only dips.
+Write + E + D,-,Very few syscalls{,} few to none after. EINTR small dip,Network IO stops. EINTR dips then to small.
+Writev + D,-,-,normal
+Writev + E,-,No special{,} done download causes spike.,No special{,} done download causes spike.
+Writev + E + D,-,No special{,} done download causes spike.,No special{,} done download causes spike.
+Read + D,-,Big dip during,Network IO big dip during
+Read + E,-,Very few syscalls{,} few to none after. EINTR big dip,Network IO stops. EINTR dips then to small
+Read + E + D,-,Very few syscalls{,} few to none after.,Network IO stops. Tiny CPU.
+Readv + D,-,Normal{,} spike after,normal
+Readv + E,-,Normal{,} some spike after,normal
+Readv + E + D,-,Normal{,} some spike after,normal
+Sendfile + D,-,-,normal
+Sendfile + E,-,Normal{,} some spike after,normal
+Sendfile + E + D,-,Normal{,} some spike after,normal
+Sendfile64 + D,-,Normal{,} some spike after,normal
+Sendfile64 + E,-,Normal{,} some spike after,normal
+Sendfile64 + E + D,-,Normal{,} some spike after,normal
+Poll + D,-,Normal{,} spike after,normal
+Poll + E,-,Normal{,} some spike after,normal
+Poll + E + D,-,Normal{,} some spike after,normal
+Select + D,-,Normal{,} spike after,normal
+Select + E,-,Normal{,} some spike after,normal
+Select + E + D,-,Normal{,} some spike after,normal

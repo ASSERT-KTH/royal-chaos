@@ -34,7 +34,7 @@ def start(name, delay_enter, delay_exit, error, signal, syscall, when):
         signal=signal,
         syscall=syscall,
         when=when)
-    sysfault.applyFault(container, fault)
+    sysfault.applyFault(container, fault, None)
     print('Started sysfault %s on %s' % (fault, container.name))
 
 @fault.command()

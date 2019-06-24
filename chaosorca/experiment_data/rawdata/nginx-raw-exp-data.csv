@@ -1,0 +1,181 @@
+syscall,error,delay,http req.,latency,syscall,network IO,cpu usage,mem usage
+open,-,1s,0,up after 50ms,fewer during,tiny{,} spike,tiny{,} spike,increasing
+open,-,5s,0,up after 96ms,FEWER{,} spike,tiny{,} spike,tiny{,} spike,increasing
+open,EACESS,-,403,0,fewer,small,small,increasing
+open,EACESS,1s,403 (fewer),increasing 102ms,fewer{,} spike,tiny{,} spike,tiny{,} spike,increasing
+open,EACESS,5s,403 (FEW),increasing 140ms,FEWER{,} spike,tiny{,} spike,tiny{,} spike,increasing
+open,EPERM,-,500,0,fewer,small,smaller,increasing
+open ,EPERM,1s,500 (fewer),increasing 57ms,normal{,} spike,tiny{,} spike,tiny{,} spike,increasing
+open,EPERM,5s,500 (FEW),increasing 175ms,FEWER{,} spike,tiny{,} spike,tiny{,} spike,increasing
+open,ENOENT,-,404,0,fewer,small,small,increasing
+open,ENOENT,1s,404 (fewer),increasing 150ms,normal{,} spike,tiny{,} spike,tiny{,} spike,increasing
+open,ENOENT,5s,404 (FEW),increasing 97ms,FEWER{,} spike,tiny{,} spike,tiny{,} spike,increasing
+open,EIO,-,500,0,fewer,small,smaller,increasing
+open,EIO,1s,500 (fewer),increasing 96ms,increase{,} spike,tiny{,} spike,tiny{,} spike,increasing
+open,EIO,5s,500 (FEW),increasing 172ms,FEWER{,} spike,tiny{,} spike,tiny{,} spike,increasing
+open,EINTR,-,500,0,fewer,small,smaller,increasing
+open,EINTR,1s,500 (fewer),increasing 96ms,fewer{,} spike,tiny{,} spike,tiny{,} spike,increasing
+open,EINTR,5s,500 (FEW),increasing 70ms,FEWER{,} spike,tiny{,} spike,tiny{,} spike,increasing
+open,ENOSYS,-,500,0,normal,small,smaller,increasing
+open,ENOSYS,1s,500 (fewer),increasing 149ms,normal{,} spike,tiny{,} spike,tiny{,} spike,increasing
+open,ENOSYS,5s,500 (FEW),increasing 159ms,FEWER{,} spike,tiny{,} spike,tiny{,} spike,increasing
+write,-,1s,0,up after 75ms,fewer{,} spike,tiny{,} spike,tiny{,} spike,increasing
+write,-,5s,0,up after 51ms,fewer{,} spike,tiny{,} spike,tiny{,} spike,increasing
+write,EACESS,-,200,0,normal,normal,increase,increasing
+write,EACESS,1s,200 (FEW),up after 56ms,fewer{,} spike,tiny{,} spike,tiny{,} spike,increasing
+write,EACESS,5s,0,up after 107ms,FEWER{,} spike,tiny{,} spike,tiny{,} spike,increasing
+write,EPERM,-,200,0,normal,normal,increase,increasing
+write,EPERM,1s,200 (FEW),up after 40ms,fewer{,} spike,tiny{,} spike,tiny{,} spike,increasing
+write,EPERM,5s,0,up after 143ms,FEWER{,} spike,tiny{,} spike,tiny{,} spike,increasing
+write,ENOENT,-,200,0,normal,normal,increase,increasing
+write,ENOENT,1s,200 (FEW),up after 44ms,fewer{,} spike,tiny{,} spike,tiny{,} spike,increasing
+write,ENOENT,5s,0,up after 127ms,FEWER{,} spike,tiny{,} spike,tiny{,} spike,increasing
+write,EIO,-,200,0,normal,normal,increase,increasing
+write,EIO,1s,200 (FEW),up after 58ms,fewer{,} spike,tiny{,} spike,tiny{,} spike,increasing
+write ,EIO,5s,0,up after 94ms,FEWER{,} spike,tiny{,} spike,tiny{,} spike,increasing
+write,EINTR,-,200,0,normal,normal,increase,increasing
+write,EINTR,1s,200 (FEW),up after 80ms,fewer{,} spike,tiny{,} spike,tiny{,} spike,increasing
+write,EINTR,5s,0,up after 142ms,FEWER{,} spike,tiny{,} spike,tiny{,} spike,increasing
+write,ENOSYS,-,200,0,normal,normal,increase,increasing
+write,ENOSYS,1s,200 (FEW),up after 42ms,fewer{,} spike,tiny{,} spike,tiny{,} spike,increasing
+write ,ENOSYS,5s,0,up after 101ms,FEWER{,} spike,tiny{,} spike,tiny{,} spike,increasing
+writev,-,1s,200 (FEW),up after 93ms,fewer{,} spike,tiny{,} spike,tiny{,} spike,increasing
+writev,-,5s,0,up after 134ms,FEWER{,} spike,tiny{,} spike,tiny{,} spike,increasing
+writev,EACESS,-,0,0,normal,small,normal,increasing
+writev,EACESS,1s,0,up after 43ms,normal{,} spike,tiny{,} spike,tiny{,} spike,increasing
+writev,EACESS,5s,0,up after 78ms,FEWER{,} spike,tiny{,} spike,tiny{,} spike,increasing
+writev,EPERM,-,0,0,normal,small,normal,increasing
+writev,EPERM,1s,0,up after 18ms,fewer{,} spike,tiny{,} spike,tiny{,} spike,increasing
+writev,EPERM,5s,0,up after 203ms,FEWER{,} spike,tiny{,} spike,tiny{,} spike,increasing
+writev ,ENOENT,-,0,0,normal,small,normal,increasing
+writev,ENOENT,1s,0,up after 28ms,normal{,} spike,tiny{,} spike,tiny{,} spike,increasing
+writev,ENOENT,5s,0,up after 141ms,FEWER{,} spike,tiny spike{,},tiny{,} spike,increasing
+writev,EIO,-,0,0,normal,small,normal,increasing
+writev,EIO,1s,0,up after 21ms,fewer{,} spike,tiny{,} spike,tiny{,} spike,increasing
+writev,EIO,5s,0,up after 97ms,FEWER{,} spike,tiny{,} spike,tiny{,} spike,increasing
+writev,EINTR,-,0,up after 91ms,FEWER{,} spike,tiny{,} spike,big increase,increasing
+writev,EINTR,1s,0,up after 27m,FEWER{,} spike,tiny{,} spike,tiny{,} spike,increasing
+writev,EINTR,5s,0,up after 163ms,FEWER{,} spike,tiny{,} spike,tiny{,} spike,increasing
+writev,ENOSYS,-,0,0,normal,small,normal,increasing
+writev,ENOSYS,1s,0,up after 69ms,fewer{,} spike,tiny{,} spike,tiny{,} spike,increasing
+writev,ENOSYS,5s,0,up after 70ms,FEWER{,} spike,tiny{,} spike,tiny{,} spike,increasing
+read,-,1s,200,0,normal,normal,increase,increasing
+read,-,5s,200,0,normal,normal,increase,increasing
+read,EACESS,-,200,0,normal,normal,increase,increasing
+read,EACESS,1s,200,0,normal,normal,increase,increasing
+read,EACESS,5s,200,0,normal,normal,increase,increasing
+read,EPERM,-,200,0,normal,normal,increase,increasing
+read,EPERM,1s,200,0,normal,normal,increase,increasing
+read,EPERM,5s,200,0,normal,normal,increase,increasing
+read,ENOENT,-,200,0,normal,normal,increase,increasing
+read,ENOENT,1s,200,0,normal,normal,increase,increasing
+read,ENOENT,5s,200,0,normal,normal,increase,increasing
+read,EIO,-,200,0,normal,normal,increase,increasing
+read,EIO,1s,200,0,normal,normal,increase,increasing
+read,EIO,5s,200,0,normal,normal,increase,increasing
+read,EINTR,-,200,0,normal,normal,increase,increasing
+read,EINTR,1s,200,0,normal,normal,increase,increasing
+read,EINTR,5s,200,0,normal,normal,increase,increasing
+read,ENOSYS,-,200,0,normal,normal,increase,increasing
+read,ENOSYS,1s,200,0,normal,normal,increase,increasing
+read,ENOSYS,5s,200,0,normal,normal,increase,increasing
+readv,-,1s,200,increase 0.08ms,normal,normal,increase,increasing
+readv,-,5s,200,increase 0.08ms,normal,normal,increase,increasing
+readv,EACESS,-,200,increase 0.08ms,normal,normal,increase,increasing
+readv,EACESS,1s,200,increase 0.08ms,normal,normal,increase,increasing
+readv,EACESS,5s,200,increase 0.08ms,normal,normal,increase,increasing
+readv,EPERM,-,200,increase 0.08ms,normal,normal,increase,increasing
+readv,EPERM,1s,200,increase 0.08ms,normal,normal,increase,increasing
+readv,EPERM,5s,200,increase 0.08ms,normal,normal,increase,increasing
+readv,ENOENT,-,200,increase 0.08ms,normal,normal,increase,increasing
+readv,ENOENT,1s,200,increase 0.08ms,normal,normal,increase,increasing
+readv,ENOENT,5s,200,increase 0.08ms,normal,normal,increase,increasing
+readv,EIO,-,200,increase 0.08ms,normal,normal,increase,increasing
+readv,EIO,1s,200,increase 0.08ms,normal,normal,increase,increasing
+readv,EIO,5s,200,increase 0.08ms,normal,normal,increase,increasing
+readv,EINTR,-,200,increase 0.08ms,normal,normal,increase,increasing
+readv,EINTR,1s,200,increase 0.08ms,normal,normal,increase,increasing
+readv,EINTR,5s,200,increase 0.08ms,normal,normal,increase,increasing
+readv,ENOSYS,-,200,increase 0.08ms,normal,normal,increase,increasing
+readv,ENOSYS,1s,200,increase 0.08ms,normal,normal,increase,increasing
+readv,ENOSYS,5s,200,increase 0.08ms,normal,normal,increase,increasing
+sendfile,-,1s,0,up after 35ms,fewer{,} spike,tiny{,} spike,tiny{,} spike,increasing
+sendfile,-,5s,0,up after 172ms,FEWER{,} spike,tiny{,} spike,tiny{,} spike,increasing
+sendfile,EACESS,-,0,0,increase,small,normal,increasing
+sendfile,EACESS,1s,0,up after 59ms,normal{,} spike,tiny{,} spike,tiny{,} spike,increasing
+sendfile,EACESS,5s,0,up after 108ms,FEWER{,} spike,tiny{,} spike,tiny{,} spike,increasing
+sendfile,EPERM,-,0,0,normal,small,normal,increasing
+sendfile,EPERM,1s,0,up after 64ms,fewer{,} spike,tiny{,} spike,tiny{,} spike,increasing
+sendfile,EPERM,5s,0,up after 142ms,FEWER{,} spike,tiny{,} spike,tiny{,} spike,increasing
+sendfile,ENOENT,-,0,0,normal,small,normal,increasing
+sendfile,ENOENT,1s,0,up after 42ms,normal{,} spike,tiny{,} spike,tiny{,} spike,increasing
+sendfile,ENOENT,5s,0,up after 230ms,FEWER{,} spike,tiny{,} spike,tiny{,} spike,increasing
+sendfile,EIO,-,0,0,normal,small,normal,increasing
+sendfile,EIO,1s,0,up after 39ms,normal{,} spike,tiny{,} spike,tiny{,} spike,increasing
+sendfile,EIO,5s,0,up after 129ms,FEWER{,} spike,tiny{,} spike,tiny{,} spike,increasing
+sendfile,EINTR,-,0,up after 109ms,FEWER{,} spike,tiny{,} spike,big increase,increasing
+sendfile,EINTR,1s,0,up after 88ms,FEWER{,} spike,tiny{,} spike,tiny{,} spike,increasing
+sendfile,EINTR,5s,0,up after 88ms,FEWER{,} spike,tiny{,} spike,tiny{,} spike,increasing
+sendfile,ENOSYS,-,0,0,normal,small,normal,increasing
+sendfile,ENOSYS,1s,0,up after 42ms,fewer{,} spike,tiny{,} spike,tiny{,} spike,increasing
+sendfile,ENOSYS,5s,0,up after 200ms,FEWER{,} spike,tiny{,} spike,tiny{,} spike,increasing
+sendfile64,-,1s,200,increase 0.08ms,normal,normal,increase,increasing
+sendfile64,-,5s,200,increase 0.08ms,normal,normal,increase,increasing
+sendfile64,EACESS,-,200,increase 0.08ms,normal,normal,increase,increasing
+sendfile64,EACESS,1s,200,increase 0.08ms,normal,normal,increase,increasing
+sendfile64,EACESS,5s,200,increase 0.08ms,normal,normal,increase,increasing
+sendfile64,EPERM,-,200,increase 0.08ms,normal,normal,increase,increasing
+sendfile64,EPERM,1s,200,increase 0.08ms,normal,normal,increase,increasing
+sendfile64,EPERM,5s,200,increase 0.08ms,normal,normal,increase,increasing
+sendfile64,ENOENT,-,200,increase 0.08ms,normal,normal,increase,increasing
+sendfile64,ENOENT,1s,200,increase 0.08ms,normal,normal,increase,increasing
+sendfile64,ENOENT,5s,200,increase 0.08ms,normal,normal,increase,increasing
+sendfile64,EIO,-,200,increase 0.08ms,normal,normal,increase,increasing
+sendfile64,EIO,1s,200,increase 0.08ms,normal,normal,increase,increasing
+sendfile64,EIO,5s,200,increase 0.08ms,normal,normal,increase,increasing
+sendfile64,EINTR,-,200,increase 0.08ms,normal,normal,increase,increasing
+sendfile64,EINTR,1s,200,increase 0.08ms,normal,normal,increase,increasing
+sendfile64,EINTR,5s,200,increase 0.08ms,slightly fewer,normal,increase,increasing
+sendfile64,ENOSYS,-,200,increase 0.08ms,normal,normal,increase,increasing
+sendfile64,ENOSYS,1s,200,increase 0.08ms,normal,normal,increase,increasing
+sendfile64,ENOSYS,5s,200,increase 0.08ms,fewer,normal,increase,increasing
+poll,-,1s,200,increase 0.08ms,slightly fewer,normal,increase,increasing
+poll,-,5s,200,increase 0.08ms,slightly fewer,normal,increase,increasing
+poll,EACESS,-,200,increase 0.08ms,slightly fewer,normal,increase,increasing
+poll,EACESS,1s,200,increase 0.08ms,slightly fewer,normal,increase,increasing
+poll,EACESS,5s,200,increase 0.08ms,slightly fewer,normal,increase,increasing
+poll,EPERM,-,200,increase 0.08ms,normal,normal,increase,increasing
+poll,EPERM,1s,200,increase 0.08ms,normal,normal,increase,increasing
+poll,EPERM,5s,200,increase 0.08ms,normal,normal,increase,increasing
+poll,ENOENT,-,200,increase 0.08ms,normal,normal,increase,increasing
+poll,ENOENT,1s,200,increase 0.08ms,normal,normal,increase,increasing
+poll,ENOENT,5s,200,increase 0.08ms,normal,normal,increase,increasing
+poll,EIO,-,200,increase 0.08ms,normal,normal,increase,increasing
+poll,EIO,1s,200,increase 0.08ms,normal,normal,increase,increasing
+poll,EIO,5s,200,increase 0.08ms,normal,normal,increase,increasing
+poll,EINTR,-,200,increase 0.08ms,normal,normal,increase,increasing
+poll,EINTR,1s,200,increase 0.08ms,normal,normal,increase,increasing
+poll,EINTR,5s,200,increase 0.08ms,normal,normal,increase,increasing
+poll,ENOSYS,-,200,increase 0.08ms,normal,normal,increase,increasing
+poll,ENOSYS,1s,200,increase 0.08ms,normal,normal,increase,increasing
+poll,ENOSYS,5s,200,increase 0.08ms,normal,normal,increase,increasing
+select,-,1s,200,increase 0.08ms,normal,normal,increase,increasing
+select,-,5s,200,increase 0.08ms,normal,normal,increase,increasing
+select,EACESS,-,200,increase 0.08ms,normal,normal,increase,increasing
+select,EACESS,1s,200,increase 0.08ms,normal,normal,increase,increasing
+select,EACESS,5s,200,increase 0.08ms,normal,normal,increase,increasing
+select,EPERM,-,200,increase 0.08ms,normal,normal,increase,increasing
+select,EPERM,1s,200,increase 0.08ms,normal,normal,increase,increasing
+select,EPERM,5s,200,increase 0.08ms,normal,normal,increase,increasing
+select,ENOENT,-,200,increase 0.08ms,normal,normal,increase,increasing
+select,ENOENT,1s,200,increase 0.08ms,normal,normal,increase,increasing
+select,ENOENT,5s,200,increase 0.08ms,normal,normal,increase,increasing
+select,EIO,-,200,increase 0.08ms,normal,normal,increase,increasing
+select,EIO,1s,200,increase 0.08ms,normal,normal,increase,increasing
+select,EIO,5s,200,increase 0.08ms,normal,normal,increase,increasing
+select,EINTR,-,200,increase 0.08ms,normal,normal,increase,increasing
+select,EINTR,1s,200,increase 0.08ms,normal,normal,increase,increasing
+select,EINTR,5s,200,increase 0.08ms,normal,normal,increase,increasing
+select,ENOSYS,-,200,increase 0.08ms,normal,normal,increase,increasing
+select,ENOSYS,1s,200,increase 0.08ms,normal,normal,increase,increasing
+select,ENOSYS,5s,200,increase 0.08ms,normal,normal,increase,increasing
