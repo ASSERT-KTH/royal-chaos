@@ -22,6 +22,4 @@ More details in the paper: [Simulation of Chaos Engineering for Internet-scale S
 ## ChaosOrca
 ChaosOrca is a tool for doing Chaos Engineering on containers by perturbing system calls for processes inside containers. Where monitoring/observability is a key part of the system to be able to reason about the given perturbations effect on the container. The system utilises strace built in system call fault injections, as such it can add delays, return error codes, do so intermittenly and more. Metrics recorded are System calls, HTTP, Logs and Performance related ones. 
 
-More details to come.
-
-
+More details in the paper: [Observability and Chaos Engineering on System Calls for Containerized Applications in Docker](https://arxiv.org/pdf/1907.13039)
