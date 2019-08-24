@@ -13,7 +13,7 @@ ChaosMachine is a tool to do chaos engineering at the application level in the J
 TripleAgent is a system for fault injection for Java applications. The unique feature of this system is to combine automated monitoring and automated perturbation injection. It outputs concrete hints to improve the resilience against unhandled exceptions.
 
 * Code: [tripleagent](https://github.com/KTH/royal-chaos/tree/master/tripleagent)
-* Paper: [TripleAgent: Monitoring, Perturbation And Failure-obliviousness for Automated Resilience Improvement in Java Applications (Long Zhang and Martin Monperrus)](http://arxiv.org/pdf/1812.10706)
+* Paper: [TripleAgent: Monitoring, Perturbation and Failure-obliviousness for Automated Resilience Improvement in Java Applications (Long Zhang and Martin Monperrus)](http://arxiv.org/pdf/1812.10706)
 
 ## Chaos-NS-3
 
