@@ -32,7 +32,7 @@ public class ChaosMachineAgent {
                 try {
                     instrumentation.retransformClasses(cl[i]);
                 } catch (UnmodifiableClassException e){
-                    System.out.println("can't retransformClass: " + className);
+                    System.out.println("can't retransform class: " + className);
                 }
             }
         } else {
