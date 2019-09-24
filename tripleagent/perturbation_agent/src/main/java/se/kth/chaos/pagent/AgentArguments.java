@@ -19,23 +19,28 @@ public class AgentArguments {
     private String defaultMode;
     private int perturbationCountdown;
     private int interval;
+    private boolean readFromEnv;
 
     public AgentArguments(String args) {
         Map<String, String> configuration = argumentMap(args == null ? "" : args);
-        this.tcIndex = Integer.valueOf(configuration.getOrDefault("tcindex", "-1"));
-        this.operationMode = OperationMode.fromLowerCase(configuration.getOrDefault("mode", OperationMode.ARRAY_PONE.name()));
-        this.chanceOfFailure = Double.valueOf(configuration.getOrDefault("rate", "1"));
-        this.filter = new FilterByClassAndMethodName(configuration.getOrDefault("filter", ".*"));
-        this.exceptionFilter = new FilterByExceptionType(configuration.getOrDefault("efilter", ".*"));
-        this.lineNumber = configuration.getOrDefault("lineNumber", "*");
         this.configFile = configuration.getOrDefault("config", null);
-        this.csvfilepath = configuration.getOrDefault("csvfilepath", "perturbationPointsList.csv");
-        this.defaultMode = configuration.getOrDefault("defaultMode", "off");
-        this.perturbationCountdown = Integer.valueOf(configuration.getOrDefault("countdown", "-1"));
-        this.interval = Integer.valueOf(configuration.getOrDefault("interval", "1"));
+        this.readFromEnv = Boolean.valueOf(configuration.getOrDefault("readFromEnv", "false"));
 
         if (this.configFile != null) {
             refreshConfig();
+        } else if (this.readFromEnv) {
+            readConfigFromEnv();
+        } else {
+            this.tcIndex = Integer.valueOf(configuration.getOrDefault("tcindex", "-1"));
+            this.operationMode = OperationMode.fromLowerCase(configuration.getOrDefault("mode", OperationMode.ARRAY_PONE.name()));
+            this.chanceOfFailure = Double.valueOf(configuration.getOrDefault("rate", "1"));
+            this.filter = new FilterByClassAndMethodName(configuration.getOrDefault("filter", ".*"));
+            this.exceptionFilter = new FilterByExceptionType(configuration.getOrDefault("efilter", ".*"));
+            this.lineNumber = configuration.getOrDefault("lineNumber", "*");
+            this.csvfilepath = configuration.getOrDefault("csvfilepath", "perturbationPointsList.csv");
+            this.defaultMode = configuration.getOrDefault("defaultMode", "off");
+            this.perturbationCountdown = Integer.valueOf(configuration.getOrDefault("countdown", "-1"));
+            this.interval = Integer.valueOf(configuration.getOrDefault("interval", "1"));
         }
     }
 
@@ -80,6 +85,27 @@ public class AgentArguments {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private void readConfigFromEnv() {
+        this.tcIndex = Integer.valueOf(this.getenvOrDefault("TRIPLEAGENT_TCINDEX", "-1"));
+        this.operationMode = OperationMode.fromLowerCase(this.getenvOrDefault("mode", OperationMode.THROW_E.name()));
+        this.chanceOfFailure = Double.valueOf(this.getenvOrDefault("TRIPLEAGENT_RATE", "1"));
+        this.filter = new FilterByClassAndMethodName(this.getenvOrDefault("TRIPLEAGENT_FILTER", ".*"));
+        this.exceptionFilter = new FilterByExceptionType(this.getenvOrDefault("TRIPLEAGENT_EFILTER", ".*"));
+        this.lineNumber = this.getenvOrDefault("TRIPLEAGENT_LINENUMBER", "*");
+        this.csvfilepath = this.getenvOrDefault("TRIPLEAGENT_CSVFILEPATH", "/home/tripleagent/perturbationPointsList.csv");
+        this.defaultMode = this.getenvOrDefault("TRIPLEAGENT_DEFAULTMODE", "off");
+        this.perturbationCountdown = Integer.valueOf(this.getenvOrDefault("TRIPLEAGENT_COUNTDOWN", "1"));
+        this.interval = Integer.valueOf(this.getenvOrDefault("TRIPLEAGENT_INTERVAL", "1"));
+    }
+
+    private String getenvOrDefault(String key, String defaultValue) {
+        String value = System.getenv(key);
+        if (value == null) {
+            value = defaultValue;
+        }
+        return value;
     }
 
      public int tcIndex() {
