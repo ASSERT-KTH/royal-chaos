@@ -5,7 +5,7 @@ COPY ./base_files/glowroot/ /home/tripleagent/glowroot/
 
 ENV TRIPLEAGENT_MODE throw_e
 ENV TRIPLEAGENT_CSVPATH /home/tripleagent/perturbationPointsList.csv
-ENV JAVA_TOOL_OPTIONS "$JAVA_TOOL_OPTIONS -javaagent:/root/glowroot/glowroot.jar -javaagent:/home/tripleagent/tripleagent-perturbation-jar-with-dependencies.jar=readFromEnv:true"
+ENV JAVA_TOOL_OPTIONS "$JAVA_TOOL_OPTIONS -javaagent:/home/tripleagent/glowroot/glowroot.jar -javaagent:/home/tripleagent/tripleagent-perturbation-jar-with-dependencies.jar=readFromEnv:true"
 ENV JAVA_OPTS "$JAVA_OPTS -noverify"
 
 EXPOSE 4000
