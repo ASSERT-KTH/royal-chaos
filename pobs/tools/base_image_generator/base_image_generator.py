@@ -6,6 +6,8 @@ import logging
 from optparse import OptionParser
 
 __version__ = "0.1"
+DOCKERHUB_USERNAME = "your_dockerhub_username" # for the --publish option
+DOCKERHUB_TOKEN = "your_dockerhub_access_token" # for the --publish option
 
 def parse_options():
     usage = r'usage: python3 %prog [options] -f /path/to/Dockerfile -o /path/to/output'
@@ -27,20 +29,27 @@ def parse_options():
     parser.add_option('-b', '--build',
         action = 'store_true',
         dest = 'build',
-        help = 'Whether to build the POBS image after the transformation [default: False]'
+        help = 'Build the POBS image after the transformation'
+    )
+
+    parser.add_option('-p', '--publish',
+        action = 'store_true',
+        dest = 'publish',
+        help = 'Publish the new POBS image after building it. To enable this option, you need to set up your DockerHub access token in the script'
     )
 
     parser.add_option('--dockerhub_org',
         action = 'store',
         type = 'string',
         dest = 'dockerhub_org',
-        help = 'The organisation name on DockerHub [default: gluckzhang]'
+        help = 'The organisation name on DockerHub [default: royalchaos]'
     )
 
     parser.set_defaults(
         output = './Dockerfile-pobs',
         build = False,
-        dockerhub_org = 'gluckzhang'
+        publish = False,
+        dockerhub_org = 'royalchaos'
     )
 
     options, args = parser.parse_args()
@@ -87,6 +96,9 @@ def main():
 
     if options.build:
         os.system("docker build -t %s/%s-pobs:%s -f %s ."%(options.dockerhub_org, image_name, image_tag, options.output))
+        if options.publish:
+            os.system("docker login --username %s --password"%(DOCKERHUB_USERNAME, DOCKERHUB_TOKEN))
+            os.system("docker push %s/%s-pobs:%s"%(options.dockerhub_org, image_name, image_tag))
 
 
 if __name__ == '__main__':
