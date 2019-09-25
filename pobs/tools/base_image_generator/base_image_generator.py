@@ -29,7 +29,7 @@ def parse_options():
     parser.add_option('-b', '--build',
         action = 'store_true',
         dest = 'build',
-        help = 'Build the POBS image after the transformation'
+        help = 'Build the POBS base image after the transformation'
     )
 
     parser.add_option('-p', '--publish',
@@ -90,9 +90,20 @@ def generate_base_image(ori_dockerfile, target_dockerfile):
 
     return image_name, image_tag
 
+def generate_application_dockerfile(ori_dockerfile, target_dockerfile, ori_image_name, ori_image_tag, pobs_org_name):
+    with open(ori_dockerfile, 'rt') as original, open(target_dockerfile, 'wt') as target:
+        for line in original.readlines():
+            full_image_name = "%s:%s"%(ori_image_name, ori_image_tag)
+            if "FROM" in line and full_image_name in line: # probably there are lots of space after "FROM"
+                line = line.replace(ori_image_name, "%s/%s-pobs"%(pobs_org_name, ori_image_name))
+                target.write(line)
+            else:
+                target.write(line)
+
 def main():
     options = parse_options()
     image_name, image_tag = generate_base_image(options.dockerfile, options.output)
+    generate_application_dockerfile(options.dockerfile, "%s-application"%options.output, image_name, image_tag, options.dockerhub_org)
 
     if options.build:
         os.system("docker build -t %s/%s-pobs:%s -f %s ."%(options.dockerhub_org, image_name, image_tag, options.output))
