@@ -97,8 +97,9 @@ def main():
     if options.build:
         os.system("docker build -t %s/%s-pobs:%s -f %s ."%(options.dockerhub_org, image_name, image_tag, options.output))
         if options.publish:
-            os.system("docker login --username %s --password"%(DOCKERHUB_USERNAME, DOCKERHUB_TOKEN))
+            os.system("docker login --username %s --password %s"%(DOCKERHUB_USERNAME, DOCKERHUB_TOKEN))
             os.system("docker push %s/%s-pobs:%s"%(options.dockerhub_org, image_name, image_tag))
+            os.system("docker logout")
 
 
 if __name__ == '__main__':
