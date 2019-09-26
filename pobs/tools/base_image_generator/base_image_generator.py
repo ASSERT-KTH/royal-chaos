@@ -69,9 +69,12 @@ def get_template_contents(base_image):
     if len(base_image.split(":", 1)) == 2:
         image_tag = base_image.split(":", 1)[1]
     
-    template_file = "./pobs_templates/default.tpl"
     if os.path.isfile("./pobs_templates/%s/%s.tpl"%(image_name, image_tag)):
         template_file = "./pobs_templates/%s/%s.tpl"%(image_name, image_tag)
+    elif os.path.isfile("./pobs_templates/%s/default.tpl"%(image_name)):
+        template_file = "./pobs_templates/%s/default.tpl"%(image_name)
+    else:
+        template_file = "./pobs_templates/default.tpl"
 
     with open(template_file, 'rt') as file:
         contents = file.readlines()
