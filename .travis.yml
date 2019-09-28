@@ -1,0 +1,14 @@
+# this script is modified from https://github.com/INRIA/spoon/blob/master/.travis.yml
+
+language: java
+
+# oraclejdk8 is the default jvm in trusty (Ubuntu 14.04)
+dist: trusty
+
+env:
+  global:
+  - M2_HOME="/usr/local/maven"
+  matrix:
+  - SCRIPT=travis-jdk8.sh
+
+script: ./chore/travis/$SCRIPT
