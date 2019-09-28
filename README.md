@@ -1,4 +1,4 @@
-# Royal Chaos
+# Royal Chaos [![Travis Build Status](https://travis-ci.org/kth/royal-chaos.svg?branch=master)](https://travis-ci.org/kth/royal-chaos)
 
 This repository contains the chaos engineering systems invented at KTH Royal Institute of Technology. Every tool is organized in a separate folder in this repo, with a detailed README file inside.
 
