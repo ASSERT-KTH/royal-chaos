@@ -83,12 +83,13 @@ def get_template_contents(base_image):
 
 def generate_base_image(ori_dockerfile, target_dockerfile):
     with open(ori_dockerfile, 'rt') as original, open(target_dockerfile, 'wt') as target:
+        last_baseimage = "";
+        # use the last FROM instruction's image as base image
         for line in original.readlines():
             if line.startswith("FROM"):
-                base_image = line[5:].strip()
-                break
-        image_name, image_tag, contents = get_template_contents(base_image)
-        target.write("FROM %s\n"%base_image)
+                last_baseimage = line[5:].strip()
+        image_name, image_tag, contents = get_template_contents(last_baseimage)
+        target.write("FROM %s\n"%last_baseimage)
         target.writelines(contents)
 
     return image_name, image_tag
