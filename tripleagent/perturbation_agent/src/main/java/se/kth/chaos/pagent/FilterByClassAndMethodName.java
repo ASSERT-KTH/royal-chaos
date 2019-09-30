@@ -13,7 +13,10 @@ public class FilterByClassAndMethodName {
     }
 
     public boolean matches(String className, String methodName) {
-        String fullName = className + "/" + methodName;
+        String fullName = className;
+        if (methodName != null && methodName.length() > 0) {
+            fullName = className + "/" + methodName;
+        }
 
         return this.pattern.matcher(fullName).find();
     }
