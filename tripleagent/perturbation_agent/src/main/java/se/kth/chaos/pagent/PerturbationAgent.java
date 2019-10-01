@@ -19,12 +19,15 @@ public class PerturbationAgent {
                     continue;
                 }
 
-                try {
-                    instrumentation.retransformClasses(cl[i]);
-                } catch (UnmodifiableClassException e){
-                    System.out.println("WARN PerturbationAgent can't retransform Class: " + className);
-                } catch (VerifyError e) {
-                    // System.out.println("WARN PerturbationAgent retransform error, Class: " + className);
+                if (transformer.getArguments().filter().matches(className.replace(".", "/"), null)) {
+                    System.out.println(className);
+                    try {
+                        instrumentation.retransformClasses(cl[i]);
+                    } catch (UnmodifiableClassException e){
+                        System.out.println("WARN PerturbationAgent can't retransform Class: " + className);
+                    } catch (VerifyError e) {
+                        // System.out.println("WARN PerturbationAgent retransform error, Class: " + className);
+                    }
                 }
             }
         } else {

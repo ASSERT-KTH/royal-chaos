@@ -94,7 +94,7 @@ public class AgentArguments {
         this.filter = new FilterByClassAndMethodName(this.getenvOrDefault("TRIPLEAGENT_FILTER", ".*"));
         this.exceptionFilter = new FilterByExceptionType(this.getenvOrDefault("TRIPLEAGENT_EFILTER", ".*"));
         this.lineNumber = this.getenvOrDefault("TRIPLEAGENT_LINENUMBER", "*");
-        this.csvfilepath = this.getenvOrDefault("TRIPLEAGENT_CSVFILEPATH", "/home/tripleagent/perturbationPointsList.csv");
+        this.csvfilepath = this.getenvOrDefault("TRIPLEAGENT_CSVPATH", "/home/tripleagent/logs/perturbationPointsList.csv");
         this.defaultMode = this.getenvOrDefault("TRIPLEAGENT_DEFAULTMODE", "off");
         this.perturbationCountdown = Integer.valueOf(this.getenvOrDefault("TRIPLEAGENT_COUNTDOWN", "1"));
         this.interval = Integer.valueOf(this.getenvOrDefault("TRIPLEAGENT_INTERVAL", "1"));

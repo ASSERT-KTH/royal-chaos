@@ -67,4 +67,8 @@ public class PerturbationAgentClassTransformer implements ClassFileTransformer {
 
         return result;
     }
+
+    public AgentArguments getArguments() {
+        return this.arguments;
+    }
 }
