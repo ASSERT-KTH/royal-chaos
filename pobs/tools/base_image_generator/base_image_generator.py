@@ -3,21 +3,39 @@
 
 import os
 import logging
-from optparse import OptionParser
+from optparse import OptionParser, OptionGroup
 
 __version__ = "0.1"
 DOCKERHUB_USERNAME = "your_dockerhub_username" # for the --publish option
 DOCKERHUB_TOKEN = "your_dockerhub_access_token" # for the --publish option
+OPTIONS = None
 
 def parse_options():
     usage = r'usage: python3 %prog [options] -f /path/to/Dockerfile -o /path/to/output'
     parser = OptionParser(usage = usage, version = __version__)
-    parser.add_option('-f', '--dockerfile',
+
+    source_group = OptionGroup(parser, "Source options", "Use one of the following options to define the source")
+    source_group.add_option('-f', '--dockerfile',
         action = 'store',
         type = 'string',
         dest = 'dockerfile',
         help = 'The path to your Dockerfile to be transformed'
     )
+
+    source_group.add_option('--from_image',
+        action = 'store',
+        type = 'string',
+        dest = 'from_image',
+        help = 'Based on this image name and tag to generate POBS base image'
+    )
+
+    source_group.add_option('--from_file',
+        action = 'store',
+        type = 'string',
+        dest = 'from_file',
+        help = 'Based on all the images in the file to generate a set of POBS base images'
+    )
+    parser.add_option_group(source_group)
 
     parser.add_option('-o', '--output',
         action = 'store',
@@ -53,10 +71,10 @@ def parse_options():
     )
 
     options, args = parser.parse_args()
-    if options.dockerfile == None:
+    if options.dockerfile == None and options.from_image == None and options.from_file == None:
         parser.print_help()
-        parser.error("The path to the dockerfile should be given.")
-    elif not os.path.isfile(options.dockerfile):
+        parser.error("The source for POBS base image generation should be given.")
+    elif options.dockerfile != None and not os.path.isfile(options.dockerfile):
         parser.print_help()
         parser.error("%s should be a file."%options.dockerfile)
     
@@ -81,7 +99,7 @@ def get_template_contents(base_image):
     
     return image_name, image_tag, contents
 
-def generate_base_image(ori_dockerfile, target_dockerfile):
+def generate_base_image_from_dockerfile(ori_dockerfile, target_dockerfile):
     with open(ori_dockerfile, 'rt') as original, open(target_dockerfile, 'wt') as target:
         last_baseimage = "";
         # use the last FROM instruction's image as base image
@@ -89,10 +107,33 @@ def generate_base_image(ori_dockerfile, target_dockerfile):
             if line.startswith("FROM"):
                 last_baseimage = line[5:].strip()
         image_name, image_tag, contents = get_template_contents(last_baseimage)
-        target.write("FROM %s\n"%last_baseimage)
+        target.write("FROM %s\n\n"%last_baseimage)
         target.writelines(contents)
 
     return image_name, image_tag
+
+def generate_base_image_from_image(ori_image, target_dockerfile):
+    with open(target_dockerfile, 'wt') as target:
+        image_name, image_tag, contents = get_template_contents(ori_image)
+        target.write("FROM %s\n\n"%ori_image)
+        target.writelines(contents)
+
+    return image_name, image_tag
+
+def generate_base_images_from_file(filepath, target_dockerfile):
+    with open(filepath, 'rt') as image_list:
+        # each line records one entry, image_name:image_tag
+        for line in image_list.readlines():
+            if line.strip() == "": continue
+            image_name, image_tag = generate_base_image_from_image(line.strip(), OPTIONS.output)
+            if OPTIONS.build: build_POBS_base_image(image_name, image_tag)
+
+def build_POBS_base_image(image_name, image_tag):
+    os.system("docker build -t %s/%s-pobs:%s -f %s ."%(OPTIONS.dockerhub_org, image_name, image_tag, OPTIONS.output))
+    if OPTIONS.publish:
+        os.system("docker login --username %s --password %s"%(DOCKERHUB_USERNAME, DOCKERHUB_TOKEN))
+        os.system("docker push %s/%s-pobs:%s"%(OPTIONS.dockerhub_org, image_name, image_tag))
+        os.system("docker logout")
 
 def generate_application_dockerfile(ori_dockerfile, target_dockerfile, ori_image_name, ori_image_tag, pobs_org_name):
     with open(ori_dockerfile, 'rt') as original, open(target_dockerfile, 'wt') as target:
@@ -105,17 +146,18 @@ def generate_application_dockerfile(ori_dockerfile, target_dockerfile, ori_image
                 target.write(line)
 
 def main():
-    options = parse_options()
-    image_name, image_tag = generate_base_image(options.dockerfile, options.output)
-    generate_application_dockerfile(options.dockerfile, "%s-application"%options.output, image_name, image_tag, options.dockerhub_org)
+    global OPTIONS
+    OPTIONS = parse_options()
 
-    if options.build:
-        os.system("docker build -t %s/%s-pobs:%s -f %s ."%(options.dockerhub_org, image_name, image_tag, options.output))
-        if options.publish:
-            os.system("docker login --username %s --password %s"%(DOCKERHUB_USERNAME, DOCKERHUB_TOKEN))
-            os.system("docker push %s/%s-pobs:%s"%(options.dockerhub_org, image_name, image_tag))
-            os.system("docker logout")
-
+    if OPTIONS.dockerfile != None:
+        image_name, image_tag = generate_base_image_from_dockerfile(OPTIONS.dockerfile, OPTIONS.output)
+        if OPTIONS.build: build_POBS_base_image(image_name, image_tag)
+        generate_application_dockerfile(OPTIONS.dockerfile, "%s-application"%OPTIONS.output, image_name, image_tag, OPTIONS.dockerhub_org)
+    elif OPTIONS.from_image != None:
+        image_name, image_tag = generate_base_image_from_image(OPTIONS.from_image, OPTIONS.output)
+        if OPTIONS.build: build_POBS_base_image(image_name, image_tag)
+    elif OPTIONS.from_file != None:
+        generate_base_images_from_file(OPTIONS.from_file, OPTIONS.output)
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
