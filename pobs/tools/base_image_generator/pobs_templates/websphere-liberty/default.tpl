@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install -y iproute
 COPY ./base_files/tripleagent-perturbation-jar-with-dependencies.jar /home/tripleagent/
 COPY ./base_files/glowroot/ /home/tripleagent/glowroot/
 
-RUN mkdir /home/tripleagent/logs
+RUN mkdir /home/tripleagent/logs && chmod -R a+rw /home/tripleagent
 RUN chown -R default /home/tripleagent
 
 ENV TRIPLEAGENT_MODE throw_e

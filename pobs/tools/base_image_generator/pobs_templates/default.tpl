@@ -3,7 +3,7 @@ RUN apt-get update && apt-get install -y iproute
 COPY ./base_files/tripleagent-perturbation-jar-with-dependencies.jar /home/tripleagent/
 COPY ./base_files/glowroot/ /home/tripleagent/glowroot/
 
-RUN mkdir /home/tripleagent/logs
+RUN mkdir /home/tripleagent/logs && chmod -R a+rw /home/tripleagent
 ENV TRIPLEAGENT_MODE throw_e
 ENV TRIPLEAGENT_CSVPATH /home/tripleagent/logs/perturbationPointsList.csv
 ENV TRIPLEAGENT_FILTER none/by/default
