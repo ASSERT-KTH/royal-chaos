@@ -28,7 +28,7 @@ for i in range(1, 11):
   params = (
     ('q', 'docker in:readme language:Java'),
     ('sort', 'stars'),
-    ('per_page', '2'),
+    ('per_page', '100'),
     ('page', i),
   )
   print(params)
