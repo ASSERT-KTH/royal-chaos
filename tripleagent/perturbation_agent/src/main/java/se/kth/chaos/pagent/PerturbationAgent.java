@@ -8,6 +8,7 @@ public class PerturbationAgent {
     public static void premain(String agentArguments, Instrumentation instrumentation) {
         PerturbationAgentClassTransformer transformer = new PerturbationAgentClassTransformer(agentArguments);
         instrumentation.addTransformer(transformer);
+        System.out.println("INFO TripleAgent PerturbationAgent is successfully attached!");
 
         // for already loaded classes, we can retransform them, but that depends on platform's type
         if (instrumentation.isRetransformClassesSupported()) {

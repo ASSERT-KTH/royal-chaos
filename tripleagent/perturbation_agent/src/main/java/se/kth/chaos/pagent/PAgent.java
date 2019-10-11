@@ -150,6 +150,8 @@ public class PAgent {
                             perturbationPoint.lineIndexNumber, perturbationPoint.perturbationCountdown, perturbationPoint.chanceOfFailure, perturbationPoint.mode));
                 } else {
                     csvFile.createNewFile();
+                    csvFile.setReadable(true, false);
+                    csvFile.setWritable(true, false);
                     out = new PrintWriter(new FileWriter(csvFile));
                     out.println("key,className,methodName,methodSignature,exceptionType,exceptionIndexNumber,lineIndexNumber,countdown,rate,mode");
                     out.println(String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s", perturbationPoint.key, perturbationPoint.className,

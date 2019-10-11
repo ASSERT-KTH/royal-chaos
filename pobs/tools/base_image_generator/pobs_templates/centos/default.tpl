@@ -1,4 +1,4 @@
-RUN apt-get update && apt-get install -y iproute
+RUN yum install -y iproute2
 
 COPY ./base_files/tripleagent-perturbation-jar-with-dependencies.jar /home/tripleagent/
 COPY ./base_files/glowroot/ /home/tripleagent/glowroot/
