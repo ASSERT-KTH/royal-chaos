@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
 
-import os
+import os, sys, re
 import logging
 from optparse import OptionParser, OptionGroup
 
@@ -11,7 +11,7 @@ DOCKERHUB_TOKEN = "your_dockerhub_access_token" # for the --publish option
 OPTIONS = None
 
 def parse_options():
-    usage = r'usage: python3 %prog [options] -f /path/to/Dockerfile -o /path/to/output'
+    usage = r'usage: python3 %prog [options] -f /path/to/Dockerfile -o /folder/to/output'
     parser = OptionParser(usage = usage, version = __version__)
 
     source_group = OptionGroup(parser, "Source options", "Use one of the following options to define the source")
@@ -41,7 +41,7 @@ def parse_options():
         action = 'store',
         type = 'string',
         dest = 'output',
-        help = 'The path to save the transformed Dockerfile [default: ./Dockerfile-pobs]'
+        help = 'The path to save the transformed Dockerfile [default: ./]'
     )
 
     parser.add_option('-b', '--build',
@@ -64,7 +64,7 @@ def parse_options():
     )
 
     parser.set_defaults(
-        output = './Dockerfile-pobs',
+        output = './',
         build = False,
         publish = False,
         dockerhub_org = 'royalchaos'
@@ -82,15 +82,16 @@ def parse_options():
 
 def get_template_contents(base_image):
     image_name = base_image.split(":", 1)[0]
+    image_name_fixed = image_name.replace("/", "__") # replace '/' with '__' when handling non-official images
     image_tag = "latest"
     contents = list()
     if len(base_image.split(":", 1)) == 2:
         image_tag = base_image.split(":", 1)[1]
     
-    if os.path.isfile("./pobs_templates/%s/%s.tpl"%(image_name, image_tag)):
-        template_file = "./pobs_templates/%s/%s.tpl"%(image_name, image_tag)
-    elif os.path.isfile("./pobs_templates/%s/default.tpl"%(image_name)):
-        template_file = "./pobs_templates/%s/default.tpl"%(image_name)
+    if os.path.isfile("./pobs_templates/%s/%s.tpl"%(image_name_fixed, image_tag)):
+        template_file = "./pobs_templates/%s/%s.tpl"%(image_name_fixed, image_tag)
+    elif os.path.isfile("./pobs_templates/%s/default.tpl"%(image_name_fixed)):
+        template_file = "./pobs_templates/%s/default.tpl"%(image_name_fixed)
     else:
         template_file = "./pobs_templates/default.tpl"
 
@@ -99,20 +100,23 @@ def get_template_contents(base_image):
     
     return image_name, image_tag, contents
 
-def generate_base_image_from_dockerfile(ori_dockerfile, target_dockerfile):
+def generate_base_image_from_dockerfile(ori_dockerfile, target_dockerfile_path):
+    target_dockerfile = os.path.join(target_dockerfile_path, "Dockerfile-pobs")
     with open(ori_dockerfile, 'rt') as original, open(target_dockerfile, 'wt') as target:
         last_baseimage = "";
         # use the last FROM instruction's image as base image
         for line in original.readlines():
             if line.startswith("FROM"):
                 last_baseimage = line[5:].strip()
+                last_baseimage = re.split(" as ", last_baseimage, flags=re.IGNORECASE)[0].strip()
         image_name, image_tag, contents = get_template_contents(last_baseimage)
         target.write("FROM %s\n\n"%last_baseimage)
         target.writelines(contents)
 
     return image_name, image_tag
 
-def generate_base_image_from_image(ori_image, target_dockerfile):
+def generate_base_image_from_image(ori_image, target_dockerfile_path):
+    target_dockerfile = os.path.join(target_dockerfile_path, "Dockerfile-pobs")
     with open(target_dockerfile, 'wt') as target:
         image_name, image_tag, contents = get_template_contents(ori_image)
         target.write("FROM %s\n\n"%ori_image)
@@ -120,27 +124,33 @@ def generate_base_image_from_image(ori_image, target_dockerfile):
 
     return image_name, image_tag
 
-def generate_base_images_from_file(filepath, target_dockerfile):
+def generate_base_images_from_file(filepath, target_dockerfile_path):
+    target_dockerfile = os.path.join(target_dockerfile_path, "Dockerfile-pobs")
     with open(filepath, 'rt') as image_list:
         # each line records one entry, image_name:image_tag
         for line in image_list.readlines():
             if line.strip() == "": continue
-            image_name, image_tag = generate_base_image_from_image(line.strip(), OPTIONS.output)
+            image_name, image_tag = generate_base_image_from_image(line.strip(), target_dockerfile)
             if OPTIONS.build: build_POBS_base_image(image_name, image_tag)
 
 def build_POBS_base_image(image_name, image_tag):
-    os.system("docker build -t %s/%s-pobs:%s -f %s ."%(OPTIONS.dockerhub_org, image_name, image_tag, OPTIONS.output))
+    exitcode = os.system("docker build -t %s/%s-pobs:%s -f %s/Dockerfile-pobs ."%(OPTIONS.dockerhub_org, image_name, image_tag, OPTIONS.output))
+    os.system("docker image prune -f")
+    if exitcode != 0:
+        logging.error("Failed to build POBS base image for %s:%s"%(image_name, image_tag))
+        sys.exit(1)
     if OPTIONS.publish:
         os.system("docker login --username %s --password %s"%(DOCKERHUB_USERNAME, DOCKERHUB_TOKEN))
         os.system("docker push %s/%s-pobs:%s"%(OPTIONS.dockerhub_org, image_name, image_tag))
         os.system("docker logout")
 
-def generate_application_dockerfile(ori_dockerfile, target_dockerfile, ori_image_name, ori_image_tag, pobs_org_name):
+def generate_application_dockerfile(ori_dockerfile, target_dockerfile_path, ori_image_name, ori_image_tag, pobs_org_name):
+    target_dockerfile = os.path.join(target_dockerfile_path, "Dockerfile-pobs-application")
     with open(ori_dockerfile, 'rt') as original, open(target_dockerfile, 'wt') as target:
         for line in original.readlines():
             full_image_name = "%s:%s"%(ori_image_name, ori_image_tag)
             if "FROM" in line and full_image_name in line: # probably there are lots of space after "FROM"
-                line = line.replace(ori_image_name, "%s/%s-pobs"%(pobs_org_name, ori_image_name))
+                line = line.replace(full_image_name, "%s/%s-pobs:%s"%(pobs_org_name, ori_image_name.replace("/", "__"), ori_image_tag))
                 target.write(line)
             else:
                 target.write(line)
@@ -152,7 +162,7 @@ def main():
     if OPTIONS.dockerfile != None:
         image_name, image_tag = generate_base_image_from_dockerfile(OPTIONS.dockerfile, OPTIONS.output)
         if OPTIONS.build: build_POBS_base_image(image_name, image_tag)
-        generate_application_dockerfile(OPTIONS.dockerfile, "%s-application"%OPTIONS.output, image_name, image_tag, OPTIONS.dockerhub_org)
+        generate_application_dockerfile(OPTIONS.dockerfile, OPTIONS.output, image_name, image_tag, OPTIONS.dockerhub_org)
     elif OPTIONS.from_image != None:
         image_name, image_tag = generate_base_image_from_image(OPTIONS.from_image, OPTIONS.output)
         if OPTIONS.build: build_POBS_base_image(image_name, image_tag)
