@@ -53,7 +53,7 @@ def test_application(project_name, image_index):
         try:
             exit_code = p.wait(timeout=60)
         except subprocess.TimeoutExpired as err:
-            return ("", "", -1)
+            exit_code = 0 # if the container runs for 60 seconds, it is considered as a successful run
         stdout_f.flush()
         stderr_f.flush()
         stdout_f.seek(0, os.SEEK_SET)
@@ -139,7 +139,7 @@ def evaluate_project(project):
                             dockerfile["glowroot_attached"] = glowroot_attached
                             dockerfile["tripleagent_attached"] = tripleagent_attached
 
-                            if glowroot_attached and tripleagent_attached: project["if_able_to_run"].append(fileindex)
+                            if glowroot_attached and tripleagent_attached and exitcode == 0: project["if_able_to_run"].append(fileindex)
 
                             # clean up: delete the built images
                             clean_up(project["name"])
