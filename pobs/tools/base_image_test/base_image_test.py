@@ -9,8 +9,9 @@ __version__ = "0.1"
 OPTIONS = None
 WHERE_IS_GENERATOR = "../base_image_generator"
 CMD_TRANSFORM_DOCKERFILE = "python ../base_image_generator/base_image_generator.py -f %s -o %s --build" # path to the Dockerfile and output folder
-CMD_BUILD_APPLICATION_IMAGE = "docker build -t %s-pobs -f Dockerfile-pobs-application ." # the project name
-CMD_RUN_APPLICATION = "docker run --rm -p 4000:4000 %s-pobs" # give the project name
+CMD_BUILD_IMAGE = "docker build -t %s -f %s ." # tag name and Dockerfile path
+CMD_RUN_APPLICATION = "docker run --rm -p 4000:4000 %s-pobs:%d" # give the project name and the index of the dockerfile
+CLEAN_CONTAINERS_SINCE = "CONTAINER_NAME" # give a container name since which the created containers will be removed
 
 def parse_options():
     usage = r'usage: python3 %prog [options] -f /path/to/json-data-set.json'
@@ -46,17 +47,29 @@ def run_command(command, workdir):
 
         return (stdoutdata.decode("utf-8"), stderrdata.decode("utf-8"), exit_code)
 
-def run_application(project_name):
-    p = subprocess.Popen(CMD_RUN_APPLICATION, stdout=subprocess.PIPE, stderr=subprocess.PIPE, close_fds=True, shell=True)
-    while True:
-        stdout = p.stdout.readlines()
-        stderr = p.stderr.readlines()
-        if stdout:
-            logging.warn(stdout)
-        if p.poll() is not None:
-            break
-    exit_code = p.wait()
-    logging.warn("exit code of the docker container: %s"%exit_code)
+def test_application(project_name, image_index):
+    with tempfile.NamedTemporaryFile(mode="w+b") as stdout_f, tempfile.NamedTemporaryFile(mode="w+b") as stderr_f:
+        p = subprocess.Popen(CMD_RUN_APPLICATION%(project_name, image_index), stdout=stdout_f.fileno(), stderr=stderr_f.fileno(), close_fds=True, shell=True)
+        try:
+            exit_code = p.wait(timeout=60)
+        except subprocess.TimeoutExpired as err:
+            return ("", "", -1)
+        stdout_f.flush()
+        stderr_f.flush()
+        stdout_f.seek(0, os.SEEK_SET)
+        stderr_f.seek(0, os.SEEK_SET)
+        stdoutdata = stdout_f.read()
+        stderrdata = stderr_f.read()
+
+        glowroot_attached = False
+        tripleagent_attached = False
+        stdout = stdoutdata.decode("utf-8")
+        if "org.glowroot - UI listening on 0.0.0.0:4000" in stdout:
+            glowroot_attached = True
+        if "INFO TripleAgent PerturbationAgent is successfully attached!" in stdout:
+            tripleagent_attached = True
+
+        return (glowroot_attached, tripleagent_attached, exit_code)
 
 def dump_logs(stdoutdata, stderrdata, filepath, fileprefix):
     with open(os.path.join(filepath, "%s-stdout.log"%fileprefix), 'wt') as stdoutfile, \
@@ -64,38 +77,78 @@ def dump_logs(stdoutdata, stderrdata, filepath, fileprefix):
         stdoutfile.writelines(stdoutdata)
         stderrfile.writelines(stderrdata)
 
+def clean_up(project_name):
+    os.system("docker rm $(docker ps -a -q --filter since=%s)"%CLEAN_CONTAINERS_SINCE)
+    os.system("docker image prune -f")
+    os.system("docker image rm $(docker images -q --filter reference='%s:*')"%project_name)
+
 def evaluate_project(project):
-    # clone the repo
-    with tempfile.TemporaryDirectory() as tmpdir:
-        tmprepo = os.path.join(tmpdir, project["name"])
-        goodrepo = os.system("cd %s && git clone %s"%(tmpdir, project["clone_url"])) == 0
-        if not goodrepo: logging.error("failed to clone repo %s"%project["clone_url"])
+    if project["number_of_dockerfiles"] > 0:
+        # clone the repo
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmprepo = os.path.join(tmpdir, project["name"])
+            goodrepo = os.system("cd %s && git clone %s"%(tmpdir, project["clone_url"])) == 0
+            if goodrepo:
+                project["if_able_to_clone"] = True
+                project["if_able_to_run"] = list()
+            else:
+                project["if_able_to_clone"] = False
+                logging.error("failed to clone repo %s"%project["clone_url"])
 
-        # build the project?
+            # build the project?
 
-        if project["number_of_dockerfiles"] > 0:
             fileindex = 0
             for dockerfile in project["info_from_dockerfiles"]:
                 # build the base image
                 filepath = os.path.join(tmprepo, dockerfile["path"])
                 dirname = os.path.dirname(filepath)
-                logging.info("Begin to transform the dockerfile and build POBS base image: %s"%dockerfile["path"])
-                stdout, stderr, exitcode = run_command(CMD_TRANSFORM_DOCKERFILE%(filepath, dirname), WHERE_IS_GENERATOR)
-                logging.info("Finished POBS base image transformation, exitcode: %d"%exitcode)
+                filename = os.path.basename(filepath)
+
+                # sanity check: try to build the original docker image
+                logging.info("Check whether the dockerfile is buildable: %s"%dockerfile["path"])
+                stdout, stderr, exitcode = run_command(CMD_BUILD_IMAGE%(project["name"], filename), dirname)
                 if exitcode != 0:
-                    dump_logs(stdout, stderr, "./", "%s_%d_base"%(project["name"], fileindex))
+                    dockerfile["sanity_check"] = "failed"
+                    dump_logs(stdout, stderr, "./", "%s_%d_sanity_check"%(project["name"], fileindex))
+                    logging.info("The original dockerfile can not be built: %s"%dockerfile["path"])
                 else:
-                    # build the application
-                    logging.info("Begin to build the application image using: %s-pobs-application"%dockerfile["path"])
-                    stdout, stderr, exitcode = run_command(CMD_BUILD_APPLICATION_IMAGE%(project["name"]), dirname)
-                    logging.info("Finished building the application, exitcode: %d"%exitcode)
+                    dockerfile["sanity_check"] = "successful"
+
+                    # POBS base image generation test
+                    logging.info("Begin to transform the dockerfile and build POBS base image: %s"%dockerfile["path"])
+                    stdout, stderr, exitcode = run_command(CMD_TRANSFORM_DOCKERFILE%(filepath, dirname), WHERE_IS_GENERATOR)
                     if exitcode != 0:
-                        dump_logs(stdout, stderr, "./", "%s_%d_app"%(project["name"], fileindex))
-                        logging.error("Failed to build the application image using %s-pobs-application, project %s"%(dockerfile["path"], project["name"]))
+                        dump_logs(stdout, stderr, "./", "%s_%d_base"%(project["name"], fileindex))
+                        dockerfile["pobs_base_generation"] = "failed"
+                        logging.info("Failed to build POBS base image, exitcode: %d"%exitcode)
                     else:
-                        # run the application and test Glowroot, TripleAgent
-                        run_application(project["name"])
+                        dockerfile["pobs_base_generation"] = "successful"
+
+                        # build the PBOS application image
+                        logging.info("Begin to build the application image using: %s-pobs-application"%(dockerfile["path"]))
+                        stdout, stderr, exitcode = run_command(CMD_BUILD_IMAGE%(project["name"] + "-pobs:%d"%fileindex, "Dockerfile-pobs-application"), dirname)
+                        if exitcode != 0:
+                            dump_logs(stdout, stderr, "./", "%s_%d_app"%(project["name"], fileindex))
+                            dockerfile["pobs_application_build"] = "failed"
+                            logging.error("Failed to build the application image using %s-pobs-application, project %s"%(dockerfile["path"], project["name"]))
+                        else:
+                            dockerfile["pobs_application_build"] = "successful"
+
+                            # run the application and test Glowroot, TripleAgent
+                            glowroot_attached, tripleagent_attached, exitcode = test_application(project["name"], fileindex)
+                            dockerfile["glowroot_attached"] = glowroot_attached
+                            dockerfile["tripleagent_attached"] = tripleagent_attached
+
+                            if glowroot_attached and tripleagent_attached: project["if_able_to_run"].append(fileindex)
+
+                            # clean up: delete the built images
+                            clean_up(project["name"])
                 fileindex = fileindex + 1
+    return project
+
+def dump_analysis(projects):
+    with open("analysis_log.json", "wt") as output:
+        json.dump(projects, output, indent = 4)
 
 def main():
     global OPTIONS
@@ -105,7 +158,8 @@ def main():
         projects = json.load(file)
         for project in projects:
             if project["number_of_dockerfiles"] > 0:
-                evaluate_project(project)
+                project = evaluate_project(project)
+                dump_analysis(projects)
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
