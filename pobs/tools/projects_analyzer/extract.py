@@ -78,7 +78,7 @@ for i in range(len(repo_data["items"])):
     single_repo["has_modules"] = True
   
   # Get number of Dockerfiles
-  find_number_of_dockerfiles_cmd = "find . -type f -name \"Dockerfile\" | wc -l"
+  find_number_of_dockerfiles_cmd = "find . -type f -iname \"Dockerfile\" | wc -l"
   single_repo["number_of_dockerfiles"] = int(os.popen(find_number_of_dockerfiles_cmd).read().strip())
 
   # Analyze individual Dockerfiles
@@ -90,7 +90,7 @@ for i in range(len(repo_data["items"])):
     i = 0
     while i < len(lines_in_dockerfile):
       current_line = lines_in_dockerfile[i].strip()
-      if instruction in current_line:
+      if current_line.lower().startswith(instruction.lower()):
         instruction_string = current_line
         while instruction_string.endswith("\\"):
           i += 1
@@ -104,7 +104,7 @@ for i in range(len(repo_data["items"])):
 
   if single_repo["number_of_dockerfiles"] > 0:
     info = []
-    find_dockerfiles_cmd = "find . -name \"Dockerfile\" -exec realpath {} \\;"
+    find_dockerfiles_cmd = "find . -type f -iname \"Dockerfile\" -exec realpath {} \\;"
     dockerfile_list = os.popen(find_dockerfiles_cmd).read().splitlines()
     for j in range(len(dockerfile_list)):
       dockerfile_path = re.sub(r".*/" + single_repo["name"] + "/", "./", dockerfile_list[j])
@@ -112,7 +112,8 @@ for i in range(len(repo_data["items"])):
           "path": dockerfile_path,
           "base_images": find_instruction_in_dockerfile(dockerfile_list[j], "FROM"),
           "cmds": find_instruction_in_dockerfile(dockerfile_list[j], "CMD"),
-          "entrypoints": find_instruction_in_dockerfile(dockerfile_list[j], "ENTRYPOINT")
+          "entrypoints": find_instruction_in_dockerfile(dockerfile_list[j], "ENTRYPOINT"),
+          "args": find_instruction_in_dockerfile(dockerfile_list[j], "ARG")
       }
       info.append(info_from_this_file)
     single_repo["info_from_dockerfiles"] = info
