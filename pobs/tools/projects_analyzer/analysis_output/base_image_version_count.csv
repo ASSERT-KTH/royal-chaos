@@ -1,0 +1,745 @@
+base-image:version,count
+java:8,126
+openjdk:8-jdk-alpine,91
+openjdk:8-jre-alpine,62
+java:8-jre,46
+openjdk:8-jre,46
+java:8-jre-alpine,39
+frolvlad/alpine-oraclejdk8:slim,38
+scratch,36
+ubuntu:16.04,31
+openjdk:8,31
+busybox:latest,29
+ubuntu:14.04,28
+openjdk:8u151-jre-alpine,21
+java:openjdk-8u111-alpine,20
+ubuntu:18.04,18
+openjdk:8-jdk,17
+openjdk:8u171-alpine3.7,17
+java:8-jdk,16
+glassfish:4.1,16
+openjdk:8-alpine,15
+alpine,15
+ubuntu:trusty,14
+ubuntu,14
+openjdk:8-jre-slim,14
+java:alpine,14
+openjdk:8u151-jre-alpine3.7,13
+openjdk:10.0.2-jre-slim,13
+anapsix/alpine-java:8_server-jre_unlimited,13
+registry.cn-beijing.aliyuncs.com/sxd/ubuntu-java8:1.0,12
+centos:7,12
+java:7,12
+java:8-jdk-alpine,12
+vertx/vertx3,12
+openjdk:8u171-jre-alpine,12
+pronter/jce-java,11
+busybox,11
+debian:jessie,11
+jerverless/jerverless:latest,11
+anapsix/alpine-java:8_jdk,11
+adoptopenjdk/openjdk11:alpine-jre,11
+tomcat:8-jre8-alpine,11
+java,10
+nicodeur/glassfish:5.0-web,10
+cloudunit/base-jessie,10
+azul/zulu-openjdk-alpine:11 as packager,9
+namespace/weathervane-centos7:version,9
+openjdk:8u121-jdk-alpine,9
+frolvlad/alpine-java,9
+oracle/glassfish:5.0-web,9
+openjdk:11-jre-slim,9
+openjdk:8u171-jre-alpine3.8,9
+registry.cn-hangzhou.aliyuncs.com/springcloud-cn/java:8u172-jre-alpine,9
+openjdk:8u212-jre,8
+openjdk:8u222-jre,8
+ubuntu:xenial,7
+maven:3.3.9-jdk-8,7
+centos:latest,7
+openjdk:11,7
+nginx,7
+adoptopenjdk/openjdk8-openj9:alpine-slim,7
+openjdk:11.0.2-jre-slim,7
+mysql:5.7,6
+maven:3.6.1-jdk-8 as mavenBuild,6
+centos:centos7,6
+debian:stretch,6
+maven:3.5-jdk-8-alpine,6
+docker-private.infra.cloudera.com/cloudera_base/cldr-java:11.0-jdk-slim,6
+azul/zulu-openjdk:8,6
+java:openjdk-8u91-jdk,5
+mysql:5.6,5
+maven:3-jdk-8,5
+universalresolver/base-alpine,5
+node:8-alpine,5
+alpine:3.3,5
+anapsix/alpine-java:8_jdk_unlimited,5
+alpine:latest,5
+centos,5
+registry.cn-hangzhou.aliyuncs.com/springcloud-cn/alpine-3.7:glibc-2.27-r0,5
+alpine/git,5
+tomcat:7.0.75-jre8,5
+alpine:3.4,5
+python:3-alpine,5
+stratos/base-image:4.1.5,4
+python:2,4
+golang:1.10 AS build,4
+ubuntu:12.04,4
+jboss/base-jdk:8,4
+adorsys/java:8,4
+openjdk:11-jre,4
+debian,4
+alpine:3.7,4
+lucida_base,4
+wso2/micro-integrator:latest,4
+confluentinc/cp-base:5.3.1,4
+adoptopenjdk/openjdk11-openj9:jdk-11.0.1.13-alpine-slim,4
+outofcoffee/imposter:${BASE_IMAGE_TAG},4
+openjdk,4
+fancybing/java:serverjre-8,4
+hub.c.163.com/wuxukun/maven-aliyun:3-jdk-8,4
+alpine:3.2,4
+openjdk:8u201-jre-alpine,4
+scratch AS runtime,4
+stateful-functions,3
+jenkins/java:d93654cc6239,3
+golang:1.12.2-alpine3.9,3
+maven:3-jdk-8-alpine AS build,3
+maven:alpine as build,3
+maven:3.5-jdk-8,3
+openjdk:alpine,3
+daggerok/jboss:eap-7.1,3
+ubuntu:18.10,3
+openjdk:11.0.3-jre-stretch,3
+openjdk:8u131-jre,3
+openjdk:7,3
+photon:2.0,3
+node:boron,3
+postgres,3
+openjdk:8u181-jdk-alpine3.8,3
+sonatype/nexus3:$NEXUS_VERSION,3
+sdaschner/wildfly:javaee8-kafka-b1,3
+$docker_namespace/concord-base:$concord_version,3
+@docker.account@/java-base,3
+java:openjdk-8-jre-alpine,3
+nginx:alpine,3
+maven AS builder,3
+openjdk:11-jdk-slim,3
+maven:3.5.4-jdk-8,3
+gcr.io/distroless/base,3
+centos:centos7.6.1810,3
+${DOCKER_UPSTREAM_REGISTRY}confluentinc/cp-base-new:${DOCKER_UPSTREAM_TAG},3
+fabric8/java-alpine-openjdk8-jre,3
+registry.cn-hangzhou.aliyuncs.com/kennylee/alpine:3.4,3
+livingobjects/jre8,3
+ubuntu:latest,3
+golang as build,3
+alpine:3.6,2
+${base},2
+openjdk:8u131-jre-alpine,2
+java:openjdk-8-jdk,2
+centos:6.10,2
+mesos/logstash-commons:latest,2
+node:9.11.1-alpine as build-stage,2
+fundrequestio/alpine-jdk8-slim,2
+fabric8/java-alpine-openjdk8-jdk:latest,2
+asqatasun/asqatasun:pre-requisites_without-DB,2
+ruby:2.5-alpine,2
+adoptopenjdk/openjdk8:latest,2
+openjdk:11-jdk,2
+openjdk:11-slim,2
+maven:alpine,2
+mysql:5.7.21,2
+httpd:2.4-alpine,2
+docker.io/library/node:8.11.4,2
+node:8-onbuild,2
+adoptopenjdk/openjdk11:x86_64-alpine-jre-11.0.3_7,2
+ibmcom/eventstreams-kafka-ce-icp-linux-amd64:2019.2.1-3a2f93e as builder,2
+openjdk:8u151-jdk-alpine3.7,2
+java:openjdk-8-jre,2
+openjdk:11.0.2-jre-slim-stretch,2
+java:8u111-jdk,2
+openjdk:8-alpine AS builder,2
+openjdk:7-jdk,2
+cassandra:3.11.4,2
+python:2-alpine,2
+docker.io/hyperledger/fabric-peer:x86_64-1.0.6,2
+node:alpine as builder,2
+python:2-slim,2
+anapsix/alpine-java,2
+debian:testing,2
+maven:3-jdk-11 as builder,2
+redis:3.2,2
+cloudunit/base-14.04,2
+golang:alpine,2
+registry.cn-hangzhou.aliyuncs.com/kennylee/java:openjdk-8-jre,2
+eventuateio/eventuate-mysql:0.7.0.RELEASE,2
+openjdk:jre,2
+daocloud.io/java:8,2
+registry.cn-hangzhou.aliyuncs.com/kennylee/mysql:5.7,2
+${docker.share.image}:${alfresco.share.version},2
+maven:3-alpine,2
+asqatasun/asqatasun:base_wget,2
+node:latest,2
+openjdk:11-oracle,2
+openjdk:latest,2
+dinkel/openldap:latest,2
+nginx:1.9.10,2
+openjdk:8-jdk as builder,2
+asqatasun/asqatasun:pre-requisites_with-empty-DB,2
+eventuateio/eventuate-postgres:0.7.0.RELEASE,2
+mysql,2
+postgres:9.6.3,2
+@docker.account@/jetty-base,2
+ibmjava:8-jre,2
+jboss/wildfly:10.1.0.Final,2
+openjdk:8u111-jre-alpine,2
+0xacab.org:4567/leap/bitmask_android/android-sdk:latest,2
+docker_base-streaming-file-server:latest,2
+nginx:1.14.0-alpine,2
+maven:3.6.0-jdk-8-alpine,2
+java:latest,2
+gradle:jdk8-alpine as jdk,2
+centos:centos6.9,2
+ubuntu:16.10,2
+apache/bookkeeper:4.5.0,2
+maven:3.5-jdk-8-alpine as build,2
+adoptopenjdk:11-jdk-hotspot,2
+debian:8.11,2
+docker.io/hyperledger/fabric-ca:x86_64-1.0.6,2
+redis,2
+amazonlinux,2
+maven:3-jdk-8-alpine,2
+pub.domeos.org/domeos/mysql:5.7,2
+java:8-alpine,2
+${docker.acs.image}:${alfresco.platform.version},2
+openjdk:8-jdk-slim,2
+ubuntu:bionic,2
+registry:2,2
+tomcat:8-jre8,2
+ruby:2.3.1,2
+ubuntu:18.04 as builder,2
+maven:3-jdk-8-slim,2
+registry.cn-hangzhou.aliyuncs.com/kennylee/elasticsearch:5.3.0,2
+clouthinkin/jre,2
+eclipse/kura:develop,2
+maven:3.6.0-jdk-8 as builder,1
+docker.elastic.co/logstash/logstash:5.3.0,1
+tomee:8-jre-1.7.2-webprofile,1
+openjdk:8u181-jre,1
+gcr.io/distroless/java:11,1
+tomcat:8.0.20-jre8,1
+tomcat:8.0.36-jre8,1
+quay.io/openshift/origin-jenkins-agent-maven:v4.0 AS builder,1
+private-registry.sohucs.com/sohucs/tomcat:8.0.24-jdk7,1
+nvidia/cuda:${cuda_version}-cudnn${cudnn_version}-devel,1
+nginx:stable,1
+maven:3.5.3-jdk-10,1
+alpine:3.10 as packager,1
+tomcat:8.0.30-jre8,1
+maven:latest AS appserver,1
+moditect/vertx-helloworld-base,1
+tomcat,1
+grafana/grafana:6.1.4,1
+umple/umpleonline-base:latest,1
+localhost:5050/testuser/busybox:latest,1
+${BASE_LDAP}:${TAG} as sourceLdap,1
+maven:3.5-jdk-11,1
+0xacab.org:4567/leap/docker/debian:stretch_amd64,1
+maven:3.5.4-jdk-11-slim as java-builder,1
+hawkbit/hawkbit-update-server:0.2.2,1
+linagora/linshare-backend:2.2.3,1
+tomcat:9-jre8,1
+golang:1.12.0,1
+maven:3.5.2-jdk-8,1
+maven:3.6-jdk-8-slim AS builder,1
+golang:1.11 as builder,1
+openjdk:8u191-jdk-alpine3.8,1
+scylladb/scylla,1
+rabbitmq:3-management,1
+postgres:10.3,1
+alpine:3.10,1
+awsdeeplearningteam/mxnet-model-server:base-cpu-py3.6,1
+debian:9-slim AS builder,1
+centos/wildfly,1
+gradle:5.4-jdk8 AS builder,1
+circleci/node:12,1
+hawkbit/hawkbit-update-server:0.2.1,1
+node:9.11.2-alpine,1
+maven:3-jdk-8-alpine AS BUILD,1
+anapsix/alpine-java:8 as production-stage,1
+golang:1.9.1-alpine3.6 as builder,1
+hawkbit/hawkbit-update-server:0.2.4,1
+consul,1
+adoptopenjdk/openjdk8:alpine-jre,1
+codingtony/java,1
+gke-jetty:@@jetty.version@@,1
+alpine:3.5,1
+node:8-slim as frontend-build,1
+openjdk:8 as builder,1
+mesosphere/mesos-slave:1.7.1,1
+maven:3.6.0-jdk-8-alpine AS build,1
+eventuateio/eventuate-mysql:0.5.0.RELEASE,1
+alpine:latest AS build,1
+openjdk:8-jre-slim AS run,1
+ruby:2.4.1,1
+node:8.0.0,1
+openweb/oracle-tomcat:8-jre8,1
+dockerhub.braintree.tools/bt/java:8,1
+mailhog/mailhog:latest,1
+usdotfhwastol/autoware.ai:3.1.0 AS install,1
+rabbitmq,1
+jboss/wildfly:8.2.0.Final,1
+openjdk:8u181-jre-alpine,1
+httpd:2.4,1
+adoptopenjdk/openjdk11:alpine-slim,1
+rundeck/rundeck:3.0.17,1
+cassandra:3.7,1
+frolvlad/alpine-glibc:${alpine-glibc.image.version},1
+docker.elastic.co/beats/filebeat:6.3.1,1
+maven:3.5.0-jdk-8-alpine,1
+continuumio/miniconda,1
+docker-java-onbuild,1
+openjdk:8-jdk-slim AS build,1
+httpd:alpine,1
+fabric8/java-jboss-openjdk8-jdk:1.0.13,1
+solr:latest,1
+openzipkin/zipkin-builder,1
+ngb:latest,1
+@docker.base.image@,1
+openjdk:12.0.1-jdk-oraclelinux7,1
+registry.cn-hangzhou.aliyuncs.com/kennylee/tomcat:tomcat8-jre8,1
+fedora:28,1
+hub.c.163.com/library/java:8-jre-alpine,1
+mariadb:10.3.3,1
+openliberty/open-liberty:microProfile1-java8-openj9,1
+openjdk:8-stretch,1
+mariadb:10.4,1
+ubuntu@sha256:de0090e770183eaa19f47984af93a3df02a5112f1eb71fb6a16b20ef6770156f,1
+maven:3.6.2-jdk-8,1
+tomcat:9.0.20-jre11-slim,1
+docker:1.12.1-dind,1
+golang:1.13.1 AS build,1
+couchbase,1
+spotify/alpine:latest,1
+registry.cn-hangzhou.aliyuncs.com/kennylee/sshd-tomcat:tomcat8-jdk7-nodejs7,1
+rust:1.31 as builder,1
+node:6-alpine,1
+phusion/baseimage:latest,1
+tfennelly/tomcat7,1
+canal/osbase:v2,1
+java:jre-alpine,1
+node:10-alpine,1
+node:10.15.1-stretch-slim,1
+centos:centos7.3.1611,1
+openjdk:8u121-alpine,1
+confluentinc/cp-kafka-connect-base:4.1.2,1
+maven:3-jdk-11-slim,1
+registry.cn-hangzhou.aliyuncs.com/kennylee/maven:3.5-jdk-8-alpine as builder,1
+maven:3.6.0-jdk-11-slim as builder,1
+nvidia/cuda:8.0-cudnn6-devel-ubuntu16.04,1
+morunchang/fastdfs,1
+node,1
+tinkerpop/gremlin-server:3.4.2,1
+jenkinsci/jnlp-slave:3.27-1,1
+openjdk:8u121-jre-alpine,1
+ubuntu:bionic as docker-cli-getter,1
+golang:1.6.1-alpine,1
+postgres:8,1
+jenkins/jenkins:lts-alpine,1
+docker.io/java,1
+nginx:1.15,1
+openjdk:8u212-jre-alpine3.9,1
+maven:3.5.3-jdk-8-slim AS build,1
+openjdk:8-jdk-stretch,1
+docker.io/library/node:6.11.3,1
+debezium/connect:0.7,1
+jrottenberg/ffmpeg:3.3,1
+alpine:edge,1
+centos:centos6.10,1
+gradle:jdk-alpine,1
+alpine:3.9,1
+maven:onbuild-alpine,1
+gitlab/gitlab-ce:10.1.3-ce.0,1
+iotacafe/maven:3.5.4.oracle8u181.1.webupd8.1.1-1@sha256:5e30eb28d778a65af2498bf1b7ef594adf046d44a8e4f7b32b326d8d10626e93 as local_stage_build,1
+maven:3.6.0-jdk-11-slim AS build,1
+photon:2.0-20190511,1
+openjdk:8u131-jdk-alpine,1
+nginx:1.10.3-alpine,1
+nginx:1.13.12-alpine as production-stage,1
+anapsix/alpine-java:8_jdk as build-stage,1
+vertx/vertx3-alpine,1
+busybox:bogustag,1
+maven:3.6.0-jdk-11-slim,1
+flink:1.9.0-scala_2.11,1
+docker.io/hyperledger/fabric-orderer:x86_64-1.0.6,1
+openjdk:8u171-jre,1
+registry.access.redhat.com/rhel7/rhel,1
+openjdk:8 AS build,1
+nvidia/cuda:9.2-cudnn7-runtime-ubuntu18.04,1
+jetty:9.2.12-jre7,1
+openjdk:13-alpine as server,1
+maven:3.5.0-jdk-8,1
+labsai/base-image,1
+gke-debian-openjdk:8-jre,1
+node:latest AS storefront,1
+quay.io/coreos/etcd,1
+google/cadvisor:v0.26.1,1
+orienteer/orienteer:latest,1
+harisekhon/hbase-dev:latest,1
+maven:latest AS boot,1
+postgres:10.0-alpine,1
+golang:1.12.5,1
+maven:3.5.2-jdk-8-slim as base-layer,1
+postgres:9.6,1
+amazon/dynamodb-local:1.11.477,1
+openjdk:11.0.1-jdk-slim-stretch,1
+klokantech/tileserver-gl,1
+jboss/keycloak:7.0.0,1
+mongo:${MONGODB_VERSION},1
+mvertes/alpine-mongo,1
+eclipse/che-base:nightly,1
+buildpack-deps:bionic,1
+ubuntu:xenial-20181113,1
+python:3,1
+mysql:5.7.16,1
+maven:3.5.3-jdk-10-slim as build,1
+registry.docker:5000/timekey/python,1
+jboss/wildfly:10.0.0.Final,1
+adoptopenjdk/openjdk11:alpine,1
+ruby:2.6.2-alpine3.9,1
+maven:3-jdk-11,1
+openzipkin/zipkin-builder as built,1
+maven,1
+ballerina/ballerina-runtime:0.990.5,1
+debian:9-slim,1
+nimmis/java:oracle-8-jdk,1
+solr:6-slim,1
+jboss/wildfly:latest,1
+debian:7.8,1
+anapsix/alpine-java:latest,1
+postgres:9.5,1
+l.gcr.io/google/bazel:latest AS build,1
+nginx:latest,1
+haproxy:2.0.0-alpine,1
+java:openjdk-8u66-jdk,1
+maven:3.5.4 as maven,1
+puppet/puppet-agent-alpine:4.6.2,1
+maven:3.5.4-jdk-10-slim AS builder,1
+airhacks/wildfly-ping,1
+nginx:1.7.9,1
+openjdk:8u212-jdk as builder,1
+openjdk:8u212-jre-slim,1
+${BASE_RABBITMQ}:${TAG} as sourceRabbitMQ,1
+mongo:3,1
+node:10-stretch,1
+node:10 as build-stage,1
+openjdk:11.0.4-jre,1
+confluentinc/cp-kafka-connect:3.2.0,1
+registry.cn-hangzhou.aliyuncs.com/kennylee/debian:jessie,1
+eventuateio/eventuate-mysql:$EVENTUATE_COMMON_VERSION,1
+openjdk:11 as builder,1
+maven:3.6.1-jdk-11,1
+kibana:5.1.1,1
+flowci/flow-platform-base:latest,1
+maven:3,1
+fnproject/fn-java-fdk:jre11-1.0.98,1
+registry.cn-shanghai.aliyuncs.com/ngtesting/ngtesting-web-base:2.0.0,1
+node:4-onbuild,1
+testcafe/testcafe:latest,1
+openzipkin/zipkin:master,1
+dekstroza/openjdk9-alpine as packager,1
+dxia2/scratch-private:latest,1
+gradle:5.6.2-jdk11 as build-stage,1
+blobcity/java8-ubuntu,1
+linagora/james-jpa-guice,1
+tomcat:latest,1
+anapsix/alpine-java:8_server-jre,1
+azul/zulu-openjdk-alpine:11 AS jlink,1
+mkodockx/docker-clamav,1
+iotacafe/java:oracle8u181.1.webupd8.1-1@sha256:21b0fb1e5b5be7cd239a742238f346e076a46dc0003670cd50f079780288773f,1
+openshift/wildfly-101-centos7,1
+registry.cn-hangzhou.aliyuncs.com/kennylee/maven,1
+hawkbit/hawkbit-update-server:0.3.0M4,1
+cfmanteiga/alpine-bash-curl-jq,1
+websphere-liberty:javaee8,1
+openjdk:10.0.1-10-jre-slim,1
+python:2.7.16-alpine3.9,1
+openjdk:8u201-jdk-alpine3.9,1
+solr:7.5.0,1
+circleci/node:6,1
+alpine:latest AS runtime,1
+openjdk:11.0.2-jdk AS workspace,1
+openjdk:13-jdk,1
+maven:3-jdk-11-slim as zipkin-builder,1
+node:10-stretch as frontend-build,1
+hawkbit/hawkbit-update-server:0.2.0M4,1
+sebp/elk:631,1
+buildpack-deps:bionic-scm,1
+postgres:9.6.15,1
+debian:9 as mirror-builder,1
+registry.cn-hangzhou.aliyuncs.com/springcloud-cn/java:openjdk-10.0.1-alpine as packager,1
+azul/zulu-openjdk-alpine:8,1
+grafana/grafana:4.4.3,1
+mariadb:5.5.56,1
+jetty:jre8,1
+maven:latest as builder,1
+telegraf:1.2-alpine,1
+selenium/standalone-chrome-debug,1
+jpetazzo/dind,1
+maven AS maven-container,1
+gcr.io/distroless/java:11-debug as zipkin-server,1
+nginx:1.10.3,1
+smebberson/alpine-redis,1
+jenkins:1.651.3,1
+openjdk:8 AS builder,1
+tomcat:9-alpine,1
+ubuntu:precise,1
+${IMAGE_NAME}:${IMAGE_VERSION},1
+openjdk:11-jre-slim as runner,1
+hawkbit/hawkbit-update-server:0.2.3,1
+nginx:1-alpine,1
+tomcat:8.5.38-alpine as webapp,1
+mcr.microsoft.com/dotnet/core/runtime:2.2-alpine3.9,1
+registry.alauda.cn/kenny/pure-ftpd,1
+docker:17.06-rc,1
+vmware/photon-closure-runner_java_base:2.0,1
+elasticsearch:5.1.1,1
+node:5,1
+tomcat:8.0,1
+ruby:2.3.0,1
+--platform=$BUILDPLATFORM maven:3.6-jdk-8 AS build,1
+ubuntu:17.10,1
+anapsix/alpine-java:8_jdk_nashorn,1
+fjfisbein/alpine-oracle-jdk9,1
+tomcat:8-jre11-slim,1
+dockerfile/java:openjdk-7-jdk,1
+openjdk:11-alpine as server,1
+flink:1.9.0,1
+debian:stable-slim,1
+jerverless:latest,1
+usdotfhwastol/autoware.ai:3.1.0,1
+java:8 as builder,1
+ibmjava:8-sfj-alpine,1
+resin/rpi-raspbian:stretch,1
+python:3.7.2-stretch,1
+ppc64le/centos:centos7,1
+httpd,1
+maven:3.5.0-jdk-7-alpine as s3proxy-builder,1
+node:8.12.0 as node-builder,1
+registry,1
+node:6.10.1,1
+python:3.7.2-alpine3.8,1
+index.alauda.cn/linzhiqiang/centos6,1
+registry.cn-hangzhou.aliyuncs.com/kennylee/alpine,1
+hawkbit/hawkbit-update-server:0.3.0M3,1
+hawkbit/hawkbit-update-server:0.3.0M2,1
+openjdk:8u171-jdk-alpine as build,1
+bitnami/tomcat:7.0.94 as fineract,1
+node:8-slim,1
+unicon/shibboleth-sp,1
+azul/zulu-openjdk-alpine:11 as zulu,1
+tiangolo/uwsgi-nginx-flask:python2.7,1
+docker.elastic.co/elasticsearch/elasticsearch:6.3.1,1
+maven:3.5-jdk-8 as BUILD,1
+eventuateio/eventuate-postgres:$EVENTUATE_COMMON_VERSION,1
+nginx:1.10-alpine,1
+openjdk:11.0.1-jre-slim-stretch,1
+jeanblanchard/java:8,1
+openjdk:12-alpine,1
+maven:3.6.1-amazoncorretto-8 as BUILD,1
+maven:3.3.1-jdk-8,1
+gradle:4.10.0-jdk8-alpine,1
+tfennelly/java6_dev,1
+alpine:3.10.0,1
+jmxtrans/jmxtrans,1
+ubuntu:rolling,1
+usdotfhwastol/autoware.ai:3.1.0 AS source-code,1
+${BASE}:${TAG} as source,1
+bigtop/deploy:ubuntu-14.04,1
+lordofthejars/docker-tomee:8-jre-1.7.2-plus,1
+vmware/photon-closure-runner_powershell_base:2.0,1
+php:apache,1
+registry.cn-hangzhou.aliyuncs.com/kennylee/kibana:5.3.0,1
+kennedyoliveira/java8,1
+broadinstitute/gatk:gatkbase-2.2.0,1
+boxfuse/flyway:5.2.4-alpine as flyway-migration,1
+jenkinsci/slave,1
+confluentinc/cp-schema-registry:4.1.2,1
+registry.opensource.zalan.do/stups/openjdk:1.8.0-191-19,1
+marvambass/nginx-registry-proxy,1
+monasca/base:$BASE_TAG,1
+debian:stable,1
+microsoft/mssql-server-windows-express:2016-sp1-windowsservercore-10.0.14393.693,1
+gradle:4.9.0-jdk8,1
+jboss/keycloak:3.0.0.Final,1
+debian:stable-slim as fetcher,1
+envoyproxy/envoy-alpine:v1.11.1,1
+circleci/node:8,1
+jboss/apiman-wildfly,1
+iron/python:2-dev,1
+nginx:1.11.1-alpine,1
+azul/zulu-openjdk-alpine:8u152,1
+hurence/spark:2.3.3,1
+everpeace/curl-jq,1
+kibana:4.5.3,1
+python:2-onbuild,1
+java:openjdk-7-jdk,1
+fabric8/java-jboss-openjdk8-jdk:1.2.3,1
+mysql:${MYSQL_VERSION},1
+debian:9,1
+postgres:9.4,1
+circleci/node:10,1
+vmware/photon-closure-runner_nodejs_base:2.0,1
+nginx:mainline,1
+openjdk:8-alpine AS BUILD,1
+wouterd/java8,1
+node:10.15.0-alpine,1
+maven:3.5.4-jdk-11 as builder,1
+maven:3 AS builder,1
+mongo,1
+grafana/grafana:5.4.2,1
+clojure:alpine,1
+daocloud.io/library/java:openjdk-8-jre-alpine,1
+k0kubun/ruby:2.6.1,1
+java:openjdk-8u45-jdk,1
+adoptopenjdk/openjdk11:${adoptopenjdk11.image.version} as staging_area,1
+jenkinsci/workflow-demo:2017-06-15,1
+python:3.6-stretch,1
+confluentinc/cp-kafka:3.0.0,1
+maven:3.6.1-jdk-8,1
+${BASE_RABBITMQ_LDAP}:${TAG} as sourceRabbitMQLdap,1
+ruby:2.3,1
+kristophjunge/test-saml-idp:1.14.15,1
+maven:3.5.4-jdk-8-alpine,1
+grafana/grafana:5.2.4,1
+circleci/node:latest-browsers,1
+registry.cn-shanghai.aliyuncs.com/ngtesting/ngtesting-postgres-base:2.0.0,1
+grafana/grafana:4.3.1,1
+adoptopenjdk/openjdk8-openj9:x86_64-alpine-jdk8u202-b08_openj9-0.12.1-slim,1
+ruby:2.6.3,1
+ldbc/datagen-base:latest,1
+php:7.3.4-apache,1
+registry.cn-hangzhou.aliyuncs.com/kennylee/logstash:5.3.0,1
+openjdk:12 AS build,1
+azul/zulu-openjdk:8u162,1
+sonarqube:6.7-alpine,1
+docker.turn.com/tops-base/jdk7:latest,1
+$docker_namespace/concord-ansible:$concord_version,1
+centos:centos6,1
+openjdk:11-jre-slim-sid,1
+node:6.5.0,1
+node:9.11.1-alpine,1
+phusion/baseimage:0.9.8,1
+timescale/timescaledb:0.9.0-pg9.6,1
+docker.elastic.co/kibana/kibana:5.3.0,1
+adoptopenjdk/openjdk11:jdk-11.0.2.9-alpine-slim,1
+maven as jenkinsfilerunner-build,1
+hawkbit/hawkbit-update-server:0.3.0M5,1
+mcr.microsoft.com/dotnet/core/sdk:2.2 AS build-env,1
+envoyproxy/envoy:v1.7.0,1
+hawkbit/hawkbit-update-server:0.2.5,1
+openzipkin/jre-full:1.8.0_201,1
+catatnight/postfix,1
+node:6.9.1,1
+alpine:3.9.2,1
+openjdk:10-jre-slim,1
+jimschubert/8-jdk-alpine-mvn:1.0,1
+lachlanevenson/k8s-kubectl:v1.11.0,1
+eventuateio/eventuate-postgres:0.5.0.RELEASE,1
+microsoft/aspnet:windowsservercore-10.0.14393.953,1
+java:openjdk-8u92-jdk-alpine,1
+maven as jenkinsfilerunner-mvncache,1
+debian:7,1
+mysql:8,1
+jenkins/jenkins:2.107.3-alpine,1
+openjdk:8u151-jdk-alpine,1
+java:8u45-jre,1
+nginx:1.16-alpine as zipkin-ui,1
+hortonworks/hwx_openjdk:11.0-jdk-slim,1
+quay.io/openshift/origin-jenkins:v4.0,1
+mysql:5.7.13,1
+deathangel908/pychat,1
+tomcat:9-jre8-alpine,1
+jotschi/protractor,1
+tomcat:${TOMCAT_VERSION},1
+selenium/standalone-firefox-debug:2.53.0,1
+jenkins:2.60.1,1
+alpine:latest as production-stage,1
+library/centos:centos7,1
+openjdk:11-jdk as build,1
+fabric8/java-centos-openjdk8-jdk:1.5.1,1
+sickp/alpine-sshd:7.5-r2,1
+nginx:1.17.0-alpine,1
+openjdk:12 AS deploy,1
+jbossdemocentral/developer:jdk8-uid,1
+maven:alpine as maven,1
+microsoft/mssql-server-linux,1
+azul/zulu-openjdk:latest as build,1
+maven:3.5.3-jdk-8-alpine,1
+centos:7.3.1611,1
+adoptopenjdk/openjdk8-openj9:x86_64-alpine-jdk8u181-b13_openj9-0.9.0-slim,1
+dist AS k8s,1
+node:latest AS ui,1
+alpine:3.8,1
+azul/zulu-openjdk-alpine:11-jre,1
+hyperledger/fabric-baseimage:amd64-0.4.16,1
+fhuz/docker-storm:latest,1
+dexterbt1/kestrel,1
+hub.c.163.com/xbingo/jdk8:latest,1
+mcr.microsoft.com/dotnet/core/aspnet:2.2,1
+openjdk:7-jre-alpine,1
+tomcat:8.5.42-jdk8-openjdk,1
+gcr.io/google_appengine/debian8,1
+jboss/wildfly,1
+tomcat:8.0-jre8-alpine,1
+hawkbit/hawkbit-update-server:0.2.0,1
+grpc/java,1
+node:10,1
+alpine:3.10.2 AS extractor,1
+consol/tomcat-7.0:latest,1
+openjdk:13-ea-19-jdk-alpine3.9,1
+golang:1.4.2,1
+solr:5.3.1,1
+enmasseproject/activemq-artemis:2.2.0-1,1
+python:2.7,1
+solidnerd/rainloop:1.10.5.192,1
+prom/prometheus:v2.3.1,1
+prom/prometheus:v2.4.2,1
+sismics/jetty:9.3.11,1
+vmware/powerclicore,1
+openshift3/nodejs-010-rhel7,1
+hello-world,1
+node:10.15.0-alpine as builder,1
+#BASE_IMAGE,1
+google/cloud-sdk:alpine,1
+anapsix/alpine-java:8_jdk as builder,1
+node:8.11.4,1
+tinkerpop/gremlin-console:3.4.2,1
+hub.c.163.com/library/java:latest,1
+ubuntu:18.04 AS dist,1
+mysql:5.5,1
+registry.cn-hangzhou.aliyuncs.com/kennylee/java:ubuntu-serverjre8,1
+debian:latest,1
+b1u3r/trackray:3.0.0,1
+vmware/admiral-base,1
+anapsix/alpine-java:8,1
+taobeier/openjdk,1
+nginx:1.15.2-alpine,1
+camptocamp/tomcat-logback:8.5-jre8,1
+spotify/helios-solo-base:0.8,1
+node:8.4.0-alpine,1
+sonarqube:7.9.1-community,1
+vmware/photon-closure-runner_python_base:2.0,1
+adoptopenjdk/openjdk8:jre8u212-b03-alpine,1
+node:12,1
+jenkins:2.60.3,1
+elasticsearch:2.3,1
+hawkbit/hawkbit-update-server:0.2.0M9,1
+appengine-mvn-opensource:latest,1
+microsoft/dotnet:runtime,1
+{{BASE_IMAGE}},1
+anapsix/alpine-java:jre8,1
+universalresolver/base-ubuntu,1
+registry.cn-hangzhou.aliyuncs.com/kennylee/tomcat:tomcat9-jre8,1
+node:carbon,1
