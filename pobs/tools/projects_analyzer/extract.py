@@ -107,7 +107,7 @@ for i in range(len(repo_data["items"])):
     find_dockerfiles_cmd = "find . -type f -iname \"Dockerfile\" -exec realpath {} \\;"
     dockerfile_list = os.popen(find_dockerfiles_cmd).read().splitlines()
     for j in range(len(dockerfile_list)):
-      dockerfile_path = re.sub(r".*/" + single_repo["name"] + "/", "./", dockerfile_list[j])
+      dockerfile_path = re.sub(os.getcwd(), ".", dockerfile_list[j])
       info_from_this_file = {
           "path": dockerfile_path,
           "base_images": find_instruction_in_dockerfile(dockerfile_list[j], "FROM"),
