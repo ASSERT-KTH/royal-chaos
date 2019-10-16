@@ -89,13 +89,23 @@ def evaluate_project(project):
             tmprepo = os.path.join(tmpdir, project["name"])
             goodrepo = os.system("cd %s && git clone %s"%(tmpdir, project["clone_url"])) == 0
             if goodrepo:
-                project["if_able_to_clone"] = True
-                project["if_able_to_run"] = list()
+                project["is_able_to_clone"] = True
+                project["is_able_to_build"] = list()
+                project["is_able_to_run"] = list()
             else:
-                project["if_able_to_clone"] = False
+                project["is_able_to_clone"] = False
                 logging.error("failed to clone repo %s"%project["clone_url"])
 
             # build the project?
+            if "Maven" in project["build_tools"]:
+                stdout, stderr, exitcode = run_command("mvn package", dirname)
+                if exitcode == 0: project["is_able_to_build"].append("Maven")
+            if "Gradle" in project["build_tools"]:
+                stdout, stderr, exitcode = run_command("gradle build", dirname)
+                if exitcode == 0: project["is_able_to_build"].append("Gradle")
+            if "Ant" in project["build_tools"]:
+                stdout, stderr, exitcode = run_command("ant compile jar", dirname)
+                if exitcode == 0: project["is_able_to_build"].append("Ant")
 
             fileindex = 0
             for dockerfile in project["info_from_dockerfiles"]:
@@ -139,7 +149,7 @@ def evaluate_project(project):
                             dockerfile["glowroot_attached"] = glowroot_attached
                             dockerfile["tripleagent_attached"] = tripleagent_attached
 
-                            if glowroot_attached and tripleagent_attached and exitcode == 0: project["if_able_to_run"].append(fileindex)
+                            if glowroot_attached and tripleagent_attached and exitcode == 0: project["is_able_to_run"].append(fileindex)
                 fileindex = fileindex + 1
         # clean up: delete the built images
         clean_up(project["name"])
@@ -156,7 +166,7 @@ def main():
     with open(OPTIONS.dataset, 'rt') as file:
         projects = json.load(file)
         for project in projects:
-            if project["number_of_dockerfiles"] > 0 and not "if_able_to_clone" in project:
+            if project["number_of_dockerfiles"] > 0 and not "is_able_to_clone" in project:
                 project = evaluate_project(project)
                 dump_analysis(projects)
 
