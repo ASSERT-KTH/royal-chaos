@@ -124,12 +124,11 @@ def generate_base_image_from_image(ori_image, target_dockerfile_path):
     return image_name, image_tag
 
 def generate_base_images_from_file(filepath, target_dockerfile_path):
-    target_dockerfile = os.path.join(target_dockerfile_path, "Dockerfile-pobs")
     with open(filepath, 'rt') as image_list:
         # each line records one entry, image_name:image_tag
         for line in image_list.readlines():
             if line.strip() == "": continue
-            image_name, image_tag = generate_base_image_from_image(line.strip(), target_dockerfile)
+            image_name, image_tag = generate_base_image_from_image(line.strip(), target_dockerfile_path)
             if OPTIONS.build: build_POBS_base_image(image_name, image_tag)
 
 def build_POBS_base_image(image_name, image_tag):
