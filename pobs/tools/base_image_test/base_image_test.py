@@ -99,13 +99,13 @@ def evaluate_project(project):
 
             # build the project?
             if "Maven" in project["build_tools"]:
-                stdout, stderr, exitcode = run_command("mvn package", dirname)
+                stdout, stderr, exitcode = run_command("mvn package", tmprepo)
                 if exitcode == 0: project["is_able_to_build"].append("Maven")
             if "Gradle" in project["build_tools"]:
-                stdout, stderr, exitcode = run_command("gradle build", dirname)
+                stdout, stderr, exitcode = run_command("gradle build", tmprepo)
                 if exitcode == 0: project["is_able_to_build"].append("Gradle")
             if "Ant" in project["build_tools"]:
-                stdout, stderr, exitcode = run_command("ant compile jar", dirname)
+                stdout, stderr, exitcode = run_command("ant compile jar", tmprepo)
                 if exitcode == 0: project["is_able_to_build"].append("Ant")
 
             fileindex = 0
