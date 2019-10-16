@@ -98,18 +98,19 @@ def evaluate_project(project):
                 logging.error("failed to clone repo %s"%project["clone_url"])
 
             # build the project?
-            logging.info("Try to build the project with some default commands")
-            if "Maven" in project["build_tools"]:
-                stdout, stderr, exitcode = run_command("mvn package", tmprepo)
-                if exitcode == 0: project["is_able_to_build"].append("Maven")
-            if "Gradle" in project["build_tools"]:
-                stdout, stderr, exitcode = run_command("gradle build", tmprepo)
-                if exitcode == 0: project["is_able_to_build"].append("Gradle")
-            if "Ant" in project["build_tools"]:
-                stdout, stderr, exitcode = run_command("ant compile jar", tmprepo)
-                if exitcode == 0: project["is_able_to_build"].append("Ant")
-            if len(project["is_able_to_build"]) > 0:
-                logging.info("Successfully build the project using: %s"%project["is_able_to_build"])
+            if "build_tools" in project:
+                logging.info("Try to build the project with some default commands")
+                if "Maven" in project["build_tools"]:
+                    stdout, stderr, exitcode = run_command("mvn package", tmprepo)
+                    if exitcode == 0: project["is_able_to_build"].append("Maven")
+                if "Gradle" in project["build_tools"]:
+                    stdout, stderr, exitcode = run_command("gradle build", tmprepo)
+                    if exitcode == 0: project["is_able_to_build"].append("Gradle")
+                if "Ant" in project["build_tools"]:
+                    stdout, stderr, exitcode = run_command("ant compile jar", tmprepo)
+                    if exitcode == 0: project["is_able_to_build"].append("Ant")
+                if len(project["is_able_to_build"]) > 0:
+                    logging.info("Successfully build the project using: %s"%project["is_able_to_build"])
 
             fileindex = 0
             for dockerfile in project["info_from_dockerfiles"]:
