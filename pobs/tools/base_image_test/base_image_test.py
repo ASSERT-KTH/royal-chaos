@@ -140,10 +140,9 @@ def evaluate_project(project):
                             dockerfile["tripleagent_attached"] = tripleagent_attached
 
                             if glowroot_attached and tripleagent_attached and exitcode == 0: project["if_able_to_run"].append(fileindex)
-
-                            # clean up: delete the built images
-                            clean_up(project["name"])
                 fileindex = fileindex + 1
+        # clean up: delete the built images
+        clean_up(project["name"])
     return project
 
 def dump_analysis(projects):
@@ -157,7 +156,7 @@ def main():
     with open(OPTIONS.dataset, 'rt') as file:
         projects = json.load(file)
         for project in projects:
-            if project["number_of_dockerfiles"] > 0:
+            if project["number_of_dockerfiles"] > 0 and not "if_able_to_clone" in project:
                 project = evaluate_project(project)
                 dump_analysis(projects)
 
