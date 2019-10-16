@@ -80,7 +80,7 @@ def dump_logs(stdoutdata, stderrdata, filepath, fileprefix):
 def clean_up(project_name):
     os.system("docker rm $(docker ps -a -q --filter since=%s)"%CLEAN_CONTAINERS_SINCE)
     os.system("docker image prune -f")
-    os.system("docker image rm $(docker images -q --filter reference='%s:*')"%project_name)
+    os.system("docker image rm -f $(docker images -q --filter reference='%s*:*')"%project_name)
 
 def evaluate_project(project):
     if project["number_of_dockerfiles"] > 0:
