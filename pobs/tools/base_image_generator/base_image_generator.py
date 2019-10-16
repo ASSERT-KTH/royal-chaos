@@ -82,16 +82,15 @@ def parse_options():
 
 def get_template_contents(base_image):
     image_name = base_image.split(":", 1)[0]
-    image_name_fixed = image_name.replace("/", "__") # replace '/' with '__' when handling non-official images
     image_tag = "latest"
     contents = list()
     if len(base_image.split(":", 1)) == 2:
         image_tag = base_image.split(":", 1)[1]
     
-    if os.path.isfile("./pobs_templates/%s/%s.tpl"%(image_name_fixed, image_tag)):
-        template_file = "./pobs_templates/%s/%s.tpl"%(image_name_fixed, image_tag)
-    elif os.path.isfile("./pobs_templates/%s/default.tpl"%(image_name_fixed)):
-        template_file = "./pobs_templates/%s/default.tpl"%(image_name_fixed)
+    if os.path.isfile("./pobs_templates/%s/%s.tpl"%(image_name, image_tag)):
+        template_file = "./pobs_templates/%s/%s.tpl"%(image_name, image_tag)
+    elif os.path.isfile("./pobs_templates/%s/default.tpl"%(image_name)):
+        template_file = "./pobs_templates/%s/default.tpl"%(image_name)
     else:
         template_file = "./pobs_templates/default.tpl"
 
@@ -150,7 +149,7 @@ def generate_application_dockerfile(ori_dockerfile, target_dockerfile_path, ori_
         for line in original.readlines():
             full_image_name = "%s:%s"%(ori_image_name, ori_image_tag)
             if "FROM" in line and full_image_name in line: # probably there are lots of space after "FROM"
-                line = line.replace(full_image_name, "%s/%s-pobs:%s"%(pobs_org_name, ori_image_name.replace("/", "__"), ori_image_tag))
+                line = line.replace(full_image_name, "%s/%s-pobs:%s"%(pobs_org_name, ori_image_name, ori_image_tag))
                 target.write(line)
             else:
                 target.write(line)
