@@ -138,9 +138,7 @@ def build_POBS_base_image(image_name, image_tag):
         logging.error("Failed to build POBS base image for %s:%s"%(image_name, image_tag))
         sys.exit(1)
     if OPTIONS.publish:
-        os.system("docker login --username %s --password %s"%(DOCKERHUB_USERNAME, DOCKERHUB_TOKEN))
         os.system("docker push %s/%s-pobs:%s"%(OPTIONS.dockerhub_org, image_name, image_tag))
-        os.system("docker logout")
 
 def generate_application_dockerfile(ori_dockerfile, target_dockerfile_path, ori_image_name, ori_image_tag, pobs_org_name):
     target_dockerfile = os.path.join(target_dockerfile_path, "Dockerfile-pobs-application")
@@ -157,6 +155,8 @@ def main():
     global OPTIONS
     OPTIONS = parse_options()
 
+    if OPTIONS.publish: os.system("docker login --username %s --password %s"%(DOCKERHUB_USERNAME, DOCKERHUB_TOKEN))
+
     if OPTIONS.dockerfile != None:
         image_name, image_tag = generate_base_image_from_dockerfile(OPTIONS.dockerfile, OPTIONS.output)
         if OPTIONS.build: build_POBS_base_image(image_name, image_tag)
@@ -166,6 +166,8 @@ def main():
         if OPTIONS.build: build_POBS_base_image(image_name, image_tag)
     elif OPTIONS.from_file != None:
         generate_base_images_from_file(OPTIONS.from_file, OPTIONS.output)
+
+    if OPTIONS.publish: os.system("docker logout")
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
