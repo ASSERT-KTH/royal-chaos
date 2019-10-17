@@ -79,6 +79,7 @@ def dump_logs(stdoutdata, stderrdata, filepath, fileprefix):
         stderrfile.writelines(stderrdata)
 
 def clean_up(project_name):
+    os.system("docker stop $(docker ps -a -q)") # stop all containers first
     os.system("docker rm $(docker ps -a -q --filter since=%s)"%CLEAN_CONTAINERS_SINCE)
     os.system("docker image prune -f")
     os.system("docker image rm -f $(docker images -q --filter reference='%s-pobs:*')"%project_name)
