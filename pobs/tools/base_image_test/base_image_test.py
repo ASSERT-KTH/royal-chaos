@@ -69,9 +69,10 @@ def test_application(project_name, image_index):
         if "INFO TripleAgent PerturbationAgent is successfully attached!" in stdout:
             tripleagent_attached = True
 
-        return (glowroot_attached, tripleagent_attached, exit_code)
+        return (glowroot_attached, tripleagent_attached, stdoutdata.decode("utf-8"), stderrdata.decode("utf-8"), exit_code)
 
 def dump_logs(stdoutdata, stderrdata, filepath, fileprefix):
+    os.makedirs(filepath, exist_ok=True)
     with open(os.path.join(filepath, "%s-stdout.log"%fileprefix), 'wt') as stdoutfile, \
             open(os.path.join(filepath, "%s-stderr.log"%fileprefix), 'wt') as stderrfile:
         stdoutfile.writelines(stdoutdata)
@@ -150,7 +151,7 @@ def evaluate_project(project):
                             dockerfile["pobs_application_build"] = "successful"
 
                             # run the application and test Glowroot, TripleAgent
-                            glowroot_attached, tripleagent_attached, exitcode = test_application(project["name"], fileindex)
+                            glowroot_attached, tripleagent_attached, stdout, stderr, exitcode = test_application(project["name"], fileindex)
                             dockerfile["glowroot_attached"] = glowroot_attached
                             dockerfile["tripleagent_attached"] = tripleagent_attached
 
