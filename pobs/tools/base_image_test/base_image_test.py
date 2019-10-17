@@ -101,10 +101,10 @@ def evaluate_project(project):
             if "build_tools" in project:
                 logging.info("Try to build the project with some default commands")
                 if "Maven" in project["build_tools"]:
-                    stdout, stderr, exitcode = run_command("mvn package", tmprepo)
+                    stdout, stderr, exitcode = run_command("mvn package -DskipTests=true", tmprepo)
                     if exitcode == 0: project["is_able_to_build"].append("Maven")
                 if "Gradle" in project["build_tools"]:
-                    stdout, stderr, exitcode = run_command("gradle build", tmprepo)
+                    stdout, stderr, exitcode = run_command("gradle build -x test", tmprepo)
                     if exitcode == 0: project["is_able_to_build"].append("Gradle")
                 if "Ant" in project["build_tools"]:
                     stdout, stderr, exitcode = run_command("ant compile jar", tmprepo)
