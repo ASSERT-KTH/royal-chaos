@@ -1,5 +1,3 @@
-RUN apt-get update && apt-get install -y iproute
-
 COPY ./base_files/tripleagent-perturbation-jar-with-dependencies.jar /home/tripleagent/
 COPY ./base_files/glowroot/ /home/tripleagent/glowroot/
 
