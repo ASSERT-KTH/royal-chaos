@@ -155,8 +155,11 @@ def evaluate_project(project):
                             dockerfile["glowroot_attached"] = glowroot_attached
                             dockerfile["tripleagent_attached"] = tripleagent_attached
 
-                            if glowroot_attached and tripleagent_attached and exitcode == 0: project["is_able_to_run"].append(fileindex)
-                            if (not glowroot_attached) or (not tripleagent_attached):
+                            if glowroot_attached and tripleagent_attached and exitcode == 0:
+                                dockerfile["pobs_application_run"] = "successful"
+                                project["is_able_to_run"].append(fileindex)
+                            else:
+                                dockerfile["pobs_application_run"] = "failed"
                                 dump_logs(stdout, stderr, "./logs/app-run/", "%s_%d_apprun"%(project["name"], fileindex))
                 fileindex = fileindex + 1
         # clean up: delete the built images
