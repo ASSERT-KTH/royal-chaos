@@ -89,7 +89,7 @@ public class AgentArguments {
 
     private void readConfigFromEnv() {
         this.tcIndex = Integer.valueOf(this.getenvOrDefault("TRIPLEAGENT_TCINDEX", "-1"));
-        this.operationMode = OperationMode.fromLowerCase(this.getenvOrDefault("mode", OperationMode.THROW_E.name()));
+        this.operationMode = OperationMode.fromLowerCase(this.getenvOrDefault("TRIPLEAGENT_MODE", OperationMode.THROW_E.name()));
         this.chanceOfFailure = Double.valueOf(this.getenvOrDefault("TRIPLEAGENT_RATE", "1"));
         this.filter = new FilterByClassAndMethodName(this.getenvOrDefault("TRIPLEAGENT_FILTER", ".*"));
         this.exceptionFilter = new FilterByExceptionType(this.getenvOrDefault("TRIPLEAGENT_EFILTER", ".*"));
