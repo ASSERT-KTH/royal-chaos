@@ -81,11 +81,11 @@ def parse_options():
     return options
 
 def get_template_contents(base_image):
-    image_name = base_image.split(":", 1)[0]
+    image_name = base_image.rsplit(":", 1)[0]
     image_tag = "latest"
     contents = list()
-    if len(base_image.split(":", 1)) == 2:
-        image_tag = base_image.split(":", 1)[1]
+    if len(base_image.rsplit(":", 1)) == 2:
+        image_tag = base_image.rsplit(":", 1)[1]
     
     if os.path.isfile("./pobs_templates/%s/%s.tpl"%(image_name, image_tag)):
         template_file = "./pobs_templates/%s/%s.tpl"%(image_name, image_tag)
