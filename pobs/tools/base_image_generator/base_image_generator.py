@@ -105,9 +105,10 @@ def generate_base_image_from_dockerfile(ori_dockerfile, target_dockerfile_path):
         last_baseimage = "";
         # use the last FROM instruction's image as base image
         for line in original.readlines():
-            if line.startswith("FROM"):
-                last_baseimage = line[5:].strip()
-                last_baseimage = re.split(" as ", last_baseimage, flags=re.IGNORECASE)[0].strip()
+            line = line.strip()
+            if re.search(r"^FROM", line, flags=re.IGNORECASE):
+                last_baseimage = line[5:]
+                last_baseimage = re.split(" as ", last_baseimage, flags=re.IGNORECASE)[0]
         image_name, image_tag, contents = get_template_contents(last_baseimage)
         target.write("FROM %s\n\n"%last_baseimage)
         target.writelines(contents)
@@ -144,8 +145,9 @@ def generate_application_dockerfile(ori_dockerfile, target_dockerfile_path, ori_
     target_dockerfile = os.path.join(target_dockerfile_path, "Dockerfile-pobs-application")
     with open(ori_dockerfile, 'rt') as original, open(target_dockerfile, 'wt') as target:
         for line in original.readlines():
+            line.strip()
             full_image_name = "%s:%s"%(ori_image_name, ori_image_tag)
-            if "FROM" in line and full_image_name in line: # probably there are lots of space after "FROM"
+            if re.search(r"^FROM", line, flags=re.IGNORECASE) and full_image_name in line: # probably there are lots of space after "FROM"
                 line = line.replace(full_image_name, "%s/%s-pobs:%s"%(pobs_org_name, ori_image_name, ori_image_tag))
                 target.write(line)
             else:
