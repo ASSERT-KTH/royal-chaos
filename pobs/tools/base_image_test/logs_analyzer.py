@@ -53,6 +53,36 @@ def print_failure_categories(failure_categories):
     pretty_table.reversesort = True
     print(pretty_table)
 
+def analyze_base_logs(folderpath):
+    failure_categories = {
+        "no such file or directory": {"count": 0, "pattern": r"no such file or directory"},
+        "iproute": {"count": 0, "pattern": r"iproute"},
+        "Permission denied": {"count": 0, "pattern": r"Permission denied"},
+        "invalid reference format": {"count": 0, "pattern": r"invalid reference format\n"}
+    }
+    other_failures = 0
+    for entry in os.listdir(folderpath):
+        if os.path.isfile(os.path.join(folderpath, entry)) and "stderr" in entry:
+            with open(os.path.join(folderpath, entry), "rt") as stderr, open(os.path.join(folderpath, entry.replace("stderr", "stdout")), "rt") as stdout:
+                content_stderr = stderr.read()
+                content_stdout = stdout.read()
+
+                hit = False
+                for category in failure_categories:
+                    if re.search(failure_categories[category]["pattern"], content_stderr) or re.search(failure_categories[category]["pattern"], content_stdout):
+                        failure_categories[category]["count"] = failure_categories[category]["count"] + 1
+                        hit = True
+                        if category == "invalid reference format":
+                            logging.info(entry)
+                            logging.info(content_stderr)
+                        break
+                if not hit:
+                    logging.info(entry)
+                    logging.info(content_stderr)
+                    other_failures = other_failures + 1
+    failure_categories["others"] = {"count": other_failures, "pattern": "none"}
+    print_failure_categories(failure_categories)
+
 def analyze_sanity_check_logs(folderpath):
     failure_categories = {
         "no such file or directory": {"count": 0, "pattern": r"no such file or directory"},
@@ -60,7 +90,7 @@ def analyze_sanity_check_logs(folderpath):
         "pull access denied": {"count": 0, "pattern": r"pull access denied"},
         "unknown instruction": {"count": 0, "pattern": r"unknown instruction"},
         "manifest unknown": {"count": 0, "pattern": r"manifest unknown"},
-        "invalid reference format": {"count": 0, "pattern": r"invalid reference format$"},
+        "invalid reference format": {"count": 0, "pattern": r"invalid reference format\n"},
         "failed to process": {"count": 0, "pattern": r"failed to process"},
         "no such host": {"count": 0, "pattern": r"no such host"},
         "404 Not Found": {"count": 0, "pattern": r"404 Not Found"},
@@ -94,6 +124,8 @@ def main():
 
     if options.phase == "sanity-check":
         analyze_sanity_check_logs(options.folderpath)
+    elif options.phase == "base":
+        analyze_base_logs(options.folderpath)
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
