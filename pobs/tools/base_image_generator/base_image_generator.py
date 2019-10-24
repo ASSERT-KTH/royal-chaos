@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
 
-import os, sys, re
+import os, sys, re, tempfile, subprocess
 import logging
 from optparse import OptionParser, OptionGroup
 
@@ -48,6 +48,12 @@ def parse_options():
         action = 'store_true',
         dest = 'build',
         help = 'Build the POBS base image after the transformation'
+    )
+
+    parser.add_option('-t', '--test',
+        action = 'store_true',
+        dest = 'test',
+        help = 'Conduct an integration test on the generated POBS base image'
     )
 
     parser.add_option('-p', '--publish',
@@ -132,14 +138,124 @@ def generate_base_images_from_file(filepath, target_dockerfile_path):
             image_name, image_tag = generate_base_image_from_image(line.strip(), target_dockerfile_path)
             if OPTIONS.build: build_POBS_base_image(image_name, image_tag)
 
+def run_integration_test_container(run_command, container_name, timeout):
+    with tempfile.NamedTemporaryFile(mode="w+b") as stdout_f, tempfile.NamedTemporaryFile(mode="w+b") as stderr_f:
+        p = subprocess.Popen(run_command, stdout=stdout_f.fileno(), stderr=stderr_f.fileno(), close_fds=True, shell=True)
+        try:
+            exit_code = p.wait(timeout=timeout)
+        except subprocess.TimeoutExpired as err:
+            os.system("docker stop %s"%container_name)
+            exit_code = 0
+
+        stdout_f.flush()
+        stderr_f.flush()
+        stdout_f.seek(0, os.SEEK_SET)
+        stderr_f.seek(0, os.SEEK_SET)
+        stdoutdata = stdout_f.read()
+        stderrdata = stderr_f.read()
+    return stdoutdata.decode("utf-8"), stderrdata.decode("utf-8"), exit_code
+
+def test_pobs_base_image(image_name, image_tag):
+    base_path = "./integration_test/dockerfile_snippet"
+    snippet = "default.tpl"
+    dockerfile_name = "Dockerfile-test"
+
+    with open(os.path.join(base_path, snippet), 'rt') as snippet_file, open(dockerfile_name, 'wt') as target:
+        contents = snippet_file.readlines()
+        target.write("FROM %s:%s\n\n"%(image_name, image_tag))
+        target.writelines(contents)
+
+    test_result = True
+    if os.system("docker build -t royalchaos/pobs-integration-test -f %s ."%(dockerfile_name)) != 0:
+        logging.warn("Failed to build the integration test image on top of %s:%s"%(image_name, image_tag))
+        test_result = False
+    else:
+        if not os.path.exists("./logs"): os.mkdir("./logs")
+        if not os.path.exists("./downloaded"): os.mkdir("./downloaded")
+
+        run_command_normal = 'docker run --rm --name pobs-test -p 4000:4000 -e "TRIPLEAGENT_FILTER=pobs" -v $PWD/logs:/home/tripleagent/logs -v $PWD/downloaded:/root/downloaded royalchaos/pobs-integration-test:latest'
+        run_command_fi = 'docker run --rm --name pobs-test -p 4000:4000 -e "TRIPLEAGENT_FILTER=pobs" -e "TRIPLEAGENT_EFILTER=java/io/IOException" -e "TRIPLEAGENT_DEFAULTMODE=throw_e"  -v $PWD/logs:/home/tripleagent/logs -v $PWD/downloaded:/root/downloaded royalchaos/pobs-integration-test:latest'
+        target_file = "./downloaded/EIN-understanding-and-modeling-in-DRAM-ECC_dsn19.pdf"
+        correct_md5 = "e797219bfc25ff2ec8a95c0ad8d9b48b"
+
+        # test the application without fault injection
+        stdout, stderr, exitcode = run_integration_test_container(run_command_normal, "pobs-test", 10)
+
+        glowroot_attached = False
+        tripleagent_attached = False
+        tripleagent_csv = False
+        file_correctness = False
+
+        if "org.glowroot - UI listening on 0.0.0.0:4000" in stdout:
+            glowroot_attached = True
+        if "INFO TripleAgent PerturbationAgent is successfully attached!" in stdout:
+            tripleagent_attached = True
+        if os.path.exists("./logs/perturbationPointsList.csv"):
+            tripleagent_csv = True
+        if os.path.exists(target_file):
+            md5 = subprocess.check_output("md5sum %s"%target_file, shell=True)
+            if correct_md5 == re.split(r"\s+", md5.decode("utf-8").strip())[0]: file_correctness = True
+        
+        if glowroot_attached and tripleagent_attached and tripleagent_csv and file_correctness:
+            # test the application with a fault injection
+            logging.info("Passed the test without fault injection")
+
+            os.system("rm ./logs/*.*")
+            os.system("rm ./downloaded/*.*")
+            stdout, stderr, exitcode = run_integration_test_container(run_command_fi, "pobs-test", 10)
+
+            glowroot_attached = False
+            tripleagent_attached = False
+            exception_thrown = False
+            tripleagent_csv = False
+            file_not_exist = False
+            if "org.glowroot - UI listening on 0.0.0.0:4000" in stdout:
+                glowroot_attached = True
+            if "INFO TripleAgent PerturbationAgent is successfully attached!" in stdout:
+                tripleagent_attached = True
+            if "INFO PAgent throw exception perturbation activated in pobs/App/downloadDSN2019BestPaper(java/io/IOException)" in stdout:
+                exception_thrown = True
+            if os.path.exists("./logs/perturbationPointsList.csv"):
+                tripleagent_csv = True
+            if not os.path.exists(target_file):
+                file_not_exist = True
+            
+            if glowroot_attached and tripleagent_attached and exception_thrown and tripleagent_csv and file_not_exist:
+                logging.info("POBS base image %s:%s integration test passed"%(image_name, image_tag))
+            else:
+                logging.warn("Failed during the test with a fault injection")
+                logging.warn({"glowroot_attached": glowroot_attached, "tripleagent_attached": tripleagent_attached, "exception_thrown": exception_thrown, "tripleagent_csv": tripleagent_csv, "file_not_exist": file_not_exist})
+                test_result = False
+        else:
+            logging.warn("Failed during the test without fault injection")
+            logging.warn({"glowroot_attached": glowroot_attached, "tripleagent_attached": tripleagent_attached, "tripleagent_csv": tripleagent_csv, "file_correctness": file_correctness})
+            test_result = False
+
+        #clean up
+        os.system("rm ./logs/*.*")
+        os.system("rm ./downloaded/*.*")
+        os.system("docker image rm royalchaos/pobs-integration-test")
+
+    return test_result
+
+
 def build_POBS_base_image(image_name, image_tag):
     exitcode = os.system("docker build -t %s/%s-pobs:%s -f %s/Dockerfile-pobs ."%(OPTIONS.dockerhub_org, image_name, image_tag, OPTIONS.output))
     os.system("docker image prune -f")
     if exitcode != 0:
         logging.error("Failed to build POBS base image for %s:%s"%(image_name, image_tag))
         sys.exit(1)
+    
+    if OPTIONS.test:
+        test_result = test_pobs_base_image("%s/%s-pobs"%(OPTIONS.dockerhub_org, image_name), image_tag)
+
     if OPTIONS.publish:
-        os.system("docker push %s/%s-pobs:%s"%(OPTIONS.dockerhub_org, image_name, image_tag))
+        if (not OPTIONS.test) or (OPTIONS.test and test_result):
+            os.system("docker push %s/%s-pobs:%s"%(OPTIONS.dockerhub_org, image_name, image_tag))
+        else:
+            logging.warn("The POBS base image %s/%s-pobs:%s did not pass the integration test"%(OPTIONS.dockerhub_org, image_name, image_tag))
+            logging.warn("Skip publishing the generated POBS base image %s/%s-pobs:%s"%(OPTIONS.dockerhub_org, image_name, image_tag))
+        
 
 def generate_application_dockerfile(ori_dockerfile, target_dockerfile_path, ori_image_name, ori_image_tag, pobs_org_name):
     target_dockerfile = os.path.join(target_dockerfile_path, "Dockerfile-pobs-application")
