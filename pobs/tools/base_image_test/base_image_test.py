@@ -91,13 +91,21 @@ def evaluate_project(project):
         with tempfile.TemporaryDirectory() as tmpdir:
             tmprepo = os.path.join(tmpdir, project["name"])
             goodrepo = os.system("cd %s && git clone %s"%(tmpdir, project["clone_url"])) == 0
+
             if goodrepo:
-                project["is_able_to_clone"] = True
-                project["is_able_to_build"] = list()
-                project["is_able_to_run"] = list()
+                goodcheckout = os.system("cd %s && git checkout %s"%(tmprepo, project["commit_sha"])) == 0
+                if goodcheckout:
+                    project["is_able_to_clone"] = True
+                    project["is_able_to_build"] = list()
+                    project["is_able_to_run"] = list()
+                else:
+                    project["is_able_to_clone"] = False
+                    logging.error("failed to checkout the specific commit of repo %s, commit %s"%(project["clone_url"], project["commit_sha"]))
+                    return project
             else:
                 project["is_able_to_clone"] = False
                 logging.error("failed to clone repo %s"%project["clone_url"])
+                return project
 
             # build the project?
             if "build_tools" in project:
