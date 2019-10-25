@@ -220,9 +220,7 @@ def test_pobs_base_image(image_name, image_tag):
             if not os.path.exists(target_file):
                 file_not_exist = True
             
-            if glowroot_attached and tripleagent_attached and exception_thrown and tripleagent_csv and file_not_exist:
-                logging.info("POBS base image %s:%s integration test passed"%(image_name, image_tag))
-            else:
+            if not(glowroot_attached and tripleagent_attached and exception_thrown and tripleagent_csv and file_not_exist):
                 logging.warn("Failed during the test with a fault injection")
                 logging.warn({"glowroot_attached": glowroot_attached, "tripleagent_attached": tripleagent_attached, "exception_thrown": exception_thrown, "tripleagent_csv": tripleagent_csv, "file_not_exist": file_not_exist})
                 test_result = False
@@ -230,6 +228,11 @@ def test_pobs_base_image(image_name, image_tag):
             logging.warn("Failed during the test without fault injection")
             logging.warn({"glowroot_attached": glowroot_attached, "tripleagent_attached": tripleagent_attached, "tripleagent_csv": tripleagent_csv, "file_correctness": file_correctness})
             test_result = False
+
+        if test_result:
+            logging.info("POBS base image %s:%s integration test passed"%(image_name, image_tag))
+        else:
+            logging.warn("POBS base image %s:%s integration test failed"%(image_name, image_tag))
 
         #clean up
         os.system("rm ./logs/*.*")
