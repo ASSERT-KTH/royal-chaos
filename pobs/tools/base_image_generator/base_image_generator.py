@@ -103,6 +103,9 @@ def get_template_contents(base_image):
     with open(template_file, 'rt') as file:
         contents = file.readlines()
     
+    # for the official image busybox, we have to switch to another fatter busybox
+    if image_name == "busybox": image_name = "progrium/busybox"
+
     return image_name, image_tag, contents
 
 def generate_base_image_from_dockerfile(ori_dockerfile, target_dockerfile_path):
@@ -116,7 +119,7 @@ def generate_base_image_from_dockerfile(ori_dockerfile, target_dockerfile_path):
                 last_baseimage = line[5:]
                 last_baseimage = re.split(" as ", last_baseimage, flags=re.IGNORECASE)[0]
         image_name, image_tag, contents = get_template_contents(last_baseimage)
-        target.write("FROM %s\n\n"%last_baseimage)
+        target.write("FROM %s:%s\n\n"%(image_name, image_tag))
         target.writelines(contents)
 
     return image_name, image_tag
@@ -125,7 +128,7 @@ def generate_base_image_from_image(ori_image, target_dockerfile_path):
     target_dockerfile = os.path.join(target_dockerfile_path, "Dockerfile-pobs")
     with open(target_dockerfile, 'wt') as target:
         image_name, image_tag, contents = get_template_contents(ori_image)
-        target.write("FROM %s\n\n"%ori_image)
+        target.write("FROM %s:%s\n\n"%(image_name, image_tag))
         target.writelines(contents)
 
     return image_name, image_tag
@@ -159,6 +162,14 @@ def test_pobs_base_image(image_name, image_tag):
     base_path = "./integration_test/dockerfile_snippet"
     snippet = "default.tpl"
     dockerfile_name = "Dockerfile-test"
+
+    # for some base images, we need to install jdk by ourselves
+    if "ubuntu" in image_name:
+        if image_tag in ["14.04", "trusty"]:
+            snippet = "ubuntu-old.tpl"
+        else: snippet = "ubuntu.tpl"
+    elif "busybox" in image_name:
+        snippet = "busybox.tpl"
 
     with open(os.path.join(base_path, snippet), 'rt') as snippet_file, open(dockerfile_name, 'wt') as target:
         contents = snippet_file.readlines()
@@ -243,6 +254,9 @@ def test_pobs_base_image(image_name, image_tag):
 
 
 def build_POBS_base_image(image_name, image_tag):
+    # a bit tricky: consider progrium/busybox as busybox
+    if image_name == "progrium/busybox": image_name = "busybox"
+    
     exitcode = os.system("docker build -t %s/%s-pobs:%s -f %s/Dockerfile-pobs ."%(OPTIONS.dockerhub_org, image_name, image_tag, OPTIONS.output))
     os.system("docker image prune -f")
     if exitcode != 0:
