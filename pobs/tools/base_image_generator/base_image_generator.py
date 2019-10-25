@@ -1,7 +1,9 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
+# Filename: base_image_generator.py
 
-import os, sys, re, tempfile, subprocess
+import os, sys, re, tempfile, subprocess, time
+from prettytable import PrettyTable
 import logging
 from optparse import OptionParser, OptionGroup
 
@@ -134,12 +136,16 @@ def generate_base_image_from_image(ori_image, target_dockerfile_path):
     return image_name, image_tag
 
 def generate_base_images_from_file(filepath, target_dockerfile_path):
+    build_results = list()
     with open(filepath, 'rt') as image_list:
         # each line records one entry, image_name:image_tag
         for line in image_list.readlines():
             if line.strip() == "": continue
             image_name, image_tag = generate_base_image_from_image(line.strip(), target_dockerfile_path)
-            if OPTIONS.build: build_POBS_base_image(image_name, image_tag)
+            if OPTIONS.build:
+                result = build_POBS_base_image(image_name, image_tag)
+                build_results.append(result)
+    return build_results
 
 def run_integration_test_container(run_command, container_name, timeout):
     with tempfile.NamedTemporaryFile(mode="w+b") as stdout_f, tempfile.NamedTemporaryFile(mode="w+b") as stderr_f:
@@ -256,22 +262,33 @@ def test_pobs_base_image(image_name, image_tag):
 def build_POBS_base_image(image_name, image_tag):
     # a bit tricky: consider progrium/busybox as busybox
     if image_name == "progrium/busybox": image_name = "busybox"
-    
+
+    build_result = {"image_name": image_name, "image_tag": image_tag, "build": "not built", "test": "not tested", "publish": "not yet"}
+
     exitcode = os.system("docker build -t %s/%s-pobs:%s -f %s/Dockerfile-pobs ."%(OPTIONS.dockerhub_org, image_name, image_tag, OPTIONS.output))
     os.system("docker image prune -f")
     if exitcode != 0:
         logging.error("Failed to build POBS base image for %s:%s"%(image_name, image_tag))
-        sys.exit(1)
+        build_result["build"] = "failed"
+        return build_result
+    else:
+        build_result["build"] = "succeeded"
     
     if OPTIONS.test:
         test_result = test_pobs_base_image("%s/%s-pobs"%(OPTIONS.dockerhub_org, image_name), image_tag)
+        build_result["test"] = "passed" if test_result else "failed"
 
     if OPTIONS.publish:
         if (not OPTIONS.test) or (OPTIONS.test and test_result):
-            os.system("docker push %s/%s-pobs:%s"%(OPTIONS.dockerhub_org, image_name, image_tag))
+            if os.system("docker push %s/%s-pobs:%s"%(OPTIONS.dockerhub_org, image_name, image_tag)) == 0:
+                build_result["publish"] = "published at %s"%time.strftime("%Y-%m-%d %H:%M", time.localtime())
+            else:
+                build_result["publish"] = "failed"
         else:
             logging.warn("The POBS base image %s/%s-pobs:%s did not pass the integration test"%(OPTIONS.dockerhub_org, image_name, image_tag))
             logging.warn("Skip publishing the generated POBS base image %s/%s-pobs:%s"%(OPTIONS.dockerhub_org, image_name, image_tag))
+
+    return build_result
         
 
 def generate_application_dockerfile(ori_dockerfile, target_dockerfile_path, ori_image_name, ori_image_tag, pobs_org_name):
@@ -286,6 +303,18 @@ def generate_application_dockerfile(ori_dockerfile, target_dockerfile_path, ori_
             else:
                 target.write(line)
 
+def print_build_results(results):
+    pretty_table = PrettyTable()
+    pretty_table.field_names = ["No.", "Image", "Tag", "Build", "Test", "Publish"]
+
+    index = 1
+    for result in results:
+        pretty_table.add_row([index, result["image_name"], result["image_tag"], result["build"], result["test"], result["publish"]])
+        index = index + 1
+
+    pretty_table.sortby = "Image"
+    print(pretty_table)
+
 def main():
     global OPTIONS
     OPTIONS = parse_options()
@@ -294,13 +323,18 @@ def main():
 
     if OPTIONS.dockerfile != None:
         image_name, image_tag = generate_base_image_from_dockerfile(OPTIONS.dockerfile, OPTIONS.output)
-        if OPTIONS.build: build_POBS_base_image(image_name, image_tag)
+        if OPTIONS.build:
+            result = build_POBS_base_image(image_name, image_tag)
+            print_build_results([result])
         generate_application_dockerfile(OPTIONS.dockerfile, OPTIONS.output, image_name, image_tag, OPTIONS.dockerhub_org)
     elif OPTIONS.from_image != None:
         image_name, image_tag = generate_base_image_from_image(OPTIONS.from_image, OPTIONS.output)
-        if OPTIONS.build: build_POBS_base_image(image_name, image_tag)
+        if OPTIONS.build:
+            result = build_POBS_base_image(image_name, image_tag)
+            print_build_results([result])
     elif OPTIONS.from_file != None:
-        generate_base_images_from_file(OPTIONS.from_file, OPTIONS.output)
+        results = generate_base_images_from_file(OPTIONS.from_file, OPTIONS.output)
+        print_build_results(results)
 
     if OPTIONS.publish: os.system("docker logout")
 
