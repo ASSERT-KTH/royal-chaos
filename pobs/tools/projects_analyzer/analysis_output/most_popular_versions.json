@@ -1,0 +1,4141 @@
+[
+  {
+    "base_image": "maven",
+    "versions": [
+      {
+        "version": "3.3.9-jdk-8",
+        "count": 10
+      },
+      {
+        "version": "3.5-jdk-8-alpine",
+        "count": 8
+      },
+      {
+        "version": "",
+        "count": 7
+      },
+      {
+        "version": "3-jdk-8-alpine",
+        "count": 6
+      },
+      {
+        "version": "alpine",
+        "count": 6
+      },
+      {
+        "version": "3.6.1-jdk-8",
+        "count": 6
+      },
+      {
+        "version": "3-jdk-8",
+        "count": 5
+      },
+      {
+        "version": "3.5-jdk-8",
+        "count": 4
+      },
+      {
+        "version": "3.5.4-jdk-8",
+        "count": 3
+      },
+      {
+        "version": "latest",
+        "count": 3
+      },
+      {
+        "version": "3.6.0-jdk-8-alpine",
+        "count": 2
+      },
+      {
+        "version": "3",
+        "count": 2
+      },
+      {
+        "version": "3-alpine",
+        "count": 2
+      },
+      {
+        "version": "3-jdk-11-slim",
+        "count": 1
+      },
+      {
+        "version": "3.5-jdk-11",
+        "count": 1
+      },
+      {
+        "version": "3.3.1-jdk-8",
+        "count": 1
+      },
+      {
+        "version": "3.5.0-jdk-7-alpine",
+        "count": 1
+      },
+      {
+        "version": "3.5.4-jdk-11",
+        "count": 1
+      },
+      {
+        "version": "3-jdk-13",
+        "count": 1
+      },
+      {
+        "version": "3.6.1-amazoncorretto-8",
+        "count": 1
+      },
+      {
+        "version": "3.5.4",
+        "count": 1
+      },
+      {
+        "version": "3.5.4-jdk-11-slim",
+        "count": 1
+      },
+      {
+        "version": "3.5.4-jdk-8-alpine",
+        "count": 1
+      },
+      {
+        "version": "3.5.3-jdk-10-slim",
+        "count": 1
+      },
+      {
+        "version": "3.6-jdk-8-slim",
+        "count": 1
+      },
+      {
+        "version": "3.5.2-jdk-8-slim",
+        "count": 1
+      },
+      {
+        "version": "3.5.2-jdk-8",
+        "count": 1
+      },
+      {
+        "version": "3.6.0-jdk-8",
+        "count": 1
+      },
+      {
+        "version": "3.5.0-jdk-8-alpine",
+        "count": 1
+      },
+      {
+        "version": "3.6.0-jdk-11-slim",
+        "count": 1
+      },
+      {
+        "version": "3-jdk-8-onbuild",
+        "count": 1
+      },
+      {
+        "version": "3.5.3-jdk-8-slim",
+        "count": 1
+      },
+      {
+        "version": "onbuild-alpine",
+        "count": 1
+      },
+      {
+        "version": "3.3.3-jdk-8",
+        "count": 1
+      },
+      {
+        "version": "3.5.3-jdk-8-alpine",
+        "count": 1
+      },
+      {
+        "version": "3.5.0-jdk-8",
+        "count": 1
+      },
+      {
+        "version": "3.5.4-jdk-10-slim",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "openjdk",
+    "versions": [
+      {
+        "version": "8-jdk-alpine",
+        "count": 89
+      },
+      {
+        "version": "8-jre-alpine",
+        "count": 80
+      },
+      {
+        "version": "8-jre",
+        "count": 47
+      },
+      {
+        "version": "8",
+        "count": 32
+      },
+      {
+        "version": "8u151-jre-alpine",
+        "count": 21
+      },
+      {
+        "version": "8-jdk",
+        "count": 20
+      },
+      {
+        "version": "8-alpine",
+        "count": 19
+      },
+      {
+        "version": "8u171-alpine3.7",
+        "count": 18
+      },
+      {
+        "version": "8u151-jre-alpine3.7",
+        "count": 13
+      },
+      {
+        "version": "10.0.2-jre-slim",
+        "count": 13
+      },
+      {
+        "version": "8u171-jre-alpine",
+        "count": 12
+      },
+      {
+        "version": "8-jre-slim",
+        "count": 12
+      },
+      {
+        "version": "8u121-jdk-alpine",
+        "count": 9
+      },
+      {
+        "version": "8u171-jre-alpine3.8",
+        "count": 9
+      },
+      {
+        "version": "8u222-jre",
+        "count": 8
+      },
+      {
+        "version": "8u212-jre",
+        "count": 8
+      },
+      {
+        "version": "11",
+        "count": 7
+      },
+      {
+        "version": "11.0.2-jre-slim",
+        "count": 7
+      },
+      {
+        "version": "",
+        "count": 4
+      },
+      {
+        "version": "alpine",
+        "count": 4
+      },
+      {
+        "version": "7",
+        "count": 3
+      },
+      {
+        "version": "11-jdk-slim",
+        "count": 3
+      },
+      {
+        "version": "8u181-jdk-alpine3.8",
+        "count": 3
+      },
+      {
+        "version": "11-jre-slim",
+        "count": 3
+      },
+      {
+        "version": "11.0.3-jre-stretch",
+        "count": 3
+      },
+      {
+        "version": "8u131-jre",
+        "count": 3
+      },
+      {
+        "version": "11-jre",
+        "count": 2
+      },
+      {
+        "version": "11-slim",
+        "count": 2
+      },
+      {
+        "version": "8u201-jre-alpine",
+        "count": 2
+      },
+      {
+        "version": "7-jdk",
+        "count": 2
+      },
+      {
+        "version": "11-oracle",
+        "count": 2
+      },
+      {
+        "version": "11.0.2-jre-slim-stretch",
+        "count": 2
+      },
+      {
+        "version": "8u151-jdk-alpine3.7",
+        "count": 2
+      },
+      {
+        "version": "12",
+        "count": 2
+      },
+      {
+        "version": "latest",
+        "count": 2
+      },
+      {
+        "version": "8u131-jre-alpine",
+        "count": 2
+      },
+      {
+        "version": "8-stretch",
+        "count": 1
+      },
+      {
+        "version": "jre",
+        "count": 1
+      },
+      {
+        "version": "11.0.1-jre-slim-stretch",
+        "count": 1
+      },
+      {
+        "version": "8u212-jdk",
+        "count": 1
+      },
+      {
+        "version": "8u212-jre-slim",
+        "count": 1
+      },
+      {
+        "version": "7-jre-alpine",
+        "count": 1
+      },
+      {
+        "version": "13-alpine",
+        "count": 1
+      },
+      {
+        "version": "8u191-jdk-alpine3.8",
+        "count": 1
+      },
+      {
+        "version": "11.0.1-jdk-slim-stretch",
+        "count": 1
+      },
+      {
+        "version": "7u201-jre-alpine3.9",
+        "count": 1
+      },
+      {
+        "version": "8u201-jdk-alpine3.9",
+        "count": 1
+      },
+      {
+        "version": "8-jdk-stretch",
+        "count": 1
+      },
+      {
+        "version": "12-alpine",
+        "count": 1
+      },
+      {
+        "version": "8u111-jre-alpine",
+        "count": 1
+      },
+      {
+        "version": "8u121-jre-alpine",
+        "count": 1
+      },
+      {
+        "version": "8u181-jre-alpine",
+        "count": 1
+      },
+      {
+        "version": "10.0.1-10-jre-slim",
+        "count": 1
+      },
+      {
+        "version": "8u212-jre-alpine",
+        "count": 1
+      },
+      {
+        "version": "8u181-jre",
+        "count": 1
+      },
+      {
+        "version": "8u171-jdk-alpine",
+        "count": 1
+      },
+      {
+        "version": "11.0.2-jdk",
+        "count": 1
+      },
+      {
+        "version": "8u171-jre",
+        "count": 1
+      },
+      {
+        "version": "11-jre-slim-sid",
+        "count": 1
+      },
+      {
+        "version": "8u131-jdk-alpine",
+        "count": 1
+      },
+      {
+        "version": "12.0.1-jdk-oraclelinux7",
+        "count": 1
+      },
+      {
+        "version": "8-jdk-slim",
+        "count": 1
+      },
+      {
+        "version": "8u121-alpine",
+        "count": 1
+      },
+      {
+        "version": "13-ea-19-jdk-alpine3.9",
+        "count": 1
+      },
+      {
+        "version": "8u151-jdk-alpine",
+        "count": 1
+      },
+      {
+        "version": "11-jdk",
+        "count": 1
+      },
+      {
+        "version": "10-jre-slim",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "openzipkin/zipkin-builder",
+    "versions": [
+      {
+        "version": "",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "base_image": "nginx",
+    "versions": [
+      {
+        "version": "",
+        "count": 7
+      },
+      {
+        "version": "alpine",
+        "count": 3
+      },
+      {
+        "version": "1.16-alpine",
+        "count": 2
+      },
+      {
+        "version": "1.9.10",
+        "count": 2
+      },
+      {
+        "version": "1-alpine",
+        "count": 1
+      },
+      {
+        "version": "stable",
+        "count": 1
+      },
+      {
+        "version": "1.7.9",
+        "count": 1
+      },
+      {
+        "version": "1.10.3-alpine",
+        "count": 1
+      },
+      {
+        "version": "latest",
+        "count": 1
+      },
+      {
+        "version": "1.10.3",
+        "count": 1
+      },
+      {
+        "version": "mainline",
+        "count": 1
+      },
+      {
+        "version": "1.11.1-alpine",
+        "count": 1
+      },
+      {
+        "version": "1.14.0-alpine",
+        "count": 1
+      },
+      {
+        "version": "1.13.12-alpine",
+        "count": 1
+      },
+      {
+        "version": "1.17.0-alpine",
+        "count": 1
+      },
+      {
+        "version": "1.15.2-alpine",
+        "count": 1
+      },
+      {
+        "version": "1.15",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "gcr.io/distroless/java",
+    "versions": [
+      {
+        "version": "11-debug",
+        "count": 2
+      },
+      {
+        "version": "11",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "centos",
+    "versions": [
+      {
+        "version": "7",
+        "count": 12
+      },
+      {
+        "version": "",
+        "count": 7
+      },
+      {
+        "version": "latest",
+        "count": 7
+      },
+      {
+        "version": "centos6.10",
+        "count": 2
+      },
+      {
+        "version": "centos6.9",
+        "count": 2
+      },
+      {
+        "version": "centos7",
+        "count": 2
+      },
+      {
+        "version": "6.10",
+        "count": 2
+      },
+      {
+        "version": "centos6",
+        "count": 1
+      },
+      {
+        "version": "centos7.3.1611",
+        "count": 1
+      },
+      {
+        "version": "7.3.1611",
+        "count": 1
+      },
+      {
+        "version": "6",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "canal/osbase",
+    "versions": [
+      {
+        "version": "v2",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "ubuntu",
+    "versions": [
+      {
+        "version": "16.04",
+        "count": 41
+      },
+      {
+        "version": "14.04",
+        "count": 28
+      },
+      {
+        "version": "18.04",
+        "count": 27
+      },
+      {
+        "version": "",
+        "count": 15
+      },
+      {
+        "version": "trusty",
+        "count": 14
+      },
+      {
+        "version": "xenial",
+        "count": 7
+      },
+      {
+        "version": "12.04",
+        "count": 4
+      },
+      {
+        "version": "bionic",
+        "count": 3
+      },
+      {
+        "version": "latest",
+        "count": 3
+      },
+      {
+        "version": "18.10",
+        "count": 3
+      },
+      {
+        "version": "16.10",
+        "count": 2
+      },
+      {
+        "version": "xenial-20181113",
+        "count": 1
+      },
+      {
+        "version": "rolling",
+        "count": 1
+      },
+      {
+        "version": "precise",
+        "count": 1
+      },
+      {
+        "version": "17.10",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "node",
+    "versions": [
+      {
+        "version": "8-alpine",
+        "count": 5
+      },
+      {
+        "version": "latest",
+        "count": 4
+      },
+      {
+        "version": "10",
+        "count": 3
+      },
+      {
+        "version": "9.11.1-alpine",
+        "count": 3
+      },
+      {
+        "version": "boron",
+        "count": 3
+      },
+      {
+        "version": "10-stretch",
+        "count": 2
+      },
+      {
+        "version": "8-slim",
+        "count": 2
+      },
+      {
+        "version": "alpine",
+        "count": 2
+      },
+      {
+        "version": "10.15.0-alpine",
+        "count": 2
+      },
+      {
+        "version": "8-onbuild",
+        "count": 2
+      },
+      {
+        "version": "10-alpine",
+        "count": 1
+      },
+      {
+        "version": "9.11.2-alpine",
+        "count": 1
+      },
+      {
+        "version": "10.15.1-stretch-slim",
+        "count": 1
+      },
+      {
+        "version": "8.0.0",
+        "count": 1
+      },
+      {
+        "version": "8.12.0",
+        "count": 1
+      },
+      {
+        "version": "6.10.1",
+        "count": 1
+      },
+      {
+        "version": "8.4.0-alpine",
+        "count": 1
+      },
+      {
+        "version": "4-onbuild",
+        "count": 1
+      },
+      {
+        "version": "5",
+        "count": 1
+      },
+      {
+        "version": "6.5.0",
+        "count": 1
+      },
+      {
+        "version": "6.9.1",
+        "count": 1
+      },
+      {
+        "version": "6-alpine",
+        "count": 1
+      },
+      {
+        "version": "carbon",
+        "count": 1
+      },
+      {
+        "version": "8.11.4",
+        "count": 1
+      },
+      {
+        "version": "",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "java",
+    "versions": [
+      {
+        "version": "8",
+        "count": 122
+      },
+      {
+        "version": "8-jre",
+        "count": 47
+      },
+      {
+        "version": "8-jre-alpine",
+        "count": 39
+      },
+      {
+        "version": "openjdk-8u111-alpine",
+        "count": 20
+      },
+      {
+        "version": "8-jdk",
+        "count": 16
+      },
+      {
+        "version": "7",
+        "count": 13
+      },
+      {
+        "version": "alpine",
+        "count": 12
+      },
+      {
+        "version": "8-jdk-alpine",
+        "count": 12
+      },
+      {
+        "version": "",
+        "count": 10
+      },
+      {
+        "version": "openjdk-8u91-jdk",
+        "count": 5
+      },
+      {
+        "version": "openjdk-8-jre-alpine",
+        "count": 3
+      },
+      {
+        "version": "8u111-jdk",
+        "count": 2
+      },
+      {
+        "version": "8-alpine",
+        "count": 2
+      },
+      {
+        "version": "8u111-jre-alpine",
+        "count": 1
+      },
+      {
+        "version": "openjdk-8-jre",
+        "count": 1
+      },
+      {
+        "version": "jre-alpine",
+        "count": 1
+      },
+      {
+        "version": "openjdk-7-jdk",
+        "count": 1
+      },
+      {
+        "version": "openjdk-8u45-jdk",
+        "count": 1
+      },
+      {
+        "version": "openjdk-8u92-jdk-alpine",
+        "count": 1
+      },
+      {
+        "version": "latest",
+        "count": 1
+      },
+      {
+        "version": "8u45-jre",
+        "count": 1
+      },
+      {
+        "version": "openjdk-8u66-jdk",
+        "count": 1
+      },
+      {
+        "version": "openjdk-8-jdk",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "mongo",
+    "versions": [
+      {
+        "version": "3",
+        "count": 2
+      },
+      {
+        "version": "4.1",
+        "count": 1
+      },
+      {
+        "version": "",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "golang",
+    "versions": [
+      {
+        "version": "1.10",
+        "count": 4
+      },
+      {
+        "version": "1.12.2-alpine3.9",
+        "count": 3
+      },
+      {
+        "version": "",
+        "count": 3
+      },
+      {
+        "version": "1.13.1",
+        "count": 2
+      },
+      {
+        "version": "alpine",
+        "count": 2
+      },
+      {
+        "version": "1.11",
+        "count": 1
+      },
+      {
+        "version": "1.6.1-alpine",
+        "count": 1
+      },
+      {
+        "version": "1.9.1-alpine3.6",
+        "count": 1
+      },
+      {
+        "version": "1.4.2",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "envoyproxy/envoy-alpine",
+    "versions": [
+      {
+        "version": "v1.11.1",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "lucida_base",
+    "versions": [
+      {
+        "version": "",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "base_image": "jboss/base-jdk",
+    "versions": [
+      {
+        "version": "8",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "base_image": "mariadb",
+    "versions": [
+      {
+        "version": "10.3.3",
+        "count": 2
+      },
+      {
+        "version": "5.5.56",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "google/cadvisor",
+    "versions": [
+      {
+        "version": "v0.26.1",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "grafana/grafana",
+    "versions": [
+      {
+        "version": "4.4.3",
+        "count": 2
+      },
+      {
+        "version": "4.3.1",
+        "count": 1
+      },
+      {
+        "version": "5.4.2",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "ruby",
+    "versions": [
+      {
+        "version": "2.5-alpine",
+        "count": 3
+      },
+      {
+        "version": "2.3.1",
+        "count": 2
+      },
+      {
+        "version": "2.6.3",
+        "count": 1
+      },
+      {
+        "version": "2.3",
+        "count": 1
+      },
+      {
+        "version": "2.3.0",
+        "count": 1
+      },
+      {
+        "version": "2.4.1",
+        "count": 1
+      },
+      {
+        "version": "2.6.2-alpine3.9",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "jimschubert/8-jdk-alpine-mvn",
+    "versions": [
+      {
+        "version": "1.0",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "frolvlad/alpine-oraclejdk8",
+    "versions": [
+      {
+        "version": "slim",
+        "count": 41
+      }
+    ]
+  },
+  {
+    "base_image": "scratch",
+    "versions": [
+      {
+        "version": "",
+        "count": 23
+      }
+    ]
+  },
+  {
+    "base_image": "python",
+    "versions": [
+      {
+        "version": "3-alpine",
+        "count": 6
+      },
+      {
+        "version": "2-alpine",
+        "count": 2
+      },
+      {
+        "version": "2.7",
+        "count": 2
+      },
+      {
+        "version": "2-slim",
+        "count": 1
+      },
+      {
+        "version": "2.7.16-alpine3.9",
+        "count": 1
+      },
+      {
+        "version": "3.7.2-alpine3.8",
+        "count": 1
+      },
+      {
+        "version": "3",
+        "count": 1
+      },
+      {
+        "version": "2-onbuild",
+        "count": 1
+      },
+      {
+        "version": "3.7.2-stretch",
+        "count": 1
+      },
+      {
+        "version": "3.6-stretch",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "mcr.microsoft.com/dotnet/core/sdk",
+    "versions": [
+      {
+        "version": "2.2",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "mcr.microsoft.com/dotnet/core/aspnet",
+    "versions": [
+      {
+        "version": "2.2",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "alpine",
+    "versions": [
+      {
+        "version": "latest",
+        "count": 10
+      },
+      {
+        "version": "",
+        "count": 6
+      },
+      {
+        "version": "3.7",
+        "count": 5
+      },
+      {
+        "version": "3.4",
+        "count": 5
+      },
+      {
+        "version": "3.3",
+        "count": 5
+      },
+      {
+        "version": "3.2",
+        "count": 4
+      },
+      {
+        "version": "3.10",
+        "count": 2
+      },
+      {
+        "version": "3.8",
+        "count": 1
+      },
+      {
+        "version": "3.6",
+        "count": 1
+      },
+      {
+        "version": "3.9",
+        "count": 1
+      },
+      {
+        "version": "3.5",
+        "count": 1
+      },
+      {
+        "version": "edge",
+        "count": 1
+      },
+      {
+        "version": "3.9.2",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "microsoft/mssql-server-linux",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "microsoft/dotnet",
+    "versions": [
+      {
+        "version": "runtime",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "testcafe/testcafe",
+    "versions": [
+      {
+        "version": "latest",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "debian",
+    "versions": [
+      {
+        "version": "jessie",
+        "count": 11
+      },
+      {
+        "version": "stretch",
+        "count": 6
+      },
+      {
+        "version": "",
+        "count": 4
+      },
+      {
+        "version": "stable-slim",
+        "count": 2
+      },
+      {
+        "version": "8.11",
+        "count": 2
+      },
+      {
+        "version": "testing",
+        "count": 2
+      },
+      {
+        "version": "9",
+        "count": 2
+      },
+      {
+        "version": "9-slim",
+        "count": 2
+      },
+      {
+        "version": "latest",
+        "count": 1
+      },
+      {
+        "version": "7",
+        "count": 1
+      },
+      {
+        "version": "7.8",
+        "count": 1
+      },
+      {
+        "version": "stable",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "tomcat",
+    "versions": [
+      {
+        "version": "8-jre8-alpine",
+        "count": 9
+      },
+      {
+        "version": "7.0.75-jre8",
+        "count": 5
+      },
+      {
+        "version": "9-jre8",
+        "count": 2
+      },
+      {
+        "version": "8",
+        "count": 2
+      },
+      {
+        "version": "8-jre8",
+        "count": 2
+      },
+      {
+        "version": "8.0-jre8",
+        "count": 1
+      },
+      {
+        "version": "alpine",
+        "count": 1
+      },
+      {
+        "version": "9-alpine",
+        "count": 1
+      },
+      {
+        "version": "8.5.38-alpine",
+        "count": 1
+      },
+      {
+        "version": "9.0.20-jre11-slim",
+        "count": 1
+      },
+      {
+        "version": "8.0.30-jre8",
+        "count": 1
+      },
+      {
+        "version": "9-jre8-alpine",
+        "count": 1
+      },
+      {
+        "version": "8.0-jre8-alpine",
+        "count": 1
+      },
+      {
+        "version": "latest",
+        "count": 1
+      },
+      {
+        "version": "8.0.20-jre8",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "${DOCKER_UPSTREAM_REGISTRY}confluentinc/cp-base",
+    "versions": [
+      {
+        "version": "${DOCKER_UPSTREAM_TAG}",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "base_image": "fabric8/java-alpine-openjdk8-jre",
+    "versions": [
+      {
+        "version": "",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "base_image": "vertx/vertx3",
+    "versions": [
+      {
+        "version": "",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "base_image": "centos/wildfly",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "pronter/jce-java",
+    "versions": [
+      {
+        "version": "",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "base_image": "daocloud.io/library/java",
+    "versions": [
+      {
+        "version": "openjdk-8-jre-alpine",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "adoptopenjdk/openjdk8",
+    "versions": [
+      {
+        "version": "alpine-slim",
+        "count": 8
+      },
+      {
+        "version": "latest",
+        "count": 2
+      },
+      {
+        "version": "alpine-jre",
+        "count": 1
+      },
+      {
+        "version": "jre8u212-b03-alpine",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "busybox",
+    "versions": [
+      {
+        "version": "latest",
+        "count": 35
+      },
+      {
+        "version": "",
+        "count": 11
+      },
+      {
+        "version": "bogustag",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "ppc64le/centos",
+    "versions": [
+      {
+        "version": "centos7",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "${IMAGE_NAME}",
+    "versions": [
+      {
+        "version": "${IMAGE_VERSION}",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "spotify/alpine",
+    "versions": [
+      {
+        "version": "latest",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "spotify/helios-solo-base",
+    "versions": [
+      {
+        "version": "0.8",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "azul/zulu-openjdk-alpine",
+    "versions": [
+      {
+        "version": "11",
+        "count": 3
+      },
+      {
+        "version": "8",
+        "count": 1
+      },
+      {
+        "version": "8u152",
+        "count": 1
+      },
+      {
+        "version": "11-jre",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "mcr.microsoft.com/dotnet/core/runtime",
+    "versions": [
+      {
+        "version": "2.2-alpine3.9",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "hello-world",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "buildpack-deps",
+    "versions": [
+      {
+        "version": "bionic-scm",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "google/cloud-sdk",
+    "versions": [
+      {
+        "version": "alpine",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "mysql",
+    "versions": [
+      {
+        "version": "5.7",
+        "count": 8
+      },
+      {
+        "version": "5.6",
+        "count": 5
+      },
+      {
+        "version": "",
+        "count": 2
+      },
+      {
+        "version": "5.5",
+        "count": 2
+      },
+      {
+        "version": "5.7.21",
+        "count": 2
+      },
+      {
+        "version": "5.7.13",
+        "count": 1
+      },
+      {
+        "version": "8",
+        "count": 1
+      },
+      {
+        "version": "8.0.16",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "sickp/alpine-sshd",
+    "versions": [
+      {
+        "version": "7.5-r2",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "docker-java-onbuild",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "localhost",
+    "versions": [
+      {
+        "version": "5050/testuser/busybox:latest",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "registry",
+    "versions": [
+      {
+        "version": "2",
+        "count": 3
+      },
+      {
+        "version": "",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "jenkinsci/slave",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "circleci/node",
+    "versions": [
+      {
+        "version": "latest-browsers",
+        "count": 2
+      },
+      {
+        "version": "8",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "jenkins/jenkins",
+    "versions": [
+      {
+        "version": "lts-alpine",
+        "count": 2
+      },
+      {
+        "version": "2.107.3-alpine",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "registry.cn-hangzhou.aliyuncs.com/springcloud-cn/alpine-3.7",
+    "versions": [
+      {
+        "version": "glibc-2.27-r0",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "base_image": "registry.cn-hangzhou.aliyuncs.com/springcloud-cn/java",
+    "versions": [
+      {
+        "version": "8u172-jre-alpine",
+        "count": 9
+      },
+      {
+        "version": "openjdk-10.0.1-alpine",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "dxia2/scratch-private",
+    "versions": [
+      {
+        "version": "latest",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "docker",
+    "versions": [
+      {
+        "version": "1.12.1-dind",
+        "count": 2
+      },
+      {
+        "version": "17.06-rc",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "httpd",
+    "versions": [
+      {
+        "version": "2.4-alpine",
+        "count": 3
+      },
+      {
+        "version": "2.4",
+        "count": 1
+      },
+      {
+        "version": "",
+        "count": 1
+      },
+      {
+        "version": "alpine",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "consol/tomcat-7.0",
+    "versions": [
+      {
+        "version": "latest",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "${base}",
+    "versions": [
+      {
+        "version": "",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "base_image": "iotacafe/maven",
+    "versions": [
+      {
+        "version": "3.5.4.oracle8u181.1.webupd8.1.1-1@sha256:5e30eb28d778a65af2498bf1b7ef594adf046d44a8e4f7b32b326d8d10626e93",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "iotacafe/java",
+    "versions": [
+      {
+        "version": "oracle8u181.1.webupd8.1-1@sha256:21b0fb1e5b5be7cd239a742238f346e076a46dc0003670cd50f079780288773f",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "${DOCKER_UPSTREAM_REGISTRY}confluentinc/cp-base-new",
+    "versions": [
+      {
+        "version": "${DOCKER_UPSTREAM_TAG}",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "anapsix/alpine-java",
+    "versions": [
+      {
+        "version": "8_jdk",
+        "count": 13
+      },
+      {
+        "version": "8_server-jre_unlimited",
+        "count": 11
+      },
+      {
+        "version": "8_jdk_unlimited",
+        "count": 5
+      },
+      {
+        "version": "8",
+        "count": 2
+      },
+      {
+        "version": "latest",
+        "count": 1
+      },
+      {
+        "version": "8_jdk_nashorn",
+        "count": 1
+      },
+      {
+        "version": "jre8",
+        "count": 1
+      },
+      {
+        "version": "8_server-jre",
+        "count": 1
+      },
+      {
+        "version": "",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "gradle",
+    "versions": [
+      {
+        "version": "5.4-jdk8",
+        "count": 2
+      },
+      {
+        "version": "jdk8-alpine",
+        "count": 2
+      },
+      {
+        "version": "jdk-alpine",
+        "count": 1
+      },
+      {
+        "version": "4.9.0-jdk8",
+        "count": 1
+      },
+      {
+        "version": "4.10.0-jdk8-alpine",
+        "count": 1
+      },
+      {
+        "version": "5.6.2-jdk11",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "azul/zulu-openjdk",
+    "versions": [
+      {
+        "version": "8",
+        "count": 6
+      },
+      {
+        "version": "8u162",
+        "count": 1
+      },
+      {
+        "version": "latest",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "mesosphere/mesos-slave",
+    "versions": [
+      {
+        "version": "1.7.1",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "amazon/dynamodb-local",
+    "versions": [
+      {
+        "version": "1.11.477",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "flowci/flow-platform-base",
+    "versions": [
+      {
+        "version": "latest",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "broadinstitute/gatk",
+    "versions": [
+      {
+        "version": "gatkbase-2.2.0",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "fhuz/docker-storm",
+    "versions": [
+      {
+        "version": "latest",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "elasticsearch",
+    "versions": [
+      {
+        "version": "2.3",
+        "count": 2
+      },
+      {
+        "version": "5.1.1",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "kibana",
+    "versions": [
+      {
+        "version": "4.5.3",
+        "count": 2
+      },
+      {
+        "version": "5.1.1",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "dexterbt1/kestrel",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "b1u3r/trackray",
+    "versions": [
+      {
+        "version": "3.0.0",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "l.gcr.io/google/bazel",
+    "versions": [
+      {
+        "version": "latest",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "jenkins",
+    "versions": [
+      {
+        "version": "1.651.3",
+        "count": 2
+      },
+      {
+        "version": "2.46.1",
+        "count": 1
+      },
+      {
+        "version": "2.60.3",
+        "count": 1
+      },
+      {
+        "version": "2.32.1",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "jboss/apiman-wildfly",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "registry.opensource.zalan.do/stups/openjdk",
+    "versions": [
+      {
+        "version": "1.8.0-191-19",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "dekstroza/openjdk9-alpine",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "nvidia/cuda",
+    "versions": [
+      {
+        "version": "9.2-cudnn7-runtime-ubuntu18.04",
+        "count": 2
+      },
+      {
+        "version": "${cuda_version}-cudnn${cudnn_version}-devel",
+        "count": 1
+      },
+      {
+        "version": "8.0-cudnn6-devel-ubuntu16.04",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "awsdeeplearningteam/mxnet-model-server",
+    "versions": [
+      {
+        "version": "base-cpu-py3.6",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "fabric8/java-jboss-openjdk8-jdk",
+    "versions": [
+      {
+        "version": "1.0.13",
+        "count": 2
+      },
+      {
+        "version": "1.2.3",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "k0kubun/ruby",
+    "versions": [
+      {
+        "version": "2.6.1",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "microsoft/aspnet",
+    "versions": [
+      {
+        "version": "windowsservercore-10.0.14393.953",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "microsoft/mssql-server-windows-express",
+    "versions": [
+      {
+        "version": "2016-sp1-windowsservercore-10.0.14393.693",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "postgres",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      },
+      {
+        "version": "9.6.3",
+        "count": 2
+      },
+      {
+        "version": "10.3",
+        "count": 1
+      },
+      {
+        "version": "9.4",
+        "count": 1
+      },
+      {
+        "version": "10.0-alpine",
+        "count": 1
+      },
+      {
+        "version": "8",
+        "count": 1
+      },
+      {
+        "version": "9.6.15",
+        "count": 1
+      },
+      {
+        "version": "9.5",
+        "count": 1
+      },
+      {
+        "version": "9.6",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "telegraf",
+    "versions": [
+      {
+        "version": "1.2-alpine",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "eventuateio/eventuate-mysql",
+    "versions": [
+      {
+        "version": "$EVENTUATE_COMMON_VERSION",
+        "count": 2
+      },
+      {
+        "version": "0.7.0.RELEASE",
+        "count": 2
+      },
+      {
+        "version": "0.5.0.RELEASE",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "eventuateio/eventuate-postgres",
+    "versions": [
+      {
+        "version": "$EVENTUATE_COMMON_VERSION",
+        "count": 2
+      },
+      {
+        "version": "0.7.0.RELEASE",
+        "count": 2
+      },
+      {
+        "version": "0.5.0.RELEASE",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "adoptopenjdk/openjdk8-openj9",
+    "versions": [
+      {
+        "version": "alpine-slim",
+        "count": 7
+      },
+      {
+        "version": "x86_64-alpine-jdk8u181-b13_openj9-0.9.0-slim",
+        "count": 2
+      },
+      {
+        "version": "x86_64-alpine-jdk8u202-b08_openj9-0.12.1-slim",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "amazonlinux",
+    "versions": [
+      {
+        "version": "",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "base_image": "adoptopenjdk/openjdk11",
+    "versions": [
+      {
+        "version": "alpine-jre",
+        "count": 4
+      },
+      {
+        "version": "x86_64-alpine-jre-11.0.3_7",
+        "count": 3
+      },
+      {
+        "version": "jdk-11.0.2.9-alpine-slim",
+        "count": 1
+      },
+      {
+        "version": "${adoptopenjdk11.image.version}",
+        "count": 1
+      },
+      {
+        "version": "alpine-slim",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "jenkinsci/jnlp-slave",
+    "versions": [
+      {
+        "version": "3.27-1",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "jotschi/protractor",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "dockerfile/java",
+    "versions": [
+      {
+        "version": "oracle-java8",
+        "count": 2
+      },
+      {
+        "version": "openjdk-7-jdk",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "fedora",
+    "versions": [
+      {
+        "version": "28",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "debezium/connect",
+    "versions": [
+      {
+        "version": "0.7",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "tfennelly/tomcat7",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "jenkinsci/workflow-demo",
+    "versions": [
+      {
+        "version": "2017-06-15",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "solidnerd/rainloop",
+    "versions": [
+      {
+        "version": "1.10.5.192",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "${BASE}",
+    "versions": [
+      {
+        "version": "${TAG}",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "${BASE_LDAP}",
+    "versions": [
+      {
+        "version": "${TAG}",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "${BASE_RABBITMQ}",
+    "versions": [
+      {
+        "version": "${TAG}",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "${BASE_RABBITMQ_LDAP}",
+    "versions": [
+      {
+        "version": "${TAG}",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "adoptopenjdk",
+    "versions": [
+      {
+        "version": "11-jdk-hotspot",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "base_image": "linagora/james-jpa-guice",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "dinkel/openldap",
+    "versions": [
+      {
+        "version": "latest",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "base_image": "iron/python",
+    "versions": [
+      {
+        "version": "2-dev",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "linagora/linshare-backend",
+    "versions": [
+      {
+        "version": "2.2.3",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "dist",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "sismics/jetty",
+    "versions": [
+      {
+        "version": "9.3.11",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "bigtop/deploy",
+    "versions": [
+      {
+        "version": "ubuntu-14.04",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "sdaschner/wildfly",
+    "versions": [
+      {
+        "version": "javaee8-kafka-b1",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "base_image": "eclipse/kura",
+    "versions": [
+      {
+        "version": "develop",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "base_image": "livingobjects/jre8",
+    "versions": [
+      {
+        "version": "",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "base_image": "adoptopenjdk/openjdk11-openj9",
+    "versions": [
+      {
+        "version": "jdk-11.0.1.13-alpine-slim",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "base_image": "docker-private.infra.cloudera.com/cloudera_base/cldr-java",
+    "versions": [
+      {
+        "version": "11.0-jdk-slim",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "base_image": "hortonworks/hwx_openjdk",
+    "versions": [
+      {
+        "version": "11.0-jdk-slim",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "selenium/standalone-chrome-debug",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "hub.c.163.com/wuxukun/maven-aliyun",
+    "versions": [
+      {
+        "version": "3-jdk-8",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "base_image": "clojure",
+    "versions": [
+      {
+        "version": "alpine",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "hub.c.163.com/library/java",
+    "versions": [
+      {
+        "version": "latest",
+        "count": 2
+      },
+      {
+        "version": "8-jre-alpine",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "rundeck/rundeck",
+    "versions": [
+      {
+        "version": "3.0.17",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "tfennelly/java6_dev",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "jrottenberg/ffmpeg",
+    "versions": [
+      {
+        "version": "3.3",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "eclipse/che-base",
+    "versions": [
+      {
+        "version": "5.15.0",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "puppet/puppet-agent-alpine",
+    "versions": [
+      {
+        "version": "4.6.2",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "pub.domeos.org/domeos/mysql",
+    "versions": [
+      {
+        "version": "5.7",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "base_image": "private-registry.sohucs.com/sohucs/tomcat",
+    "versions": [
+      {
+        "version": "8.0.24-jdk7",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "moditect/vertx-helloworld-base",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "jpetazzo/dind",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "openliberty/open-liberty",
+    "versions": [
+      {
+        "version": "microProfile1-java8-openj9",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "frolvlad/alpine-java",
+    "versions": [
+      {
+        "version": "",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "base_image": "jboss/wildfly",
+    "versions": [
+      {
+        "version": "10.1.0.Final",
+        "count": 3
+      },
+      {
+        "version": "8.2.0.Final",
+        "count": 1
+      },
+      {
+        "version": "",
+        "count": 1
+      },
+      {
+        "version": "10.0.0.Final",
+        "count": 1
+      },
+      {
+        "version": "latest",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "hawkbit/hawkbit-update-server",
+    "versions": [
+      {
+        "version": "0.2.1",
+        "count": 2
+      },
+      {
+        "version": "0.2.4",
+        "count": 1
+      },
+      {
+        "version": "0.2.0M9",
+        "count": 1
+      },
+      {
+        "version": "0.3.0M3",
+        "count": 1
+      },
+      {
+        "version": "0.2.3",
+        "count": 1
+      },
+      {
+        "version": "0.2.2",
+        "count": 1
+      },
+      {
+        "version": "0.2.0M4",
+        "count": 1
+      },
+      {
+        "version": "0.2.5",
+        "count": 1
+      },
+      {
+        "version": "0.3.0M2",
+        "count": 1
+      },
+      {
+        "version": "0.2.0",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "{{BASE_IMAGE}}",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "photon",
+    "versions": [
+      {
+        "version": "2.0",
+        "count": 4
+      },
+      {
+        "version": "2.0-20190511",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "vmware/powerclicore",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "vmware/photon-closure-runner_python_base",
+    "versions": [
+      {
+        "version": "2.0",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "vmware/photon-closure-runner_nodejs_base",
+    "versions": [
+      {
+        "version": "2.0",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "vmware/photon-closure-runner_powershell_base",
+    "versions": [
+      {
+        "version": "2.0",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "vmware/photon-closure-runner_java_base",
+    "versions": [
+      {
+        "version": "2.0",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "vmware/admiral-base",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "confluentinc/cp-kafka-connect",
+    "versions": [
+      {
+        "version": "3.2.0",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "fancybing/java",
+    "versions": [
+      {
+        "version": "serverjre-8",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "base_image": "lachlanevenson/k8s-kubectl",
+    "versions": [
+      {
+        "version": "v1.11.0",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "frolvlad/alpine-glibc",
+    "versions": [
+      {
+        "version": "${alpine-glibc.image.version}",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "flink",
+    "versions": [
+      {
+        "version": "1.9.0-scala_2.11",
+        "count": 2
+      },
+      {
+        "version": "1.9.0",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "index.alauda.cn/linzhiqiang/centos6",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "openweb/oracle-tomcat",
+    "versions": [
+      {
+        "version": "8-jre8",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "universalresolver/base-alpine",
+    "versions": [
+      {
+        "version": "",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "base_image": "universalresolver/base-ubuntu",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "appengine-mvn-opensource",
+    "versions": [
+      {
+        "version": "latest",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "jetty",
+    "versions": [
+      {
+        "version": "9.2.11-jre7",
+        "count": 2
+      },
+      {
+        "version": "9.2.12-jre7",
+        "count": 1
+      },
+      {
+        "version": "jre8",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "envoyproxy/envoy",
+    "versions": [
+      {
+        "version": "v1.7.0",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "usdotfhwastol/carma-base",
+    "versions": [
+      {
+        "version": "2.8.3",
+        "count": 3
+      },
+      {
+        "version": "latest",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "ros",
+    "versions": [
+      {
+        "version": "kinetic-ros-base",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "tinkerpop/gremlin-server",
+    "versions": [
+      {
+        "version": "3.4.0",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "tinkerpop/gremlin-console",
+    "versions": [
+      {
+        "version": "3.4.0",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "rust",
+    "versions": [
+      {
+        "version": "1.31",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "jerverless/jerverless",
+    "versions": [
+      {
+        "version": "latest",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "base_image": "jerverless",
+    "versions": [
+      {
+        "version": "latest",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "stratos/base-image",
+    "versions": [
+      {
+        "version": "4.1.5",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "base_image": "apache/bookkeeper",
+    "versions": [
+      {
+        "version": "4.5.0",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "base_image": "${docker.acs.image}",
+    "versions": [
+      {
+        "version": "${alfresco.platform.version}",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "base_image": "${docker.share.image}",
+    "versions": [
+      {
+        "version": "${alfresco.share.version}",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "base_image": "ballerina/ballerina-runtime",
+    "versions": [
+      {
+        "version": "0.990.5",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "kennedyoliveira/java8",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "labsai/base-image",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "camptocamp/tomcat-logback",
+    "versions": [
+      {
+        "version": "8.5-jre8",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "@docker.account@/jetty-base",
+    "versions": [
+      {
+        "version": "",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "base_image": "@docker.account@/java-base",
+    "versions": [
+      {
+        "version": "",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "base_image": "enmasseproject/activemq-artemis",
+    "versions": [
+      {
+        "version": "2.2.0-1",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "@docker.base.image@",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "jboss/keycloak",
+    "versions": [
+      {
+        "version": "3.0.0.Final",
+        "count": 2
+      },
+      {
+        "version": "7.0.0",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "cloudunit/base-jessie",
+    "versions": [
+      {
+        "version": "",
+        "count": 11
+      }
+    ]
+  },
+  {
+    "base_image": "cloudunit/base-14.04",
+    "versions": [
+      {
+        "version": "",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "base_image": "blobcity/java8-ubuntu",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "cassandra",
+    "versions": [
+      {
+        "version": "3.7",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "morunchang/fastdfs",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "quay.io/openshift/origin-jenkins-agent-maven",
+    "versions": [
+      {
+        "version": "v4.0",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "quay.io/openshift/origin-jenkins",
+    "versions": [
+      {
+        "version": "v4.0",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "websphere-liberty",
+    "versions": [
+      {
+        "version": "latest",
+        "count": 2
+      },
+      {
+        "version": "javaee8",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "outofcoffee/imposter-base",
+    "versions": [
+      {
+        "version": "${BASE_IMAGE_TAG}",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "base_image": "rabbitmq",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      },
+      {
+        "version": "3-management",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "clouthinkin/jre",
+    "versions": [
+      {
+        "version": "",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "base_image": "daocloud.io/java",
+    "versions": [
+      {
+        "version": "8",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "base_image": "--platform=$BUILDPLATFORM maven",
+    "versions": [
+      {
+        "version": "3.6-jdk-8",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "stateful-functions",
+    "versions": [
+      {
+        "version": "",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "base_image": "registry.cn-beijing.aliyuncs.com/sxd/ubuntu-java8",
+    "versions": [
+      {
+        "version": "1.0",
+        "count": 13
+      }
+    ]
+  },
+  {
+    "base_image": "confluentinc/cp-base",
+    "versions": [
+      {
+        "version": "5.3.1",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "base_image": "everpeace/curl-jq",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "confluentinc/cp-schema-registry",
+    "versions": [
+      {
+        "version": "4.1.2",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "confluentinc/cp-kafka-connect-base",
+    "versions": [
+      {
+        "version": "4.1.2",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "solr",
+    "versions": [
+      {
+        "version": "7.5.0",
+        "count": 2
+      },
+      {
+        "version": "",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "fabric8/java-centos-openjdk8-jdk",
+    "versions": [
+      {
+        "version": "1.5.1",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "registry.cn-hangzhou.aliyuncs.com/kennylee/maven",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      },
+      {
+        "version": "3.5-jdk-8-alpine",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "ngb",
+    "versions": [
+      {
+        "version": "latest",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "sonatype/nexus3",
+    "versions": [
+      {
+        "version": "$NEXUS_VERSION",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "base_image": "redis",
+    "versions": [
+      {
+        "version": "",
+        "count": 3
+      },
+      {
+        "version": "3.2",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "scylladb/scylla",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "catatnight/postfix",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "umple/umpleonline-base",
+    "versions": [
+      {
+        "version": "latest",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "taobeier/openjdk",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "php",
+    "versions": [
+      {
+        "version": "apache",
+        "count": 2
+      },
+      {
+        "version": "7.3.4-apache",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "dockerhub.braintree.tools/bt/java",
+    "versions": [
+      {
+        "version": "8",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "boxfuse/flyway",
+    "versions": [
+      {
+        "version": "5.2.4-alpine",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "resin/rpi-raspbian",
+    "versions": [
+      {
+        "version": "stretch",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "klokantech/tileserver-gl",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "registry.cn-shanghai.aliyuncs.com/ngtesting/ngtesting-web-base",
+    "versions": [
+      {
+        "version": "2.0.0",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "registry.cn-shanghai.aliyuncs.com/ngtesting/ngtesting-postgres-base",
+    "versions": [
+      {
+        "version": "2.0.0",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "vertx/vertx3-alpine",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "marvambass/nginx-registry-proxy",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "openshift/wildfly-101-centos7",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "tomee",
+    "versions": [
+      {
+        "version": "8-jre-1.7.2-webprofile",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "selenium/standalone-firefox-debug",
+    "versions": [
+      {
+        "version": "2.53.0",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "lordofthejars/docker-tomee",
+    "versions": [
+      {
+        "version": "8-jre-1.7.2-plus",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "hyperledger/fabric-baseimage",
+    "versions": [
+      {
+        "version": "amd64-0.4.16",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "orienteer/orienteer",
+    "versions": [
+      {
+        "version": "latest",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "jenkins/java",
+    "versions": [
+      {
+        "version": "d93654cc6239",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "base_image": "codingtony/java",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "kristophjunge/test-saml-idp",
+    "versions": [
+      {
+        "version": "1.14.15",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "phusion/baseimage",
+    "versions": [
+      {
+        "version": "0.9.8",
+        "count": 2
+      },
+      {
+        "version": "latest",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "mailhog/mailhog",
+    "versions": [
+      {
+        "version": "latest",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "confluentinc/cp-kafka",
+    "versions": [
+      {
+        "version": "3.0.0",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "docker.io/hyperledger/fabric-ca",
+    "versions": [
+      {
+        "version": "x86_64-1.0.6",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "base_image": "docker.io/hyperledger/fabric-orderer",
+    "versions": [
+      {
+        "version": "x86_64-1.0.6",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "docker.io/library/node",
+    "versions": [
+      {
+        "version": "8.11.4",
+        "count": 3
+      },
+      {
+        "version": "6.11.3",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "docker.io/hyperledger/fabric-peer",
+    "versions": [
+      {
+        "version": "x86_64-1.0.6",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "base_image": "glassfish",
+    "versions": [
+      {
+        "version": "4.1",
+        "count": 17
+      }
+    ]
+  },
+  {
+    "base_image": "nicodeur/glassfish",
+    "versions": [
+      {
+        "version": "5.0-web",
+        "count": 9
+      }
+    ]
+  },
+  {
+    "base_image": "oracle/glassfish",
+    "versions": [
+      {
+        "version": "5.0-web",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "base_image": "hub.c.163.com/xbingo/jdk8",
+    "versions": [
+      {
+        "version": "latest",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "nimmis/java",
+    "versions": [
+      {
+        "version": "oracle-8-jdk",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "docker.elastic.co/beats/filebeat",
+    "versions": [
+      {
+        "version": "6.3.1",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "prom/prometheus",
+    "versions": [
+      {
+        "version": "v2.3.1",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "docker.elastic.co/elasticsearch/elasticsearch",
+    "versions": [
+      {
+        "version": "6.3.1",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "wouterd/java8",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "jeanblanchard/java",
+    "versions": [
+      {
+        "version": "8",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "continuumio/miniconda",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "hurence/spark",
+    "versions": [
+      {
+        "version": "2.3.3",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "0xacab.org",
+    "versions": [
+      {
+        "version": "4567/leap/docker/debian:stretch_amd64",
+        "count": 2
+      },
+      {
+        "version": "4567/leap/bitmask_android/android-sdk:latest",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "namespace/weathervane-centos7",
+    "versions": [
+      {
+        "version": "version",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "base_image": "ubuntu@sha256",
+    "versions": [
+      {
+        "version": "de0090e770183eaa19f47984af93a3df02a5112f1eb71fb6a16b20ef6770156f",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "adorsys/java",
+    "versions": [
+      {
+        "version": "8",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "base_image": "airhacks/wildfly-ping",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "sonarqube",
+    "versions": [
+      {
+        "version": "6.7-alpine",
+        "count": 2
+      },
+      {
+        "version": "7.9.1-community",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "mesos/logstash-commons",
+    "versions": [
+      {
+        "version": "latest",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "base_image": "gcr.io/google_appengine_qa/debian",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "openjdk8",
+    "versions": [
+      {
+        "version": "async-8-jre",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "jetty9",
+    "versions": [
+      {
+        "version": "@@image.label@@",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "fabric8/java-alpine-openjdk8-jdk",
+    "versions": [
+      {
+        "version": "latest",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "base_image": "tiangolo/uwsgi-nginx-flask",
+    "versions": [
+      {
+        "version": "python2.7",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "walmartlabs/concord-base",
+    "versions": [
+      {
+        "version": "$concord_version",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "base_image": "library/centos",
+    "versions": [
+      {
+        "version": "centos7",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "walmartlabs/concord-ansible",
+    "versions": [
+      {
+        "version": "$concord_version",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "bash",
+    "versions": [
+      {
+        "version": "latest",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "#BASE_IMAGE",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "jbossdemocentral/developer",
+    "versions": [
+      {
+        "version": "jdk8-uid",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "cfmanteiga/alpine-bash-curl-jq",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "alpine/git",
+    "versions": [
+      {
+        "version": "",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "base_image": "timescale/timescaledb",
+    "versions": [
+      {
+        "version": "0.9.0-pg9.6",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "docker.turn.com/tops-base/jdk7",
+    "versions": [
+      {
+        "version": "latest",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "harisekhon/hbase-dev",
+    "versions": [
+      {
+        "version": "latest",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "jmxtrans/jmxtrans",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "openshift3/nodejs-010-rhel7",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "registry.access.redhat.com/rhel7/rhel",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "haproxy",
+    "versions": [
+      {
+        "version": "2.0.0-alpine",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "docker_base-streaming-file-server",
+    "versions": [
+      {
+        "version": "latest",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "base_image": "sebp/elk",
+    "versions": [
+      {
+        "version": "631",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "fnproject/fn-java-fdk",
+    "versions": [
+      {
+        "version": "jre11-1.0.98",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "grpc/java",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "gcr.io/distroless/base",
+    "versions": [
+      {
+        "version": "",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "base_image": "wso2/micro-integrator",
+    "versions": [
+      {
+        "version": "latest",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "base_image": "mkodockx/docker-clamav",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "daggerok/jboss",
+    "versions": [
+      {
+        "version": "eap-7.1",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "base_image": "couchbase",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "monasca/base",
+    "versions": [
+      {
+        "version": "$BASE_TAG",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "fjfisbein/alpine-oracle-jdk9",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "registry.cn-hangzhou.aliyuncs.com/kennylee/tomcat",
+    "versions": [
+      {
+        "version": "tomcat9-jre8",
+        "count": 2
+      },
+      {
+        "version": "tomcat8-jre8",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "registry.cn-hangzhou.aliyuncs.com/kennylee/sshd-tomcat",
+    "versions": [
+      {
+        "version": "tomcat8-jdk7-nodejs7",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "gitlab/gitlab-ce",
+    "versions": [
+      {
+        "version": "10.1.3-ce.0",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "registry.cn-hangzhou.aliyuncs.com/kennylee/alpine",
+    "versions": [
+      {
+        "version": "3.4",
+        "count": 3
+      },
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "registry.cn-hangzhou.aliyuncs.com/kennylee/mysql",
+    "versions": [
+      {
+        "version": "5.7",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "base_image": "registry.cn-hangzhou.aliyuncs.com/kennylee/logstash",
+    "versions": [
+      {
+        "version": "5.3.0",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "registry.cn-hangzhou.aliyuncs.com/kennylee/elasticsearch",
+    "versions": [
+      {
+        "version": "5.3.0",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "base_image": "registry.cn-hangzhou.aliyuncs.com/kennylee/kibana",
+    "versions": [
+      {
+        "version": "5.3.0",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "docker.elastic.co/logstash/logstash",
+    "versions": [
+      {
+        "version": "5.3.0",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "docker.elastic.co/kibana/kibana",
+    "versions": [
+      {
+        "version": "5.3.0",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "registry.cn-hangzhou.aliyuncs.com/kennylee/java",
+    "versions": [
+      {
+        "version": "openjdk-8-jre",
+        "count": 3
+      },
+      {
+        "version": "ubuntu-serverjre8",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "base_image": "registry.docker",
+    "versions": [
+      {
+        "version": "5000/timekey/python",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "consul",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "registry.cn-hangzhou.aliyuncs.com/kennylee/debian",
+    "versions": [
+      {
+        "version": "jessie",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "quay.io/coreos/etcd",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "registry.alauda.cn/kenny/pure-ftpd",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "smebberson/alpine-redis",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "mvertes/alpine-mongo",
+    "versions": [
+      {
+        "version": "",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "base_image": "ibmcom/eventstreams-kafka-ce-icp-linux-amd64",
+    "versions": [
+      {
+        "version": "2019.2.1-3a2f93e",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "base_image": "ibmjava",
+    "versions": [
+      {
+        "version": "8-jre",
+        "count": 3
+      },
+      {
+        "version": "8-sfj-alpine",
+        "count": 1
+      }
+    ]
+  }
+]
