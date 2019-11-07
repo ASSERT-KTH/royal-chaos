@@ -36,32 +36,32 @@ chart.data = [{
             "children": [ // total: 724
               {
                 "name": "Application run succeed",
-                "value": 79
+                "value": 83
               },
               {
                 "name": "Application run failed",
-                "value": 645,
+                "value": 669,
                 "color": "orange"
               }
             ]
           },
           {
             "name": "POBS application image build failed",
-            "value": 4,
+            "value": 7,
             "color": "orange"
           },
         ]
       },
       {
         "name": "POBS base image generation failed",
-        "value": 121,
+        "value": 111,
         "color": "orange"
       },
     ]
   },
   {
     "name": "Sanity check failed",
-    "value": 1161,
+    "value": 1082,
     "color": "orange"
   }
 ];
@@ -112,6 +112,6 @@ chart.seriesTemplates.setKey("4", level4SeriesTemplate)
 level4SeriesTemplate.fillOpacity = 0.4;
 
 chart.legend = new am4charts.Legend();
-chart.legend.marginTop = -100;
+chart.legend.marginTop = -80;
 chart.exporting.menu = new am4core.ExportMenu();
 </script>
