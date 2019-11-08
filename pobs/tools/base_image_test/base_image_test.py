@@ -124,6 +124,7 @@ def evaluate_project(project):
 
             fileindex = 0
             project_name = project["name"].lower() # docker build: repository name must be lowercase
+            project_full_name = project["full_name"].lower().replace("/", "_")
             for dockerfile in project["info_from_dockerfiles"]:
                 # build the base image
                 filepath = os.path.join(tmprepo, dockerfile["path"])
@@ -135,7 +136,7 @@ def evaluate_project(project):
                 stdout, stderr, exitcode = run_command(CMD_BUILD_IMAGE%(project_name, filename), dirname)
                 if exitcode != 0:
                     dockerfile["sanity_check"] = "failed"
-                    dump_logs(stdout, stderr, "./logs/sanity_check/", "%s_%d_sanity_check"%(project_name, fileindex))
+                    dump_logs(stdout, stderr, "./logs/sanity_check/", "%s_%d_sanity_check"%(project_full_name, fileindex))
                     logging.info("The original dockerfile can not be built: %s"%dockerfile["path"])
                 else:
                     dockerfile["sanity_check"] = "successful"
@@ -144,7 +145,7 @@ def evaluate_project(project):
                     logging.info("Begin to transform the dockerfile and build POBS base image: %s"%dockerfile["path"])
                     stdout, stderr, exitcode = run_command(CMD_TRANSFORM_DOCKERFILE%(filepath, dirname), WHERE_IS_GENERATOR)
                     if exitcode != 0:
-                        dump_logs(stdout, stderr, "./logs/base/", "%s_%d_base"%(project_name, fileindex))
+                        dump_logs(stdout, stderr, "./logs/base/", "%s_%d_base"%(project_full_name, fileindex))
                         dockerfile["pobs_base_generation"] = "failed"
                         logging.info("Failed to build POBS base image, exitcode: %d"%exitcode)
                     else:
@@ -154,7 +155,7 @@ def evaluate_project(project):
                         logging.info("Begin to build the application image using: %s-pobs-application"%(dockerfile["path"]))
                         stdout, stderr, exitcode = run_command(CMD_BUILD_IMAGE%(project_name + "-pobs:%d"%fileindex, "Dockerfile-pobs-application"), dirname)
                         if exitcode != 0:
-                            dump_logs(stdout, stderr, "./logs/app-build/", "%s_%d_appbuild"%(project_name, fileindex))
+                            dump_logs(stdout, stderr, "./logs/app-build/", "%s_%d_appbuild"%(project_full_name, fileindex))
                             dockerfile["pobs_application_build"] = "failed"
                             logging.error("Failed to build the application image using %s-pobs-application, project %s"%(dockerfile["path"], project_name))
                         else:
@@ -170,7 +171,7 @@ def evaluate_project(project):
                                 project["is_able_to_run"].append(fileindex)
                             else:
                                 dockerfile["pobs_application_run"] = "failed"
-                                dump_logs(stdout, stderr, "./logs/app-run/", "%s_%d_apprun"%(project_name, fileindex))
+                                dump_logs(stdout, stderr, "./logs/app-run/", "%s_%d_apprun"%(project_full_name, fileindex))
                 fileindex = fileindex + 1
         # clean up: delete the built images
         clean_up(project_name)
