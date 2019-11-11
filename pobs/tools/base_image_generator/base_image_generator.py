@@ -288,7 +288,12 @@ def build_POBS_base_image(image_name, image_tag):
 
     if OPTIONS.publish:
         if (not OPTIONS.test) or (OPTIONS.test and test_result):
-            if os.system("docker push %s/%s-pobs:%s"%(OPTIONS.dockerhub_org, image_name, image_tag)) == 0:
+            if "/" in image_name:
+                # rename nonofficial image names since they contain "/"
+                full_image_name = "%s/%s-pobs:%s"%(OPTIONS.dockerhub_org, image_name, image_tag)
+                full_image_name_new = "%s/%s-pobs:%s"%(OPTIONS.dockerhub_org, image_name.replace("/", "_"), image_tag)
+                os.system("docker tag %s %s"%(full_image_name, full_image_name_new))
+            if os.system("docker push %s/%s-pobs:%s"%(OPTIONS.dockerhub_org, image_name.replace("/", "_"), image_tag)) == 0:
                 build_result["publish"] = "published at %s"%time.strftime("%Y-%m-%d %H:%M", time.localtime())
             else:
                 build_result["publish"] = "failed"
@@ -321,7 +326,7 @@ def print_build_results(results):
         pretty_table.add_row([index, result["image_name"], result["image_tag"], result["build"], result["test"], result["publish"]])
         index = index + 1
 
-    pretty_table.sortby = "Image"
+    # pretty_table.sortby = "Image"
     print(pretty_table)
 
 def main():
