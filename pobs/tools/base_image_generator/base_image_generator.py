@@ -136,6 +136,7 @@ def generate_base_image_from_image(ori_image, target_dockerfile_path):
     return image_name, image_tag
 
 def generate_base_images_from_file(filepath, target_dockerfile_path):
+    error_found = False
     build_results = list()
     with open(filepath, 'rt') as image_list:
         # each line records one entry, image_name:image_tag
@@ -143,9 +144,10 @@ def generate_base_images_from_file(filepath, target_dockerfile_path):
             if line.strip() == "": continue
             image_name, image_tag = generate_base_image_from_image(line.strip(), target_dockerfile_path)
             if OPTIONS.build:
-                result = build_POBS_base_image(image_name, image_tag)
+                result, errors = build_POBS_base_image(image_name, image_tag)
+                error_found = error_found or status
                 build_results.append(result)
-    return build_results
+    return build_results, error_found
 
 def run_integration_test_container(run_command, container_name, timeout):
     with tempfile.NamedTemporaryFile(mode="w+b") as stdout_f, tempfile.NamedTemporaryFile(mode="w+b") as stderr_f:
@@ -260,6 +262,7 @@ def test_pobs_base_image(image_name, image_tag):
 
 
 def build_POBS_base_image(image_name, image_tag):
+    error_found = False
     # a bit tricky: consider progrium/busybox as busybox
     if image_name == "progrium/busybox": image_name = "busybox"
 
@@ -270,13 +273,18 @@ def build_POBS_base_image(image_name, image_tag):
     if exitcode != 0:
         logging.error("Failed to build POBS base image for %s:%s"%(image_name, image_tag))
         build_result["build"] = "failed"
-        return build_result
+        error_found = True
+        return build_result, error_found
     else:
         build_result["build"] = "succeeded"
     
     if OPTIONS.test:
         test_result = test_pobs_base_image("%s/%s-pobs"%(OPTIONS.dockerhub_org, image_name), image_tag)
-        build_result["test"] = "passed" if test_result else "failed"
+        if test_result:
+            build_result["test"] = "passed"
+        else:
+            build_result["test"] = "failed"
+            error_found = True
 
     if OPTIONS.publish:
         if (not OPTIONS.test) or (OPTIONS.test and test_result):
@@ -284,11 +292,12 @@ def build_POBS_base_image(image_name, image_tag):
                 build_result["publish"] = "published at %s"%time.strftime("%Y-%m-%d %H:%M", time.localtime())
             else:
                 build_result["publish"] = "failed"
+                error_found = True
         else:
             logging.warn("The POBS base image %s/%s-pobs:%s did not pass the integration test"%(OPTIONS.dockerhub_org, image_name, image_tag))
             logging.warn("Skip publishing the generated POBS base image %s/%s-pobs:%s"%(OPTIONS.dockerhub_org, image_name, image_tag))
 
-    return build_result
+    return build_result, error_found
         
 
 def generate_application_dockerfile(ori_dockerfile, target_dockerfile_path, ori_image_name, ori_image_tag, pobs_org_name):
@@ -321,22 +330,28 @@ def main():
 
     if OPTIONS.publish: os.system("docker login --username %s --password %s"%(DOCKERHUB_USERNAME, DOCKERHUB_TOKEN))
 
+    if_any_error = False
     if OPTIONS.dockerfile != None:
         image_name, image_tag = generate_base_image_from_dockerfile(OPTIONS.dockerfile, OPTIONS.output)
         if OPTIONS.build:
-            result = build_POBS_base_image(image_name, image_tag)
+            result, if_any_error = build_POBS_base_image(image_name, image_tag)
             print_build_results([result])
         generate_application_dockerfile(OPTIONS.dockerfile, OPTIONS.output, image_name, image_tag, OPTIONS.dockerhub_org)
     elif OPTIONS.from_image != None:
         image_name, image_tag = generate_base_image_from_image(OPTIONS.from_image, OPTIONS.output)
         if OPTIONS.build:
-            result = build_POBS_base_image(image_name, image_tag)
+            result, if_any_error = build_POBS_base_image(image_name, image_tag)
             print_build_results([result])
     elif OPTIONS.from_file != None:
-        results = generate_base_images_from_file(OPTIONS.from_file, OPTIONS.output)
+        results, if_any_error = generate_base_images_from_file(OPTIONS.from_file, OPTIONS.output)
         print_build_results(results)
 
     if OPTIONS.publish: os.system("docker logout")
+
+    if if_any_error:
+        sys.exit(1)
+    else:
+        sys.exit(0)
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
