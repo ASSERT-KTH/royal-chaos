@@ -145,7 +145,7 @@ def generate_base_images_from_file(filepath, target_dockerfile_path):
             image_name, image_tag = generate_base_image_from_image(line.strip(), target_dockerfile_path)
             if OPTIONS.build:
                 result, errors = build_POBS_base_image(image_name, image_tag)
-                error_found = error_found or status
+                error_found = error_found or errors
                 build_results.append(result)
     return build_results, error_found
 
