@@ -12,6 +12,7 @@ CMD_TRANSFORM_DOCKERFILE = "python ../base_image_generator/base_image_generator.
 CMD_BUILD_IMAGE = "docker build -t %s -f %s ." # tag name and Dockerfile path
 CMD_RUN_APPLICATION = "docker run --rm -p 4000:4000 %s-pobs:%d" # give the project name and the index of the dockerfile
 CLEAN_CONTAINERS_SINCE = "CONTAINER_NAME" # give a container name since which the created containers will be removed
+os.environ["TMPDIR"] = "/tmp" # change it if you need to use another path to create temporary files
 
 def parse_options():
     usage = r'usage: python3 %prog [options] -f /path/to/json-data-set.json'
