@@ -89,6 +89,7 @@ def parse_options():
     return options
 
 def get_template_contents(base_image):
+    base_image = base_image.strip()
     image_name = base_image.rsplit(":", 1)[0]
     image_tag = "latest"
     contents = list()
@@ -105,9 +106,6 @@ def get_template_contents(base_image):
     with open(template_file, 'rt') as file:
         contents = file.readlines()
     
-    # for the official image busybox, we have to switch to another fatter busybox
-    if image_name == "busybox": image_name = "progrium/busybox"
-
     return image_name, image_tag, contents
 
 def generate_base_image_from_dockerfile(ori_dockerfile, target_dockerfile_path):
@@ -120,8 +118,10 @@ def generate_base_image_from_dockerfile(ori_dockerfile, target_dockerfile_path):
             if re.search(r"^FROM", line, flags=re.IGNORECASE):
                 last_baseimage = line[5:]
                 last_baseimage = re.split(" as ", last_baseimage, flags=re.IGNORECASE)[0]
-        image_name, image_tag, contents = get_template_contents(last_baseimage)
-        target.write("FROM %s:%s\n\n"%(image_name, image_tag))
+        image_name, image_tag, contents = get_template_contents(last_baseimage.strip())
+        # for the official image busybox, we have to switch to another fatter busybox
+        actual_image_name = "progrium/busybox" if image_name == "busybox" else image_name
+        target.write("FROM %s:%s\n\n"%(actual_image_name, image_tag))
         target.writelines(contents)
 
     return image_name, image_tag
@@ -129,8 +129,10 @@ def generate_base_image_from_dockerfile(ori_dockerfile, target_dockerfile_path):
 def generate_base_image_from_image(ori_image, target_dockerfile_path):
     target_dockerfile = os.path.join(target_dockerfile_path, "Dockerfile-pobs")
     with open(target_dockerfile, 'wt') as target:
-        image_name, image_tag, contents = get_template_contents(ori_image)
-        target.write("FROM %s:%s\n\n"%(image_name, image_tag))
+        image_name, image_tag, contents = get_template_contents(ori_image.strip())
+        # for the official image busybox, we have to switch to another fatter busybox
+        actual_image_name = "progrium/busybox" if image_name == "busybox" else image_name
+        target.write("FROM %s:%s\n\n"%(actual_image_name, image_tag))
         target.writelines(contents)
 
     return image_name, image_tag
@@ -263,8 +265,6 @@ def test_pobs_base_image(image_name, image_tag):
 
 def build_POBS_base_image(image_name, image_tag):
     error_found = False
-    # a bit tricky: consider progrium/busybox as busybox
-    if image_name == "progrium/busybox": image_name = "busybox"
 
     build_result = {"image_name": image_name, "image_tag": image_tag, "build": "not built", "test": "not tested", "publish": "not yet"}
 
