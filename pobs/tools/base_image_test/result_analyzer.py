@@ -48,7 +48,7 @@ def main():
         pobs_application_run_passed_count = 0
 
         for project in projects:
-            if "is_able_to_clone" in project:
+            if "is_able_to_clone" in project and project["is_able_to_clone"]:
                 analyzed_project_count = analyzed_project_count + 1
                 if len(project["is_able_to_build"]) > 0:
                     built_project_count = built_project_count + 1
