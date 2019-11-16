@@ -4,6 +4,7 @@
 # build the application image first
   # git clone https://github.com/jamesdbloom/mockserver.git
   # git checkout 98eff57639cae9ac820389b16e2f92645acb8552
+  # mvn package -DskipTests=true
   # python base_image_generator.py -f /path/to/mockserver/docker/Dockerfile -o /path/to/mockserver/docker --build
   # docker build -t royalchaos/mockserver-pobs -f Dockerfile-pobs-application .
 
