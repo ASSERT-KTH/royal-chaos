@@ -1,6 +1,12 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
 
+# build the application image first
+  # git clone https://github.com/jamesdbloom/mockserver.git
+  # git checkout 98eff57639cae9ac820389b16e2f92645acb8552
+  # python base_image_generator.py -f /path/to/mockserver/docker/Dockerfile -o /path/to/mockserver/docker --build
+  # docker build -t royalchaos/mockserver-pobs -f Dockerfile-pobs-application .
+
 import os, time, re, datetime, json, csv, tempfile, subprocess, requests
 import logging
 
@@ -66,50 +72,56 @@ def main():
     perturbation_point_csv = "./perturbationPointsList.csv"
     tripleagent_config_csv = "./logs/perturbationPointsList.csv"
     cmd_start_container = 'docker run --rm -d -p 4000:4000 -e "TRIPLEAGENT_FILTER=org/mockserver" -e "TRIPLEAGENT_LINENUMBER=0" -v $PWD/logs:/home/tripleagent/logs -p 1080:1080 royalchaos/mockserver-pobs:latest'
-    cmd_add_expectation = 'curl -v -X PUT "http://localhost:1080/mockserver/expectation" -d \'{"httpRequest" : {"method" : "GET", "path" : "/"}, "httpResponse" : {"body" : "some_response_body"} }\''
+    cmd_add_expectation = 'curl -X PUT "http://localhost:1080/mockserver/expectation" -d \'{"httpRequest" : {"method" : "GET", "path" : "/"}, "httpResponse" : {"body" : "some_response_body"} }\''
     url_query = 'http://localhost:4000/backend/jvm/gauges?agent-rollup-id=&from=%d&to=%d&gauge-name=java.lang%%3Atype%%3DMemory%%3AHeapMemoryUsage.used'
     
     headers, points = read_from_csv(perturbation_point_csv)
-    if "tail-area probability" not in headers: headers.extend(["tail-area probability", "prob. of a causal effect"])
+    if "tail-area probability" not in headers: headers.extend(["tail-area probability", "prob. of a causal effect", "p fi", "prob. fi"])
 
     for point in points:
-        # start an application container
-        os.system(cmd_start_container)
-        time.sleep(5)
+        for i in range(2):
+            # start an application container
+            os.system(cmd_start_container)
+            time.sleep(10)
 
-        # setup an expectation
-        os.system(cmd_add_expectation)
-        time.sleep(2)
+            # setup an expectation
+            os.system(cmd_add_expectation)
+            time.sleep(2)
 
-        # 8 mins common workload
-        start_at = int(time.time() * 1000)
-        workload_generator(8)
-        
-        # 2 mins fault workload
-        point["countdown"] = -1
-        point["mode"] = "throw_e"
-        # write_to_csv(tripleagent_config_csv, headers, [point])
-        time.sleep(1)
-        when_fi_started = int(time.time() * 1000)
-        workload_generator(2)
-        end_at = int(time.time() * 1000)
-        time.sleep(1)
+            # 8 mins common workload
+            start_at = int(time.time() * 1000)
+            workload_generator(8)
+            
+            # 2 mins common workload / fault workload
+            if i == 1:
+                point["countdown"] = -1
+                point["mode"] = "throw_e"
+                write_to_csv(tripleagent_config_csv, headers, [point])
+            time.sleep(2)
+            when_fi_started = int(time.time() * 1000)
+            workload_generator(2)
+            end_at = int(time.time() * 1000)
+            time.sleep(1)
 
-        # query Glowroot to get last 10 minuets record
-        request = requests.session()
-        response = request.get(url_query%(start_at, end_at))
-        ori_data = json.loads(response.content)
+            # query Glowroot to get last 10 minuets record
+            request = requests.session()
+            response = request.get(url_query%(start_at, end_at))
+            ori_data = json.loads(response.content)
 
-        # calculate causal impact of this specific exception
-        p, prob = causal_impact_analysis(ori_data["dataSeries"][0]["data"], when_fi_started)
-        point["tail-area probability"] = p
-        point["prob. of a causal effect"] = prob
+            # calculate causal impact of this specific exception
+            p, prob = causal_impact_analysis(ori_data["dataSeries"][0]["data"], when_fi_started)
+            if i == 1:
+                point["p fi"] = p
+                point["prob. fi"] = prob
+            else:
+                point["tail-area probability"] = p
+                point["prob. of a causal effect"] = prob
 
-        # clean up
-        os.system("docker stop $(docker ps -q)")
-        os.system("rm logs/perturbationPointsList.csv")
+            # clean up
+            os.system("docker stop $(docker ps -q)")
+            os.system("rm logs/perturbationPointsList.csv")
 
-    write_to_csv(perturbation_point_csv, headers, points)
+            write_to_csv(perturbation_point_csv, headers, points)
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
