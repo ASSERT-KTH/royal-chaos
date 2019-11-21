@@ -27,6 +27,10 @@ def write_to_csv(path, headers, rows):
         f_csv.writeheader()
         f_csv.writerows(rows)
 
+def write_to_json(path, data):
+    with open(path, 'w', newline='') as file:
+        file.write(json.dumps(data, indent=4))
+
 def workload_generator(duration):
     t_end = time.time() + 60 * duration
     cmd_workload = "curl -i --connect-timeout 1 -m 1 http://localhost:1080 > /dev/null 2>&1"
@@ -56,17 +60,17 @@ def causal_impact_analysis(ori_data, when_fi_started):
 
     causal_impact = CausalImpact(data_frame, pre_period, post_period, prior_level_sd = 0.1)
     
-    logging.info(causal_impact.summary())
     p = -1 # Posterior tail-area probability
     prob = -1 # Posterior prob. of a causal effect
     pattern = re.compile(r'Posterior tail-area probability p: (0\.\d+|[1-9]\d*\.\d+)\sPosterior prob. of a causal effect: (0\.\d+|[1-9]\d*\.\d+)%')
     match = pattern.search(causal_impact.summary())
     p = float(match.group(1))
     prob = float(match.group(2))
+    summary = causal_impact.summary(output='report')
+    report = causal_impact.summary(output='report')
     # causal_impact.plot()
-    # causal_impact.savefig('causal_impact_analysis.pdf')
 
-    return p, prob
+    return summary, report, p, prob
 
 def main():
     # load perturbation points list
@@ -109,14 +113,25 @@ def main():
             response = request.get(url_query%(start_at, end_at))
             ori_data = json.loads(response.content)
 
+            # persist the monitoring data
+            if not os.path.isdir("./monitoring_data"): os.system("mkdir ./monitoring_data")
+            monitoring_data = {"data": ori_data["dataSeries"][0]["data"], "when_fi_started": when_fi_started}
+            write_to_json("monitoring_data/%s-%d.json"%(point["key"], i), monitoring_data)
+
             # calculate causal impact of this specific exception
-            p, prob = causal_impact_analysis(ori_data["dataSeries"][0]["data"], when_fi_started)
+            summary, report, p, prob = causal_impact_analysis(ori_data["dataSeries"][0]["data"], when_fi_started)
             if i == 1:
                 point["p fi"] = p
                 point["prob. fi"] = prob
+                logging.info("FI execution, %s"%point["key"])
+                logging.info(summary)
+                logging.info(report)
             else:
                 point["tail-area probability"] = p
                 point["prob. of a causal effect"] = prob
+                logging.info("Normal execution, %s"%point["key"])
+                logging.info(summary)
+                logging.info(report)
 
             # clean up
             os.system("docker stop $(docker ps -q)")
