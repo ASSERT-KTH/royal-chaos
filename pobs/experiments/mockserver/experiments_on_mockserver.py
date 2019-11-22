@@ -52,21 +52,21 @@ def causal_impact_analysis(ori_data, when_fi_started):
         y.append(point[1])
         if post_period_index == 0 and when_fi_started <= point[0]:
             post_period_index = ori_data.index(point)
-    
+
     data_frame = pd.DataFrame({"timestamp": pd.to_datetime(x, unit="ms"), "y": y})
     data_frame = data_frame.set_index("timestamp")
     pre_period = [pd.to_datetime(ori_data[0][0], unit="ms"), pd.to_datetime(ori_data[post_period_index-1][0], unit="ms")]
     post_period = [pd.to_datetime(ori_data[post_period_index][0], unit="ms"), pd.to_datetime(ori_data[-1][0], unit="ms")]
 
     causal_impact = CausalImpact(data_frame, pre_period, post_period, prior_level_sd = 0.1)
-    
+
     p = -1 # Posterior tail-area probability
     prob = -1 # Posterior prob. of a causal effect
     pattern = re.compile(r'Posterior tail-area probability p: (0\.\d+|[1-9]\d*\.\d+)\sPosterior prob. of a causal effect: (0\.\d+|[1-9]\d*\.\d+)%')
     match = pattern.search(causal_impact.summary())
     p = float(match.group(1))
     prob = float(match.group(2))
-    summary = causal_impact.summary(output='report')
+    summary = causal_impact.summary()
     report = causal_impact.summary(output='report')
     # causal_impact.plot()
 
@@ -79,7 +79,7 @@ def main():
     cmd_start_container = 'docker run --rm -d -p 4000:4000 -e "TRIPLEAGENT_FILTER=org/mockserver" -e "TRIPLEAGENT_LINENUMBER=0" -v $PWD/logs:/home/tripleagent/logs -p 1080:1080 royalchaos/mockserver-pobs:latest'
     cmd_add_expectation = 'curl -X PUT "http://localhost:1080/mockserver/expectation" -d \'{"httpRequest" : {"method" : "GET", "path" : "/"}, "httpResponse" : {"body" : "some_response_body"} }\''
     url_query = 'http://localhost:4000/backend/jvm/gauges?agent-rollup-id=&from=%d&to=%d&gauge-name=java.lang%%3Atype%%3DMemory%%3AHeapMemoryUsage.used'
-    
+
     headers, points = read_from_csv(perturbation_point_csv)
     if "tail-area probability" not in headers: headers.extend(["tail-area probability", "prob. of a causal effect", "p fi", "prob. fi"])
 
@@ -96,7 +96,7 @@ def main():
             # 8 mins common workload
             start_at = int(time.time() * 1000)
             workload_generator(8)
-            
+
             # 2 mins common workload / fault workload
             if i == 1:
                 point["countdown"] = -1
