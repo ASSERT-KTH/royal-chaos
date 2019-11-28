@@ -53,13 +53,43 @@ def print_failure_categories(failure_categories):
     pretty_table.reversesort = True
     print(pretty_table)
 
-def analyze_base_logs(folderpath):
+def analyze_logs(folderpath, phase):
     failure_categories = {
-        "no such file or directory": {"count": 0, "pattern": r"no such file or directory"},
-        "iproute": {"count": 0, "pattern": r"iproute"},
-        "Permission denied": {"count": 0, "pattern": r"Permission denied"},
-        "invalid reference format": {"count": 0, "pattern": r"invalid reference format\n"}
+        "app-run": {
+            "Permission denied": {"count": 0, "pattern": r"Permission denied"},
+            "UnsupportedClassVersionError": {"count": 0, "pattern": r"UnsupportedClassVersionError"},
+            "Connection refused": {"count": 0, "pattern": r"Connection refused"},
+            "No command specified": {"count": 0, "pattern": r"No command specified"},
+            "bind 0.0.0.0:4000 failed": {"count": 0, "pattern": r"4000 failed: port is already allocated"},
+            "Operation not permitted": {"count": 0, "pattern": r"Operation not permitted"}
+        },
+        "app-build": {"returned a non-zero code": {"count": 0, "pattern": r"returned a non-zero code"}},
+        "base": {
+            "no such file or directory": {"count": 0, "pattern": r"no such file or directory"},
+            "iproute": {"count": 0, "pattern": r"iproute"},
+            "scratch is a reserved name": {"count": 0, "pattern": r"'scratch' is a reserved name"},
+            "Permission denied": {"count": 0, "pattern": r"Permission denied"},
+            "invalid reference format": {"count": 0, "pattern": r"invalid reference format\n"}
+        },
+        "sanity-check": {
+            "no such file or directory": {"count": 0, "pattern": r"no such file or directory"},
+            "no source files were specified": {"count": 0, "pattern": r"no source files were specified"},
+            "pull access denied": {"count": 0, "pattern": r"pull access denied"},
+            "unknown instruction": {"count": 0, "pattern": r"unknown instruction"},
+            "manifest unknown": {"count": 0, "pattern": r"manifest unknown"},
+            "invalid reference format": {"count": 0, "pattern": r"invalid reference format\n"},
+            "failed to process": {"count": 0, "pattern": r"failed to process"},
+            "no such host": {"count": 0, "pattern": r"no such host"},
+            "404 Not Found": {"count": 0, "pattern": r"404 Not Found"},
+            "403 Forbidden": {"count": 0, "pattern": r"403 Forbidden"},
+            "base name should not be blank": {"count": 0, "pattern": r"base name \S+ should not be blank"},
+            "the Dockerfile cannot be empty": {"count": 0, "pattern": r"the Dockerfile \(\S*\) cannot be empty"},
+            "repository name must be lowercase": {"count": 0, "pattern": r"repository name must be lowercase"},
+            "cannot be used on this platform": {"count": 0, "pattern": r"cannot be used on this platform"},
+            "returned a non-zero code": {"count": 0, "pattern": r"returned a non-zero code"}
+        }
     }
+
     other_failures = 0
     for entry in os.listdir(folderpath):
         if os.path.isfile(os.path.join(folderpath, entry)) and "stderr" in entry:
@@ -68,64 +98,21 @@ def analyze_base_logs(folderpath):
                 content_stdout = stdout.read()
 
                 hit = False
-                for category in failure_categories:
-                    if re.search(failure_categories[category]["pattern"], content_stderr) or re.search(failure_categories[category]["pattern"], content_stdout):
-                        failure_categories[category]["count"] = failure_categories[category]["count"] + 1
+                for category in failure_categories[phase]:
+                    if re.search(failure_categories[phase][category]["pattern"], content_stderr) or re.search(failure_categories[phase][category]["pattern"], content_stdout):
+                        failure_categories[phase][category]["count"] = failure_categories[phase][category]["count"] + 1
                         hit = True
-                        if category == "invalid reference format":
-                            logging.info(entry)
-                            logging.info(content_stderr)
                         break
                 if not hit:
                     logging.info(entry)
                     logging.info(content_stderr)
                     other_failures = other_failures + 1
-    failure_categories["others"] = {"count": other_failures, "pattern": "none"}
-    print_failure_categories(failure_categories)
-
-def analyze_sanity_check_logs(folderpath):
-    failure_categories = {
-        "no such file or directory": {"count": 0, "pattern": r"no such file or directory"},
-        "no source files were specified": {"count": 0, "pattern": r"no source files were specified"},
-        "pull access denied": {"count": 0, "pattern": r"pull access denied"},
-        "unknown instruction": {"count": 0, "pattern": r"unknown instruction"},
-        "manifest unknown": {"count": 0, "pattern": r"manifest unknown"},
-        "invalid reference format": {"count": 0, "pattern": r"invalid reference format\n"},
-        "failed to process": {"count": 0, "pattern": r"failed to process"},
-        "no such host": {"count": 0, "pattern": r"no such host"},
-        "404 Not Found": {"count": 0, "pattern": r"404 Not Found"},
-        "403 Forbidden": {"count": 0, "pattern": r"403 Forbidden"},
-        "base name should not be blank": {"count": 0, "pattern": r"base name \S+ should not be blank"},
-        "the Dockerfile cannot be empty": {"count": 0, "pattern": r"the Dockerfile \(\S*\) cannot be empty"},
-        "repository name must be lowercase": {"count": 0, "pattern": r"repository name must be lowercase"},
-        "cannot be used on this platform": {"count": 0, "pattern": r"cannot be used on this platform"},
-        "returned a non-zero code": {"count": 0, "pattern": r"returned a non-zero code"}
-    }
-    other_failures = 0
-    for entry in os.listdir(folderpath):
-        if os.path.isfile(os.path.join(folderpath, entry)) and "stderr" in entry:
-            with open(os.path.join(folderpath, entry), "rt") as logfile:
-                content = logfile.read()
-                hit = False
-                for category in failure_categories:
-                    if re.search(failure_categories[category]["pattern"], content):
-                        failure_categories[category]["count"] = failure_categories[category]["count"] + 1
-                        hit = True
-                        break
-                if not hit:
-                    logging.info(entry)
-                    logging.info(content)
-                    other_failures = other_failures + 1
-    failure_categories["others"] = {"count": other_failures, "pattern": "none"}
-    print_failure_categories(failure_categories)
+    failure_categories[phase]["others"] = {"count": other_failures, "pattern": "none"}
+    print_failure_categories(failure_categories[phase])
 
 def main():
     options = parse_options()
-
-    if options.phase == "sanity-check":
-        analyze_sanity_check_logs(options.folderpath)
-    elif options.phase == "base":
-        analyze_base_logs(options.folderpath)
+    analyze_logs(options.folderpath, options.phase)
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
