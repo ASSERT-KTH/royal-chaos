@@ -77,7 +77,7 @@ def main():
     # load perturbation points list
     perturbation_point_csv = "./perturbationPointsList.csv"
     tripleagent_config_csv = "./logs/perturbationPointsList.csv"
-    cmd_start_container = 'docker run --rm -d -p 4000:4000 -e "TRIPLEAGENT_FILTER=org/mockserver" -e "TRIPLEAGENT_LINENUMBER=0" -v $PWD/logs:/home/tripleagent/logs -p 1080:1080 royalchaos/mockserver-pobs:latest'
+    cmd_start_container = 'docker run --rm -d -p 8080:8080 -p 4000:4000 -e "TRIPLEAGENT_FILTER=org/openapitools/codegen" -e "TRIPLEAGENT_LINENUMBER=0" -v $PWD/logs:/home/tripleagent/logs royalchaos/openapi-generator-online-pobs:latest'
     url_query = 'http://localhost:4000/backend/jvm/gauges?agent-rollup-id=&from=%d&to=%d&gauge-name=java.lang%%3Atype%%3DMemory%%3AHeapMemoryUsage.used'
 
     headers, points = read_from_csv(perturbation_point_csv)
