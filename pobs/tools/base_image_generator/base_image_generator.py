@@ -244,10 +244,18 @@ def test_pobs_base_image(image_name, image_tag):
             if not(glowroot_attached and tripleagent_attached and exception_thrown and tripleagent_csv and file_not_exist):
                 logging.warn("Failed during the test with a fault injection")
                 logging.warn({"glowroot_attached": glowroot_attached, "tripleagent_attached": tripleagent_attached, "exception_thrown": exception_thrown, "tripleagent_csv": tripleagent_csv, "file_not_exist": file_not_exist})
+                logging.warn("stdout:")
+                logging.warn(stdout)
+                logging.warn("stderr:")
+                logging.warn(stderr)
                 test_result = False
         else:
             logging.warn("Failed during the test without fault injection")
             logging.warn({"glowroot_attached": glowroot_attached, "tripleagent_attached": tripleagent_attached, "tripleagent_csv": tripleagent_csv, "file_correctness": file_correctness})
+            logging.warn("stdout:")
+            logging.warn(stdout)
+            logging.warn("stderr:")
+            logging.warn(stderr)
             test_result = False
 
         if test_result:
