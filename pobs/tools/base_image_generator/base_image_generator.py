@@ -196,8 +196,8 @@ def test_pobs_base_image(image_name, image_tag):
 
         run_command_normal = 'docker run --rm --name pobs-test -p 4000:4000 -e "TRIPLEAGENT_FILTER=pobs" -v $PWD/logs:/home/tripleagent/logs -v $PWD/downloaded:/root/downloaded royalchaos/pobs-integration-test:latest'
         run_command_fi = 'docker run --rm --name pobs-test -p 4000:4000 -e "TRIPLEAGENT_FILTER=pobs" -e "TRIPLEAGENT_EFILTER=java/io/IOException" -e "TRIPLEAGENT_DEFAULTMODE=throw_e"  -v $PWD/logs:/home/tripleagent/logs -v $PWD/downloaded:/root/downloaded royalchaos/pobs-integration-test:latest'
-        target_file = "./downloaded/EIN-understanding-and-modeling-in-DRAM-ECC_dsn19.pdf"
-        correct_md5 = "e797219bfc25ff2ec8a95c0ad8d9b48b"
+        target_file = "./downloaded/conference-latex-template_10-17-19.zip"
+        correct_md5 = "116071955da8546129e5aac684f23678"
 
         # test the application without fault injection
         stdout, stderr, exitcode = run_integration_test_container(run_command_normal, "pobs-test", 10)

@@ -18,8 +18,8 @@ public class App {
     }
 
     public static void downloadDSN2019BestPaper() throws InterruptedException, IOException {
-        String fileUrl = "https://people.inf.ethz.ch/omutlu/pub/EIN-understanding-and-modeling-in-DRAM-ECC_dsn19.pdf";
-        String filePath = "./downloaded/EIN-understanding-and-modeling-in-DRAM-ECC_dsn19.pdf";
+        String fileUrl = "https://www.ieee.org/content/dam/ieee-org/ieee/web/org/pubs/conference-latex-template_10-17-19.zip";
+        String filePath = "./downloaded/conference-latex-template_10-17-19.zip";
 
         File targetFile = new File(filePath);
 
