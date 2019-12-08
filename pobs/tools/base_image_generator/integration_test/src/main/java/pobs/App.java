@@ -23,7 +23,7 @@ public class App {
 
         File targetFile = new File(filePath);
 
-        FileUtils.copyURLToFile(new URL(fileUrl), targetFile, 1000, 1000);
+        FileUtils.copyURLToFile(new URL(fileUrl), targetFile);
         targetFile.setReadable(true, false);
         targetFile.setWritable(true, false);
 
