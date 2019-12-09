@@ -180,6 +180,8 @@ def test_pobs_base_image(image_name, image_tag):
         else: snippet = "ubuntu.tpl"
     elif "busybox" in image_name:
         snippet = "busybox.tpl"
+    elif "centos" in image_name:
+        snippet = "centos.tpl"
 
     with open(os.path.join(base_path, snippet), 'rt') as snippet_file, open(dockerfile_name, 'wt') as target:
         contents = snippet_file.readlines()

@@ -1,4 +1,4 @@
-RUN yum install -y iproute2
+# RUN yum install -y iproute2
 
 COPY ./base_files/tripleagent-perturbation-jar-with-dependencies.jar /home/tripleagent/
 COPY ./base_files/glowroot/ /home/tripleagent/glowroot/
