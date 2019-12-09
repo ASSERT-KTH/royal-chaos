@@ -8,7 +8,7 @@ from optparse import OptionParser, OptionGroup
 __version__ = "0.1"
 OPTIONS = None
 WHERE_IS_GENERATOR = "../base_image_generator"
-CMD_TRANSFORM_DOCKERFILE = "python ../base_image_generator/base_image_generator.py -f %s -o %s --build" # path to the Dockerfile and output folder
+CMD_TRANSFORM_DOCKERFILE = "python ../base_image_generator/base_image_generator.py -f %s -o %s --build --test" # path to the Dockerfile and output folder
 CMD_BUILD_IMAGE = "docker build -t %s -f %s ." # tag name and Dockerfile path
 CMD_RUN_APPLICATION = "docker run --rm -p 4000:4000 %s-pobs:%d" # give the project name and the index of the dockerfile
 CLEAN_CONTAINERS_SINCE = "CONTAINER_NAME" # give a container name since which the created containers will be removed
@@ -179,6 +179,7 @@ def evaluate_project(project):
                                 dump_logs(stdout, stderr, "./logs/app-run/", "%s_%d_apprun"%(project_full_name, fileindex))
                 fileindex = fileindex + 1
                 os.system("docker stop $(docker ps -q)") # stop all containers first
+                time.sleep(1)
         # clean up: delete the built images
         clean_up_project(project_name)
     return project
