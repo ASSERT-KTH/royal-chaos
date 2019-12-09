@@ -1,14 +1,5 @@
-java_installed() {
-  local result
-  if [[ -n $(type -p java) ]]
-  then
-    result="yes"
-  else
-  	result="no"
-  fi
-  echo "$result"
-}
+java -version
 
-if [ $(java_installed) = "no" ]; then
+if ! [ $? -eq 0 ]; then
   apt-get update && apt-get install -y openjdk-8-jdk ;
 fi
