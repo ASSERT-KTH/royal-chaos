@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
 
-import os, time, json, tempfile, subprocess
+import os, time, json, tempfile, subprocess, signal
 import logging
 from optparse import OptionParser, OptionGroup
 
@@ -35,10 +35,14 @@ def parse_options():
     
     return options
 
-def run_command(command, workdir):
+def run_command(command, workdir, timeout=600):
     with tempfile.NamedTemporaryFile(mode="w+b") as stdout_f, tempfile.NamedTemporaryFile(mode="w+b") as stderr_f:
-        p = subprocess.Popen(command, stdout=stdout_f.fileno(), stderr=stderr_f.fileno(), close_fds=True, shell=True, cwd=workdir)
-        exit_code = p.wait()
+        p = subprocess.Popen(command, stdout=stdout_f.fileno(), stderr=stderr_f.fileno(), close_fds=True, shell=True, cwd=workdir, preexec_fn=os.setsid)
+        try:
+            exit_code = p.wait(timeout=timeout)
+        except subprocess.TimeoutExpired as err:
+            os.killpg(os.getpgid(p.pid), signal.SIGTERM)
+            exit_code = -1
         stdout_f.flush()
         stderr_f.flush()
         stdout_f.seek(0, os.SEEK_SET)
