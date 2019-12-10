@@ -35,6 +35,9 @@ def main():
 
     with open(options.filepath, 'rt') as file:
         projects = json.load(file)
+
+        all_unique_base_images = dict()
+        experiment_unique_base_images = dict()
         analyzed_project_count = 0
         built_project_count = 0
         run_project_count = 0
@@ -48,6 +51,11 @@ def main():
         pobs_application_run_passed_count = 0
 
         for project in projects:
+            if project["number_of_dockerfiles"] > 0:
+                for dockerfile in project["info_from_dockerfiles"]:
+                    for base_image in dockerfile["base_images"]:
+                        all_unique_base_images[base_image[4:].strip()] = 1
+
             if "is_able_to_clone" in project and project["is_able_to_clone"]:
                 analyzed_project_count = analyzed_project_count + 1
                 if len(project["is_able_to_build"]) > 0:
@@ -59,6 +67,7 @@ def main():
                     for dockerfile in project["info_from_dockerfiles"]:
                         if dockerfile["sanity_check"] == "successful":
                             sanity_check_passed_count = sanity_check_passed_count + 1;
+                            experiment_unique_base_images[dockerfile["base_images"][-1][4:].strip()] = 1
                             if dockerfile["pobs_base_generation"] == "successful":
                                 pobs_base_generation_passed_count = pobs_base_generation_passed_count + 1
                                 if dockerfile["pobs_application_build"] == "successful":
@@ -67,6 +76,8 @@ def main():
                                     if dockerfile["tripleagent_attached"]: tripleagent_attached_count = tripleagent_attached_count + 1
                                     if dockerfile["pobs_application_run"] == "successful": pobs_application_run_passed_count = pobs_application_run_passed_count + 1
 
+        logging.info("the total number of unique base images: %d"%len(all_unique_base_images))
+        logging.info("the number of unique base images under evaluation: %d"%len(experiment_unique_base_images))
         logging.info("analyzed_project_count: %d"%analyzed_project_count)
         logging.info("built_project_count: %d"%built_project_count)
         logging.info("run_project_count: %d"%run_project_count)
