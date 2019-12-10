@@ -5,6 +5,8 @@ Automatic Observability and Chaos for Dockerized Java Applications
 
 This section describes an empirical study conducted on 1000 public Java projects on GitHub to analyze the popularity of Docker base images and their versions.
 
+The dataset of 867 Dockerfiles is in folder <https://github.com/KTH/royal-chaos/tree/master/pobs/dataset>
+
 ### Methodology
 
 We use [GitHub API v3](https://developer.github.com/v3/) to get a list of 1000 repositories, sorted by the number of stars, that use Java as their primary programming language, and mention ‘docker’ in their readme.
