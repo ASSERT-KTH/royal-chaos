@@ -35,9 +35,12 @@ def main():
 
     with open(options.filepath, 'rt') as file:
         projects = json.load(file)
+        top_25_base_images = ["java:8", "openjdk:8-jdk-alpine", "openjdk:8-jre-alpine", "openjdk:8-jre", "java:8-jre", "ubuntu:16.04", "frolvlad/alpine-oraclejdk8:slim", "java:8-jre-alpine", "busybox:latest", "openjdk:8", "ubuntu:14.04", "ubuntu:18.04", "scratch", "openjdk:8u151-jre-alpine", "java:openjdk-8u111-alpine", "openjdk:8-jdk", "openjdk:8-alpine", "openjdk:8u171-alpine3.7", "java:8-jdk", "glassfish:4.1", "ubuntu", "ubuntu:trusty", "java:7", "anapsix/alpine-java:8_jdk", "openjdk:8u151-jre-alpine3.7"]
+        top_25_base_images_covered_projects = dict()
 
         all_unique_base_images = dict()
         experiment_unique_base_images = dict()
+        augmented_base_images = dict()
         analyzed_project_count = 0
         built_project_count = 0
         run_project_count = 0
@@ -55,6 +58,8 @@ def main():
                 for dockerfile in project["info_from_dockerfiles"]:
                     for base_image in dockerfile["base_images"]:
                         all_unique_base_images[base_image[4:].strip()] = 1
+                        if base_image[4:].strip() in top_25_base_images:
+                            top_25_base_images_covered_projects[project["full_name"]] = 1
 
             if "is_able_to_clone" in project and project["is_able_to_clone"]:
                 analyzed_project_count = analyzed_project_count + 1
@@ -70,14 +75,17 @@ def main():
                             experiment_unique_base_images[dockerfile["base_images"][-1][4:].strip()] = 1
                             if dockerfile["pobs_base_generation"] == "successful":
                                 pobs_base_generation_passed_count = pobs_base_generation_passed_count + 1
+                                augmented_base_images[dockerfile["base_images"][-1][4:].strip()] = 1
                                 if dockerfile["pobs_application_build"] == "successful":
                                     pobs_application_build_passed_count = pobs_application_build_passed_count + 1
                                     if dockerfile["glowroot_attached"]: glowroot_attached_count = glowroot_attached_count + 1
                                     if dockerfile["tripleagent_attached"]: tripleagent_attached_count = tripleagent_attached_count + 1
                                     if dockerfile["pobs_application_run"] == "successful": pobs_application_run_passed_count = pobs_application_run_passed_count + 1
 
+        logging.info("the total number of projects covered by the top 25 base images: %d"%len(top_25_base_images_covered_projects))
         logging.info("the total number of unique base images: %d"%len(all_unique_base_images))
         logging.info("the number of unique base images under evaluation: %d"%len(experiment_unique_base_images))
+        logging.info("the number of unique augmented base images: %d"%len(augmented_base_images))
         logging.info("analyzed_project_count: %d"%analyzed_project_count)
         logging.info("built_project_count: %d"%built_project_count)
         logging.info("run_project_count: %d"%run_project_count)
