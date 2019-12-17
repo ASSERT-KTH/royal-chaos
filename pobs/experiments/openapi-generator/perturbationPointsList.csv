@@ -1,13 +1,13 @@
-key,className,methodName,methodSignature,exceptionType,exceptionIndexNumber,lineIndexNumber,countdown,rate,mode
-7AD7BF7C26C89C1EC6B245180D171736,org/openapitools/codegen/templating/MustacheEngineAdapter,compileTemplate,(Lorg/openapitools/codegen/api/TemplatingGenerator;Ljava/util/Map;Ljava/lang/String;)Ljava/lang/String;,java/io/IOException,0,48,1,1,off
-E2DF855C44B91FE4B0D903C88A9AB8B1,org/openapitools/codegen/templating/MustacheEngineAdapter,lambda$compileTemplate$0,(Lorg/openapitools/codegen/api/TemplatingGenerator;Ljava/lang/String;)Ljava/io/Reader;,java/lang/Exception,0,49,1,1,off
-0EC8F8637E1FE2CD090473D184A2C2F3,org/openapitools/codegen/DefaultGenerator,generateModelTests,(Ljava/util/List;Ljava/util/Map;Ljava/lang/String;)V,java/io/IOException,0,284,1,1,off
-62E2B6FB5B5999633CE25D77CF09EC2A,org/openapitools/codegen/DefaultGenerator,generateModelDocumentation,(Ljava/util/List;Ljava/util/Map;Ljava/lang/String;)V,java/io/IOException,0,303,1,1,off
-5CD7A5501BAD4EAE4AAA108B482E763C,org/openapitools/codegen/DefaultGenerator,generateModel,(Ljava/util/List;Ljava/util/Map;Ljava/lang/String;)V,java/io/IOException,0,322,1,1,off
-CAA7A3C69BEF2224E49702CD14D9DBB6,org/openapitools/codegen/DefaultGenerator,processTemplateToFile,(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;,java/io/IOException,0,957,1,1,off
-6A51ED843B52F758D1BEF0F287F14812,org/openapitools/codegen/AbstractGenerator,writeToFile,(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;,java/io/IOException,0,53,1,1,off
-AD6CF653191A4706E9CCE2722E7DEE56,org/openapitools/codegen/AbstractGenerator,writeToFile,(Ljava/lang/String;[B)Ljava/io/File;,java/io/IOException,0,66,1,1,off
-3E75273F1E5A56366D11736255AE12E5,org/openapitools/codegen/AbstractGenerator,writeToFileRaw,(Ljava/lang/String;[B)Ljava/io/File;,java/io/IOException,0,102,1,1,off
-3BE022F0D706349515D16801705C91D1,org/openapitools/codegen/online/service/ZipUtil,compressFiles,(Ljava/util/List;Ljava/lang/String;)V,java/io/IOException,0,54,1,1,off
-D785DA6C71725B647F026FD1793AFE50,org/openapitools/codegen/online/service/ZipUtil,addFolderToZip,(Ljava/io/File;Ljava/lang/String;Ljava/util/zip/ZipOutputStream;)V,java/io/FileNotFoundException,0,79,1,1,off
-8C6E94C9CF27D5E74EB0396159C086AF,org/openapitools/codegen/online/service/ZipUtil,addFolderToZip,(Ljava/io/File;Ljava/lang/String;Ljava/util/zip/ZipOutputStream;)V,java/io/IOException,1,79,1,1,off
+key,className,methodName,methodSignature,exceptionType,exceptionIndexNumber,lineIndexNumber,countdown,rate,mode,tail-area probability,prob. of a causal effect,p fi,prob. fi
+7AD7BF7C26C89C1EC6B245180D171736,org/openapitools/codegen/templating/MustacheEngineAdapter,compileTemplate,(Lorg/openapitools/codegen/api/TemplatingGenerator;Ljava/util/Map;Ljava/lang/String;)Ljava/lang/String;,java/io/IOException,0,48,-1,1,throw_e,0.39,61.44,0.22,77.62
+E2DF855C44B91FE4B0D903C88A9AB8B1,org/openapitools/codegen/templating/MustacheEngineAdapter,lambda$compileTemplate$0,(Lorg/openapitools/codegen/api/TemplatingGenerator;Ljava/lang/String;)Ljava/io/Reader;,java/lang/Exception,0,49,-1,1,throw_e,0.47,52.65,0.17,83.22
+0EC8F8637E1FE2CD090473D184A2C2F3,org/openapitools/codegen/DefaultGenerator,generateModelTests,(Ljava/util/List;Ljava/util/Map;Ljava/lang/String;)V,java/io/IOException,0,284,-1,1,throw_e,0.36,63.54,0.27,73.43
+62E2B6FB5B5999633CE25D77CF09EC2A,org/openapitools/codegen/DefaultGenerator,generateModelDocumentation,(Ljava/util/List;Ljava/util/Map;Ljava/lang/String;)V,java/io/IOException,0,303,-1,1,throw_e,0.45,55.34,0.3,69.63
+5CD7A5501BAD4EAE4AAA108B482E763C,org/openapitools/codegen/DefaultGenerator,generateModel,(Ljava/util/List;Ljava/util/Map;Ljava/lang/String;)V,java/io/IOException,0,322,-1,1,throw_e,0.36,63.54,0.35,65.03
+CAA7A3C69BEF2224E49702CD14D9DBB6,org/openapitools/codegen/DefaultGenerator,processTemplateToFile,(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;,java/io/IOException,0,957,-1,1,throw_e,0.43,57.04,0.29,71.33
+6A51ED843B52F758D1BEF0F287F14812,org/openapitools/codegen/AbstractGenerator,writeToFile,(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;,java/io/IOException,0,53,-1,1,throw_e,0.42,58.44,0.24,75.82
+AD6CF653191A4706E9CCE2722E7DEE56,org/openapitools/codegen/AbstractGenerator,writeToFile,(Ljava/lang/String;[B)Ljava/io/File;,java/io/IOException,0,66,-1,1,throw_e,0.42,57.64,0.18,81.72
+3E75273F1E5A56366D11736255AE12E5,org/openapitools/codegen/AbstractGenerator,writeToFileRaw,(Ljava/lang/String;[B)Ljava/io/File;,java/io/IOException,0,102,-1,1,throw_e,0.36,64.44,0.31,69.23
+3BE022F0D706349515D16801705C91D1,org/openapitools/codegen/online/service/ZipUtil,compressFiles,(Ljava/util/List;Ljava/lang/String;)V,java/io/IOException,0,54,-1,1,throw_e,0.42,57.54,0.44,55.54
+D785DA6C71725B647F026FD1793AFE50,org/openapitools/codegen/online/service/ZipUtil,addFolderToZip,(Ljava/io/File;Ljava/lang/String;Ljava/util/zip/ZipOutputStream;)V,java/io/FileNotFoundException,0,79,-1,1,throw_e,0.43,57.44,0.49,51.05
+8C6E94C9CF27D5E74EB0396159C086AF,org/openapitools/codegen/online/service/ZipUtil,addFolderToZip,(Ljava/io/File;Ljava/lang/String;Ljava/util/zip/ZipOutputStream;)V,java/io/IOException,1,79,-1,1,throw_e,0.34,65.63,0.48,51.75
