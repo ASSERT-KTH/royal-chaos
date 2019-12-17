@@ -57,6 +57,7 @@ def analyze_logs(folderpath, phase):
     failure_categories = {
         "app-run": {
             "Permission denied": {"count": 0, "pattern": r"Permission denied"},
+            "Error: Invalid or corrupt jarfile": {"count": 0, "pattern": r"Error: Invalid or corrupt jarfile"},
             "UnsupportedClassVersionError": {"count": 0, "pattern": r"UnsupportedClassVersionError"},
             "Connection refused": {"count": 0, "pattern": r"Connection refused"},
             "No command specified": {"count": 0, "pattern": r"No command specified"},
@@ -65,6 +66,8 @@ def analyze_logs(folderpath, phase):
         },
         "app-build": {"returned a non-zero code": {"count": 0, "pattern": r"returned a non-zero code"}},
         "base": {
+            "install_openjdk8.sh": {"count": 0, "pattern": r"install_openjdk8\.sh"},
+            "busybox installation": {"count": 0, "pattern": r"curl https://mail-tp\.fareoffice\.com"},
             "no such file or directory": {"count": 0, "pattern": r"no such file or directory"},
             "iproute": {"count": 0, "pattern": r"iproute"},
             "scratch is a reserved name": {"count": 0, "pattern": r"'scratch' is a reserved name"},
@@ -91,6 +94,7 @@ def analyze_logs(folderpath, phase):
     }
 
     other_failures = 0
+    empty_stderr = 0
     for entry in os.listdir(folderpath):
         if os.path.isfile(os.path.join(folderpath, entry)) and "stderr" in entry:
             with open(os.path.join(folderpath, entry), "rt") as stderr, open(os.path.join(folderpath, entry.replace("stderr", "stdout")), "rt") as stdout:
@@ -104,9 +108,13 @@ def analyze_logs(folderpath, phase):
                         hit = True
                         break
                 if not hit:
-                    logging.info(entry)
-                    logging.info(content_stderr)
-                    other_failures = other_failures + 1
+                    if len(content_stderr) == 0:
+                        empty_stderr = empty_stderr + 1
+                    else:
+                        logging.info(entry)
+                        logging.info(content_stderr)
+                        other_failures = other_failures + 1
+    failure_categories[phase]["Empty in stderr (may need extra arguments)"] = {"count": empty_stderr, "pattern": "none"}
     failure_categories[phase]["others"] = {"count": other_failures, "pattern": "none"}
     print_failure_categories(failure_categories[phase])
 
