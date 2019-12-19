@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # Filename: pull_dockerfiles.py
 
-import os, sys, shutil, time, json, logging
+import os, sys, shutil, tempfile, json, logging
 from optparse import OptionParser, OptionGroup
 
 __version__ = "0.1"
@@ -19,10 +19,22 @@ def parse_options():
         help = 'The path to the analysis result (json format)'
     )
 
+    parser.add_option('-o', '--output',
+        action = 'store',
+        type = 'string',
+        dest = 'filepath',
+        help = 'The path to save the actual Dockerfiles'
+    )
+
     parser.add_option('-c', '--clean',
         action = 'store_true',
         dest = 'clean',
         help = 'Clean the dataset, remove unrelated projects.'
+    )
+
+    parser.set_defaults(
+        output = './',
+        clean = False
     )
 
     options, args = parser.parse_args()
@@ -34,6 +46,15 @@ def parse_options():
         parser.error("%s should be a json file."%options.filepath)
     
     return options
+
+def copy_dockerfiles(project, project_path, output_path):
+    if not os.path.exists(os.path.join(output_path, project["name"])):
+        os.mkdir(os.path.join(output_path, project["name"]))
+
+    file_index = 0
+    for dockerfile in project["info_from_dockerfiles"]:
+        shutil.copyfile(os.path.join(project_path, dockerfile["path"]), os.path.join(output_path, project["name"], 'Dockerfile-%d'%file_index))
+        file_index = file_index + 1
 
 def main():
     options = parse_options()
@@ -61,6 +82,27 @@ def main():
 
         with open(options.filepath, 'wt') as file:
             json.dump(final_dataset, file, indent = 4)
+    else:
+        with open(options.filepath, 'rt') as file:
+            projects = json.load(file)
+
+            for project in projects:
+                with tempfile.TemporaryDirectory() as tmpdir:
+                    tmprepo = os.path.join(tmpdir, project["name"])
+                    goodrepo = os.system("cd %s && git clone %s"%(tmpdir, project["clone_url"])) == 0
+                    if goodrepo:
+                        goodcheckout = os.system("cd %s && git checkout %s"%(tmprepo, project["commit_sha"])) == 0
+                        if goodcheckout:
+                            copy_dockerfiles(project, tmprepo, options.output)
+                        else:
+                            project["note"] = "the commit is no longer avaliable"
+                            logging.error("failed to checkout the specific commit of repo %s, commit %s"%(project["clone_url"], project["commit_sha"]))
+                    else:
+                        project["note"] = "the repo is no longer avaliable"
+                        logging.error("failed to clone repo %s"%project["clone_url"])
+
+        with open(options.filepath, "wt") as file:
+            json.dump(projects, file, indent = 4)
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
