@@ -1,0 +1,3 @@
+# Dummy container
+
+FROM ubuntu
