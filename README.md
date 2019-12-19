@@ -27,3 +27,9 @@ ChaosOrca is a tool for doing Chaos Engineering on containers by perturbing syst
 
 * Code: [chaosorca](https://github.com/KTH/royal-chaos/tree/master/chaosorca)
 * Paper: [Observability and Chaos Engineering on System Calls for Containerized Applications in Docker (Jesper Simonsson, Long Zhang, Brice Morin, Benoit Baudry and Martin Monperrus)](https://arxiv.org/pdf/1907.13039)
+
+## POBS
+POBS is an approach that automatically augments Docker images to have improved observability and fault injection capabilities for Java applications.
+
+* Code: [pobs](https://github.com/KTH/royal-chaos/tree/master/pobs)
+* Paper: [Automatic Observability for Dockerized Java Applications (Long Zhang, Deepika Tiwari, Brice Morin, Benoit Baudry, Martin Monperrus)](https://arxiv.org/abs/1912.06914)

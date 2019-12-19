@@ -1,4 +1,4 @@
-# POBS (working in progress)
+# POBS
 Automatic Observability and Chaos for Dockerized Java Applications
 
 ## Empirical Study of Dockerfiles in Java Applications
