@@ -10,8 +10,9 @@ More details in the paper: [TripleAgent: Monitoring, Perturbation and Failure-ob
 
 ## Talks about TripleAgent
 
-- [The 2nd Vienna Software Seminar (VSS) on DevOps and Microservice APIs, Vienna, Austria, Thu, Aug 29, 2019](https://vss.swa.univie.ac.at/2019/)
-- [The 30th International Symposium on Software Reliability Engineering (ISSRE 2019), RS 4, Wed, Oct 30, 2019)](http://2019.issre.net/)
+- [The 2nd Vienna Software Seminar (VSS) on DevOps and Microservice APIs, Vienna, Austria, Thu, Aug 29, 2019](https://vss.swa.univie.ac.at/2019/)  
+- [The 30th International Symposium on Software Reliability Engineering (ISSRE 2019), RS 4, Wed, Oct 30, 2019)](http://2019.issre.net/)  
+- [CREST/PWL Special Event in London, UK, Sun, Jan 19, 2020](https://www.meetup.com/Papers-We-Love-London/events/266943387/)  
 - [Conf42: Chaos Engineering, London, UK, Thu, Jan 23, 2020](https://www.conf42.com/)
 
 ## How to conduct an experiment using TripleAgent
