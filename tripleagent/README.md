@@ -6,7 +6,7 @@ TripleAgent is a system for fault injection in production for Java applications.
 - Perturbation agent: The perturbation agent injects specific exceptions at systematically identified locations.
 - Failure-oblivious agent: The failure-oblivious agent does failure oblivious computing, which is the concept of automatically modifying software for surviving unanticipated errors.
 
-More details in the paper: [TripleAgent: Monitoring, Perturbation and Failure-obliviousness for Automated Resilience Improvement in Java Applications, Long Zhang and Martin Monperrus, ISSRE 2019](https://arxiv.org/abs/1812.10706)
+More details in the paper: [TripleAgent: Monitoring, Perturbation and Failure-obliviousness for Automated Resilience Improvement in Java Applications](https://arxiv.org/pdf/1812.10706), Long Zhang and Martin Monperrus, ISSRE 2019, [doi:10.1109/issre.2019.00021](https://doi.org/10.1109/issre.2019.00021)
 
 ## Talks about TripleAgent
 
