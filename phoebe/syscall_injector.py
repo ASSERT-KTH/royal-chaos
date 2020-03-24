@@ -10,6 +10,7 @@ import argparse
 from bcc import BPF
 
 prog = """
+#include <uapi/linux/ptrace.h>
 #include <linux/errno.h>
 
 struct debug_message {
@@ -35,8 +36,10 @@ int inject_when_exit(struct pt_regs *ctx)
     {
         // calculate the countdown if necessary
         %s
-        // override the return value
-        bpf_override_return(ctx, %s);
+        // override the return value, only when the original return value >= 0
+        int ret = PT_REGS_RC(ctx);
+        if (ret >= 0)
+            bpf_override_return(ctx, %s);
         return 0;
     }
 }
