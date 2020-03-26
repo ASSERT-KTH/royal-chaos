@@ -38,12 +38,14 @@ int inject_when_exit(struct pt_regs *ctx)
         %s
         // override the return value, only when the original return value >= 0
         int ret = PT_REGS_RC(ctx);
+
         if (ret >= 0)
             bpf_override_return(ctx, %s);
         return 0;
     }
 }
 """
+bpf = None
 
 def calculate_probability(probability):
     if probability == 1:
@@ -73,6 +75,8 @@ def calculate_countdown(count):
     return snippet
 
 def print_debug_info(cpu, data, size):
+    global bpf
+
     event = bpf["events"].event(data)
     print(event.pid)
 
@@ -99,6 +103,7 @@ def get_arguments():
 
 def main():
     global prog
+    global bpf
 
     args = get_arguments()
     prog = prog%(args.pid, calculate_probability(args.probability), calculate_countdown(args.count), args.errorno)
