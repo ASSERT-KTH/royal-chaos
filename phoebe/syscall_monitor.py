@@ -60,8 +60,8 @@ parser.add_argument("-L", "--latency", action="store_true",
     help="collect syscall latency")
 parser.add_argument("-m", "--milliseconds", action="store_true",
     help="display latency in milliseconds (default: microseconds)")
-parser.add_argument("-P", "--process", action="store_true",
-    help="count by process and not by syscall")
+parser.add_argument("-P", "--port", type=int,
+    help="the port number which is used to export metrics to prometheus")
 parser.add_argument("-l", "--list", action="store_true",
     help="print list of recognized syscalls and exit")
 parser.add_argument("--ebpf", action="store_true",
@@ -71,6 +71,8 @@ if args.duration and not args.interval:
     args.interval = args.duration
 if not args.interval:
     args.interval = 99999999
+if not args.port:
+    args.port = 8000
 
 if args.list:
     for grp in izip_longest(*(iter(sorted(syscalls.values())),) * 4):
@@ -124,13 +126,9 @@ TRACEPOINT_PROBE(raw_syscalls, sys_exit) {
         return 0;
 #endif
 
-#ifdef BY_PROCESS
-    u32 key = pid_tgid >> 32;
-#else
     u32 key = args->id;
     if (args->ret < 0)
         key = args->id + -(args->ret * 10000);
-#endif
 
 #ifdef LATENCY
     struct data_t *val, zero = {};
@@ -163,8 +161,6 @@ if args.errno:
     text = "#define FILTER_ERRNO %d\n" % abs(args.errno) + text
 if args.latency:
     text = "#define LATENCY\n" + text
-if args.process:
-    text = "#define BY_PROCESS\n" + text
 if args.ebpf:
     print(text)
     exit()
@@ -177,7 +173,6 @@ def print_stats():
     else:
         print_count_stats()
 
-agg_colname = "PID    COMM" if args.process else "SYSCALL"
 time_colname = "TIME (ms)" if args.milliseconds else "TIME (us)"
 
 def comm_for_pid(pid):
@@ -186,20 +181,14 @@ def comm_for_pid(pid):
     except Exception:
         return b"[unknown]"
 
-def agg_colval(key):
-    if args.process:
-        return b"%-6d %-15s" % (key.value, comm_for_pid(key.value))
-    else:
-        return syscall_name(key.value % 10000)
-
 def print_count_stats():
     data = bpf["data"]
     print("[%s]" % strftime("%H:%M:%S"))
-    print("%-22s %8s" % (agg_colname, "COUNT"))
+    print("%-22s %8s" % ("SYSCALL", "COUNT"))
     for k, v in sorted(data.items(), key=lambda kv: -kv[1].value)[:args.top]:
         if k.value == 0xFFFFFFFF:
             continue    # happens occasionally, we don't need it
-        printb(b"%-22s %8d" % (agg_colval(k), v.value))
+        printb(b"%-22s %8d" % (syscall_name(k.value % 10000), v.value))
     print("")
     data.clear()
 
@@ -212,7 +201,7 @@ def print_latency_stats():
 
     data = bpf["data"]
     print("[%s]" % strftime("%H:%M:%S"))
-    print("%-22s %8s %16s %12s %12s" % (agg_colname, "COUNT", time_colname, "ERRORNO", "PERCENTAGE"))
+    print("%-22s %8s %16s %12s %12s" % ("SYSCALL", "COUNT", time_colname, "ERRORNO", "PERCENTAGE"))
 
     data_summary = dict()
     for k, v in sorted(data.items(),
@@ -289,7 +278,7 @@ c_labels = ['hostname', 'application_name', 'pid', 'layer', 'syscall_name', 'err
 c_number_total = Counter('failed_syscalls_total', 'Failed system calls in a process', c_labels)
 c_latency_total = Counter('failed_syscalls_latency_total', 'The total execution time spent by failed system calles in a process', c_labels)
 g_failure_rate = Gauge('syscalls_failure_rate', 'The rate of failures categorized by the types of system calls.', c_labels)
-start_http_server(8000)
+start_http_server(args.port)
 
 while True:
     try:
