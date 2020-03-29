@@ -1,0 +1,54 @@
+{
+  "experiment name": "An example",
+  "experiment description": "An example of fault injection experiments on HedWig",
+  "experiments": [
+    {
+      "syscall_name": "accept",
+      "error_code": "EAGAIN",
+      "failure_rate": 0.5,
+      "experiment duration": 120
+    },
+    {
+      "syscall_name": "accept",
+      "error_code": "EAGAIN",
+      "failure_rate": 0.75,
+      "experiment duration": 120
+    },
+    {
+      "syscall_name": "accept",
+      "error_code": "EAGAIN",
+      "failure_rate": 1,
+      "experiment duration": 120
+    },
+    {
+      "syscall_name": "read",
+      "error_code": "EAGAIN",
+      "failure_rate": 0.5,
+      "experiment duration": 120
+    },
+    {
+      "syscall_name": "read",
+      "error_code": "EAGAIN",
+      "failure_rate": 0.75,
+      "experiment duration": 120
+    },
+    {
+      "syscall_name": "read",
+      "error_code": "EAGAIN",
+      "failure_rate": 1,
+      "experiment duration": 120
+    },
+    {
+      "syscall_name": "connect",
+      "error_code": "ENOENT",
+      "failure_rate": 0.75,
+      "experiment duration": 120
+    },
+    {
+      "syscall_name": "connect",
+      "error_code": "ENOENT",
+      "failure_rate": 1,
+      "experiment duration": 120
+    }    
+  ]
+}
