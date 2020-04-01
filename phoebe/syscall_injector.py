@@ -14,7 +14,7 @@ prog = """
 #include <linux/errno.h>
 
 struct debug_message {
-    u32 pid;
+    int count;
     char message[64];
 };
 
@@ -34,13 +34,14 @@ int inject_when_exit(struct pt_regs *ctx)
     }
     else
     {
-        // calculate the countdown if necessary
-        %s
         // override the return value, only when the original return value >= 0
         int ret = PT_REGS_RC(ctx);
-
         if (ret >= 0)
+        {
+            // calculate the countdown if necessary
+            %s
             bpf_override_return(ctx, %s);
+        }
         return 0;
     }
 }
@@ -55,22 +56,29 @@ def calculate_probability(probability):
     return condition_str
 
 def calculate_countdown(count):
-    if count > 0:
-        snippet = """
-        u32 overridden = 0;
-        int zero = 0;
-        u32* val;
-        
-        val = count.lookup(&zero);
-        if (val)
-            overridden = *val;
+    snippet = """
+            u32 overridden = 0;
+            int zero = 0;
+            u32* val;
 
-        if (overridden >= %s)
-            return 0;
-        count.increment(zero);
-        """%count
-    else:
-        snippet = ""
+            val = count.lookup(&zero);
+            if (val)
+                overridden = *val;
+"""
+
+    if count > 0:
+        snippet = snippet + """
+            if (overridden >= %s)
+                return 0;
+"""%count
+
+    snippet = snippet + """
+            count.increment(zero);
+            // output debug information
+            struct debug_message message = {};
+            message.count = overridden + 1;
+            events.perf_submit(ctx, &message, sizeof(message));
+"""
 
     return snippet
 
@@ -78,7 +86,7 @@ def print_debug_info(cpu, data, size):
     global bpf
 
     event = bpf["events"].event(data)
-    print(event.pid)
+    print("%d failures have been injected so far."%event.count)
 
 def get_arguments():
     parser = argparse.ArgumentParser(description="Syscall failure injector",
