@@ -6,20 +6,14 @@
 #
 # 18-Mar-2020   Long Zhang   Created this file based on bcc/tools/inject.py
 
-import argparse
+import argparse, signal, time
 from bcc import BPF
 
 prog = """
 #include <uapi/linux/ptrace.h>
 #include <linux/errno.h>
 
-struct debug_message {
-    int count;
-    char message[64];
-};
-
 BPF_ARRAY(count, u32, 1);
-BPF_PERF_OUTPUT(events);
 
 int inject_when_exit(struct pt_regs *ctx)
 {
@@ -74,19 +68,9 @@ def calculate_countdown(count):
 
     snippet = snippet + """
             count.increment(zero);
-            // output debug information
-            struct debug_message message = {};
-            message.count = overridden + 1;
-            events.perf_submit(ctx, &message, sizeof(message));
 """
 
     return snippet
-
-def print_debug_info(cpu, data, size):
-    global bpf
-
-    event = bpf["events"].event(data)
-    print("%d failures have been injected so far."%event.count)
 
 def get_arguments():
     parser = argparse.ArgumentParser(description="Syscall failure injector",
@@ -101,6 +85,10 @@ def get_arguments():
     parser.add_argument("-P", "--probability", default=1,
             metavar="probability", type=float,
             help="probability that this call chain will fail")
+    parser.add_argument("-i", "--interval", default=1, type=int,
+            help="print summary at this interval (seconds)")
+    parser.add_argument("-d", "--duration", type=int,
+        help="total duration of fault injection, in seconds")
     parser.add_argument("-v", "--verbose", action="store_true",
             help="print BPF program")
     parser.add_argument("-c", "--count", action="store", default=-1,
@@ -108,6 +96,15 @@ def get_arguments():
     args = parser.parse_args()
 
     return args
+
+def print_stats():
+    global bpf
+    count = bpf["count"] # type: c_unit
+    print("%s failures have been injected so far."%count[0].value)
+
+# signal handler
+def signal_ignore(signal, frame):
+    print()
 
 def main():
     global prog
@@ -120,11 +117,22 @@ def main():
     bpf = BPF(text = prog)
     bpf.attach_kretprobe(event = bpf.get_syscall_fnname(args.syscall), fn_name = "inject_when_exit")
 
-    bpf["events"].open_perf_buffer(print_debug_info)
+    exiting = 0
+    seconds = 0
     while True:
         try:
-            bpf.perf_buffer_poll()
+            time.sleep(args.interval)
+            seconds += args.interval
         except KeyboardInterrupt:
+            exiting = 1
+            signal.signal(signal.SIGINT, signal_ignore)
+        if args.duration and seconds >= args.duration:
+            exiting = 1
+
+        print_stats()
+
+        if exiting:
+            print("Detaching...")
             exit()
 
 if __name__ == "__main__":
