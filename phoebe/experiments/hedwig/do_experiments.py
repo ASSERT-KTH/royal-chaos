@@ -58,10 +58,9 @@ def do_experiment(experiment, pid, injector, dataset):
         #   randomly pickup an email from the dataset
         original_email = randomly_pickup(dataset)
         #   send email -> fetch email -> validate email
-        logging.info(original_email)
         send_email(SENDER, RECEIVER, original_email)
         logging.info("send an email to the receiver")
-        time.sleep(30) # wait, the server needs some time to handle the mails
+        time.sleep(40) # wait, the server needs some time to handle the mails
         fetched_email = fetch_email(RECEIVER)
         logging.info("fetch the email from the receiver")
 
@@ -80,12 +79,10 @@ def do_experiment(experiment, pid, injector, dataset):
     # post inspection: whether abnormal behavior exists even after turning off the injector
     # if so, the server needs to be restarted
     original_email = randomly_pickup(dataset)
-    with open(email_path) as file:
-        original_email = email.message_from_file(file)
     send_email(SENDER, RECEIVER, original_email)
-    time.sleep(30)
+    time.sleep(40)
     fetched_email = fetch_email(RECEIVER)
-    logging.info("post inspection: " + validate_email(original_email, fetched_email))
+    logging.info("post inspection: %s"%validate_email(original_email, fetched_email))
 
     experiment["result"] = result
     return experiment
