@@ -27,6 +27,12 @@ def handle_args():
     parser.add_argument("-d", "--dataset", help="the folder that contains .msg files")
     return parser.parse_args()
 
+def randomly_pickup(dataset):
+    email_path = random.choice(dataset)
+    with open(email_path) as file:
+        original_email = email.message_from_file(file)
+    return original_email
+
 def do_experiment(experiment, pid, injector, dataset):
     global SENDER
     global RECEIVER
@@ -50,10 +56,9 @@ def do_experiment(experiment, pid, injector, dataset):
     result = {"rounds": 0, "succeeded": 0, "failed": 0}
     while True:
         #   randomly pickup an email from the dataset
-        email_path = random.choice(dataset)
-        with open(email_path) as file:
-            original_email = email.message_from_file(file)
+        original_email = randomly_pickup(dataset)
         #   send email -> fetch email -> validate email
+        logging.info(original_email)
         send_email(SENDER, RECEIVER, original_email)
         logging.info("send an email to the receiver")
         time.sleep(30) # wait, the server needs some time to handle the mails
@@ -74,9 +79,11 @@ def do_experiment(experiment, pid, injector, dataset):
 
     # post inspection: whether abnormal behavior exists even after turning off the injector
     # if so, the server needs to be restarted
-    original_email = random.choice(dataset)
+    original_email = randomly_pickup(dataset)
+    with open(email_path) as file:
+        original_email = email.message_from_file(file)
     send_email(SENDER, RECEIVER, original_email)
-    time.sleep(10)
+    time.sleep(30)
     fetched_email = fetch_email(RECEIVER)
     logging.info("post inspection: " + validate_email(original_email, fetched_email))
 
