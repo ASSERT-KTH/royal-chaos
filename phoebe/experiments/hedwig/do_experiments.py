@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 # Filename: do_experiments.py
 
-import os, datetime, time, json, re, argparse, subprocess, random
+import os, datetime, time, json, re, argparse, subprocess, signal, random
+from difflib import Differ
 import smtplib, imaplib, email
 from email.header import Header
 from email.header import decode_header
@@ -17,6 +18,13 @@ IMAP_SERVER_PORT = 30143
 
 SENDER = {"name": "longz", "address": "longz@localhost", "password": "123456"}
 RECEIVER = {"name": "test", "address": "test@localhost", "password": "654321"}
+
+INJECTOR = None
+
+def handle_sigint(sig, frame):
+    global INJECTOR
+    if (INJECTOR != None): os.killpg(os.getpgid(INJECTOR.pid), signal.SIGTERM)
+    exit()
 
 def handle_args():
     parser = argparse.ArgumentParser(
@@ -33,9 +41,10 @@ def randomly_pickup(dataset):
         original_email = email.message_from_file(file)
     return original_email
 
-def do_experiment(experiment, pid, injector, dataset):
+def do_experiment(experiment, pid, injector_path, dataset):
     global SENDER
     global RECEIVER
+    global INJECTOR
 
     # experiment principle
     # while loop for the duration of the experiment:
@@ -47,42 +56,66 @@ def do_experiment(experiment, pid, injector, dataset):
     logging.info("begin the following experiment")
     logging.info(experiment)
     end_at = time.time() + experiment["experiment_duration"]
+    sleep_time_after_sending = 40
 
     # start the injector
-    injector = subprocess.Popen("%s -p %s -P %s --errorno=%s %s"%(
-        injector, pid, experiment["failure_rate"], experiment["error_code"], experiment["syscall_name"]
-    ), close_fds=True, shell=True)
+    INJECTOR = subprocess.Popen("%s -p %s -P %s --errorno=%s %s"%(
+        injector_path, pid, experiment["failure_rate"], experiment["error_code"], experiment["syscall_name"]
+    ), close_fds=True, shell=True, preexec_fn=os.setsid)
 
-    result = {"rounds": 0, "succeeded": 0, "failed": 0}
+    result = {"rounds": 0, "succeeded": 0, "sending_failures": 0, "fetching_failures": 0, "validation_failures": 0}
     while True:
+        if time.time() > end_at: break
+        # logging.info(INJECTOR.stdout.readline())
         #   randomly pickup an email from the dataset
         original_email = randomly_pickup(dataset)
         #   send email -> fetch email -> validate email
-        send_email(SENDER, RECEIVER, original_email)
-        logging.info("send an email to the receiver")
-        time.sleep(40) # wait, the server needs some time to handle the mails
-        fetched_email = fetch_email(RECEIVER)
-        logging.info("fetch the email from the receiver")
+        try:
+            send_email(SENDER, RECEIVER, original_email)
+            logging.info("send an email to the receiver")
+        except:
+            logging.info("failed to send!")
+            result["rounds"] = result["rounds"] + 1
+            result["sending_failures"] = result["sending_failures"] + 1
+            sleep(5)
+            continue
+
+        # logging.info(INJECTOR.stdout.readline())
+        time.sleep(sleep_time_after_sending) # wait, the server needs some time to handle the mails
+
+        # logging.info(INJECTOR.stdout.readline())
+        try:
+            fetched_email = fetch_email(RECEIVER)
+            logging.info("fetch the email from the receiver")
+        except:
+            logging.info("failed to fetch!")
+            result["rounds"] = result["rounds"] + 1
+            result["fetching_failures"] = result["fetching_failures"] + 1
+            sleep(5)
+            continue
 
         result["rounds"] = result["rounds"] + 1
         if validate_email(original_email, fetched_email):
             result["succeeded"] = result["succeeded"] + 1
         else:
-            result["failed"] = result["failed"] + 1
+            result["validation_failures"] = result["validation_failures"] + 1
         logging.info(result)
 
-        if time.time() > end_at: break
-
     # end the injector
-    injector.terminate()
+    os.killpg(os.getpgid(INJECTOR.pid), signal.SIGTERM)
 
     # post inspection: whether abnormal behavior exists even after turning off the injector
     # if so, the server needs to be restarted
+    logging.info("post inspection begins")
     original_email = randomly_pickup(dataset)
     send_email(SENDER, RECEIVER, original_email)
-    time.sleep(40)
+    time.sleep(sleep_time_after_sending)
     fetched_email = fetch_email(RECEIVER)
-    logging.info("post inspection: %s"%validate_email(original_email, fetched_email))
+    if validate_email(original_email, fetched_email):
+        result["post_inspection"] = "passed"
+    else:
+        result["post_inspection"] = "failed"
+    logging.info(result)
 
     experiment["result"] = result
     return experiment
@@ -145,13 +178,18 @@ def extract_basic_info(message):
     except UnicodeEncodeError:
         logging.warning("failed to decode the email because of UnicodeEncodeError")
 
-    return {"subject": subject, "content": content_str}
+    return {"subject": subject.replace("\r\n", "\n"), "content": content_str.replace("\r\n", "\n")}
 
 def validate_email(original_email, fetched_email):
     ori = extract_basic_info(original_email)
     fetched = extract_basic_info(fetched_email)
     subject_match = True if ori["subject"] == fetched["subject"] else False
     content_match = True if ori["content"] == fetched["content"] else False
+    if not subject_match:
+        logging.debug("subject match failed")
+        logging.debug(list(Differ().compare(ori["subject"], fetched["subject"])))
+    if not content_match:
+        logging.debug("content match failed")
     return subject_match and content_match
 
 def save_experiment_result(experiments):
@@ -175,6 +213,8 @@ def main(args):
             save_experiment_result(experiments)
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO)
+    logging.basicConfig(level=logging.DEBUG)
+    signal.signal(signal.SIGINT, handle_sigint)
+
     args = handle_args()
     main(args)
