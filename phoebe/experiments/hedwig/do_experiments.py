@@ -20,6 +20,7 @@ SENDER = {"name": "longz", "address": "longz@localhost", "password": "123456"}
 RECEIVER = {"name": "test", "address": "test@localhost", "password": "654321"}
 
 INJECTOR = None
+HEDWIG_RESET = "JAVA_HOME=/home/gluckzhang/.sdkman/candidates/java/current /home/gluckzhang/development/hedwig-0.7/hedwig-0.7-binary/bin/run.sh restart"
 
 def handle_sigint(sig, frame):
     global INJECTOR
@@ -34,6 +35,27 @@ def handle_args():
     parser.add_argument("-i", "--injector", help="the path to syscall_injector.py")
     parser.add_argument("-d", "--dataset", help="the folder that contains .msg files")
     return parser.parse_args()
+
+def check_hedwig():
+    pattern = re.compile(r'(\d+)\s+com\.hs\.mail\.container\.simple\.SimpleSpringContainer')
+
+    jps_output = subprocess.check_output("jps -l", shell=True)
+    pids = pattern.findall(jps_output)
+    if len(pids) == 1:
+        result = {"status": "running", "pid": pids[0]}
+    else:
+        logging.warning("hedwig is down, needs to be restarted")
+        os.system(HEDWIG_RESET)
+        time.sleep(3)
+        jps_output = subprocess.check_output("jps -l", shell=True)
+        pids = pattern.findall(jps_output)
+        if len(pids) == 1:
+            result = {"status": "restarted", "pid": pids[0]}
+        else:
+            result = {"status": "down", "pid": 0}
+            logging.warning("hedwig is down, failed to be restarted!")
+    return result
+
 
 def randomly_pickup(dataset):
     email_path = random.choice(dataset)
@@ -56,14 +78,15 @@ def do_experiment(experiment, pid, injector_path, dataset):
     logging.info("begin the following experiment")
     logging.info(experiment)
     end_at = time.time() + experiment["experiment_duration"]
-    sleep_time_after_sending = 40
+    sleep_time_after_sending = 30
+    hedwig_pid = pid
 
     # start the injector
     INJECTOR = subprocess.Popen("%s -p %s -P %s --errorno=%s %s"%(
-        injector_path, pid, experiment["failure_rate"], experiment["error_code"], experiment["syscall_name"]
+        injector_path, hedwig_pid, experiment["failure_rate"], experiment["error_code"], experiment["syscall_name"]
     ), close_fds=True, shell=True, preexec_fn=os.setsid)
 
-    result = {"rounds": 0, "succeeded": 0, "sending_failures": 0, "fetching_failures": 0, "validation_failures": 0}
+    result = {"rounds": 0, "succeeded": 0, "sending_failures": 0, "fetching_failures": 0, "validation_failures": 0, "server_crashed": 0}
     while True:
         if time.time() > end_at: break
         # logging.info(INJECTOR.stdout.readline())
@@ -76,9 +99,20 @@ def do_experiment(experiment, pid, injector_path, dataset):
         except:
             logging.info("failed to send!")
             result["rounds"] = result["rounds"] + 1
-            result["sending_failures"] = result["sending_failures"] + 1
-            sleep(5)
-            continue
+            time.sleep(3)
+            hedwig_status = check_hedwig()
+            if hedwig_status["status"] == "restarted":
+                result["server_crashed"] = result["server_crashed"] + 1
+                hedwig_pid = hedwig_status["pid"]
+                break
+            elif hedwig_status["status"] == "running":
+                result["sending_failures"] = result["sending_failures"] + 1
+                continue
+            else:
+                # failed to restart hedwig, should stop the experiments
+                logging.error("failed to restart hedwig, experiments should be stopped")
+                result["fatal"] = True
+                break
 
         # logging.info(INJECTOR.stdout.readline())
         time.sleep(sleep_time_after_sending) # wait, the server needs some time to handle the mails
@@ -90,9 +124,20 @@ def do_experiment(experiment, pid, injector_path, dataset):
         except:
             logging.info("failed to fetch!")
             result["rounds"] = result["rounds"] + 1
-            result["fetching_failures"] = result["fetching_failures"] + 1
-            sleep(5)
-            continue
+            time.sleep(3)
+            hedwig_status = check_hedwig()
+            if hedwig_status["status"] == "restarted":
+                result["server_crashed"] = result["server_crashed"] + 1
+                hedwig_pid = hedwig_status["pid"]
+                break
+            elif hedwig_status["status"] == "running":
+                result["fetching_failures"] = result["fetching_failures"] + 1
+                continue
+            else:
+                # failed to restart hedwig, should stop the experiments
+                logging.error("failed to restart hedwig, experiments should be stopped")
+                result["fatal"] = True
+                break
 
         result["rounds"] = result["rounds"] + 1
         if validate_email(original_email, fetched_email):
@@ -108,12 +153,15 @@ def do_experiment(experiment, pid, injector_path, dataset):
     # if so, the server needs to be restarted
     logging.info("post inspection begins")
     original_email = randomly_pickup(dataset)
-    send_email(SENDER, RECEIVER, original_email)
-    time.sleep(sleep_time_after_sending)
-    fetched_email = fetch_email(RECEIVER)
-    if validate_email(original_email, fetched_email):
-        result["post_inspection"] = "passed"
-    else:
+    try:
+        send_email(SENDER, RECEIVER, original_email)
+        time.sleep(sleep_time_after_sending)
+        fetched_email = fetch_email(RECEIVER)
+        if validate_email(original_email, fetched_email):
+            result["post_inspection"] = "passed"
+        else:
+            result["post_inspection"] = "failed"
+    except:
         result["post_inspection"] = "failed"
     logging.info(result)
 
@@ -211,6 +259,7 @@ def main(args):
         for experiment in experiments["experiments"]:
             experiment = do_experiment(experiment, args.pid, args.injector, dataset)
             save_experiment_result(experiments)
+            if experiment["result"]["fatal"]: break
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.DEBUG)
