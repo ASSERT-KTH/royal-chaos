@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # Filename: do_experiments.py
 
-import os, datetime, time, json, re, argparse, subprocess, signal, random
+import os, datetime, time, json, re, argparse, subprocess, signal, random, socket
 from difflib import Differ
 import smtplib, imaplib, email
 from email.header import Header
@@ -179,7 +179,7 @@ def send_email(sender, receiver, message):
     message['From'] = format_addr('%s <%s>' % (sender["name"], sender["address"]))
     message['To'] = format_addr('%s <%s>' % (receiver["name"], receiver["address"]))
 
-    server = smtplib.SMTP(SMTP_SERVER, SMTP_SERVER_PORT, timeout=5)
+    server = smtplib.SMTP(SMTP_SERVER, SMTP_SERVER_PORT)
     # server.login(sender["address"], sender["password"])
     server.sendmail(sender["address"], [receiver["address"]], message.as_string())
     # server.quit()
@@ -195,7 +195,6 @@ def fetch_email(receiver):
     global IMAP_SERVER_PORT
 
     server = imaplib.IMAP4(IMAP_SERVER, IMAP_SERVER_PORT)
-    server.socket().settimeout(5)
     server.login(receiver["address"],receiver["password"])
     server.select("INBOX")
     typ, data = server.search(None, "ALL")
@@ -265,6 +264,9 @@ def main(args):
 if __name__ == "__main__":
     logging.basicConfig(level=logging.DEBUG)
     signal.signal(signal.SIGINT, handle_sigint)
+
+    socket_default_timeout = 5
+    socket.setdefaulttimeout(socket_default_timeout)
 
     args = handle_args()
     main(args)
