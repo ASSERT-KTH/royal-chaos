@@ -257,9 +257,10 @@ def main(args):
     with open(args.config, 'rt') as file:
         experiments = json.load(file)
         for experiment in experiments["experiments"]:
+            if "result" in experiment: continue
             experiment = do_experiment(experiment, args.pid, args.injector, dataset)
             save_experiment_result(experiments)
-            if experiment["result"]["fatal"]: break
+            if "fatal" in experiment["result"] and experiment["result"]["fatal"]: break
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.DEBUG)
