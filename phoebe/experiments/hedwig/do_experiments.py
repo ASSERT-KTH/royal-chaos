@@ -20,11 +20,14 @@ SENDER = {"name": "longz", "address": "longz@localhost", "password": "123456"}
 RECEIVER = {"name": "test", "address": "test@localhost", "password": "654321"}
 
 INJECTOR = None
+MONITOR = None
 HEDWIG_RESET = "JAVA_HOME=/home/gluckzhang/.sdkman/candidates/java/current /home/gluckzhang/development/hedwig-0.7/hedwig-0.7-binary/bin/run.sh restart"
 
 def handle_sigint(sig, frame):
     global INJECTOR
+    global MONITOR
     if (INJECTOR != None): os.killpg(os.getpgid(INJECTOR.pid), signal.SIGTERM)
+    if (MONITOR != None): os.killpg(os.getpgid(MONITOR.pid), signal.SIGTERM)
     exit()
 
 def handle_args():
@@ -33,10 +36,13 @@ def handle_args():
     parser.add_argument("-p", "--pid", type=int, help="the pid of HedWig")
     parser.add_argument("-c", "--config", help="the fault injection config (.json)")
     parser.add_argument("-i", "--injector", help="the path to syscall_injector.py")
+    parser.add_argument("-m", "--monitor", help="the path to syscall_monitor.py")
     parser.add_argument("-d", "--dataset", help="the folder that contains .msg files")
     return parser.parse_args()
 
-def check_hedwig():
+def check_hedwig(monitor_path):
+    global MONITOR
+
     pattern = re.compile(r'(\d+)\s+com\.hs\.mail\.container\.simple\.SimpleSpringContainer')
 
     jps_output = subprocess.check_output("jps -l", shell=True)
@@ -51,6 +57,9 @@ def check_hedwig():
         pids = pattern.findall(jps_output)
         if len(pids) == 1:
             result = {"status": "restarted", "pid": pids[0]}
+            # the monitor should be restarted because the pid changes
+            if (MONITOR != None): os.killpg(os.getpgid(MONITOR.pid), signal.SIGTERM)
+            MONITOR = subprocess.Popen("%s -p %s -mL -i 15 >/dev/null 2>&1"%(monitor_path, pids[0]), close_fds=True, shell=True, preexec_fn=os.setsid)
         else:
             result = {"status": "down", "pid": 0}
             logging.warning("hedwig is down, failed to be restarted!")
@@ -63,7 +72,7 @@ def randomly_pickup(dataset):
         original_email = email.message_from_file(file)
     return original_email
 
-def do_experiment(experiment, pid, injector_path, dataset):
+def do_experiment(experiment, pid, injector_path, monitor_path, dataset):
     global SENDER
     global RECEIVER
     global INJECTOR
@@ -100,7 +109,7 @@ def do_experiment(experiment, pid, injector_path, dataset):
             logging.info("failed to send!")
             result["rounds"] = result["rounds"] + 1
             time.sleep(3)
-            hedwig_status = check_hedwig()
+            hedwig_status = check_hedwig(monitor_path)
             if hedwig_status["status"] == "restarted":
                 result["server_crashed"] = result["server_crashed"] + 1
                 hedwig_pid = hedwig_status["pid"]
@@ -125,7 +134,7 @@ def do_experiment(experiment, pid, injector_path, dataset):
             logging.info("failed to fetch!")
             result["rounds"] = result["rounds"] + 1
             time.sleep(3)
-            hedwig_status = check_hedwig()
+            hedwig_status = check_hedwig(monitor_path)
             if hedwig_status["status"] == "restarted":
                 result["server_crashed"] = result["server_crashed"] + 1
                 hedwig_pid = hedwig_status["pid"]
@@ -251,13 +260,19 @@ def extract_messages(dataset_path):
     return dataset
 
 def main(args):
+    global MONITOR
+
     dataset = extract_messages(args.dataset)
 
     with open(args.config, 'rt') as file:
         experiments = json.load(file)
+
+        # start the monitor
+        MONITOR = subprocess.Popen("%s -p %s -mL -i 15 >/dev/null 2>&1"%(args.monitor, hedwig_pid), close_fds=True, shell=True, preexec_fn=os.setsid)
+
         for experiment in experiments["experiments"]:
             if "result" in experiment: continue
-            experiment = do_experiment(experiment, args.pid, args.injector, dataset)
+            experiment = do_experiment(experiment, args.pid, args.injector, args.monitor, dataset)
             save_experiment_result(experiments)
             if "fatal" in experiment["result"] and experiment["result"]["fatal"]: break
 
@@ -265,6 +280,7 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.DEBUG)
     signal.signal(signal.SIGINT, handle_sigint)
 
+    # this is a temporary workaround to set up a timeout for imaplib
     socket_default_timeout = 5
     socket.setdefaulttimeout(socket_default_timeout)
 
