@@ -1,54 +1,216 @@
 {
-  "experiment_name": "An example",
-  "experiment_description": "An example of fault injection experiments on HedWig",
+  "experiment_name": "Syscall Fault Injection Experiments", 
   "experiments": [
     {
-      "syscall_name": "accept",
-      "error_code": "-EAGAIN",
-      "failure_rate": 0.5,
+      "syscall_name": "accept", 
+      "error_code": "-EAGAIN", 
+      "failure_rate": 0.6666666666666666, 
       "experiment_duration": 120
-    },
+    }, 
     {
-      "syscall_name": "accept",
-      "error_code": "-EAGAIN",
-      "failure_rate": 0.75,
+      "syscall_name": "accept", 
+      "error_code": "-EAGAIN", 
+      "failure_rate": 0.5, 
       "experiment_duration": 120
-    },
+    }, 
     {
-      "syscall_name": "accept",
-      "error_code": "-EAGAIN",
-      "failure_rate": 1,
+      "syscall_name": "accept", 
+      "error_code": "-EAGAIN", 
+      "failure_rate": 1, 
       "experiment_duration": 120
-    },
+    }, 
     {
-      "syscall_name": "read",
-      "error_code": "-EAGAIN",
-      "failure_rate": 0.5,
+      "syscall_name": "futex", 
+      "error_code": "-EAGAIN", 
+      "failure_rate": 0.6666666666666666, 
       "experiment_duration": 120
-    },
+    }, 
     {
-      "syscall_name": "read",
-      "error_code": "-EAGAIN",
-      "failure_rate": 0.75,
+      "syscall_name": "futex", 
+      "error_code": "-EAGAIN", 
+      "failure_rate": 0.5, 
       "experiment_duration": 120
-    },
+    }, 
     {
-      "syscall_name": "read",
-      "error_code": "-EAGAIN",
-      "failure_rate": 1,
+      "syscall_name": "futex", 
+      "error_code": "-EAGAIN", 
+      "failure_rate": 1, 
       "experiment_duration": 120
-    },
+    }, 
     {
-      "syscall_name": "connect",
-      "error_code": "-ENOENT",
-      "failure_rate": 0.75,
+      "syscall_name": "read", 
+      "error_code": "-EAGAIN", 
+      "failure_rate": 0.6666666666666666, 
       "experiment_duration": 120
-    },
+    }, 
     {
-      "syscall_name": "connect",
-      "error_code": "-ENOENT",
-      "failure_rate": 1,
+      "syscall_name": "read", 
+      "error_code": "-EAGAIN", 
+      "failure_rate": 0.5, 
       "experiment_duration": 120
-    }    
-  ]
+    }, 
+    {
+      "syscall_name": "read", 
+      "error_code": "-EAGAIN", 
+      "failure_rate": 1, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "recvfrom", 
+      "error_code": "-ECONNRESET", 
+      "failure_rate": 0.6666666666666666, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "recvfrom", 
+      "error_code": "-ECONNRESET", 
+      "failure_rate": 0.5, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "recvfrom", 
+      "error_code": "-ECONNRESET", 
+      "failure_rate": 1, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "sendto", 
+      "error_code": "-ECONNRESET", 
+      "failure_rate": 0.6666666666666666, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "sendto", 
+      "error_code": "-ECONNRESET", 
+      "failure_rate": 0.5, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "sendto", 
+      "error_code": "-ECONNRESET", 
+      "failure_rate": 1, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "connect", 
+      "error_code": "-ENOENT", 
+      "failure_rate": 0.6666666666666666, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "connect", 
+      "error_code": "-ENOENT", 
+      "failure_rate": 0.5, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "connect", 
+      "error_code": "-ENOENT", 
+      "failure_rate": 1, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "epoll_ctl", 
+      "error_code": "-ENOENT", 
+      "failure_rate": 1, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "lstat", 
+      "error_code": "-ENOENT", 
+      "failure_rate": 0.6666666666666666, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "lstat", 
+      "error_code": "-ENOENT", 
+      "failure_rate": 0.5, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "lstat", 
+      "error_code": "-ENOENT", 
+      "failure_rate": 1, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "mkdir", 
+      "error_code": "-ENOENT", 
+      "failure_rate": 0.5, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "mkdir", 
+      "error_code": "-ENOENT", 
+      "failure_rate": 0.6666666666666666, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "mkdir", 
+      "error_code": "-ENOENT", 
+      "failure_rate": 1, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "stat", 
+      "error_code": "-ENOENT", 
+      "failure_rate": 0.6666666666666666, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "stat", 
+      "error_code": "-ENOENT", 
+      "failure_rate": 0.5, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "stat", 
+      "error_code": "-ENOENT", 
+      "failure_rate": 1, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "shutdown", 
+      "error_code": "-ENOTCONN", 
+      "failure_rate": 1, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "sendto", 
+      "error_code": "-EPIPE", 
+      "failure_rate": 0.6666666666666666, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "sendto", 
+      "error_code": "-EPIPE", 
+      "failure_rate": 0.5, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "sendto", 
+      "error_code": "-EPIPE", 
+      "failure_rate": 1, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "futex", 
+      "error_code": "-ETIMEDOUT", 
+      "failure_rate": 0.7360084477296727, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "futex", 
+      "error_code": "-ETIMEDOUT", 
+      "failure_rate": 0.9813445969728969, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "futex", 
+      "error_code": "-ETIMEDOUT", 
+      "failure_rate": 1, 
+      "experiment_duration": 120
+    }
+  ], 
+  "experiment_description": "Automatically generated based on monitoring data from 2020-04-07T00:00:00Z to 2020-04-08T00:00:00Z"
 }
