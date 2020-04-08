@@ -173,7 +173,7 @@ def print_stats():
     else:
         print_count_stats()
 
-time_colname = "TIME (ms)" if args.milliseconds else "TIME (us)"
+time_colname = "AVG TIME (ms)" if args.milliseconds else "AVG TIME (us)"
 
 def comm_for_pid(pid):
     try:
@@ -196,6 +196,7 @@ def print_latency_stats():
     global c_number_total
     global c_latency_total
     global g_failure_rate
+    global g_avg_latency
     host_name = socket.gethostname()
     application_name = comm_for_pid(args.pid)
 
@@ -219,6 +220,7 @@ def print_latency_stats():
             return_info = "SUCCESS"
 
         key = syscall_name(k.value % 10000)
+        if "unknown" in key: continue
         if data_summary.has_key(key):
             data_summary[key]["total_count"] = data_summary[key]["total_count"] + v.count
             data_summary[key]["details"].append({"return_code": return_info, "count": v.count, "latency": v.total_ns / (1e6 if args.milliseconds else 1e3)})
@@ -234,7 +236,7 @@ def print_latency_stats():
             detail["percentage"] = float(detail["count"]) / info["total_count"]
             printb((b"%-22s %8d " + (b"%16.6f" if args.milliseconds else b"%16.3f") + b" %12s %12.5f") %
                    (syscall, detail["count"],
-                    detail["latency"], detail["return_code"], detail["percentage"]))
+                    detail["latency"] / detail["count"], detail["return_code"], detail["percentage"]))
 
             # export metrics
             c_number_total.labels(
@@ -255,6 +257,15 @@ def print_latency_stats():
                 error_code=detail["return_code"],
                 injected_on_purpose=False
             ).inc(detail["latency"])
+            g_avg_latency.labels(
+                hostname=host_name,
+                application_name=application_name,
+                pid=args.pid,
+                layer='os',
+                syscall_name=syscall,
+                error_code=detail["return_code"],
+                injected_on_purpose=False
+            ).set(detail["latency"] / detail["count"])
             if detail["return_code"] != "SUCCESS":
                 g_failure_rate.labels(
                     hostname=host_name,
@@ -277,7 +288,8 @@ seconds = 0
 c_labels = ['hostname', 'application_name', 'pid', 'layer', 'syscall_name', 'error_code', 'injected_on_purpose']
 c_number_total = Counter('failed_syscalls_total', 'Failed system calls in a process', c_labels)
 c_latency_total = Counter('failed_syscalls_latency_total', 'The total execution time spent by failed system calles in a process', c_labels)
-g_failure_rate = Gauge('syscalls_failure_rate', 'The rate of failures categorized by the types of system calls.', c_labels)
+g_failure_rate = Gauge('syscalls_failure_rate', 'The rate of failures categorized by the types of system calls', c_labels)
+g_avg_latency = Gauge('syscalls_avg_latency', 'The average execution time of system calls categorized by type', c_labels)
 start_http_server(args.port)
 
 while True:
