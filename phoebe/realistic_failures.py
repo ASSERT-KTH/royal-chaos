@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # Filename: realistic_failures.py
 
-import csv, requests, sys, getopt, datetime, time
+import csv, requests, sys, getopt, datetime, time, json
 from prettytable import PrettyTable
 import logging
 
@@ -19,6 +19,7 @@ def main():
 
     failure_category = query_failures(START, END, STEP)
     pretty_print_details(failure_category)
+    generate_experiment_config(failure_category)
 
 def handle_args(argv):
     global PROMETHEUS_URL
@@ -112,6 +113,51 @@ def pretty_print_details(failure_details):
         stat_table.add_row([detail["syscall_name"], detail["error_code"], detail["samples_in_total"], samples_str])
 
     print(stat_table)
+
+def generate_experiment(syscall_name, error_code, failure_rate, duration):
+    result = {
+        "syscall_name": syscall_name,
+        "error_code": "-%s"%error_code,
+        "failure_rate": failure_rate,
+        "experiment_duration": duration
+    }
+    return result
+
+def generate_experiment_config(failure_details):
+    global START
+    global END
+    output_file = "fi_experiments_config.json"
+    config = {
+        "experiment_name": "Syscall Fault Injection Experiments",
+        "experiment_description": "Automatically generated based on monitoring data from %s to %s"%(START, END),
+        "experiments": []
+    }
+
+    factor_1 = 1.5
+    factor_2 = 2.0
+    duration = 120
+
+    for detail in failure_details:
+        if "unknown" in detail["syscall_name"]: continue
+
+        sample = detail["samples"][0]
+
+        if sample["failure_rate"] < 0.3:
+            config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], 1 / factor_1, duration))
+            config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], 1 / factor_2, duration))
+            config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], 1, duration))
+        elif sample["failure_rate"] < (1 / factor_2):
+            config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], sample["failure_rate"] * factor_1, duration))
+            config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], sample["failure_rate"] * factor_2, duration))
+            config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], 1, duration))
+        elif sample["failure_rate"] < (1 / factor_1):
+            config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], sample["failure_rate"] * factor_1, duration))
+            config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], 1, duration))
+        else:
+            config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], 1, duration))
+
+    with open(output_file, "wt") as output:
+        json.dump(config, output, indent = 2)
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
