@@ -21,7 +21,9 @@ RECEIVER = {"name": "test", "address": "test@localhost", "password": "654321"}
 
 INJECTOR = None
 MONITOR = None
-HEDWIG_RESET = "JAVA_HOME=/home/gluckzhang/.sdkman/candidates/java/current /home/gluckzhang/development/hedwig-0.7/hedwig-0.7-binary/bin/run.sh restart"
+HEDWIG_PID = 0
+HEDWIG_PATH = "/home/gluckzhang/development/hedwig-0.7/hedwig-0.7-binary/bin"
+HEDWIG_RESET = "cd %s && JAVA_HOME=/home/gluckzhang/.sdkman/candidates/java/current ./run.sh restart"%HEDWIG_PATH
 
 def handle_sigint(sig, frame):
     global INJECTOR
@@ -76,6 +78,7 @@ def do_experiment(experiment, pid, injector_path, monitor_path, dataset):
     global SENDER
     global RECEIVER
     global INJECTOR
+    global HEDWIG_PID
 
     # experiment principle
     # while loop for the duration of the experiment:
@@ -88,11 +91,10 @@ def do_experiment(experiment, pid, injector_path, monitor_path, dataset):
     logging.info(experiment)
     end_at = time.time() + experiment["experiment_duration"]
     sleep_time_after_sending = 30
-    hedwig_pid = pid
 
     # start the injector
     INJECTOR = subprocess.Popen("%s -p %s -P %s --errorno=%s %s"%(
-        injector_path, hedwig_pid, experiment["failure_rate"], experiment["error_code"], experiment["syscall_name"]
+        injector_path, pid, experiment["failure_rate"], experiment["error_code"], experiment["syscall_name"]
     ), close_fds=True, shell=True, preexec_fn=os.setsid)
 
     result = {"rounds": 0, "succeeded": 0, "sending_failures": 0, "fetching_failures": 0, "validation_failures": 0, "server_crashed": 0}
@@ -112,7 +114,7 @@ def do_experiment(experiment, pid, injector_path, monitor_path, dataset):
             hedwig_status = check_hedwig(monitor_path)
             if hedwig_status["status"] == "restarted":
                 result["server_crashed"] = result["server_crashed"] + 1
-                hedwig_pid = hedwig_status["pid"]
+                HEDWIG_PID = hedwig_status["pid"]
                 break
             elif hedwig_status["status"] == "running":
                 result["sending_failures"] = result["sending_failures"] + 1
@@ -137,7 +139,7 @@ def do_experiment(experiment, pid, injector_path, monitor_path, dataset):
             hedwig_status = check_hedwig(monitor_path)
             if hedwig_status["status"] == "restarted":
                 result["server_crashed"] = result["server_crashed"] + 1
-                hedwig_pid = hedwig_status["pid"]
+                HEDWIG_PID = hedwig_status["pid"]
                 break
             elif hedwig_status["status"] == "running":
                 result["fetching_failures"] = result["fetching_failures"] + 1
@@ -260,7 +262,9 @@ def extract_messages(dataset_path):
     return dataset
 
 def main(args):
+    global INJECTOR
     global MONITOR
+    global HEDWIG_PID
 
     dataset = extract_messages(args.dataset)
 
@@ -268,13 +272,17 @@ def main(args):
         experiments = json.load(file)
 
         # start the monitor
-        MONITOR = subprocess.Popen("%s -p %s -mL -i 15 >/dev/null 2>&1"%(args.monitor, hedwig_pid), close_fds=True, shell=True, preexec_fn=os.setsid)
+        HEDWIG_PID = args.pid
+        MONITOR = subprocess.Popen("%s -p %s -mL -i 15 >/dev/null 2>&1"%(args.monitor, args.pid), close_fds=True, shell=True, preexec_fn=os.setsid)
 
         for experiment in experiments["experiments"]:
             if "result" in experiment: continue
-            experiment = do_experiment(experiment, args.pid, args.injector, args.monitor, dataset)
+            experiment = do_experiment(experiment, HEDWIG_PID, args.injector, args.monitor, dataset)
             save_experiment_result(experiments)
             if "fatal" in experiment["result"] and experiment["result"]["fatal"]: break
+
+    if (INJECTOR != None): os.killpg(os.getpgid(INJECTOR.pid), signal.SIGTERM)
+    if (MONITOR != None): os.killpg(os.getpgid(MONITOR.pid), signal.SIGTERM)
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.DEBUG)
