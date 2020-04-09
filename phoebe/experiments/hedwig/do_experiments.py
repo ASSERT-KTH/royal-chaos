@@ -95,12 +95,11 @@ def do_experiment(experiment, pid, injector_path, monitor_path, dataset):
     # start the injector
     INJECTOR = subprocess.Popen("%s -p %s -P %s --errorno=%s %s"%(
         injector_path, pid, experiment["failure_rate"], experiment["error_code"], experiment["syscall_name"]
-    ), close_fds=True, shell=True, preexec_fn=os.setsid)
+    ), stdout=subprocess.PIPE, close_fds=True, shell=True, preexec_fn=os.setsid)
 
     result = {"rounds": 0, "succeeded": 0, "sending_failures": 0, "fetching_failures": 0, "validation_failures": 0, "server_crashed": 0}
     while True:
         if time.time() > end_at: break
-        # logging.info(INJECTOR.stdout.readline())
         #   randomly pickup an email from the dataset
         original_email = randomly_pickup(dataset)
         #   send email -> fetch email -> validate email
@@ -125,10 +124,8 @@ def do_experiment(experiment, pid, injector_path, monitor_path, dataset):
                 result["fatal"] = True
                 break
 
-        # logging.info(INJECTOR.stdout.readline())
         time.sleep(sleep_time_after_sending) # wait, the server needs some time to handle the mails
 
-        # logging.info(INJECTOR.stdout.readline())
         try:
             fetched_email = fetch_email(RECEIVER)
             logging.info("fetch the email from the receiver")
@@ -159,6 +156,13 @@ def do_experiment(experiment, pid, injector_path, monitor_path, dataset):
 
     # end the injector
     os.killpg(os.getpgid(INJECTOR.pid), signal.SIGTERM)
+    injector_stdout, injector_stderr = INJECTOR.communicate()
+    pattern = re.compile(r'(\d+) failures have been injected so far')
+    injection_count = pattern.findall(injector_stdout)
+    if len(injection_count) > 0:
+        result["injection_count"] = injection_count[-1]
+    else:
+        logging.warning("something is wrong with the syscall_injector")
 
     # post inspection: whether abnormal behavior exists even after turning off the injector
     # if so, the server needs to be restarted
