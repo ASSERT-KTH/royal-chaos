@@ -245,7 +245,10 @@ def extract_basic_info(message):
 def validate_email(original_email, fetched_email):
     ori = extract_basic_info(original_email)
     fetched = extract_basic_info(fetched_email)
-    subject_match = True if ori["subject"] == fetched["subject"] else False
+    # for some long subject headers, it seems that the email library does not correctly fold them
+    # https://bugs.python.org/issue1974
+    # a temporary workaround: remove all the white spaces in the subject
+    subject_match = True if re.sub(r"\s", "", ori["subject"]) == re.sub(r"\s", "", fetched["subject"]) else False
     content_match = True if ori["content"] == fetched["content"] else False
     if not subject_match:
         logging.debug("subject match failed")
