@@ -115,7 +115,7 @@ def do_experiment(experiment, pid, injector_path, monitor_path, dataset):
     # start the injector
     INJECTOR = subprocess.Popen("%s -p %s -P %s --errorno=%s %s"%(
         injector_path, pid, experiment["failure_rate"], experiment["error_code"], experiment["syscall_name"]
-    ), stdout=subprocess.PIPE, close_fds=True, shell=True, preexec_fn=os.setsid)
+    ), stdout=subprocess.PIPE, stderr=subprocess.PIPE, close_fds=True, shell=True, preexec_fn=os.setsid)
 
     result = {"rounds": 0, "succeeded": 0, "sending_failures": 0, "fetching_failures": 0, "validation_failures": 0, "server_crashed": 0}
     while True:
@@ -175,10 +175,11 @@ def do_experiment(experiment, pid, injector_path, monitor_path, dataset):
     # end the injector
     os.killpg(os.getpgid(INJECTOR.pid), signal.SIGTERM)
     injector_stdout, injector_stderr = INJECTOR.communicate()
+    INJECTOR = None
     pattern = re.compile(r'(\d+) failures have been injected so far')
     injection_count = pattern.findall(injector_stdout)
     if len(injection_count) > 0:
-        result["injection_count"] = injection_count[-1]
+        result["injection_count"] = int(injection_count[-1])
     else:
         logging.warning("something is wrong with the syscall_injector, injector's output:")
         logging.warning(injector_stdout)
@@ -308,7 +309,7 @@ def main(args):
             save_experiment_result(experiments)
             if "fatal" in experiment["result"] and experiment["result"]["fatal"]: break
             if experiment["result"]["post_inspection"] == "failed":
-                new_pid = restart_hedwig()
+                new_pid = restart_hedwig(args.monitor)
                 if new_pid == None: break
 
     if (INJECTOR != None): os.killpg(os.getpgid(INJECTOR.pid), signal.SIGTERM)
