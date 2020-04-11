@@ -67,7 +67,7 @@ def restart_hedwig(monitor_path):
         HEDWIG_PID = pid
         # the monitor should be restarted because the pid changes
         if (MONITOR != None): os.killpg(os.getpgid(MONITOR.pid), signal.SIGTERM)
-        MONITOR = subprocess.Popen("%s -p %s -mL -i 15 >/dev/null 2>&1"%(monitor_path, new_pid), close_fds=True, shell=True, preexec_fn=os.setsid)
+        MONITOR = subprocess.Popen("%s -p %s -mL -i 15 >/dev/null 2>&1"%(monitor_path, pid), close_fds=True, shell=True, preexec_fn=os.setsid)
     else:
         logging.warning("failed to restart hedwig")
 
