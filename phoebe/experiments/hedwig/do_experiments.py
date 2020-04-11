@@ -42,22 +42,40 @@ def handle_args():
     parser.add_argument("-d", "--dataset", help="the folder that contains .msg files")
     return parser.parse_args()
 
-def check_hedwig(monitor_path):
-    global MONITOR
-
+def pidof_hedwig():
     pattern = re.compile(r'(\d+)\s+com\.hs\.mail\.container\.simple\.SimpleSpringContainer')
 
     jps_output = subprocess.check_output("jps -l", shell=True)
     pids = pattern.findall(jps_output)
+
     if len(pids) == 1:
+        result = pids[0]
+    else:
+        result = None
+
+    return result
+
+def restart_hedwig(monitor_path):
+    global MONITOR
+
+    os.system(HEDWIG_RESET)
+    time.sleep(3)
+
+    pid = pidof_hedwig()
+    return pid
+
+
+def check_hedwig(monitor_path):
+    global MONITOR
+
+    pid = pidof_hedwig()
+    if pid != None:
         result = {"status": "running", "pid": pids[0]}
     else:
         logging.warning("hedwig is down, needs to be restarted")
-        os.system(HEDWIG_RESET)
-        time.sleep(3)
-        jps_output = subprocess.check_output("jps -l", shell=True)
-        pids = pattern.findall(jps_output)
-        if len(pids) == 1:
+        new_pid = restart_hedwig(monitor_path)
+
+        if new_pid != None:
             result = {"status": "restarted", "pid": pids[0]}
             # the monitor should be restarted because the pid changes
             if (MONITOR != None): os.killpg(os.getpgid(MONITOR.pid), signal.SIGTERM)
@@ -65,8 +83,8 @@ def check_hedwig(monitor_path):
         else:
             result = {"status": "down", "pid": 0}
             logging.warning("hedwig is down, failed to be restarted!")
-    return result
 
+    return result
 
 def randomly_pickup(dataset):
     email_path = random.choice(dataset)
@@ -287,6 +305,16 @@ def main(args):
             experiment = do_experiment(experiment, HEDWIG_PID, args.injector, args.monitor, dataset)
             save_experiment_result(experiments)
             if "fatal" in experiment["result"] and experiment["result"]["fatal"]: break
+            if experiment["result"]["post_inspection"] == "failed":
+                # restart hedwig
+                if (MONITOR != None): os.killpg(os.getpgid(MONITOR.pid), signal.SIGTERM)
+                new_pid = restart_hedwig()
+                if new_pid != None:
+                    HEDWIG_PID = new_pid
+                    MONITOR = subprocess.Popen("%s -p %s -mL -i 15 >/dev/null 2>&1"%(args.monitor, args.pid), close_fds=True, shell=True, preexec_fn=os.setsid)
+                else:
+                    logging.warning("hedwig restarting failed")
+                    break
 
     if (INJECTOR != None): os.killpg(os.getpgid(INJECTOR.pid), signal.SIGTERM)
     if (MONITOR != None): os.killpg(os.getpgid(MONITOR.pid), signal.SIGTERM)
