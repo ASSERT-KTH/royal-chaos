@@ -56,33 +56,36 @@ def pidof_hedwig():
     return result
 
 def restart_hedwig(monitor_path):
+    global HEDWIG_PID
     global MONITOR
 
     os.system(HEDWIG_RESET)
     time.sleep(3)
 
     pid = pidof_hedwig()
+    if pid != None:
+        HEDWIG_PID = pid
+        # the monitor should be restarted because the pid changes
+        if (MONITOR != None): os.killpg(os.getpgid(MONITOR.pid), signal.SIGTERM)
+        MONITOR = subprocess.Popen("%s -p %s -mL -i 15 >/dev/null 2>&1"%(monitor_path, new_pid), close_fds=True, shell=True, preexec_fn=os.setsid)
+    else:
+        logging.warning("failed to restart hedwig")
+
     return pid
 
 
 def check_hedwig(monitor_path):
-    global MONITOR
-
     pid = pidof_hedwig()
     if pid != None:
-        result = {"status": "running", "pid": pids[0]}
+        result = {"status": "running", "pid": pid}
     else:
         logging.warning("hedwig is down, needs to be restarted")
         new_pid = restart_hedwig(monitor_path)
 
         if new_pid != None:
-            result = {"status": "restarted", "pid": pids[0]}
-            # the monitor should be restarted because the pid changes
-            if (MONITOR != None): os.killpg(os.getpgid(MONITOR.pid), signal.SIGTERM)
-            MONITOR = subprocess.Popen("%s -p %s -mL -i 15 >/dev/null 2>&1"%(monitor_path, pids[0]), close_fds=True, shell=True, preexec_fn=os.setsid)
+            result = {"status": "restarted", "pid": new_pid}
         else:
             result = {"status": "down", "pid": 0}
-            logging.warning("hedwig is down, failed to be restarted!")
 
     return result
 
@@ -96,7 +99,6 @@ def do_experiment(experiment, pid, injector_path, monitor_path, dataset):
     global SENDER
     global RECEIVER
     global INJECTOR
-    global HEDWIG_PID
 
     # experiment principle
     # while loop for the duration of the experiment:
@@ -131,7 +133,6 @@ def do_experiment(experiment, pid, injector_path, monitor_path, dataset):
             hedwig_status = check_hedwig(monitor_path)
             if hedwig_status["status"] == "restarted":
                 result["server_crashed"] = result["server_crashed"] + 1
-                HEDWIG_PID = hedwig_status["pid"]
                 break
             elif hedwig_status["status"] == "running":
                 result["sending_failures"] = result["sending_failures"] + 1
@@ -154,7 +155,6 @@ def do_experiment(experiment, pid, injector_path, monitor_path, dataset):
             hedwig_status = check_hedwig(monitor_path)
             if hedwig_status["status"] == "restarted":
                 result["server_crashed"] = result["server_crashed"] + 1
-                HEDWIG_PID = hedwig_status["pid"]
                 break
             elif hedwig_status["status"] == "running":
                 result["fetching_failures"] = result["fetching_failures"] + 1
@@ -180,7 +180,9 @@ def do_experiment(experiment, pid, injector_path, monitor_path, dataset):
     if len(injection_count) > 0:
         result["injection_count"] = injection_count[-1]
     else:
-        logging.warning("something is wrong with the syscall_injector")
+        logging.warning("something is wrong with the syscall_injector, injector's output:")
+        logging.warning(injector_stdout)
+        logging.warning(injector_stderr)
 
     # post inspection: whether abnormal behavior exists even after turning off the injector
     # if so, the server needs to be restarted
@@ -306,15 +308,8 @@ def main(args):
             save_experiment_result(experiments)
             if "fatal" in experiment["result"] and experiment["result"]["fatal"]: break
             if experiment["result"]["post_inspection"] == "failed":
-                # restart hedwig
-                if (MONITOR != None): os.killpg(os.getpgid(MONITOR.pid), signal.SIGTERM)
                 new_pid = restart_hedwig()
-                if new_pid != None:
-                    HEDWIG_PID = new_pid
-                    MONITOR = subprocess.Popen("%s -p %s -mL -i 15 >/dev/null 2>&1"%(args.monitor, args.pid), close_fds=True, shell=True, preexec_fn=os.setsid)
-                else:
-                    logging.warning("hedwig restarting failed")
-                    break
+                if new_pid == None: break
 
     if (INJECTOR != None): os.killpg(os.getpgid(INJECTOR.pid), signal.SIGTERM)
     if (MONITOR != None): os.killpg(os.getpgid(MONITOR.pid), signal.SIGTERM)
