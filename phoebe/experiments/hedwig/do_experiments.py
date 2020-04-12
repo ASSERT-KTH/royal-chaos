@@ -113,7 +113,7 @@ def do_experiment(experiment, pid, injector_path, monitor_path, dataset):
     sleep_time_after_sending = 30
 
     # start the injector
-    INJECTOR = subprocess.Popen("%s -p %s -P %s --errorno=%s %s"%(
+    INJECTOR = subprocess.Popen("python -u %s -p %s -P %s --errorno=%s %s"%(
         injector_path, pid, experiment["failure_rate"], experiment["error_code"], experiment["syscall_name"]
     ), stdout=subprocess.PIPE, stderr=subprocess.PIPE, close_fds=True, shell=True, preexec_fn=os.setsid)
 
