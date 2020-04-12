@@ -64,6 +64,8 @@ parser.add_argument("-P", "--port", type=int,
     help="the port number which is used to export metrics to prometheus")
 parser.add_argument("-l", "--list", action="store_true",
     help="print list of recognized syscalls and exit")
+parser.add_argument("--process",
+    help="monitor only this process name")
 parser.add_argument("--ebpf", action="store_true",
     help=argparse.SUPPRESS)
 args = parser.parse_args()
@@ -80,6 +82,8 @@ if args.list:
     sys.exit(0)
 
 text = """
+#include <linux/sched.h>
+
 #ifdef LATENCY
 struct data_t {
     long error_no; 
@@ -93,12 +97,31 @@ BPF_HASH(data, u32, struct data_t);
 BPF_HASH(data, u32, u64);
 #endif
 
+#ifdef FILTER_PROCESS
+static inline bool compare_process_name(char *str) {
+    char comm[TASK_COMM_LEN];
+    bpf_get_current_comm(&comm, sizeof(comm));
+    char comparand[sizeof(str)];
+    bpf_probe_read(&comparand, sizeof(comparand), str);
+    for (int i = 0; i < sizeof(comparand); ++i)
+        if (comm[i] != comparand[i])
+            return false;
+    return true;
+}
+#endif
+
 #ifdef LATENCY
 TRACEPOINT_PROBE(raw_syscalls, sys_enter) {
     u64 pid_tgid = bpf_get_current_pid_tgid();
 
 #ifdef FILTER_PID
     if (pid_tgid >> 32 != FILTER_PID)
+        return 0;
+#endif
+
+#ifdef FILTER_PROCESS
+    char process[] = FILTER_PROCESS;
+    if (!compare_process_name(process))
         return 0;
 #endif
 
@@ -113,6 +136,12 @@ TRACEPOINT_PROBE(raw_syscalls, sys_exit) {
 
 #ifdef FILTER_PID
     if (pid_tgid >> 32 != FILTER_PID)
+        return 0;
+#endif
+
+#ifdef FILTER_PROCESS
+    char process[] = FILTER_PROCESS;
+    if (!compare_process_name(process))
         return 0;
 #endif
 
@@ -155,6 +184,8 @@ TRACEPOINT_PROBE(raw_syscalls, sys_exit) {
 
 if args.pid:
     text = ("#define FILTER_PID %d\n" % args.pid) + text
+if args.process:
+    text = ('#define FILTER_PROCESS "%s"\n' % args.process) + text
 if args.failures:
     text = "#define FILTER_FAILED\n" + text
 if args.errno:
