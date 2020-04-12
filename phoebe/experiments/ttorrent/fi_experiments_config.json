@@ -1,0 +1,114 @@
+{
+  "experiment_name": "Syscall Fault Injection Experiments", 
+  "experiments": [
+    {
+      "syscall_name": "futex", 
+      "error_code": "-EAGAIN", 
+      "failure_rate": 0.6666666666666666, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "futex", 
+      "error_code": "-EAGAIN", 
+      "failure_rate": 0.5, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "futex", 
+      "error_code": "-EAGAIN", 
+      "failure_rate": 1, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "mkdir", 
+      "error_code": "-EEXIST", 
+      "failure_rate": 1, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "connect", 
+      "error_code": "-EINPROGRESS", 
+      "failure_rate": 0.75, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "connect", 
+      "error_code": "-EINPROGRESS", 
+      "failure_rate": 1, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "access", 
+      "error_code": "-ENOENT", 
+      "failure_rate": 0.8863636363636365, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "access", 
+      "error_code": "-ENOENT", 
+      "failure_rate": 1, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "connect", 
+      "error_code": "-ENOENT", 
+      "failure_rate": 1, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "lstat", 
+      "error_code": "-ENOENT", 
+      "failure_rate": 0.6666666666666666, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "lstat", 
+      "error_code": "-ENOENT", 
+      "failure_rate": 0.5, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "lstat", 
+      "error_code": "-ENOENT", 
+      "failure_rate": 1, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "openat", 
+      "error_code": "-ENOENT", 
+      "failure_rate": 0.6666666666666666, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "openat", 
+      "error_code": "-ENOENT", 
+      "failure_rate": 0.5, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "openat", 
+      "error_code": "-ENOENT", 
+      "failure_rate": 1, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "stat", 
+      "error_code": "-ENOENT", 
+      "failure_rate": 0.6140939597315437, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "stat", 
+      "error_code": "-ENOENT", 
+      "failure_rate": 0.8187919463087249, 
+      "experiment_duration": 120
+    }, 
+    {
+      "syscall_name": "stat", 
+      "error_code": "-ENOENT", 
+      "failure_rate": 1, 
+      "experiment_duration": 120
+    }
+  ], 
+  "experiment_description": "Automatically generated based on monitoring data from 2020-04-12T19:00:00Z to 2020-04-12T23:00:00Z"
+}
