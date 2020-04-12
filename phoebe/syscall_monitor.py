@@ -103,9 +103,12 @@ static inline bool compare_process_name(char *str) {
     bpf_get_current_comm(&comm, sizeof(comm));
     char comparand[sizeof(str)];
     bpf_probe_read(&comparand, sizeof(comparand), str);
-    for (int i = 0; i < sizeof(comparand); ++i)
+    for (int i = 0; i < sizeof(comparand); ++i) {
+        if (comm[i] == comparand[i] && comm[i] == '\\0')
+            break;
         if (comm[i] != comparand[i])
             return false;
+    }
     return true;
 }
 #endif
