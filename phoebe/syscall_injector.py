@@ -11,15 +11,40 @@ from bcc import BPF
 
 prog = """
 #include <uapi/linux/ptrace.h>
+#include <linux/sched.h>
 #include <linux/errno.h>
 
 BPF_ARRAY(count, u32, 1);
 
+#ifdef FILTER_PROCESS
+static inline bool compare_process_name(char *str) {
+    char comm[TASK_COMM_LEN];
+    bpf_get_current_comm(&comm, sizeof(comm));
+    char comparand[sizeof(str)];
+    bpf_probe_read(&comparand, sizeof(comparand), str);
+    for (int i = 0; i < sizeof(comparand); ++i) {
+        if (comm[i] == comparand[i] && comm[i] == '\\0')
+            break;
+        if (comm[i] != comparand[i])
+            return false;
+    }
+    return true;
+}
+#endif
+
 int inject_when_exit(struct pt_regs *ctx)
 {
-    u32 pid = bpf_get_current_pid_tgid() >> 32;
-    if (pid != %s)
+#ifdef FILTER_PID
+    u64 pid_tgid = bpf_get_current_pid_tgid();
+    if (pid_tgid >> 32 != FILTER_PID)
         return 0;
+#endif
+
+#ifdef FILTER_PROCESS
+    char process[] = FILTER_PROCESS;
+    if (!compare_process_name(process))
+        return 0;
+#endif
 
     // calculate the probability
     if (%s)
@@ -77,6 +102,8 @@ def get_arguments():
             formatter_class=argparse.RawDescriptionHelpFormatter,
             epilog="./syscall_injector.py -p 12345 -P 0.8 --errorno=-ENOENT openat")
     parser.add_argument("-p", "--pid", type=int, help="inject failures in this pid")
+    parser.add_argument("--process",
+            help="monitor only this process name")
     parser.add_argument(metavar="syscall", dest="syscall",
             help="specify the syscall to be failed")
     parser.add_argument("-e", "--errorno", default="-1",
@@ -88,7 +115,7 @@ def get_arguments():
     parser.add_argument("-i", "--interval", default=1, type=int,
             help="print summary at this interval (seconds)")
     parser.add_argument("-d", "--duration", type=int,
-        help="total duration of fault injection, in seconds")
+            help="total duration of fault injection, in seconds")
     parser.add_argument("-v", "--verbose", action="store_true",
             help="print BPF program")
     parser.add_argument("-c", "--count", action="store", default=-1,
@@ -111,7 +138,15 @@ def main():
     global bpf
 
     args = get_arguments()
-    prog = prog%(args.pid, calculate_probability(args.probability), calculate_countdown(args.count), args.errorno)
+    if args.pid:
+        prog = ("#define FILTER_PID %d\n" % args.pid) + prog
+    if args.process:
+        prog = ('#define FILTER_PROCESS "%s"\n' % args.process) + prog
+    if (not args.pid) and (not args.process):
+        print("Either pid or process name should be given!")
+        exit()
+
+    prog = prog%(calculate_probability(args.probability), calculate_countdown(args.count), args.errorno)
     if args.verbose: print(prog)
 
     bpf = BPF(text = prog)
