@@ -124,7 +124,8 @@ def extract_basic_info(message):
         if message.is_multipart():
             messages = message.get_payload()
             for msg in messages:
-                content_str = content_str + msg.get_payload(decode = True)
+                payload = msg.get_payload(decode = True)
+                content_str = content_str + (payload if payload != None else "")
         else:
             content_str = message.get_payload(decode = True)
     except UnicodeEncodeError:
