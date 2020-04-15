@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # Filename: realistic_failures.py
 
-import csv, requests, sys, getopt, datetime, time, json
+import csv, requests, sys, getopt, datetime, time, json, numpy
 from prettytable import PrettyTable
 import logging
 
@@ -70,6 +70,13 @@ def print_help_info():
     print('Additional options: --start=<start_timestamp_or_rfc3339> --end=<end_timestamp_or_rfc3339> --period=<get_for_most_recent_period(int miniutes)>')
     print('                    use start&end or only use period')
 
+def calculate_failure_rate(values):
+    values = numpy.array(values).astype(float)
+    min_value = numpy.amin(values, axis=0)[1] # in the values array, index 0: timestamp, index 1: failure rate
+    mean_value = numpy.mean(values, axis=0)[1]
+    max_value = numpy.amax(values, axis=0)[1]
+    return min_value, mean_value, max_value
+
 def query_failures(start_time, end_time, step):
     failure_category = list()
 
@@ -91,10 +98,12 @@ def query_failures(start_time, end_time, step):
                 {"timestamp": entry["values"][0][0], "failure_rate": float(entry["values"][0][1])}, # first case
                 {"timestamp": entry["values"][-1][0], "failure_rate": float(entry["values"][-1][1])} # last case
             ]
+        min_value, mean_value, max_value = calculate_failure_rate(entry["values"])
         failure_category.append({
             "syscall_name": entry["metric"]["syscall_name"],
             "error_code": entry["metric"]["error_code"],
             "samples_in_total": len(entry["values"]),
+            "failure_rate": "%f, %f, %f"%(min_value, mean_value, max_value),
             "samples": samples
         })
     
@@ -102,7 +111,7 @@ def query_failures(start_time, end_time, step):
 
 def pretty_print_details(failure_details):
     stat_table = PrettyTable()
-    stat_table.field_names = ["Syscall Name", "Error Code", "Samples in Total", "Samples"]
+    stat_table.field_names = ["Syscall Name", "Error Code", "Samples in Total", "Failure Rate", "Samples"]
 
     for detail in failure_details:
         samples_str = ""
@@ -110,7 +119,7 @@ def pretty_print_details(failure_details):
             localtime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(sample["timestamp"]))
             samples_str += "localtime: %s, failure rate: %2f\n"%(localtime, sample["failure_rate"])
         samples_str = samples_str[:-1]
-        stat_table.add_row([detail["syscall_name"], detail["error_code"], detail["samples_in_total"], samples_str])
+        stat_table.add_row([detail["syscall_name"], detail["error_code"], detail["samples_in_total"], detail["failure_rate"], samples_str])
 
     print(stat_table)
 
