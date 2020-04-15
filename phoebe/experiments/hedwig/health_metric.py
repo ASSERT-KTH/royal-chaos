@@ -3,7 +3,7 @@
 # Filename: health_metric.py
 
 from prometheus_client import start_http_server, Counter
-import os, time, argparse, signal, random, socket
+import os, time, argparse, signal, re, random, socket
 from difflib import Differ
 import smtplib, imaplib, email
 from email.header import Header
