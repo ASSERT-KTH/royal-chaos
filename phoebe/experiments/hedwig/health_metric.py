@@ -157,13 +157,14 @@ def extract_messages(dataset_path):
 def main(args):
     dataset = extract_messages(args.dataset)
     c_labels = ['hostname', 'result']
-    c_number_total = Counter('health_checking', 'A health checking metric for hedwig', c_labels)
+    basic_health_checking = Counter('health_checking', 'A health checking metric for hedwig', c_labels)
+    start_http_server(args.port)
 
     while True:
         result = health_checking(dataset)
         logging.info("health_checking finished, result: %s"%result)
         # export metrics
-        c_number_total.labels(
+        basic_health_checking.labels(
             hostname="production",
             result=result
         ).inc()
