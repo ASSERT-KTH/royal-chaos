@@ -3,7 +3,7 @@
 # Filename: health_metric.py
 
 from prometheus_client import start_http_server, Counter
-import os, datetime, time, json, re, argparse, subprocess, signal, random, socket
+import os, time, argparse, signal, random, socket
 from difflib import Differ
 import smtplib, imaplib, email
 from email.header import Header
@@ -18,7 +18,7 @@ IMAP_SERVER = "localhost"
 IMAP_SERVER_PORT = 143
 
 SENDER = {"name": "test-sender", "address": "test-sender@kth-assert.net", "password": "******"}
-RECEIVER = {"name": "test-receiver", "address": "test-sender@kth-assert.net", "password": "******"}
+RECEIVER = {"name": "test-receiver", "address": "test-receiver@kth-assert.net", "password": "******"}
 
 def handle_sigint(sig, frame):
     logging.info("health_checking terminated")
@@ -30,9 +30,12 @@ def handle_args():
     parser.add_argument("-d", "--dataset", help="the folder that contains .msg files")
     parser.add_argument("-p", "--port", type=int,
         help="the port number which is used to export metrics to prometheus")
+    args = parser.parse_args()
+
     if not args.port:
         args.port = 8001
-    return parser.parse_args()
+
+    return args
 
 def randomly_pickup(dataset):
     email_path = random.choice(dataset)
@@ -43,7 +46,7 @@ def randomly_pickup(dataset):
 def health_checking(dataset):
     global SENDER
     global RECEIVER
-    
+
     sleep_time_after_sending = 30
 
     #   randomly pickup an email from the dataset
@@ -164,6 +167,7 @@ def main(args):
             hostname="production",
             result=result
         ).inc()
+        time.sleep(15)
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.DEBUG)
