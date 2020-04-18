@@ -93,7 +93,6 @@ def query_total_invocations(syscall_name, error_code, start_time, end_time, step
         start_timestamp = calendar.timegm(start_datetime.utctimetuple())
         if results["values"][0][0] > start_timestamp:
             # the first failure happened after start_time
-            logging.info(syscall_name)
             total = int(results["values"][-1][1])
         else:
             total = int(results["values"][-1][1]) - int(results["values"][0][1])
@@ -169,27 +168,27 @@ def generate_experiment_config(failure_details):
         "experiments": []
     }
 
-    factor_1 = 1.5
-    factor_2 = 2.0
-    duration = 120
-
+    factor = 1.5
+    duration = 300
     for detail in failure_details:
         if "unknown" in detail["syscall_name"]: continue
 
-        sample = detail["samples"][0]
-
-        if sample["failure_rate"] < 0.3:
-            config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], 1 / factor_1, duration))
-            config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], 1 / factor_2, duration))
+        if detail["rate_max"] < 0.3:
+            # the original failure rate is very low, thus we use fixed rate instead
+            config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], 0.5, duration))
+            config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], 0.75, duration))
             config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], 1, duration))
-        elif sample["failure_rate"] < (1 / factor_2):
-            config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], sample["failure_rate"] * factor_1, duration))
-            config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], sample["failure_rate"] * factor_2, duration))
-            config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], 1, duration))
-        elif sample["failure_rate"] < (1 / factor_1):
-            config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], sample["failure_rate"] * factor_1, duration))
-            config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], 1, duration))
+        elif detail["rate_max"] / detail["rate_min"] < 10:
+            # the original failure rate fluctuated wildly, we keep using the max failure rate
+            config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], detail["rate_max"], duration))
+            if detail["rate_max"] < 1:
+                config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], 1, duration))
         else:
+            # if the original failure rate is relatively high, and it does not fluctuate a lot
+            # we amplify it by multiplying the factor
+            amplified = detail["rate_max"] * factor
+            if amplified < 1:
+                config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], amplified, duration))
             config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], 1, duration))
 
     with open(output_file, "wt") as output:
