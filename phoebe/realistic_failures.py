@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 # Filename: realistic_failures.py
 
-import csv, requests, sys, getopt, datetime, time, json, numpy
+import csv, requests, sys, getopt, time, calendar, json, numpy
+from datetime import datetime
 from prettytable import PrettyTable
 import logging
 
@@ -77,6 +78,28 @@ def calculate_failure_rate(values):
     max_value = numpy.amax(values, axis=0)[1]
     return min_value, mean_value, max_value
 
+def query_total_invocations(syscall_name, error_code, start_time, end_time, step):
+    query_string = 'failed_syscalls_total{syscall_name="%s", error_code="%s"}'%(syscall_name, error_code)
+    response = requests.post(PROMETHEUS_URL + RANGE_QUERY_API, data={'query': query_string, 'start': start_time, 'end': end_time, 'step': step})
+    status = response.json()["status"]
+
+    if status == "error":
+        logging.error(response.json())
+        total = -1
+    else:
+        results = response.json()['data']['result'][0]
+        # https://stackoverflow.com/questions/5067218/get-utc-timestamp-in-python-with-datetime
+        start_datetime = datetime.strptime(start_time, '%Y-%m-%dT%H:%M:%SZ')
+        start_timestamp = calendar.timegm(start_datetime.utctimetuple())
+        if results["values"][0][0] > start_timestamp:
+            # the first failure happened after start_time
+            logging.info(syscall_name)
+            total = int(results["values"][-1][1])
+        else:
+            total = int(results["values"][-1][1]) - int(results["values"][0][1])
+
+    return total
+
 def query_failures(start_time, end_time, step):
     failure_category = list()
 
@@ -87,7 +110,7 @@ def query_failures(start_time, end_time, step):
     if status == "error":
         logging.error(response.json())
         sys.exit(2)
-    
+
     results = response.json()['data']['result']
 
     for entry in results:
@@ -103,15 +126,18 @@ def query_failures(start_time, end_time, step):
             "syscall_name": entry["metric"]["syscall_name"],
             "error_code": entry["metric"]["error_code"],
             "samples_in_total": len(entry["values"]),
-            "failure_rate": "%f, %f, %f"%(min_value, mean_value, max_value),
+            "invocations_in_total": query_total_invocations(entry["metric"]["syscall_name"], entry["metric"]["error_code"], start_time, end_time, step,  ),
+            "rate_min": min_value,
+            "rate_mean": mean_value,
+            "rate_max": max_value,
             "samples": samples
         })
-    
+
     return failure_category
 
 def pretty_print_details(failure_details):
     stat_table = PrettyTable()
-    stat_table.field_names = ["Syscall Name", "Error Code", "Samples in Total", "Failure Rate", "Samples"]
+    stat_table.field_names = ["Syscall Name", "Error Code", "Samples in Total", "Invocations in Total", "Failure Rate", "Samples"]
 
     for detail in failure_details:
         samples_str = ""
@@ -119,8 +145,9 @@ def pretty_print_details(failure_details):
             localtime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(sample["timestamp"]))
             samples_str += "localtime: %s, failure rate: %2f\n"%(localtime, sample["failure_rate"])
         samples_str = samples_str[:-1]
-        stat_table.add_row([detail["syscall_name"], detail["error_code"], detail["samples_in_total"], detail["failure_rate"], samples_str])
+        stat_table.add_row([detail["syscall_name"], detail["error_code"], detail["samples_in_total"], detail["invocations_in_total"], "%f, %f, %f"%(detail["rate_min"], detail["rate_mean"], detail["rate_max"]), samples_str])
 
+    stat_table.sortby = "Syscall Name"
     print(stat_table)
 
 def generate_experiment(syscall_name, error_code, failure_rate, duration):
