@@ -149,11 +149,14 @@ def pretty_print_details(failure_details):
     stat_table.sortby = "Syscall Name"
     print(stat_table)
 
-def generate_experiment(syscall_name, error_code, failure_rate, duration):
+def generate_experiment(syscall_name, error_code, failure_rate, ori_min_rate, ori_mean_rate, ori_max_rate, duration):
     result = {
         "syscall_name": syscall_name,
         "error_code": "-%s"%error_code,
         "failure_rate": failure_rate,
+        "original_min_rate": ori_min_rate,
+        "original_mean_rate": ori_mean_rate,
+        "original_max_rate": ori_max_rate,
         "experiment_duration": duration
     }
     return result
@@ -175,21 +178,21 @@ def generate_experiment_config(failure_details):
 
         if detail["rate_max"] < 0.3:
             # the original failure rate is very low, thus we use fixed rate instead
-            config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], 0.5, duration))
-            config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], 0.75, duration))
-            config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], 1, duration))
+            config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], 0.5, detail["rate_min"], detail["rate_mean"], detail["rate_max"], duration))
+            config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], 0.75, detail["rate_min"], detail["rate_mean"], detail["rate_max"], duration))
+            config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], 1, detail["rate_min"], detail["rate_mean"], detail["rate_max"], duration))
         elif detail["rate_max"] / detail["rate_min"] > 10:
             # the original failure rate fluctuated wildly, we keep using the max failure rate
-            config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], detail["rate_max"], duration))
+            config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], detail["rate_max"], detail["rate_min"], detail["rate_mean"], detail["rate_max"], duration))
             if detail["rate_max"] < 1:
-                config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], 1, duration))
+                config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], 1, detail["rate_min"], detail["rate_mean"], detail["rate_max"], duration))
         else:
             # if the original failure rate is relatively high, and it does not fluctuate a lot
             # we amplify it by multiplying the factor
             amplified = detail["rate_max"] * factor
             if amplified < 1:
-                config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], amplified, duration))
-            config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], 1, duration))
+                config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], amplified, detail["rate_min"], detail["rate_mean"], detail["rate_max"], duration))
+            config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], 1, detail["rate_min"], detail["rate_mean"], detail["rate_max"], duration))
 
     with open(output_file, "wt") as output:
         json.dump(config, output, indent = 2)
