@@ -178,7 +178,7 @@ def generate_experiment_config(failure_details):
             config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], 0.5, duration))
             config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], 0.75, duration))
             config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], 1, duration))
-        elif detail["rate_max"] / detail["rate_min"] < 10:
+        elif detail["rate_max"] / detail["rate_min"] > 10:
             # the original failure rate fluctuated wildly, we keep using the max failure rate
             config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], detail["rate_max"], duration))
             if detail["rate_max"] < 1:
