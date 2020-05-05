@@ -51,7 +51,7 @@ def do_experiment(dataset):
     TTORRENT = subprocess.Popen(run_ttorrent, close_fds=True, shell=True, preexec_fn=os.setsid)
     exit_code = TTORRENT.wait()
     end_at = time.time()
-    result["execution_time"] = ent_at - start_at
+    result["execution_time"] = end_at - start_at
 
     TTORRENT = None
     if exit_code == 137:
