@@ -19,7 +19,6 @@ def handle_sigint(sig, frame):
 def handle_args():
     parser = argparse.ArgumentParser(
         description="Conduct fault injection experiments on TTorrent")
-    parser.add_argument("-c", "--config", help="the fault injection config (.json)")
     parser.add_argument("-m", "--monitor", help="the path to syscall_monitor.py")
     parser.add_argument("-d", "--dataset", help="the path to a folder which contains torrent files")
     return parser.parse_args()
@@ -79,8 +78,6 @@ def main(args):
     global TTORRENT
 
     dataset = extract_torrent_files(args.dataset)
-    print(dataset)
-    return
     MONITOR = subprocess.Popen("%s --process java -mL -i 15 >/dev/null 2>&1"%args.monitor, close_fds=True, shell=True, preexec_fn=os.setsid)
     while True:
         result = do_experiment(dataset)
