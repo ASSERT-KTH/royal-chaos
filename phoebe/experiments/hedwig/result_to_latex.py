@@ -7,10 +7,10 @@ import logging
 
 TEMPLATE = r"""\begin{table*}[tb]
 \centering
-\caption{Chaos Engineering Experiment Results on HedWig (In the result column, SF means sending failure, FF means fetching failure, SC means server crash, and PI means post inspection.)}\label{tab:resultsOfHedwig}
-\begin{tabular}{lrrrr}
+\caption{Chaos Engineering Experiment Results on HedWig}\label{tab:resultsOfHedwig}
+\begin{tabular}{lrrrrp{5.5cm}}
 \toprule
-Target& Error Code& Failure Rate& Injection Count& Result\\
+Target& Error Code& Original Failure Rate& Failure Rate& Injection Count& Result \scriptsize (SF: sending failure, FF: fetching failure, VF: validation failure, SC: server crash, PI: post inspection)\\
 \midrule
 """ + "%s" + r"""
 \bottomrule
@@ -29,9 +29,10 @@ def main(args):
         data = json.load(file)
         body = ""
         for experiment in data["experiments"]:
-            result = "SF: %d, FF: %d, SC: %d, PI: %s" % (
+            result = "SF: %d, FF: %d, VF: %d, SC: %d, PI: %s" % (
                 experiment["result"]["sending_failures"],
                 experiment["result"]["fetching_failures"],
+                experiment["result"]["validation_failures"],
                 experiment["result"]["server_crashed"],
                 experiment["result"]["post_inspection"]
             )
@@ -39,9 +40,10 @@ def main(args):
                 injection_count = experiment["result"]["injection_count"]
             else:
                 injection_count = 1
-            body += "%s& %s& %.3f& %d& %s\\\\\n"%(
+            body += "%s& %s& %s& %.3f& %d& %s\\\\\n"%(
                 experiment["syscall_name"],
                 experiment["error_code"][1:], # remove the "-" before the error code
+                "%.3f, %.3f, %.3f"%(experiment["original_min_rate"], experiment["original_mean_rate"], experiment["original_max_rate"]),
                 experiment["failure_rate"],
                 injection_count,
                 result
