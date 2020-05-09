@@ -25,9 +25,20 @@ def handle_args():
     parser.add_argument("-c", "--config", help="the fault injection config (.json)")
     parser.add_argument("-i", "--injector", help="the path to syscall_injector.py")
     parser.add_argument("-m", "--monitor", help="the path to syscall_monitor.py")
+    parser.add_argument("-d", "--dataset", help="the path to a folder which contains torrent files")
     return parser.parse_args()
 
-def do_experiment(experiment, injector_path):
+def extract_torrent_files(dataset_path):
+    dataset = list()
+    for file in os.listdir(dataset_path):
+        if os.path.splitext(file)[1] == '.torrent':
+            filepath = os.path.join(dataset_path, file)
+            with open(os.path.join(dataset_path, os.path.splitext(file)[0] + ".md5"), "rt") as md5file:
+                md5 = md5file.readline().strip()
+            dataset.append({"filepath": filepath, "md5": md5})
+    return dataset
+
+def do_experiment(experiment, injector_path, dataset):
     global INJECTOR
     global MONITOR
     global TTORRENT
@@ -41,14 +52,8 @@ def do_experiment(experiment, injector_path):
     logging.info("begin the following experiment")
     logging.info(experiment)
 
-    run_ttorrent = "timeout --signal=9 %d java -jar ttorrent-2.0-client.jar -o . ubuntu-19.10-desktop-amd64.iso.torrent > /dev/null 2>&1"%experiment["experiment_duration"]
-    correct_md5 = "ee829212bbd90d6c0237701b10ad90fd"
-
-    # remove the downloaded files
-    if os.path.exists("ubuntu-19.10-desktop-amd64.iso"):
-        os.system("rm ubuntu-19.10-desktop-amd64.iso")
-    if os.path.exists("ubuntu-19.10-desktop-amd64.iso.part"):
-        os.system("rm ubuntu-19.10-desktop-amd64.iso.part")
+    single_run_timeout = 150
+    end_at = time.time() + experiment["experiment_duration"]
 
     # start the injector
     INJECTOR = subprocess.Popen("python -u %s --process java -P %s --errorno=%s %s"%(
@@ -56,22 +61,36 @@ def do_experiment(experiment, injector_path):
     ), stdout=subprocess.PIPE, stderr=subprocess.PIPE, close_fds=True, shell=True, preexec_fn=os.setsid)
     time.sleep(3)
 
-    TTORRENT = subprocess.Popen(run_ttorrent, close_fds=True, shell=True, preexec_fn=os.setsid)
-    exit_code = TTORRENT.wait()
-    TTORRENT = None
-    result = dict()
-    logging.info(exit_code)
-    if exit_code == 137:
-        result["result"] = "app_stalled"
-    elif exit_code != 0:
-        result["result"] = "app_crashed"
+    result = {"rounds": 0, "succeeded": 0, "app_crashed": 0, "app_stalled": 0, "validation_failed": 0}
+    while True:
+        if time.time() > end_at: break
 
-    if os.path.exists("ubuntu-19.10-desktop-amd64.iso"):
-        md5 = subprocess.check_output("md5sum ./ubuntu-19.10-desktop-amd64.iso", shell=True)
-        if md5.split(" ")[0] == correct_md5:
-            result["result"] = "succeeded"
-        else:
-            result["result"] = "validation_failed"
+        target = random.choice(dataset)
+        run_ttorrent = "timeout --signal=9 %d java -jar ttorrent-2.0-client.jar -o . %s > /dev/null 2>&1"%(single_run_timeout, target["filepath"])
+
+        # remove the downloaded files
+        os.system("rm *.iso")
+        os.system("rm *.iso.part")
+
+        TTORRENT = subprocess.Popen(run_ttorrent, close_fds=True, shell=True, preexec_fn=os.setsid)
+        exit_code = TTORRENT.wait()
+        TTORRENT = None
+        result = dict()
+        logging.info(exit_code)
+        if exit_code == 137:
+            result["app_stalled"] = result["app_stalled"] + 1
+        elif exit_code != 0:
+            result["app_crashed"] = result["app_crashed"] + 1
+
+        iso_filename = os.path.splitext(target["filepath"].split("/")[-1])[0]
+        if os.path.exists(iso_filename):
+            md5 = subprocess.check_output("md5sum ./%s"%iso_filename, shell=True)
+            if md5.split(" ")[0] == target["md5"]:
+                result["succeeded"] = result["succeeded"] + 1
+            else:
+                result["validation_failed"] = result["validation_failed"] + 1
+        result["rounds"] = result["rounds"] + 1
+        time.sleep(5)
 
     # end the injector
     time.sleep(3)
@@ -104,14 +123,15 @@ def main(args):
     with open(args.config, 'rt') as file:
         experiments = json.load(file)
 
+        dataset = extract_torrent_files(args.dataset)
         # start the monitor
         MONITOR = subprocess.Popen("%s --process java -mL -i 15 >/dev/null 2>&1"%args.monitor, close_fds=True, shell=True, preexec_fn=os.setsid)
 
         for experiment in experiments["experiments"]:
             if "result" in experiment: continue
-            experiment = do_experiment(experiment, args.injector)
+            experiment = do_experiment(experiment, args.injector, dataset)
             save_experiment_result(experiments)
-            time.sleep(3)
+            time.sleep(15)
 
     if (INJECTOR != None): os.killpg(os.getpgid(INJECTOR.pid), signal.SIGTERM)
     if (MONITOR != None): os.killpg(os.getpgid(MONITOR.pid), signal.SIGTERM)
