@@ -75,7 +75,6 @@ def do_experiment(experiment, injector_path, dataset):
         TTORRENT = subprocess.Popen(run_ttorrent, close_fds=True, shell=True, preexec_fn=os.setsid)
         exit_code = TTORRENT.wait()
         TTORRENT = None
-        result = dict()
         logging.info(exit_code)
         if exit_code == 137:
             result["app_stalled"] = result["app_stalled"] + 1
