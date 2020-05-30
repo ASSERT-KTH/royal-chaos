@@ -73,9 +73,9 @@ def print_help_info():
 
 def calculate_failure_rate(values):
     values = numpy.array(values).astype(float)
-    min_value = numpy.amin(values, axis=0)[1] # in the values array, index 0: timestamp, index 1: failure rate
+    min_value = numpy.percentile(values, 5, axis=0)[1] # in the values array, index 0: timestamp, index 1: failure rate
     mean_value = numpy.mean(values, axis=0)[1]
-    max_value = numpy.amax(values, axis=0)[1]
+    max_value = numpy.percentile(values, 95, axis=0)[1]
     return min_value, mean_value, max_value
 
 def query_total_invocations(syscall_name, error_code, start_time, end_time, step):
