@@ -78,7 +78,7 @@ def main(args):
                     experiment["result"]["app_stalled"],
                     experiment["result"]["app_crashed"]
                 )
-                body += "%s:%s& %s& %s& %d& %s\\\\\n"%(
+                body += "%s:%s& %s& %s& %s\\\\\n"%(
                     experiment["syscall_name"],
                     experiment["error_code"][1:], # remove the "-" before the error code
                     round_number(experiment["failure_rate"]),
