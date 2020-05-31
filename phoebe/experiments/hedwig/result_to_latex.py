@@ -57,13 +57,14 @@ def main(args):
         data = json.load(file)
         body = ""
         for experiment in data["experiments"]:
-            result = "SU:%d, SF:%d, FF:%d, VF:%d, SC:%d, PI:%s" % (
-                experiment["result"]["succeeded"],
-                experiment["result"]["sending_failures"],
-                experiment["result"]["fetching_failures"],
-                experiment["result"]["validation_failures"],
-                experiment["result"]["server_crashed"],
-                experiment["result"]["post_inspection"]
+            result = "SU:%.1f\\%%, SF:%.1f\\%%, FF:%.1f\\%%, VF:%.1f\\%%, SC:%.1f\\%%, CO:%s" % (
+                float(experiment["result"]["succeeded"]) / experiment["result"]["rounds"] * 100,
+                float(experiment["result"]["sending_failures"]) / experiment["result"]["rounds"] * 100,
+                float(experiment["result"]["fetching_failures"]) / experiment["result"]["rounds"] * 100,
+                float(experiment["result"]["validation_failures"]) / experiment["result"]["rounds"] * 100,
+                float(experiment["result"]["server_crashed"]) / experiment["result"]["rounds"] * 100,
+                # the post inspection failure means state corruption is true (T)
+                "T" if experiment["result"]["post_inspection"] == "failed" else "F"
             )
             if "injection_count" in experiment["result"]:
                 injection_count = experiment["result"]["injection_count"]
