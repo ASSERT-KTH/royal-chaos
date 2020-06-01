@@ -1,6 +1,10 @@
-# Phoebe (WIP)
+# Phoebe
 
-Natural Errors Observation and Realistic Failure Models Synthesis
+Realistic Failure Injection for System Calls
+
+## Introduction
+
+Phoebe is a fault injection framework for reliability analysis with respect to system call invocation failures. First, Phoebe enables developers to have full observability of system call invocations for an application, second Phoebe generates failure models  that are realistic in the sense that they resemble errors that naturally happen in production. With the generated failure models, Phoebe automatically conducts a series of chaos engineering experiments to systematically assess the reliability of applications with respect to system call invocation failures.
 
 ## Installation
 
@@ -22,3 +26,26 @@ Monitor all system call invocations including their types, return code and execu
 sudo ./syscall_monitor.py --process [PROCESS_NAME] -mL -i 15
 ```
 Similar to the previous command, but it monitors all the system call invocations done by process with name `PROCESS_NAME`.
+
+## Failure Model Synthesizer
+```
+python realistic_failures.py -h [HOST_URL] --start=[START] --end=[END]
+```
+Query the monitoring information from Prometheus server and generate a set of realistic failure injection models. The option `--start` and `--end` follow the format of unix timestamp or rfc3339 string (e.g., 2020-05-30T10:00:00Z).
+
+## System Call Injector
+```
+sudo ./syscall_injector.py -p [PID] -P 0.5 --errorno=-ETIMEDOUT futex
+```
+Fail invocations to futex with an error code `ETIMEDOUT` and a failure rate 50% (half of the invocations are likely to be failed) for process PID.
+
+```
+sudo ./syscall_injector.py --process [PROCESS_NAME] -P 0.5 -c 100 --errorno=-ETIMEDOUT futex
+```
+Fail invocations to futex with an error code `ETIMEDOUT` which are done by process with name `PROCESS_NAME`. The faile rate is 50%. There are at most 100 invocations are injected with such an error.
+
+## Visualizer
+```
+cd ./visualization && ./up.sh
+```
+Then the Grafana dashboard is available at `http://localhost:3000/`.
