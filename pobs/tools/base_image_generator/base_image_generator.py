@@ -236,7 +236,7 @@ def test_pobs_base_image(image_name, image_tag):
                 glowroot_attached = True
             if "INFO TripleAgent PerturbationAgent is successfully attached!" in stdout:
                 tripleagent_attached = True
-            if "INFO PAgent throw exception perturbation activated in pobs/App/downloadDSN2019BestPaper(java/io/IOException)" in stdout:
+            if "INFO PAgent throw exception perturbation activated in pobs/App/downloadTheFile(java/io/IOException)" in stdout:
                 exception_thrown = True
             if os.path.exists("./logs/perturbationPointsList.csv"):
                 tripleagent_csv = True
