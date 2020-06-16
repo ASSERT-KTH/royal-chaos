@@ -1,3 +1,5 @@
+USER root
+
 WORKDIR /root
 
 # install openjdk8 if java is not installed
