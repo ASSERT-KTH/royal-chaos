@@ -85,7 +85,7 @@ def parse_options():
     elif options.dockerfile != None and not os.path.isfile(options.dockerfile):
         parser.print_help()
         parser.error("%s should be a file."%options.dockerfile)
-    
+
     return options
 
 def get_template_contents(base_image):
@@ -95,20 +95,30 @@ def get_template_contents(base_image):
     contents = list()
     if len(base_image.rsplit(":", 1)) == 2:
         image_tag = base_image.rsplit(":", 1)[1]
-    
+
+    template_file = "./pobs_templates/default.tpl"
+    if os.path.isfile("./pobs_templates/%s/default.tpl"%(image_name)):
+        template_file = "./pobs_templates/%s/default.tpl"%(image_name)
     if image_tag != "":
         if os.path.isfile("./pobs_templates/%s/%s.tpl"%(image_name, image_tag)):
             template_file = "./pobs_templates/%s/%s.tpl"%(image_name, image_tag)
-    else:
-        if os.path.isfile("./pobs_templates/%s/default.tpl"%(image_name)):
-            template_file = "./pobs_templates/%s/default.tpl"%(image_name)
-        else:
-            template_file = "./pobs_templates/default.tpl"
 
     with open(template_file, 'rt') as file:
         contents = file.readlines()
-    
+
+    username = get_username_of_an_image(image_name, image_tag)
+    if username != "root":
+        # we have to use root to install POBS
+        contents = ["USER root\n\n"] + contents + ["\n\nUSER %s"%username]
+
     return image_name, image_tag, contents
+
+def get_username_of_an_image(image_name, image_tag):
+    if image_tag == "":
+        username = subprocess.check_output("docker run --rm --entrypoint=whoami %s"%image_name, shell=True)
+    else:
+        username = subprocess.check_output("docker run --rm --entrypoint=whoami %s:%s"%(image_name, image_tag), shell=True)
+    return username.decode("utf-8").strip()
 
 def generate_base_image_from_dockerfile(ori_dockerfile, target_dockerfile_path):
     target_dockerfile = os.path.join(target_dockerfile_path, "Dockerfile-pobs")
