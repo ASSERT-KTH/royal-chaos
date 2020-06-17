@@ -114,10 +114,13 @@ def get_template_contents(base_image):
     return image_name, image_tag, contents
 
 def get_username_of_an_image(image_name, image_tag):
-    if image_tag == "":
-        username = subprocess.check_output("docker run --rm --entrypoint=whoami %s"%image_name, shell=True)
-    else:
-        username = subprocess.check_output("docker run --rm --entrypoint=whoami %s:%s"%(image_name, image_tag), shell=True)
+    try:
+        if image_tag == "":
+            username = subprocess.check_output("docker run --rm --entrypoint=whoami %s"%image_name, shell=True)
+        else:
+            username = subprocess.check_output("docker run --rm --entrypoint=whoami %s:%s"%(image_name, image_tag), shell=True)
+    except subprocess.CalledProcessError:
+        username = b"root"
     return username.decode("utf-8").strip()
 
 def generate_base_image_from_dockerfile(ori_dockerfile, target_dockerfile_path):
