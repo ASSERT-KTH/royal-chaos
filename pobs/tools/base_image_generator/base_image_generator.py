@@ -91,17 +91,19 @@ def parse_options():
 def get_template_contents(base_image):
     base_image = base_image.strip()
     image_name = base_image.rsplit(":", 1)[0]
-    image_tag = "latest"
+    image_tag = ""
     contents = list()
     if len(base_image.rsplit(":", 1)) == 2:
         image_tag = base_image.rsplit(":", 1)[1]
     
-    if os.path.isfile("./pobs_templates/%s/%s.tpl"%(image_name, image_tag)):
-        template_file = "./pobs_templates/%s/%s.tpl"%(image_name, image_tag)
-    elif os.path.isfile("./pobs_templates/%s/default.tpl"%(image_name)):
-        template_file = "./pobs_templates/%s/default.tpl"%(image_name)
+    if image_tag != "":
+        if os.path.isfile("./pobs_templates/%s/%s.tpl"%(image_name, image_tag)):
+            template_file = "./pobs_templates/%s/%s.tpl"%(image_name, image_tag)
     else:
-        template_file = "./pobs_templates/default.tpl"
+        if os.path.isfile("./pobs_templates/%s/default.tpl"%(image_name)):
+            template_file = "./pobs_templates/%s/default.tpl"%(image_name)
+        else:
+            template_file = "./pobs_templates/default.tpl"
 
     with open(template_file, 'rt') as file:
         contents = file.readlines()
@@ -121,7 +123,11 @@ def generate_base_image_from_dockerfile(ori_dockerfile, target_dockerfile_path):
         image_name, image_tag, contents = get_template_contents(last_baseimage.strip())
         # for the official image busybox, we have to switch to another fatter busybox
         actual_image_name = "progrium/busybox" if image_name == "busybox" else image_name
-        target.write("FROM %s:%s\n\n"%(actual_image_name, image_tag))
+
+        if image_tag == "":
+            target.write("FROM %s\n\n"%(actual_image_name))
+        else:
+            target.write("FROM %s:%s\n\n"%(actual_image_name, image_tag))
         target.writelines(contents)
 
     return image_name, image_tag
@@ -129,10 +135,15 @@ def generate_base_image_from_dockerfile(ori_dockerfile, target_dockerfile_path):
 def generate_base_image_from_image(ori_image, target_dockerfile_path):
     target_dockerfile = os.path.join(target_dockerfile_path, "Dockerfile-pobs")
     with open(target_dockerfile, 'wt') as target:
-        image_name, image_tag, contents = get_template_contents(ori_image.strip())
+        actual_image_name = re.split(" as ", ori_image, flags=re.IGNORECASE)[0]
+        image_name, image_tag, contents = get_template_contents(actual_image_name.strip())
         # for the official image busybox, we have to switch to another fatter busybox
         actual_image_name = "progrium/busybox" if image_name == "busybox" else image_name
-        target.write("FROM %s:%s\n\n"%(actual_image_name, image_tag))
+
+        if image_tag == "":
+            target.write("FROM %s\n\n"%(actual_image_name))
+        else:
+            target.write("FROM %s:%s\n\n"%(actual_image_name, image_tag))
         target.writelines(contents)
 
     return image_name, image_tag
@@ -185,7 +196,10 @@ def test_pobs_base_image(image_name, image_tag):
 
     with open(os.path.join(base_path, snippet), 'rt') as snippet_file, open(dockerfile_name, 'wt') as target:
         contents = snippet_file.readlines()
-        target.write("FROM %s:%s\n\n"%(image_name, image_tag))
+        if image_tag == "":
+            target.write("FROM %s\n\n"%(image_name))
+        else:
+            target.write("FROM %s:%s\n\n"%(image_name, image_tag))
         target.writelines(contents)
 
     test_result = True
@@ -278,7 +292,10 @@ def build_POBS_base_image(image_name, image_tag):
 
     build_result = {"image_name": image_name, "image_tag": image_tag, "build": "not built", "test": "not tested", "publish": "not yet"}
 
-    exitcode = os.system("docker build -t %s/%s-pobs:%s -f %s/Dockerfile-pobs ."%(OPTIONS.dockerhub_org, image_name, image_tag, OPTIONS.output))
+    if image_tag == "":
+        exitcode = os.system("docker build -t %s/%s-pobs -f %s/Dockerfile-pobs ."%(OPTIONS.dockerhub_org, image_name, OPTIONS.output))
+    else:
+        exitcode = os.system("docker build -t %s/%s-pobs:%s -f %s/Dockerfile-pobs ."%(OPTIONS.dockerhub_org, image_name, image_tag, OPTIONS.output))
     os.system("docker image prune -f")
     if exitcode != 0:
         logging.error("Failed to build POBS base image for %s:%s"%(image_name, image_tag))
@@ -298,12 +315,18 @@ def build_POBS_base_image(image_name, image_tag):
 
     if OPTIONS.publish:
         if (not OPTIONS.test) or (OPTIONS.test and test_result):
+            if image_name == "":
+                full_image_name = "%s/%s-pobs"%(OPTIONS.dockerhub_org, image_name)
+            else:
+                full_image_name = "%s/%s-pobs:%s"%(OPTIONS.dockerhub_org, image_name, image_tag)
+
             if "/" in image_name:
                 # rename nonofficial image names since they contain "/"
-                full_image_name = "%s/%s-pobs:%s"%(OPTIONS.dockerhub_org, image_name, image_tag)
-                full_image_name_new = "%s/%s-pobs:%s"%(OPTIONS.dockerhub_org, image_name.replace("/", "_"), image_tag)
-                os.system("docker tag %s %s"%(full_image_name, full_image_name_new))
-            if os.system("docker push %s/%s-pobs:%s"%(OPTIONS.dockerhub_org, image_name.replace("/", "_"), image_tag)) == 0:
+                ori_full_name = full_image_name
+                full_image_name = "%s/%s-pobs"%(OPTIONS.dockerhub_org, image_name.replace("/", "_"))
+                os.system("docker tag %s %s"%(ori_full_name, full_image_name))
+
+            if os.system("docker push %s"%(OPTIONS.dockerhub_org, full_image_name)) == 0:
                 build_result["publish"] = "published at %s"%time.strftime("%Y-%m-%d %H:%M", time.localtime())
             else:
                 build_result["publish"] = "failed"
