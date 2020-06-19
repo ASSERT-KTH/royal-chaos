@@ -123,6 +123,17 @@ def get_username_of_an_image(image_name, image_tag):
         username = b"root"
     return username.decode("utf-8").strip()
 
+def test_bash_if_exists(image_name, image_tag):
+    result = True
+    try:
+        if image_tag == "":
+            subprocess.check_output("docker run --rm --entrypoint=bash %s"%image_name, shell=True)
+        else:
+            subprocess.check_output("docker run --rm --entrypoint=bash %s:%s"%(image_name, image_tag), shell=True)
+    except subprocess.CalledProcessError:
+        result = False
+    return result
+
 def generate_base_image_from_dockerfile(ori_dockerfile, target_dockerfile_path):
     target_dockerfile = os.path.join(target_dockerfile_path, "Dockerfile-pobs")
     with open(ori_dockerfile, 'rt') as original, open(target_dockerfile, 'wt') as target:
@@ -200,8 +211,9 @@ def test_pobs_base_image(image_name, image_tag):
     # for some base images, we need to install jdk by ourselves
     if "busybox" in image_name:
         snippet = "busybox.tpl"
-    elif "alpine" in image_name:
-        snippet = "alpine.tpl"
+
+    # if bash does not exist, then "source" is not supported in the Dockerfile
+    if not test_bash_if_exists(image_name, image_tag): snippet = "alpine.tpl"
 
     with open(os.path.join(base_path, snippet), 'rt') as snippet_file, open(dockerfile_name, 'wt') as target:
         contents = snippet_file.readlines()
