@@ -200,6 +200,8 @@ def test_pobs_base_image(image_name, image_tag):
     # for some base images, we need to install jdk by ourselves
     if "busybox" in image_name:
         snippet = "busybox.tpl"
+    elif "alpine" in image_name:
+        snippet = "alpine.tpl"
 
     with open(os.path.join(base_path, snippet), 'rt') as snippet_file, open(dockerfile_name, 'wt') as target:
         contents = snippet_file.readlines()
