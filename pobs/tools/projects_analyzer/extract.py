@@ -37,8 +37,11 @@ def call_github_api():
       'per_page': '100',
       'page': i
     }
+    headers = {
+    'Authorization': get_auth_token()
+    }
     print(params)
-    response = requests.get('https://api.github.com/search/repositories', params=params)
+    response = requests.get('https://api.github.com/search/repositories', params=params, headers=headers)
 
     data_from_page = response.json()
     for i in range(len(data_from_page["items"])):
@@ -61,7 +64,8 @@ def find_release_sha(tags_url, tag_name):
     tags_response = requests.get(tags_url, params=params, headers=headers)
     tags_response_data = tags_response.json()
     for i in range(len(tags_response_data)):
-      if tags_response_data[i]["name"] == tag_name:
+      if (tags_response_data[i]["name"] == tag_name or 
+        re.sub("v", "", tag_name) == (re.sub("v", "", tags_response_data[i]["name"]))):
         release_sha = tags_response_data[i]["commit"]["sha"]
   return release_sha
 
@@ -91,7 +95,7 @@ def find_repo_latest_commit(commits_url):
   latest_commit_sha = latest_commit_data[0]["sha"]
   return latest_commit_sha
 
-def extract_propreitary_info(single_repo_data):
+def extract_proprietary_info(single_repo_data):
   single_repo = {
     "current_timestamp": calendar.timegm(time.gmtime()),
     "name": single_repo_data["name"],
@@ -170,6 +174,13 @@ def find_build_tools():
     build_tools.append("Gradle")
   return build_tools
 
+def find_languages(languages_url):
+  headers = {
+    'Authorization': get_auth_token()
+  }
+  languages_response = requests.get(languages_url, headers=headers)
+  return languages_response.json()
+
 def extract_info_from_results():
   with open(query_results_file, 'r') as json_file:
     repo_data = json.load(json_file)
@@ -178,7 +189,7 @@ def extract_info_from_results():
   output = []
 
   for i in range(len(repo_data["items"])):
-    single_repo = extract_propreitary_info(repo_data["items"][i])
+    single_repo = extract_proprietary_info(repo_data["items"][i])
     latest_release = find_repo_latest_release(repo_data["items"][i]["releases_url"], repo_data["items"][i]["tags_url"])
     if "tag_name" in latest_release:
       single_repo["tag_name"] = latest_release["tag_name"]
@@ -202,6 +213,8 @@ def extract_info_from_results():
     build_tools = find_build_tools()
     if len(build_tools) > 0:
       single_repo["build_tools"] = build_tools
+    # Find number of bytes of code per language
+    single_repo["languages"] = find_languages(repo_data["items"][i]["languages_url"])
     # cd to parent directory
     os.chdir(parent_dir)
     # Remove repo directory
