@@ -52,6 +52,22 @@ def run_command(command, workdir, timeout=600):
 
         return (stdoutdata.decode("utf-8"), stderrdata.decode("utf-8"), exit_code)
 
+def run_original_image(image_name):
+    with tempfile.NamedTemporaryFile(mode="w+b") as stdout_f, tempfile.NamedTemporaryFile(mode="w+b") as stderr_f:
+        p = subprocess.Popen("docker run --rm %s"%image_name, stdout=stdout_f.fileno(), stderr=stderr_f.fileno(), close_fds=True, shell=True)
+        try:
+            exit_code = p.wait(timeout=60)
+        except subprocess.TimeoutExpired as err:
+            exit_code = 0 # if the container runs for 60 seconds, it is considered as a successful run
+        stdout_f.flush()
+        stderr_f.flush()
+        stdout_f.seek(0, os.SEEK_SET)
+        stderr_f.seek(0, os.SEEK_SET)
+        stdoutdata = stdout_f.read()
+        stderrdata = stderr_f.read()
+
+        return (stdoutdata.decode("utf-8"), stderrdata.decode("utf-8"), exit_code)
+
 def test_application(project_name, image_index):
     with tempfile.NamedTemporaryFile(mode="w+b") as stdout_f, tempfile.NamedTemporaryFile(mode="w+b") as stderr_f:
         p = subprocess.Popen(CMD_RUN_APPLICATION%(project_name, image_index), stdout=stdout_f.fileno(), stderr=stderr_f.fileno(), close_fds=True, shell=True)
@@ -146,37 +162,45 @@ def evaluate_project(project):
                 else:
                     dockerfile["sanity_check"] = "successful"
 
-                    # POBS base image generation test
-                    logging.info("Begin to transform the dockerfile and build POBS base image: %s"%dockerfile["path"])
-                    stdout, stderr, exitcode = run_command(CMD_TRANSFORM_DOCKERFILE%(filepath, dirname), WHERE_IS_GENERATOR)
+                    # check if the original docker image can be run for 1 min
+                    stdout, stderr, exitcode = run_original_image(project_name)
                     if exitcode != 0:
-                        dump_logs(stdout, stderr, "./logs/base/", "%s_%d_base"%(project_full_name, fileindex))
-                        dockerfile["pobs_base_generation"] = "failed"
-                        logging.info("Failed to build POBS base image, exitcode: %d"%exitcode)
+                        dump_logs(stdout, stderr, "./logs/ori_app_run/", "%s_%d_ori_app_run"%(project_full_name, fileindex))
+                        dockerfile["ori_application_run"] = "failed"
                     else:
-                        dockerfile["pobs_base_generation"] = "successful"
+                        dockerfile["ori_application_run"] = "successful"
 
-                        # build the PBOS application image
-                        logging.info("Begin to build the application image using: %s-pobs-application"%(dockerfile["path"]))
-                        stdout, stderr, exitcode = run_command(CMD_BUILD_IMAGE%(project_name + "-pobs:%d"%fileindex, "Dockerfile-pobs-application"), dirname)
+                        # POBS base image generation test
+                        logging.info("Begin to transform the dockerfile and build POBS base image: %s"%dockerfile["path"])
+                        stdout, stderr, exitcode = run_command(CMD_TRANSFORM_DOCKERFILE%(filepath, dirname), WHERE_IS_GENERATOR)
                         if exitcode != 0:
-                            dump_logs(stdout, stderr, "./logs/app-build/", "%s_%d_appbuild"%(project_full_name, fileindex))
-                            dockerfile["pobs_application_build"] = "failed"
-                            logging.error("Failed to build the application image using %s-pobs-application, project %s"%(dockerfile["path"], project_name))
+                            dump_logs(stdout, stderr, "./logs/base/", "%s_%d_base"%(project_full_name, fileindex))
+                            dockerfile["pobs_base_generation"] = "failed"
+                            logging.info("Failed to build POBS base image, exitcode: %d"%exitcode)
                         else:
-                            dockerfile["pobs_application_build"] = "successful"
+                            dockerfile["pobs_base_generation"] = "successful"
 
-                            # run the application and test Glowroot, TripleAgent
-                            glowroot_attached, tripleagent_attached, stdout, stderr, exitcode = test_application(project_name, fileindex)
-                            dockerfile["glowroot_attached"] = glowroot_attached
-                            dockerfile["tripleagent_attached"] = tripleagent_attached
-
-                            if glowroot_attached and tripleagent_attached and exitcode == 0:
-                                dockerfile["pobs_application_run"] = "successful"
-                                project["is_able_to_run"].append(fileindex)
+                            # build the PBOS application image
+                            logging.info("Begin to build the application image using: %s-pobs-application"%(dockerfile["path"]))
+                            stdout, stderr, exitcode = run_command(CMD_BUILD_IMAGE%(project_name + "-pobs:%d"%fileindex, "Dockerfile-pobs-application"), dirname)
+                            if exitcode != 0:
+                                dump_logs(stdout, stderr, "./logs/app-build/", "%s_%d_appbuild"%(project_full_name, fileindex))
+                                dockerfile["pobs_application_build"] = "failed"
+                                logging.error("Failed to build the application image using %s-pobs-application, project %s"%(dockerfile["path"], project_name))
                             else:
-                                dockerfile["pobs_application_run"] = "failed"
-                                dump_logs(stdout, stderr, "./logs/app-run/", "%s_%d_apprun"%(project_full_name, fileindex))
+                                dockerfile["pobs_application_build"] = "successful"
+
+                                # run the application and test Glowroot, TripleAgent
+                                glowroot_attached, tripleagent_attached, stdout, stderr, exitcode = test_application(project_name, fileindex)
+                                dockerfile["glowroot_attached"] = glowroot_attached
+                                dockerfile["tripleagent_attached"] = tripleagent_attached
+
+                                if glowroot_attached and tripleagent_attached and exitcode == 0:
+                                    dockerfile["pobs_application_run"] = "successful"
+                                    project["is_able_to_run"].append(fileindex)
+                                else:
+                                    dockerfile["pobs_application_run"] = "failed"
+                                    dump_logs(stdout, stderr, "./logs/app-run/", "%s_%d_apprun"%(project_full_name, fileindex))
                 fileindex = fileindex + 1
                 os.system("docker stop $(docker ps -q)") # stop all containers first
                 time.sleep(1)
