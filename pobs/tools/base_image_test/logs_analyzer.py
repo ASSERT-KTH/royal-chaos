@@ -66,13 +66,13 @@ def analyze_logs(folderpath, phase):
         },
         "app-build": {"returned a non-zero code": {"count": 0, "pattern": r"returned a non-zero code"}},
         "base": {
-            "install_openjdk8.sh": {"count": 0, "pattern": r"install_openjdk8\.sh"},
             "busybox installation": {"count": 0, "pattern": r"curl https://mail-tp\.fareoffice\.com"},
             "no such file or directory": {"count": 0, "pattern": r"no such file or directory"},
             "iproute": {"count": 0, "pattern": r"iproute"},
             "scratch is a reserved name": {"count": 0, "pattern": r"'scratch' is a reserved name"},
             "Permission denied": {"count": 0, "pattern": r"Permission denied"},
-            "invalid reference format": {"count": 0, "pattern": r"invalid reference format\n"}
+            "invalid reference format": {"count": 0, "pattern": r"invalid reference format\n"},
+            "\"java\": executable file not found": {"count": 0, "pattern": r'\\"java\\": executable file not found'}
         },
         "sanity-check": {
             "no such file or directory": {"count": 0, "pattern": r"no such file or directory"},
@@ -111,7 +111,7 @@ def analyze_logs(folderpath, phase):
                     if len(content_stderr) == 0:
                         empty_stderr = empty_stderr + 1
                     else:
-                        logging.info(entry)
+                        logging.info(os.path.join(folderpath, entry))
                         logging.info(content_stderr)
                         other_failures = other_failures + 1
     failure_categories[phase]["Empty in stderr (may need extra arguments)"] = {"count": empty_stderr, "pattern": "none"}
