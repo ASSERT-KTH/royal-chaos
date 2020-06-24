@@ -208,12 +208,11 @@ def test_pobs_base_image(image_name, image_tag):
     snippet = "default.tpl"
     dockerfile_name = "Dockerfile-test"
 
+    # if bash does not exist, then "source" is not supported in the Dockerfile
+    if not test_bash_if_exists(image_name, image_tag): snippet = "alpine.tpl"
     # for some base images, we need to install jdk by ourselves
     if "busybox" in image_name:
         snippet = "busybox.tpl"
-
-    # if bash does not exist, then "source" is not supported in the Dockerfile
-    if not test_bash_if_exists(image_name, image_tag): snippet = "alpine.tpl"
 
     with open(os.path.join(base_path, snippet), 'rt') as snippet_file, open(dockerfile_name, 'wt') as target:
         contents = snippet_file.readlines()
