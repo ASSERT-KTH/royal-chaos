@@ -54,11 +54,13 @@ def run_command(command, workdir, timeout=600):
 
 def run_original_image(image_name):
     with tempfile.NamedTemporaryFile(mode="w+b") as stdout_f, tempfile.NamedTemporaryFile(mode="w+b") as stderr_f:
+        continuously_running = False
         p = subprocess.Popen("docker run --rm %s"%image_name, stdout=stdout_f.fileno(), stderr=stderr_f.fileno(), close_fds=True, shell=True)
         try:
             exit_code = p.wait(timeout=60)
         except subprocess.TimeoutExpired as err:
             exit_code = 0 # if the container runs for 60 seconds, it is considered as a successful run
+            continuously_running = True
         stdout_f.flush()
         stderr_f.flush()
         stdout_f.seek(0, os.SEEK_SET)
@@ -66,15 +68,17 @@ def run_original_image(image_name):
         stdoutdata = stdout_f.read()
         stderrdata = stderr_f.read()
 
-        return (stdoutdata.decode("utf-8"), stderrdata.decode("utf-8"), exit_code)
+        return (stdoutdata.decode("utf-8"), stderrdata.decode("utf-8"), exit_code, continuously_running)
 
 def test_application(project_name, image_index):
     with tempfile.NamedTemporaryFile(mode="w+b") as stdout_f, tempfile.NamedTemporaryFile(mode="w+b") as stderr_f:
+        continuously_running = False
         p = subprocess.Popen(CMD_RUN_APPLICATION%(project_name, image_index), stdout=stdout_f.fileno(), stderr=stderr_f.fileno(), close_fds=True, shell=True)
         try:
             exit_code = p.wait(timeout=60)
         except subprocess.TimeoutExpired as err:
             exit_code = 0 # if the container runs for 60 seconds, it is considered as a successful run
+            continuously_running = True
         stdout_f.flush()
         stderr_f.flush()
         stdout_f.seek(0, os.SEEK_SET)
@@ -90,7 +94,7 @@ def test_application(project_name, image_index):
         if "INFO TripleAgent PerturbationAgent is successfully attached!" in stdout:
             tripleagent_attached = True
 
-        return (glowroot_attached, tripleagent_attached, stdoutdata.decode("utf-8"), stderrdata.decode("utf-8"), exit_code)
+        return (glowroot_attached, tripleagent_attached, stdoutdata.decode("utf-8"), stderrdata.decode("utf-8"), exit_code, continuously_running)
 
 def dump_logs(stdoutdata, stderrdata, filepath, fileprefix):
     os.makedirs(filepath, exist_ok=True)
@@ -163,13 +167,10 @@ def evaluate_project(project):
                     dockerfile["sanity_check"] = "successful"
 
                     # check if the original docker image can be run for 1 min
-                    stdout, stderr, exitcode = run_original_image(project_name)
-                    if exitcode != 0:
-                        dump_logs(stdout, stderr, "./logs/ori_app_run/", "%s_%d_ori_app_run"%(project_full_name, fileindex))
-                        dockerfile["ori_application_run"] = "failed"
-                    else:
-                        dockerfile["ori_application_run"] = "successful"
-
+                    stdout, stderr, exitcode, continuously_running = run_original_image(project_name)
+                    dockerfile["ori_application_run_exitcode"] = exitcode
+                    dockerfile["ori_application_run_continuously"] = continuously_running
+                    if continuously_running:
                         # POBS base image generation test
                         logging.info("Begin to transform the dockerfile and build POBS base image: %s"%dockerfile["path"])
                         stdout, stderr, exitcode = run_command(CMD_TRANSFORM_DOCKERFILE%(filepath, dirname), WHERE_IS_GENERATOR)
@@ -191,11 +192,13 @@ def evaluate_project(project):
                                 dockerfile["pobs_application_build"] = "successful"
 
                                 # run the application and test Glowroot, TripleAgent
-                                glowroot_attached, tripleagent_attached, stdout, stderr, exitcode = test_application(project_name, fileindex)
+                                glowroot_attached, tripleagent_attached, stdout, stderr, exitcode, continuously_running = test_application(project_name, fileindex)
                                 dockerfile["glowroot_attached"] = glowroot_attached
                                 dockerfile["tripleagent_attached"] = tripleagent_attached
+                                dockerfile["pobs_application_run_exitcode"] = exitcode
+                                dockerfile["pobs_application_run_continuously"] = continuously_running
 
-                                if glowroot_attached and tripleagent_attached and exitcode == 0:
+                                if glowroot_attached and tripleagent_attached and continuously_running:
                                     dockerfile["pobs_application_run"] = "successful"
                                     project["is_able_to_run"].append(fileindex)
                                 else:
