@@ -41,6 +41,8 @@ def workload_generator(duration):
     failure_count = 0
     while time.time() < t_end:
         os.system(cmd_workload)
+        # normalize the result, there is a timestamp which affects the diff result
+        os.system("sed -i 's/when=\".*\">$/when=\"PLACEHOLDER\">/g' %s"%tmp_response)
         try:
             diff = subprocess.check_output("diff %s %s"%(tmp_response, correct_response), shell=True)
             success_count = success_count + 1
