@@ -1,0 +1,17 @@
+key,className,methodName,methodSignature,exceptionType,exceptionIndexNumber,lineIndexNumber,countdown,rate,mode
+014F11E7CB89AD876D728AD406538FA9,org/grobid/core/factory/GrobidPoolingFactory,activateObject,(Ljava/lang/Object;)V,java/lang/Exception,0,118,1,1,off
+47DEBADC66BD2F42CF7CEE165FEFC0F5,org/grobid/core/factory/GrobidPoolingFactory,destroyObject,(Ljava/lang/Object;)V,java/lang/Exception,0,125,1,1,off
+30B07D1ECFE3502CA939975204BED6E7,org/grobid/core/factory/GrobidPoolingFactory,makeObject,()Ljava/lang/Object;,java/lang/Exception,0,132,1,1,off
+470F56EB731AC0C3FC6A464FB0D6DDD4,org/grobid/core/factory/GrobidPoolingFactory,passivateObject,(Ljava/lang/Object;)V,java/lang/Exception,0,140,1,1,off
+604FEF5090CBAD32A9F9408D4A7E6044,org/grobid/core/engines/AuthorParser,processingCitation,(Ljava/lang/String;)Ljava/util/List;,java/lang/Exception,0,49,1,1,off
+5C517D61C48710E50163037703CFF841,org/grobid/core/engines/HeaderParser,processingHeaderBlock,(Lorg/grobid/core/engines/config/GrobidAnalysisConfig;Lorg/grobid/core/document/Document;Lorg/grobid/core/data/BiblioItem;)Ljava/lang/String;,java/lang/Exception,0,122,1,1,off
+463729D79BD1432B6CF2A82C37C8974C,org/grobid/core/sax/PDFALTOSaxHandler,endElement,(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V,org/xml/sax/SAXException,0,134,1,1,off
+71399AF55CE4755F2B809D7F6B7566E0,org/grobid/core/sax/PDFALTOSaxHandler,startElement,(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/xml/sax/Attributes;)V,org/xml/sax/SAXException,0,306,1,1,off
+8EB0E8384BE58724CDE61C8BA4306581,org/grobid/core/sax/PDFALTOAnnotationSaxHandler,endElement,(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V,org/xml/sax/SAXException,0,57,1,1,off
+EBFBA7ADB98792F2D8731787A9E57D6D,org/grobid/core/sax/PDFALTOAnnotationSaxHandler,startElement,(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/xml/sax/Attributes;)V,org/xml/sax/SAXException,0,99,1,1,off
+8AD716C81E40EDA204193118003B0D45,org/grobid/core/sax/PDFMetadataSaxHandler,endElement,(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V,org/xml/sax/SAXException,0,42,1,1,off
+870AE6DEBE8378D24E74D2727997FF34,org/grobid/core/sax/PDFMetadataSaxHandler,startElement,(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/xml/sax/Attributes;)V,org/xml/sax/SAXException,0,77,1,1,off
+D0266CC1B2E519EC871274F6F6AA220A,org/grobid/core/features/FeaturesVectorName,addFeaturesName,(Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;)Ljava/lang/String;,java/lang/Exception,0,121,1,1,off
+D5B2D68A1923474573395EBEE1B26EE9,org/grobid/core/features/FeaturesVectorAffiliationAddress,addFeaturesAffiliationAddress,(Ljava/util/List;Ljava/util/List;Ljava/util/List;)Ljava/lang/String;,java/lang/Exception,0,124,1,1,off
+E36310BFB727EC2A2C7D841712749CBD,org/grobid/core/features/FeaturesVectorCitation,addFeaturesCitation,(Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;)Ljava/lang/String;,java/lang/Exception,0,191,1,1,off
+6C14C9FE6F8092DCA1B7F0789B950330,org/grobid/core/features/FeaturesVectorDate,addFeaturesDate,(Ljava/util/List;)Ljava/lang/String;,java/lang/Exception,0,95,1,1,off
