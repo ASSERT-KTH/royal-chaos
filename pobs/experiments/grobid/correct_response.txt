@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Synthesis of Linux Kernel Fuzzing Tools Based on Syscall</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2017">AIEA 2017</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Shuai</forename><surname>Bai</surname></persName>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Dan</forename><surname>Li</surname></persName>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Minhuan</forename><surname>Huang</surname></persName>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Hua</forename><surname>Chen</surname></persName>
+						</author>
+						<title level="a" type="main">Synthesis of Linux Kernel Fuzzing Tools Based on Syscall</title>
+					</analytic>
+					<monogr>
+						<title level="m">2017 2 nd International Conference on Artificial Intelligence and Engineering Applications</title>
+						<imprint>
+							<date type="published" when="2017">AIEA 2017</date>
+						</imprint>
+					</monogr>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+
+		<encodingDesc>
+			<appInfo>
+				<application version="0.6.0" ident="GROBID-SDO" when="2020-07-09T09:36+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid-sdo"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Fuzzing</term>
+					<term>Linux kernel</term>
+					<term>sisal</term>
+					<term>coverage</term>
+					<term>genetic algorithm</term>
+					<term>test case generation</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>Any software especially the operating system requires testing and evaluation to validate the functional and security characteristics. As yet, fuzzing has become widely adopted into practice software testing. We focus on the operating system kernel fuzzing, select three typical kernel fuzzing tools to analyze. We make synthesis of the three kernel fuzzing tools from the aspects of sisal arguments model, test case construction and fuzzing scheduling and propose an abstract of partial specialization of model and explain it through these tools. Meanwhile, we inspect these tools on the usage of coverage-based fuzzing which is the state-of-the-art fuzzing optimization technology.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+	</text>
+</TEI>
