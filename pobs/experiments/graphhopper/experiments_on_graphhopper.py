@@ -33,11 +33,27 @@ def write_to_json(path, data):
 
 def workload_generator(duration):
     t_end = time.time() + 60 * duration
-    cmd_workload = "curl --connect-timeout 1 -m 1 'localhost:8989/route?point=52.61822,13.310533&point=52.59833,13.37575&vehicle=car&locale=de&calc_points=false'"
+    correct_response = '{"hints":{"visited_nodes.sum":82,"visited_nodes.average":82.0},"info":{"copyrights":["GraphHopper","OpenStreetMap contributors"],"took":1},"paths":[{"distance":6196.994,"weight":535.832879,"time":535770,"transfers":0,"snapped_waypoints":"q}c`IytfpAb{BsvK"}]}'
+    cmd_workload = "curl --connect-timeout 1 -m 1 'localhost:8989/route?point=52.61822,13.310533&point=52.59833,13.37575&vehicle=car&locale=de&calc_points=false' 2>/dev/null"
 
+    success_count = 0
+    failure_count = 0
     while time.time() < t_end:
-        os.system(cmd_workload)
+        try:
+            response = subprocess.check_output(cmd_workload, shell=True)
+            # normalize the response text (make "took" always 1)
+            response = re.sub(r'"took":\d+', '"took":1', response.decode("utf-8"))
+            if response == correct_response:
+                success_count = success_count + 1
+            else:
+                logging.info("incorrect response")
+                logging.info(response)
+                failure_count = failure_count + 1
+        except subprocess.CalledProcessError:
+            failure_count = failure_count + 1
         time.sleep(1)
+
+    return success_count, failure_count
 
 def query_glowroot(metric_name):
     # todo
@@ -88,18 +104,24 @@ def main():
             os.system(cmd_start_container)
             time.sleep(30)
 
-            # 8 mins common workload
-            start_at = int(time.time() * 1000)
-            workload_generator(8)
+            # 2 mins warm up
+            logging.info("2 mins warm up")
+            workload_generator(2)
 
-            # 2 mins common workload / fault workload
+            # 5 mins common workload
+            logging.info("5 mins common workload")
+            start_at = int(time.time() * 1000)
+            sc_phase1, fc_phase1 = workload_generator(5)
+
+            # 5 mins common workload / fault workload
             if i == 1:
                 point["countdown"] = -1
                 point["mode"] = "throw_e"
                 write_to_csv(tripleagent_config_csv, headers, [point])
             time.sleep(2)
             when_fi_started = int(time.time() * 1000)
-            workload_generator(2)
+            logging.info("another 5 mins common/fault workload")
+            sc_phase2, fc_phase2 = workload_generator(5)
             end_at = int(time.time() * 1000)
             time.sleep(1)
 
@@ -110,7 +132,7 @@ def main():
 
             # persist the monitoring data
             if not os.path.isdir("./monitoring_data"): os.system("mkdir ./monitoring_data")
-            monitoring_data = {"data": ori_data["dataSeries"][0]["data"], "when_fi_started": when_fi_started}
+            monitoring_data = {"data": ori_data["dataSeries"][0]["data"], "when_fi_started": when_fi_started, "sc_phase1": sc_phase1, "fc_phase1": fc_phase1, "sc_phase2": sc_phase2, "fc_phase2": fc_phase2}
             write_to_json("monitoring_data/%s-%d.json"%(point["key"], i), monitoring_data)
 
             # calculate causal impact of this specific exception
