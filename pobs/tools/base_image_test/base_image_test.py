@@ -193,6 +193,7 @@ def evaluate_project(project):
                     dockerfile["sanity_check"] = "successful"
 
                     # check if the original docker image can be run for 1 min
+                    logging.info("Begin to check if the original docker image can be run for 1 min, with a java process detected")
                     stdout, stderr, exitcode, continuously_running, java_process_detected = run_original_image(project_name)
                     dockerfile["ori_application_run_exitcode"] = exitcode
                     dockerfile["ori_application_run_continuously"] = continuously_running
