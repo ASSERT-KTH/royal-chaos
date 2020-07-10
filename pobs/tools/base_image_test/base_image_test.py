@@ -148,7 +148,7 @@ def evaluate_project(project):
                     project["is_able_to_clone"] = True
                     project["is_able_to_build"] = list()
                     project["is_able_to_run"] = list()
-                    project["loc_info"] = anallyze_loc(tmprepo)
+                    project["loc_info"] = analyze_loc(tmprepo)
                 else:
                     project["is_able_to_clone"] = False
                     logging.error("failed to checkout the specific commit of repo %s, commit %s"%(project["clone_url"], project["commit_sha"]))
