@@ -5,6 +5,8 @@ import re
 import requests
 import subprocess
 import time
+from datetime import datetime
+from datetime import date
 
 # OAuth token for GitHub API calls
 from config import get_auth_token
@@ -181,6 +183,43 @@ def find_languages(languages_url):
   languages_response = requests.get(languages_url, headers=headers)
   return languages_response.json()
 
+def find_contributors(contributors_url):
+  headers = {
+    'Authorization': get_auth_token()
+  }
+  params = {
+    'per_page': 1,
+    'anon': '1'
+  }
+  contributors_response = requests.get(contributors_url, params=params, headers=headers)
+  pages = re.findall(r'&page=\d+', str(contributors_response.headers))
+  number_of_contributors = 0
+  if (len(pages) > 0):
+    last_page = pages[-1]
+    number_of_contributors = int(re.findall(r'\d+', last_page)[0])  
+  else:
+    number_of_contributors = 1
+  return number_of_contributors
+  
+
+def find_repo_age(created_at, updated_at):
+  date_created_at = datetime.strptime(created_at, "%Y-%m-%dT%H:%M:%SZ").date()
+  date_updated_at = datetime.strptime(updated_at, "%Y-%m-%dT%H:%M:%SZ").date()
+  age = (date_updated_at - date_created_at).days
+  return age
+
+def find_total_commits(url):
+  headers = {
+    'Authorization': get_auth_token()
+  }
+  params = {
+    'per_page': '1'
+  }
+  total_commits_url = url + "/commits"
+  commits_response = requests.get(total_commits_url, params=params, headers=headers)
+  last_page = re.findall(r'&page=\d+', str(commits_response.headers))[-1]
+  return int(re.findall(r'\d+', last_page)[0])
+
 def extract_info_from_results():
   with open(query_results_file, 'r') as json_file:
     repo_data = json.load(json_file)
@@ -215,6 +254,12 @@ def extract_info_from_results():
       single_repo["build_tools"] = build_tools
     # Find number of bytes of code per language
     single_repo["languages"] = find_languages(repo_data["items"][i]["languages_url"])
+    # Find number of contributors
+    single_repo["contributors"] = find_contributors(repo_data["items"][i]["contributors_url"])
+    # Find number of commits
+    single_repo["number_of_commits"] = find_total_commits(repo_data["items"][i]["url"])
+    # Find repo age in days
+    single_repo["age_days"] = find_repo_age(repo_data["items"][i]["created_at"], repo_data["items"][i]["updated_at"])
     # cd to parent directory
     os.chdir(parent_dir)
     # Remove repo directory
