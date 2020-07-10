@@ -118,13 +118,13 @@ def analyze_loc(project_path):
     pattern_java = re.compile(r'Java\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)')
     pattern_sum = re.compile(r'SUM:\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)')
 
-    cloc_output = subprocess.check_output("cloc %s"%(project_path), shell=True)
+    cloc_output = subprocess.check_output("cloc %s"%(project_path), shell=True).decode("utf-8")
     match_java = pattern_java.search(cloc_output)
     match_sum = pattern_sum.search(cloc_output)
     if match_java != None:
         result["java"] = {"files": match_java.group(1), "code": match_java.group(4)}
     if match_sum != None:
-        result["sum"] = {"files": match_java.group(1), "code": match_java.group(4)}
+        result["sum"] = {"files": match_sum.group(1), "code": match_sum.group(4)}
 
     return result
 
