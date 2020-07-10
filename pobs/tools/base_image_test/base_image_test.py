@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
 
-import os, time, json, tempfile, subprocess, signal
+import os, time, json, tempfile, subprocess, signal, re
 import logging
 from optparse import OptionParser, OptionGroup
 
@@ -55,12 +55,20 @@ def run_command(command, workdir, timeout=600):
 def run_original_image(image_name):
     with tempfile.NamedTemporaryFile(mode="w+b") as stdout_f, tempfile.NamedTemporaryFile(mode="w+b") as stderr_f:
         continuously_running = False
-        p = subprocess.Popen("docker run --rm %s"%image_name, stdout=stdout_f.fileno(), stderr=stderr_f.fileno(), close_fds=True, shell=True)
+        java_process_detected = False
+        p = subprocess.Popen("docker run --rm --name run_original %s"%image_name, stdout=stdout_f.fileno(), stderr=stderr_f.fileno(), close_fds=True, shell=True)
         try:
             exit_code = p.wait(timeout=60)
         except subprocess.TimeoutExpired as err:
             exit_code = 0 # if the container runs for 60 seconds, it is considered as a successful run
             continuously_running = True
+
+            # check if there is a java process running in the container
+            exitcode = os.system("docker top run_original -C java")
+            if exitcode == 0: java_process_detected = True
+
+            # manually stop the running container
+            os.system("docker stop run_original")
         stdout_f.flush()
         stderr_f.flush()
         stdout_f.seek(0, os.SEEK_SET)
@@ -68,7 +76,7 @@ def run_original_image(image_name):
         stdoutdata = stdout_f.read()
         stderrdata = stderr_f.read()
 
-        return (stdoutdata.decode("utf-8"), stderrdata.decode("utf-8"), exit_code, continuously_running)
+        return (stdoutdata.decode("utf-8"), stderrdata.decode("utf-8"), exit_code, continuously_running, java_process_detected)
 
 def test_application(project_name, image_index):
     with tempfile.NamedTemporaryFile(mode="w+b") as stdout_f, tempfile.NamedTemporaryFile(mode="w+b") as stderr_f:
@@ -103,6 +111,23 @@ def dump_logs(stdoutdata, stderrdata, filepath, fileprefix):
         stdoutfile.writelines(stdoutdata)
         stderrfile.writelines(stderrdata)
 
+def analyze_loc(project_path):
+    result = dict()
+
+    # the 4 groups of number: files, blank, comment, code
+    pattern_java = re.compile(r'Java\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)')
+    pattern_sum = re.compile(r'SUM:\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)')
+
+    cloc_output = subprocess.check_output("cloc %s"%(project_path), shell=True)
+    match_java = pattern_java.search(cloc_output)
+    match_sum = pattern_sum.search(cloc_output)
+    if match_java != None:
+        result["java"] = {"files": match_java.group(1), "code": match_java.group(4)}
+    if match_sum != None:
+        result["sum"] = {"files": match_java.group(1), "code": match_java.group(4)}
+
+    return result
+
 def clean_up_project(project_name):
     os.system("docker stop $(docker ps -q)") # stop all containers first
     os.system("docker rm $(docker ps -a -q --filter since=%s)"%CLEAN_CONTAINERS_SINCE)
@@ -123,6 +148,7 @@ def evaluate_project(project):
                     project["is_able_to_clone"] = True
                     project["is_able_to_build"] = list()
                     project["is_able_to_run"] = list()
+                    project["loc_info"] = anallyze_loc(tmprepo)
                 else:
                     project["is_able_to_clone"] = False
                     logging.error("failed to checkout the specific commit of repo %s, commit %s"%(project["clone_url"], project["commit_sha"]))
@@ -167,10 +193,11 @@ def evaluate_project(project):
                     dockerfile["sanity_check"] = "successful"
 
                     # check if the original docker image can be run for 1 min
-                    stdout, stderr, exitcode, continuously_running = run_original_image(project_name)
+                    stdout, stderr, exitcode, continuously_running, java_process_detected = run_original_image(project_name)
                     dockerfile["ori_application_run_exitcode"] = exitcode
                     dockerfile["ori_application_run_continuously"] = continuously_running
-                    if continuously_running:
+                    dockerfile["ori_application_run_java"] = java_process_detected
+                    if continuously_running and java_process_detected:
                         # POBS base image generation test
                         logging.info("Begin to transform the dockerfile and build POBS base image: %s"%dockerfile["path"])
                         stdout, stderr, exitcode = run_command(CMD_TRANSFORM_DOCKERFILE%(filepath, dirname), WHERE_IS_GENERATOR)
