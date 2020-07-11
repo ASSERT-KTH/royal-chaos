@@ -64,11 +64,15 @@ def run_original_image(image_name):
             continuously_running = True
 
             # check if there is a java process running in the container
-            exitcode = os.system("docker top run_original -C java")
-            if exitcode == 0: java_process_detected = True
+            try:
+                top_output = subprocess.check_output("docker top run_original -C java", shell=True).decode("utf-8")
+                if "java" in top_output: java_process_detected = True
+            except subprocess.TimeoutExpired as err:
+                logging.info(err.output)
 
             # manually stop the running container
             os.system("docker stop run_original")
+
         stdout_f.flush()
         stderr_f.flush()
         stdout_f.seek(0, os.SEEK_SET)
