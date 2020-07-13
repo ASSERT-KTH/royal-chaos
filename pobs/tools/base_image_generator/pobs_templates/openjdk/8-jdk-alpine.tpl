@@ -1,4 +1,4 @@
-RUN apk update && apk add iproute2
+# RUN apk update && apk add iproute2
 
 COPY ./base_files/tripleagent-perturbation-jar-with-dependencies.jar /home/tripleagent/
 COPY ./base_files/glowroot/ /home/tripleagent/glowroot/
