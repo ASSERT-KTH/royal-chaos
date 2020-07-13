@@ -243,7 +243,7 @@ def test_pobs_base_image(image_name, image_tag):
         tripleagent_csv = False
         file_correctness = False
 
-        if "org.glowroot - UI listening on 0.0.0.0:4000" in stdout:
+        if "INFO  org.glowroot - Glowroot version: 0.13.5" in stdout:
             glowroot_attached = True
         if "INFO TripleAgent PerturbationAgent is successfully attached!" in stdout:
             tripleagent_attached = True
@@ -266,7 +266,7 @@ def test_pobs_base_image(image_name, image_tag):
             exception_thrown = False
             tripleagent_csv = False
             file_not_exist = False
-            if "org.glowroot - UI listening on 0.0.0.0:4000" in stdout:
+            if "INFO  org.glowroot - Glowroot version: 0.13.5" in stdout:
                 glowroot_attached = True
             if "INFO TripleAgent PerturbationAgent is successfully attached!" in stdout:
                 tripleagent_attached = True
