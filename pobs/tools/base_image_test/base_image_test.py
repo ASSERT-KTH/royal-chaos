@@ -101,7 +101,7 @@ def test_application(project_name, image_index):
         glowroot_attached = False
         tripleagent_attached = False
         stdout = stdoutdata.decode("utf-8")
-        if "org.glowroot - UI listening on 0.0.0.0:4000" in stdout:
+        if "INFO  org.glowroot - Glowroot version: 0.13.5" in stdout:
             glowroot_attached = True
         if "INFO TripleAgent PerturbationAgent is successfully attached!" in stdout:
             tripleagent_attached = True
