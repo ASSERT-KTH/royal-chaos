@@ -57,7 +57,7 @@ def main():
 
         analyzed_dockerfile_count = 0
         sanity_check_passed_count = 0
-        ori_application_run_continuously = 0
+        ori_application_run_pass = 0
         pobs_base_generation_passed_count = 0
         pobs_application_build_passed_count = 0
         glowroot_attached_count = 0
@@ -86,8 +86,8 @@ def main():
                         if full_base_image_name.rsplit(":", 1)[0] in skip_list: continue
                         if dockerfile["sanity_check"] == "successful":
                             sanity_check_passed_count = sanity_check_passed_count + 1
-                            if dockerfile["ori_application_run_continuously"]:
-                                ori_application_run_continuously = ori_application_run_continuously + 1
+                            if dockerfile["ori_application_run_continuously"] and dockerfile["ori_application_run_java"]:
+                                ori_application_run_pass = ori_application_run_pass + 1
                                 experiment_unique_base_images[full_base_image_name] = 1
                                 if dockerfile["pobs_base_generation"] == "successful":
                                     pobs_base_generation_passed_count = pobs_base_generation_passed_count + 1
@@ -107,7 +107,7 @@ def main():
         logging.info("run_project_count: %d"%run_project_count)
         logging.info("analyzed_dockerfile_count: %d"%analyzed_dockerfile_count)
         logging.info("sanity_check_passed_count: %d"%sanity_check_passed_count)
-        logging.info("ori_application_run_continuously: %d"%ori_application_run_continuously)
+        logging.info("ori_application_run_pass: %d"%ori_application_run_pass)
         logging.info("pobs_base_generation_passed_count: %d"%pobs_base_generation_passed_count)
         logging.info("pobs_application_build_passed_count: %d"%pobs_application_build_passed_count)
         logging.info("glowroot_attached_count: %d"%glowroot_attached_count)
