@@ -1,1 +1,0 @@
-FROM mailhog/mailhog:latest

@@ -48,12 +48,12 @@ def parse_options():
     return options
 
 def copy_dockerfiles(project, project_path, output_path):
-    if not os.path.exists(os.path.join(output_path, project["name"])):
-        os.mkdir(os.path.join(output_path, project["name"]))
+    if not os.path.exists(os.path.join(output_path, project["full_name"])):
+        os.makedirs(os.path.join(output_path, project["full_name"]))
 
     file_index = 0
     for dockerfile in project["info_from_dockerfiles"]:
-        shutil.copyfile(os.path.join(project_path, dockerfile["path"]), os.path.join(output_path, project["name"], 'Dockerfile-%d'%file_index))
+        shutil.copyfile(os.path.join(project_path, dockerfile["path"]), os.path.join(output_path, project["full_name"], 'Dockerfile-%d'%file_index))
         file_index = file_index + 1
 
 def main():
@@ -68,13 +68,15 @@ def main():
                 project.pop('is_able_to_clone', None)
                 project.pop('is_able_to_build', None)
                 project.pop('is_able_to_run', None)
-                buildable_dockerfiles = list(filter(lambda dockerfile: dockerfile["sanity_check"] == "successful", project["info_from_dockerfiles"]))
+                buildable_dockerfiles = list(filter(lambda dockerfile: dockerfile["sanity_check"] == "successful" and dockerfile["ori_application_run_java"], project["info_from_dockerfiles"]))
                 for dockerfile in buildable_dockerfiles:
                     dockerfile.pop('sanity_check', None)
                     dockerfile.pop('pobs_base_generation', None)
                     dockerfile.pop('pobs_application_build', None)
                     dockerfile.pop('glowroot_attached', None)
                     dockerfile.pop('tripleagent_attached', None)
+                    dockerfile.pop('pobs_application_run_exitcode', None)
+                    dockerfile.pop('pobs_application_run_continuously', None)
                     dockerfile.pop('pobs_application_run', None)
                 project["info_from_dockerfiles"] = buildable_dockerfiles
                 project["number_of_dockerfiles"] = len(buildable_dockerfiles)
