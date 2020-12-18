@@ -101,6 +101,7 @@ def query_total_invocations(syscall_name, error_code, start_time, end_time, step
 
 def query_failures(start_time, end_time, step):
     failure_category = list()
+    syscall_type = list()
 
     query_string = 'syscalls_failure_rate'
     response = requests.post(PROMETHEUS_URL + RANGE_QUERY_API, data={'query': query_string, 'start': start_time, 'end': end_time, 'step': step})
@@ -125,12 +126,19 @@ def query_failures(start_time, end_time, step):
             "syscall_name": entry["metric"]["syscall_name"],
             "error_code": entry["metric"]["error_code"],
             "samples_in_total": len(entry["values"]),
-            "invocations_in_total": query_total_invocations(entry["metric"]["syscall_name"], entry["metric"]["error_code"], start_time, end_time, step,  ),
+            "invocations_in_total": query_total_invocations(entry["metric"]["syscall_name"], entry["metric"]["error_code"], start_time, end_time, step),
             "rate_min": min_value,
             "rate_mean": mean_value,
             "rate_max": max_value,
             "samples": samples
         })
+        if entry["metric"]["syscall_name"] not in syscall_type:
+            failure_category.append({
+                "syscall_name": entry["metric"]["syscall_name"],
+                "error_code": "SUCCESS",
+                "invocations_in_total": query_total_invocations(entry["metric"]["syscall_name"], "SUCCESS", start_time, end_time, step),
+            })
+            syscall_type.append(entry["metric"]["syscall_name"])
 
     return failure_category
 
@@ -139,12 +147,15 @@ def pretty_print_details(failure_details):
     stat_table.field_names = ["Syscall Name", "Error Code", "Samples in Total", "Invocations in Total", "Failure Rate", "Samples"]
 
     for detail in failure_details:
-        samples_str = ""
-        for sample in detail["samples"]:
-            localtime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(sample["timestamp"]))
-            samples_str += "localtime: %s, failure rate: %2f\n"%(localtime, sample["failure_rate"])
-        samples_str = samples_str[:-1]
-        stat_table.add_row([detail["syscall_name"], detail["error_code"], detail["samples_in_total"], detail["invocations_in_total"], "%f, %f, %f"%(detail["rate_min"], detail["rate_mean"], detail["rate_max"]), samples_str])
+        if detail["error_code"] == "SUCCESS":
+            stat_table.add_row([detail["syscall_name"], detail["error_code"], "-", detail["invocations_in_total"], "-", "-"])
+        else:
+            samples_str = ""
+            for sample in detail["samples"]:
+                localtime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(sample["timestamp"]))
+                samples_str += "localtime: %s, failure rate: %2f\n"%(localtime, sample["failure_rate"])
+            samples_str = samples_str[:-1]
+            stat_table.add_row([detail["syscall_name"], detail["error_code"], detail["samples_in_total"], detail["invocations_in_total"], "%f, %f, %f"%(detail["rate_min"], detail["rate_mean"], detail["rate_max"]), samples_str])
 
     stat_table.sortby = "Syscall Name"
     print(stat_table)
@@ -171,21 +182,18 @@ def generate_experiment_config(failure_details):
         "experiments": []
     }
 
-    factor = 1.5
+    factor = 1.2
     duration = 300
     for detail in failure_details:
         if "unknown" in detail["syscall_name"]: continue
+        if detail["error_code"] == "SUCCESS": continue
 
-        if detail["rate_max"] < 0.3:
+        if detail["rate_max"] < 0.05:
             # the original failure rate is very low, thus we use fixed rate instead
-            config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], 0.5, detail["rate_min"], detail["rate_mean"], detail["rate_max"], duration))
-            config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], 0.75, detail["rate_min"], detail["rate_mean"], detail["rate_max"], duration))
-            config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], 1, detail["rate_min"], detail["rate_mean"], detail["rate_max"], duration))
+            config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], 0.05, detail["rate_min"], detail["rate_mean"], detail["rate_max"], duration))
         elif detail["rate_max"] / detail["rate_min"] > 10:
             # the original failure rate fluctuated wildly, we keep using the max failure rate
             config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], detail["rate_max"], detail["rate_min"], detail["rate_mean"], detail["rate_max"], duration))
-            if detail["rate_max"] < 1:
-                config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], 1, detail["rate_min"], detail["rate_mean"], detail["rate_max"], duration))
         else:
             # if the original failure rate is relatively high, and it does not fluctuate a lot
             # we amplify it by multiplying the factor
