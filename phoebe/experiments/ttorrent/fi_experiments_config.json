@@ -2,33 +2,6 @@
   "experiment_name": "Syscall Fault Injection Experiments", 
   "experiments": [
     {
-      "original_min_rate": 0.00018208710487603363, 
-      "syscall_name": "futex", 
-      "original_max_rate": 0.04733817301875377, 
-      "failure_rate": 0.05, 
-      "original_mean_rate": 0.017325221154143887, 
-      "error_code": "--512", 
-      "experiment_duration": 300
-    }, 
-    {
-      "original_min_rate": 6.208677523055931e-05, 
-      "syscall_name": "futex", 
-      "original_max_rate": 0.027031865377730023, 
-      "failure_rate": 0.05, 
-      "original_mean_rate": 0.009180270797956839, 
-      "error_code": "--516", 
-      "experiment_duration": 300
-    }, 
-    {
-      "original_min_rate": 0.47500000000000003, 
-      "syscall_name": "poll", 
-      "original_max_rate": 1.0, 
-      "failure_rate": 1, 
-      "original_mean_rate": 0.8928571428571429, 
-      "error_code": "--516", 
-      "experiment_duration": 300
-    }, 
-    {
       "original_min_rate": 0.0011201978727174695, 
       "syscall_name": "futex", 
       "original_max_rate": 0.015461137008640859, 
@@ -62,15 +35,6 @@
       "failure_rate": 0.05, 
       "original_mean_rate": 2.9221770247757123e-05, 
       "error_code": "-ECONNRESET", 
-      "experiment_duration": 300
-    }, 
-    {
-      "original_min_rate": 1.0, 
-      "syscall_name": "mkdir", 
-      "original_max_rate": 1.0, 
-      "failure_rate": 1, 
-      "original_mean_rate": 1.0, 
-      "error_code": "-EEXIST", 
       "experiment_duration": 300
     }, 
     {
@@ -170,24 +134,6 @@
       "failure_rate": 0.3333333333333333, 
       "original_mean_rate": 0.28275060669271473, 
       "error_code": "-ENOTSOCK", 
-      "experiment_duration": 300
-    }, 
-    {
-      "original_min_rate": 1.0, 
-      "syscall_name": "utimes", 
-      "original_max_rate": 1.0, 
-      "failure_rate": 1, 
-      "original_mean_rate": 1.0, 
-      "error_code": "-EPERM", 
-      "experiment_duration": 300
-    }, 
-    {
-      "original_min_rate": 1.0, 
-      "syscall_name": "kill", 
-      "original_max_rate": 1.0, 
-      "failure_rate": 1, 
-      "original_mean_rate": 1.0, 
-      "error_code": "-ESRCH", 
       "experiment_duration": 300
     }, 
     {
