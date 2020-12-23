@@ -21,6 +21,7 @@ def main():
     failure_category = query_failures(START, END, STEP)
     pretty_print_details(failure_category)
     generate_experiment_config(failure_category)
+    dump_query_results("query_results.json", failure_category)
 
 def handle_args(argv):
     global PROMETHEUS_URL
@@ -71,15 +72,23 @@ def print_help_info():
     print('Additional options: --start=<start_timestamp_or_rfc3339> --end=<end_timestamp_or_rfc3339> --period=<get_for_most_recent_period(int miniutes)>')
     print('                    use start&end or only use period')
 
+def dump_query_results(filename, failure_category):
+    with open(filename, "wt") as output:
+        json.dump(failure_category, output, indent = 2)
+
 def calculate_failure_rate(values):
     values = numpy.array(values).astype(float)
     min_value = numpy.percentile(values, 5, axis=0)[1] # in the values array, index 0: timestamp, index 1: failure rate
     mean_value = numpy.mean(values, axis=0)[1]
     max_value = numpy.percentile(values, 95, axis=0)[1]
-    return min_value, mean_value, max_value
+    variance = numpy.var(values, axis=0)[1]
+    return min_value, mean_value, max_value, variance
 
 def query_total_invocations(syscall_name, error_code, start_time, end_time, step):
-    query_string = 'failed_syscalls_total{syscall_name="%s", error_code="%s"}'%(syscall_name, error_code)
+    if error_code == "":
+        query_string = 'sum(failed_syscalls_total{syscall_name="%s"})'%(syscall_name)
+    else:
+        query_string = 'failed_syscalls_total{syscall_name="%s", error_code="%s"}'%(syscall_name, error_code)
     response = requests.post(PROMETHEUS_URL + RANGE_QUERY_API, data={'query': query_string, 'start': start_time, 'end': end_time, 'step': step})
     status = response.json()["status"]
 
@@ -121,7 +130,7 @@ def query_failures(start_time, end_time, step):
                 {"timestamp": entry["values"][0][0], "failure_rate": float(entry["values"][0][1])}, # first case
                 {"timestamp": entry["values"][-1][0], "failure_rate": float(entry["values"][-1][1])} # last case
             ]
-        min_value, mean_value, max_value = calculate_failure_rate(entry["values"])
+        min_value, mean_value, max_value, variance = calculate_failure_rate(entry["values"])
         failure_category.append({
             "syscall_name": entry["metric"]["syscall_name"],
             "error_code": entry["metric"]["error_code"],
@@ -130,7 +139,9 @@ def query_failures(start_time, end_time, step):
             "rate_min": min_value,
             "rate_mean": mean_value,
             "rate_max": max_value,
-            "samples": samples
+            "variance": variance,
+            "samples": samples,
+            "data_points": entry["values"]
         })
         if entry["metric"]["syscall_name"] not in syscall_type:
             failure_category.append({
@@ -144,18 +155,18 @@ def query_failures(start_time, end_time, step):
 
 def pretty_print_details(failure_details):
     stat_table = PrettyTable()
-    stat_table.field_names = ["Syscall Name", "Error Code", "Samples in Total", "Invocations in Total", "Failure Rate", "Samples"]
+    stat_table.field_names = ["Syscall Name", "Error Code", "Samples in Total", "Invocations in Total", "Failure Rate", "Variance", "Samples"]
 
     for detail in failure_details:
         if detail["error_code"] == "SUCCESS":
-            stat_table.add_row([detail["syscall_name"], detail["error_code"], "-", detail["invocations_in_total"], "-", "-"])
+            stat_table.add_row([detail["syscall_name"], detail["error_code"], "-", detail["invocations_in_total"], "-", "-", "-"])
         else:
             samples_str = ""
             for sample in detail["samples"]:
                 localtime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(sample["timestamp"]))
                 samples_str += "localtime: %s, failure rate: %2f\n"%(localtime, sample["failure_rate"])
             samples_str = samples_str[:-1]
-            stat_table.add_row([detail["syscall_name"], detail["error_code"], detail["samples_in_total"], detail["invocations_in_total"], "%f, %f, %f"%(detail["rate_min"], detail["rate_mean"], detail["rate_max"]), samples_str])
+            stat_table.add_row([detail["syscall_name"], detail["error_code"], detail["samples_in_total"], detail["invocations_in_total"], "%f, %f, %f"%(detail["rate_min"], detail["rate_mean"], detail["rate_max"]), detail["variance"], samples_str])
 
     stat_table.sortby = "Syscall Name"
     print(stat_table)
@@ -198,9 +209,8 @@ def generate_experiment_config(failure_details):
             # if the original failure rate is relatively high, and it does not fluctuate a lot
             # we amplify it by multiplying the factor
             amplified = detail["rate_max"] * factor
-            if amplified < 1:
-                config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], amplified, detail["rate_min"], detail["rate_mean"], detail["rate_max"], duration))
-            config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], 1, detail["rate_min"], detail["rate_mean"], detail["rate_max"], duration))
+            if amplified > 1: amplified = 1
+            config["experiments"].append(generate_experiment(detail["syscall_name"], detail["error_code"], amplified, detail["rate_min"], detail["rate_mean"], detail["rate_max"], duration))
 
     with open(output_file, "wt") as output:
         json.dump(config, output, indent = 2)
