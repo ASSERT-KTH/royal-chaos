@@ -1,0 +1,253 @@
+{
+  "experiment_name": "Syscall Fault Injection Experiments", 
+  "experiments": [
+    {
+      "original_min_rate": 0.125, 
+      "syscall_name": "accept", 
+      "original_max_rate": 0.3333333333333333, 
+      "failure_rate": 0.39999999999999997, 
+      "result": {
+        "succeeded": 0, 
+        "sending_failures": 75, 
+        "injection_count": 2, 
+        "post_inspection": "failed", 
+        "fetching_failures": 1, 
+        "server_crashed": 0, 
+        "rounds": 76, 
+        "validation_failures": 0
+      }, 
+      "original_mean_rate": 0.1959099955041281, 
+      "error_code": "-EAGAIN", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 3.635791446598168e-05, 
+      "syscall_name": "futex", 
+      "original_max_rate": 7.457570249773319e-05, 
+      "failure_rate": 0.05, 
+      "result": {
+        "succeeded": 7, 
+        "sending_failures": 0, 
+        "injection_count": 476, 
+        "post_inspection": "failed", 
+        "fetching_failures": 0, 
+        "server_crashed": 0, 
+        "rounds": 7, 
+        "validation_failures": 0
+      }, 
+      "original_mean_rate": 4.5781528357513334e-05, 
+      "error_code": "-EAGAIN", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.02956195244055069, 
+      "syscall_name": "read", 
+      "original_max_rate": 0.2, 
+      "failure_rate": 0.24, 
+      "result": {
+        "succeeded": 0, 
+        "sending_failures": 0, 
+        "injection_count": 58, 
+        "post_inspection": "passed", 
+        "fetching_failures": 2, 
+        "server_crashed": 1, 
+        "rounds": 3, 
+        "validation_failures": 0
+      }, 
+      "original_mean_rate": 0.1314872592221151, 
+      "error_code": "-EAGAIN", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.030961791831357048, 
+      "syscall_name": "read", 
+      "original_max_rate": 0.04281949934123847, 
+      "failure_rate": 0.05, 
+      "result": {
+        "succeeded": 0, 
+        "sending_failures": 0, 
+        "injection_count": 53, 
+        "post_inspection": "passed", 
+        "fetching_failures": 1, 
+        "server_crashed": 1, 
+        "rounds": 2, 
+        "validation_failures": 0
+      }, 
+      "original_mean_rate": 0.03689064558629776, 
+      "error_code": "-ECONNRESET", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.010601976639712489, 
+      "syscall_name": "recvfrom", 
+      "original_max_rate": 0.03125, 
+      "failure_rate": 0.05, 
+      "result": {
+        "succeeded": 0, 
+        "sending_failures": 78, 
+        "injection_count": 90, 
+        "post_inspection": "failed", 
+        "fetching_failures": 1, 
+        "server_crashed": 0, 
+        "rounds": 79, 
+        "validation_failures": 0
+      }, 
+      "original_mean_rate": 0.022400031066593818, 
+      "error_code": "-ECONNRESET", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.010587147480351364, 
+      "syscall_name": "sendto", 
+      "original_max_rate": 0.02547619047619047, 
+      "failure_rate": 0.05, 
+      "result": {
+        "succeeded": 0, 
+        "sending_failures": 68, 
+        "injection_count": 335, 
+        "post_inspection": "failed", 
+        "fetching_failures": 2, 
+        "server_crashed": 0, 
+        "rounds": 70, 
+        "validation_failures": 0
+      }, 
+      "original_mean_rate": 0.01670679652517522, 
+      "error_code": "-ECONNRESET", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.07692307692307693, 
+      "syscall_name": "connect", 
+      "original_max_rate": 0.25, 
+      "failure_rate": 0.3, 
+      "result": {
+        "succeeded": 7, 
+        "sending_failures": 0, 
+        "injection_count": 0, 
+        "post_inspection": "passed", 
+        "fetching_failures": 0, 
+        "server_crashed": 0, 
+        "rounds": 7, 
+        "validation_failures": 0
+      }, 
+      "original_mean_rate": 0.14347144452186458, 
+      "error_code": "-ENOENT", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.5, 
+      "syscall_name": "epoll_ctl", 
+      "original_max_rate": 0.5, 
+      "failure_rate": 0.6, 
+      "result": {
+        "succeeded": 7, 
+        "sending_failures": 0, 
+        "injection_count": 6, 
+        "post_inspection": "passed", 
+        "fetching_failures": 0, 
+        "server_crashed": 0, 
+        "rounds": 7, 
+        "validation_failures": 0
+      }, 
+      "original_mean_rate": 0.5077653783914423, 
+      "error_code": "-ENOENT", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.0625, 
+      "syscall_name": "lstat", 
+      "original_max_rate": 0.0625, 
+      "failure_rate": 0.075, 
+      "result": {
+        "succeeded": 7, 
+        "sending_failures": 0, 
+        "injection_count": 0, 
+        "post_inspection": "passed", 
+        "fetching_failures": 0, 
+        "server_crashed": 0, 
+        "rounds": 7, 
+        "validation_failures": 0
+      }, 
+      "original_mean_rate": 0.0625, 
+      "error_code": "-ENOENT", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.3333333333333333, 
+      "syscall_name": "mkdir", 
+      "original_max_rate": 0.3333333333333333, 
+      "failure_rate": 0.39999999999999997, 
+      "result": {
+        "succeeded": 7, 
+        "sending_failures": 0, 
+        "injection_count": 0, 
+        "post_inspection": "passed", 
+        "fetching_failures": 0, 
+        "server_crashed": 0, 
+        "rounds": 7, 
+        "validation_failures": 0
+      }, 
+      "original_mean_rate": 0.3333333333333333, 
+      "error_code": "-ENOENT", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.025, 
+      "syscall_name": "stat", 
+      "original_max_rate": 0.09803921568627451, 
+      "failure_rate": 0.11764705882352941, 
+      "result": {
+        "succeeded": 7, 
+        "sending_failures": 0, 
+        "injection_count": 0, 
+        "post_inspection": "passed", 
+        "fetching_failures": 0, 
+        "server_crashed": 0, 
+        "rounds": 7, 
+        "validation_failures": 0
+      }, 
+      "original_mean_rate": 0.051701270509441295, 
+      "error_code": "-ENOENT", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.006629228566314659, 
+      "syscall_name": "sendto", 
+      "original_max_rate": 0.046454326923076945, 
+      "failure_rate": 0.05, 
+      "result": {
+        "succeeded": 0, 
+        "sending_failures": 63, 
+        "injection_count": 331, 
+        "post_inspection": "failed", 
+        "fetching_failures": 2, 
+        "server_crashed": 0, 
+        "rounds": 65, 
+        "validation_failures": 0
+      }, 
+      "original_mean_rate": 0.018806125318587403, 
+      "error_code": "-EPIPE", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.48304412460354496, 
+      "syscall_name": "futex", 
+      "original_max_rate": 0.4901652616113878, 
+      "failure_rate": 0.5881983139336653, 
+      "result": {
+        "succeeded": 7, 
+        "sending_failures": 0, 
+        "injection_count": 886, 
+        "post_inspection": "passed", 
+        "fetching_failures": 0, 
+        "server_crashed": 0, 
+        "rounds": 7, 
+        "validation_failures": 0
+      }, 
+      "original_mean_rate": 0.48878525159747743, 
+      "error_code": "-ETIMEDOUT", 
+      "experiment_duration": 300
+    }
+  ], 
+  "experiment_description": "Automatically generated based on monitoring data from 2020-12-21T12:00:00Z to 2020-12-22T12:00:00Z"
+}
