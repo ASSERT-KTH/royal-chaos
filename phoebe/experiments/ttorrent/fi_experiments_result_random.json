@@ -1,0 +1,278 @@
+{
+  "experiment_name": "Syscall Fault Injection Experiments", 
+  "experiments": [
+    {
+      "original_min_rate": 0.0011201978727174695, 
+      "syscall_name": "futex", 
+      "original_max_rate": 0.015461137008640859, 
+      "failure_rate": 0.05, 
+      "result": {
+        "succeeded": 5, 
+        "validation_failed": 0, 
+        "app_crashed": 0, 
+        "injection_count": 10527, 
+        "rounds": 6, 
+        "app_stalled": 1
+      }, 
+      "original_mean_rate": 0.00638041594366462, 
+      "error_code": "-EAGAIN", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 6.81391407035593e-06, 
+      "syscall_name": "read", 
+      "original_max_rate": 8.566469642557208e-05, 
+      "failure_rate": 0.05, 
+      "result": {
+        "succeeded": 0, 
+        "validation_failed": 0, 
+        "app_crashed": 59, 
+        "injection_count": 187, 
+        "rounds": 59, 
+        "app_stalled": 0
+      }, 
+      "original_mean_rate": 3.040370741459336e-05, 
+      "error_code": "-EAGAIN", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 6.78107977428351e-06, 
+      "syscall_name": "read", 
+      "original_max_rate": 0.00011692590746175646, 
+      "failure_rate": 0.05, 
+      "result": {
+        "succeeded": 0, 
+        "validation_failed": 0, 
+        "app_crashed": 59, 
+        "injection_count": 184, 
+        "rounds": 59, 
+        "app_stalled": 0
+      }, 
+      "original_mean_rate": 3.497466093416619e-05, 
+      "error_code": "-ECONNRESET", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 1.4056686687702176e-05, 
+      "syscall_name": "write", 
+      "original_max_rate": 5.970294407645359e-05, 
+      "failure_rate": 0.05, 
+      "result": {
+        "succeeded": 0, 
+        "validation_failed": 0, 
+        "app_crashed": 0, 
+        "injection_count": 1042, 
+        "rounds": 2, 
+        "app_stalled": 2
+      }, 
+      "original_mean_rate": 2.9221770247757123e-05, 
+      "error_code": "-ECONNRESET", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.004201680672268907, 
+      "syscall_name": "openat", 
+      "original_max_rate": 0.006578947368421052, 
+      "failure_rate": 0.05, 
+      "result": {
+        "succeeded": 0, 
+        "validation_failed": 0, 
+        "app_crashed": 60, 
+        "injection_count": 88, 
+        "rounds": 60, 
+        "app_stalled": 0
+      }, 
+      "original_mean_rate": 0.005963145487059483, 
+      "error_code": "-EEXIST", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.5, 
+      "syscall_name": "connect", 
+      "original_max_rate": 1.0, 
+      "failure_rate": 1, 
+      "result": {
+        "succeeded": 3, 
+        "validation_failed": 0, 
+        "app_crashed": 0, 
+        "injection_count": 7, 
+        "rounds": 4, 
+        "app_stalled": 1
+      }, 
+      "original_mean_rate": 0.792924910183692, 
+      "error_code": "-EINPROGRESS", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.5, 
+      "syscall_name": "epoll_wait", 
+      "original_max_rate": 1.0, 
+      "failure_rate": 1, 
+      "result": {
+        "succeeded": 7, 
+        "validation_failed": 0, 
+        "app_crashed": 0, 
+        "injection_count": 15087, 
+        "rounds": 7, 
+        "app_stalled": 0
+      }, 
+      "original_mean_rate": 0.7391304347826086, 
+      "error_code": "-EINTR", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.5714285714285714, 
+      "syscall_name": "access", 
+      "original_max_rate": 0.75, 
+      "failure_rate": 0.8999999999999999, 
+      "result": {
+        "succeeded": 2, 
+        "validation_failed": 0, 
+        "app_crashed": 9, 
+        "injection_count": 27, 
+        "rounds": 12, 
+        "app_stalled": 1
+      }, 
+      "original_mean_rate": 0.6078401821608341, 
+      "error_code": "-ENOENT", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.07142857142857142, 
+      "syscall_name": "connect", 
+      "original_max_rate": 1.0, 
+      "failure_rate": 1.0, 
+      "result": {
+        "succeeded": 3, 
+        "validation_failed": 0, 
+        "app_crashed": 0, 
+        "injection_count": 6, 
+        "rounds": 4, 
+        "app_stalled": 1
+      }, 
+      "original_mean_rate": 0.8085409933363149, 
+      "error_code": "-ENOENT", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 1.8299124919160037e-05, 
+      "syscall_name": "epoll_ctl", 
+      "original_max_rate": 0.0018730320179455766, 
+      "failure_rate": 0.05, 
+      "result": {
+        "succeeded": 0, 
+        "validation_failed": 0, 
+        "app_crashed": 0, 
+        "injection_count": 3, 
+        "rounds": 2, 
+        "app_stalled": 2
+      }, 
+      "original_mean_rate": 0.006080255332903473, 
+      "error_code": "-ENOENT", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.022556390977443608, 
+      "syscall_name": "lstat", 
+      "original_max_rate": 0.023809523809523808, 
+      "failure_rate": 0.05, 
+      "result": {
+        "succeeded": 7, 
+        "validation_failed": 0, 
+        "app_crashed": 0, 
+        "injection_count": 0, 
+        "rounds": 7, 
+        "app_stalled": 0
+      }, 
+      "original_mean_rate": 0.02341857500310657, 
+      "error_code": "-ENOENT", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.08695652173913043, 
+      "syscall_name": "openat", 
+      "original_max_rate": 0.35705882352941193, 
+      "failure_rate": 0.4284705882352943, 
+      "result": {
+        "succeeded": 0, 
+        "validation_failed": 0, 
+        "app_crashed": 60, 
+        "injection_count": 94, 
+        "rounds": 60, 
+        "app_stalled": 0
+      }, 
+      "original_mean_rate": 0.22213638546190603, 
+      "error_code": "-ENOENT", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.11428571428571428, 
+      "syscall_name": "stat", 
+      "original_max_rate": 0.5714285714285714, 
+      "failure_rate": 0.6857142857142856, 
+      "result": {
+        "succeeded": 8, 
+        "validation_failed": 0, 
+        "app_crashed": 0, 
+        "injection_count": 0, 
+        "rounds": 8, 
+        "app_stalled": 0
+      }, 
+      "original_mean_rate": 0.3646504643057799, 
+      "error_code": "-ENOENT", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.6666666666666666, 
+      "syscall_name": "unlink", 
+      "original_max_rate": 1.0, 
+      "failure_rate": 1, 
+      "result": {
+        "succeeded": 4, 
+        "validation_failed": 0, 
+        "app_crashed": 0, 
+        "injection_count": 3, 
+        "rounds": 5, 
+        "app_stalled": 1
+      }, 
+      "original_mean_rate": 0.7831978319783199, 
+      "error_code": "-ENOENT", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.00969079939668175, 
+      "syscall_name": "getsockname", 
+      "original_max_rate": 0.3333333333333333, 
+      "failure_rate": 0.3333333333333333, 
+      "result": {
+        "succeeded": 1, 
+        "validation_failed": 0, 
+        "app_crashed": 0, 
+        "injection_count": 40, 
+        "rounds": 3, 
+        "app_stalled": 2
+      }, 
+      "original_mean_rate": 0.28275060669271473, 
+      "error_code": "-ENOTSOCK", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.004547460548276242, 
+      "syscall_name": "futex", 
+      "original_max_rate": 0.4931921331316187, 
+      "failure_rate": 0.4931921331316187, 
+      "result": {
+        "succeeded": 7, 
+        "validation_failed": 0, 
+        "app_crashed": 0, 
+        "injection_count": 5928, 
+        "rounds": 7, 
+        "app_stalled": 0
+      }, 
+      "original_mean_rate": 0.26512547339848386, 
+      "error_code": "-ETIMEDOUT", 
+      "experiment_duration": 300
+    }
+  ], 
+  "experiment_description": "Automatically generated based on monitoring data from 2020-12-21T10:00:00Z to 2020-12-21T16:00:00Z"
+}
