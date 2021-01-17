@@ -23,9 +23,10 @@ TEMPLATE_SINGLE_COLUMN = r"""\begin{table}[tb]
 \centering
 \scriptsize
 \caption{Chaos Engineering Experiment Results on TTorrent}\label{tab:resultsOfTTorrent}
-\begin{tabularx}{\columnwidth}{lrRlr}
+\begin{tabularx}{\columnwidth}{lrRXXXXX}
 \toprule
-Target \& Error& F. Rate& Inj.& Behavioral Assessment Criteria& \\
+Target \& Error& F. Rate& Inj.& \multicolumn{4}{l}{Behavioral Assessment Criteria}& \\
+& & & SU& ST& VF& CR& \\
 \midrule
 """ + "%s" + r"""
 \bottomrule
@@ -53,18 +54,28 @@ def human_format(num):
     return '{}{}'.format('{:f}'.format(num).rstrip('0').rstrip('.'), ['', 'K', 'M', 'B', 'T'][magnitude])
 
 def summarize_result(result):
-    percentage = dict()
-    percentage["Success"] = float(result["succeeded"]) / result["rounds"]
-    percentage["Validation Failure"] = float(result["validation_failed"]) / result["rounds"]
-    percentage["Stalled"] = float(result["app_stalled"]) / result["rounds"]
-    percentage["Crash"] = float(result["app_crashed"]) / result["rounds"]
+    percentage = list()
+    percentage.append({"name": "SU", "value": float(result["succeeded"]) / result["rounds"]})
+    percentage.append({"name": "ST", "value": float(result["app_stalled"]) / result["rounds"]})
+    percentage.append({"name": "VF", "value": float(result["validation_failed"]) / result["rounds"]})
+    percentage.append({"name": "CR", "value": float(result["app_crashed"]) / result["rounds"]})
 
     return_str = ""
-    for key in percentage:
-        if percentage[key] != 0:
-            return_str = return_str + "%s: %.0f\\%%, "%(key, percentage[key] * 100)
+    for category in percentage:
+        return_str = return_str + "%.0f\\%%& "%(category["value"] * 100)
     return_str = return_str[:-2]
+
     return return_str
+
+def categorize_result(result):
+    return_str = r"\colorbox{green}{\makebox[0.3em]{√}}"
+
+    if result["validation_failed"] > 0 or result["app_crashed"] > 0:
+        return_str = r"\colorbox{red}{!}"
+    elif result["app_stalled"] > 0:
+        return_str = r"\colorbox{orange}{-}"
+
+    return return_str.decode("utf-8")
 
 def main(args):
     with open(args.file, 'rt') as file:
@@ -72,28 +83,24 @@ def main(args):
         body = ""
         for experiment in data["experiments"]:
             if args.single_column:
-                result = "SU:%d, VF:%d, ST:%d, CR:%d"%(
-                    experiment["result"]["succeeded"],
-                    experiment["result"]["validation_failed"],
-                    experiment["result"]["app_stalled"],
-                    experiment["result"]["app_crashed"]
-                )
-                body += "%s:%s& %s& %s& %s\\\\\n"%(
+                body += "%s:%s.& %s& %s& %s& %s\\\\\n"%(
                     experiment["syscall_name"],
-                    experiment["error_code"][1:], # remove the "-" before the error code
+                    experiment["error_code"][1:4], # remove the "-" before the error code
                     round_number(experiment["failure_rate"]),
                     human_format(experiment["result"]["injection_count"]),
-                    result
+                    summarize_result(experiment["result"]),
+                    categorize_result(experiment["result"])
                 )
             else:
-                body += "%s& %s& %s& %s& %d& %d& %s\\\\\n"%(
+                body += "%s& %s.& %s& %s& %d& %d& %s& %s\\\\\n"%(
                     experiment["syscall_name"],
-                    experiment["error_code"][1:], # remove the "-" before the error code
+                    experiment["error_code"][1:4], # remove the "-" before the error code
                     "%s, %s, %s"%(round_number(experiment["original_min_rate"]), round_number(experiment["original_mean_rate"]), round_number(experiment["original_max_rate"])),
                     round_number(experiment["failure_rate"]),
                     experiment["result"]["injection_count"],
                     experiment["result"]["rounds"],
-                    summarize_result(experiment["result"])
+                    summarize_result(experiment["result"]),
+                    categorize_result(experiment["result"])
                 )
         body = body[:-1] # remove the very last line break
         latex = TEMPLATE_SINGLE_COLUMN%body if args.single_column else TEMPLATE%body
