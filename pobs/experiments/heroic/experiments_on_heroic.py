@@ -74,17 +74,19 @@ def causal_impact_analysis(ori_data, when_fi_started):
 
     causal_impact = CausalImpact(data_frame, pre_period, post_period, prior_level_sd = 0.1)
 
-    p = -1 # Posterior tail-area probability
-    prob = -1 # Posterior prob. of a causal effect
-    pattern = re.compile(r'Posterior tail-area probability p: (0\.\d+|[1-9]\d*\.\d+)\sPosterior prob. of a causal effect: (0\.\d+|[1-9]\d*\.\d+)%')
-    match = pattern.search(causal_impact.summary())
-    p = float(match.group(1))
-    prob = float(match.group(2))
+    p_value = -1 # Posterior tail-area probability (p-value)
+    relative_effect = -1 # Relative effect
+    relative_effect_pattern = re.compile(r'Relative effect \(s\.d\.\)\s+(-?\d+(\.\d+)?%)')
+    p_value_pattern = re.compile(r'Posterior tail-area probability p: (0\.\d+|[1-9]\d*\.\d+)\sPosterior prob. of a causal effect: (0\.\d+|[1-9]\d*\.\d+)%')
+    match = relative_effect_pattern.search(causal_impact.summary())
+    relative_effect = match.group(1)
+    match = p_value_pattern.search(causal_impact.summary())
+    p_value = float(match.group(1))
     summary = causal_impact.summary()
     report = causal_impact.summary(output='report')
     # causal_impact.plot()
 
-    return summary, report, p, prob
+    return summary, report, p_value, relative_effect
 
 def main():
     # load perturbation points list
@@ -94,7 +96,7 @@ def main():
     url_query = 'http://localhost:4000/backend/jvm/gauges?agent-rollup-id=&from=%d&to=%d&gauge-name=java.lang%%3Atype%%3DMemory%%3AHeapMemoryUsage.used'
 
     headers, points = read_from_csv(perturbation_point_csv)
-    if "tail-area probability" not in headers: headers.extend(["tail-area probability", "prob. of a causal effect", "p fi", "prob. fi"])
+    if "p-value" not in headers: headers.extend(["sc_phase1", "fc_phase1", "sc_phase2", "fc_phase2", "p-value", "relative effect", "sc_phase1 fi", "fc_phase1 fi", "sc_phase2 fi", "fc_phase2 fi", "p-value fi", "relative effect fi"])
 
     for point in points:
         for i in range(2):
@@ -139,16 +141,24 @@ def main():
             write_to_json("monitoring_data/%s-%d.json"%(point["key"], i), monitoring_data)
 
             # calculate causal impact of this specific exception
-            summary, report, p, prob = causal_impact_analysis(ori_data["dataSeries"][0]["data"], when_fi_started)
+            summary, report, p, relative_effect = causal_impact_analysis(ori_data["dataSeries"][0]["data"], when_fi_started)
             if i == 1:
-                point["p fi"] = p
-                point["prob. fi"] = prob
+                point["sc_phase1 fi"] = sc_phase1
+                point["fc_phase1 fi"] = fc_phase1
+                point["sc_phase2 fi"] = sc_phase2
+                point["fc_phase1 fi"] = fc_phase2
+                point["p-value fi"] = p
+                point["relative effect fi"] = relative_effect
                 logging.info("FI execution, %s"%point["key"])
                 logging.info(summary)
                 logging.info(report)
             else:
-                point["tail-area probability"] = p
-                point["prob. of a causal effect"] = prob
+                point["sc_phase1"] = sc_phase1
+                point["fc_phase1"] = fc_phase1
+                point["sc_phase2"] = sc_phase2
+                point["fc_phase1"] = fc_phase2
+                point["p-value"] = p
+                point["relative effect"] = relative_effect
                 logging.info("Normal execution, %s"%point["key"])
                 logging.info(summary)
                 logging.info(report)
