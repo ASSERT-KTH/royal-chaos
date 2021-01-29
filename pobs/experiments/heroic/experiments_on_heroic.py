@@ -146,7 +146,7 @@ def main():
                 point["sc_phase1 fi"] = sc_phase1
                 point["fc_phase1 fi"] = fc_phase1
                 point["sc_phase2 fi"] = sc_phase2
-                point["fc_phase1 fi"] = fc_phase2
+                point["fc_phase2 fi"] = fc_phase2
                 point["p-value fi"] = p
                 point["relative effect fi"] = relative_effect
                 logging.info("FI execution, %s"%point["key"])
@@ -156,7 +156,7 @@ def main():
                 point["sc_phase1"] = sc_phase1
                 point["fc_phase1"] = fc_phase1
                 point["sc_phase2"] = sc_phase2
-                point["fc_phase1"] = fc_phase2
+                point["fc_phase2"] = fc_phase2
                 point["p-value"] = p
                 point["relative effect"] = relative_effect
                 logging.info("Normal execution, %s"%point["key"])
