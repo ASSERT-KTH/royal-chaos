@@ -34,7 +34,7 @@ def workload_generator(duration):
     t_end = time.time() + 60 * duration
     # if the response contains this point information, it is considered as a successful one
     correctness_checking = "[1300001010000,10.0],[1300002000000,20.0]"
-    cmd_workload = 'curl -XPOST -H "X-Client-Id: my_app_name" -H "Content-Type: application/json" http://localhost:8080/query/metrics -d \'{ "range": {"type": "absolute", "start": 1300000000000, "end": 1300009000000}, "filter": ["key", "foo"], "aggregation": { "type": "group", "of": ["site"], "each": { "type": "sum" } } }\' 2>/dev/null'
+    cmd_workload = 'curl --connect-timeout 2 -m 2  -XPOST -H "X-Client-Id: my_app_name" -H "Content-Type: application/json" http://localhost:8080/query/metrics -d \'{ "range": {"type": "absolute", "start": 1300000000000, "end": 1300009000000}, "filter": ["key", "foo"], "aggregation": { "type": "group", "of": ["site"], "each": { "type": "sum" } } }\' 2>/dev/null'
 
     success_count = 0
     failure_count = 0
@@ -93,7 +93,7 @@ def main():
     perturbation_point_csv = "./perturbationPointsList.csv"
     tripleagent_config_csv = "./logs/perturbationPointsList.csv"
     cmd_start_container = 'docker run --name heroic --rm -d -p 4000:4000 -p 8080:8080 -p 9091:9091 -v $PWD/logs:/home/tripleagent/logs -e "TRIPLEAGENT_FILTER=com/spotify/heroic" -e "TRIPLEAGENT_LINENUMBER=0" heroic-pobs:2.1.0'
-    url_query = 'http://localhost:4000/backend/jvm/gauges?agent-rollup-id=&from=%d&to=%d&gauge-name=java.lang%%3Atype%%3DMemory%%3AHeapMemoryUsage.used'
+    url_query = 'http://localhost:4000/backend/jvm/gauges?agent-rollup-id=&from=%d&to=%d&gauge-name=java.lang%%3Atype%%3DMemory%%3AHeapMemoryUsage.used&gauge-name=java.lang%%3Atype%%3DOperatingSystem%%3AProcessCpuLoad'
 
     headers, points = read_from_csv(perturbation_point_csv)
     if "p-value" not in headers: headers.extend(["sc_phase1", "fc_phase1", "sc_phase2", "fc_phase2", "p-value", "relative effect", "sc_phase1 fi", "fc_phase1 fi", "sc_phase2 fi", "fc_phase2 fi", "p-value fi", "relative effect fi"])
@@ -104,7 +104,7 @@ def main():
             os.system(cmd_start_container)
             time.sleep(20)
             # write some date points into Heroic
-            os.system('curl -XPOST -H "X-Client-Id: my_app_name" -H "Content-Type: application/json" http://localhost:8080/write -d \'{ "series": {"key": "foo", "tags": {"site": "lon", "host": "www.example.com"}}, "data": {"type": "points", "data": [[1300001000000, 10.0], [1300002000000, 20.0]]} }\'')
+            os.system('curl --connect-timeout 2 -m 2  -XPOST -H "X-Client-Id: my_app_name" -H "Content-Type: application/json" http://localhost:8080/write -d \'{ "series": {"key": "foo", "tags": {"site": "lon", "host": "www.example.com"}}, "data": {"type": "points", "data": [[1300001000000, 10.0], [1300002000000, 20.0]]} }\'')
             time.sleep(1)
 
             # 2 mins warm up
@@ -137,11 +137,11 @@ def main():
 
             # persist the monitoring data
             if not os.path.isdir("./monitoring_data"): os.system("mkdir ./monitoring_data")
-            monitoring_data = {"data": ori_data["dataSeries"][0]["data"], "when_fi_started": when_fi_started, "sc_phase1": sc_phase1, "fc_phase1": fc_phase1, "sc_phase2": sc_phase2, "fc_phase2": fc_phase2}
+            monitoring_data = {"query_result": ori_data, "when_fi_started": when_fi_started, "sc_phase1": sc_phase1, "fc_phase1": fc_phase1, "sc_phase2": sc_phase2, "fc_phase2": fc_phase2}
             write_to_json("monitoring_data/%s-%d.json"%(point["key"], i), monitoring_data)
 
-            # calculate causal impact of this specific exception
-            summary, report, p, relative_effect = causal_impact_analysis(ori_data["dataSeries"][0]["data"], when_fi_started)
+            # calculate causal impact of this specific exception (now we use ProcessCpuLoad as the metric)
+            summary, report, p, relative_effect = causal_impact_analysis(ori_data["dataSeries"][1]["data"], when_fi_started)
             if i == 1:
                 point["sc_phase1 fi"] = sc_phase1
                 point["fc_phase1 fi"] = fc_phase1
