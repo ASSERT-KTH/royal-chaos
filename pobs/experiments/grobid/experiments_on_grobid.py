@@ -58,7 +58,7 @@ def query_glowroot(metric_name):
     # todo
     return
 
-def causal_impact_analysis(ori_data, when_fi_started):
+def causal_impact_analysis(ori_data, when_fi_started, data_point_interval):
     x = list()
     y = list()
     post_period_index = 0
@@ -67,35 +67,45 @@ def causal_impact_analysis(ori_data, when_fi_started):
         y.append(point[1])
         if post_period_index == 0 and when_fi_started <= point[0]:
             post_period_index = ori_data.index(point)
+    # standardize these timestamp points to have exactly the same interval
+    for i in range(1, len(x)):
+        x[i] = x[i-1] + data_point_interval
 
     data_frame = pd.DataFrame({"timestamp": pd.to_datetime(x, unit="ms"), "y": y})
     data_frame = data_frame.set_index("timestamp")
-    pre_period = [pd.to_datetime(ori_data[0][0], unit="ms"), pd.to_datetime(ori_data[post_period_index-1][0], unit="ms")]
-    post_period = [pd.to_datetime(ori_data[post_period_index][0], unit="ms"), pd.to_datetime(ori_data[-1][0], unit="ms")]
+    data_frame = data_frame.asfreq(freq='%dms'%data_point_interval)
+    pre_period = [pd.to_datetime(x[0], unit="ms"), pd.to_datetime(x[post_period_index-1], unit="ms")]
+    post_period = [pd.to_datetime(x[post_period_index], unit="ms"), pd.to_datetime(x[-1], unit="ms")]
 
     causal_impact = CausalImpact(data_frame, pre_period, post_period, prior_level_sd = 0.1)
+    summary = causal_impact.summary()
+    report = causal_impact.summary(output='report')
+    logging.info(summary)
+    logging.info(report)
+
+    relative_effect = -1 # Relative effect on average in the posterior area
+    pattern_re = re.compile(r'Relative effect \(s\.d\.\)\s+(-?\d+(\.\d+)?%)')
+    match = pattern_re.search(summary)
+    relative_effect = match.group(1)
 
     p = -1 # Posterior tail-area probability
     prob = -1 # Posterior prob. of a causal effect
-    pattern = re.compile(r'Posterior tail-area probability p: (0\.\d+|[1-9]\d*\.\d+)\sPosterior prob. of a causal effect: (0\.\d+|[1-9]\d*\.\d+)%')
-    match = pattern.search(causal_impact.summary())
+    pattern_p_value = re.compile(r'Posterior tail-area probability p: (0\.\d+|[1-9]\d*\.\d+)\sPosterior prob. of a causal effect: (0\.\d+|[1-9]\d*\.\d+)%')
+    match = pattern_p_value.search(summary)
     p = float(match.group(1))
     prob = float(match.group(2))
-    summary = causal_impact.summary()
-    report = causal_impact.summary(output='report')
-    # causal_impact.plot()
 
-    return summary, report, p, prob
+    return summary, report, p, relative_effect
 
 def main():
     # load perturbation points list
     perturbation_point_csv = "./perturbationPointsList.csv"
     tripleagent_config_csv = "./logs/perturbationPointsList.csv"
     cmd_start_container = 'docker run --rm -t --init -d -p 4000:4000 -p 8080:8070 -p 8081:8071 -v $PWD/logs:/home/tripleagent/logs -e "TRIPLEAGENT_FILTER=org/grobid" -e "TRIPLEAGENT_LINENUMBER=0" grobid-pobs:0.6.0'
-    url_query = 'http://localhost:4000/backend/jvm/gauges?agent-rollup-id=&from=%d&to=%d&gauge-name=java.lang%%3Atype%%3DMemory%%3AHeapMemoryUsage.used'
+    url_query = 'http://localhost:4000/backend/jvm/gauges?agent-rollup-id=&from=%d&to=%d&gauge-name=java.lang%%3Atype%%3DMemory%%3AHeapMemoryUsage.used&gauge-name=java.lang%%3Atype%%3DOperatingSystem%%3AProcessCpuLoad'
 
     headers, points = read_from_csv(perturbation_point_csv)
-    if "tail-area probability" not in headers: headers.extend(["tail-area probability", "prob. of a causal effect", "p fi", "prob. fi"])
+    if "p-value" not in headers: headers.extend(["sc_phase1", "fc_phase1", "sc_phase2", "fc_phase2", "p-value", "relative effect", "sc_phase1 fi", "fc_phase1 fi", "sc_phase2 fi", "fc_phase2 fi", "p-value fi", "relative effect fi"])
 
     for point in points:
         for i in range(2):
@@ -111,6 +121,7 @@ def main():
             logging.info("5 mins common workload")
             start_at = int(time.time() * 1000)
             sc_phase1, fc_phase1 = workload_generator(5)
+            logging.info("sc_phase1: %d, fc_phase1: %d"%(sc_phase1, fc_phase1))
 
             # 5 mins common workload / fault workload
             if i == 1:
@@ -121,6 +132,7 @@ def main():
             when_fi_started = int(time.time() * 1000)
             logging.info("another 5 mins common/fault workload")
             sc_phase2, fc_phase2 = workload_generator(5)
+            logging.info("sc_phase2: %d, fc_phase2: %d"%(sc_phase2, fc_phase2))
             end_at = int(time.time() * 1000)
             time.sleep(1)
 
@@ -131,22 +143,28 @@ def main():
 
             # persist the monitoring data
             if not os.path.isdir("./monitoring_data"): os.system("mkdir ./monitoring_data")
-            monitoring_data = {"data": ori_data["dataSeries"][0]["data"], "when_fi_started": when_fi_started, "sc_phase1": sc_phase1, "fc_phase1": fc_phase1, "sc_phase2": sc_phase2, "fc_phase2": fc_phase2}
+            monitoring_data = {"query_result": ori_data, "when_fi_started": when_fi_started, "sc_phase1": sc_phase1, "fc_phase1": fc_phase1, "sc_phase2": sc_phase2, "fc_phase2": fc_phase2}
             write_to_json("monitoring_data/%s-%d.json"%(point["key"], i), monitoring_data)
 
-            # calculate causal impact of this specific exception
-            summary, report, p, prob = causal_impact_analysis(ori_data["dataSeries"][0]["data"], when_fi_started)
-            logging.info("sc_phase1: %d, fc_phase1: %d"%(sc_phase1, fc_phase1))
-            logging.info("sc_phase2: %d, fc_phase2: %d"%(sc_phase2, fc_phase2))
+            # calculate causal impact of this specific exception (now we use ProcessCpuLoad as the metric)
+            summary, report, p, relative_effect = causal_impact_analysis(ori_data["dataSeries"][1]["data"], when_fi_started, ori_data["dataPointIntervalMillis"])
             if i == 1:
-                point["p fi"] = p
-                point["prob. fi"] = prob
+                point["sc_phase1 fi"] = sc_phase1
+                point["fc_phase1 fi"] = fc_phase1
+                point["sc_phase2 fi"] = sc_phase2
+                point["fc_phase2 fi"] = fc_phase2
+                point["p-value fi"] = p
+                point["relative effect fi"] = relative_effect
                 logging.info("FI execution, %s"%point["key"])
                 logging.info(summary)
                 logging.info(report)
             else:
-                point["tail-area probability"] = p
-                point["prob. of a causal effect"] = prob
+                point["sc_phase1"] = sc_phase1
+                point["fc_phase1"] = fc_phase1
+                point["sc_phase2"] = sc_phase2
+                point["fc_phase2"] = fc_phase2
+                point["p-value"] = p
+                point["relative effect"] = relative_effect
                 logging.info("Normal execution, %s"%point["key"])
                 logging.info(summary)
                 logging.info(report)
@@ -158,5 +176,6 @@ def main():
             write_to_csv(perturbation_point_csv, headers, points)
 
 if __name__ == '__main__':
-    logging.basicConfig(level=logging.INFO)
+    logger_format = '%(asctime)-15s %(levelname)-8s %(message)s'
+    logging.basicConfig(level=logging.INFO, format=logger_format)
     main()

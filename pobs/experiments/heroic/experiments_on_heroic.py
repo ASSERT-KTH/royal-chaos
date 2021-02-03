@@ -57,7 +57,7 @@ def query_glowroot(metric_name):
     # todo
     return
 
-def causal_impact_analysis(ori_data, when_fi_started):
+def causal_impact_analysis(ori_data, when_fi_started, data_point_interval):
     x = list()
     y = list()
     post_period_index = 0
@@ -66,27 +66,35 @@ def causal_impact_analysis(ori_data, when_fi_started):
         y.append(point[1])
         if post_period_index == 0 and when_fi_started <= point[0]:
             post_period_index = ori_data.index(point)
+    # standardize these timestamp points to have exactly the same interval
+    for i in range(1, len(x)):
+        x[i] = x[i-1] + data_point_interval
 
     data_frame = pd.DataFrame({"timestamp": pd.to_datetime(x, unit="ms"), "y": y})
     data_frame = data_frame.set_index("timestamp")
-    pre_period = [pd.to_datetime(ori_data[0][0], unit="ms"), pd.to_datetime(ori_data[post_period_index-1][0], unit="ms")]
-    post_period = [pd.to_datetime(ori_data[post_period_index][0], unit="ms"), pd.to_datetime(ori_data[-1][0], unit="ms")]
+    data_frame = data_frame.asfreq(freq='%dms'%data_point_interval)
+    pre_period = [pd.to_datetime(x[0], unit="ms"), pd.to_datetime(x[post_period_index-1], unit="ms")]
+    post_period = [pd.to_datetime(x[post_period_index], unit="ms"), pd.to_datetime(x[-1], unit="ms")]
 
     causal_impact = CausalImpact(data_frame, pre_period, post_period, prior_level_sd = 0.1)
-
-    p_value = -1 # Posterior tail-area probability (p-value)
-    relative_effect = -1 # Relative effect
-    relative_effect_pattern = re.compile(r'Relative effect \(s\.d\.\)\s+(-?\d+(\.\d+)?%)')
-    p_value_pattern = re.compile(r'Posterior tail-area probability p: (0\.\d+|[1-9]\d*\.\d+)\sPosterior prob. of a causal effect: (0\.\d+|[1-9]\d*\.\d+)%')
-    match = relative_effect_pattern.search(causal_impact.summary())
-    relative_effect = match.group(1)
-    match = p_value_pattern.search(causal_impact.summary())
-    p_value = float(match.group(1))
     summary = causal_impact.summary()
     report = causal_impact.summary(output='report')
-    # causal_impact.plot()
+    logging.info(summary)
+    logging.info(report)
 
-    return summary, report, p_value, relative_effect
+    relative_effect = -1 # Relative effect on average in the posterior area
+    pattern_re = re.compile(r'Relative effect \(s\.d\.\)\s+(-?\d+(\.\d+)?%)')
+    match = pattern_re.search(summary)
+    relative_effect = match.group(1)
+
+    p = -1 # Posterior tail-area probability
+    prob = -1 # Posterior prob. of a causal effect
+    pattern_p_value = re.compile(r'Posterior tail-area probability p: (0\.\d+|[1-9]\d*\.\d+)\sPosterior prob. of a causal effect: (0\.\d+|[1-9]\d*\.\d+)%')
+    match = pattern_p_value.search(summary)
+    p = float(match.group(1))
+    prob = float(match.group(2))
+
+    return summary, report, p, relative_effect
 
 def main():
     # load perturbation points list
@@ -141,7 +149,7 @@ def main():
             write_to_json("monitoring_data/%s-%d.json"%(point["key"], i), monitoring_data)
 
             # calculate causal impact of this specific exception (now we use ProcessCpuLoad as the metric)
-            summary, report, p, relative_effect = causal_impact_analysis(ori_data["dataSeries"][1]["data"], when_fi_started)
+            summary, report, p, relative_effect = causal_impact_analysis(ori_data["dataSeries"][1]["data"], when_fi_started, ori_data["dataPointIntervalMillis"])
             if i == 1:
                 point["sc_phase1 fi"] = sc_phase1
                 point["fc_phase1 fi"] = fc_phase1
@@ -170,5 +178,6 @@ def main():
             write_to_csv(perturbation_point_csv, headers, points)
 
 if __name__ == '__main__':
-    logging.basicConfig(level=logging.INFO)
+    logger_format = '%(asctime)-15s %(levelname)-8s %(message)s'
+    logging.basicConfig(level=logging.INFO, format=logger_format)
     main()
