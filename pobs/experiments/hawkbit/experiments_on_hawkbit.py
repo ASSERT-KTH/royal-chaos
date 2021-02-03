@@ -33,19 +33,19 @@ def write_to_json(path, data):
 def workload_generator(duration):
     t_end = time.time() + 60 * duration
     # if the response contains this point information, it is considered as a successful one
-    cmd_workload_step_1 = 'curl --connect-timeout 2 -m 2 \'http://localhost:8080/rest/v1/softwaremodules\' -X POST --user admin:admin -H \'Content-Type: application/hal+json;charset=UTF-8\' -d \'[ {"vendor" : "vendor{count}", "name" : "name{count}", "description" : "description{count}", "type" : "os", "version" : "version{count}" }]\' 2>/dev/null'
-    cmd_workload_step_2 = 'curl --connect-timeout 2 -m 2 \'http://localhost:8080/rest/v1/softwaremodules\' -X GET --user admin:admin -H \'Accept: application/json\' 2>/dev/null'
+    cmd_workload_step_1 = 'curl --connect-timeout 2 -m 2 \'http://localhost:8080/rest/v1/softwaremodules\' -X POST --user admin:admin -H \'Content-Type: application/hal+json;charset=UTF-8\' -d \'[ {"vendor" : "vendor%(timestamp)s", "name" : "name%(timestamp)s", "description" : "description%(timestamp)s", "type" : "os", "version" : "version%(timestamp)s" }]\' 2>/dev/null'
+    cmd_workload_step_2 = 'curl --connect-timeout 2 -m 2 \'http://localhost:8080/rest/v1/softwaremodules?limit=9999\' -X GET --user admin:admin -H \'Accept: application/json\' 2>/dev/null'
 
     success_count = 0
     failure_count = 0
-    request_count = 0
-    correctness_checking = '"name":"name{count}","description":"description{count}","version":"version{count}","type":"os","vendor":"vendor{count}"'
+    correctness_checking = '"name":"name%(timestamp)s","description":"description%(timestamp)s","version":"version%(timestamp)s","type":"os","vendor":"vendor%(timestamp)s"'
     while time.time() < t_end:
         try:
-            os.system(cmd_workload_step_1.format(count = request_count))
+            request_time = int(time.time())
+            os.system(cmd_workload_step_1%{"timestamp": request_time})
             time.sleep(1)
             response = subprocess.check_output(cmd_workload_step_2, shell=True)
-            if correctness_checking.format(count = request_count) in response.decode("utf-8"):
+            if correctness_checking%{"timestamp": request_time} in response.decode("utf-8"):
                 success_count = success_count + 1
             else:
                 logging.info("incorrect response")
@@ -106,7 +106,7 @@ def main():
         for i in range(2):
             # start an application container
             os.system(cmd_start_container)
-            time.sleep(20)
+            time.sleep(30)
 
             # 2 mins warm up
             logging.info("2 mins warm up")
