@@ -29,22 +29,26 @@ def causal_impact_analysis(ori_data, when_fi_started):
         y.append(point[1])
         if post_period_index == 0 and when_fi_started <= point[0]:
             post_period_index = ori_data.index(point)
+    # standardize these timestamp points to have exactly the same interval
+    for i in range(1, len(x)):
+        x[i] = x[i-1] + 5000
 
     data_frame = pd.DataFrame({"timestamp": pd.to_datetime(x, unit="ms"), "y": y})
     data_frame = data_frame.set_index("timestamp")
-    pre_period = [pd.to_datetime(ori_data[0][0], unit="ms"), pd.to_datetime(ori_data[post_period_index-1][0], unit="ms")]
-    post_period = [pd.to_datetime(ori_data[post_period_index][0], unit="ms"), pd.to_datetime(ori_data[-1][0], unit="ms")]
+    data_frame = data_frame.asfreq(freq='5000ms')
+    pre_period = [pd.to_datetime(x[0], unit="ms"), pd.to_datetime(x[post_period_index-1], unit="ms")]
+    post_period = [pd.to_datetime(x[post_period_index], unit="ms"), pd.to_datetime(x[-1], unit="ms")]
 
-    causal_impact = CausalImpact(data_frame, pre_period, post_period, prior_level_sd = 0.1)
+    causal_impact = CausalImpact(data_frame, pre_period, post_period, prior_level_sd = 0.01)
     summary = causal_impact.summary()
     report = causal_impact.summary(output='report')
     logging.info(summary)
     logging.info(report)
 
     relative_effect = -1 # Relative effect on average in the posterior area
-    pattern_re = re.compile(r'Relative effect \(s\.d\.\)\s+-?(0\.\d+|[1-9]\d*\.\d+)%\s+\((0\.\d+|[1-9]\d*\.\d+)%\)')
+    pattern_re = re.compile(r'Relative effect \(s\.d\.\)\s+(-?\d+(\.\d+)?%)')
     match = pattern_re.search(summary)
-    relative_effect = float(match.group(2))
+    relative_effect = match.group(1)
 
     p = -1 # Posterior tail-area probability
     prob = -1 # Posterior prob. of a causal effect
@@ -53,14 +57,15 @@ def causal_impact_analysis(ori_data, when_fi_started):
     p = float(match.group(1))
     prob = float(match.group(2))
 
-    # causal_impact.plot(panels=['original'], figsize=(12, 4))
+    causal_impact.plot(panels=['original'], figsize=(12, 4))
 
     return summary, report, p, prob, relative_effect
 
 def analyze_one_log(json_file):
     with open(json_file, "rt") as file:
         data = json.load(file)
-        ori_data = data["data"]
+        # index 0: HeapMemoryUsage, index 1: ProcessCpuLoad
+        ori_data = data["query_result"]["dataSeries"][0]["data"]
         when_fi_started = data["when_fi_started"]
 
         causal_impact_analysis(ori_data, when_fi_started)
