@@ -20,7 +20,7 @@ def write_to_csv(path, headers, rows):
         f_csv.writeheader()
         f_csv.writerows(rows)
 
-def causal_impact_analysis(ori_data, when_fi_started):
+def causal_impact_analysis(ori_data, when_fi_started, data_point_interval):
     x = list()
     y = list()
     post_period_index = 0
@@ -31,11 +31,11 @@ def causal_impact_analysis(ori_data, when_fi_started):
             post_period_index = ori_data.index(point)
     # standardize these timestamp points to have exactly the same interval
     for i in range(1, len(x)):
-        x[i] = x[i-1] + 5000
+        x[i] = x[i-1] + data_point_interval
 
     data_frame = pd.DataFrame({"timestamp": pd.to_datetime(x, unit="ms"), "y": y})
     data_frame = data_frame.set_index("timestamp")
-    data_frame = data_frame.asfreq(freq='5000ms')
+    data_frame = data_frame.asfreq(freq='%dms'%data_point_interval)
     pre_period = [pd.to_datetime(x[0], unit="ms"), pd.to_datetime(x[post_period_index-1], unit="ms")]
     post_period = [pd.to_datetime(x[post_period_index], unit="ms"), pd.to_datetime(x[-1], unit="ms")]
 
@@ -65,10 +65,11 @@ def analyze_one_log(json_file):
     with open(json_file, "rt") as file:
         data = json.load(file)
         # index 0: HeapMemoryUsage, index 1: ProcessCpuLoad
-        ori_data = data["query_result"]["dataSeries"][0]["data"]
+        ori_data = data["query_result"]["dataSeries"][1]["data"]
+        data_point_interval_millis = data["query_result"]["dataPointIntervalMillis"]
         when_fi_started = data["when_fi_started"]
 
-        causal_impact_analysis(ori_data, when_fi_started)
+        causal_impact_analysis(ori_data, when_fi_started, data_point_interval_millis)
 
 def analyze_csv(csv_file, log_path):
     headers, points = read_from_csv(csv_file)
@@ -77,7 +78,9 @@ def analyze_csv(csv_file, log_path):
         log = os.path.join(log_path, "%s-1.json"%point["key"])
         with open(log, "rt") as file:
             data = json.load(file)
-            ori_data = data["data"]
+            # index 0: HeapMemoryUsage, index 1: ProcessCpuLoad
+            ori_data = data["query_result"]["dataSeries"][1]["data"]
+            data_point_interval_millis = data["query_result"]["dataPointIntervalMillis"]
             when_fi_started = data["when_fi_started"]
 
             # shrunk the data to 2mins v.s. 2mins
@@ -85,7 +88,7 @@ def analyze_csv(csv_file, log_path):
             # for data_point in ori_data:
             #     if data_point[0] < two_mins_before: ori_data.remove(data_point)
 
-            summary, report, p, prob, relative_effect = causal_impact_analysis(ori_data, when_fi_started)
+            summary, report, p, prob, relative_effect = causal_impact_analysis(ori_data, when_fi_started, data_point_interval_millis)
             point["p fi"] = p
             point["prob. fi"] = prob
             point["re fi"] = relative_effect
