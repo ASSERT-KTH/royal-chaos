@@ -79,8 +79,6 @@ def causal_impact_analysis(ori_data, when_fi_started, data_point_interval):
     causal_impact = CausalImpact(data_frame, pre_period, post_period, prior_level_sd = 0.1)
     summary = causal_impact.summary()
     report = causal_impact.summary(output='report')
-    logging.info(summary)
-    logging.info(report)
 
     relative_effect = -1 # Relative effect on average in the posterior area
     pattern_re = re.compile(r'Relative effect \(s\.d\.\)\s+(-?\d+(\.\d+)?%)')
