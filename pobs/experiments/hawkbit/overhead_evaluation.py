@@ -8,8 +8,8 @@ import numpy
 def workload_generator(duration):
     t_end = time.time() + 60 * duration
     # if the response contains this point information, it is considered as a successful one
-    cmd_workload_step_1 = 'curl --connect-timeout 2 -m 2 -s -w \'%%{time_total}\n\' \'http://localhost:8080/rest/v1/softwaremodules\' -X POST --user admin:admin -H \'Content-Type: application/hal+json;charset=UTF-8\' -d \'[ {"vendor" : "vendor%(timestamp)s", "name" : "name%(timestamp)s", "description" : "description%(timestamp)s", "type" : "os", "version" : "version%(timestamp)s" }]\' > /dev/null 2>&1'
-    cmd_workload_step_2 = 'curl --connect-timeout 2 -m 2 -s -w \'%%{time_total}\n\' \'http://localhost:8080/rest/v1/softwaremodules?limit=9999\' -X GET --user admin:admin -H \'Accept: application/json\' 2>/dev/null'
+    cmd_workload_step_1 = 'curl --connect-timeout 2 -m 2 -s -w \'%%{time_total}\n\' -o /dev/null \'http://localhost:8080/rest/v1/softwaremodules\' -X POST --user admin:admin -H \'Content-Type: application/hal+json;charset=UTF-8\' -d \'[ {"vendor" : "vendor%(timestamp)s", "name" : "name%(timestamp)s", "description" : "description%(timestamp)s", "type" : "os", "version" : "version%(timestamp)s" }]\''
+    cmd_workload_step_2 = 'curl --connect-timeout 2 -m 2 \'http://localhost:8080/rest/v1/softwaremodules?limit=9999\' -X GET --user admin:admin -H \'Accept: application/json\' 2>/dev/null'
 
     success_count = 0
     failure_count = 0
