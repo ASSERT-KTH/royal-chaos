@@ -18,7 +18,7 @@ def workload_generator(duration):
     while time.time() < t_end:
         try:
             request_time = int(time.time())
-            response_time = subprocess.check_output(cmd_workload_step_1%{"timestamp": request_time})
+            response_time = subprocess.check_output(cmd_workload_step_1%{"timestamp": request_time}, shell=True)
             response_time_list.append(float(response_time))
             time.sleep(1)
             response = subprocess.check_output(cmd_workload_step_2, shell=True)
