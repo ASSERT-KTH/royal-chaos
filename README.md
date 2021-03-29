@@ -37,5 +37,5 @@ POBS is an approach that automatically augments Docker images to have improved o
 ## Phoebe
 Phoebe is a fault injection framework for reliability analysis with respect to system call invocation errors. First, Phoebe enables developers to have full observability of system call invocations. Second, Phoebe generates error models that are realistic in the sense that they resemble errors that naturally happen in production. With the generated error models, Phoebe automatically conducts a series of experiments to systematically assess the reliability of applications with respect to system call invocation errors in production.
 
-* Code: [pobs](https://github.com/KTH/royal-chaos/tree/master/phoebe)
+* Code: [phoebe](https://github.com/KTH/royal-chaos/tree/master/phoebe)
 * Paper: [Realistic Error Injection for System Calls (Long Zhang, Brice Morin, Benoit Baudry and Martin Monperrus)](https://arxiv.org/abs/2006.04444)
