@@ -1,10 +1,9 @@
 # Phoebe
 
-Realistic Failure Injection for System Calls
-
-## Introduction
-
 Phoebe is a fault injection framework for reliability analysis with respect to system call invocation failures. First, Phoebe enables developers to have full observability of system call invocations for an application, second Phoebe generates failure models  that are realistic in the sense that they resemble errors that naturally happen in production. With the generated failure models, Phoebe automatically conducts a series of chaos engineering experiments to systematically assess the reliability of applications with respect to system call invocation failures.
+
+## Talks about Phoebe
+- [Conf42: Chaos Engineering 2021, Online, Mar 28, 2021](https://www.conf42.com/Chaos_Engineering_2021_Long_Zhang_error_injection_system_calls)
 
 ## Installation
 
