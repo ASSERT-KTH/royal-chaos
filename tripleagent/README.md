@@ -8,6 +8,15 @@ TripleAgent is a system for fault injection in production for Java applications.
 
 More details in the paper: [TripleAgent: Monitoring, Perturbation and Failure-obliviousness for Automated Resilience Improvement in Java Applications](https://arxiv.org/pdf/1812.10706), Long Zhang and Martin Monperrus, ISSRE 2019, [doi:10.1109/issre.2019.00021](https://doi.org/10.1109/issre.2019.00021)
 
+```
+@INPROCEEDINGS{Zhang:TripleAgent,
+  author={L. {Zhang} and M. {Monperrus}},
+  booktitle={2019 IEEE 30th International Symposium on Software Reliability Engineering (ISSRE)},
+  title={TripleAgent: Monitoring, Perturbation and Failure-Obliviousness for Automated Resilience Improvement in Java Applications},
+  year={2019},  volume={},  number={},  pages={116-127},
+  doi={10.1109/ISSRE.2019.00021}}
+```
+
 ## Talks about TripleAgent
 
 - [The 2nd Vienna Software Seminar (VSS) on DevOps and Microservice APIs, Vienna, Austria, Thu, Aug 29, 2019](https://vss.swa.univie.ac.at/2019/)  

@@ -8,14 +8,12 @@ Chaos machine is a tool to do application level chaos engineering in the JVM. It
 More details in the Arxiv paper: [A Chaos Engineering System for Live Analysis and Falsification of Exception-handling in the JVM (Arxiv 1805.05246, 2018)](https://arxiv.org/abs/1805.05246)
 
 ```
-@article{arXiv-1805.05246,
- title = {A Chaos Engineering System for Live Analysis and Falsification of Exception-handling in the JVM},
- journal = {IEEE Transactions on Software Engineering},
- year = {2019},
- doi = {10.1109/TSE.2019.2954871},
- author = {Long Zhang and Brice Morin and Philipp Haller and Benoit Baudry and Martin Monperrus},
- url = {http://arxiv.org/pdf/1805.05246},
-}
+@ARTICLE{Zhang:ChaosMachine,
+  author={L. {Zhang} and B. {Morin} and P. {Haller} and B. {Baudry} and M. {Monperrus}},
+  journal={IEEE Transactions on Software Engineering},
+  title={A Chaos Engineering System for Live Analysis and Falsification of Exception-handling in the JVM},
+  year={2019},  volume={},  number={},  pages={1-1},
+  doi={10.1109/TSE.2019.2954871}}
 ```
 
 ## Talks about Chaos Machine

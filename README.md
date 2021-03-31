@@ -6,14 +6,14 @@ This repository contains the chaos engineering systems invented at KTH Royal Ins
 ChaosMachine is a tool to do chaos engineering at the application level in the JVM. It concentrates on analyzing the error-handling capability of each try-catch block involved in the application by injecting exceptions.
 
 * Code: [chaosmachine](https://github.com/KTH/royal-chaos/tree/master/chaosmachine)
-* Paper: [A Chaos Engineering System for Live Analysis and Falsification of Exception-handling in the JVM (Long Zhang, Brice Morin, Philipp Haller, Benoit Baudry and Martin Monperrus)](https://arxiv.org/abs/1805.05246)
+* Paper: [[TSE] A Chaos Engineering System for Live Analysis and Falsification of Exception-handling in the JVM (Long Zhang, Brice Morin, Philipp Haller, Benoit Baudry and Martin Monperrus)](https://arxiv.org/abs/1805.05246)
 
 ## TripleAgent
 
 TripleAgent is a system for fault injection for Java applications. The unique feature of this system is to combine automated monitoring and automated perturbation injection. It outputs concrete hints to improve the resilience against unhandled exceptions.
 
 * Code: [tripleagent](https://github.com/KTH/royal-chaos/tree/master/tripleagent)
-* Paper: [TripleAgent: Monitoring, Perturbation and Failure-obliviousness for Automated Resilience Improvement in Java Applications (Long Zhang and Martin Monperrus)](http://arxiv.org/pdf/1812.10706)
+* Paper: [[ISSRE] TripleAgent: Monitoring, Perturbation and Failure-obliviousness for Automated Resilience Improvement in Java Applications (Long Zhang and Martin Monperrus)](http://arxiv.org/pdf/1812.10706)
 
 ## Chaos-NS-3
 
@@ -38,4 +38,4 @@ POBS is an approach that automatically augments Docker images to have improved o
 Phoebe is a fault injection framework for reliability analysis with respect to system call invocation errors. First, Phoebe enables developers to have full observability of system call invocations. Second, Phoebe generates error models that are realistic in the sense that they resemble errors that naturally happen in production. With the generated error models, Phoebe automatically conducts a series of experiments to systematically assess the reliability of applications with respect to system call invocation errors in production.
 
 * Code: [phoebe](https://github.com/KTH/royal-chaos/tree/master/phoebe)
-* Paper: [Realistic Error Injection for System Calls (Long Zhang, Brice Morin, Benoit Baudry and Martin Monperrus)](https://arxiv.org/abs/2006.04444)
+* Paper: [[TDSC] Maximizing Error Injection Realism for Chaos Engineering with System Calls (Long Zhang, Brice Morin, Benoit Baudry and Martin Monperrus)](https://arxiv.org/abs/2006.04444)
