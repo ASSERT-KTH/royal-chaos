@@ -26,7 +26,7 @@ We seek to attain a simplified illustration about chaos engineering applied on a
 ChaosOrca is a tool for doing Chaos Engineering on containers by perturbing system calls for processes inside containers. Where monitoring/observability is a key part of the system to be able to reason about the given perturbations effect on the container. The system utilises strace built in system call fault injections, as such it can add delays, return error codes, do so intermittenly and more. Metrics recorded are System calls, HTTP, Logs and Performance related ones. 
 
 * Code: [chaosorca](https://github.com/KTH/royal-chaos/tree/master/chaosorca)
-* Paper: [Observability and Chaos Engineering on System Calls for Containerized Applications in Docker (Jesper Simonsson, Long Zhang, Brice Morin, Benoit Baudry and Martin Monperrus)](https://arxiv.org/pdf/1907.13039)
+* Paper: [[FGCS] Observability and Chaos Engineering on System Calls for Containerized Applications in Docker (Jesper Simonsson, Long Zhang, Brice Morin, Benoit Baudry and Martin Monperrus)](https://arxiv.org/pdf/1907.13039)
 
 ## POBS
 POBS is an approach that automatically augments Docker images to have improved observability and fault injection capabilities for Java applications.
