@@ -2,6 +2,22 @@
 
 ChaosOrca is an original chaos engineering system for Docker. Its key design principle is to work with untouched Dockers images. All the monitoring and pertirbations are done from the Docker host. It uses different capabilities of the Linux Kernel and the Docker architecture. 
 
+More details in the paper: [Observability and Chaos Engineering on System Calls for Containerized Applications in Docker](https://arxiv.org/abs/1907.13039), Jesper Simonsson, Long Zhang, Brice Morin, Benoit Baudry and Martin Monperrus, FGCS 2021, [doi:10.1016/j.future.2021.04.001](https://doi.org/10.1016/j.future.2021.04.001)
+
+```
+@article{Simonsson:ChaosOrca:2021,
+  title = {Observability and chaos engineering on system calls for containerized applications in Docker},
+  journal = {Future Generation Computer Systems},
+  volume = {122},
+  pages = {117-129},
+  year = {2021},
+  issn = {0167-739X},
+  doi = {https://doi.org/10.1016/j.future.2021.04.001},
+  url = {https://www.sciencedirect.com/science/article/pii/S0167739X21001163},
+  author = {Jesper Simonsson and Long Zhang and Brice Morin and Benoit Baudry and Martin Monperrus},
+  keywords = {Fault injection, Chaos engineering, System call, Containers, Observability}}
+```
+
 ## Install
 1. Rename `file_sd_config.json.sample` to `file_sd_config.json`
 2. Run the orc application. `python main.py <commands>`
