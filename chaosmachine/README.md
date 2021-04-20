@@ -5,7 +5,7 @@ Chaos machine is a tool to do application level chaos engineering in the JVM. It
 - Perturbation injector: injects an exception at a specific time  
 - Chaos controller: controls every perturbation injector to fulfill a chaos experiment, generates analysis reports for developers  
 
-More details in the Arxiv paper: [A Chaos Engineering System for Live Analysis and Falsification of Exception-handling in the JVM (Arxiv 1805.05246, 2018)](https://arxiv.org/abs/1805.05246)
+More details in the paper: [A Chaos Engineering System for Live Analysis and Falsification of Exception-handling in the JVM](https://arxiv.org/abs/1805.05246), Long Zhang, Brice Morin, Philipp Haller, Benoit Baudry and Martin Monperrus, TSE 2019, [doi:10.1109/TSE.2019.2954871](https://doi.org/10.1109/TSE.2019.2954871)
 
 ```
 @ARTICLE{Zhang:ChaosMachine,
