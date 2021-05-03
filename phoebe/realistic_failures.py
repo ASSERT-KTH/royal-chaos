@@ -14,14 +14,19 @@ START = '' # rfc3339 | unix_timestamp
 END = '' # rfc3339 | unix_timestamp
 STEP = ''
 PERIOD = 60 # unit: miniute, default 60
+RESULTS_FILE = '' # specify the path to a query results file
 
 def main():
     handle_args(sys.argv[1:])
 
-    failure_category = query_failures(START, END, STEP)
-    pretty_print_details(failure_category)
-    generate_experiment_config(failure_category)
-    dump_query_results("query_results.json", failure_category)
+    if RESULTS_FILE != '':
+        failure_category = read_query_results(RESULTS_FILE)
+        pretty_print_details(failure_category)
+    else:
+        failure_category = query_failures(START, END, STEP)
+        pretty_print_details(failure_category)
+        generate_experiment_config(failure_category)
+        dump_query_results("query_results.json", failure_category)
 
 def handle_args(argv):
     global PROMETHEUS_URL
@@ -29,9 +34,10 @@ def handle_args(argv):
     global END
     global STEP
     global PERIOD
+    global RESULTS_FILE
 
     try:
-        opts, args = getopt.getopt(argv, "h:o:c:s:", ["host=", "outfile=", "step=", "help", "start=", "end=", "period="])
+        opts, args = getopt.getopt(argv, "h:o:c:s:", ["host=", "outfile=", "step=", "help", "start=", "end=", "period=", "from_json="])
     except getopt.GetoptError as error:
         logging.error(error)
         print_help_info()
@@ -51,17 +57,20 @@ def handle_args(argv):
             END = arg
         elif opt == "--period":
             PERIOD = int(arg)
+        elif opt == "--from_json":
+            RESULTS_FILE = arg
 
-    if PROMETHEUS_URL == '':
-        logging.error("You should use -h or --host to specify your prometheus server's url, e.g. http://prometheus:9090")
-        print_help_info()
-        sys.exit(2)
+    if RESULTS_FILE == '':
+        if PROMETHEUS_URL == '':
+            logging.error("You should use -h or --host to specify your prometheus server's url, e.g. http://prometheus:9090")
+            print_help_info()
+            sys.exit(2)
 
-    if STEP == '':
-        STEP = '15s'
-        logging.warning("You didn't specify query resolution step width, will use default value %s", STEP)
-    if START == '' and END == '':
-        logging.warning("You didn't specify start&end time, will query the latest %s miniutes' data as a test", PERIOD)
+        if STEP == '':
+            STEP = '15s'
+            logging.warning("You didn't specify query resolution step width, will use default value %s", STEP)
+        if START == '' and END == '':
+            logging.warning("You didn't specify start&end time, will query the latest %s miniutes' data as a test", PERIOD)
 
 def print_help_info():
     print('')
@@ -75,6 +84,11 @@ def print_help_info():
 def dump_query_results(filename, failure_category):
     with open(filename, "wt") as output:
         json.dump(failure_category, output, indent = 2)
+
+def read_query_results(filename):
+    with open(filename, "rt") as json_file:
+        data = json.load(json_file)
+        return data
 
 def calculate_failure_rate(values):
     values = numpy.array(values).astype(float)
@@ -96,15 +110,18 @@ def query_total_invocations(syscall_name, error_code, start_time, end_time, step
         logging.error(response.json())
         total = -1
     else:
-        results = response.json()['data']['result'][0]
-        # https://stackoverflow.com/questions/5067218/get-utc-timestamp-in-python-with-datetime
-        start_datetime = datetime.strptime(start_time, '%Y-%m-%dT%H:%M:%SZ')
-        start_timestamp = calendar.timegm(start_datetime.utctimetuple())
-        if results["values"][0][0] > start_timestamp:
-            # the first failure happened after start_time
-            total = int(results["values"][-1][1])
+        if len(response.json()['data']['result']) == 0:
+            total = 0
         else:
-            total = int(results["values"][-1][1]) - int(results["values"][0][1])
+            results = response.json()['data']['result'][0]
+            # https://stackoverflow.com/questions/5067218/get-utc-timestamp-in-python-with-datetime
+            start_datetime = datetime.strptime(start_time, '%Y-%m-%dT%H:%M:%SZ')
+            start_timestamp = calendar.timegm(start_datetime.utctimetuple())
+            if results["values"][0][0] > start_timestamp:
+                # the first failure happened after start_time
+                total = int(results["values"][-1][1])
+            else:
+                total = int(results["values"][-1][1]) - int(results["values"][0][1])
 
     return total
 
@@ -157,9 +174,18 @@ def pretty_print_details(failure_details):
     stat_table = PrettyTable()
     stat_table.field_names = ["Syscall Name", "Error Code", "Samples in Total", "Invocations in Total", "Failure Rate", "Variance", "Samples"]
 
+    tmp_success_count = dict()
     for detail in failure_details:
+        if detail["error_code"].startswith("-"):
+            error_code = int(detail["error_code"])
+            if error_code <= -1E10:
+                if detail["syscall_name"] not in tmp_success_count: tmp_success_count[detail["syscall_name"]] = 0
+                tmp_success_count[detail["syscall_name"]] = tmp_success_count[detail["syscall_name"]] + detail["invocations_in_total"]
+
+    for detail in failure_details:
+        if detail["error_code"].startswith("-"): continue
         if detail["error_code"] == "SUCCESS":
-            stat_table.add_row([detail["syscall_name"], detail["error_code"], "-", detail["invocations_in_total"], "-", "-", "-"])
+            stat_table.add_row([detail["syscall_name"], detail["error_code"], "-", detail["invocations_in_total"] + tmp_success_count[detail["syscall_name"]] if detail["syscall_name"] in tmp_success_count else 0, "-", "-", "-"])
         else:
             samples_str = ""
             for sample in detail["samples"]:
