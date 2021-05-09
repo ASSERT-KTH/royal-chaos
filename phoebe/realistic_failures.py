@@ -185,7 +185,7 @@ def pretty_print_details(failure_details):
     for detail in failure_details:
         if detail["error_code"].startswith("-"): continue
         if detail["error_code"] == "SUCCESS":
-            stat_table.add_row([detail["syscall_name"], detail["error_code"], "-", detail["invocations_in_total"] + tmp_success_count[detail["syscall_name"]] if detail["syscall_name"] in tmp_success_count else 0, "-", "-", "-"])
+            stat_table.add_row([detail["syscall_name"], detail["error_code"], "-", detail["invocations_in_total"] + tmp_success_count[detail["syscall_name"]] if detail["syscall_name"] in tmp_success_count else detail["invocations_in_total"], "-", "-", "-"])
         else:
             samples_str = ""
             for sample in detail["samples"]:
