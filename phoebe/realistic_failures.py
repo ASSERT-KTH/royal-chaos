@@ -22,6 +22,7 @@ def main():
     if RESULTS_FILE != '':
         failure_category = read_query_results(RESULTS_FILE)
         pretty_print_details(failure_category)
+        generate_experiment_config(failure_category)
     else:
         failure_category = query_failures(START, END, STEP)
         pretty_print_details(failure_category)
@@ -224,6 +225,7 @@ def generate_experiment_config(failure_details):
     for detail in failure_details:
         if "unknown" in detail["syscall_name"]: continue
         if detail["error_code"] == "SUCCESS": continue
+        if detail["error_code"].startswith("-"): continue
 
         if detail["rate_max"] < 0.05:
             # the original failure rate is very low, thus we use fixed rate instead
