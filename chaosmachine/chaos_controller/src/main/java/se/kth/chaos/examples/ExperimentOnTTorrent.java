@@ -24,7 +24,7 @@ public class ExperimentOnTTorrent {
                 // todo
             } else {
                 System.out.println("[CHAOS_MACHINE]step 0: analysis mode, downloading the file normally.");
-                process = Runtime.getRuntime().exec(new String[] {"bash", "-c", String.format("java -noverify -javaagent:%s=mode:analyzetc,csvfilepath:./0_original.csv,filter:com/turn/ttorrent -jar %s -o . -s 0 ubuntu-14.04.5-server-i386.iso.torrent 2>&1", javaagentPath, threadName)}, null, new File(rootPath));
+                process = Runtime.getRuntime().exec(new String[] {"bash", "-c", String.format("java -noverify -javaagent:%s=mode:analyzetc,csvfilepath:./0_original.csv,filter:com/turn/ttorrent -jar %s -o . -s 0 CentOS-7-x86_64-NetInstall-1810.torrent 2>&1", javaagentPath, threadName)}, null, new File(rootPath));
                 int input_pid = JMXMonitoringTool.getPidByThreadName(threadName);
                 Thread jmxMonitoring = null;
                 if (input_pid > 0) {
@@ -117,9 +117,9 @@ public class ExperimentOnTTorrent {
 //        List<String> tc = new ArrayList<>(Arrays.asList(registeredTCinfo.get(0)));
         File targetFile = null;
         for (int i = 1; i < registeredTCinfo.size(); i++) {
-            targetFile = new File(rootPath + "/ubuntu-14.04.5-server-i386.iso");
+            targetFile = new File(rootPath + "CentOS-7-x86_64-NetInstall-1810/CentOS-7-x86_64-NetInstall-1810.iso");
             if (targetFile.exists()) { targetFile.delete(); }
-            targetFile = new File(rootPath + "/ubuntu-14.04.5-server-i386.iso.part");
+            targetFile = new File(rootPath + "CentOS-7-x86_64-NetInstall-1810/CentOS-7-x86_64-NetInstall-1810.iso.part");
             if (targetFile.exists()) { targetFile.delete(); }
 
             tc = new ArrayList<>(Arrays.asList(registeredTCinfo.get(i)));
@@ -133,7 +133,7 @@ public class ExperimentOnTTorrent {
                     if (osName.contains("Windows")) {
                         // todo
                     } else {
-                        String command = String.format("timeout --signal=9 300 java -noverify -javaagent:%s=mode:scircuit,filter:%s,tcindex:%s -jar %s -o . -s 0 ubuntu-14.04.5-server-i386.iso.torrent 2>&1", javaagentPath, filter.replace("$", "\\$"), tcindex, threadName);
+                        String command = String.format("timeout --signal=9 300 java -noverify -javaagent:%s=mode:scircuit,filter:%s,tcindex:%s -jar %s -o . -s 0 CentOS-7-x86_64-NetInstall-1810.torrent 2>&1", javaagentPath, filter.replace("$", "\\$"), tcindex, threadName);
                         process = Runtime.getRuntime().exec(new String[] {"bash", "-c", command}, null, new File(rootPath));
 
                         int input_pid = JMXMonitoringTool.getPidByThreadName(threadName);
@@ -170,7 +170,7 @@ public class ExperimentOnTTorrent {
                         }
                         tc.set(6, String.valueOf(injectionCount));
                         tc.set(7, String.valueOf(capturedInLogCount));
-                        targetFile = new File(rootPath + "/ubuntu-14.04.5-server-i386.iso");
+                        targetFile = new File(rootPath + "CentOS-7-x86_64-NetInstall-1810/CentOS-7-x86_64-NetInstall-1810.iso");
                         if (targetFile.exists()) {
                             tc.set(8, "yes");
                         } else {
