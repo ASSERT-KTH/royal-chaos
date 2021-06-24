@@ -117,9 +117,9 @@ public class ExperimentOnTTorrent {
 //        List<String> tc = new ArrayList<>(Arrays.asList(registeredTCinfo.get(0)));
         File targetFile = null;
         for (int i = 1; i < registeredTCinfo.size(); i++) {
-            targetFile = new File(rootPath + "CentOS-7-x86_64-NetInstall-1810/CentOS-7-x86_64-NetInstall-1810.iso");
+            targetFile = new File(rootPath + "/CentOS-7-x86_64-NetInstall-1810/CentOS-7-x86_64-NetInstall-1810.iso");
             if (targetFile.exists()) { targetFile.delete(); }
-            targetFile = new File(rootPath + "CentOS-7-x86_64-NetInstall-1810/CentOS-7-x86_64-NetInstall-1810.iso.part");
+            targetFile = new File(rootPath + "/CentOS-7-x86_64-NetInstall-1810/CentOS-7-x86_64-NetInstall-1810.iso.part");
             if (targetFile.exists()) { targetFile.delete(); }
 
             tc = new ArrayList<>(Arrays.asList(registeredTCinfo.get(i)));
@@ -170,7 +170,7 @@ public class ExperimentOnTTorrent {
                         }
                         tc.set(6, String.valueOf(injectionCount));
                         tc.set(7, String.valueOf(capturedInLogCount));
-                        targetFile = new File(rootPath + "CentOS-7-x86_64-NetInstall-1810/CentOS-7-x86_64-NetInstall-1810.iso");
+                        targetFile = new File(rootPath + "/CentOS-7-x86_64-NetInstall-1810/CentOS-7-x86_64-NetInstall-1810.iso");
                         if (targetFile.exists()) {
                             tc.set(8, "yes");
                         } else {
