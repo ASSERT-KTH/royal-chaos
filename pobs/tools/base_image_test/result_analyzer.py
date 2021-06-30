@@ -21,6 +21,20 @@ def parse_options():
         help = 'The path to the analysis result (json format)'
     )
 
+    parser.add_option('--min-java-loc',
+        type = 'int',
+        dest = 'min_java_loc',
+        default = 0,
+        help = 'The minimum lines of Java code for selecting a project (default: 0)'
+    )
+
+    parser.add_option('--min-commit',
+        type = 'int',
+        dest = 'min_commit',
+        default = 0,
+        help = 'The minimum number of commits for selecting a project (default: 0)'
+    )
+
     options, args = parser.parse_args()
     if options.filepath == None:
         parser.print_help()
@@ -28,7 +42,7 @@ def parse_options():
     elif options.filepath != None and not os.path.isfile(options.filepath):
         parser.print_help()
         parser.error("%s should be a json file."%options.filepath)
-    
+
     return options
 
 def clean_image_name(name_str):
@@ -39,8 +53,10 @@ def clean_image_name(name_str):
 def draw_projects_info(data, labels):
     for i in range(len(data)):
         figure, ax = plt.subplots(figsize=(9, 1))
-        ax.boxplot(data[i], widths=0.6, vert=False)
+        ax.boxplot(data[i], widths=0.6, vert=False, showfliers=False)
         ax.set_yticklabels([labels[i]], fontsize=14)
+        if labels[i] == "Lines of All Code":
+            ax.xaxis.set_major_formatter(lambda x, pos: 0 if x == 0 else "%dK"%(x/1000))
         plt.subplots_adjust(left=0.2, right=0.99, top=0.75, bottom=0.3)
         plt.xticks(fontsize=14)
         plt.show()
@@ -74,6 +90,7 @@ def main():
         analyzed_project_count = 0
         built_project_count = 0
         run_project_count = 0
+        run_project_data = list()
 
         analyzed_dockerfile_count = 0
         sanity_check_passed_count = 0
@@ -94,11 +111,16 @@ def main():
                             top_25_base_images_covered_projects[project["full_name"]] = 1
 
             if "is_able_to_clone" in project and project["is_able_to_clone"]:
+                # remove projects that may not be real ones
+                if "java" in project["loc_info"] and int(project["loc_info"]["java"]["code"]) < options.min_java_loc: continue
+                if project["number_of_commits"] < options.min_commit: continue
+
                 analyzed_project_count = analyzed_project_count + 1
                 if len(project["is_able_to_build"]) > 0:
                     built_project_count = built_project_count + 1
                 if len(project["is_able_to_run"]) > 0:
                     run_project_count = run_project_count + 1
+                    run_project_data.append(project)
                 if project["number_of_dockerfiles"] > 0:
                     analyzed_dockerfile_count = analyzed_dockerfile_count + project["number_of_dockerfiles"]
                     for dockerfile in project["info_from_dockerfiles"]:
@@ -152,6 +174,8 @@ def main():
         # project_info_data = [experiment_project_sum_loc, stargazers_count, commits_count, contributors_count]
         # project_info_labels = ["Lines of All Code", "GitHub Stars", "Commits", "Contributors"]
         # draw_projects_info(project_info_data, project_info_labels)
+        with open("runnable_projects.json", "wt") as output:
+            json.dump(run_project_data, output, indent = 4)
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
