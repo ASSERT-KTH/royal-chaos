@@ -51,9 +51,45 @@ def clean_image_name(name_str):
     return clean_name
 
 def draw_projects_info(data, labels):
+    def format_num(label_name, value):
+        value = int(value)
+        if label_name == "Lines of All Code" and value > 1000:
+            value = "%dK"%(value/1000)
+        return value
+
     for i in range(len(data)):
         figure, ax = plt.subplots(figsize=(9, 1))
-        ax.boxplot(data[i], widths=0.6, vert=False, showfliers=False)
+        boxplot = ax.boxplot(data[i], widths=0.6, vert=False, showfliers=False)
+
+        # The following code about adding labels is taken from this answer
+        # https://stackoverflow.com/a/55650457/15390985
+        # Grab the relevant Line2D instances from the boxplot dictionary
+        iqr = boxplot['boxes'][0]
+        caps = boxplot['caps']
+        med = boxplot['medians'][0]
+
+        # The x position of the median line
+        xpos = med.get_xdata()
+        # Lets make the text have a horizontal offset which is some
+        # fraction of the width of the box
+        xoff = 0.10 * (xpos[1] - xpos[0])
+        # The median is the x-position of the median line
+        median = med.get_xdata()[1]
+        # The 25th and 75th percentiles are found from the
+        # top and bottom (max and min) of the box
+        pc25 = iqr.get_xdata().min()
+        pc75 = iqr.get_xdata().max()
+        # The caps give the vertical position of the ends of the whiskers
+        capbottom = caps[0].get_xdata()[0]
+        captop = caps[1].get_xdata()[0]
+
+        # Make some labels on the figure using the values derived above
+        ax.text(median + xoff, 1.1, format_num(labels[i], median), va='center', fontsize=10)
+        ax.text(pc25 + xoff, 1.1, format_num(labels[i], pc25), va='center', fontsize=10)
+        ax.text(pc75 + xoff, 1.1, format_num(labels[i], pc75), va='center', fontsize=10)
+        ax.text(capbottom + xoff, 1.1, format_num(labels[i], capbottom), va='center', fontsize=10)
+        ax.text(captop + xoff, 1.1, format_num(labels[i], captop), va='center', fontsize=10)
+
         ax.set_yticklabels([labels[i]], fontsize=14)
         if labels[i] == "Lines of All Code":
             ax.xaxis.set_major_formatter(lambda x, pos: 0 if x == 0 else "%dK"%(x/1000))
