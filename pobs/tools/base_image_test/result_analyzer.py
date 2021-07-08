@@ -117,6 +117,8 @@ def main():
         all_unique_base_images = dict()
         experiment_unique_base_images = dict()
         augmented_base_images = dict()
+        augmented_base_images_app_buildable = dict()
+        augmented_base_images_app_runnable = dict()
         experiment_projects = dict()
         experiment_project_java_loc = list()
         experiment_project_sum_loc = list()
@@ -177,10 +179,15 @@ def main():
                                     pobs_base_generation_passed_count = pobs_base_generation_passed_count + 1
                                     augmented_base_images[full_base_image_name] = 1
                                     if dockerfile["pobs_application_build"] == "successful":
+                                        augmented_base_images_app_buildable[full_base_image_name] = 1
                                         pobs_application_build_passed_count = pobs_application_build_passed_count + 1
                                         if dockerfile["glowroot_attached"]: glowroot_attached_count = glowroot_attached_count + 1
                                         if dockerfile["tripleagent_attached"]: tripleagent_attached_count = tripleagent_attached_count + 1
-                                        if dockerfile["pobs_application_run"] == "successful": pobs_application_run_passed_count = pobs_application_run_passed_count + 1
+                                        if dockerfile["pobs_application_run"] == "successful":
+                                            augmented_base_images_app_runnable[full_base_image_name] = 1
+                                            pobs_application_run_passed_count = pobs_application_run_passed_count + 1
+                                        # else:
+                                        #     print("%s: %s"%(project["full_name"], dockerfile["path"]))
                                         # if not dockerfile["glowroot_attached"] and dockerfile["tripleagent_attached"]:
                                         #     print("%s: %s"%(project["full_name"], dockerfile["path"]))
 
@@ -194,7 +201,9 @@ def main():
         logging.info("the total number of projects covered by the top 25 base images: %d"%len(top_25_base_images_covered_projects))
         logging.info("the total number of unique base images: %d"%len(all_unique_base_images))
         logging.info("the number of unique base images under evaluation: %d"%len(experiment_unique_base_images))
-        logging.info("the number of unique augmented base images: %d"%len(augmented_base_images))
+        logging.info("the number of unique augmented images: %d"%len(augmented_base_images))
+        logging.info("the number of unique augmented images that an app is successfully built: %d"%len(augmented_base_images_app_buildable))
+        logging.info("the number of unique augmented images that an app successfully run: %d"%len(augmented_base_images_app_runnable))
         logging.info("built_project_count: %d"%built_project_count)
         logging.info("run_project_count: %d"%run_project_count)
         logging.info("analyzed_dockerfile_count: %d"%analyzed_dockerfile_count)
