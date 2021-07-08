@@ -52,7 +52,6 @@ def main():
 
         # 5 mins common workload
         logging.info("5 mins common workload")
-        start_at = int(time.time() * 1000)
         sc, fc, response_time = workload_generator(5)
         logging.info("sc: %d, fc: %d, response time: %f"%(sc, fc, response_time))
         sc_list.append(sc)
