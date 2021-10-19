@@ -1,0 +1,35 @@
+{
+  "experiment_name": "Error Models for Resilience Benchmarking Experiments",
+  "experiments": [
+    {
+      "syscall_name": "accept4",
+      "failure_rate": 0.6,
+      "error_code": "-EAGAIN",
+      "experiment_duration": 300
+    },
+    {
+      "syscall_name": "futex",
+      "failure_rate": 0.05,
+      "error_code": "-EAGAIN",
+      "experiment_duration": 300
+    },
+    {
+      "syscall_name": "read",
+      "failure_rate": 0.5974652987326494,
+      "error_code": "-EAGAIN",
+      "experiment_duration": 300
+    },
+    {
+      "syscall_name": "recvfrom",
+      "failure_rate": 0.6,
+      "error_code": "-EAGAIN",
+      "experiment_duration": 300
+    },
+    {
+      "syscall_name": "futex",
+      "failure_rate": 0.05,
+      "error_code": "-ETIMEDOUT",
+      "experiment_duration": 300
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+2021-10-11 04:54:58 UTC  36/50 peers    630 KiB chain  0 bytes queue  RPC:  0 conn,    0 req/s,    0 µs
+2021-10-11 04:55:20 UTC Reorg to #13395296 0xd019…98c0 (0xb42c…ed7d #13395294 0x6df0…1d64 0xa4d3…0915)
+2021-10-11 04:55:20 UTC Imported #13395296 0xd019…98c0 (470 txs, 30.01 Mgas, 6154 ms, 132.79 KiB)
+2021-10-11 04:55:28 UTC  37/50 peers    740 KiB chain  0 bytes queue  RPC:  0 conn,    0 req/s,    0 µs
+2021-10-11 04:55:32 UTC Imported #13395297 0x58c5…48e7 (134 txs, 11.53 Mgas, 1571 ms, 45.60 KiB)
+2021-10-11 04:55:44 UTC Imported #13395298 0x5a71…3b22 (13 txs, 1.54 Mgas, 372 ms, 7.23 KiB)
+2021-10-11 04:55:54 UTC Imported #13395299 0xc6b7…c3be (337 txs, 30.07 Mgas, 7882 ms, 137.17 KiB)
+2021-10-11 04:55:58 UTC  37/50 peers    977 KiB chain  0 bytes queue  RPC:  0 conn,    0 req/s,    0 µs
+2021-10-11 04:55:59 UTC Imported #13395300 0xe417…e498 (91 txs, 9.56 Mgas, 2062 ms, 36.31 KiB)
+2021-10-11 04:56:04 UTC Imported #13395301 0x9f3a…16f1 (132 txs, 11.56 Mgas, 2697 ms, 68.50 KiB)
+2021-10-11 04:56:27 UTC Panic occured, see stderr for details
+
+
+====================
+
+   0: panic_hook::set_with::{{closure}}
+   1: std::panicking::rust_panic_with_hook
+             at /rustc/2fd73fabe469357a12c2c974c140f67e7cdd76d0/library/std/src/panicking.rs:595:17
+   2: std::panicking::begin_panic_handler::{{closure}}
+             at /rustc/2fd73fabe469357a12c2c974c140f67e7cdd76d0/library/std/src/panicking.rs:497:13
+   3: std::sys_common::backtrace::__rust_end_short_backtrace
+             at /rustc/2fd73fabe469357a12c2c974c140f67e7cdd76d0/library/std/src/sys_common/backtrace.rs:141:18
+   4: rust_begin_unwind
+             at /rustc/2fd73fabe469357a12c2c974c140f67e7cdd76d0/library/std/src/panicking.rs:493:5
+   5: core::panicking::panic_fmt
+             at /rustc/2fd73fabe469357a12c2c974c140f67e7cdd76d0/library/core/src/panicking.rs:92:14
+   6: core::option::expect_none_failed
+             at /rustc/2fd73fabe469357a12c2c974c140f67e7cdd76d0/library/core/src/option.rs:1300:5
+   7: ethcore_blockchain::blockchain::BlockChain::prepare_update
+   8: ethcore_blockchain::blockchain::BlockChain::insert_block
+   9: ethcore::client::client::Importer::import_verified_blocks
+  10: <ethcore_service::service::ClientIoHandler as ethcore_io::IoHandler<ethcore::client::io_message::ClientIoMessage>>::message
+  11: ethcore_io::service_mio::IoChannel<Message>::send_sync
+  12: std::sys_common::backtrace::__rust_begin_short_backtrace
+  13: core::ops::function::FnOnce::call_once{{vtable.shim}}
+  14: <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once
+             at /rustc/2fd73fabe469357a12c2c974c140f67e7cdd76d0/library/alloc/src/boxed.rs:1521:9
+      <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once
+             at /rustc/2fd73fabe469357a12c2c974c140f67e7cdd76d0/library/alloc/src/boxed.rs:1521:9
+      std::sys::unix::thread::Thread::new::thread_start
+             at /rustc/2fd73fabe469357a12c2c974c140f67e7cdd76d0/library/std/src/sys/unix/thread.rs:71:17
+  15: start_thread
+  16: __clone
+
+
+Thread 'Verifier #0' panicked at 'Low level database error when updating blooms. Some issue with disk?: Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }', crates/ethcore/blockchain/src/blockchain.rs:1465
+
+This is a bug. Please report it at:
+
+    https://github.com/openethereum/openethereum/issues/new
+
+
+2021-10-11 04:56:27 UTC Finishing work, please wait...
+2021-10-11 04:56:27 UTC Panic occured, see stderr for details
+
+
+====================
+
+   0: panic_hook::set_with::{{closure}}
+   1: std::panicking::rust_panic_with_hook
+             at /rustc/2fd73fabe469357a12c2c974c140f67e7cdd76d0/library/std/src/panicking.rs:595:17
+   2: std::panicking::begin_panic_handler::{{closure}}
+             at /rustc/2fd73fabe469357a12c2c974c140f67e7cdd76d0/library/std/src/panicking.rs:497:13
+   3: std::sys_common::backtrace::__rust_end_short_backtrace
+             at /rustc/2fd73fabe469357a12c2c974c140f67e7cdd76d0/library/std/src/sys_common/backtrace.rs:141:18
+   4: rust_begin_unwind
+             at /rustc/2fd73fabe469357a12c2c974c140f67e7cdd76d0/library/std/src/panicking.rs:493:5
+   5: core::panicking::panic_fmt
+             at /rustc/2fd73fabe469357a12c2c974c140f67e7cdd76d0/library/core/src/panicking.rs:92:14
+   6: core::option::expect_none_failed
+             at /rustc/2fd73fabe469357a12c2c974c140f67e7cdd76d0/library/core/src/option.rs:1300:5
+   7: <ethcore::verification::queue::VerificationQueue<K> as core::ops::drop::Drop>::drop
+   8: core::ptr::drop_in_place<ethcore::verification::queue::VerificationQueue<ethcore::verification::queue::kind::blocks::Blocks>>
+   9: core::ptr::drop_in_place<ethcore::client::client::Importer>
+  10: alloc::sync::Arc<T>::drop_slow
+  11: alloc::sync::Arc<T>::drop_slow
+  12: alloc::sync::Arc<T>::drop_slow
+  13: core::ptr::drop_in_place<ethcore_sync::api::EthSync>
+  14: alloc::sync::Arc<T>::drop_slow
+  15: alloc::sync::Arc<T>::drop_slow
+  16: alloc::sync::Arc<T>::drop_slow
+  17: core::ptr::drop_in_place<hyper::server::conn::spawn_all::NewSvcTask<hyper::server::tcp::addr_stream::AddrStream,futures::future::result_::FutureResult<hyper::service::service::ServiceFnOk<openethereum::metrics::start_prometheus_metrics::{{closure}}::{{closure}},hyper::body::body::Body>,hyper::common::never::Never>,hyper::service::service::ServiceFnOk<openethereum::metrics::start_prometheus_metrics::{{closure}}::{{closure}},hyper::body::body::Body>,hyper::common::exec::Exec,hyper::server::conn::spawn_all::NoopWatcher>>
+  18: <tokio_threadpool::shutdown::ShutdownTrigger as core::ops::drop::Drop>::drop
+  19: alloc::sync::Arc<T>::drop_slow
+  20: std::sys_common::backtrace::__rust_begin_short_backtrace
+  21: core::ops::function::FnOnce::call_once{{vtable.shim}}
+  22: <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once
+             at /rustc/2fd73fabe469357a12c2c974c140f67e7cdd76d0/library/alloc/src/boxed.rs:1521:9
+      <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once
+             at /rustc/2fd73fabe469357a12c2c974c140f67e7cdd76d0/library/alloc/src/boxed.rs:1521:9
+      std::sys::unix::thread::Thread::new::thread_start
+             at /rustc/2fd73fabe469357a12c2c974c140f67e7cdd76d0/library/std/src/sys/unix/thread.rs:71:17
+  23: start_thread
+  24: __clone
+
+
+Thread 'tokio-runtime-worker-1' panicked at 'Propagating verifier thread panic on shutdown: Any', /data/blockchain/openethereum/crates/ethcore/src/verification/queue/mod.rs:864
+
+This is a bug. Please report it at:
+
+    https://github.com/openethereum/openethereum/issues/new
+
+
+Error: 1

@@ -1,0 +1,14 @@
+global:
+  scrape_interval: 15s # By default, scrape targets every 15 seconds.
+
+# A scrape configuration containing exactly one endpoint to scrape:
+scrape_configs:
+  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
+  - job_name: 'syscall_monitoring'
+    static_configs:
+      # The url to pull the metrics
+      - targets: ['172.17.0.1:8000']
+  # add other jobs if necessary, an example for openethereum clients
+  # - job_name: 'openethereum'
+  #   static_configs:
+  #     - targets: ['172.17.0.1:3033']

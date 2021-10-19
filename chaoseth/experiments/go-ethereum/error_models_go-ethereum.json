@@ -1,0 +1,132 @@
+{
+  "experiment_name": "Error Models for Chaos Engineering Experiments on Go-ethereum", 
+  "experiments": [
+    {
+      "original_min_rate": 0.5, 
+      "syscall_name": "accept4", 
+      "original_max_rate": 0.5, 
+      "failure_rate": 0.6, 
+      "original_mean_rate": 0.4997453009652613, 
+      "error_code": "-EAGAIN", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.002993829046251604, 
+      "syscall_name": "futex", 
+      "original_max_rate": 0.007038608839664631, 
+      "failure_rate": 0.05, 
+      "original_mean_rate": 0.004622765855848585, 
+      "error_code": "-EAGAIN", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.4923506633657081, 
+      "syscall_name": "read", 
+      "original_max_rate": 0.4978877489438745, 
+      "failure_rate": 0.5974652987326494, 
+      "original_mean_rate": 0.49603121446385257, 
+      "error_code": "-EAGAIN", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.4752475247524752, 
+      "syscall_name": "recvfrom", 
+      "original_max_rate": 0.5, 
+      "failure_rate": 0.6, 
+      "original_mean_rate": 0.49499880962925313, 
+      "error_code": "-EAGAIN", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.0033785782551312973, 
+      "syscall_name": "write", 
+      "original_max_rate": 0.13890545681800737, 
+      "failure_rate": 0.13890545681800737, 
+      "original_mean_rate": 0.05177381829713933, 
+      "error_code": "-EAGAIN", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 6.0747029423366175e-05, 
+      "syscall_name": "read", 
+      "original_max_rate": 0.0001473391033227344, 
+      "failure_rate": 0.05, 
+      "original_mean_rate": 0.00010361961350681181, 
+      "error_code": "-ECONNRESET", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.003424657534246575, 
+      "syscall_name": "write", 
+      "original_max_rate": 0.003424657534246575, 
+      "failure_rate": 0.05, 
+      "original_mean_rate": 0.003424657534246575, 
+      "error_code": "-ECONNRESET", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 2.96566463887573e-05, 
+      "syscall_name": "epoll_pwait", 
+      "original_max_rate": 6.0990488387030996e-05, 
+      "failure_rate": 0.05, 
+      "original_mean_rate": 4.246129574282509e-05, 
+      "error_code": "-EINTR", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.3333333333333333, 
+      "syscall_name": "unlinkat", 
+      "original_max_rate": 0.3333333333333333, 
+      "failure_rate": 0.39999999999999997, 
+      "original_mean_rate": 0.3333333333333333, 
+      "error_code": "-EISDIR", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.20000000000000004, 
+      "syscall_name": "newfstatat", 
+      "original_max_rate": 0.2, 
+      "failure_rate": 0.24, 
+      "original_mean_rate": 0.2, 
+      "error_code": "-ENOENT", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.16666666666666666, 
+      "syscall_name": "unlinkat", 
+      "original_max_rate": 0.16666666666666666, 
+      "failure_rate": 0.19999999999999998, 
+      "original_mean_rate": 0.16666666666666666, 
+      "error_code": "-ENOTEMPTY", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.07194244604316546, 
+      "syscall_name": "epoll_ctl", 
+      "original_max_rate": 0.14285714285714285, 
+      "failure_rate": 0.1714285714285714, 
+      "original_mean_rate": 0.10290129199398783, 
+      "error_code": "-EPERM", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.0009727626459143969, 
+      "syscall_name": "write", 
+      "original_max_rate": 0.0009727626459143969, 
+      "failure_rate": 0.05, 
+      "original_mean_rate": 0.0009727626459143969, 
+      "error_code": "-EPIPE", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.002025580184038428, 
+      "syscall_name": "futex", 
+      "original_max_rate": 0.012364270428786558, 
+      "failure_rate": 0.05, 
+      "original_mean_rate": 0.004350331776581664, 
+      "error_code": "-ETIMEDOUT", 
+      "experiment_duration": 300
+    }
+  ], 
+  "experiment_description": "Automatically generated based on monitoring data from 2021-10-09T19:00:00+02:00 to 2021-10-10T00:00:00+02:00"
+}

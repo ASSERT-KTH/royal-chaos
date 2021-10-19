@@ -1,0 +1,123 @@
+{
+  "experiment_name": "Error Models for Chaos Engineering Experiments on Openethereum", 
+  "experiments": [
+    {
+      "original_min_rate": 0.0012142161962613687, 
+      "syscall_name": "sendto", 
+      "original_max_rate": 0.0013833607410141961, 
+      "failure_rate": 0.05, 
+      "original_mean_rate": 0.0012987884686377824, 
+      "error_code": "-EAFNOSUPPORT", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.5, 
+      "syscall_name": "accept4", 
+      "original_max_rate": 0.5, 
+      "failure_rate": 0.6, 
+      "original_mean_rate": 0.4998496324534939, 
+      "error_code": "-EAGAIN", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.004181184668989547, 
+      "syscall_name": "futex", 
+      "original_max_rate": 0.039510075069142635, 
+      "failure_rate": 0.05, 
+      "original_mean_rate": 0.018278924014403442, 
+      "error_code": "-EAGAIN", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.16515626323367494, 
+      "syscall_name": "read", 
+      "original_max_rate": 0.465122470713525, 
+      "failure_rate": 0.55814696485623, 
+      "original_mean_rate": 0.30379262499843324, 
+      "error_code": "-EAGAIN", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.5, 
+      "syscall_name": "readv", 
+      "original_max_rate": 0.5, 
+      "failure_rate": 0.6, 
+      "original_mean_rate": 0.49989294635422865, 
+      "error_code": "-EAGAIN", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.12680949623624782, 
+      "syscall_name": "recvfrom", 
+      "original_max_rate": 0.2102543720190779, 
+      "failure_rate": 0.2523052464228935, 
+      "original_mean_rate": 0.16588625421441103, 
+      "error_code": "-EAGAIN", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.001088757659671482, 
+      "syscall_name": "sendto", 
+      "original_max_rate": 0.0012167570680107203, 
+      "failure_rate": 0.05, 
+      "original_mean_rate": 0.0011524916101096666, 
+      "error_code": "-EAGAIN", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.0007336757153338225, 
+      "syscall_name": "recvfrom", 
+      "original_max_rate": 0.0007336757153338225, 
+      "failure_rate": 0.05, 
+      "original_mean_rate": 0.0007336757153338225, 
+      "error_code": "-ECONNRESET", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 1.0, 
+      "syscall_name": "mkdir", 
+      "original_max_rate": 1.0, 
+      "failure_rate": 1, 
+      "original_mean_rate": 1.0, 
+      "error_code": "-EEXIST", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.14285714285714285, 
+      "syscall_name": "connect", 
+      "original_max_rate": 1.0, 
+      "failure_rate": 1, 
+      "original_mean_rate": 0.6938775510204083, 
+      "error_code": "-EINPROGRESS", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.00015122649378222625, 
+      "syscall_name": "ioctl", 
+      "original_max_rate": 0.021254293455458283, 
+      "failure_rate": 0.05, 
+      "original_mean_rate": 0.0038655378316570467, 
+      "error_code": "-ENOTTY", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.0034519705646466206, 
+      "syscall_name": "sendto", 
+      "original_max_rate": 0.006246781387626458, 
+      "failure_rate": 0.05, 
+      "original_mean_rate": 0.004849375976136539, 
+      "error_code": "-EPIPE", 
+      "experiment_duration": 300
+    }, 
+    {
+      "original_min_rate": 0.013759213759213759, 
+      "syscall_name": "futex", 
+      "original_max_rate": 0.03319969932347783, 
+      "failure_rate": 0.05, 
+      "original_mean_rate": 0.022520484749763328, 
+      "error_code": "-ETIMEDOUT", 
+      "experiment_duration": 300
+    }
+  ], 
+  "experiment_description": "Automatically generated based on monitoring data from 2021-10-10T18:00:00+02:00 to 2021-10-10T23:00:00+02:00"
+}

@@ -1,0 +1,728 @@
+{
+  "experiment_name": "Error Models for Resilience Benchmarking Experiments", 
+  "experiments": [
+    {
+      "result": {
+        "metrics": {
+          "validation": {
+            "blockchaincache_size": {
+              "max": 16893672.0, 
+              "mean": 6220991.238095238, 
+              "variance": 27225918594858.082, 
+              "pvalue": 0.13547361330501362, 
+              "min": 494864.0
+            }, 
+            "kvdb_bytes_read": {
+              "max": 2044728.3, 
+              "mean": 778508.9845215468, 
+              "variance": 601236422386.2852, 
+              "pvalue": 0.0051528582022617574, 
+              "min": 6855.7
+            }, 
+            "sync_blocks_highest": {
+              "max": 3.0, 
+              "mean": 1.0000214350019292, 
+              "variance": 1.3571643013339727, 
+              "pvalue": 0.4651391165698341, 
+              "min": 0.0
+            }, 
+            "import_blocks": {
+              "max": 3.0, 
+              "mean": 1.2143285842895726, 
+              "variance": 1.2042347765664427, 
+              "pvalue": 0.2744945632047338, 
+              "min": 0.0
+            }, 
+            "peer_stats": {
+              "max": 30.0, 
+              "mean": 29.333333333333332, 
+              "variance": 0.22222222222222224, 
+              "pvalue": 7.998472092837352e-15, 
+              "min": 29.0
+            }, 
+            "sync_blocks_recieved": {
+              "max": 3.0, 
+              "mean": 1.0000214350019292, 
+              "variance": 1.3571643013339727, 
+              "pvalue": 0.46662144401795314, 
+              "min": 0.0
+            }, 
+            "kvdb_bytes_write": {
+              "max": 627812.1, 
+              "mean": 244539.72729818945, 
+              "variance": 56576906956.87263, 
+              "pvalue": 0.3486804883373934, 
+              "min": 0.0
+            }
+          }, 
+          "ce": {
+            "blockchaincache_size": {
+              "max": 15805248.0, 
+              "mean": 5504885.714285715, 
+              "variance": 39901240320055.72, 
+              "pvalue": 0.0007481234269557667, 
+              "min": 523144.0
+            }, 
+            "kvdb_bytes_read": {
+              "max": 3249456.2, 
+              "mean": 1220019.8666666667, 
+              "variance": 2405600894876.7354, 
+              "pvalue": 0.00020753758296686563, 
+              "min": 4051.9
+            }, 
+            "sync_blocks_highest": {
+              "max": 3.0, 
+              "mean": 1.0714285714285714, 
+              "variance": 1.3163265306122447, 
+              "pvalue": 0.4582405647692008, 
+              "min": 0.0
+            }, 
+            "import_blocks": {
+              "max": 3.0, 
+              "mean": 1.2857142857142858, 
+              "variance": 1.9897959183673468, 
+              "pvalue": 0.32847875652454306, 
+              "min": 0.0
+            }, 
+            "peer_stats": {
+              "max": 29.0, 
+              "mean": 29.0, 
+              "variance": 0.0, 
+              "pvalue": 5.415069936115101e-18, 
+              "min": 29.0
+            }, 
+            "sync_blocks_recieved": {
+              "max": 3.0, 
+              "mean": 1.0714285714285714, 
+              "variance": 1.3163265306122447, 
+              "pvalue": 0.4567467975682358, 
+              "min": 0.0
+            }, 
+            "kvdb_bytes_write": {
+              "max": 790601.8, 
+              "mean": 274816.65714285715, 
+              "variance": 89832675905.35295, 
+              "pvalue": 0.25032234395007036, 
+              "min": 0.0
+            }
+          }, 
+          "pre_check": {
+            "blockchaincache_size": {
+              "max": 9839816.0, 
+              "mean": 4390538.666666667, 
+              "variance": 8593040880014.222, 
+              "pvalue": 0.002458669398885227, 
+              "min": 1927424.0
+            }, 
+            "kvdb_bytes_read": {
+              "max": 1731460.7, 
+              "mean": 542768.6714285713, 
+              "variance": 310795789972.37714, 
+              "pvalue": 0.0023603859192111386, 
+              "min": 16381.8
+            }, 
+            "sync_blocks_highest": {
+              "max": 3.0, 
+              "mean": 1.6428571428571428, 
+              "variance": 1.4795918367346939, 
+              "pvalue": 0.010306455487558487, 
+              "min": 0.0
+            }, 
+            "import_blocks": {
+              "max": 4.5, 
+              "mean": 1.5, 
+              "variance": 2.7857142857142856, 
+              "pvalue": 0.22258133733869823, 
+              "min": 0.0
+            }, 
+            "peer_stats": {
+              "max": 29.0, 
+              "mean": 29.0, 
+              "variance": 0.0, 
+              "pvalue": 5.415069936115101e-18, 
+              "min": 29.0
+            }, 
+            "sync_blocks_recieved": {
+              "max": 3.0, 
+              "mean": 1.6428571428571428, 
+              "variance": 1.4795918367346939, 
+              "pvalue": 0.01015625211271421, 
+              "min": 0.0
+            }, 
+            "kvdb_bytes_write": {
+              "max": 874956.8, 
+              "mean": 294709.5761904762, 
+              "variance": 109055272133.50182, 
+              "pvalue": 0.26502462756430545, 
+              "min": 0.0
+            }
+          }
+        }, 
+        "client_crashed": false, 
+        "injection_count": 459
+      }, 
+      "syscall_name": "accept4", 
+      "error_code": "-EAGAIN", 
+      "failure_rate": 0.6, 
+      "experiment_duration": 300
+    }, 
+    {
+      "result": {
+        "metrics": {
+          "validation": {
+            "blockchaincache_size": {
+              "max": 6458596.0, 
+              "mean": 3027099.5, 
+              "variance": 4867520064207.75, 
+              "pvalue": 0.00025243957014616354, 
+              "min": 1316150.0
+            }, 
+            "kvdb_bytes_read": {
+              "max": 1319379.75, 
+              "mean": 886319.4355450001, 
+              "variance": 152885603595.0564, 
+              "pvalue": 4.444593968244179e-08, 
+              "min": 133184.84958
+            }, 
+            "sync_blocks_highest": {
+              "max": 3.375, 
+              "mean": 0.785725, 
+              "variance": 1.7602316343750009, 
+              "pvalue": 0.10497009019920572, 
+              "min": 0.0
+            }, 
+            "import_blocks": {
+              "max": 3.375, 
+              "mean": 0.46875, 
+              "variance": 1.6083984375, 
+              "pvalue": 0.004064501852652989, 
+              "min": 0.0
+            }, 
+            "peer_stats": {
+              "max": 3.25, 
+              "mean": 1.6875, 
+              "variance": 1.08984375, 
+              "pvalue": 2.163266103393726e-14, 
+              "min": 0.0
+            }, 
+            "sync_blocks_recieved": {
+              "max": 4.125, 
+              "mean": 0.879475, 
+              "variance": 3.7134941343750003, 
+              "pvalue": 0.05073760726555627, 
+              "min": 0.0
+            }, 
+            "kvdb_bytes_write": {
+              "max": 610196.125, 
+              "mean": 83775.04375, 
+              "variance": 50928036440.703735, 
+              "pvalue": 0.007931834491195191, 
+              "min": 0.0
+            }
+          }, 
+          "ce": {
+            "blockchaincache_size": {
+              "max": 5824207.6, 
+              "mean": 5542729.0, 
+              "variance": 31412166199.0, 
+              "pvalue": 0.0015279002344747651, 
+              "min": 5475680.0
+            }, 
+            "kvdb_bytes_read": {
+              "max": 1211066.975, 
+              "mean": 497123.2333333334, 
+              "variance": 283095733455.32227, 
+              "pvalue": 0.46818237082147124, 
+              "min": 0.0
+            }, 
+            "sync_blocks_highest": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.007373497417962655, 
+              "min": 0.0
+            }, 
+            "import_blocks": {
+              "max": 6.75, 
+              "mean": 2.0, 
+              "variance": 8.75, 
+              "pvalue": 0.4471765981408445, 
+              "min": 0.0
+            }, 
+            "peer_stats": {
+              "max": 5.299999999999999, 
+              "mean": 1.5, 
+              "variance": 4.75, 
+              "pvalue": 3.990860189600674e-08, 
+              "min": 0.0
+            }, 
+            "sync_blocks_recieved": {
+              "max": 3.375, 
+              "mean": 0.75, 
+              "variance": 2.8125, 
+              "pvalue": 0.09954262623902355, 
+              "min": 0.0
+            }, 
+            "kvdb_bytes_write": {
+              "max": 1216300.475, 
+              "mean": 388896.81666666665, 
+              "variance": 305763007467.6013, 
+              "pvalue": 0.45385848069313683, 
+              "min": 0.0
+            }
+          }, 
+          "pre_check": {
+            "blockchaincache_size": {
+              "max": 6452188.799999999, 
+              "mean": 5995133.647058823, 
+              "variance": 145247158164.81662, 
+              "pvalue": 0.03518370290522584, 
+              "min": 5379763.2
+            }, 
+            "kvdb_bytes_read": {
+              "max": 1190719.0499999998, 
+              "mean": 345643.0690484065, 
+              "variance": 224396135524.7742, 
+              "pvalue": 0.09959642133498764, 
+              "min": 0.0
+            }, 
+            "sync_blocks_highest": {
+              "max": 5.8753, 
+              "mean": 1.093825, 
+              "variance": 12.508846959375001, 
+              "pvalue": 0.004462074151211195, 
+              "min": 0.0
+            }, 
+            "import_blocks": {
+              "max": 4.5, 
+              "mean": 0.7508609597335756, 
+              "variance": 2.251302558375306, 
+              "pvalue": 0.048968581170519214, 
+              "min": 0.0
+            }, 
+            "peer_stats": {
+              "max": 4.599999999999998, 
+              "mean": 1.588235294117647, 
+              "variance": 3.653979238754326, 
+              "pvalue": 3.682891058016073e-15, 
+              "min": 0.0
+            }, 
+            "sync_blocks_recieved": {
+              "max": 216.3759, 
+              "mean": 52.281325, 
+              "variance": 39510.055856334366, 
+              "pvalue": 0.005663857736896763, 
+              "min": 0.0
+            }, 
+            "kvdb_bytes_write": {
+              "max": 778231.4750000001, 
+              "mean": 152216.7688515491, 
+              "variance": 80993576049.61006, 
+              "pvalue": 0.048672756424840105, 
+              "min": 0.0
+            }
+          }
+        }, 
+        "client_crashed": false, 
+        "injection_count": 176
+      }, 
+      "syscall_name": "futex", 
+      "error_code": "-EAGAIN", 
+      "failure_rate": 0.05, 
+      "experiment_duration": 300
+    }, 
+    {
+      "result": {
+        "metrics": {
+          "pre_check": {
+            "blockchaincache_size": {
+              "max": 7148242.4, 
+              "mean": 6156695.466666667, 
+              "variance": 180509294510.6489, 
+              "pvalue": 0.004725353622990825, 
+              "min": 5626332.800000001
+            }, 
+            "kvdb_bytes_read": {
+              "max": 1297070.48, 
+              "mean": 501971.822216048, 
+              "variance": 242945690916.5493, 
+              "pvalue": 0.1641639375597032, 
+              "min": 0.0
+            }, 
+            "sync_blocks_highest": {
+              "max": 5.151150690414246, 
+              "mean": 0.8142500885146473, 
+              "variance": 3.723498956039101, 
+              "pvalue": 0.023258398160044255, 
+              "min": 0.0
+            }, 
+            "import_blocks": {
+              "max": 3.3170502301380766, 
+              "mean": 0.5791090038638568, 
+              "variance": 2.61356035236952, 
+              "pvalue": 0.015109607718534514, 
+              "min": 0.0
+            }, 
+            "peer_stats": {
+              "max": 2.0, 
+              "mean": 0.5333333333333333, 
+              "variance": 0.5155555555555557, 
+              "pvalue": 1.2788793113693817e-13, 
+              "min": 0.0
+            }, 
+            "sync_blocks_recieved": {
+              "max": 4.234100460276162, 
+              "mean": 0.6966795461892521, 
+              "variance": 3.002655665132061, 
+              "pvalue": 0.02197862062963361, 
+              "min": 0.0
+            }, 
+            "kvdb_bytes_write": {
+              "max": 526238.6117270351, 
+              "mean": 92942.28355474824, 
+              "variance": 70842263007.25795, 
+              "pvalue": 0.0074824599596048195, 
+              "min": 0.0
+            }
+          }
+        }, 
+        "client_crashed": true, 
+        "injection_count": 7930
+      }, 
+      "syscall_name": "read", 
+      "error_code": "-EAGAIN", 
+      "failure_rate": 0.5974652987326494, 
+      "experiment_duration": 300
+    }, 
+    {
+      "result": {
+        "metrics": {
+          "validation": {
+            "blockchaincache_size": {
+              "max": 6317936.0, 
+              "mean": 5059404.666666667, 
+              "variance": 833527712708.889, 
+              "pvalue": 0.027369557751444246, 
+              "min": 4229462.8
+            }, 
+            "kvdb_bytes_read": {
+              "max": 1457925.55, 
+              "mean": 815635.2344121211, 
+              "variance": 183183499251.69562, 
+              "pvalue": 5.214099505968281e-06, 
+              "min": 250879.23157333332
+            }, 
+            "sync_blocks_highest": {
+              "max": 4.0, 
+              "mean": 1.1363636363636365, 
+              "variance": 2.2433951841322317, 
+              "pvalue": 0.4311911361111168, 
+              "min": 0.0
+            }, 
+            "import_blocks": {
+              "max": 1.5, 
+              "mean": 0.2727272727272727, 
+              "variance": 0.33471074380165294, 
+              "pvalue": 0.009417748461767217, 
+              "min": 0.0
+            }, 
+            "peer_stats": {
+              "max": 2.349999999999998, 
+              "mean": 1.0, 
+              "variance": 1.0, 
+              "pvalue": 2.7545625186244606e-11, 
+              "min": 0.0
+            }, 
+            "sync_blocks_recieved": {
+              "max": 4.9358, 
+              "mean": 1.306509090909091, 
+              "variance": 3.4199726571900837, 
+              "pvalue": 0.4417841072408808, 
+              "min": 0.0
+            }, 
+            "kvdb_bytes_write": {
+              "max": 394115.6, 
+              "mean": 71657.40000000001, 
+              "variance": 23138481567.061813, 
+              "pvalue": 0.028525748859832615, 
+              "min": 0.0
+            }
+          }, 
+          "ce": {
+            "blockchaincache_size": {
+              "max": 5296952.0, 
+              "mean": 5296952.0, 
+              "variance": 0.0, 
+              "pvalue": 3.121930337759992e-07, 
+              "min": 5296952.0
+            }, 
+            "kvdb_bytes_read": {
+              "max": 6784.4, 
+              "mean": 1233.5272727272727, 
+              "variance": 15215895.325619835, 
+              "pvalue": 2.364192933858469e-08, 
+              "min": 0.0
+            }, 
+            "sync_blocks_highest": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.0004887248521468869, 
+              "min": 0.0
+            }, 
+            "import_blocks": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.0005586094061756684, 
+              "min": 0.0
+            }, 
+            "peer_stats": {
+              "max": 0.4499999999999993, 
+              "mean": 0.08333333333333333, 
+              "variance": 0.07638888888888885, 
+              "pvalue": 2.7545300955463936e-11, 
+              "min": 0.0
+            }, 
+            "sync_blocks_recieved": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.00048766757158921656, 
+              "min": 0.0
+            }, 
+            "kvdb_bytes_write": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.0006511385502632361, 
+              "min": 0.0
+            }
+          }, 
+          "pre_check": {
+            "blockchaincache_size": {
+              "max": 5928512.0, 
+              "mean": 5389666.181818182, 
+              "variance": 106745336216.33057, 
+              "pvalue": 0.000134669767275495, 
+              "min": 5028092.0
+            }, 
+            "kvdb_bytes_read": {
+              "max": 1122780.37004, 
+              "mean": 355488.70961454546, 
+              "variance": 200396688524.29626, 
+              "pvalue": 0.2877798904587121, 
+              "min": 0.0
+            }, 
+            "sync_blocks_highest": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.0004887248521468869, 
+              "min": 0.0
+            }, 
+            "import_blocks": {
+              "max": 4.5, 
+              "mean": 1.1688, 
+              "variance": 3.6679889454545456, 
+              "pvalue": 0.20698531880374743, 
+              "min": 0.0
+            }, 
+            "peer_stats": {
+              "max": 2.5, 
+              "mean": 0.8181818181818182, 
+              "variance": 0.87603305785124, 
+              "pvalue": 1.676454160104019e-10, 
+              "min": 0.0
+            }, 
+            "sync_blocks_recieved": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.00048766757158921656, 
+              "min": 0.0
+            }, 
+            "kvdb_bytes_write": {
+              "max": 1112747.8, 
+              "mean": 261585.82996363632, 
+              "variance": 199985228005.17825, 
+              "pvalue": 0.2953419715515624, 
+              "min": 0.0
+            }
+          }
+        }, 
+        "client_crashed": false, 
+        "injection_count": 5402
+      }, 
+      "syscall_name": "recvfrom", 
+      "error_code": "-EAGAIN", 
+      "failure_rate": 0.6, 
+      "experiment_duration": 300
+    }, 
+    {
+      "result": {
+        "metrics": {
+          "validation": {
+            "blockchaincache_size": {
+              "max": 6404153.6, 
+              "mean": 5395924.235294118, 
+              "variance": 1807843804326.5327, 
+              "pvalue": 0.0027331346144288836, 
+              "min": 4245716.8
+            }, 
+            "kvdb_bytes_read": {
+              "max": 1226936.6749999998, 
+              "mean": 608853.6362966666, 
+              "variance": 199955683663.2465, 
+              "pvalue": 0.0019222817736574349, 
+              "min": 0.0
+            }, 
+            "sync_blocks_highest": {
+              "max": 8.25, 
+              "mean": 1.914275, 
+              "variance": 13.915556634375003, 
+              "pvalue": 0.45009032411974625, 
+              "min": 0.0
+            }, 
+            "import_blocks": {
+              "max": 4.875, 
+              "mean": 2.070525, 
+              "variance": 4.3768782743750005, 
+              "pvalue": 0.057326826050686654, 
+              "min": 0.0
+            }, 
+            "peer_stats": {
+              "max": 6.399999999999999, 
+              "mean": 2.235294117647059, 
+              "variance": 5.003460207612457, 
+              "pvalue": 3.682906897993222e-15, 
+              "min": 0.0
+            }, 
+            "sync_blocks_recieved": {
+              "max": 8.625, 
+              "mean": 1.84375, 
+              "variance": 16.649521757499997, 
+              "pvalue": 0.2808088990211829, 
+              "min": 0.0
+            }, 
+            "kvdb_bytes_write": {
+              "max": 1124560.075, 
+              "mean": 440020.8730916667, 
+              "variance": 204733472432.01913, 
+              "pvalue": 0.050556663717162525, 
+              "min": 0.0
+            }
+          }, 
+          "ce": {
+            "blockchaincache_size": {
+              "max": 7800577.599999996, 
+              "mean": 6127879.529411765, 
+              "variance": 3428162722631.3086, 
+              "pvalue": 0.19787966075334307, 
+              "min": 3703688.0
+            }, 
+            "kvdb_bytes_read": {
+              "max": 1214520.9799999997, 
+              "mean": 698788.6579057805, 
+              "variance": 160910688127.74097, 
+              "pvalue": 7.570124048038543e-06, 
+              "min": 0.0
+            }, 
+            "sync_blocks_highest": {
+              "max": 9.299999999999994, 
+              "mean": 1.6764705882352942, 
+              "variance": 16.910034602076124, 
+              "pvalue": 0.06243210890110188, 
+              "min": 0.0
+            }, 
+            "import_blocks": {
+              "max": 4.799999999999999, 
+              "mean": 1.1470588235294117, 
+              "variance": 3.0519031141868513, 
+              "pvalue": 0.2540068331586664, 
+              "min": 0.0
+            }, 
+            "peer_stats": {
+              "max": 4.0, 
+              "mean": 2.0588235294117645, 
+              "variance": 0.8788927335640141, 
+              "pvalue": 3.6828725026952626e-15, 
+              "min": 1.0
+            }, 
+            "sync_blocks_recieved": {
+              "max": 12.899999999999997, 
+              "mean": 1.7647058823529411, 
+              "variance": 21.50346020761245, 
+              "pvalue": 0.010474561722650167, 
+              "min": 0.0
+            }, 
+            "kvdb_bytes_write": {
+              "max": 755391.2599999995, 
+              "mean": 248886.09411764704, 
+              "variance": 121823251558.74408, 
+              "pvalue": 0.40381459576639867, 
+              "min": 0.0
+            }
+          }, 
+          "pre_check": {
+            "blockchaincache_size": {
+              "max": 6945280.799999997, 
+              "mean": 4352446.933333334, 
+              "variance": 3177613818162.063, 
+              "pvalue": 5.214672887546501e-05, 
+              "min": 2560376.0
+            }, 
+            "kvdb_bytes_read": {
+              "max": 1185707.0799999998, 
+              "mean": 675026.0253485714, 
+              "variance": 188470513458.99307, 
+              "pvalue": 0.000492748490282343, 
+              "min": 0.0
+            }, 
+            "sync_blocks_highest": {
+              "max": 9.0, 
+              "mean": 2.0357142857142856, 
+              "variance": 12.08801020408163, 
+              "pvalue": 0.23253516361478704, 
+              "min": 0.0
+            }, 
+            "import_blocks": {
+              "max": 5.0249999999999995, 
+              "mean": 1.454057142857143, 
+              "variance": 3.39910733387755, 
+              "pvalue": 0.3491918995851451, 
+              "min": 0.0
+            }, 
+            "peer_stats": {
+              "max": 5.0, 
+              "mean": 1.7333333333333334, 
+              "variance": 3.1288888888888886, 
+              "pvalue": 1.278893185129645e-13, 
+              "min": 0.0
+            }, 
+            "sync_blocks_recieved": {
+              "max": 11.024999999999999, 
+              "mean": 1.6071428571428572, 
+              "variance": 15.577806122448976, 
+              "pvalue": 0.014691240405656874, 
+              "min": 0.0
+            }, 
+            "kvdb_bytes_write": {
+              "max": 1071646.8699999999, 
+              "mean": 347294.9489257143, 
+              "variance": 175189718992.20956, 
+              "pvalue": 0.25063686994126355, 
+              "min": 0.0
+            }
+          }
+        }, 
+        "client_crashed": false, 
+        "injection_count": 12
+      }, 
+      "syscall_name": "futex", 
+      "error_code": "-ETIMEDOUT", 
+      "failure_rate": 0.05, 
+      "experiment_duration": 300
+    }
+  ]
+}
