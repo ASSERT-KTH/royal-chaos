@@ -21,6 +21,7 @@ More details in the paper: [A Chaos Engineering System for Live Analysis and Fal
 - SINTEF Digital, Department of Software and Service Innovation, Oslo, Norway, Monday, May 28, 2018
 - [Stockholm Chaos Engineering Meetup, Stockholm, Sweden, Tuesday, June 19, 2018](https://www.meetup.com/Stockholm-Chaos-Engineering-Community/events/250982413/)
 - [2nd European Chaos Engineering Day, Stockholm, Sweden, Wednesday, December 05, 2018](https://www.chaos.conf.kth.se/)
+- [43rd International Conference on Software Engineering (ICSE 2021), Journal-First Papers Track, Online, Friday, May 28, 2021](https://conf.researchr.org/details/icse-2021/icse-2021-Journal-First-Papers/48/A-Chaos-Engineering-System-for-Live-Analysis-and-Falsification-of-Exception-handling-)
 
 ## The Usage of ChaosMachineAnnotationProcessor
 
