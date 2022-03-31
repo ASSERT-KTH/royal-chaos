@@ -9,10 +9,10 @@ More details in the paper: [A Chaos Engineering System for Live Analysis and Fal
 
 ```
 @ARTICLE{Zhang:ChaosMachine,
-  author={L. {Zhang} and B. {Morin} and P. {Haller} and B. {Baudry} and M. {Monperrus}},
+  author={Zhang, Long and Morin, Brice and Haller, Philipp and Baudry, Benoit and Monperrus, Martin},
   journal={IEEE Transactions on Software Engineering},
-  title={A Chaos Engineering System for Live Analysis and Falsification of Exception-handling in the JVM},
-  year={2019},  volume={},  number={},  pages={1-1},
+  title={A Chaos Engineering System for Live Analysis and Falsification of Exception-Handling in the JVM},
+  year={2021},  volume={47},  number={11},  pages={2534-2548},
   doi={10.1109/TSE.2019.2954871}}
 ```
 
