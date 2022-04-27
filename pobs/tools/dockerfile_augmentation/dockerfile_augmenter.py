@@ -8,8 +8,8 @@ import logging
 from optparse import OptionParser, OptionGroup
 
 __version__ = "0.1"
-DOCKERHUB_USERNAME = "gluckzhang" # for the --publish option
-DOCKERHUB_TOKEN = "e9e66fd4-31b7-491b-9219-da0af1131652" # for the --publish option
+DOCKERHUB_USERNAME = "your_dockerhub_username" # for the --publish option
+DOCKERHUB_TOKEN = "your_dockerhub_access_token" # for the --publish option
 OPTIONS = None
 
 def parse_options():
@@ -123,7 +123,7 @@ def get_template_contents(base_image):
 ## END ##
 #########
 """)
-    logging.info(contents)
+
     return image_name, image_tag, contents
 
 def get_username_of_an_image(image_name, image_tag):
