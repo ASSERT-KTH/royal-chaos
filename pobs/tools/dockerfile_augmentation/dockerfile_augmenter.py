@@ -88,7 +88,7 @@ def parse_options():
 
     return options
 
-def get_template_contents(base_image):
+def get_template_contents(base_image, username, s6_installed):
     base_image = base_image.strip()
     image_name = base_image.rsplit(":", 1)[0]
     image_tag = ""
@@ -107,11 +107,12 @@ def get_template_contents(base_image):
     if image_tag != "":
         if os.path.isfile("./pobs_templates/%s/%s.tpl"%(image_name, image_tag)):
             template_file = "./pobs_templates/%s/%s.tpl"%(image_name, image_tag)
+    s6_suffix = "" if s6_installed else "-s6"
+    template_file = template_file.replace(".tpl", "%s.tpl"%s6_suffix)
 
     with open(template_file, 'rt') as file:
         template_contents = file.readlines()
 
-    username = get_username_of_an_image(image_name, image_tag)
     if username != "root":
         # we have to use root to install POBS
         contents = contents + ["USER root\n\n"] + template_contents + ["\n\nUSER %s"%username]
@@ -147,8 +148,25 @@ def test_bash_if_exists(image_name, image_tag):
         result = False
     return result
 
-def augment_image_from_dockerfile(ori_dockerfile, target_dockerfile_path):
-    if target_dockerfile_path != "./":
+def inspect_original_dockerfile(ori_dockerfile, ori_filepath):
+    # build the image
+    image_name = "temp-ori-app"
+    cmd_build = "docker build -t %s -f %s %s"%(image_name, ori_dockerfile, ori_filepath)
+    os.system(cmd_build)
+    # get the username
+    username = get_username_of_an_image(image_name, "")
+    # check if s6-overlay is installed
+    s6_installed = False
+    code = os.system("docker run --rm --entrypoint=s6-true %s"%image_name)
+    if code == 0:
+        s6_installed = True
+    # remove the image
+    os.system("docker image rm temp-ori-app")
+    return {"username": username, "s6_installed": s6_installed}
+
+
+def augment_image_from_dockerfile(ori_dockerfile, target_dockerfile_path, ori_dockerfile_info):
+    if not os.path.exists(os.path.join(target_dockerfile_path, "pobs_files")):
         # copy pobs files to the target folder
         os.system("cp -r ./pobs_files %s"%target_dockerfile_path)
     target_dockerfile = os.path.join(target_dockerfile_path, "Dockerfile-pobs")
@@ -161,9 +179,13 @@ def augment_image_from_dockerfile(ori_dockerfile, target_dockerfile_path):
             if re.search(r"^FROM", line, flags=re.IGNORECASE):
                 last_baseimage = line[5:]
                 last_baseimage = re.split(" as ", last_baseimage, flags=re.IGNORECASE)[0]
-        image_name, image_tag, contents = get_template_contents(last_baseimage.strip())
+        image_name, image_tag, contents = get_template_contents(last_baseimage.strip(), ori_dockerfile_info["username"], ori_dockerfile_info["s6_installed"])
 
-        target.writelines(original_content)
+        for line in original_content:
+            if line.startswith("ENTRYPOINT"):
+                target.write(line.replace("ENTRYPOINT", "CMD"))
+            else:
+                target.write(line)
         target.write("\n")
         target.writelines(contents)
 
@@ -389,7 +411,8 @@ def main():
 
     if_any_error = False
     if OPTIONS.dockerfile != None:
-        image_name, image_tag = augment_image_from_dockerfile(OPTIONS.dockerfile, OPTIONS.output)
+        original_dockerfile_information = inspect_original_dockerfile(OPTIONS.dockerfile, OPTIONS.output)
+        image_name, image_tag = augment_image_from_dockerfile(OPTIONS.dockerfile, OPTIONS.output, original_dockerfile_information)
         if OPTIONS.build:
             result, if_any_error = build_POBS_base_image(image_name, image_tag)
             print_build_results([result])
