@@ -1,3 +1,4 @@
 #!/usr/bin/with-contenv bash
 
+echo "system call monitor started"
 strace -qqq -ttt -T -Z -k -f --trace=%file,%memory,%net -p $(pidof java)

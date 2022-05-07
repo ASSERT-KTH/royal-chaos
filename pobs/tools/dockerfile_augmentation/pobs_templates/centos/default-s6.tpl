@@ -1,3 +1,7 @@
+# install s6-overlay
+ADD https://github.com/just-containers/s6-overlay/releases/download/v2.2.0.1/s6-overlay-amd64-installer /tmp/
+RUN chmod +x /tmp/s6-overlay-amd64-installer && /tmp/s6-overlay-amd64-installer /
+
 # copy POBS files
 COPY ./pobs_files/ /
 
@@ -8,6 +12,6 @@ ENV JAVA_TOOL_OPTIONS "$JAVA_TOOL_OPTIONS -javaagent:/home/elastic/elastic-apm-a
 ENV JAVA_OPTS "$JAVA_OPTS -noverify
 
 # System call monitoring
-RUN apt-get update && apt-get install -y procps strace
+RUN yum install -y procps strace
 
 ENTRYPOINT ["/init"]

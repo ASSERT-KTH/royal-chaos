@@ -8,6 +8,6 @@ ENV JAVA_TOOL_OPTIONS "$JAVA_TOOL_OPTIONS -javaagent:/home/elastic/elastic-apm-a
 ENV JAVA_OPTS "$JAVA_OPTS -noverify
 
 # System call monitoring
-RUN apt-get update && apt-get install -y procps strace
+RUN yum install -y procps strace
 
 ENTRYPOINT ["/init"]
