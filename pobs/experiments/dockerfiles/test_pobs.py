@@ -103,7 +103,7 @@ def analyze_loc(project_path):
     return result
 
 def clean_up_project(project_name):
-    os.system("docker stop $(docker ps -q)") # stop all containers first
+    os.system("docker stop $(docker ps -q --filter since=%s)"%CLEAN_CONTAINERS_SINCE) # stop all experiment-related containers first
     os.system("docker rm $(docker ps -a -q --filter since=%s)"%CLEAN_CONTAINERS_SINCE)
     os.system("docker image prune -f")
     os.system("docker image rm -f $(docker images -q --filter reference='%s-pobs:*')"%project_name)
@@ -190,7 +190,7 @@ def evaluate_project(project):
                             dockerfile["pobs_application_run"] = "failed"
                             dump_logs(stdout, stderr, "./logs/app-run/", "%s_%d_apprun"%(project_full_name, fileindex))
                 fileindex = fileindex + 1
-                os.system("docker stop $(docker ps -q)") # stop all containers first
+                os.system("docker stop $(docker ps -q --filter since=%s)"%CLEAN_CONTAINERS_SINCE) # stop all experiment-related containers first
                 time.sleep(1)
         # clean up: delete the built images
         clean_up_project(project_name)
