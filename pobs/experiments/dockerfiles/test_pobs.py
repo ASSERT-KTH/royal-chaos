@@ -10,7 +10,7 @@ OPTIONS = None
 AUGMENTER_WORKDIR = "../../tools/dockerfile_augmentation"
 CMD_TRANSFORM_DOCKERFILE = "python ./dockerfile_augmenter.py -f %s -o %s" # path to the Dockerfile and output folder
 CMD_BUILD_IMAGE = "docker build -t %s -f %s ." # tag name and Dockerfile path
-CMD_RUN_APPLICATION = "docker run --rm %s-pobs:%d" # give the project name and the index of the dockerfile
+CMD_RUN_APPLICATION = "docker run --rm --cap-add=SYS_PTRACE %s-pobs:%d" # give the project name and the index of the dockerfile
 CLEAN_CONTAINERS_SINCE = "musing_aryabhata" # give a container name after which the created containers will be removed
 os.environ["TMPDIR"] = "/tmp" # change it if you need to use another path to create temporary files
 
@@ -209,7 +209,6 @@ def main():
         for project in projects:
             project = evaluate_project(project)
             dump_analysis(projects)
-            break
 
 if __name__ == '__main__':
     logger_format = '%(asctime)-15s %(levelname)-8s %(message)s'
