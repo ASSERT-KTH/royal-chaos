@@ -35,6 +35,7 @@ COPY ./pobs_files/ /
 
 def set_env():
     scripts = """
+# set up environment variables
 ENV POBS_SERVICE_NAME=app
 ENV POBS_APPLICATION_PACKAGES=
 ENV POBS_APM_SERVER=http://172.17.0.1:8200

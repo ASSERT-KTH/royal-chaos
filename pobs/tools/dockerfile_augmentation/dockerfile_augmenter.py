@@ -48,7 +48,7 @@ def get_template_contents(username, s6_installed, package_manager, ori_entrypoin
 
     if username != "root":
         # we have to use root to install POBS
-        contents.append("USER root\n\n")
+        contents.append("USER root\n")
 
     if not s6_installed:
         # install s6-overlay
@@ -105,9 +105,9 @@ def inspect_original_dockerfile(ori_dockerfile, ori_filepath):
             package_manager = entrypoint
             break
     # get the original entrypoint as a joint string
-    ori_entrypoint = subprocess.check_output("docker image inspect --format '{{join .Config.Entrypoint \" \"}}' %s"%image_name, shell=True)
+    ori_entrypoint = subprocess.check_output("docker image inspect --format '{{join .Config.Entrypoint \" \"}}' %s"%image_name, shell=True).decode("utf-8").strip()
     # get the original cmd as a joint string
-    ori_cmd = subprocess.check_output("docker image inspect --format '{{join .Config.Cmd \" \"}}' %s"%image_name, shell=True)
+    ori_cmd = subprocess.check_output("docker image inspect --format '{{join .Config.Cmd \" \"}}' %s"%image_name, shell=True).decode("utf-8").strip()
     # remove the image
     os.system("docker image rm temp-ori-app")
     return {"username": username, "s6_installed": s6_installed, "package_manager": package_manager, "ori_entrypoint": ori_entrypoint, "ori_cmd": ori_cmd}
