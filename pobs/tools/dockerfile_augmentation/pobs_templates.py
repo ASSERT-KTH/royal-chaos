@@ -48,9 +48,24 @@ def entrypoint():
 
 def install_syscall_monitor(package_manager):
     scripts = {
-        "apt": "\n# System call monitoring\nRUN apt-get update && apt-get install -y procps strace\n\n",
-        "apk": "\n# System call monitoring\nRUN apk update && apk add procps strace\n\n",
-        "yum": "\n# System call monitoring\nRUN yum install -y sysvinit-tools strace\n\n"
+        "apt": """
+# System call monitoring
+RUN apt-get update && apt-get install -y procps strace
+
+""",
+        "yum": """
+# System call monitoring
+RUN yum install -y sysvinit-tools strace
+
+""",
+        "apk": """
+# System call monitoring
+RUN apk update && apk add procps strace
+ADD http://dl-cdn.alpinelinux.org/alpine/v3.15/main/x86_64/libelf-0.185-r0.apk /tmp/
+ADD http://dl-cdn.alpinelinux.org/alpine/v3.15/main/x86_64/strace-5.14-r0.apk /tmp/
+RUN apk add --allow-untrusted /tmp/libelf-0.185-r0.apk /tmp/strace-5.14-r0.apk
+
+"""
     }
     if package_manager not in scripts:
         return ""

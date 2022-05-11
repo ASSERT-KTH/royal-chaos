@@ -42,7 +42,7 @@ def parse_options():
 
     return options
 
-def get_template_contents(username, s6_installed, package_manager):
+def get_template_contents(username, s6_installed, package_manager, ori_entrypoint, ori_cmd):
     contents = list()
     contents.append(pobs_templates.header())
 
@@ -67,8 +67,8 @@ def get_template_contents(username, s6_installed, package_manager):
     contents.append(pobs_templates.entrypoint())
 
     if username != "root":
-        # change the user back to its original one
-        contents.append("\n\nUSER %s"%username)
+        # add a CMD instruction so that s6-overlay can start up the application using a specific username
+        contents.append('\nCMD ["/usr/bin/execlineb", "-P", "-c", "s6-setuidgid %s %s %s"]'%(username, ori_entrypoint, ori_cmd))
 
     contents.append(pobs_templates.footer())
 
@@ -104,9 +104,13 @@ def inspect_original_dockerfile(ori_dockerfile, ori_filepath):
         if code == 0:
             package_manager = entrypoint
             break
+    # get the original entrypoint as a joint string
+    ori_entrypoint = subprocess.check_output("docker image inspect --format '{{join .Config.Entrypoint \" \"}}' %s"%image_name, shell=True)
+    # get the original cmd as a joint string
+    ori_cmd = subprocess.check_output("docker image inspect --format '{{join .Config.Cmd \" \"}}' %s"%image_name, shell=True)
     # remove the image
     os.system("docker image rm temp-ori-app")
-    return {"username": username, "s6_installed": s6_installed, "package_manager": package_manager}
+    return {"username": username, "s6_installed": s6_installed, "package_manager": package_manager, "ori_entrypoint": ori_entrypoint, "ori_cmd": ori_cmd}
 
 def augment_image_from_dockerfile(ori_dockerfile, target_dockerfile_path, ori_dockerfile_info):
     if not os.path.exists(os.path.join(target_dockerfile_path, "pobs_files")):
@@ -115,7 +119,7 @@ def augment_image_from_dockerfile(ori_dockerfile, target_dockerfile_path, ori_do
     target_dockerfile = os.path.join(target_dockerfile_path, "Dockerfile-pobs")
     with open(ori_dockerfile, 'rt') as original, open(target_dockerfile, 'wt') as target:
         original_content = original.readlines()
-        contents = get_template_contents(ori_dockerfile_info["username"], ori_dockerfile_info["s6_installed"], ori_dockerfile_info["package_manager"])
+        contents = get_template_contents(ori_dockerfile_info["username"], ori_dockerfile_info["s6_installed"], ori_dockerfile_info["package_manager"], ori_dockerfile_info["ori_entrypoint"], ori_dockerfile_info["ori_cmd"])
 
         for line in original_content:
             if line.startswith("ENTRYPOINT"):
