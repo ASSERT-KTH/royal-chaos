@@ -3,6 +3,8 @@
 
 import os, time, json, tempfile, subprocess, signal, re
 import logging
+import numpy
+from influxdb import InfluxDBClient
 from optparse import OptionParser, OptionGroup
 
 __version__ = "0.1"
@@ -10,8 +12,9 @@ OPTIONS = None
 AUGMENTER_WORKDIR = "../../tools/dockerfile_augmentation"
 CMD_TRANSFORM_DOCKERFILE = "python ./dockerfile_augmenter.py -f %s -o %s" # path to the Dockerfile and output folder
 CMD_BUILD_IMAGE = "docker build -t %s -f %s ." # tag name and Dockerfile path
-CMD_RUN_APPLICATION = "docker run --rm --cap-add=SYS_PTRACE %s-pobs:%d" # give the project name and the index of the dockerfile
+CMD_RUN_APPLICATION = "docker run --rm --name %s --cap-add=SYS_PTRACE %s-pobs:%d" # give the project name and the index of the dockerfile
 CLEAN_CONTAINERS_SINCE = "musing_aryabhata" # give a container name after which the created containers will be removed
+DBCLIENT = InfluxDBClient("localhost", 8086, "root", "root", "cadvisor")
 os.environ["TMPDIR"] = "/tmp" # change it if you need to use another path to create temporary files
 
 def parse_options():
@@ -35,14 +38,27 @@ def parse_options():
     
     return options
 
+def cadvisor_metrics(container_name, duration):
+    query_str_cpu = 'SELECT derivative(mean("value"), 1s)/2000000000 FROM "cpu_usage_total" WHERE ("container_name" = $container_name) AND time >= now() - %s GROUP BY time(500ms) fill(null)'%duration
+    query_str_memory = 'SELECT mean("value") FROM "memory_usage" WHERE ("container_name" = $container_name) AND time >= now() - %s GROUP BY time(5s) fill(null)'%duration
+    bind_params = {"container_name": container_name}
+    cpu_usage = DBCLIENT.query(query_str_cpu, bind_params=bind_params)
+    memory_usage = DBCLIENT.query(query_str_memory, bind_params=bind_params)
+    cpu_mean = numpy.mean([p["derivative"] for p in cpu_usage.get_points("cpu_usage_total") if p["derivative"] is not None])
+    memory_mean = numpy.mean([p["mean"] for p in cpu_usage.get_points("memory_usage") if p["mean"] is not None])
+    return {"cpu_mean": cpu_mean, "memory_mean": memory_mean}
+
+
 def run_command(command, workdir, timeout=600):
     with tempfile.NamedTemporaryFile(mode="w+b") as stdout_f, tempfile.NamedTemporaryFile(mode="w+b") as stderr_f:
+        start_time = time.time()
         p = subprocess.Popen(command, stdout=stdout_f.fileno(), stderr=stderr_f.fileno(), close_fds=True, shell=True, cwd=workdir, preexec_fn=os.setsid)
         try:
             exit_code = p.wait(timeout=timeout)
         except subprocess.TimeoutExpired as err:
             os.killpg(os.getpgid(p.pid), signal.SIGTERM)
             exit_code = -1
+        execution_time = time.time() - start_time
         stdout_f.flush()
         stderr_f.flush()
         stdout_f.seek(0, os.SEEK_SET)
@@ -50,12 +66,46 @@ def run_command(command, workdir, timeout=600):
         stdoutdata = stdout_f.read()
         stderrdata = stderr_f.read()
 
-        return (stdoutdata.decode("utf-8"), stderrdata.decode("utf-8"), exit_code)
+        return (stdoutdata.decode("utf-8"), stderrdata.decode("utf-8"), exit_code, execution_time)
+
+def run_original_image(image_name):
+    with tempfile.NamedTemporaryFile(mode="w+b") as stdout_f, tempfile.NamedTemporaryFile(mode="w+b") as stderr_f:
+        continuously_running = False
+        java_process_detected = False
+        container_name = "run_original_%s"%image_name
+        p = subprocess.Popen("docker run --rm --name run_original_%s %s"%(container_name, image_name), stdout=stdout_f.fileno(), stderr=stderr_f.fileno(), close_fds=True, shell=True)
+        try:
+            exit_code = p.wait(timeout=60)
+        except subprocess.TimeoutExpired as err:
+            exit_code = 0 # if the container runs for 60 seconds, it is considered as a successful run
+            continuously_running = True
+
+            # check if there is a java process running in the container
+            try:
+                top_output = subprocess.check_output("docker top run_original -C java", shell=True).decode("utf-8")
+                if "java" in top_output: java_process_detected = True
+            except subprocess.TimeoutExpired as err:
+                logging.info(err.output)
+
+            # manually stop the running container
+            os.system("docker stop run_original")
+
+        stdout_f.flush()
+        stderr_f.flush()
+        stdout_f.seek(0, os.SEEK_SET)
+        stderr_f.seek(0, os.SEEK_SET)
+        stdoutdata = stdout_f.read()
+        stderrdata = stderr_f.read()
+
+        cadvisor_metrics = cadvisor_metrics(container_name, "1m")
+
+        return (stdoutdata.decode("utf-8"), stderrdata.decode("utf-8"), exit_code, continuously_running, java_process_detected, cadvisor_metrics)
 
 def test_application(project_name, image_index):
     with tempfile.NamedTemporaryFile(mode="w+b") as stdout_f, tempfile.NamedTemporaryFile(mode="w+b") as stderr_f:
         continuously_running = False
-        p = subprocess.Popen(CMD_RUN_APPLICATION%(project_name, image_index), stdout=stdout_f.fileno(), stderr=stderr_f.fileno(), close_fds=True, shell=True)
+        container_name = "run_pobs_%s"%project_name
+        p = subprocess.Popen(CMD_RUN_APPLICATION%(container_name, project_name, image_index), stdout=stdout_f.fileno(), stderr=stderr_f.fileno(), close_fds=True, shell=True)
         try:
             exit_code = p.wait(timeout=60)
         except subprocess.TimeoutExpired as err:
@@ -76,7 +126,9 @@ def test_application(project_name, image_index):
         if "Starting Elastic APM 1.30.1" in stdout:
             apm_agent_attached = True
 
-        return (syscall_monitor_enabled, apm_agent_attached, stdoutdata.decode("utf-8"), stderrdata.decode("utf-8"), exit_code, continuously_running)
+        cadvisor_metrics = cadvisor_metrics(container_name, "1m")
+
+        return (syscall_monitor_enabled, apm_agent_attached, stdoutdata.decode("utf-8"), stderrdata.decode("utf-8"), exit_code, continuously_running, cadvisor_metrics)
 
 def dump_logs(stdoutdata, stderrdata, filepath, fileprefix):
     os.makedirs(filepath, exist_ok=True)
@@ -136,14 +188,14 @@ def evaluate_project(project):
             if "build_tools" in project:
                 logging.info("Try to build the project with some default commands")
                 if "Maven" in project["build_tools"]:
-                    stdout, stderr, exitcode = run_command("mvn package -DskipTests=true", tmprepo)
-                    if exitcode == 0: project["is_able_to_build"].append("Maven")
+                    stdout, stderr, exitcode, execution_time = run_command("mvn package -DskipTests=true", tmprepo)
+                    if exitcode == 0: project["is_able_to_build"].append({"Maven": execution_time})
                 if "Gradle" in project["build_tools"]:
-                    stdout, stderr, exitcode = run_command("gradle build -x test", tmprepo)
-                    if exitcode == 0: project["is_able_to_build"].append("Gradle")
+                    stdout, stderr, exitcode, execution_time = run_command("gradle build -x test", tmprepo)
+                    if exitcode == 0: project["is_able_to_build"].append({"Gradle": execution_time})
                 if "Ant" in project["build_tools"]:
-                    stdout, stderr, exitcode = run_command("ant compile jar", tmprepo)
-                    if exitcode == 0: project["is_able_to_build"].append("Ant")
+                    stdout, stderr, exitcode, execution_time = run_command("ant compile jar", tmprepo)
+                    if exitcode == 0: project["is_able_to_build"].append({"Ant": execution_time})
                 if len(project["is_able_to_build"]) > 0:
                     logging.info("Successfully build the project using: %s"%project["is_able_to_build"])
 
@@ -151,46 +203,68 @@ def evaluate_project(project):
             project_name = project["name"].lower() # docker build: repository name must be lowercase
             project_full_name = project["full_name"].lower().replace("/", "_")
             for dockerfile in project["info_from_dockerfiles"]:
-                # build the base image
                 filepath = os.path.join(tmprepo, dockerfile["path"])
                 dirname = os.path.dirname(filepath)
                 filename = os.path.basename(filepath)
 
-                # POBS augmented image generation
-                logging.info("Begin to augment the dockerfile and build POBS application image: %s"%dockerfile["path"])
-                stdout, stderr, exitcode = run_command(CMD_TRANSFORM_DOCKERFILE%(filepath, dirname), AUGMENTER_WORKDIR)
+                # sanity check: try to build the original docker image
+                logging.info("Check whether the dockerfile is buildable: %s"%dockerfile["path"])
+                stdout, stderr, exitcode, execution_time = run_command(CMD_BUILD_IMAGE%(project_name + ":%d"%fileindex, filename), dirname)
                 if exitcode != 0:
-                    dump_logs(stdout, stderr, "./logs/augmentation/", "%s_%d_augmentation"%(project_full_name, fileindex))
-                    dockerfile["pobs_augmentation"] = "failed"
-                    logging.info("Failed to augment the dockerfile, exitcode: %d"%exitcode)
+                    dockerfile["ori_application_build"] = "failed"
+                    dump_logs(stdout, stderr, "./logs/ori_build/", "%s_%d_ori_build"%(project_full_name, fileindex))
+                    logging.info("The original dockerfile can not be built: %s"%dockerfile["path"])
                 else:
-                    dockerfile["pobs_augmentation"] = "successful"
+                    dockerfile["ori_build"] = "successful"
+                    dockerfile["ori_build_execution_time"] = execution_time
 
-                    # build the PBOS application image
-                    logging.info("Begin to build the application image using: %s-pobs"%(dockerfile["path"]))
-                    stdout, stderr, exitcode = run_command(CMD_BUILD_IMAGE%(project_name + "-pobs:%d"%fileindex, "Dockerfile-pobs"), dirname)
+                    # check if the original docker image can be run for 1 min, and calculate the performance
+                    logging.info("Begin to check if the original docker image can be run for 1 min, with a java process detected")
+                    stdout, stderr, exitcode, continuously_running, java_process_detected, cadvisor_metrics = run_original_image(project_name)
+                    logging.info("ori_application_run, exitcode: %d, continuously: %s, java: %s"%(exitcode, continuously_running, java_process_detected))
+                    dockerfile["ori_application_run_exitcode"] = exitcode
+                    dockerfile["ori_application_run_continuously"] = continuously_running
+                    dockerfile["ori_application_run_java"] = java_process_detected
+                    dockerfile["ori_application_run_metrics"] = cadvisor_metrics
+
+                    # POBS augmented image generation
+                    logging.info("Begin to augment the dockerfile and build POBS application image: %s"%dockerfile["path"])
+                    stdout, stderr, exitcode, execution_time = run_command(CMD_TRANSFORM_DOCKERFILE%(filepath, dirname), AUGMENTER_WORKDIR)
                     if exitcode != 0:
-                        dump_logs(stdout, stderr, "./logs/app-build/", "%s_%d_appbuild"%(project_full_name, fileindex))
-                        dockerfile["pobs_application_build"] = "failed"
-                        logging.error("Failed to build the application image using %s-pobs-application, project %s"%(dockerfile["path"], project_name))
+                        dump_logs(stdout, stderr, "./logs/augmentation/", "%s_%d_augmentation"%(project_full_name, fileindex))
+                        dockerfile["pobs_augmentation"] = "failed"
+                        logging.info("Failed to augment the dockerfile, exitcode: %d"%exitcode)
                     else:
-                        dockerfile["pobs_application_build"] = "successful"
+                        dockerfile["pobs_augmentation"] = "successful"
 
-                        # run the application and test strace, apm agent
-                        syscall_monitor_enabled, apm_agent_attached, stdout, stderr, exitcode, continuously_running = test_application(project_name, fileindex)
-                        dockerfile["pobs_syscall_monitor_enabled"] = syscall_monitor_enabled
-                        dockerfile["pobs_apm_agent_attached"] = apm_agent_attached
-                        dockerfile["pobs_application_run_exitcode"] = exitcode
-                        dockerfile["pobs_application_run_continuously"] = continuously_running
-
-                        if syscall_monitor_enabled and apm_agent_attached and continuously_running:
-                            dockerfile["pobs_application_run"] = "successful"
-                            project["is_able_to_run"].append(fileindex)
+                        # build the PBOS application image
+                        logging.info("Begin to build the application image using: %s-pobs"%(dockerfile["path"]))
+                        stdout, stderr, exitcode, execution_time = run_command(CMD_BUILD_IMAGE%(project_name + "-pobs:%d"%fileindex, "Dockerfile-pobs"), dirname)
+                        if exitcode != 0:
+                            dump_logs(stdout, stderr, "./logs/app-build/", "%s_%d_appbuild"%(project_full_name, fileindex))
+                            dockerfile["pobs_application_build"] = "failed"
+                            logging.error("Failed to build the application image using %s-pobs-application, project %s"%(dockerfile["path"], project_name))
                         else:
-                            dockerfile["pobs_application_run"] = "failed"
-                            dump_logs(stdout, stderr, "./logs/app-run/", "%s_%d_apprun"%(project_full_name, fileindex))
+                            dockerfile["pobs_application_build"] = "successful"
+                            dockerfile["pobs_application_build_execution_time"] = execution_time
+
+                            # run the application and test strace, apm agent
+                            syscall_monitor_enabled, apm_agent_attached, stdout, stderr, exitcode, continuously_running, cadvisor_metrics = test_application(project_name, fileindex)
+                            dockerfile["pobs_syscall_monitor_enabled"] = syscall_monitor_enabled
+                            dockerfile["pobs_apm_agent_attached"] = apm_agent_attached
+                            dockerfile["pobs_application_run_exitcode"] = exitcode
+                            dockerfile["pobs_application_run_continuously"] = continuously_running
+                            dockerfile["pobs_application_run_metrics"] = cadvisor_metrics
+
+                            if syscall_monitor_enabled and apm_agent_attached and continuously_running:
+                                dockerfile["pobs_application_run"] = "successful"
+                                project["is_able_to_run"].append(fileindex)
+                            else:
+                                dockerfile["pobs_application_run"] = "failed"
+                                dump_logs(stdout, stderr, "./logs/app-run/", "%s_%d_apprun"%(project_full_name, fileindex))
                 fileindex = fileindex + 1
                 os.system("docker stop $(docker ps -q --filter since=%s)"%CLEAN_CONTAINERS_SINCE) # stop all experiment-related containers first
+                os.system("docker rmi %s"%project_name)
                 time.sleep(1)
         # clean up: delete the built images
         clean_up_project(project_name)
