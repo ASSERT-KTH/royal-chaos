@@ -97,9 +97,9 @@ def run_original_image(image_name):
         stdoutdata = stdout_f.read()
         stderrdata = stderr_f.read()
 
-        cadvisor_metrics = cadvisor_metrics(container_name, "1m")
+        cpu_and_memory_usage = cadvisor_metrics(container_name, "1m")
 
-        return (stdoutdata.decode("utf-8"), stderrdata.decode("utf-8"), exit_code, continuously_running, java_process_detected, cadvisor_metrics)
+        return (stdoutdata.decode("utf-8"), stderrdata.decode("utf-8"), exit_code, continuously_running, java_process_detected, cpu_and_memory_usage)
 
 def test_application(project_name, image_index):
     with tempfile.NamedTemporaryFile(mode="w+b") as stdout_f, tempfile.NamedTemporaryFile(mode="w+b") as stderr_f:
@@ -126,9 +126,9 @@ def test_application(project_name, image_index):
         if "Starting Elastic APM 1.30.1" in stdout:
             apm_agent_attached = True
 
-        cadvisor_metrics = cadvisor_metrics(container_name, "1m")
+        cpu_and_memory_usage = cadvisor_metrics(container_name, "1m")
 
-        return (syscall_monitor_enabled, apm_agent_attached, stdoutdata.decode("utf-8"), stderrdata.decode("utf-8"), exit_code, continuously_running, cadvisor_metrics)
+        return (syscall_monitor_enabled, apm_agent_attached, stdoutdata.decode("utf-8"), stderrdata.decode("utf-8"), exit_code, continuously_running, cpu_and_memory_usage)
 
 def dump_logs(stdoutdata, stderrdata, filepath, fileprefix):
     os.makedirs(filepath, exist_ok=True)
@@ -220,12 +220,12 @@ def evaluate_project(project):
 
                     # check if the original docker image can be run for 1 min, and calculate the performance
                     logging.info("Begin to check if the original docker image can be run for 1 min, with a java process detected")
-                    stdout, stderr, exitcode, continuously_running, java_process_detected, cadvisor_metrics = run_original_image(project_name)
+                    stdout, stderr, exitcode, continuously_running, java_process_detected, cpu_and_memory_usage = run_original_image(project_name)
                     logging.info("ori_application_run, exitcode: %d, continuously: %s, java: %s"%(exitcode, continuously_running, java_process_detected))
                     dockerfile["ori_application_run_exitcode"] = exitcode
                     dockerfile["ori_application_run_continuously"] = continuously_running
                     dockerfile["ori_application_run_java"] = java_process_detected
-                    dockerfile["ori_application_run_metrics"] = cadvisor_metrics
+                    dockerfile["ori_application_run_metrics"] = cpu_and_memory_usage
 
                     # POBS augmented image generation
                     logging.info("Begin to augment the dockerfile and build POBS application image: %s"%dockerfile["path"])
@@ -249,12 +249,12 @@ def evaluate_project(project):
                             dockerfile["pobs_application_build_execution_time"] = execution_time
 
                             # run the application and test strace, apm agent
-                            syscall_monitor_enabled, apm_agent_attached, stdout, stderr, exitcode, continuously_running, cadvisor_metrics = test_application(project_name, fileindex)
+                            syscall_monitor_enabled, apm_agent_attached, stdout, stderr, exitcode, continuously_running, cpu_and_memory_usage = test_application(project_name, fileindex)
                             dockerfile["pobs_syscall_monitor_enabled"] = syscall_monitor_enabled
                             dockerfile["pobs_apm_agent_attached"] = apm_agent_attached
                             dockerfile["pobs_application_run_exitcode"] = exitcode
                             dockerfile["pobs_application_run_continuously"] = continuously_running
-                            dockerfile["pobs_application_run_metrics"] = cadvisor_metrics
+                            dockerfile["pobs_application_run_metrics"] = cpu_and_memory_usage
 
                             if syscall_monitor_enabled and apm_agent_attached and continuously_running:
                                 dockerfile["pobs_application_run"] = "successful"
