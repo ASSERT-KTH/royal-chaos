@@ -51,7 +51,8 @@ def install_syscall_monitor(package_manager):
     scripts = {
         "apt": """
 # System call monitoring
-RUN apt-get update && apt-get install -y procps strace
+RUN apt-get update; exit 0
+RUN apt-get install -y procps strace
 
 """,
         "yum": """
