@@ -50,7 +50,7 @@ def cadvisor_metrics(container_name, duration):
 
 def get_image_size(image_name):
     command = "docker images --filter=reference='%s' --format={{.Size}}"%image_name
-    size = subprocess.check_output(command, shell=True).decode("utf-8")
+    size = subprocess.check_output(command, shell=True).decode("utf-8").strip()
     return size
 
 
@@ -78,7 +78,7 @@ def run_original_image(image_name):
         continuously_running = False
         java_process_detected = False
         container_name = "run_original_%s"%image_name
-        p = subprocess.Popen("docker run --rm --name run_original_%s %s"%(container_name, image_name), stdout=stdout_f.fileno(), stderr=stderr_f.fileno(), close_fds=True, shell=True)
+        p = subprocess.Popen("docker run --rm --name %s %s"%(container_name, image_name), stdout=stdout_f.fileno(), stderr=stderr_f.fileno(), close_fds=True, shell=True)
         try:
             exit_code = p.wait(timeout=60)
         except subprocess.TimeoutExpired as err:
@@ -87,13 +87,13 @@ def run_original_image(image_name):
 
             # check if there is a java process running in the container
             try:
-                top_output = subprocess.check_output("docker top run_original -C java", shell=True).decode("utf-8")
+                top_output = subprocess.check_output("docker top %s -C java"%container_name, shell=True).decode("utf-8")
                 if "java" in top_output: java_process_detected = True
             except subprocess.TimeoutExpired as err:
                 logging.info(err.output)
 
             # manually stop the running container
-            os.system("docker stop run_original")
+            os.system("docker stop %s"%container_name)
 
         stdout_f.flush()
         stderr_f.flush()
@@ -227,7 +227,7 @@ def evaluate_project(project):
 
                     # check if the original docker image can be run for 1 min, and calculate the performance
                     logging.info("Begin to check if the original docker image can be run for 1 min, with a java process detected")
-                    stdout, stderr, exitcode, continuously_running, java_process_detected, cpu_and_memory_usage = run_original_image(project_name)
+                    stdout, stderr, exitcode, continuously_running, java_process_detected, cpu_and_memory_usage = run_original_image(image_name)
                     logging.info("ori_application_run, exitcode: %d, continuously: %s, java: %s"%(exitcode, continuously_running, java_process_detected))
                     dockerfile["ori_application_run_exitcode"] = exitcode
                     dockerfile["ori_application_run_continuously"] = continuously_running
