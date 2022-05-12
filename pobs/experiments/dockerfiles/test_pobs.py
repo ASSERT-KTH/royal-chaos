@@ -45,7 +45,7 @@ def cadvisor_metrics(container_name, duration):
     cpu_usage = DBCLIENT.query(query_str_cpu, bind_params=bind_params)
     memory_usage = DBCLIENT.query(query_str_memory, bind_params=bind_params)
     cpu_mean = numpy.mean([p["derivative"] for p in cpu_usage.get_points("cpu_usage_total") if p["derivative"] is not None])
-    memory_mean = numpy.mean([p["mean"] for p in cpu_usage.get_points("memory_usage") if p["mean"] is not None])
+    memory_mean = numpy.mean([p["mean"] for p in memory_usage.get_points("memory_usage") if p["mean"] is not None])
     return {"cpu_mean": cpu_mean, "memory_mean": memory_mean}
 
 def get_image_size(image_name):
