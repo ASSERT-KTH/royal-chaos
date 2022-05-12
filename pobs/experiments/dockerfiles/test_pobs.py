@@ -77,10 +77,10 @@ def run_original_image(image_name):
     with tempfile.NamedTemporaryFile(mode="w+b") as stdout_f, tempfile.NamedTemporaryFile(mode="w+b") as stderr_f:
         continuously_running = False
         java_process_detected = False
-        container_name = "run_original_%s"%image_name
+        container_name = "run_original_%s"%image_name.replace(":", "_")
         p = subprocess.Popen("docker run --rm --name %s %s"%(container_name, image_name), stdout=stdout_f.fileno(), stderr=stderr_f.fileno(), close_fds=True, shell=True)
         try:
-            exit_code = p.wait(timeout=60)
+            exit_code = p.wait(timeout=120)
         except subprocess.TimeoutExpired as err:
             exit_code = 0 # if the container runs for 60 seconds, it is considered as a successful run
             continuously_running = True
@@ -109,10 +109,10 @@ def run_original_image(image_name):
 def test_application(project_name, image_index):
     with tempfile.NamedTemporaryFile(mode="w+b") as stdout_f, tempfile.NamedTemporaryFile(mode="w+b") as stderr_f:
         continuously_running = False
-        container_name = "run_pobs_%s"%project_name
+        container_name = "run_pobs_%s_%d"%(project_name, image_index)
         p = subprocess.Popen(CMD_RUN_APPLICATION%(container_name, project_name, image_index), stdout=stdout_f.fileno(), stderr=stderr_f.fileno(), close_fds=True, shell=True)
         try:
-            exit_code = p.wait(timeout=60)
+            exit_code = p.wait(timeout=120)
         except subprocess.TimeoutExpired as err:
             exit_code = 0 # if the container runs for 60 seconds, it is considered as a successful run
             continuously_running = True
@@ -274,7 +274,6 @@ def evaluate_project(project):
                                     dump_logs(stdout, stderr, "./logs/app-run/", "%s_%d_apprun"%(project_full_name, fileindex))
                 fileindex = fileindex + 1
                 os.system("docker stop $(docker ps -q --filter since=%s)"%CLEAN_CONTAINERS_SINCE) # stop all experiment-related containers first
-                os.system("docker rmi %s"%project_name)
                 time.sleep(1)
         # clean up: delete the built images
         clean_up_project(project_name)
