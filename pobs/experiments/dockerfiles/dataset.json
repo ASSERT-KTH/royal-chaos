@@ -586,55 +586,6 @@
         }
     },
     {
-        "current_timestamp": 1594333765,
-        "name": "kubernetes-plugin",
-        "full_name": "jenkinsci/kubernetes-plugin",
-        "fork": false,
-        "clone_url": "https://github.com/jenkinsci/kubernetes-plugin.git",
-        "stargazers_count": 1654,
-        "language": "Java",
-        "default_branch": "master",
-        "tag_name": "kubernetes-1.26.3",
-        "commit_sha": "88d1260a10e1d683317782d9efd0e2510be72643",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM jenkins/jenkins:lts-alpine"
-                ],
-                "cmds": [],
-                "entrypoints": [],
-                "args": [
-                    "ARG VERSION=1.15.5"
-                ]
-            }
-        ],
-        "build_tools": [
-            "Maven"
-        ],
-        "languages": {
-            "Java": 717795,
-            "Groovy": 48782,
-            "HTML": 22439,
-            "Shell": 2331,
-            "Dockerfile": 826
-        },
-        "contributors": 168,
-        "number_of_commits": 2707,
-        "age_days": 1969,
-        "loc_info": {
-            "java": {
-                "files": "121",
-                "code": "13730"
-            },
-            "sum": {
-                "files": "339",
-                "code": "20076"
-            }
-        }
-    },
-    {
         "current_timestamp": 1594334032,
         "name": "docker-maven-plugin",
         "full_name": "fabric8io/docker-maven-plugin",
@@ -852,59 +803,6 @@
         }
     },
     {
-        "current_timestamp": 1594334487,
-        "name": "validator",
-        "full_name": "validator/validator",
-        "fork": false,
-        "clone_url": "https://github.com/validator/validator.git",
-        "stargazers_count": 898,
-        "language": "Java",
-        "default_branch": "master",
-        "tag_name": "20.6.30",
-        "commit_sha": "3e56505f8e4aa4364a28de79d6dc15215a0bd5d2",
-        "has_modules": true,
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM debian:stable-slim"
-                ],
-                "cmds": [
-                    "CMD CONNECTION_TIMEOUT=$((CONNECTION_TIMEOUT_SECONDS * 1000)); \\SOCKET_TIMEOUT=$((SOCKET_TIMEOUT_SECONDS * 1000)); \\./vnu-runtime-image/bin/java \\-Dnu.validator.servlet.connection-timeout=$CONNECTION_TIMEOUT \\-Dnu.validator.servlet.socket-timeout=$SOCKET_TIMEOUT \\-Dnu.validator.servlet.bind-address=$BIND_ADDRESS \\-m vnu/nu.validator.servlet.Main 8888"
-                ],
-                "entrypoints": [],
-                "args": []
-            }
-        ],
-        "build_tools": [
-            "Ant"
-        ],
-        "languages": {
-            "Java": 2125059,
-            "Python": 103292,
-            "HTML": 99669,
-            "JavaScript": 49345,
-            "CSS": 20890,
-            "Dockerfile": 2491,
-            "Makefile": 2342,
-            "Shell": 139
-        },
-        "contributors": 57,
-        "number_of_commits": 3871,
-        "age_days": 3505,
-        "loc_info": {
-            "java": {
-                "files": "267",
-                "code": "38015"
-            },
-            "sum": {
-                "files": "323",
-                "code": "82406"
-            }
-        }
-    },
-    {
         "current_timestamp": 1594334516,
         "name": "s3proxy",
         "full_name": "gaul/s3proxy",
@@ -950,50 +848,6 @@
             "sum": {
                 "files": "48",
                 "code": "8886"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594334525,
-        "name": "FakeSMTP",
-        "full_name": "Nilhcem/FakeSMTP",
-        "fork": false,
-        "clone_url": "https://github.com/Nilhcem/FakeSMTP.git",
-        "stargazers_count": 844,
-        "language": "Java",
-        "default_branch": "master",
-        "commit_sha": "1fea9ab114f836188974763c69254003c514437c",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM java:8"
-                ],
-                "cmds": [],
-                "entrypoints": [
-                    "ENTRYPOINT [\"java\",\"-jar\",\"/fakeSMTP-2.0.jar\",\"--background\", \"--output-dir\", \"/output\", \"--port\", \"25\", \"--start-server\"]"
-                ],
-                "args": []
-            }
-        ],
-        "build_tools": [
-            "Maven"
-        ],
-        "languages": {
-            "Java": 100941
-        },
-        "contributors": 13,
-        "number_of_commits": 182,
-        "age_days": 3212,
-        "loc_info": {
-            "java": {
-                "files": "52",
-                "code": "2000"
-            },
-            "sum": {
-                "files": "59",
-                "code": "2513"
             }
         }
     },
@@ -1060,170 +914,6 @@
             "sum": {
                 "files": "1394",
                 "code": "156837"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594334614,
-        "name": "heroic",
-        "full_name": "spotify/heroic",
-        "fork": false,
-        "clone_url": "https://github.com/spotify/heroic.git",
-        "stargazers_count": 788,
-        "language": "Java",
-        "default_branch": "master",
-        "tag_name": "2.1.0",
-        "commit_sha": "26d23e113d6094b56d0f6731dd753b59ab6e318e",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM maven:3.5.4-jdk-11 as builder",
-                    "FROM openjdk:11"
-                ],
-                "cmds": [
-                    "CMD [\"/heroic.yml\"]"
-                ],
-                "entrypoints": [
-                    "ENTRYPOINT [\"/usr/bin/heroic.sh\"]"
-                ],
-                "args": []
-            }
-        ],
-        "build_tools": [
-            "Gradle"
-        ],
-        "languages": {
-            "Java": 2621595,
-            "Kotlin": 512180,
-            "Python": 9692,
-            "ANTLR": 4623,
-            "Shell": 1807,
-            "Dockerfile": 646
-        },
-        "contributors": 34,
-        "number_of_commits": 1257,
-        "age_days": 1868,
-        "loc_info": {
-            "java": {
-                "files": "809",
-                "code": "47974"
-            },
-            "sum": {
-                "files": "1326",
-                "code": "67380"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594334625,
-        "name": "pcap4j",
-        "full_name": "kaitoy/pcap4j",
-        "fork": false,
-        "clone_url": "https://github.com/kaitoy/pcap4j.git",
-        "stargazers_count": 778,
-        "language": "Java",
-        "default_branch": "v1",
-        "commit_sha": "0b4fad83439808c32f61054b2693641991572f6f",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM openjdk:11-jdk-slim"
-                ],
-                "cmds": [
-                    "CMD [\"eth0\", \"false\"]"
-                ],
-                "entrypoints": [
-                    "ENTRYPOINT [\"/bin/sh\", \"/usr/local/src/pcap4j/bin/capture.sh\"]"
-                ],
-                "args": []
-            }
-        ],
-        "build_tools": [
-            "Maven"
-        ],
-        "languages": {
-            "Java": 3326369,
-            "Dockerfile": 1684,
-            "HTML": 1675,
-            "Perl": 1613,
-            "Shell": 103
-        },
-        "contributors": 24,
-        "number_of_commits": 866,
-        "age_days": 3126,
-        "loc_info": {
-            "java": {
-                "files": "444",
-                "code": "67539"
-            },
-            "sum": {
-                "files": "485",
-                "code": "70848"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594334641,
-        "name": "metron",
-        "full_name": "apache/metron",
-        "fork": false,
-        "clone_url": "https://github.com/apache/metron.git",
-        "stargazers_count": 769,
-        "language": "Java",
-        "default_branch": "master",
-        "commit_sha": "1252573eab087e87fb2938f8651c5b0b393aca9e",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./metron-contrib/metron-docker/compose/kafkazk/Dockerfile",
-                "base_images": [
-                    "FROM centos"
-                ],
-                "cmds": [
-                    "CMD ./bin/start.sh"
-                ],
-                "entrypoints": [],
-                "args": [
-                    "ARG DOCKER_HOST",
-                    "ARG BROKER_IP_ADDR",
-                    "ARG METRON_VERSION"
-                ]
-            }
-        ],
-        "build_tools": [
-            "Maven"
-        ],
-        "languages": {
-            "Java": 7489872,
-            "HTML": 2157386,
-            "TypeScript": 1299353,
-            "CSS": 786331,
-            "Python": 356749,
-            "Shell": 226434,
-            "JavaScript": 185836,
-            "C": 49573,
-            "Ruby": 26376,
-            "Dockerfile": 16693,
-            "ANTLR": 12811,
-            "Scala": 2700,
-            "Makefile": 2579,
-            "TSQL": 2401
-        },
-        "contributors": 80,
-        "number_of_commits": 1453,
-        "age_days": 1669,
-        "loc_info": {
-            "java": {
-                "files": "1344",
-                "code": "128344"
-            },
-            "sum": {
-                "files": "2716",
-                "code": "332046"
             }
         }
     },
@@ -1369,51 +1059,6 @@
             "sum": {
                 "files": "207",
                 "code": "20556"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594334854,
-        "name": "java-client-api",
-        "full_name": "jenkinsci/java-client-api",
-        "fork": false,
-        "clone_url": "https://github.com/jenkinsci/java-client-api.git",
-        "stargazers_count": 663,
-        "language": "Java",
-        "default_branch": "master",
-        "commit_sha": "5ac251377875083027d5e54c0e611f6b59deb335",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./jenkins-client-it-docker/Dockerfile",
-                "base_images": [
-                    "FROM jenkins:1.651.3"
-                ],
-                "cmds": [],
-                "entrypoints": [],
-                "args": []
-            }
-        ],
-        "build_tools": [
-            "Ant",
-            "Maven"
-        ],
-        "languages": {
-            "Java": 407733,
-            "Shell": 493,
-            "Dockerfile": 222
-        },
-        "contributors": 66,
-        "number_of_commits": 539,
-        "age_days": 2791,
-        "loc_info": {
-            "java": {
-                "files": "125",
-                "code": "8635"
-            },
-            "sum": {
-                "files": "148",
-                "code": "10871"
             }
         }
     },
@@ -1714,56 +1359,6 @@
         }
     },
     {
-        "current_timestamp": 1594335592,
-        "name": "openrouteservice",
-        "full_name": "GIScience/openrouteservice",
-        "fork": false,
-        "clone_url": "https://github.com/GIScience/openrouteservice.git",
-        "stargazers_count": 463,
-        "language": "Java",
-        "default_branch": "master",
-        "tag_name": "v6.1.1",
-        "commit_sha": "f5f118178da820573d08f84698b8fdbc0828ab22",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM openjdk:8-jdk"
-                ],
-                "cmds": [],
-                "entrypoints": [
-                    "ENTRYPOINT [\"/bin/bash\", \"/docker-entrypoint.sh\"]"
-                ],
-                "args": [
-                    "ARG APP_CONFIG=./docker/conf/app.config.sample",
-                    "ARG OSM_FILE=./docker/data/heidelberg.osm.gz"
-                ]
-            }
-        ],
-        "build_tools": [
-            "Maven"
-        ],
-        "languages": {
-            "Java": 3281235,
-            "Shell": 3617,
-            "Dockerfile": 2557
-        },
-        "contributors": 56,
-        "number_of_commits": 2037,
-        "age_days": 1031,
-        "loc_info": {
-            "java": {
-                "files": "565",
-                "code": "58511"
-            },
-            "sum": {
-                "files": "596",
-                "code": "60717"
-            }
-        }
-    },
-    {
         "current_timestamp": 1594335623,
         "name": "spring-boot-thin-launcher",
         "full_name": "spring-projects-experimental/spring-boot-thin-launcher",
@@ -2060,57 +1655,6 @@
         }
     },
     {
-        "current_timestamp": 1594336006,
-        "name": "scoold",
-        "full_name": "Erudika/scoold",
-        "fork": false,
-        "clone_url": "https://github.com/Erudika/scoold.git",
-        "stargazers_count": 368,
-        "language": "Java",
-        "default_branch": "master",
-        "tag_name": "1.39.3",
-        "commit_sha": "47e8223878b11daeb6c3fafc574edd72be2f2cd5",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM openjdk:8-jdk-alpine"
-                ],
-                "cmds": [
-                    "CMD sleep $BOOT_SLEEP && \\java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar scoold-*.jar"
-                ],
-                "entrypoints": [],
-                "args": []
-            }
-        ],
-        "build_tools": [
-            "Maven"
-        ],
-        "languages": {
-            "Java": 387464,
-            "JavaScript": 42209,
-            "CSS": 30529,
-            "HTML": 4725,
-            "Shell": 1877,
-            "Smarty": 1042,
-            "Dockerfile": 668
-        },
-        "contributors": 27,
-        "number_of_commits": 1016,
-        "age_days": 1251,
-        "loc_info": {
-            "java": {
-                "files": "46",
-                "code": "7886"
-            },
-            "sum": {
-                "files": "127",
-                "code": "19892"
-            }
-        }
-    },
-    {
         "current_timestamp": 1594336094,
         "name": "para",
         "full_name": "Erudika/para",
@@ -2270,114 +1814,6 @@
         }
     },
     {
-        "current_timestamp": 1594336201,
-        "name": "bigtop",
-        "full_name": "apache/bigtop",
-        "fork": false,
-        "clone_url": "https://github.com/apache/bigtop.git",
-        "stargazers_count": 330,
-        "language": "Java",
-        "default_branch": "master",
-        "commit_sha": "cd8903aab346aa38f83cb1a2177bf8a56fc8d1c4",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./bigtop-bigpetstore/bigpetstore-transaction-queue/Dockerfile",
-                "base_images": [
-                    "FROM gradle:5.6.3-jdk12 as build",
-                    "FROM openjdk:14-ea-12-jdk-alpine3.10"
-                ],
-                "cmds": [],
-                "entrypoints": [
-                    "ENTRYPOINT [\"java\", \"-jar\", \"bigpetstore-transaction-queue-all-1.0.jar\"]"
-                ],
-                "args": []
-            }
-        ],
-        "build_tools": [
-            "Maven",
-            "Gradle"
-        ],
-        "languages": {
-            "Java": 670985,
-            "Groovy": 639368,
-            "Shell": 594014,
-            "Python": 240919,
-            "Puppet": 181304,
-            "Scala": 85334,
-            "HTML": 55085,
-            "Makefile": 54104,
-            "Roff": 35443,
-            "Ruby": 14182,
-            "TSQL": 13064,
-            "CSS": 4822,
-            "PigLatin": 3196,
-            "Dockerfile": 2684,
-            "HiveQL": 1658,
-            "XSLT": 1323,
-            "CodeQL": 129
-        },
-        "contributors": 187,
-        "number_of_commits": 2530,
-        "age_days": 3260,
-        "loc_info": {
-            "java": {
-                "files": "215",
-                "code": "11269"
-            },
-            "sum": {
-                "files": "1291",
-                "code": "155382"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594336385,
-        "name": "sorryJava",
-        "full_name": "li24361/sorryJava",
-        "fork": false,
-        "clone_url": "https://github.com/li24361/sorryJava.git",
-        "stargazers_count": 299,
-        "language": "Java",
-        "default_branch": "master",
-        "commit_sha": "2324f68e70fe430fd80e85b036ef52bde525133b",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM openjdk:8-alpine"
-                ],
-                "cmds": [
-                    "CMD java -jar /opt/site/app.jar"
-                ],
-                "entrypoints": [],
-                "args": []
-            }
-        ],
-        "build_tools": [
-            "Maven"
-        ],
-        "languages": {
-            "Java": 11553,
-            "FreeMarker": 1501,
-            "Dockerfile": 682
-        },
-        "contributors": 3,
-        "number_of_commits": 73,
-        "age_days": 850,
-        "loc_info": {
-            "java": {
-                "files": "8",
-                "code": "260"
-            },
-            "sum": {
-                "files": "15",
-                "code": "1145"
-            }
-        }
-    },
-    {
         "current_timestamp": 1594336395,
         "name": "movie-database",
         "full_name": "tobiasflohre/movie-database",
@@ -2455,51 +1891,6 @@
             "sum": {
                 "files": "131",
                 "code": "4578"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594336516,
-        "name": "rundeck-ansible-plugin",
-        "full_name": "Batix/rundeck-ansible-plugin",
-        "fork": false,
-        "clone_url": "https://github.com/Batix/rundeck-ansible-plugin.git",
-        "stargazers_count": 287,
-        "language": "Java",
-        "default_branch": "master",
-        "tag_name": "3.1.1",
-        "commit_sha": "ee626c1c3f338edbc0893b99c870aef079d25b35",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM rundeck/rundeck:3.0.17"
-                ],
-                "cmds": [],
-                "entrypoints": [],
-                "args": []
-            }
-        ],
-        "build_tools": [
-            "Gradle"
-        ],
-        "languages": {
-            "Java": 157847,
-            "Dockerfile": 1241,
-            "Shell": 223
-        },
-        "contributors": 28,
-        "number_of_commits": 218,
-        "age_days": 1574,
-        "loc_info": {
-            "java": {
-                "files": "20",
-                "code": "3290"
-            },
-            "sum": {
-                "files": "31",
-                "code": "3805"
             }
         }
     },
@@ -2878,59 +2269,6 @@
         }
     },
     {
-        "current_timestamp": 1594337569,
-        "name": "credhub",
-        "full_name": "cloudfoundry-incubator/credhub",
-        "fork": false,
-        "clone_url": "https://github.com/cloudfoundry-incubator/credhub.git",
-        "stargazers_count": 176,
-        "language": "Java",
-        "default_branch": "master",
-        "commit_sha": "43a07997401048e3fff23796556855156198e9da",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM openjdk:8 as build",
-                    "FROM openjdk:8-jre as run"
-                ],
-                "cmds": [
-                    "CMD /app/setup_trust_store.sh && /app/start_server.sh"
-                ],
-                "entrypoints": [],
-                "args": []
-            }
-        ],
-        "build_tools": [
-            "Gradle"
-        ],
-        "languages": {
-            "Java": 1296047,
-            "Kotlin": 1075840,
-            "TSQL": 44569,
-            "Shell": 22882,
-            "Groovy": 3620,
-            "HTML": 1305,
-            "Dockerfile": 989,
-            "Vim Snippet": 593,
-            "PLSQL": 271
-        },
-        "contributors": 74,
-        "number_of_commits": 2322,
-        "age_days": 1535,
-        "loc_info": {
-            "java": {
-                "files": "232",
-                "code": "25703"
-            },
-            "sum": {
-                "files": "821",
-                "code": "53841"
-            }
-        }
-    },
-    {
         "current_timestamp": 1594337637,
         "name": "jenkins-client-plugin",
         "full_name": "openshift/jenkins-client-plugin",
@@ -2975,7 +2313,7 @@
             },
             "sum": {
                 "files": "1499",
-                "code": "654731"
+                "code": "654777"
             }
         }
     },
@@ -2990,7 +2328,7 @@
         "default_branch": "master",
         "tag_name": "v2.0.0",
         "commit_sha": "b84034550cfaf5ce20d84c4200f736ad73beb806",
-        "number_of_dockerfiles": 8,
+        "number_of_dockerfiles": 7,
         "info_from_dockerfiles": [
             {
                 "path": "./examples/ruby/Dockerfile",
@@ -3006,16 +2344,6 @@
                 "base_images": [
                     "FROM ubuntu:18.04 as builder",
                     "FROM jerverless/jerverless:latest"
-                ],
-                "cmds": [],
-                "entrypoints": [],
-                "args": []
-            },
-            {
-                "path": "./examples/golang/Dockerfile",
-                "base_images": [
-                    "FROM golang:1.11 as builder",
-                    "FROM jerverless:latest"
                 ],
                 "cmds": [],
                 "entrypoints": [],
@@ -3441,102 +2769,6 @@
         }
     },
     {
-        "current_timestamp": 1594338121,
-        "name": "standalone-hystrix-dashboard",
-        "full_name": "kennedyoliveira/standalone-hystrix-dashboard",
-        "fork": false,
-        "clone_url": "https://github.com/kennedyoliveira/standalone-hystrix-dashboard.git",
-        "stargazers_count": 146,
-        "language": "Java",
-        "default_branch": "master",
-        "commit_sha": "8db0c97e0640dc51e24ea9823489d3f5559520b6",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./docker/Dockerfile",
-                "base_images": [
-                    "FROM kennedyoliveira/java8"
-                ],
-                "cmds": [],
-                "entrypoints": [
-                    "ENTRYPOINT exec java -jar $JVM_ARGS standalone-hystrix-dashboard-$STANDALONE_HYSTRIX_VERSION-all.jar"
-                ],
-                "args": []
-            }
-        ],
-        "build_tools": [
-            "Gradle"
-        ],
-        "languages": {
-            "Java": 40057,
-            "Shell": 106
-        },
-        "contributors": 2,
-        "number_of_commits": 52,
-        "age_days": 1534,
-        "loc_info": {
-            "java": {
-                "files": "11",
-                "code": "716"
-            },
-            "sum": {
-                "files": "23",
-                "code": "1294"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594338127,
-        "name": "db",
-        "full_name": "blobcity/db",
-        "fork": false,
-        "clone_url": "https://github.com/blobcity/db.git",
-        "stargazers_count": 146,
-        "language": "Java",
-        "default_branch": "master",
-        "tag_name": "1.7.10",
-        "commit_sha": "3e0e2d78725570f8c7695d07167694fb31ae2b85",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM blobcity/java8-ubuntu"
-                ],
-                "cmds": [
-                    "CMD [\"bin/blobcity.sh\"]"
-                ],
-                "entrypoints": [],
-                "args": []
-            }
-        ],
-        "build_tools": [
-            "Ant",
-            "Maven"
-        ],
-        "languages": {
-            "Java": 2672480,
-            "C++": 157121,
-            "C": 61776,
-            "Makefile": 6014,
-            "Shell": 2832,
-            "Dockerfile": 1035
-        },
-        "contributors": 8,
-        "number_of_commits": 336,
-        "age_days": 662,
-        "loc_info": {
-            "java": {
-                "files": "523",
-                "code": "41292"
-            },
-            "sum": {
-                "files": "612",
-                "code": "47352"
-            }
-        }
-    },
-    {
         "current_timestamp": 1594338154,
         "name": "etcd-viewer",
         "full_name": "nikfoundas/etcd-viewer",
@@ -3591,40 +2823,8 @@
         "default_branch": "dev",
         "tag_name": "2.1.0",
         "commit_sha": "0bffd4a6d7218303170b990874bce73dfa5b4b54",
-        "number_of_dockerfiles": 10,
+        "number_of_dockerfiles": 5,
         "info_from_dockerfiles": [
-            {
-                "path": "./cu-services/images/servers/tomcat-8/Dockerfile",
-                "base_images": [
-                    "FROM openjdk:8-jdk"
-                ],
-                "cmds": [
-                    "CMD [ \"run\" ]"
-                ],
-                "entrypoints": [
-                    "ENTRYPOINT [\"docker-entrypoint.sh\"]"
-                ],
-                "args": [
-                    "ARG TOMCAT_VERSION",
-                    "ARG TOMCAT_VERSION"
-                ]
-            },
-            {
-                "path": "./cu-services/images/servers/tomcat-85/Dockerfile",
-                "base_images": [
-                    "FROM openjdk:8-jdk"
-                ],
-                "cmds": [
-                    "CMD [ \"run\" ]"
-                ],
-                "entrypoints": [
-                    "ENTRYPOINT [\"docker-entrypoint.sh\"]"
-                ],
-                "args": [
-                    "ARG TOMCAT_VERSION",
-                    "ARG TOMCAT_VERSION"
-                ]
-            },
             {
                 "path": "./cu-services/images/servers/wildfly-9/Dockerfile",
                 "base_images": [
@@ -3658,22 +2858,6 @@
                 ]
             },
             {
-                "path": "./cu-services/images/servers/tomcat-9/Dockerfile",
-                "base_images": [
-                    "FROM openjdk:8-jdk"
-                ],
-                "cmds": [
-                    "CMD [ \"run\" ]"
-                ],
-                "entrypoints": [
-                    "ENTRYPOINT [\"docker-entrypoint.sh\"]"
-                ],
-                "args": [
-                    "ARG TOMCAT_VERSION",
-                    "ARG TOMCAT_VERSION"
-                ]
-            },
-            {
                 "path": "./cu-services/images/servers/wildfly-8/Dockerfile",
                 "base_images": [
                     "FROM openjdk:7"
@@ -3703,22 +2887,6 @@
                 "args": []
             },
             {
-                "path": "./cu-services/images/servers/tomcat-7/Dockerfile",
-                "base_images": [
-                    "FROM openjdk:8-jdk"
-                ],
-                "cmds": [
-                    "CMD [ \"run\" ]"
-                ],
-                "entrypoints": [
-                    "ENTRYPOINT [\"docker-entrypoint.sh\"]"
-                ],
-                "args": [
-                    "ARG TOMCAT_VERSION",
-                    "ARG TOMCAT_VERSION"
-                ]
-            },
-            {
                 "path": "./cu-services/images/servers/fatjar/Dockerfile",
                 "base_images": [
                     "FROM openjdk:8"
@@ -3728,22 +2896,6 @@
                     "ENTRYPOINT [\"/tini\", \"--\", \"/docker-entrypoint.sh\"]"
                 ],
                 "args": []
-            },
-            {
-                "path": "./cu-services/images/servers/tomcat-6/Dockerfile",
-                "base_images": [
-                    "FROM openjdk:7-jdk"
-                ],
-                "cmds": [
-                    "CMD [ \"run\" ]"
-                ],
-                "entrypoints": [
-                    "ENTRYPOINT [\"docker-entrypoint.sh\"]"
-                ],
-                "args": [
-                    "ARG TOMCAT_VERSION",
-                    "ARG TOMCAT_VERSION"
-                ]
             }
         ],
         "build_tools": [
@@ -3923,7 +3075,7 @@
         "default_branch": "master",
         "tag_name": "0.14.4.Final",
         "commit_sha": "0f1de397120aaaaa9ceacda7e3b5b7729c3e69c8",
-        "number_of_dockerfiles": 5,
+        "number_of_dockerfiles": 1,
         "info_from_dockerfiles": [
             {
                 "path": "./examples/polyglot-zipkin/java-wildfly-swarm/Dockerfile",
@@ -3932,50 +3084,6 @@
                 ],
                 "cmds": [
                     "CMD [\"java\", \"-jar\", \"target/hawkular-apm-example-zipkin-wildfly-swarm.jar\", \"-Dswarm.http.port=3003\"]"
-                ],
-                "entrypoints": [],
-                "args": []
-            },
-            {
-                "path": "./examples/vertx-opentracing/order-manager/Dockerfile",
-                "base_images": [
-                    "FROM openjdk:8-jdk"
-                ],
-                "cmds": [
-                    "CMD [\"java\", \"-jar\", \"hawkular-apm-examples-vertx-opentracing-order-manager-fat.jar\", \"-cluster\"]"
-                ],
-                "entrypoints": [],
-                "args": []
-            },
-            {
-                "path": "./examples/vertx-opentracing/order-log/Dockerfile",
-                "base_images": [
-                    "FROM openjdk:8-jdk"
-                ],
-                "cmds": [
-                    "CMD [\"java\", \"-jar\", \"hawkular-apm-examples-vertx-opentracing-order-log-fat.jar\", \"-cluster\"]"
-                ],
-                "entrypoints": [],
-                "args": []
-            },
-            {
-                "path": "./examples/vertx-opentracing/account-manager/Dockerfile",
-                "base_images": [
-                    "FROM openjdk:8-jdk"
-                ],
-                "cmds": [
-                    "CMD [\"java\", \"-jar\", \"hawkular-apm-examples-vertx-opentracing-account-manager-fat.jar\", \"-cluster\"]"
-                ],
-                "entrypoints": [],
-                "args": []
-            },
-            {
-                "path": "./examples/vertx-opentracing/inventory-manager/Dockerfile",
-                "base_images": [
-                    "FROM openjdk:8-jdk"
-                ],
-                "cmds": [
-                    "CMD [\"java\", \"-jar\", \"hawkular-apm-examples-vertx-opentracing-inventory-manager-fat.jar\", \"-cluster\"]"
                 ],
                 "entrypoints": [],
                 "args": []
@@ -4071,118 +3179,6 @@
             "sum": {
                 "files": "1549",
                 "code": "155063"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594338990,
-        "name": "delivery-pipeline-plugin",
-        "full_name": "Diabol/delivery-pipeline-plugin",
-        "fork": false,
-        "clone_url": "https://github.com/Diabol/delivery-pipeline-plugin.git",
-        "stargazers_count": 117,
-        "language": "Java",
-        "default_branch": "master",
-        "tag_name": "release-1.4.2",
-        "commit_sha": "49002f9f76ca8f664c1de1c0546011179f81a367",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM jenkins/jenkins:2.107.3-alpine"
-                ],
-                "cmds": [],
-                "entrypoints": [],
-                "args": []
-            }
-        ],
-        "build_tools": [
-            "Maven"
-        ],
-        "languages": {
-            "Java": 658324,
-            "JavaScript": 31826,
-            "CSS": 10620,
-            "HTML": 5716,
-            "Shell": 1367,
-            "Groovy": 1273,
-            "Dockerfile": 704
-        },
-        "contributors": 52,
-        "number_of_commits": 1064,
-        "age_days": 2576,
-        "loc_info": {
-            "java": {
-                "files": "151",
-                "code": "11832"
-            },
-            "sum": {
-                "files": "214",
-                "code": "14893"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594339068,
-        "name": "miso-lims",
-        "full_name": "miso-lims/miso-lims",
-        "fork": false,
-        "clone_url": "https://github.com/miso-lims/miso-lims.git",
-        "stargazers_count": 115,
-        "language": "Java",
-        "default_branch": "develop",
-        "tag_name": "v1.7.1",
-        "commit_sha": "5cec68d5949f4ccfec8c4309aeea899c50b930c4",
-        "has_modules": true,
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM maven:3.6.0-jdk-8 as builder",
-                    "FROM boxfuse/flyway:5.2.4-alpine as flyway-migration",
-                    "FROM tomcat:8.5.38-alpine as webapp"
-                ],
-                "cmds": [
-                    "CMD [\"catalina.sh\", \"run\"]"
-                ],
-                "entrypoints": [
-                    "ENTRYPOINT [\"/run-flyway\"]"
-                ],
-                "args": [
-                    "ARG MYSQL_JBDC_VERSION=8.0.15"
-                ]
-            }
-        ],
-        "build_tools": [
-            "Maven"
-        ],
-        "languages": {
-            "Java": 5224941,
-            "JavaScript": 1809387,
-            "TSQL": 238395,
-            "CSS": 60301,
-            "PLpgSQL": 25059,
-            "XSLT": 19123,
-            "SQLPL": 16995,
-            "Groovy": 4515,
-            "Shell": 4042,
-            "Dockerfile": 3076,
-            "HTML": 2171,
-            "PLSQL": 1180
-        },
-        "contributors": 21,
-        "number_of_commits": 4088,
-        "age_days": 2941,
-        "loc_info": {
-            "java": {
-                "files": "1332",
-                "code": "113856"
-            },
-            "sum": {
-                "files": "2266",
-                "code": "297871"
             }
         }
     },
@@ -4569,19 +3565,8 @@
         "language": "Java",
         "default_branch": "master",
         "commit_sha": "a1e0665af24b08f3930328b36e0ce5203030d4b0",
-        "number_of_dockerfiles": 2,
+        "number_of_dockerfiles": 1,
         "info_from_dockerfiles": [
-            {
-                "path": "./src/main/resources/org/jenkinsci/test/acceptance/docker/fixtures/ArtifactoryContainer/Dockerfile",
-                "base_images": [
-                    "FROM codingtony/java"
-                ],
-                "cmds": [
-                    "CMD [ \"/opt/artifactory/bin/artifactory.sh\" ]"
-                ],
-                "entrypoints": [],
-                "args": []
-            },
             {
                 "path": "./src/main/resources/org/jenkinsci/test/acceptance/docker/fixtures/Tomcat7Container/Dockerfile",
                 "base_images": [
@@ -4676,56 +3661,6 @@
         }
     },
     {
-        "current_timestamp": 1594339456,
-        "name": "build-info",
-        "full_name": "jfrog/build-info",
-        "fork": false,
-        "clone_url": "https://github.com/jfrog/build-info.git",
-        "stargazers_count": 104,
-        "language": "Java",
-        "default_branch": "master",
-        "tag_name": "build-info-gradle-extractor-4.4.12",
-        "commit_sha": "ba4de26fb4ac92a5db66be8a3a7acf469b96e70a",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./itest/src/test/groovy/docker/images/Dockerfile",
-                "base_images": [
-                    "FROM codingtony/java"
-                ],
-                "cmds": [
-                    "CMD [ \"/opt/artifactory/bin/artifactory.sh\" ]"
-                ],
-                "entrypoints": [],
-                "args": []
-            }
-        ],
-        "build_tools": [
-            "Ant",
-            "Maven",
-            "Gradle"
-        ],
-        "languages": {
-            "Java": 1339495,
-            "Groovy": 60640,
-            "HTML": 1529,
-            "Go": 198
-        },
-        "contributors": 85,
-        "number_of_commits": 2353,
-        "age_days": 3425,
-        "loc_info": {
-            "java": {
-                "files": "201",
-                "code": "16272"
-            },
-            "sum": {
-                "files": "353",
-                "code": "24193"
-            }
-        }
-    },
-    {
         "current_timestamp": 1594339480,
         "name": "cerberus-source",
         "full_name": "cerberustesting/cerberus-source",
@@ -4736,7 +3671,7 @@
         "default_branch": "master",
         "tag_name": "cerberus-testing-4.7",
         "commit_sha": "793231f76918f821de95487a0e1ceda946a9fef3",
-        "number_of_dockerfiles": 13,
+        "number_of_dockerfiles": 6,
         "info_from_dockerfiles": [
             {
                 "path": "./docker/images/cerberus-as-tomcat/4.6/Dockerfile",
@@ -4788,97 +3723,6 @@
                     "ARG MYSQL_JAVA_CONNECTOR_VERSION=5.1.47",
                     "ARG MYSQL_JAVA_CONNECTOR_NAME=mysql-connector-java-${MYSQL_JAVA_CONNECTOR_VERSION}"
                 ]
-            },
-            {
-                "path": "./docker/images/cerberus-as-glassfish/1.1.4/Dockerfile",
-                "base_images": [
-                    "FROM glassfish:4.1"
-                ],
-                "cmds": [
-                    "CMD ${ASADMIN} start-domain --verbose ${GLASSFISH_DOMAIN}"
-                ],
-                "entrypoints": [
-                    "ENTRYPOINT [\"/entrypoint.sh\"]"
-                ],
-                "args": []
-            },
-            {
-                "path": "./docker/images/cerberus-as-glassfish/1.1.5/Dockerfile",
-                "base_images": [
-                    "FROM glassfish:4.1"
-                ],
-                "cmds": [
-                    "CMD asadmin --user ${GLASSFISH_ADMIN_USER} --passwordfile /tmp/glassfish_admin_password.txt start-domain --verbose ${GLASSFISH_DOMAIN}"
-                ],
-                "entrypoints": [
-                    "ENTRYPOINT [\"/entrypoint.sh\"]"
-                ],
-                "args": []
-            },
-            {
-                "path": "./docker/images/cerberus-as-glassfish/1.1.8/Dockerfile",
-                "base_images": [
-                    "FROM glassfish:4.1"
-                ],
-                "cmds": [
-                    "CMD asadmin --user ${GLASSFISH_ADMIN_USER} --passwordfile /tmp/glassfish_admin_password.txt start-domain --verbose ${GLASSFISH_DOMAIN}"
-                ],
-                "entrypoints": [
-                    "ENTRYPOINT [\"/entrypoint.sh\"]"
-                ],
-                "args": []
-            },
-            {
-                "path": "./docker/images/cerberus-as-glassfish/1.1.7/Dockerfile",
-                "base_images": [
-                    "FROM glassfish:4.1"
-                ],
-                "cmds": [
-                    "CMD asadmin --user ${GLASSFISH_ADMIN_USER} --passwordfile /tmp/glassfish_admin_password.txt start-domain --verbose ${GLASSFISH_DOMAIN}"
-                ],
-                "entrypoints": [
-                    "ENTRYPOINT [\"/entrypoint.sh\"]"
-                ],
-                "args": []
-            },
-            {
-                "path": "./docker/images/cerberus-as-glassfish/1.1.3/Dockerfile",
-                "base_images": [
-                    "FROM glassfish:4.1"
-                ],
-                "cmds": [
-                    "CMD ${ASADMIN} start-domain --verbose ${GLASSFISH_DOMAIN}"
-                ],
-                "entrypoints": [
-                    "ENTRYPOINT [\"/entrypoint.sh\"]"
-                ],
-                "args": []
-            },
-            {
-                "path": "./docker/images/cerberus-as-glassfish/1.1.6/Dockerfile",
-                "base_images": [
-                    "FROM glassfish:4.1"
-                ],
-                "cmds": [
-                    "CMD asadmin --user ${GLASSFISH_ADMIN_USER} --passwordfile /tmp/glassfish_admin_password.txt start-domain --verbose ${GLASSFISH_DOMAIN}"
-                ],
-                "entrypoints": [
-                    "ENTRYPOINT [\"/entrypoint.sh\"]"
-                ],
-                "args": []
-            },
-            {
-                "path": "./docker/images/cerberus-as-glassfish/1.1.3.1/Dockerfile",
-                "base_images": [
-                    "FROM glassfish:4.1"
-                ],
-                "cmds": [
-                    "CMD ${ASADMIN} start-domain --verbose ${GLASSFISH_DOMAIN}"
-                ],
-                "entrypoints": [
-                    "ENTRYPOINT [\"/entrypoint.sh\"]"
-                ],
-                "args": []
             },
             {
                 "path": "./docker/images/cerberus-as-tomcat-keycloak/4.6/Dockerfile",
@@ -5022,85 +3866,8 @@
         "default_branch": "master",
         "tag_name": "dc3.release.1.0.0",
         "commit_sha": "fa50be2e28a1d74d388abb1adc8cbad98f4dc7c7",
-        "number_of_dockerfiles": 13,
+        "number_of_dockerfiles": 6,
         "info_from_dockerfiles": [
-            {
-                "path": "./dc3-driver/dc3-driver-listening-virtual/Dockerfile",
-                "base_images": [
-                    "FROM pnoker/alpine-java:1.8.251"
-                ],
-                "cmds": [
-                    "CMD java ${JAVA_OPS} -Djava.security.egd=file:/dev/./urandom -jar dc3-driver-listening-virtual.jar"
-                ],
-                "entrypoints": [],
-                "args": []
-            },
-            {
-                "path": "./dc3-driver/dc3-driver-opc-ua/Dockerfile",
-                "base_images": [
-                    "FROM pnoker/alpine-java:1.8.251"
-                ],
-                "cmds": [
-                    "CMD java ${JAVA_OPS} -Djava.security.egd=file:/dev/./urandom -jar dc3-driver-opc-ua.jar"
-                ],
-                "entrypoints": [],
-                "args": []
-            },
-            {
-                "path": "./dc3-driver/dc3-driver-virtual/Dockerfile",
-                "base_images": [
-                    "FROM pnoker/alpine-java:1.8.251"
-                ],
-                "cmds": [
-                    "CMD java ${JAVA_OPS} -Djava.security.egd=file:/dev/./urandom -jar dc3-driver-virtual.jar"
-                ],
-                "entrypoints": [],
-                "args": []
-            },
-            {
-                "path": "./dc3-driver/dc3-driver-modbus-tcp/Dockerfile",
-                "base_images": [
-                    "FROM pnoker/alpine-java:1.8.251"
-                ],
-                "cmds": [
-                    "CMD java ${JAVA_OPS} -Djava.security.egd=file:/dev/./urandom -jar dc3-driver-modbus-tcp.jar"
-                ],
-                "entrypoints": [],
-                "args": []
-            },
-            {
-                "path": "./dc3-driver/dc3-driver-plcs7/Dockerfile",
-                "base_images": [
-                    "FROM pnoker/alpine-java:1.8.251"
-                ],
-                "cmds": [
-                    "CMD java ${JAVA_OPS} -Djava.security.egd=file:/dev/./urandom -jar dc3-driver-plcs7.jar"
-                ],
-                "entrypoints": [],
-                "args": []
-            },
-            {
-                "path": "./dc3-driver/dc3-driver-opc-da/Dockerfile",
-                "base_images": [
-                    "FROM pnoker/alpine-java:1.8.251"
-                ],
-                "cmds": [
-                    "CMD java ${JAVA_OPS} -Djava.security.egd=file:/dev/./urandom -jar dc3-driver-opc-da.jar"
-                ],
-                "entrypoints": [],
-                "args": []
-            },
-            {
-                "path": "./dc3-driver/dc3-driver-mqtt/Dockerfile",
-                "base_images": [
-                    "FROM pnoker/alpine-java:1.8.251"
-                ],
-                "cmds": [
-                    "CMD java ${JAVA_OPS} -Djava.security.egd=file:/dev/./urandom -jar dc3-driver-mqtt.jar"
-                ],
-                "entrypoints": [],
-                "args": []
-            },
             {
                 "path": "./dc3-center/dc3-auth/Dockerfile",
                 "base_images": [
