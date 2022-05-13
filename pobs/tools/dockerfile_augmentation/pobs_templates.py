@@ -36,10 +36,10 @@ COPY ./pobs_files/ /
 def set_env():
     scripts = """
 # set up environment variables
-ENV POBS_SERVICE_NAME=app
-ENV POBS_APPLICATION_PACKAGES=
-ENV POBS_APM_SERVER=http://172.17.0.1:8200
-ENV JAVA_TOOL_OPTIONS "$JAVA_TOOL_OPTIONS -javaagent:/home/elastic/elastic-apm-agent-1.30.1.jar -Delastic.apm.service_name=$POBS_SERVICE_NAME -Delastic.apm.application_packages=$POBS_APPLICATION_PACKAGES -Delastic.apm.log_ecs_reformatting=OVERRIDE -Delastic.apm.server_url=$POBS_APM_SERVER"
+ENV ELASTIC_APM_SERVICE_NAME=app
+ENV ELASTIC_APM_APPLICATION_PACKAGES=
+ENV ELASTIC_APM_SERVER_URL=http://172.17.0.1:8200
+ENV JAVA_TOOL_OPTIONS "$JAVA_TOOL_OPTIONS -javaagent:/home/elastic/elastic-apm-agent-1.30.1.jar -Delastic.apm.log_ecs_reformatting=OVERRIDE"
 ENV JAVA_OPTS "$JAVA_OPTS -noverify"
 """
     return scripts
