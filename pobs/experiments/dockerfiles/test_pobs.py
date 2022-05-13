@@ -4,6 +4,7 @@
 import os, time, json, tempfile, subprocess, signal, re
 import logging
 import numpy
+import elasticsearch
 from influxdb import InfluxDBClient
 from optparse import OptionParser, OptionGroup
 
@@ -12,10 +13,18 @@ OPTIONS = None
 AUGMENTER_WORKDIR = "../../tools/dockerfile_augmentation"
 CMD_TRANSFORM_DOCKERFILE = "python ./dockerfile_augmenter.py -f %s -o %s" # path to the Dockerfile and output folder
 CMD_BUILD_IMAGE = "docker build -t %s -f %s ." # tag name and Dockerfile path
-CMD_RUN_APPLICATION = "docker run --rm --name %s --cap-add=SYS_PTRACE %s-pobs:%d" # give the project name and the index of the dockerfile
-CLEAN_CONTAINERS_SINCE = "musing_aryabhata" # give a container name after which the created containers will be removed
+CMD_RUN_APPLICATION = "docker run --rm --name %s --cap-add=SYS_PTRACE -e ELASTIC_APM_SERVICE_NAME=%s %s-pobs:%d" # give the project name and the index of the dockerfile
+CLEAN_CONTAINERS_SINCE = "elastic_filebeat_1" # give a container name after which the created containers will be removed
 DBCLIENT = InfluxDBClient("localhost", 8086, "root", "root", "cadvisor")
 os.environ["TMPDIR"] = "/tmp" # change it if you need to use another path to create temporary files
+
+# Elasticsearch
+ELASTIC_HOST = "https://localhost:9200"
+ELASTIC_CERT_PATH = "path/to/elasticsearch/certs/ca/ca.crt"
+ELASTIC_USERNAME = "elastic"
+ELASTIC_PASSWORD = "changeme"
+ELASTIC_LOG_INDEX = "log_index_name"
+ELASTIC_APM_INDEX = "apm_index_name"
 
 def parse_options():
     usage = r'usage: python3 %prog [options] -d /path/to/json-data-set.json'
@@ -106,11 +115,41 @@ def run_original_image(image_name):
 
         return (stdoutdata.decode("utf-8"), stderrdata.decode("utf-8"), exit_code, continuously_running, java_process_detected, cpu_and_memory_usage)
 
+def query_elasticsearch(container_name):
+    # Create the client instance
+    client = elasticsearch.Elasticsearch(
+        ELASTIC_HOST,
+        ca_certs=ELASTIC_CERT_PATH,
+        basic_auth=(ELASTIC_USERNAME, ELASTIC_PASSWORD)
+    )
+
+    syscall_monitor_enabled = False
+    apm_agent_attached = False
+
+    try:
+        resp = client.search(index=ELASTIC_LOG_INDEX, size=10000, query={"match": {"container.name":container_name}})
+        for hit in resp['hits']['hits']:
+            log_message = hit["_source"]["message"]
+            if log_message.startswith("[pid"): syscall_monitor_enabled = True
+            if "Starting Elastic APM 1.30.1" in log_message: apm_agent_attached = True
+            if syscall_monitor_enabled and apm_agent_attached: break
+    except elasticsearch.NotFoundError as err:
+        logging.info("query logs from elasticsearch for container %s failed"%container_name)
+
+    try:
+        resp = client.search(index=ELASTIC_APM_INDEX, query={"match": {"service.name":container_name}})
+        if resp["hits"]["total"]["value"] > 0:
+            apm_agent_attached = True
+    except elasticsearch.NotFoundError as err:
+        logging.info("query apm metrics from elasticsearch for container %s failed"%container_name)
+
+    return syscall_monitor_enabled, apm_agent_attached
+
 def test_application(project_name, image_index):
     with tempfile.NamedTemporaryFile(mode="w+b") as stdout_f, tempfile.NamedTemporaryFile(mode="w+b") as stderr_f:
         continuously_running = False
         container_name = "run_pobs_%s_%d"%(project_name, image_index)
-        p = subprocess.Popen(CMD_RUN_APPLICATION%(container_name, project_name, image_index), stdout=stdout_f.fileno(), stderr=stderr_f.fileno(), close_fds=True, shell=True)
+        p = subprocess.Popen(CMD_RUN_APPLICATION%(container_name, container_name, project_name, image_index), stdout=stdout_f.fileno(), stderr=stderr_f.fileno(), close_fds=True, shell=True)
         try:
             exit_code = p.wait(timeout=120)
         except subprocess.TimeoutExpired as err:
@@ -123,15 +162,8 @@ def test_application(project_name, image_index):
         stdoutdata = stdout_f.read()
         stderrdata = stderr_f.read()
 
-        syscall_monitor_enabled = False
-        apm_agent_attached = False
-        stdout = stdoutdata.decode("utf-8")
-        if "system call monitor started" in stdout:
-            syscall_monitor_enabled = True
-        if "Starting Elastic APM 1.30.1" in stdout:
-            apm_agent_attached = True
-
         cpu_and_memory_usage = cadvisor_metrics(container_name, "1m")
+        syscall_monitor_enabled, apm_agent_attached = query_elasticsearch(container_name)
 
         return (syscall_monitor_enabled, apm_agent_attached, stdoutdata.decode("utf-8"), stderrdata.decode("utf-8"), exit_code, continuously_running, cpu_and_memory_usage)
 
@@ -268,9 +300,11 @@ def evaluate_project(project):
 
                                 if syscall_monitor_enabled and apm_agent_attached and continuously_running:
                                     dockerfile["pobs_application_run"] = "successful"
+                                    logging.info("pobs_application_run succeeded")
                                     project["is_able_to_run"].append(fileindex)
                                 else:
                                     dockerfile["pobs_application_run"] = "failed"
+                                    logging.info("pobs_application_run failed, syscall_monitor_enabled: %s, apm_agent_attached: %s, continuously_running: %s"%(syscall_monitor_enabled, apm_agent_attached, continuously_running))
                                     dump_logs(stdout, stderr, "./logs/app-run/", "%s_%d_apprun"%(project_full_name, fileindex))
                 fileindex = fileindex + 1
                 os.system("docker stop $(docker ps -q --filter since=%s)"%CLEAN_CONTAINERS_SINCE) # stop all experiment-related containers first
