@@ -82,7 +82,7 @@ def run_original_image(image_name):
         try:
             exit_code = p.wait(timeout=120)
         except subprocess.TimeoutExpired as err:
-            exit_code = 0 # if the container runs for 60 seconds, it is considered as a successful run
+            exit_code = 0 # if the container runs for 120 seconds, it is considered as a successful run
             continuously_running = True
 
             # check if there is a java process running in the container
@@ -114,7 +114,7 @@ def test_application(project_name, image_index):
         try:
             exit_code = p.wait(timeout=120)
         except subprocess.TimeoutExpired as err:
-            exit_code = 0 # if the container runs for 60 seconds, it is considered as a successful run
+            exit_code = 0 # if the container runs for 120 seconds, it is considered as a successful run
             continuously_running = True
         stdout_f.flush()
         stderr_f.flush()
@@ -217,7 +217,7 @@ def evaluate_project(project):
                 image_name = project_name + ":%d"%fileindex
                 stdout, stderr, exitcode, execution_time = run_command(CMD_BUILD_IMAGE%(image_name, filename), dirname)
                 if exitcode != 0:
-                    dockerfile["ori_application_build"] = "failed"
+                    dockerfile["ori_build"] = "failed"
                     dump_logs(stdout, stderr, "./logs/ori_build/", "%s_%d_ori_build"%(project_full_name, fileindex))
                     logging.info("The original dockerfile can not be built: %s"%dockerfile["path"])
                 else:
@@ -225,8 +225,8 @@ def evaluate_project(project):
                     dockerfile["ori_build_execution_time"] = execution_time
                     dockerfile["ori_build_image_size"] = get_image_size(image_name)
 
-                    # check if the original docker image can be run for 1 min, and calculate the performance
-                    logging.info("Begin to check if the original docker image can be run for 1 min, with a java process detected")
+                    # check if the original docker image can be run for 2 mins, and calculate the performance
+                    logging.info("Begin to check if the original docker image can be run for 2 mins, with a java process detected")
                     stdout, stderr, exitcode, continuously_running, java_process_detected, cpu_and_memory_usage = run_original_image(image_name)
                     logging.info("ori_application_run, exitcode: %d, continuously: %s, java: %s"%(exitcode, continuously_running, java_process_detected))
                     dockerfile["ori_application_run_exitcode"] = exitcode
