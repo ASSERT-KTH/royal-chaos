@@ -69,6 +69,8 @@ def get_template_contents(username, s6_installed, package_manager, ori_entrypoin
     if username != "root":
         # add a CMD instruction so that s6-overlay can start up the application using a specific username
         contents.append('\nCMD ["/usr/bin/execlineb", "-P", "-c", "s6-setuidgid %s %s %s"]'%(username, ori_entrypoint, ori_cmd))
+    else:
+        contents.append('\nCMD ["/usr/bin/execlineb", "-P", "-c", "%s %s"]'%(ori_entrypoint, ori_cmd))
 
     contents.append(pobs_templates.footer())
 
@@ -123,7 +125,7 @@ def augment_image_from_dockerfile(ori_dockerfile, target_dockerfile_path, ori_do
 
         for line in original_content:
             if line.startswith("ENTRYPOINT"):
-                target.write(line.replace("ENTRYPOINT", "CMD"))
+                target.write(line.replace("ENTRYPOINT", "# ENTRYPOINT"))
             else:
                 target.write(line)
         target.write("\n")
