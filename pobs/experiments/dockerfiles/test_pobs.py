@@ -86,6 +86,7 @@ def run_original_image(image_name):
     with tempfile.NamedTemporaryFile(mode="w+b") as stdout_f, tempfile.NamedTemporaryFile(mode="w+b") as stderr_f:
         continuously_running = False
         java_process_detected = False
+        agent_exists = False
         container_name = "run_original_%s"%image_name.replace(":", "_")
         p = subprocess.Popen("docker run --rm --name %s %s"%(container_name, image_name), stdout=stdout_f.fileno(), stderr=stderr_f.fileno(), close_fds=True, shell=True)
         try:
@@ -94,10 +95,11 @@ def run_original_image(image_name):
             exit_code = 0 # if the container runs for 120 seconds, it is considered as a successful run
             continuously_running = True
 
-            # check if there is a java process running in the container
+            # check if there is a java process running in the container, also check if there is any java agent attached
             try:
-                top_output = subprocess.check_output("docker top %s -C java"%container_name, shell=True).decode("utf-8")
+                top_output = subprocess.check_output("docker top %s -o pid,args -C java"%container_name, shell=True).decode("utf-8")
                 if "java" in top_output: java_process_detected = True
+                if "-javaagent" in top_output or "-agentpath" in top_output: agent_exists = True
             except subprocess.TimeoutExpired as err:
                 logging.info(err.output)
 
@@ -113,7 +115,7 @@ def run_original_image(image_name):
 
         cpu_and_memory_usage = cadvisor_metrics(container_name, "1m")
 
-        return (stdoutdata.decode("utf-8"), stderrdata.decode("utf-8"), exit_code, continuously_running, java_process_detected, cpu_and_memory_usage)
+        return (stdoutdata.decode("utf-8"), stderrdata.decode("utf-8"), exit_code, continuously_running, java_process_detected, agent_exists, cpu_and_memory_usage)
 
 def query_elasticsearch(container_name):
     # Create the client instance
@@ -259,11 +261,12 @@ def evaluate_project(project):
 
                     # check if the original docker image can be run for 2 mins, and calculate the performance
                     logging.info("Begin to check if the original docker image can be run for 2 mins, with a java process detected")
-                    stdout, stderr, exitcode, continuously_running, java_process_detected, cpu_and_memory_usage = run_original_image(image_name)
-                    logging.info("ori_application_run, exitcode: %d, continuously: %s, java: %s"%(exitcode, continuously_running, java_process_detected))
+                    stdout, stderr, exitcode, continuously_running, java_process_detected, agent_exists, cpu_and_memory_usage = run_original_image(image_name)
+                    logging.info("ori_application_run, exitcode: %d, continuously: %s, java: %s, agent: %s"%(exitcode, continuously_running, java_process_detected, agent_exists))
                     dockerfile["ori_application_run_exitcode"] = exitcode
                     dockerfile["ori_application_run_continuously"] = continuously_running
                     dockerfile["ori_application_run_java"] = java_process_detected
+                    dockerfile["ori_application_run_agent_exists"] = agent_exists
                     dockerfile["ori_application_run_metrics"] = cpu_and_memory_usage
 
                     if continuously_running and java_process_detected:
