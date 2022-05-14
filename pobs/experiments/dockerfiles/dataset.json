@@ -690,58 +690,6 @@
         }
     },
     {
-        "current_timestamp": 1594334113,
-        "name": "iri",
-        "full_name": "iotaledger/iri",
-        "fork": false,
-        "clone_url": "https://github.com/iotaledger/iri.git",
-        "stargazers_count": 1187,
-        "language": "Java",
-        "default_branch": "dev",
-        "tag_name": "v1.8.6-RELEASE",
-        "commit_sha": "a3e9022d3616046ba6e7fa7048dd121d4a898fa9",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM iotacafe/maven:3.5.4.oracle8u181.1.webupd8.1.1-1@sha256:5e30eb28d778a65af2498bf1b7ef594adf046d44a8e4f7b32b326d8d10626e93 as local_stage_build",
-                    "FROM iotacafe/java:oracle8u181.1.webupd8.1-1@sha256:21b0fb1e5b5be7cd239a742238f346e076a46dc0003670cd50f079780288773f"
-                ],
-                "cmds": [],
-                "entrypoints": [
-                    "ENTRYPOINT [ \"/entrypoint.sh\" ]"
-                ],
-                "args": []
-            }
-        ],
-        "build_tools": [
-            "Maven"
-        ],
-        "languages": {
-            "Java": 2268569,
-            "Python": 72609,
-            "Gherkin": 23282,
-            "Standard ML": 14103,
-            "Shell": 4608,
-            "Dockerfile": 3996,
-            "JavaScript": 1440
-        },
-        "contributors": 72,
-        "number_of_commits": 2699,
-        "age_days": 1353,
-        "loc_info": {
-            "java": {
-                "files": "351",
-                "code": "26224"
-            },
-            "sum": {
-                "files": "419",
-                "code": "30900"
-            }
-        }
-    },
-    {
         "current_timestamp": 1594334213,
         "name": "grobid",
         "full_name": "kermitt2/grobid",
@@ -2269,55 +2217,6 @@
         }
     },
     {
-        "current_timestamp": 1594337637,
-        "name": "jenkins-client-plugin",
-        "full_name": "openshift/jenkins-client-plugin",
-        "fork": false,
-        "clone_url": "https://github.com/openshift/jenkins-client-plugin.git",
-        "stargazers_count": 172,
-        "language": "Java",
-        "default_branch": "master",
-        "commit_sha": "3bd3894ea9c1ea8ee68cbc8482449eddd77d043b",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM quay.io/openshift/origin-jenkins-agent-maven:v4.0 AS builder",
-                    "FROM quay.io/openshift/origin-jenkins:v4.0"
-                ],
-                "cmds": [],
-                "entrypoints": [],
-                "args": []
-            }
-        ],
-        "build_tools": [
-            "Maven"
-        ],
-        "languages": {
-            "Java": 95664,
-            "Groovy": 75390,
-            "Go": 30485,
-            "HTML": 2608,
-            "Shell": 1711,
-            "Dockerfile": 671,
-            "Makefile": 113
-        },
-        "contributors": 29,
-        "number_of_commits": 369,
-        "age_days": 1281,
-        "loc_info": {
-            "java": {
-                "files": "21",
-                "code": "2009"
-            },
-            "sum": {
-                "files": "1499",
-                "code": "654777"
-            }
-        }
-    },
-    {
         "current_timestamp": 1594337713,
         "name": "jerverless",
         "full_name": "jerverless/jerverless",
@@ -3065,58 +2964,6 @@
         }
     },
     {
-        "current_timestamp": 1594338441,
-        "name": "hawkular-apm",
-        "full_name": "hawkular/hawkular-apm",
-        "fork": false,
-        "clone_url": "https://github.com/hawkular/hawkular-apm.git",
-        "stargazers_count": 131,
-        "language": "Java",
-        "default_branch": "master",
-        "tag_name": "0.14.4.Final",
-        "commit_sha": "0f1de397120aaaaa9ceacda7e3b5b7729c3e69c8",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./examples/polyglot-zipkin/java-wildfly-swarm/Dockerfile",
-                "base_images": [
-                    "FROM maven:3.3.9-jdk-8"
-                ],
-                "cmds": [
-                    "CMD [\"java\", \"-jar\", \"target/hawkular-apm-example-zipkin-wildfly-swarm.jar\", \"-Dswarm.http.port=3003\"]"
-                ],
-                "entrypoints": [],
-                "args": []
-            }
-        ],
-        "build_tools": [
-            "Maven"
-        ],
-        "languages": {
-            "Java": 2334955,
-            "TypeScript": 124064,
-            "HTML": 76677,
-            "CSS": 62273,
-            "JavaScript": 15108,
-            "Shell": 11350,
-            "Batchfile": 5271,
-            "XSLT": 2230
-        },
-        "contributors": 17,
-        "number_of_commits": 1659,
-        "age_days": 1812,
-        "loc_info": {
-            "java": {
-                "files": "529",
-                "code": "42303"
-            },
-            "sum": {
-                "files": "756",
-                "code": "60576"
-            }
-        }
-    },
-    {
         "current_timestamp": 1594338448,
         "name": "openremote",
         "full_name": "openremote/openremote",
@@ -3229,55 +3076,6 @@
             "sum": {
                 "files": "66",
                 "code": "4746"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594339152,
-        "name": "Orienteer",
-        "full_name": "OrienteerBAP/Orienteer",
-        "fork": false,
-        "clone_url": "https://github.com/OrienteerBAP/Orienteer.git",
-        "stargazers_count": 112,
-        "language": "Java",
-        "default_branch": "master",
-        "tag_name": "v1.4",
-        "commit_sha": "651a22b5d8e5a05c18b24ab80fbf62f78546f3f1",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM maven:3.5.0-jdk-8-alpine"
-                ],
-                "cmds": [
-                    "CMD [\"java\",  \"-server\", \"-DORIENTDB_HOME=/app/runtime\", \"-Dorientdb.url=plocal:databases/Orienteer\", \"-Dorienteer.loader.repository.local=/root/.m2/repository\", \"-jar\", \"../jetty-runner.jar\", \"../active.war\"]"
-                ],
-                "entrypoints": [],
-                "args": []
-            }
-        ],
-        "build_tools": [
-            "Maven"
-        ],
-        "languages": {
-            "Java": 2455334,
-            "JavaScript": 216379,
-            "HTML": 54233,
-            "CSS": 12019,
-            "Dockerfile": 1111
-        },
-        "contributors": 13,
-        "number_of_commits": 2065,
-        "age_days": 2154,
-        "loc_info": {
-            "java": {
-                "files": "848",
-                "code": "43865"
-            },
-            "sum": {
-                "files": "1063",
-                "code": "55381"
             }
         }
     },
