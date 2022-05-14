@@ -1,0 +1,156 @@
+[s6-init] making user provided files available at /var/run/s6/etc...exited 0.
+[s6-init] ensuring user provided files have correct perms...exited 0.
+[fix-attrs.d] applying ownership & permissions fixes...
+[fix-attrs.d] done.
+[cont-init.d] executing container initialization scripts...
+[cont-init.d] done.
+[services.d] starting services
+system call monitor started
+[services.d] done.
+Waiting xvfb...
+Picked up JAVA_TOOL_OPTIONS: -javaagent:/home/elastic/elastic-apm-agent-1.30.1.jar
+[elastic-apm-agent] WARN WARNING: -Xverify:none and -noverify are not supported by the Elastic APM Java Agent. In an upcoming version, the agent will not start when these flags are set, unless the system property elastic.apm.disable_bootstrap_checks is set to true.
+PORT=5900
+system call monitor started
+2022-05-14 02:21:44,642 [main] INFO  co.elastic.apm.agent.util.JmxUtils - Found JVM-specific OperatingSystemMXBean interface: com.sun.management.OperatingSystemMXBean
+2022-05-14 02:21:45,247 [main] INFO  co.elastic.apm.agent.configuration.StartupInfo - Starting Elastic APM 1.30.1 as run_pobs_arquillian-cube_2 on Java 1.8.0_91 Runtime version: 1.8.0_91-8u91-b14-3ubuntu1~16.04.1-b14 VM version: 25.91-b14 (Oracle Corporation) Linux 5.4.0-1070-azure
+2022-05-14 02:21:45,248 [main] INFO  co.elastic.apm.agent.configuration.StartupInfo - service_name: 'run_pobs_arquillian-cube_2' (source: Environment Variables)
+2022-05-14 02:21:45,254 [main] INFO  co.elastic.apm.agent.configuration.StartupInfo - server_url: 'http://172.17.0.1:8200' (source: Environment Variables)
+2022-05-14 02:21:45,254 [main] WARN  co.elastic.apm.agent.configuration.StartupInfo - To enable all features and decrease startup time, please configure application_packages
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+2022-05-14 02:21:52,080 [main] INFO  co.elastic.apm.agent.impl.ElasticApmTracer - Tracer switched to RUNNING state
+2022-05-14 02:21:52,199 [elastic-apm-server-healthcheck] INFO  co.elastic.apm.agent.report.ApmServerHealthChecker - Elastic APM server is available: {  "build_date": "2021-11-04T13:10:15Z",  "build_sha": "0702551667e5319822d00dee613ea2a1501615bf",  "version": "7.15.2"}
+2022-05-14 02:21:52,297 [elastic-apm-remote-config-poller] INFO  co.elastic.apm.agent.configuration.ApmServerConfigurationSource - Received new configuration from APM Server: {}
+02:21:52.326 INFO - Launching a standalone Selenium Server
+system call monitor started
+02:21:52.562 INFO - Java: Oracle Corporation 25.91-b14
+02:21:52.562 INFO - OS: Linux 5.4.0-1070-azure amd64
+02:21:52.582 INFO - v2.53.1, with Core v2.53.1. Built from revision a36b8b1
+02:21:53.027 INFO - Driver provider org.openqa.selenium.ie.InternetExplorerDriver registration is skipped:
+registration capabilities Capabilities [{ensureCleanSession=true, browserName=internet explorer, version=, platform=WINDOWS}] does not match the current platform LINUX
+02:21:53.029 INFO - Driver provider org.openqa.selenium.edge.EdgeDriver registration is skipped:
+registration capabilities Capabilities [{browserName=MicrosoftEdge, version=, platform=WINDOWS}] does not match the current platform LINUX
+02:21:53.029 INFO - Driver class not found: com.opera.core.systems.OperaDriver
+02:21:53.030 INFO - Driver provider com.opera.core.systems.OperaDriver is not registered
+02:21:53.032 INFO - Driver provider org.openqa.selenium.safari.SafariDriver registration is skipped:
+registration capabilities Capabilities [{browserName=safari, version=, platform=MAC}] does not match the current platform LINUX
+02:21:53.034 INFO - Driver class not found: org.openqa.selenium.htmlunit.HtmlUnitDriver
+02:21:53.034 INFO - Driver provider org.openqa.selenium.htmlunit.HtmlUnitDriver is not registered
+system call monitor started
+02:21:53.348 INFO - RemoteWebDriver instances should connect to: http://127.0.0.1:4444/wd/hub
+02:21:53.348 INFO - Selenium Server is up and running
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started

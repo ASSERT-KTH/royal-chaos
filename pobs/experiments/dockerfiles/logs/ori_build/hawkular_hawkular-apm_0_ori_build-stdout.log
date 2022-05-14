@@ -1,0 +1,442 @@
+Sending build context to Docker daemon  40.45kB
+Step 1/9 : FROM maven:3.3.9-jdk-8
+ ---> 9997d8483b2f
+Step 2/9 : MAINTAINER Pavol Loffay <ploffay@redhat.com>
+ ---> Running in e7144f2d5d70
+Removing intermediate container e7144f2d5d70
+ ---> 14b4183ebdfe
+Step 3/9 : ENV APP_HOME /app/
+ ---> Running in 9473fc631d61
+Removing intermediate container 9473fc631d61
+ ---> 6b98929af544
+Step 4/9 : COPY pom.xml $APP_HOME
+ ---> 73d102a07fd8
+Step 5/9 : COPY src $APP_HOME/src
+ ---> 6a665afcf51f
+Step 6/9 : WORKDIR $APP_HOME
+ ---> Running in af981feaf789
+Removing intermediate container af981feaf789
+ ---> 17ac494a95b2
+Step 7/9 : RUN mvn package
+ ---> Running in fd0df7404ee2
+[INFO] Scanning for projects...
+Downloading: https://repo.maven.apache.org/maven2/org/wildfly/swarm/bom-all/2016.11.0/bom-all-2016.11.0.pom
+2/16 KB   3/16 KB   5/16 KB   6/16 KB   7/16 KB   9/16 KB   10/16 KB   11/16 KB   13/16 KB   14/16 KB   15/16 KB   16/16 KB   16/16 KB              Downloaded: https://repo.maven.apache.org/maven2/org/wildfly/swarm/bom-all/2016.11.0/bom-all-2016.11.0.pom (16 KB at 30.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/wildfly/swarm/parent/7/parent-7.pom
+2/5 KB     3/5 KB   5/5 KB   5/5 KB            Downloaded: https://repo.maven.apache.org/maven2/org/wildfly/swarm/parent/7/parent-7.pom (5 KB at 169.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/jboss-parent/20/jboss-parent-20.pom
+2/34 KB   3/34 KB   5/34 KB   6/34 KB   7/34 KB   9/34 KB   10/34 KB   11/34 KB   13/34 KB   14/34 KB   15/34 KB   16/34 KB   17/34 KB   19/34 KB   20/34 KB   21/34 KB   23/34 KB   24/34 KB   25/34 KB   27/34 KB   28/34 KB   29/34 KB   31/34 KB   32/34 KB   33/34 KB   34/34 KB              Downloaded: https://repo.maven.apache.org/maven2/org/jboss/jboss-parent/20/jboss-parent-20.pom (34 KB at 789.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/shrinkwrap-bom/1.2.6/shrinkwrap-bom-1.2.6.pom
+2/4 KB     3/4 KB   4/4 KB            Downloaded: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/shrinkwrap-bom/1.2.6/shrinkwrap-bom-1.2.6.pom (4 KB at 176.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-bom/2.0.0-alpha-9/shrinkwrap-descriptors-bom-2.0.0-alpha-9.pom
+4/6 KB   6/6 KB            Downloaded: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-bom/2.0.0-alpha-9/shrinkwrap-descriptors-bom-2.0.0-alpha-9.pom (6 KB at 301.1 KB/sec)
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Wildfly Swarm Example 0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+Downloading: https://repo.maven.apache.org/maven2/org/wildfly/swarm/wildfly-swarm-plugin/2016.11.0/wildfly-swarm-plugin-2016.11.0.pom
+4/4 KB            Downloaded: https://repo.maven.apache.org/maven2/org/wildfly/swarm/wildfly-swarm-plugin/2016.11.0/wildfly-swarm-plugin-2016.11.0.pom (4 KB at 150.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/wildfly/swarm/wildfly-swarm/2016.11.0/wildfly-swarm-2016.11.0.pom
+4/40 KB   8/40 KB   12/40 KB   16/40 KB   20/40 KB   24/40 KB   28/40 KB   32/40 KB   36/40 KB   40/40 KB              Downloaded: https://repo.maven.apache.org/maven2/org/wildfly/swarm/wildfly-swarm/2016.11.0/wildfly-swarm-2016.11.0.pom (40 KB at 1310.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/wildfly/wildfly-parent/10.1.0.Final/wildfly-parent-10.1.0.Final.pom
+4/274 KB   8/274 KB   12/274 KB   16/274 KB   20/274 KB   24/274 KB   28/274 KB   32/274 KB   36/274 KB   40/274 KB   44/274 KB   48/274 KB   52/274 KB   56/274 KB   60/274 KB   64/274 KB   68/274 KB   72/274 KB   76/274 KB   80/274 KB   84/274 KB   88/274 KB   92/274 KB   96/274 KB   100/274 KB   104/274 KB   108/274 KB   112/274 KB   116/274 KB   120/274 KB   124/274 KB   128/274 KB   132/274 KB   136/274 KB   140/274 KB   144/274 KB   148/274 KB   152/274 KB   156/274 KB   160/274 KB   164/274 KB   168/274 KB   172/274 KB   176/274 KB   180/274 KB   184/274 KB   188/274 KB   192/274 KB   196/274 KB   200/274 KB   204/274 KB   208/274 KB   212/274 KB   216/274 KB   220/274 KB   224/274 KB   228/274 KB   232/274 KB   236/274 KB   240/274 KB   244/274 KB   248/274 KB   252/274 KB   256/274 KB   260/274 KB   264/274 KB   268/274 KB   272/274 KB   274/274 KB                Downloaded: https://repo.maven.apache.org/maven2/org/wildfly/wildfly-parent/10.1.0.Final/wildfly-parent-10.1.0.Final.pom (274 KB at 1966.8 KB/sec)
+Downloading: http://repo.spring.io/libs-release-remote/org/wildfly/core/wildfly-core-parent/2.2.0.Final/wildfly-core-parent-2.2.0.Final.pom
+             Downloading: https://repository.jboss.org/nexus/content/groups/public-jboss/org/wildfly/core/wildfly-core-parent/2.2.0.Final/wildfly-core-parent-2.2.0.Final.pom
+             Downloading: http://repo.spring.io/plugins-release/org/wildfly/core/wildfly-core-parent/2.2.0.Final/wildfly-core-parent-2.2.0.Final.pom
+             Downloading: http://repository.jboss.org/nexus/content/groups/public/org/wildfly/core/wildfly-core-parent/2.2.0.Final/wildfly-core-parent-2.2.0.Final.pom
+             Downloading: https://repo.maven.apache.org/maven2/org/wildfly/core/wildfly-core-parent/2.2.0.Final/wildfly-core-parent-2.2.0.Final.pom
+4/70 KB      8/70 KB   12/70 KB   16/70 KB   20/70 KB   24/70 KB   28/70 KB   32/70 KB   36/70 KB   40/70 KB   44/70 KB   48/70 KB   52/70 KB   56/70 KB   60/70 KB   64/70 KB   68/70 KB   70/70 KB              Downloaded: https://repo.maven.apache.org/maven2/org/wildfly/core/wildfly-core-parent/2.2.0.Final/wildfly-core-parent-2.2.0.Final.pom (70 KB at 2908.0 KB/sec)
+Downloading: http://repo.spring.io/libs-release-remote/org/wildfly/arquillian/wildfly-arquillian-parent/1.0.2.Final/wildfly-arquillian-parent-1.0.2.Final.pom
+           Downloading: https://repository.jboss.org/nexus/content/groups/public-jboss/org/wildfly/arquillian/wildfly-arquillian-parent/1.0.2.Final/wildfly-arquillian-parent-1.0.2.Final.pom
+           Downloading: http://repo.spring.io/plugins-release/org/wildfly/arquillian/wildfly-arquillian-parent/1.0.2.Final/wildfly-arquillian-parent-1.0.2.Final.pom
+           Downloading: http://repository.jboss.org/nexus/content/groups/public/org/wildfly/arquillian/wildfly-arquillian-parent/1.0.2.Final/wildfly-arquillian-parent-1.0.2.Final.pom
+           Downloading: https://repo.maven.apache.org/maven2/org/wildfly/arquillian/wildfly-arquillian-parent/1.0.2.Final/wildfly-arquillian-parent-1.0.2.Final.pom
+4/17 KB    8/17 KB   12/17 KB   16/17 KB   17/17 KB              Downloaded: https://repo.maven.apache.org/maven2/org/wildfly/arquillian/wildfly-arquillian-parent/1.0.2.Final/wildfly-arquillian-parent-1.0.2.Final.pom (17 KB at 990.0 KB/sec)
+Downloading: http://repo.spring.io/libs-release-remote/org/jboss/jboss-parent/19/jboss-parent-19.pom
+           Downloading: https://repository.jboss.org/nexus/content/groups/public-jboss/org/jboss/jboss-parent/19/jboss-parent-19.pom
+           Downloading: http://repo.spring.io/plugins-release/org/jboss/jboss-parent/19/jboss-parent-19.pom
+           Downloading: http://repository.jboss.org/nexus/content/groups/public/org/jboss/jboss-parent/19/jboss-parent-19.pom
+           Downloading: https://repo.maven.apache.org/maven2/org/jboss/jboss-parent/19/jboss-parent-19.pom
+4/31 KB    8/31 KB   12/31 KB   16/31 KB   20/31 KB   24/31 KB   28/31 KB   31/31 KB              Downloaded: https://repo.maven.apache.org/maven2/org/jboss/jboss-parent/19/jboss-parent-19.pom (31 KB at 1931.1 KB/sec)
+Downloading: http://repo.spring.io/libs-release-remote/org/wildfly/core/wildfly-core-parent/1.0.1.Final/wildfly-core-parent-1.0.1.Final.pom
+           Downloading: https://repository.jboss.org/nexus/content/groups/public-jboss/org/wildfly/core/wildfly-core-parent/1.0.1.Final/wildfly-core-parent-1.0.1.Final.pom
+           Downloading: http://repo.spring.io/plugins-release/org/wildfly/core/wildfly-core-parent/1.0.1.Final/wildfly-core-parent-1.0.1.Final.pom
+           Downloading: http://repository.jboss.org/nexus/content/groups/public/org/wildfly/core/wildfly-core-parent/1.0.1.Final/wildfly-core-parent-1.0.1.Final.pom
+           Downloading: https://repo.maven.apache.org/maven2/org/wildfly/core/wildfly-core-parent/1.0.1.Final/wildfly-core-parent-1.0.1.Final.pom
+4/68 KB    8/68 KB   12/68 KB   16/68 KB   20/68 KB   24/68 KB   28/68 KB   32/68 KB   36/68 KB   40/68 KB   44/68 KB   48/68 KB   52/68 KB   56/68 KB   60/68 KB   64/68 KB   68/68 KB              Downloaded: https://repo.maven.apache.org/maven2/org/wildfly/core/wildfly-core-parent/1.0.1.Final/wildfly-core-parent-1.0.1.Final.pom (68 KB at 2325.1 KB/sec)
+Downloading: http://repo.spring.io/libs-release-remote/org/jboss/jboss-parent/16/jboss-parent-16.pom
+           Downloading: https://repository.jboss.org/nexus/content/groups/public-jboss/org/jboss/jboss-parent/16/jboss-parent-16.pom
+           Downloading: http://repo.spring.io/plugins-release/org/jboss/jboss-parent/16/jboss-parent-16.pom
+           Downloading: http://repository.jboss.org/nexus/content/groups/public/org/jboss/jboss-parent/16/jboss-parent-16.pom
+           Downloading: https://repo.maven.apache.org/maven2/org/jboss/jboss-parent/16/jboss-parent-16.pom
+4/31 KB    8/31 KB   12/31 KB   16/31 KB   20/31 KB   24/31 KB   28/31 KB   31/31 KB              Downloaded: https://repo.maven.apache.org/maven2/org/jboss/jboss-parent/16/jboss-parent-16.pom (31 KB at 1231.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/io/vertx/vertx-dependencies/3.3.3/vertx-dependencies-3.3.3.pom
+4/16 KB    8/16 KB   12/16 KB   16/16 KB              Downloaded: https://repo.maven.apache.org/maven2/io/vertx/vertx-dependencies/3.3.3/vertx-dependencies-3.3.3.pom (16 KB at 725.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/7/oss-parent-7.pom
+4/5 KB     5/5 KB            Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/7/oss-parent-7.pom (5 KB at 362.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/arquillian/arquillian-bom/1.1.10.Final/arquillian-bom-1.1.10.Final.pom
+4/11 KB   8/11 KB   11/11 KB              Downloaded: https://repo.maven.apache.org/maven2/org/jboss/arquillian/arquillian-bom/1.1.10.Final/arquillian-bom-1.1.10.Final.pom (11 KB at 649.3 KB/sec)
+Downloading: http://repo.spring.io/libs-release-remote/org/jboss/shrinkwrap/shrinkwrap-bom/1.2.2/shrinkwrap-bom-1.2.2.pom
+           Downloading: https://repository.jboss.org/nexus/content/groups/public-jboss/org/jboss/shrinkwrap/shrinkwrap-bom/1.2.2/shrinkwrap-bom-1.2.2.pom
+           Downloading: http://repo.spring.io/plugins-release/org/jboss/shrinkwrap/shrinkwrap-bom/1.2.2/shrinkwrap-bom-1.2.2.pom
+           Downloading: http://repository.jboss.org/nexus/content/groups/public/org/jboss/shrinkwrap/shrinkwrap-bom/1.2.2/shrinkwrap-bom-1.2.2.pom
+           Downloading: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/shrinkwrap-bom/1.2.2/shrinkwrap-bom-1.2.2.pom
+4/4 KB              Downloaded: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/shrinkwrap-bom/1.2.2/shrinkwrap-bom-1.2.2.pom (4 KB at 215.1 KB/sec)
+Downloading: http://repo.spring.io/libs-release-remote/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-bom/2.2.0/shrinkwrap-resolver-bom-2.2.0.pom
+         Downloading: https://repository.jboss.org/nexus/content/groups/public-jboss/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-bom/2.2.0/shrinkwrap-resolver-bom-2.2.0.pom
+         Downloading: http://repo.spring.io/plugins-release/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-bom/2.2.0/shrinkwrap-resolver-bom-2.2.0.pom
+         Downloading: http://repository.jboss.org/nexus/content/groups/public/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-bom/2.2.0/shrinkwrap-resolver-bom-2.2.0.pom
+         Downloading: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-bom/2.2.0/shrinkwrap-resolver-bom-2.2.0.pom
+4/6 KB   6/6 KB            Downloaded: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-bom/2.2.0/shrinkwrap-resolver-bom-2.2.0.pom (6 KB at 398.1 KB/sec)
+Downloading: http://repo.spring.io/libs-release-remote/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-bom/2.0.0-alpha-8/shrinkwrap-descriptors-bom-2.0.0-alpha-8.pom
+         Downloading: https://repository.jboss.org/nexus/content/groups/public-jboss/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-bom/2.0.0-alpha-8/shrinkwrap-descriptors-bom-2.0.0-alpha-8.pom
+         Downloading: http://repo.spring.io/plugins-release/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-bom/2.0.0-alpha-8/shrinkwrap-descriptors-bom-2.0.0-alpha-8.pom
+         Downloading: http://repository.jboss.org/nexus/content/groups/public/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-bom/2.0.0-alpha-8/shrinkwrap-descriptors-bom-2.0.0-alpha-8.pom
+         Downloading: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-bom/2.0.0-alpha-8/shrinkwrap-descriptors-bom-2.0.0-alpha-8.pom
+4/6 KB   6/6 KB            Downloaded: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-bom/2.0.0-alpha-8/shrinkwrap-descriptors-bom-2.0.0-alpha-8.pom (6 KB at 319.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/arquillian/extension/arquillian-drone-bom/2.0.1.Final/arquillian-drone-bom-2.0.1.Final.pom
+4/7 KB   7/7 KB            Downloaded: https://repo.maven.apache.org/maven2/org/jboss/arquillian/extension/arquillian-drone-bom/2.0.1.Final/arquillian-drone-bom-2.0.1.Final.pom (7 KB at 469.7 KB/sec)
+Downloading: http://repo.spring.io/libs-release-remote/org/jboss/arquillian/selenium/selenium-bom/2.53.1/selenium-bom-2.53.1.pom
+         Downloading: https://repository.jboss.org/nexus/content/groups/public-jboss/org/jboss/arquillian/selenium/selenium-bom/2.53.1/selenium-bom-2.53.1.pom
+         Downloading: http://repo.spring.io/plugins-release/org/jboss/arquillian/selenium/selenium-bom/2.53.1/selenium-bom-2.53.1.pom
+         Downloading: http://repository.jboss.org/nexus/content/groups/public/org/jboss/arquillian/selenium/selenium-bom/2.53.1/selenium-bom-2.53.1.pom
+         Downloading: https://repo.maven.apache.org/maven2/org/jboss/arquillian/selenium/selenium-bom/2.53.1/selenium-bom-2.53.1.pom
+4/6 KB   6/6 KB            Downloaded: https://repo.maven.apache.org/maven2/org/jboss/arquillian/selenium/selenium-bom/2.53.1/selenium-bom-2.53.1.pom (6 KB at 407.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/wildfly/swarm/wildfly-swarm-plugin/2016.11.0/wildfly-swarm-plugin-2016.11.0.jar
+4/65 KB   8/65 KB   12/65 KB   16/65 KB   20/65 KB   24/65 KB   28/65 KB   32/65 KB   36/65 KB   40/65 KB   44/65 KB   48/65 KB   52/65 KB   56/65 KB   60/65 KB   64/65 KB   65/65 KB              Downloaded: https://repo.maven.apache.org/maven2/org/wildfly/swarm/wildfly-swarm-plugin/2016.11.0/wildfly-swarm-plugin-2016.11.0.jar (65 KB at 1898.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.pom
+4/8 KB     8/8 KB            Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.pom (8 KB at 566.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/23/maven-plugins-23.pom
+4/9 KB   8/9 KB   9/9 KB            Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/23/maven-plugins-23.pom (9 KB at 691.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/22/maven-parent-22.pom
+4/30 KB   8/30 KB   12/30 KB   16/30 KB   20/30 KB   24/30 KB   28/30 KB   30/30 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/22/maven-parent-22.pom (30 KB at 1815.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/apache/11/apache-11.pom
+4/15 KB    8/15 KB   12/15 KB   15/15 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/apache/11/apache-11.pom (15 KB at 761.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.jar
+4/29 KB    8/29 KB   12/29 KB   16/29 KB   20/29 KB   24/29 KB   28/29 KB   29/29 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.jar (29 KB at 1372.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.1/maven-compiler-plugin-3.1.pom
+4/10 KB    8/10 KB   10/10 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.1/maven-compiler-plugin-3.1.pom (10 KB at 767.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/24/maven-plugins-24.pom
+4/11 KB    8/11 KB   11/11 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/24/maven-plugins-24.pom (11 KB at 285.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/23/maven-parent-23.pom
+4/32 KB    8/32 KB   12/32 KB   16/32 KB   20/32 KB   24/32 KB   28/32 KB   32/32 KB   32/32 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/23/maven-parent-23.pom (32 KB at 1871.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/apache/13/apache-13.pom
+4/14 KB    8/14 KB   12/14 KB   14/14 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/apache/13/apache-13.pom (14 KB at 852.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.1/maven-compiler-plugin-3.1.jar
+4/42 KB    8/42 KB   12/42 KB   16/42 KB   20/42 KB   24/42 KB   28/42 KB   32/42 KB   36/42 KB   40/42 KB   42/42 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.1/maven-compiler-plugin-3.1.jar (42 KB at 1906.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.12.4/maven-surefire-plugin-2.12.4.pom
+4/11 KB    8/11 KB   11/11 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.12.4/maven-surefire-plugin-2.12.4.pom (11 KB at 730.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire/2.12.4/surefire-2.12.4.pom
+4/14 KB    8/14 KB   12/14 KB   14/14 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire/2.12.4/surefire-2.12.4.pom (14 KB at 748.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.12.4/maven-surefire-plugin-2.12.4.jar
+4/30 KB    8/30 KB   12/30 KB   16/30 KB   20/30 KB   24/30 KB   28/30 KB   30/30 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.12.4/maven-surefire-plugin-2.12.4.jar (30 KB at 1983.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-war-plugin/2.2/maven-war-plugin-2.2.pom
+4/7 KB     7/7 KB            Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-war-plugin/2.2/maven-war-plugin-2.2.pom (7 KB at 486.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/22/maven-plugins-22.pom
+4/13 KB   8/13 KB   12/13 KB   13/13 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/22/maven-plugins-22.pom (13 KB at 1157.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/21/maven-parent-21.pom
+4/26 KB    8/26 KB   12/26 KB   16/26 KB   20/26 KB   24/26 KB   26/26 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/21/maven-parent-21.pom (26 KB at 1354.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/apache/10/apache-10.pom
+4/15 KB    8/15 KB   12/15 KB   15/15 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/apache/10/apache-10.pom (15 KB at 1204.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-war-plugin/2.2/maven-war-plugin-2.2.jar
+4/77 KB    8/77 KB   12/77 KB   16/77 KB   20/77 KB   24/77 KB   28/77 KB   32/77 KB   36/77 KB   40/77 KB   44/77 KB   48/77 KB   52/77 KB   56/77 KB   60/77 KB   64/77 KB   68/77 KB   72/77 KB   76/77 KB   77/77 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-war-plugin/2.2/maven-war-plugin-2.2.jar (77 KB at 4267.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/javax/javaee-api/7.0/javaee-api-7.0.pom
+4/9 KB     8/9 KB   9/9 KB            Downloaded: https://repo.maven.apache.org/maven2/javax/javaee-api/7.0/javaee-api-7.0.pom (9 KB at 562.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/net/java/jvnet-parent/3/jvnet-parent-3.pom
+4/5 KB   5/5 KB            Downloaded: https://repo.maven.apache.org/maven2/net/java/jvnet-parent/3/jvnet-parent-3.pom (5 KB at 119.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/sun/mail/javax.mail/1.5.0/javax.mail-1.5.0.pom
+4/5 KB   5/5 KB            Downloaded: https://repo.maven.apache.org/maven2/com/sun/mail/javax.mail/1.5.0/javax.mail-1.5.0.pom (5 KB at 262.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/sun/mail/all/1.5.0/all-1.5.0.pom
+4/19 KB   8/19 KB   12/19 KB   16/19 KB   19/19 KB              Downloaded: https://repo.maven.apache.org/maven2/com/sun/mail/all/1.5.0/all-1.5.0.pom (19 KB at 998.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/net/java/jvnet-parent/1/jvnet-parent-1.pom
+4/5 KB     5/5 KB            Downloaded: https://repo.maven.apache.org/maven2/net/java/jvnet-parent/1/jvnet-parent-1.pom (5 KB at 383.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/javax/activation/activation/1.1/activation-1.1.pom
+2/2 KB            Downloaded: https://repo.maven.apache.org/maven2/javax/activation/activation/1.1/activation-1.1.pom (2 KB at 73.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/wildfly/swarm/jaxrs/2016.11.0/jaxrs-2016.11.0.pom
+4/4 KB            Downloaded: https://repo.maven.apache.org/maven2/org/wildfly/swarm/jaxrs/2016.11.0/jaxrs-2016.11.0.pom (4 KB at 269.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/wildfly/swarm/container/2016.11.0/container-2016.11.0.pom
+4/6 KB   6/6 KB            Downloaded: https://repo.maven.apache.org/maven2/org/wildfly/swarm/container/2016.11.0/container-2016.11.0.pom (6 KB at 172.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/wildfly/swarm/spi/2016.11.0/spi-2016.11.0.pom
+3/3 KB            Downloaded: https://repo.maven.apache.org/maven2/org/wildfly/swarm/spi/2016.11.0/spi-2016.11.0.pom (3 KB at 111.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/wildfly/swarm/bootstrap/2016.11.0/bootstrap-2016.11.0.pom
+4/4 KB            Downloaded: https://repo.maven.apache.org/maven2/org/wildfly/swarm/bootstrap/2016.11.0/bootstrap-2016.11.0.pom (4 KB at 74.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/modules/jboss-modules/1.5.2.Final/jboss-modules-1.5.2.Final.pom
+4/7 KB   7/7 KB            Downloaded: https://repo.maven.apache.org/maven2/org/jboss/modules/jboss-modules/1.5.2.Final/jboss-modules-1.5.2.Final.pom (7 KB at 229.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/1.17/snakeyaml-1.17.pom
+4/28 KB   8/28 KB   12/28 KB   16/28 KB   20/28 KB   24/28 KB   28/28 KB              Downloaded: https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/1.17/snakeyaml-1.17.pom (28 KB at 1709.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/shrinkwrap-api/1.2.6/shrinkwrap-api-1.2.6.pom
+4/4 KB              Downloaded: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/shrinkwrap-api/1.2.6/shrinkwrap-api-1.2.6.pom (4 KB at 23.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/shrinkwrap-parent/1.2.6/shrinkwrap-parent-1.2.6.pom
+4/11 KB   8/11 KB   11/11 KB              Downloaded: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/shrinkwrap-parent/1.2.6/shrinkwrap-parent-1.2.6.pom (11 KB at 410.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/shrinkwrap-impl-base/1.2.6/shrinkwrap-impl-base-1.2.6.pom
+4/4 KB              Downloaded: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/shrinkwrap-impl-base/1.2.6/shrinkwrap-impl-base-1.2.6.pom (4 KB at 260.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/shrinkwrap-spi/1.2.6/shrinkwrap-spi-1.2.6.pom
+2/2 KB            Downloaded: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/shrinkwrap-spi/1.2.6/shrinkwrap-spi-1.2.6.pom (2 KB at 112.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-api-jboss/2.0.0-alpha-9/shrinkwrap-descriptors-api-jboss-2.0.0-alpha-9.pom
+2/2 KB            Downloaded: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-api-jboss/2.0.0-alpha-9/shrinkwrap-descriptors-api-jboss-2.0.0-alpha-9.pom (2 KB at 87.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-parent/2.0.0-alpha-9/shrinkwrap-descriptors-parent-2.0.0-alpha-9.pom
+4/13 KB   8/13 KB   12/13 KB   13/13 KB              Downloaded: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-parent/2.0.0-alpha-9/shrinkwrap-descriptors-parent-2.0.0-alpha-9.pom (13 KB at 828.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-api-javaee/2.0.0-alpha-9/shrinkwrap-descriptors-api-javaee-2.0.0-alpha-9.pom
+2/2 KB              Downloaded: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-api-javaee/2.0.0-alpha-9/shrinkwrap-descriptors-api-javaee-2.0.0-alpha-9.pom (2 KB at 13.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-api-base/2.0.0-alpha-9/shrinkwrap-descriptors-api-base-2.0.0-alpha-9.pom
+2/2 KB            Downloaded: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-api-base/2.0.0-alpha-9/shrinkwrap-descriptors-api-base-2.0.0-alpha-9.pom (2 KB at 71.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-impl-jboss/2.0.0-alpha-9/shrinkwrap-descriptors-impl-jboss-2.0.0-alpha-9.pom
+3/3 KB            Downloaded: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-impl-jboss/2.0.0-alpha-9/shrinkwrap-descriptors-impl-jboss-2.0.0-alpha-9.pom (3 KB at 217.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-impl-javaee/2.0.0-alpha-9/shrinkwrap-descriptors-impl-javaee-2.0.0-alpha-9.pom
+3/3 KB            Downloaded: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-impl-javaee/2.0.0-alpha-9/shrinkwrap-descriptors-impl-javaee-2.0.0-alpha-9.pom (3 KB at 186.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-impl-base/2.0.0-alpha-9/shrinkwrap-descriptors-impl-base-2.0.0-alpha-9.pom
+3/3 KB            Downloaded: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-impl-base/2.0.0-alpha-9/shrinkwrap-descriptors-impl-base-2.0.0-alpha-9.pom (3 KB at 155.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-spi/2.0.0-alpha-9/shrinkwrap-descriptors-spi-2.0.0-alpha-9.pom
+2/2 KB            Downloaded: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-spi/2.0.0-alpha-9/shrinkwrap-descriptors-spi-2.0.0-alpha-9.pom (2 KB at 124.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/wildfly/swarm/config-api-modules/0.4.8/config-api-modules-0.4.8.pom
+2/2 KB            Downloaded: https://repo.maven.apache.org/maven2/org/wildfly/swarm/config-api-modules/0.4.8/config-api-modules-0.4.8.pom (2 KB at 99.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/wildfly/swarm/config-api-parent/0.4.8/config-api-parent-0.4.8.pom
+4/5 KB   5/5 KB            Downloaded: https://repo.maven.apache.org/maven2/org/wildfly/swarm/config-api-parent/0.4.8/config-api-parent-0.4.8.pom (5 KB at 367.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/wildfly/swarm/parent/6/parent-6.pom
+4/5 KB   5/5 KB            Downloaded: https://repo.maven.apache.org/maven2/org/wildfly/swarm/parent/6/parent-6.pom (5 KB at 429.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/wildfly/swarm/config-api/0.4.8/config-api-0.4.8.pom
+4/8 KB   8/8 KB            Downloaded: https://repo.maven.apache.org/maven2/org/wildfly/swarm/config-api/0.4.8/config-api-0.4.8.pom (8 KB at 510.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/wildfly/swarm/config-api-runtime/0.4.8/config-api-runtime-0.4.8.pom
+2/2 KB            Downloaded: https://repo.maven.apache.org/maven2/org/wildfly/swarm/config-api-runtime/0.4.8/config-api-runtime-0.4.8.pom (2 KB at 18.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-all/5.0.4/asm-all-5.0.4.pom
+2/2 KB            Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-all/5.0.4/asm-all-5.0.4.pom (2 KB at 137.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-parent/5.0.4/asm-parent-5.0.4.pom
+4/6 KB   6/6 KB            Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-parent/5.0.4/asm-parent-5.0.4.pom (6 KB at 383.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/ow2/ow2/1.3/ow2-1.3.pom
+4/10 KB   8/10 KB   10/10 KB              Downloaded: https://repo.maven.apache.org/maven2/org/ow2/ow2/1.3/ow2-1.3.pom (10 KB at 546.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/logging/jboss-logging/3.3.0.Final/jboss-logging-3.3.0.Final.pom
+4/6 KB     6/6 KB            Downloaded: https://repo.maven.apache.org/maven2/org/jboss/logging/jboss-logging/3.3.0.Final/jboss-logging-3.3.0.Final.pom (6 KB at 382.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/jboss-parent/15/jboss-parent-15.pom
+4/31 KB   8/31 KB   12/31 KB   16/31 KB   20/31 KB   24/31 KB   28/31 KB   31/31 KB              Downloaded: https://repo.maven.apache.org/maven2/org/jboss/jboss-parent/15/jboss-parent-15.pom (31 KB at 1282.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/wildfly/swarm/undertow/2016.11.0/undertow-2016.11.0.pom
+4/5 KB     5/5 KB            Downloaded: https://repo.maven.apache.org/maven2/org/wildfly/swarm/undertow/2016.11.0/undertow-2016.11.0.pom (5 KB at 311.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/wildfly/swarm/io/2016.11.0/io-2016.11.0.pom
+2/2 KB            Downloaded: https://repo.maven.apache.org/maven2/org/wildfly/swarm/io/2016.11.0/io-2016.11.0.pom (2 KB at 96.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/wildfly/swarm/logging/2016.11.0/logging-2016.11.0.pom
+3/3 KB            Downloaded: https://repo.maven.apache.org/maven2/org/wildfly/swarm/logging/2016.11.0/logging-2016.11.0.pom (3 KB at 196.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/wildfly/swarm/ee/2016.11.0/ee-2016.11.0.pom
+3/3 KB            Downloaded: https://repo.maven.apache.org/maven2/org/wildfly/swarm/ee/2016.11.0/ee-2016.11.0.pom (3 KB at 111.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/wildfly/swarm/naming/2016.11.0/naming-2016.11.0.pom
+3/3 KB            Downloaded: https://repo.maven.apache.org/maven2/org/wildfly/swarm/naming/2016.11.0/naming-2016.11.0.pom (3 KB at 128.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/spec/javax/enterprise/concurrent/jboss-concurrency-api_1.0_spec/1.0.0.Final/jboss-concurrency-api_1.0_spec-1.0.0.Final.pom
+4/5 KB   5/5 KB            Downloaded: https://repo.maven.apache.org/maven2/org/jboss/spec/javax/enterprise/concurrent/jboss-concurrency-api_1.0_spec/1.0.0.Final/jboss-concurrency-api_1.0_spec-1.0.0.Final.pom (5 KB at 291.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/jboss-parent/10/jboss-parent-10.pom
+4/30 KB   8/30 KB   12/30 KB   16/30 KB   20/30 KB   24/30 KB   28/30 KB   30/30 KB              Downloaded: https://repo.maven.apache.org/maven2/org/jboss/jboss-parent/10/jboss-parent-10.pom (30 KB at 1335.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/spec/javax/interceptor/jboss-interceptors-api_1.2_spec/1.0.0.Final/jboss-interceptors-api_1.2_spec-1.0.0.Final.pom
+4/5 KB     5/5 KB            Downloaded: https://repo.maven.apache.org/maven2/org/jboss/spec/javax/interceptor/jboss-interceptors-api_1.2_spec/1.0.0.Final/jboss-interceptors-api_1.2_spec-1.0.0.Final.pom (5 KB at 369.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/spec/javax/el/jboss-el-api_3.0_spec/1.0.7.Final/jboss-el-api_3.0_spec-1.0.7.Final.pom
+4/5 KB   5/5 KB            Downloaded: https://repo.maven.apache.org/maven2/org/jboss/spec/javax/el/jboss-el-api_3.0_spec/1.0.7.Final/jboss-el-api_3.0_spec-1.0.7.Final.pom (5 KB at 369.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/jboss-parent/21/jboss-parent-21.pom
+4/36 KB   8/36 KB   12/36 KB   16/36 KB   20/36 KB   24/36 KB   28/36 KB   32/36 KB   36/36 KB   36/36 KB              Downloaded: https://repo.maven.apache.org/maven2/org/jboss/jboss-parent/21/jboss-parent-21.pom (36 KB at 2096.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/glassfish/javax.el-impl/3.0.1-b08-jbossorg-1/javax.el-impl-3.0.1-b08-jbossorg-1.pom
+           Downloading: http://repository.jboss.org/nexus/content/groups/public/org/glassfish/javax.el-impl/3.0.1-b08-jbossorg-1/javax.el-impl-3.0.1-b08-jbossorg-1.pom
+           Downloading: https://repo.maven.apache.org/maven2/org/wildfly/swarm/request-controller/2016.11.0/request-controller-2016.11.0.pom
+2/2 KB     2/2 KB            Downloaded: https://repo.maven.apache.org/maven2/org/wildfly/swarm/request-controller/2016.11.0/request-controller-2016.11.0.pom (2 KB at 86.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/spec/javax/servlet/jboss-servlet-api_3.1_spec/1.0.0.Final/jboss-servlet-api_3.1_spec-1.0.0.Final.pom
+2/4 KB   3/4 KB   4/4 KB            Downloaded: https://repo.maven.apache.org/maven2/org/jboss/spec/javax/servlet/jboss-servlet-api_3.1_spec/1.0.0.Final/jboss-servlet-api_3.1_spec-1.0.0.Final.pom (4 KB at 283.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/spec/javax/websocket/jboss-websocket-api_1.1_spec/1.1.1.Final/jboss-websocket-api_1.1_spec-1.1.1.Final.pom
+2/4 KB   3/4 KB   4/4 KB            Downloaded: https://repo.maven.apache.org/maven2/org/jboss/spec/javax/websocket/jboss-websocket-api_1.1_spec/1.1.1.Final/jboss-websocket-api_1.1_spec-1.1.1.Final.pom (4 KB at 287.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/io/undertow/undertow-servlet/1.4.0.Final/undertow-servlet-1.4.0.Final.pom
+2/17 KB   3/17 KB   5/17 KB   6/17 KB   7/17 KB   9/17 KB   10/17 KB   11/17 KB   13/17 KB   14/17 KB   15/17 KB   16/17 KB   17/17 KB              Downloaded: https://repo.maven.apache.org/maven2/io/undertow/undertow-servlet/1.4.0.Final/undertow-servlet-1.4.0.Final.pom (17 KB at 875.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/io/undertow/undertow-parent/1.4.0.Final/undertow-parent-1.4.0.Final.pom
+2/21 KB    3/21 KB   5/21 KB   6/21 KB   7/21 KB   9/21 KB   10/21 KB   11/21 KB   13/21 KB   14/21 KB   15/21 KB   16/21 KB   17/21 KB   19/21 KB   20/21 KB   21/21 KB              Downloaded: https://repo.maven.apache.org/maven2/io/undertow/undertow-parent/1.4.0.Final/undertow-parent-1.4.0.Final.pom (21 KB at 899.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/io/undertow/undertow-core/1.4.0.Final/undertow-core-1.4.0.Final.pom
+4/18 KB    8/18 KB   12/18 KB   16/18 KB   18/18 KB              Downloaded: https://repo.maven.apache.org/maven2/io/undertow/undertow-core/1.4.0.Final/undertow-core-1.4.0.Final.pom (18 KB at 618.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/logging/jboss-logging/3.2.1.Final/jboss-logging-3.2.1.Final.pom
+4/6 KB     6/6 KB            Downloaded: https://repo.maven.apache.org/maven2/org/jboss/logging/jboss-logging/3.2.1.Final/jboss-logging-3.2.1.Final.pom (6 KB at 484.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/xnio/xnio-api/3.3.6.Final/xnio-api-3.3.6.Final.pom
+4/7 KB   7/7 KB            Downloaded: https://repo.maven.apache.org/maven2/org/jboss/xnio/xnio-api/3.3.6.Final/xnio-api-3.3.6.Final.pom (7 KB at 379.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/xnio/xnio-all/3.3.6.Final/xnio-all-3.3.6.Final.pom
+4/6 KB   6/6 KB            Downloaded: https://repo.maven.apache.org/maven2/org/jboss/xnio/xnio-all/3.3.6.Final/xnio-all-3.3.6.Final.pom (6 KB at 487.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/xnio/xnio-nio/3.3.6.Final/xnio-nio-3.3.6.Final.pom
+4/6 KB   6/6 KB            Downloaded: https://repo.maven.apache.org/maven2/org/jboss/xnio/xnio-nio/3.3.6.Final/xnio-nio-3.3.6.Final.pom (6 KB at 540.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/spec/javax/annotation/jboss-annotations-api_1.2_spec/1.0.0.Final/jboss-annotations-api_1.2_spec-1.0.0.Final.pom
+4/5 KB   5/5 KB            Downloaded: https://repo.maven.apache.org/maven2/org/jboss/spec/javax/annotation/jboss-annotations-api_1.2_spec/1.0.0.Final/jboss-annotations-api_1.2_spec-1.0.0.Final.pom (5 KB at 321.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/wildfly/swarm/security/2016.11.0/security-2016.11.0.pom
+3/3 KB            Downloaded: https://repo.maven.apache.org/maven2/org/wildfly/swarm/security/2016.11.0/security-2016.11.0.pom (3 KB at 183.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/spec/javax/ws/rs/jboss-jaxrs-api_2.0_spec/1.0.0.Final/jboss-jaxrs-api_2.0_spec-1.0.0.Final.pom
+4/4 KB            Downloaded: https://repo.maven.apache.org/maven2/org/jboss/spec/javax/ws/rs/jboss-jaxrs-api_2.0_spec/1.0.0.Final/jboss-jaxrs-api_2.0_spec-1.0.0.Final.pom (4 KB at 259.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.7.4/jackson-core-2.7.4.pom
+4/5 KB   5/5 KB            Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.7.4/jackson-core-2.7.4.pom (5 KB at 329.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-parent/2.7/jackson-parent-2.7.pom
+4/8 KB   8/8 KB            Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-parent/2.7/jackson-parent-2.7.pom (8 KB at 530.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/oss-parent/25/oss-parent-25.pom
+4/19 KB   8/19 KB   12/19 KB   16/19 KB   19/19 KB              Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/oss-parent/25/oss-parent-25.pom (19 KB at 1353.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.7.4/jackson-annotations-2.7.4.pom
+2/2 KB              Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.7.4/jackson-annotations-2.7.4.pom (2 KB at 129.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.7.4/jackson-databind-2.7.4.pom
+4/6 KB   6/6 KB            Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.7.4/jackson-databind-2.7.4.pom (6 KB at 390.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.7.0/jackson-annotations-2.7.0.pom
+2/2 KB            Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.7.0/jackson-annotations-2.7.0.pom (2 KB at 83.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/2.7.4/jackson-jaxrs-json-provider-2.7.4.pom
+4/4 KB            Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/2.7.4/jackson-jaxrs-json-provider-2.7.4.pom (4 KB at 285.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jaxrs/jackson-jaxrs-providers/2.7.4/jackson-jaxrs-providers-2.7.4.pom
+4/4 KB            Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jaxrs/jackson-jaxrs-providers/2.7.4/jackson-jaxrs-providers-2.7.4.pom (4 KB at 266.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jaxrs/jackson-jaxrs-base/2.7.4/jackson-jaxrs-base-2.7.4.pom
+2/2 KB            Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jaxrs/jackson-jaxrs-base/2.7.4/jackson-jaxrs-base-2.7.4.pom (2 KB at 105.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.7.4/jackson-module-jaxb-annotations-2.7.4.pom
+4/4 KB            Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.7.4/jackson-module-jaxb-annotations-2.7.4.pom (4 KB at 205.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/wildfly/swarm/jaxrs-cdi/2016.11.0/jaxrs-cdi-2016.11.0.pom
+3/3 KB            Downloaded: https://repo.maven.apache.org/maven2/org/wildfly/swarm/jaxrs-cdi/2016.11.0/jaxrs-cdi-2016.11.0.pom (3 KB at 217.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/wildfly/swarm/cdi/2016.11.0/cdi-2016.11.0.pom
+4/4 KB            Downloaded: https://repo.maven.apache.org/maven2/org/wildfly/swarm/cdi/2016.11.0/cdi-2016.11.0.pom (4 KB at 168.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/wildfly/swarm/cdi-config/2016.11.0/cdi-config-2016.11.0.pom
+3/3 KB            Downloaded: https://repo.maven.apache.org/maven2/org/wildfly/swarm/cdi-config/2016.11.0/cdi-config-2016.11.0.pom (3 KB at 137.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/javax/enterprise/cdi-api/1.2/cdi-api-1.2.pom
+4/7 KB   7/7 KB            Downloaded: https://repo.maven.apache.org/maven2/javax/enterprise/cdi-api/1.2/cdi-api-1.2.pom (7 KB at 78.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/weld/weld-parent/26/weld-parent-26.pom
+4/32 KB   8/32 KB   12/32 KB   16/32 KB   20/32 KB   24/32 KB   28/32 KB   32/32 KB   32/32 KB              Downloaded: https://repo.maven.apache.org/maven2/org/jboss/weld/weld-parent/26/weld-parent-26.pom (32 KB at 1169.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/javax/inject/javax.inject/1/javax.inject-1.pom
+612/612 B               Downloaded: https://repo.maven.apache.org/maven2/javax/inject/javax.inject/1/javax.inject-1.pom (612 B at 39.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/wildfly/swarm/bean-validation/2016.11.0/bean-validation-2016.11.0.pom
+3/3 KB               Downloaded: https://repo.maven.apache.org/maven2/org/wildfly/swarm/bean-validation/2016.11.0/bean-validation-2016.11.0.pom (3 KB at 223.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.pom
+4/8 KB   8/8 KB            Downloaded: https://repo.maven.apache.org/maven2/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.pom (8 KB at 697.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/wildfly/swarm/transactions/2016.11.0/transactions-2016.11.0.pom
+4/4 KB            Downloaded: https://repo.maven.apache.org/maven2/org/wildfly/swarm/transactions/2016.11.0/transactions-2016.11.0.pom (4 KB at 264.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/wildfly/swarm/jgroups-module/2016.11.0/jgroups-module-2016.11.0.pom
+2/2 KB            Downloaded: https://repo.maven.apache.org/maven2/org/wildfly/swarm/jgroups-module/2016.11.0/jgroups-module-2016.11.0.pom (2 KB at 117.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/spec/javax/transaction/jboss-transaction-api_1.2_spec/1.0.0.Final/jboss-transaction-api_1.2_spec-1.0.0.Final.pom
+4/5 KB   5/5 KB            Downloaded: https://repo.maven.apache.org/maven2/org/jboss/spec/javax/transaction/jboss-transaction-api_1.2_spec/1.0.0.Final/jboss-transaction-api_1.2_spec-1.0.0.Final.pom (5 KB at 319.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/narayana/jts/narayana-jts-idlj/5.3.3.Final/narayana-jts-idlj-5.3.3.Final.pom
+4/12 KB   8/12 KB   12/12 KB              Downloaded: https://repo.maven.apache.org/maven2/org/jboss/narayana/jts/narayana-jts-idlj/5.3.3.Final/narayana-jts-idlj-5.3.3.Final.pom (12 KB at 746.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/narayana/jts/narayana-jts-all/5.3.3.Final/narayana-jts-all-5.3.3.Final.pom
+4/9 KB     8/9 KB   9/9 KB            Downloaded: https://repo.maven.apache.org/maven2/org/jboss/narayana/jts/narayana-jts-all/5.3.3.Final/narayana-jts-all-5.3.3.Final.pom (9 KB at 629.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/narayana/narayana-all/5.3.3.Final/narayana-all-5.3.3.Final.pom
+4/30 KB   8/30 KB   12/30 KB   16/30 KB   20/30 KB   24/30 KB   28/30 KB   30/30 KB              Downloaded: https://repo.maven.apache.org/maven2/org/jboss/narayana/narayana-all/5.3.3.Final/narayana-all-5.3.3.Final.pom (30 KB at 1540.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/openjdk-orb/openjdk-orb/8.0.4.Final/openjdk-orb-8.0.4.Final.pom
+4/10 KB    8/10 KB   10/10 KB              Downloaded: https://repo.maven.apache.org/maven2/org/jboss/openjdk-orb/openjdk-orb/8.0.4.Final/openjdk-orb-8.0.4.Final.pom (10 KB at 595.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/wildfly/swarm/cdi-jaxrsapi/2016.11.0/cdi-jaxrsapi-2016.11.0.pom
+4/4 KB              Downloaded: https://repo.maven.apache.org/maven2/org/wildfly/swarm/cdi-jaxrsapi/2016.11.0/cdi-jaxrsapi-2016.11.0.pom (4 KB at 215.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/resteasy/resteasy-client/3.0.19.Final/resteasy-client-3.0.19.Final.pom
+4/5 KB   5/5 KB            Downloaded: https://repo.maven.apache.org/maven2/org/jboss/resteasy/resteasy-client/3.0.19.Final/resteasy-client-3.0.19.Final.pom (5 KB at 279.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/resteasy/resteasy-jaxrs-all/3.0.19.Final/resteasy-jaxrs-all-3.0.19.Final.pom
+4/27 KB   8/27 KB   12/27 KB   16/27 KB   20/27 KB   24/27 KB   27/27 KB              Downloaded: https://repo.maven.apache.org/maven2/org/jboss/resteasy/resteasy-jaxrs-all/3.0.19.Final/resteasy-jaxrs-all-3.0.19.Final.pom (27 KB at 1112.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jboss/resteasy/resteasy-jaxrs/3.0.19.Final/resteasy-jaxrs-3.0.19.Final.pom
+4/10 KB    8/10 KB   10/10 KB              Downloaded: https://repo.maven.apache.org/maven2/org/jboss/resteasy/resteasy-jaxrs/3.0.19.Final/resteasy-jaxrs-3.0.19.Final.pom (10 KB at 725.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/javax/activation/activation/1.1.1/activation-1.1.1.pom
+644/644 B               Downloaded: https://repo.maven.apache.org/maven2/javax/activation/activation/1.1.1/activation-1.1.1.pom (644 B at 52.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.3.6/httpclient-4.3.6.pom
+4/6 KB      6/6 KB            Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.3.6/httpclient-4.3.6.pom (6 KB at 242.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-client/4.3.6/httpcomponents-client-4.3.6.pom
+4/16 KB   8/16 KB   12/16 KB   16/16 KB   16/16 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-client/4.3.6/httpcomponents-client-4.3.6.pom (16 KB at 973.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/project/7/project-7.pom
+4/27 KB    8/27 KB   12/27 KB   16/27 KB   20/27 KB   24/27 KB   27/27 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/project/7/project-7.pom (27 KB at 1330.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.3.3/httpcore-4.3.3.pom
+4/5 KB     5/5 KB            Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.3.3/httpcore-4.3.3.pom (5 KB at 374.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-core/4.3.3/httpcomponents-core-4.3.3.pom
+4/13 KB   8/13 KB   12/13 KB   13/13 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-core/4.3.3/httpcomponents-core-4.3.3.pom (13 KB at 1073.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.pom
+4/18 KB    8/18 KB   12/18 KB   16/18 KB   18/18 KB              Downloaded: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.pom (18 KB at 1493.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/28/commons-parent-28.pom
+4/49 KB    8/49 KB   12/49 KB   16/49 KB   20/49 KB   24/49 KB   28/49 KB   32/49 KB   36/49 KB   40/49 KB   44/49 KB   48/49 KB   49/49 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/28/commons-parent-28.pom (49 KB at 3060.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.6/commons-codec-1.6.pom
+4/11 KB    8/11 KB   11/11 KB              Downloaded: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.6/commons-codec-1.6.pom (11 KB at 778.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/22/commons-parent-22.pom
+4/41 KB    8/41 KB   12/41 KB   16/41 KB   20/41 KB   24/41 KB   28/41 KB   32/41 KB   36/41 KB   40/41 KB   41/41 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/22/commons-parent-22.pom (41 KB at 2274.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/apache/9/apache-9.pom
+4/15 KB    8/15 KB   12/15 KB   15/15 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/apache/9/apache-9.pom (15 KB at 1138.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.1/commons-io-2.1.pom
+4/11 KB    8/11 KB   11/11 KB              Downloaded: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.1/commons-io-2.1.pom (11 KB at 799.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.pom
+491/491 B               Downloaded: https://repo.maven.apache.org/maven2/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.pom (491 B at 36.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/io/zipkin/brave/brave-apache-http-interceptors/3.16.0/brave-apache-http-interceptors-3.16.0.pom
+2/2 KB               Downloaded: https://repo.maven.apache.org/maven2/io/zipkin/brave/brave-apache-http-interceptors/3.16.0/brave-apache-http-interceptors-3.16.0.pom (2 KB at 136.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/io/zipkin/brave/brave/3.16.0/brave-3.16.0.pom
+4/20 KB   8/20 KB   12/20 KB   16/20 KB   20/20 KB              Downloaded: https://repo.maven.apache.org/maven2/io/zipkin/brave/brave/3.16.0/brave-3.16.0.pom (20 KB at 867.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.4.1/httpcore-4.4.1.pom
+4/5 KB     5/5 KB            Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.4.1/httpcore-4.4.1.pom (5 KB at 320.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-core/4.4.1/httpcomponents-core-4.4.1.pom
+4/13 KB   8/13 KB   12/13 KB   13/13 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-core/4.4.1/httpcomponents-core-4.4.1.pom (13 KB at 966.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/io/zipkin/brave/brave-http/3.16.0/brave-http-3.16.0.pom
+2/2 KB              Downloaded: https://repo.maven.apache.org/maven2/io/zipkin/brave/brave-http/3.16.0/brave-http-3.16.0.pom (2 KB at 108.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/io/zipkin/brave/brave-core/3.16.0/brave-core-3.16.0.pom
+3/3 KB            Downloaded: https://repo.maven.apache.org/maven2/io/zipkin/brave/brave-core/3.16.0/brave-core-3.16.0.pom (3 KB at 200.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/io/zipkin/java/zipkin/1.16.2/zipkin-1.16.2.pom
+4/5 KB   5/5 KB            Downloaded: https://repo.maven.apache.org/maven2/io/zipkin/java/zipkin/1.16.2/zipkin-1.16.2.pom (5 KB at 370.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/io/zipkin/java/parent/1.16.2/parent-1.16.2.pom
+4/22 KB   8/22 KB   12/22 KB   16/22 KB   20/22 KB   22/22 KB              Downloaded: https://repo.maven.apache.org/maven2/io/zipkin/java/parent/1.16.2/parent-1.16.2.pom (22 KB at 1179.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/io/zipkin/reporter/zipkin-reporter/0.6.9/zipkin-reporter-0.6.9.pom
+2/2 KB              Downloaded: https://repo.maven.apache.org/maven2/io/zipkin/reporter/zipkin-reporter/0.6.9/zipkin-reporter-0.6.9.pom (2 KB at 108.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/io/zipkin/reporter/zipkin-reporter-parent/0.6.9/zipkin-reporter-parent-0.6.9.pom
+4/14 KB   8/14 KB   12/14 KB   14/14 KB              Downloaded: https://repo.maven.apache.org/maven2/io/zipkin/reporter/zipkin-reporter-parent/0.6.9/zipkin-reporter-parent-0.6.9.pom (14 KB at 496.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/io/zipkin/brave/brave-spancollector-http/3.16.0/brave-spancollector-http-3.16.0.pom
+2/2 KB              Downloaded: https://repo.maven.apache.org/maven2/io/zipkin/brave/brave-spancollector-http/3.16.0/brave-spancollector-http-3.16.0.pom (2 KB at 16.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/io/zipkin/reporter/zipkin-sender-okhttp3/0.6.9/zipkin-sender-okhttp3-0.6.9.pom
+2/2 KB            Downloaded: https://repo.maven.apache.org/maven2/io/zipkin/reporter/zipkin-sender-okhttp3/0.6.9/zipkin-sender-okhttp3-0.6.9.pom (2 KB at 130.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp/3.4.1/okhttp-3.4.1.pom
+2/2 KB            Downloaded: https://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp/3.4.1/okhttp-3.4.1.pom (2 KB at 79.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/squareup/okhttp3/parent/3.4.1/parent-3.4.1.pom
+4/15 KB   8/15 KB   12/15 KB   15/15 KB              Downloaded: https://repo.maven.apache.org/maven2/com/squareup/okhttp3/parent/3.4.1/parent-3.4.1.pom (15 KB at 1004.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/squareup/okio/okio/1.9.0/okio-1.9.0.pom
+2/2 KB              Downloaded: https://repo.maven.apache.org/maven2/com/squareup/okio/okio/1.9.0/okio-1.9.0.pom (2 KB at 76.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/squareup/okio/okio-parent/1.9.0/okio-parent-1.9.0.pom
+4/4 KB            Downloaded: https://repo.maven.apache.org/maven2/com/squareup/okio/okio-parent/1.9.0/okio-parent-1.9.0.pom (4 KB at 239.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/io/zipkin/brave/brave-web-servlet-filter/3.16.0/brave-web-servlet-filter-3.16.0.pom
+2/2 KB            Downloaded: https://repo.maven.apache.org/maven2/io/zipkin/brave/brave-web-servlet-filter/3.16.0/brave-web-servlet-filter-3.16.0.pom (2 KB at 111.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/datastax/cassandra/cassandra-driver-core/3.1.0/cassandra-driver-core-3.1.0.pom
+4/16 KB   8/16 KB   12/16 KB   16/16 KB   16/16 KB              Downloaded: https://repo.maven.apache.org/maven2/com/datastax/cassandra/cassandra-driver-core/3.1.0/cassandra-driver-core-3.1.0.pom (16 KB at 1314.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/datastax/cassandra/cassandra-driver-parent/3.1.0/cassandra-driver-parent-3.1.0.pom
+4/19 KB    8/19 KB   12/19 KB   16/19 KB   19/19 KB              Downloaded: https://repo.maven.apache.org/maven2/com/datastax/cassandra/cassandra-driver-parent/3.1.0/cassandra-driver-parent-3.1.0.pom (19 KB at 1403.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/io/netty/netty-handler/4.0.37.Final/netty-handler-4.0.37.Final.pom
+3/3 KB              Downloaded: https://repo.maven.apache.org/maven2/io/netty/netty-handler/4.0.37.Final/netty-handler-4.0.37.Final.pom (3 KB at 167.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/io/netty/netty-parent/4.0.37.Final/netty-parent-4.0.37.Final.pom
+4/44 KB   8/44 KB   12/44 KB   16/44 KB   20/44 KB   24/44 KB   28/44 KB   32/44 KB   36/44 KB   40/44 KB   44/44 KB              Downloaded: https://repo.maven.apache.org/maven2/io/netty/netty-parent/4.0.37.Final/netty-parent-4.0.37.Final.pom (44 KB at 2536.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/9/oss-parent-9.pom
+4/7 KB     7/7 KB            Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/9/oss-parent-9.pom (7 KB at 641.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/io/netty/netty-buffer/4.0.37.Final/netty-buffer-4.0.37.Final.pom
+2/2 KB            Downloaded: https://repo.maven.apache.org/maven2/io/netty/netty-buffer/4.0.37.Final/netty-buffer-4.0.37.Final.pom (2 KB at 49.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/io/netty/netty-common/4.0.37.Final/netty-common-4.0.37.Final.pom
+4/4 KB            Downloaded: https://repo.maven.apache.org/maven2/io/netty/netty-common/4.0.37.Final/netty-common-4.0.37.Final.pom (4 KB at 259.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/io/netty/netty-transport/4.0.37.Final/netty-transport-4.0.37.Final.pom
+2/2 KB            Downloaded: https://repo.maven.apache.org/maven2/io/netty/netty-transport/4.0.37.Final/netty-transport-4.0.37.Final.pom (2 KB at 96.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/io/netty/netty-codec/4.0.37.Final/netty-codec-4.0.37.Final.pom
+3/3 KB            Downloaded: https://repo.maven.apache.org/maven2/io/netty/netty-codec/4.0.37.Final/netty-codec-4.0.37.Final.pom (3 KB at 198.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava/16.0.1/guava-16.0.1.pom
+4/6 KB   6/6 KB            Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava/16.0.1/guava-16.0.1.pom (6 KB at 496.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/16.0.1/guava-parent-16.0.1.pom
+4/8 KB   8/8 KB            Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/16.0.1/guava-parent-16.0.1.pom (8 KB at 716.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/io/dropwizard/metrics/metrics-core/3.1.2/metrics-core-3.1.2.pom
+846/846 B               Downloaded: https://repo.maven.apache.org/maven2/io/dropwizard/metrics/metrics-core/3.1.2/metrics-core-3.1.2.pom (846 B at 75.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/io/dropwizard/metrics/metrics-parent/3.1.2/metrics-parent-3.1.2.pom
+4/12 KB     8/12 KB   12/12 KB              Downloaded: https://repo.maven.apache.org/maven2/io/dropwizard/metrics/metrics-parent/3.1.2/metrics-parent-3.1.2.pom (12 KB at 976.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.pom
+3/3 KB              Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.pom (3 KB at 262.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.7.7/slf4j-parent-1.7.7.pom
+4/12 KB   8/12 KB   12/12 KB              Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.7.7/slf4j-parent-1.7.7.pom (12 KB at 1057.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-ffi/2.0.7/jnr-ffi-2.0.7.pom
+4/9 KB     8/9 KB   9/9 KB            Downloaded: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-ffi/2.0.7/jnr-ffi-2.0.7.pom (9 KB at 681.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/github/jnr/jffi/1.2.10/jffi-1.2.10.pom
+4/8 KB   8/8 KB            Downloaded: https://repo.maven.apache.org/maven2/com/github/jnr/jffi/1.2.10/jffi-1.2.10.pom (8 KB at 627.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/5.0.3/asm-5.0.3.pom
+2/2 KB            Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/5.0.3/asm-5.0.3.pom (2 KB at 94.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-parent/5.0.3/asm-parent-5.0.3.pom
+4/6 KB   6/6 KB            Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-parent/5.0.3/asm-parent-5.0.3.pom (6 KB at 536.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/5.0.3/asm-commons-5.0.3.pom
+3/3 KB            Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/5.0.3/asm-commons-5.0.3.pom (3 KB at 185.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/5.0.3/asm-tree-5.0.3.pom
+3/3 KB            Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/5.0.3/asm-tree-5.0.3.pom (3 KB at 203.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/5.0.3/asm-analysis-5.0.3.pom
+3/3 KB            Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/5.0.3/asm-analysis-5.0.3.pom (3 KB at 204.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/5.0.3/asm-util-5.0.3.pom
+3/3 KB            Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/5.0.3/asm-util-5.0.3.pom (3 KB at 169.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-x86asm/1.0.2/jnr-x86asm-1.0.2.pom
+2/2 KB            Downloaded: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-x86asm/1.0.2/jnr-x86asm-1.0.2.pom (2 KB at 134.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-posix/3.0.27/jnr-posix-3.0.27.pom
+4/6 KB   6/6 KB            Downloaded: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-posix/3.0.27/jnr-posix-3.0.27.pom (6 KB at 301.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-constants/0.9.0/jnr-constants-0.9.0.pom
+3/3 KB            Downloaded: https://repo.maven.apache.org/maven2/com/github/jnr/jnr-constants/0.9.0/jnr-constants-0.9.0.pom (3 KB at 94.2 KB/sec)
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 13.196 s
+[INFO] Finished at: 2022-05-14T08:39:58+00:00
+[INFO] Final Memory: 19M/200M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal on project hawkular-apm-example-zipkin-wildfly-swarm: Could not resolve dependencies for project org.hawkular.apm.example.swarm:hawkular-apm-example-zipkin-wildfly-swarm:war:0.1-SNAPSHOT: Failed to collect dependencies at org.wildfly.swarm:jaxrs:jar:2016.11.0 -> org.wildfly.swarm:undertow:jar:2016.11.0 -> org.wildfly.swarm:ee:jar:2016.11.0 -> org.glassfish:javax.el-impl:jar:3.0.1-b08-jbossorg-1: Failed to read artifact descriptor for org.glassfish:javax.el-impl:jar:3.0.1-b08-jbossorg-1: Could not transfer artifact org.glassfish:javax.el-impl:pom:3.0.1-b08-jbossorg-1 from/to jboss-public-repository-group (http://repository.jboss.org/nexus/content/groups/public/): Failed to transfer file: http://repository.jboss.org/nexus/content/groups/public/org/glassfish/javax.el-impl/3.0.1-b08-jbossorg-1/javax.el-impl-3.0.1-b08-jbossorg-1.pom. Return code is: 503 , ReasonPhrase:Service Unavailable. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException

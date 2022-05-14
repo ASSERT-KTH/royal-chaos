@@ -1,0 +1,2079 @@
+strace: option requires an argument -- p
+Try 'strace -h' for more information.
+Picked up JAVA_TOOL_OPTIONS:  -javaagent:/home/elastic/elastic-apm-agent-1.30.1.jar -Delastic.apm.log_ecs_reformatting=OVERRIDE
+[pid   218] 1652497962.001893 execve("/usr/local/sbin/uname", ["uname", "-n"], 0x7fffa71ffcd8 /* 17 vars */) = -1 ENOENT (No such file or directory) <0.000043>
+ > /lib/ld-musl-x86_64.so.1(execve+0x8) [0x3eccb]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libjava.so() [0x18ca0]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libjava.so() [0x159f1]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libjava.so(Java_java_lang_UNIXProcess_forkAndExec+0x2b7) [0x16057]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x41b11b]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x41a7c4]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x41a834]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x43f2ca]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x5cd744]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x5cd868]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x530459]
+ > /lib/ld-musl-x86_64.so.1() [0x524d7]
+ > No DWARF information found
+[pid   218] 1652497962.003451 execve("/usr/local/bin/uname", ["uname", "-n"], 0x7fffa71ffcd8 /* 17 vars */) = -1 ENOENT (No such file or directory) <0.000046>
+ > /lib/ld-musl-x86_64.so.1(execve+0x8) [0x3eccb]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libjava.so() [0x18ca0]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libjava.so() [0x159f1]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libjava.so(Java_java_lang_UNIXProcess_forkAndExec+0x2b7) [0x16057]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x41b11b]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x41a7c4]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x41a834]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x43f2ca]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x5cd744]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x5cd868]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x530459]
+ > /lib/ld-musl-x86_64.so.1() [0x524d7]
+ > No DWARF information found
+[pid   218] 1652497962.004528 execve("/usr/sbin/uname", ["uname", "-n"], 0x7fffa71ffcd8 /* 17 vars */) = -1 ENOENT (No such file or directory) <0.000048>
+ > /lib/ld-musl-x86_64.so.1(execve+0x8) [0x3eccb]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libjava.so() [0x18ca0]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libjava.so() [0x159f1]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libjava.so(Java_java_lang_UNIXProcess_forkAndExec+0x2b7) [0x16057]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x41b11b]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x41a7c4]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x41a834]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x43f2ca]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x5cd744]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x5cd868]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x530459]
+ > /lib/ld-musl-x86_64.so.1() [0x524d7]
+ > No DWARF information found
+[pid   218] 1652497962.005848 execve("/usr/bin/uname", ["uname", "-n"], 0x7fffa71ffcd8 /* 17 vars */) = -1 ENOENT (No such file or directory) <0.000196>
+ > /lib/ld-musl-x86_64.so.1(execve+0x8) [0x3eccb]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libjava.so() [0x18ca0]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libjava.so() [0x159f1]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libjava.so(Java_java_lang_UNIXProcess_forkAndExec+0x2b7) [0x16057]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x41b11b]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x41a7c4]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x41a834]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x43f2ca]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x5cd744]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x5cd868]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x530459]
+ > /lib/ld-musl-x86_64.so.1() [0x524d7]
+ > No DWARF information found
+[pid   218] 1652497962.007105 execve("/sbin/uname", ["uname", "-n"], 0x7fffa71ffcd8 /* 17 vars */) = -1 ENOENT (No such file or directory) <0.000136>
+ > /lib/ld-musl-x86_64.so.1(execve+0x8) [0x3eccb]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libjava.so() [0x18ca0]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libjava.so() [0x159f1]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libjava.so(Java_java_lang_UNIXProcess_forkAndExec+0x2b7) [0x16057]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x41b11b]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x41a7c4]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x41a834]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x43f2ca]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x5cd744]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x5cd868]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x530459]
+ > /lib/ld-musl-x86_64.so.1() [0x524d7]
+ > No DWARF information found
+ > /lib/ld-musl-x86_64.so.1(execve+0x8) [0x3eccb]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libjava.so() [0x18ca0]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libjava.so() [0x159f1]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libjava.so(Java_java_lang_UNIXProcess_forkAndExec+0x2b7) [0x16057]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x41b11b]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x41a7c4]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x41a834]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x43f2ca]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x5cd744]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x5cd868]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so() [0x530459]
+ > /lib/ld-musl-x86_64.so.1() [0x524d7]
+ > No DWARF information found
+[pid   216] 1652497962.012228 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=218, si_uid=0, si_status=0, si_utime=0, si_stime=0} ---
+ > /lib/ld-musl-x86_64.so.1(lseek+0xd) [0x573bc]
+ > /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libzip.so() [0x6906]
+[pid   216] 1652497962.039690 connect(17, {sa_family=AF_INET, sin_port=htons(80), sin_addr=inet_addr("169.254.169.254")}, 16) = -1 EINPROGRESS (Operation in progress) <0.000073>
+ > /lib/ld-musl-x86_64.so.1(__clone+0x62) [0x543ad]
+ > No DWARF information found
+[pid   215] 1652497962.039718 connect(18, {sa_family=AF_INET, sin_port=htons(80), sin_addr=inet_addr("169.254.169.254")}, 16) = -1 EINPROGRESS (Operation in progress) <0.000750>
+ > /lib/ld-musl-x86_64.so.1(__clone+0x62) [0x543ad]
+ > No DWARF information found
+[pid   216] 1652497962.051573 connect(16, {sa_family=AF_INET, sin_port=htons(80), sin_addr=inet_addr("169.254.169.254")}, 16) = -1 EINPROGRESS (Operation in progress) <0.000068>
+ > /lib/ld-musl-x86_64.so.1(__clone+0x62) [0x543ad]
+ > No DWARF information found
+[pid   199] 1652497962.603217 stat("/com/alibaba/dubbo/rpc/protocol/dubbo/filter/FutureFilter.class", 0x7f769df26700) = -1 ENOENT (No such file or directory) <0.000111>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.270035 stat("/org/slf4j/ext/EventData.class", 0x7f769df264f0) = -1 ENOENT (No such file or directory) <0.000020>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.350873 stat("/org/apache/http/impl/execchain/ClientExecChain.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000022>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.358858 stat("/org/apache/http/nio/client/HttpAsyncClient.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000036>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.386867 stat("/co/elastic/apm/api/CaptureTransaction.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000022>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.388513 stat("/co/elastic/apm/api/CaptureSpan.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.389470 stat("/co/elastic/apm/api/Traced.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.392836 stat("/org/asynchttpclient/AsyncHandler.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000967>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.394599 stat("/com/datastax/driver/core/BoundStatement.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.001147>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.398208 stat("/org/grails/web/mapping/mvc/GrailsControllerUrlMappingInfo.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.002932>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.410275 stat("/org/hibernate/search/FullTextQuery.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000042>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.418264 stat("/io/javalin/http/Handler.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000096>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.419566 stat("/io/javalin/http/Handler.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.421156 stat("/javax/ws/rs/Path.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.424602 stat("/jakarta/ws/rs/Path.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000079>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.425613 stat("/jakarta/jws/WebService.class", 0x7f769df26ef0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.433274 stat("/javax/jms/Message.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.434168 stat("/javax/jms/Message.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.435063 stat("/javax/jms/Message.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.435870 stat("/javax/jms/Message.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.436594 stat("/javax/jms/Message.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.437295 stat("/javax/faces/lifecycle/Lifecycle.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.438220 stat("/javax/faces/lifecycle/Lifecycle.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.438945 stat("/jakarta/faces/lifecycle/Lifecycle.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.439732 stat("/jakarta/faces/lifecycle/Lifecycle.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.440430 stat("/org/apache/kafka/clients/consumer/ConsumerRecord.class", 0x7f769df26ea0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.441003 stat("/org/apache/kafka/common/header/Headers.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.447558 stat("/org/apache/kafka/clients/consumer/ConsumerRecord.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000020>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.448366 stat("/org/apache/kafka/clients/consumer/ConsumerRecord.class", 0x7f769df26ea0) = -1 ENOENT (No such file or directory) <0.000016>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.448723 stat("/org/apache/kafka/common/header/Headers.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000017>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.449398 stat("/org/apache/kafka/clients/consumer/ConsumerRecord.class", 0x7f769df26ea0) = -1 ENOENT (No such file or directory) <0.000016>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.449761 stat("/org/apache/kafka/common/header/Headers.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000017>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.450547 stat("/org/apache/kafka/clients/consumer/ConsumerRecord.class", 0x7f769df26ea0) = -1 ENOENT (No such file or directory) <0.000016>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.450886 stat("/org/apache/kafka/common/header/Headers.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000015>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.452766 stat("/org/apache/kafka/clients/consumer/ConsumerRecord.class", 0x7f769df26ea0) = -1 ENOENT (No such file or directory) <0.000017>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.453119 stat("/org/apache/kafka/common/header/Headers.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000018>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.453865 stat("/com/lambdaworks/redis/event/EventBus.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000018>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.454211 stat("/com/lambdaworks/redis/api/sync/RedisServerCommands.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000015>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.461753 stat("/com/lambdaworks/redis/event/EventBus.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000023>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.462114 stat("/com/lambdaworks/redis/api/sync/RedisServerCommands.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000018>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.462789 stat("/com/lambdaworks/redis/event/EventBus.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000018>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.463129 stat("/com/lambdaworks/redis/api/sync/RedisServerCommands.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000020>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.463777 stat("/com/lambdaworks/redis/event/EventBus.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000019>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.464149 stat("/com/lambdaworks/redis/api/sync/RedisServerCommands.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.001664>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.467798 stat("/org/apache/log4j/WriterAppender.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.004055>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.472517 stat("/org/apache/log4j/WriterAppender.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000035>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.473981 stat("/org/apache/logging/log4j/core/Appender.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000062>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.475152 stat("/org/apache/logging/log4j/core/Appender.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.475929 stat("/org/apache/logging/log4j/core/Appender.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000036>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.476777 stat("/org/apache/logging/log4j/core/impl/LogEventFactory.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000094>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.477744 stat("/org/apache/logging/log4j/core/impl/LogEventFactory.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.478747 stat("/ch/qos/logback/core/OutputStreamAppender.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000102>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.479345 stat("/ch/qos/logback/classic/LoggerContext.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.002429>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.492029 stat("/ch/qos/logback/core/OutputStreamAppender.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000036>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.492589 stat("/ch/qos/logback/classic/LoggerContext.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.493653 stat("/org/jboss/logging/JDKLogger.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000112>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.494573 stat("/org/jboss/logmanager/Logger.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000034>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.505023 stat("/com/rabbitmq/client/Channel.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000037>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.505939 stat("/com/rabbitmq/client/Channel.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000035>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.506798 stat("/com/rabbitmq/client/Channel.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000036>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.507696 stat("/org/springframework/amqp/core/MessageListener.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000035>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.508558 stat("/org/springframework/amqp/core/MessageListener.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000033>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.509424 stat("/org/springframework/amqp/core/MessageListener.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000035>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.512631 stat("/javax/servlet/AsyncContext.class", 0x7f769df26eb0) = -1 ENOENT (No such file or directory) <0.000036>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.513565 stat("/javax/servlet/http/HttpServlet.class", 0x7f769df26ea0) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.514477 stat("/jakarta/servlet/AsyncContext.class", 0x7f769df26eb0) = -1 ENOENT (No such file or directory) <0.000033>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.514933 stat("/jakarta/servlet/http/HttpServlet.class", 0x7f769df26ea0) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.516806 stat("/javax/servlet/AsyncContext.class", 0x7f769df26eb0) = -1 ENOENT (No such file or directory) <0.000034>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.517260 stat("/javax/servlet/http/HttpServlet.class", 0x7f769df26ea0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.518030 stat("/jakarta/servlet/AsyncContext.class", 0x7f769df26eb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.518440 stat("/jakarta/servlet/http/HttpServlet.class", 0x7f769df26ea0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.519085 stat("/javax/servlet/AsyncContext.class", 0x7f769df26eb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.519490 stat("/javax/servlet/http/HttpServlet.class", 0x7f769df26ea0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.520138 stat("/jakarta/servlet/AsyncContext.class", 0x7f769df26eb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.520530 stat("/jakarta/servlet/http/HttpServlet.class", 0x7f769df26ea0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.521184 stat("/javax/servlet/AsyncContext.class", 0x7f769df26eb0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.521595 stat("/javax/servlet/http/HttpServlet.class", 0x7f769df26ea0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.522466 stat("/javax/servlet/AsyncContext.class", 0x7f769df26eb0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.522848 stat("/javax/servlet/http/HttpServlet.class", 0x7f769df26ea0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.523471 stat("/jakarta/servlet/AsyncContext.class", 0x7f769df26eb0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.523979 stat("/jakarta/servlet/http/HttpServlet.class", 0x7f769df26ea0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.524654 stat("/jakarta/servlet/AsyncContext.class", 0x7f769df26eb0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.525021 stat("/jakarta/servlet/http/HttpServlet.class", 0x7f769df26ea0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.525729 stat("/javax/servlet/AsyncContext.class", 0x7f769df26eb0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.526101 stat("/javax/servlet/http/HttpServlet.class", 0x7f769df26ea0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.526691 stat("/jakarta/servlet/AsyncContext.class", 0x7f769df26eb0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.527075 stat("/jakarta/servlet/http/HttpServlet.class", 0x7f769df26ea0) = -1 ENOENT (No such file or directory) <0.000042>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.527753 stat("/javax/servlet/AsyncContext.class", 0x7f769df26eb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.528129 stat("/javax/servlet/http/HttpServlet.class", 0x7f769df26ea0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.528782 stat("/jakarta/servlet/AsyncContext.class", 0x7f769df26eb0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.529149 stat("/jakarta/servlet/http/HttpServlet.class", 0x7f769df26ea0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.529827 stat("/javax/servlet/AsyncContext.class", 0x7f769df26eb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.530201 stat("/javax/servlet/http/HttpServlet.class", 0x7f769df26ea0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.530827 stat("/jakarta/servlet/AsyncContext.class", 0x7f769df26eb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.531196 stat("/jakarta/servlet/http/HttpServlet.class", 0x7f769df26ea0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.532343 stat("/org/springframework/web/method/HandlerMethod.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000024>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.535480 stat("/jakarta/websocket/server/ServerEndpoint.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.536233 stat("/javax/websocket/server/ServerEndpoint.class", 0x7f769df26f00) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.701737 stat("/co/elastic/apm/agent/bbwarmup/WarmupInstrumentation$AdviceClass.class", 0x7f769df25dc0) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.729050 stat("/javax/annotation/Nullable.class", 0x7f769df25c10) = -1 ENOENT (No such file or directory) <0.000086>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.729879 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df25c10) = -1 ENOENT (No such file or directory) <0.000102>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.775238 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToReturned.class", 0x7f769df25c10) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.776977 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df25c10) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.819841 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df258d0) = -1 ENOENT (No such file or directory) <0.000033>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.830173 stat("/co/elastic/apm/agent/bci/bytebuddy/SimpleMethodSignatureOffsetMappingFactory$SimpleMethodSignature.class", 0x7f769df258d0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.838711 stat("/net/bytebuddy/asm/Advice$Enter.class", 0x7f769df25b70) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497963.840018 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df25b70) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497964.051442 stat("/co/elastic/apm/agent/bbwarmup/WarmupInstrumentation$AdviceClass.class", 0x7f769df25dc0) = -1 ENOENT (No such file or directory) <0.000033>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497964.053504 stat("/javax/annotation/Nullable.class", 0x7f769df25c10) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497964.054167 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df25c10) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497964.055481 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToReturned.class", 0x7f769df25c10) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497964.056625 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df25c10) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497964.059636 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df258d0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497964.061354 stat("/co/elastic/apm/agent/bci/bytebuddy/SimpleMethodSignatureOffsetMappingFactory$SimpleMethodSignature.class", 0x7f769df258d0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497964.062687 stat("/net/bytebuddy/asm/Advice$Enter.class", 0x7f769df25b70) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497964.063827 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df25b70) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497964.070713 stat("/org/slf4j/ext/EventData.class", 0x7f769df26ba0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497964.109851 stat("/META-INF/services/java.nio.file.spi.FileSystemProvider", 0x7f769df248b0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.907719 stat("/org/apache/http/impl/execchain/ClientExecChain.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000034>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.908826 stat("/org/apache/http/nio/client/HttpAsyncClient.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.909371 stat("/co/elastic/apm/api/CaptureTransaction.class", 0x7f769df26d50) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.909827 stat("/co/elastic/apm/api/CaptureSpan.class", 0x7f769df26d50) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.910365 stat("/co/elastic/apm/api/Traced.class", 0x7f769df26d50) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.911065 stat("/org/asynchttpclient/AsyncHandler.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.911529 stat("/com/datastax/driver/core/BoundStatement.class", 0x7f769df26d50) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.911977 stat("/org/grails/web/mapping/mvc/GrailsControllerUrlMappingInfo.class", 0x7f769df26d50) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.912407 stat("/org/hibernate/search/FullTextQuery.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.912898 stat("/io/javalin/http/Handler.class", 0x7f769df26d50) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.913308 stat("/io/javalin/http/Handler.class", 0x7f769df26d50) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.913751 stat("/javax/ws/rs/Path.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.914189 stat("/jakarta/ws/rs/Path.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.916148 stat("/javax/jms/Message.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.917096 stat("/javax/jms/Message.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.917569 stat("/javax/jms/Message.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.918067 stat("/javax/jms/Message.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.918500 stat("/javax/jms/Message.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.919038 stat("/javax/faces/lifecycle/Lifecycle.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.919628 stat("/javax/faces/lifecycle/Lifecycle.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.920087 stat("/jakarta/faces/lifecycle/Lifecycle.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.920643 stat("/jakarta/faces/lifecycle/Lifecycle.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.921212 stat("/org/apache/kafka/clients/consumer/ConsumerRecord.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.921768 stat("/org/apache/kafka/clients/consumer/ConsumerRecord.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.922314 stat("/org/apache/kafka/clients/consumer/ConsumerRecord.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.922762 stat("/org/apache/kafka/clients/consumer/ConsumerRecord.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.923194 stat("/org/apache/kafka/clients/consumer/ConsumerRecord.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.923628 stat("/org/apache/kafka/clients/consumer/ConsumerRecord.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.924072 stat("/com/lambdaworks/redis/event/EventBus.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.924500 stat("/com/lambdaworks/redis/api/sync/RedisServerCommands.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.924979 stat("/com/lambdaworks/redis/event/EventBus.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.925435 stat("/com/lambdaworks/redis/api/sync/RedisServerCommands.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.926007 stat("/com/lambdaworks/redis/event/EventBus.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.926585 stat("/com/lambdaworks/redis/api/sync/RedisServerCommands.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.927092 stat("/com/lambdaworks/redis/event/EventBus.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.927512 stat("/com/lambdaworks/redis/api/sync/RedisServerCommands.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.928006 stat("/org/apache/log4j/WriterAppender.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.928483 stat("/org/apache/log4j/WriterAppender.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.929005 stat("/org/apache/logging/log4j/core/Appender.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.929636 stat("/org/apache/logging/log4j/core/Appender.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000046>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.930245 stat("/org/apache/logging/log4j/core/Appender.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.930928 stat("/org/apache/logging/log4j/core/impl/LogEventFactory.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.931562 stat("/org/apache/logging/log4j/core/impl/LogEventFactory.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.932024 stat("/ch/qos/logback/core/OutputStreamAppender.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.932448 stat("/ch/qos/logback/core/OutputStreamAppender.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.933077 stat("/org/jboss/logging/JDKLogger.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.933500 stat("/org/jboss/logmanager/Logger.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.934011 stat("/com/rabbitmq/client/Channel.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.934541 stat("/com/rabbitmq/client/Channel.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.935054 stat("/com/rabbitmq/client/Channel.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.935498 stat("/org/springframework/amqp/core/MessageListener.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.935915 stat("/org/springframework/amqp/core/MessageListener.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.936432 stat("/org/springframework/amqp/core/MessageListener.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.936955 stat("/javax/servlet/AsyncContext.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.937467 stat("/jakarta/servlet/AsyncContext.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.938325 stat("/javax/servlet/AsyncContext.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.938864 stat("/jakarta/servlet/AsyncContext.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.939356 stat("/javax/servlet/AsyncContext.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.939808 stat("/jakarta/servlet/AsyncContext.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.940507 stat("/javax/servlet/AsyncContext.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.941116 stat("/javax/servlet/AsyncContext.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.941861 stat("/jakarta/servlet/AsyncContext.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.942453 stat("/jakarta/servlet/AsyncContext.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.942999 stat("/javax/servlet/AsyncContext.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.943520 stat("/jakarta/servlet/AsyncContext.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.944051 stat("/javax/servlet/AsyncContext.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.944577 stat("/jakarta/servlet/AsyncContext.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.945108 stat("/javax/servlet/AsyncContext.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.945759 stat("/jakarta/servlet/AsyncContext.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.946203 stat("/org/springframework/web/method/HandlerMethod.class", 0x7f769df26d50) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.946688 stat("/jakarta/websocket/server/ServerEndpoint.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497967.947272 stat("/javax/websocket/server/ServerEndpoint.class", 0x7f769df26ce0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.129309 stat("/co/elastic/apm/agent/bbwarmup/WarmupInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000034>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.131321 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.131932 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.133193 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToReturned.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000087>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.134403 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.137345 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.138994 stat("/co/elastic/apm/agent/bci/bytebuddy/SimpleMethodSignatureOffsetMappingFactory$SimpleMethodSignature.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.140302 stat("/net/bytebuddy/asm/Advice$Enter.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.141429 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.150858 stat("/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorRunnableInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.154791 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.155376 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.156533 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.157984 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.161143 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7f769df23d30) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.175242 stat("/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7f769df23df0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.180138 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.181745 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.183920 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.186557 stat("/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorCallableInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.187979 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.188550 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.189616 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.190989 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.192459 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7f769df23d30) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.194119 stat("/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7f769df23df0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.196823 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.198517 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.200484 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.204152 stat("/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorInvokeAnyAllInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.205751 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.206416 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.207468 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.208724 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.210173 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7f769df23d30) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.211569 stat("/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7f769df23df0) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.214276 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.215938 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.217658 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000136>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.240268 stat("/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorRunnableInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.241818 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000069>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.242521 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.243715 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.245293 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.246792 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7f769df23d30) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.248186 stat("/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7f769df23df0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.251177 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.252868 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.255307 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.257995 stat("/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorCallableInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.259560 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.260296 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.261483 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.262875 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.264363 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7f769df23d30) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.265883 stat("/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7f769df23df0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.268555 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.270468 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.272744 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.275367 stat("/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorInvokeAnyAllInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.276834 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.277401 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.278471 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.279731 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.281169 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7f769df23d30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.282622 stat("/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7f769df23df0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.285349 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.286960 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.288838 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.300972 stat("/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorRunnableInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.302397 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.303053 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.304312 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.305693 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.307138 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7f769df23d30) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.308544 stat("/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7f769df23df0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.311344 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.312890 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.314790 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.317388 stat("/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorCallableInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.318829 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.320472 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.321667 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.323132 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.324542 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7f769df23d30) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.325969 stat("/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7f769df23df0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.328725 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.330500 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.332507 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.335209 stat("/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorInvokeAnyAllInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.336734 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.337398 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.338567 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.339808 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.341202 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7f769df23d30) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.342657 stat("/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7f769df23df0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.345423 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.347139 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.349060 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.357885 stat("/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorRunnableInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.359197 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.359892 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.361030 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.362309 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.363746 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7f769df23d30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.365117 stat("/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7f769df23df0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.367813 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.369648 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000040>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.371675 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.374331 stat("/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorCallableInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.375744 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.376294 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.377499 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.378900 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.380293 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7f769df23d30) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.381661 stat("/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7f769df23df0) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.384490 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.386426 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000042>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.388510 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.391081 stat("/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorInvokeAnyAllInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.392580 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.393176 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.394265 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000046>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.395682 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.397169 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7f769df23d30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.398630 stat("/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7f769df23df0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.401360 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.402987 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.404795 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.415193 stat("/co/elastic/apm/agent/loginstr/error/AbstractLoggerErrorCapturingInstrumentation$LoggingAdvice.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.416594 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.417215 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.418538 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.421261 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.422954 stat("/net/bytebuddy/asm/Advice$Origin.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.425286 stat("/net/bytebuddy/asm/Advice$Enter.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.514292 stat("/co/elastic/apm/agent/loginstr/error/AbstractLoggerErrorCapturingInstrumentation$LoggingAdvice.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000033>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.515679 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000058>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.516312 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000034>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.517663 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.528059 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.529769 stat("/net/bytebuddy/asm/Advice$Origin.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.531091 stat("/net/bytebuddy/asm/Advice$Enter.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.558935 stat("/co/elastic/apm/agent/loginstr/error/AbstractLoggerErrorCapturingInstrumentation$LoggingAdvice.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.560824 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.561425 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.562689 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.565484 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.567143 stat("/net/bytebuddy/asm/Advice$Origin.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.568538 stat("/net/bytebuddy/asm/Advice$Enter.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.608403 stat("/co/elastic/apm/agent/concurrent/ForkJoinTaskInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000033>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.609823 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.611615 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.614375 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000019>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.616362 stat("/javax/annotation/Nullable.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.616915 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.659810 stat("/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorRunnableInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000035>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.661340 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.661974 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.663073 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.664387 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.665858 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7f769df23d30) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.667323 stat("/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7f769df23df0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.670167 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.671801 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.673652 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000037>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.676333 stat("/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorCallableInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.677872 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.678584 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.679670 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.680962 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.682434 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7f769df23d30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.683818 stat("/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7f769df23df0) = -1 ENOENT (No such file or directory) <0.000040>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.686669 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.688211 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.690037 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.692619 stat("/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorInvokeAnyAllInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.694184 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.694725 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.696023 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000024>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.697310 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.698850 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7f769df23d30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.700225 stat("/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7f769df23df0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.702922 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.704492 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.706340 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.708923 stat("/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ForkJoinPoolInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.710407 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.711097 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.712280 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.713560 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.715007 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7f769df23d30) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.716546 stat("/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7f769df23df0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.719373 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.720957 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.722798 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.841016 stat("/co/elastic/apm/agent/urlconnection/HttpUrlConnectionInstrumentation$CreateSpanInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000033>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.843347 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.843980 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.845286 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.848182 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.849858 stat("/net/bytebuddy/asm/Advice$FieldValue.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.853469 stat("/net/bytebuddy/asm/Advice$Origin.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.857371 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.858625 stat("/net/bytebuddy/asm/Advice$Enter.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.862290 stat("/co/elastic/apm/agent/urlconnection/HttpUrlConnectionInstrumentation$DisconnectInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.863621 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000017>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.865022 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000019>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.866040 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.867177 stat("/javax/annotation/Nullable.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.867775 stat("/net/bytebuddy/asm/Advice$FieldValue.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.979596 stat("/co/elastic/apm/agent/urlconnection/HttpUrlConnectionInstrumentation$CreateSpanInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000033>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.981723 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.982361 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.983628 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.986635 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.988208 stat("/net/bytebuddy/asm/Advice$FieldValue.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000024>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.989951 stat("/net/bytebuddy/asm/Advice$Origin.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.991466 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.992633 stat("/net/bytebuddy/asm/Advice$Enter.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.996385 stat("/co/elastic/apm/agent/urlconnection/HttpUrlConnectionInstrumentation$DisconnectInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.997665 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000024>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497969.999018 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.000256 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.002001 stat("/javax/annotation/Nullable.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000017>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.002750 stat("/net/bytebuddy/asm/Advice$FieldValue.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000037>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.022828 stat("/co/elastic/apm/agent/process/ProcessExitInstrumentation$WaitFor$WaitForAdvice.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000033>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.024089 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.025419 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.028839 stat("/co/elastic/apm/agent/process/ProcessExitInstrumentation$Destroy$DestroyAdvice.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.029992 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000033>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.031245 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.034639 stat("/co/elastic/apm/agent/process/ProcessExitInstrumentation$ExitValue$ExitValueAdvice.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.035819 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.037051 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.038156 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.039228 stat("/net/bytebuddy/asm/Advice$Return.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.079558 stat("/co/elastic/apm/agent/process/ProcessExitInstrumentation$WaitFor$WaitForAdvice.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000018>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.081200 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000015>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.082494 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000015>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.086535 stat("/co/elastic/apm/agent/process/ProcessExitInstrumentation$Destroy$DestroyAdvice.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.087697 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000041>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.088973 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.092178 stat("/co/elastic/apm/agent/process/ProcessExitInstrumentation$ExitValue$ExitValueAdvice.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.093335 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.094654 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.095733 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.096815 stat("/net/bytebuddy/asm/Advice$Return.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.105943 stat("/co/elastic/apm/agent/process/ProcessStartInstrumentation$ProcessBuilderStartAdvice.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.107098 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.108320 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.109386 stat("/net/bytebuddy/asm/Advice$Return.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.110464 stat("/javax/annotation/Nullable.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.111053 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.134108 stat("/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorRunnableInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.135593 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.136149 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.137370 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.138669 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.140174 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7f769df23d30) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.141627 stat("/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7f769df23df0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.144428 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.146083 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.148055 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.150667 stat("/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorCallableInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.152096 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.152650 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.153800 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.155215 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.156646 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7f769df23d30) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.158094 stat("/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7f769df23df0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.160859 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.162417 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.164278 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.166924 stat("/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorInvokeAnyAllInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.168445 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.169073 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.170245 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.171525 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000969>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.173856 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7f769df23d30) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.175448 stat("/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7f769df23df0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.178155 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.179750 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.181734 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000021>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.243274 stat("/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorRunnableInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.244893 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.245439 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.246721 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.247993 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.249571 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7f769df23d30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.250973 stat("/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7f769df23df0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.253963 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.255537 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.257532 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.260619 stat("/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorCallableInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000018>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.262022 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.262584 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.263777 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.265077 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.266519 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7f769df23d30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.267908 stat("/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7f769df23df0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.270674 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.272378 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.274237 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.276827 stat("/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorInvokeAnyAllInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.278327 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.278923 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.279980 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.281444 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000017>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.284057 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7f769df23d30) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.285461 stat("/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7f769df23df0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.288179 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.289747 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.291588 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.332807 stat("/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorRunnableInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000034>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.334222 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.334899 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.336065 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.337420 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.339081 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7f769df23d30) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.340606 stat("/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7f769df23df0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.343500 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000018>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.345330 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.347175 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.350261 stat("/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorCallableInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.351669 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.352234 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.353316 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.354625 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.356090 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7f769df23d30) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.357499 stat("/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7f769df23df0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.360279 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.361882 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.363657 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.366317 stat("/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorInvokeAnyAllInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.367760 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.368457 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.369486 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000024>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.370969 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.372395 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7f769df23d30) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.373835 stat("/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7f769df23df0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.376523 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.378146 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.379919 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.566164 stat("/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorRunnableInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000035>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.574853 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000019>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.575608 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000018>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.576936 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000016>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.578618 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000016>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.580384 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7f769df23d30) = -1 ENOENT (No such file or directory) <0.000017>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.581923 stat("/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7f769df23df0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.584803 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.586527 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.588427 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000033>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.591155 stat("/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorCallableInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.592634 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.593188 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.594311 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.595588 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.597037 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7f769df23d30) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.598486 stat("/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7f769df23df0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.601197 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.602771 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.604524 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.607148 stat("/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorInvokeAnyAllInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.608636 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.609194 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.610284 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.611550 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.612974 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7f769df23d30) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.614374 stat("/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7f769df23df0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.617064 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.618685 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.620458 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.630265 stat("/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorRunnableInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.632092 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.632724 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.633867 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.635135 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.636614 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7f769df23d30) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.638043 stat("/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7f769df23df0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.640725 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.642280 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.644032 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.646649 stat("/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorCallableInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.648041 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.648773 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.649863 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.651169 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.652585 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7f769df23d30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.654012 stat("/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7f769df23df0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.656700 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.658280 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.660056 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.662635 stat("/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorInvokeAnyAllInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.664090 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.664637 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.666836 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000038>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.668107 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.669525 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7f769df23d30) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.670930 stat("/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7f769df23df0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.673586 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.675185 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.676912 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.692054 stat("/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorRunnableInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.693428 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.694034 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.695131 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.696397 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.697881 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7f769df23d30) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.699356 stat("/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7f769df23df0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.702060 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.703665 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.705481 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.708055 stat("/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorCallableInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.709477 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.710093 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.711187 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.712491 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.713906 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7f769df23d30) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.715324 stat("/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7f769df23df0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.718175 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.719778 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.721560 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.724343 stat("/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorInvokeAnyAllInstrumentation$AdviceClass.class", 0x7f769df240e0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.725960 stat("/javax/annotation/Nullable.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.726589 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.727724 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.729026 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f769df23f30) = -1 ENOENT (No such file or directory) <0.000070>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.730640 stat("/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7f769df23d30) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.732035 stat("/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7f769df23df0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.734744 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.737213 stat("/net/bytebuddy/asm/Advice$Argument.class", 0x7f769df23bf0) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.739208 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f769df23e90) = -1 ENOENT (No such file or directory) <0.000034>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   199] 1652497970.778075 stat("/org/apache/catalina/startup/Bootstrap.class", 0x7f769df27370) = -1 ENOENT (No such file or directory) <0.000038>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   222] 1652497970.821318 stat("/co/elastic/apm/agent/urlconnection/HttpUrlConnectionInstrumentation$CreateSpanInstrumentation$AdviceClass.class", 0x7f7684707f40) = -1 ENOENT (No such file or directory) <0.000021>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   222] 1652497970.824168 stat("/javax/annotation/Nullable.class", 0x7f7684707d90) = -1 ENOENT (No such file or directory) <0.000033>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   222] 1652497970.824920 stat("/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7f7684707d90) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   222] 1652497970.826672 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f7684707d90) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   222] 1652497970.830911 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f7684707a50) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   222] 1652497970.833063 stat("/net/bytebuddy/asm/Advice$FieldValue.class", 0x7f7684707a50) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   222] 1652497970.835400 stat("/net/bytebuddy/asm/Advice$Origin.class", 0x7f7684707a50) = -1 ENOENT (No such file or directory) <0.000035>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   222] 1652497970.837462 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f7684707cf0) = -1 ENOENT (No such file or directory) <0.000035>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   222] 1652497970.839022 stat("/net/bytebuddy/asm/Advice$Enter.class", 0x7f7684707cf0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   222] 1652497970.844717 stat("/co/elastic/apm/agent/urlconnection/HttpUrlConnectionInstrumentation$DisconnectInstrumentation$AdviceClass.class", 0x7f7684707f40) = -1 ENOENT (No such file or directory) <0.000033>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   222] 1652497970.850501 stat("/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7f7684707d90) = -1 ENOENT (No such file or directory) <0.000019>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   222] 1652497970.853062 stat("/net/bytebuddy/asm/Advice$This.class", 0x7f7684707cf0) = -1 ENOENT (No such file or directory) <0.000068>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   222] 1652497970.855571 stat("/net/bytebuddy/asm/Advice$Thrown.class", 0x7f7684707cf0) = -1 ENOENT (No such file or directory) <0.000350>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   222] 1652497970.861007 stat("/javax/annotation/Nullable.class", 0x7f7684707cf0) = -1 ENOENT (No such file or directory) <0.000019>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+[pid   222] 1652497970.862017 stat("/net/bytebuddy/asm/Advice$FieldValue.class", 0x7f7684707cf0) = -1 ENOENT (No such file or directory) <0.000017>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x46b85]
+ > No DWARF information found
+Usage: java [-options] class [args...]
+           (to execute a class)
+   or  java [-options] -jar jarfile [args...]
+           (to execute a jar file)
+where options include:
+    -d32	  use a 32-bit data model if available
+    -d64	  use a 64-bit data model if available
+    -server	  to select the "server" VM
+                  The default VM is server,
+                  because you are running on a server-class machine.
+
+
+    -cp <class search path of directories and zip/jar files>
+    -classpath <class search path of directories and zip/jar files>
+                  A : separated list of directories, JAR archives,
+                  and ZIP archives to search for class files.
+    -D<name>=<value>
+                  set a system property
+    -verbose:[class|gc|jni]
+                  enable verbose output
+    -version      print product version and exit
+    -version:<value>
+                  Warning: this feature is deprecated and will be removed
+                  in a future release.
+                  require the specified version to run
+    -showversion  print product version and continue
+    -jre-restrict-search | -no-jre-restrict-search
+                  Warning: this feature is deprecated and will be removed
+                  in a future release.
+                  include/exclude user private JREs in the version search
+    -? -help      print this help message
+    -X            print help on non-standard options
+    -ea[:<packagename>...|:<classname>]
+    -enableassertions[:<packagename>...|:<classname>]
+                  enable assertions with specified granularity
+    -da[:<packagename>...|:<classname>]
+    -disableassertions[:<packagename>...|:<classname>]
+                  disable assertions with specified granularity
+    -esa | -enablesystemassertions
+                  enable system assertions
+    -dsa | -disablesystemassertions
+                  disable system assertions
+    -agentlib:<libname>[=<options>]
+                  load native agent library <libname>, e.g. -agentlib:hprof
+                  see also, -agentlib:jdwp=help and -agentlib:hprof=help
+    -agentpath:<pathname>[=<options>]
+                  load native agent library by full pathname
+    -javaagent:<jarpath>[=<options>]
+                  load Java programming language agent, see java.lang.instrument
+    -splash:<imagepath>
+                  show splash screen with specified image
+See http://www.oracle.com/technetwork/java/javase/documentation/index.html for more details.
+[pid   224] 1652497971.164155 connect(17, {sa_family=AF_INET, sin_port=htons(8200), sin_addr=inet_addr("172.17.0.1")}, 16) = -1 EINPROGRESS (Operation in progress) <0.000477>
+ > /lib/ld-musl-x86_64.so.1(__clone+0x62) [0x543ad]
+ > No DWARF information found
+[pid   222] 1652497971.173804 connect(19, {sa_family=AF_INET, sin_port=htons(8200), sin_addr=inet_addr("172.17.0.1")}, 16) = -1 EINPROGRESS (Operation in progress) <0.000520>
+ > /lib/ld-musl-x86_64.so.1(__clone+0x62) [0x543ad]
+ > No DWARF information found
+[pid   199] 1652497972.168942 unlink("/tmp/elasticapm-java-35b4d966-7345-4449-a542-06dcc06bb295.log.json.1") = -1 ENOENT (No such file or directory) <0.000128>
+ > /lib/ld-musl-x86_64.so.1(remove+0x8) [0x4a007]
+ > No DWARF information found

@@ -1,0 +1,575 @@
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+/opt/bin/entry_point.sh: line 5: /opt/bin/clear_x_locks.sh: No such file or directory
+14/05/2022 02:21:43 passing arg to libvncserver: -rfbport
+14/05/2022 02:21:43 passing arg to libvncserver: 5900
+14/05/2022 02:21:43 -usepw: found /root/.vnc/passwd
+14/05/2022 02:21:43 x11vnc version: 0.9.13 lastmod: 2011-08-10  pid: 256
+14/05/2022 02:21:43 Using X display :99.0
+14/05/2022 02:21:43 rootwin: 0x25c reswin: 0x200001 dpy: 0x17656a0
+14/05/2022 02:21:43 
+14/05/2022 02:21:43 ------------------ USEFUL INFORMATION ------------------
+14/05/2022 02:21:43 X DAMAGE available on display, using it for polling hints.
+14/05/2022 02:21:43   To disable this behavior use: '-noxdamage'
+14/05/2022 02:21:43 
+14/05/2022 02:21:43   Most compositing window managers like 'compiz' or 'beryl'
+14/05/2022 02:21:43   cause X DAMAGE to fail, and so you may not see any screen
+14/05/2022 02:21:43   updates via VNC.  Either disable 'compiz' (recommended) or
+14/05/2022 02:21:43   supply the x11vnc '-noxdamage' command line option.
+14/05/2022 02:21:43 
+14/05/2022 02:21:43 Wireframing: -wireframe mode is in effect for window moves.
+14/05/2022 02:21:43   If this yields undesired behavior (poor response, painting
+14/05/2022 02:21:43   errors, etc) it may be disabled:
+14/05/2022 02:21:43    - use '-nowf' to disable wireframing completely.
+14/05/2022 02:21:43    - use '-nowcr' to disable the Copy Rectangle after the
+14/05/2022 02:21:43      moved window is released in the new position.
+14/05/2022 02:21:43   Also see the -help entry for tuning parameters.
+14/05/2022 02:21:43   You can press 3 Alt_L's (Left "Alt" key) in a row to 
+14/05/2022 02:21:43   repaint the screen, also see the -fixscreen option for
+14/05/2022 02:21:43   periodic repaints.
+14/05/2022 02:21:43 
+14/05/2022 02:21:43 XFIXES available on display, resetting cursor mode
+14/05/2022 02:21:43   to: '-cursor most'.
+14/05/2022 02:21:43   to disable this behavior use: '-cursor arrow'
+14/05/2022 02:21:43   or '-noxfixes'.
+14/05/2022 02:21:43 using XFIXES for cursor drawing.
+14/05/2022 02:21:43 GrabServer control via XTEST.
+14/05/2022 02:21:43 
+14/05/2022 02:21:43 Scroll Detection: -scrollcopyrect mode is in effect to
+14/05/2022 02:21:43   use RECORD extension to try to detect scrolling windows
+14/05/2022 02:21:43   (induced by either user keystroke or mouse input).
+14/05/2022 02:21:43   If this yields undesired behavior (poor response, painting
+14/05/2022 02:21:43   errors, etc) it may be disabled via: '-noscr'
+14/05/2022 02:21:43   Also see the -help entry for tuning parameters.
+14/05/2022 02:21:43   You can press 3 Alt_L's (Left "Alt" key) in a row to 
+14/05/2022 02:21:43   repaint the screen, also see the -fixscreen option for
+14/05/2022 02:21:43   periodic repaints.
+14/05/2022 02:21:43 
+14/05/2022 02:21:43 XKEYBOARD: number of keysyms per keycode 7 is greater
+14/05/2022 02:21:43   than 4 and 51 keysyms are mapped above 4.
+14/05/2022 02:21:43   Automatically switching to -xkb mode.
+14/05/2022 02:21:43   If this makes the key mapping worse you can
+14/05/2022 02:21:43   disable it with the "-noxkb" option.
+14/05/2022 02:21:43   Also, remember "-remap DEAD" for accenting characters.
+14/05/2022 02:21:43 
+14/05/2022 02:21:43 X FBPM extension not supported.
+14/05/2022 02:21:43 X display is not capable of DPMS.
+14/05/2022 02:21:43 --------------------------------------------------------
+14/05/2022 02:21:43 
+14/05/2022 02:21:43 Default visual ID: 0x21
+14/05/2022 02:21:43 Read initial data from X display into framebuffer.
+14/05/2022 02:21:43 initialize_screen: fb_depth/fb_bpp/fb_Bpl 24/32/5440
+14/05/2022 02:21:43 
+14/05/2022 02:21:43 X display :99.0 is 32bpp depth=24 true color
+14/05/2022 02:21:43 
+14/05/2022 02:21:43 Listening for VNC connections on TCP port 5900
+14/05/2022 02:21:43 Listening for VNC connections on TCP6 port 5900
+14/05/2022 02:21:43 listen6: bind: Address already in use
+14/05/2022 02:21:43 Not listening on IPv6 interface.
+14/05/2022 02:21:43 
+14/05/2022 02:21:43 Xinerama is present and active (e.g. multi-head).
+14/05/2022 02:21:43 Xinerama: number of sub-screens: 1
+14/05/2022 02:21:43 Xinerama: no blackouts needed (only one sub-screen)
+14/05/2022 02:21:43 
+14/05/2022 02:21:43 fb read rate: 850 MB/sec
+14/05/2022 02:21:43 fast read: reset -wait  ms to: 10
+14/05/2022 02:21:43 fast read: reset -defer ms to: 10
+14/05/2022 02:21:43 The X server says there are 10 mouse buttons.
+14/05/2022 02:21:43 screen setup finished.
+14/05/2022 02:21:43 
+
+The VNC desktop is:      c687906efb27:0
+
+******************************************************************************
+Have you tried the x11vnc '-ncache' VNC client-side pixel caching feature yet?
+
+The scheme stores pixel data offscreen on the VNC viewer side for faster
+retrieval.  It should work with any VNC viewer.  Try it by running:
+
+    x11vnc -ncache 10 ...
+
+One can also add -ncache_cr for smooth 'copyrect' window motion.
+More info: http://www.karlrunge.com/x11vnc/faq.html#faq-client-caching
+
+Failed to read: session.ignoreBorder
+Setting default value
+Failed to read: session.forcePseudoTransparency
+Setting default value
+Failed to read: session.colorsPerChannel
+Setting default value
+Failed to read: session.doubleClickInterval
+Setting default value
+Failed to read: session.tabPadding
+Setting default value
+Failed to read: session.styleOverlay
+Setting default value
+Failed to read: session.slitlistFile
+Setting default value
+Failed to read: session.appsFile
+Setting default value
+Failed to read: session.tabsAttachArea
+Setting default value
+Failed to read: session.cacheLife
+Setting default value
+Failed to read: session.cacheMax
+Setting default value
+Failed to read: session.autoRaiseDelay
+Setting default value
+Failed to read: session.ignoreBorder
+Setting default value
+Failed to read: session.forcePseudoTransparency
+Setting default value
+Failed to read: session.colorsPerChannel
+Setting default value
+Failed to read: session.doubleClickInterval
+Setting default value
+Failed to read: session.tabPadding
+Setting default value
+Failed to read: session.styleOverlay
+Setting default value
+Failed to read: session.slitlistFile
+Setting default value
+Failed to read: session.appsFile
+Setting default value
+Failed to read: session.tabsAttachArea
+Setting default value
+Failed to read: session.cacheLife
+Setting default value
+Failed to read: session.cacheMax
+Setting default value
+Failed to read: session.autoRaiseDelay
+Setting default value
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+Failed to read: session.screen0.opaqueMove
+Setting default value
+Failed to read: session.screen0.fullMaximization
+Setting default value
+Failed to read: session.screen0.maxIgnoreIncrement
+Setting default value
+Failed to read: session.screen0.maxDisableMove
+Setting default value
+Failed to read: session.screen0.maxDisableResize
+Setting default value
+Failed to read: session.screen0.workspacewarping
+Setting default value
+Failed to read: session.screen0.showwindowposition
+Setting default value
+Failed to read: session.screen0.autoRaise
+Setting default value
+Failed to read: session.screen0.clickRaises
+Setting default value
+Failed to read: session.screen0.defaultDeco
+Setting default value
+Failed to read: session.screen0.tab.placement
+Setting default value
+Failed to read: session.screen0.windowMenu
+Setting default value
+Failed to read: session.screen0.noFocusWhileTypingDelay
+Setting default value
+Failed to read: session.screen0.workspaces
+Setting default value
+Failed to read: session.screen0.edgeSnapThreshold
+Setting default value
+Failed to read: session.screen0.window.focus.alpha
+Setting default value
+Failed to read: session.screen0.window.unfocus.alpha
+Setting default value
+Failed to read: session.screen0.menu.alpha
+Setting default value
+Failed to read: session.screen0.menuDelay
+Setting default value
+Failed to read: session.screen0.tab.width
+Setting default value
+Failed to read: session.screen0.tooltipDelay
+Setting default value
+Failed to read: session.screen0.allowRemoteActions
+Setting default value
+Failed to read: session.screen0.clientMenu.usePixmap
+Setting default value
+Failed to read: session.screen0.tabs.usePixmap
+Setting default value
+Failed to read: session.screen0.tabs.maxOver
+Setting default value
+Failed to read: session.screen0.tabs.intitlebar
+Setting default value
+Failed to read: session.screen0.focusModel
+Setting default value
+Failed to read: session.screen0.tabFocusModel
+Setting default value
+Failed to read: session.screen0.focusNewWindows
+Setting default value
+Failed to read: session.screen0.focusSameHead
+Setting default value
+Failed to read: session.screen0.rowPlacementDirection
+Setting default value
+Failed to read: session.screen0.colPlacementDirection
+Setting default value
+Failed to read: session.screen0.windowPlacement
+Setting default value
+Failed to read: session.ignoreBorder
+Setting default value
+Failed to read: session.forcePseudoTransparency
+Setting default value
+Failed to read: session.colorsPerChannel
+Setting default value
+Failed to read: session.doubleClickInterval
+Setting default value
+Failed to read: session.tabPadding
+Setting default value
+Failed to read: session.styleOverlay
+Setting default value
+Failed to read: session.slitlistFile
+Setting default value
+Failed to read: session.appsFile
+Setting default value
+Failed to read: session.tabsAttachArea
+Setting default value
+Failed to read: session.cacheLife
+Setting default value
+Failed to read: session.cacheMax
+Setting default value
+Failed to read: session.autoRaiseDelay
+Setting default value
+Failed to read: session.screen0.opaqueMove
+Setting default value
+Failed to read: session.screen0.fullMaximization
+Setting default value
+Failed to read: session.screen0.maxIgnoreIncrement
+Setting default value
+Failed to read: session.screen0.maxDisableMove
+Setting default value
+Failed to read: session.screen0.maxDisableResize
+Setting default value
+Failed to read: session.screen0.workspacewarping
+Setting default value
+Failed to read: session.screen0.showwindowposition
+Setting default value
+Failed to read: session.screen0.autoRaise
+Setting default value
+Failed to read: session.screen0.clickRaises
+Setting default value
+Failed to read: session.screen0.defaultDeco
+Setting default value
+Failed to read: session.screen0.tab.placement
+Setting default value
+Failed to read: session.screen0.windowMenu
+Setting default value
+Failed to read: session.screen0.noFocusWhileTypingDelay
+Setting default value
+Failed to read: session.screen0.workspaces
+Setting default value
+Failed to read: session.screen0.edgeSnapThreshold
+Setting default value
+Failed to read: session.screen0.window.focus.alpha
+Setting default value
+Failed to read: session.screen0.window.unfocus.alpha
+Setting default value
+Failed to read: session.screen0.menu.alpha
+Setting default value
+Failed to read: session.screen0.menuDelay
+Setting default value
+Failed to read: session.screen0.tab.width
+Setting default value
+Failed to read: session.screen0.tooltipDelay
+Setting default value
+Failed to read: session.screen0.allowRemoteActions
+Setting default value
+Failed to read: session.screen0.clientMenu.usePixmap
+Setting default value
+Failed to read: session.screen0.tabs.usePixmap
+Setting default value
+Failed to read: session.screen0.tabs.maxOver
+Setting default value
+Failed to read: session.screen0.tabs.intitlebar
+Setting default value
+Failed to read: session.screen0.focusModel
+Setting default value
+Failed to read: session.screen0.tabFocusModel
+Setting default value
+Failed to read: session.screen0.focusNewWindows
+Setting default value
+Failed to read: session.screen0.focusSameHead
+Setting default value
+Failed to read: session.screen0.rowPlacementDirection
+Setting default value
+Failed to read: session.screen0.colPlacementDirection
+Setting default value
+Failed to read: session.screen0.windowPlacement
+Setting default value
+Failed to read: session.screen0.slit.acceptKdeDockapps
+Setting default value
+Failed to read: session.screen0.slit.autoHide
+Setting default value
+Failed to read: session.screen0.slit.maxOver
+Setting default value
+Failed to read: session.screen0.slit.placement
+Setting default value
+Failed to read: session.screen0.slit.alpha
+Setting default value
+Failed to read: session.screen0.slit.onhead
+Setting default value
+Failed to read: session.screen0.slit.layer
+Setting default value
+Failed to read: session.screen0.toolbar.autoHide
+Setting default value
+Failed to read: session.screen0.toolbar.maxOver
+Setting default value
+Failed to read: session.screen0.toolbar.visible
+Setting default value
+Failed to read: session.screen0.toolbar.alpha
+Setting default value
+Failed to read: session.screen0.toolbar.layer
+Setting default value
+Failed to read: session.screen0.toolbar.onhead
+Setting default value
+Failed to read: session.screen0.toolbar.placement
+Setting default value
+Failed to read: session.screen0.toolbar.height
+Setting default value
+Failed to read: session.screen0.iconbar.mode
+Setting default value
+Failed to read: session.screen0.iconbar.alignment
+Setting default value
+Failed to read: session.screen0.iconbar.iconWidth
+Setting default value
+Failed to read: session.screen0.iconbar.iconTextPadding
+Setting default value
+Failed to read: session.screen0.iconbar.usePixmap
+Setting default value
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.
+strace: invalid option -- 'Z'
+Try 'strace -h' for more information.

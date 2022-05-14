@@ -1,0 +1,188 @@
+[s6-init] making user provided files available at /var/run/s6/etc...exited 0.
+[s6-init] ensuring user provided files have correct perms...exited 0.
+[fix-attrs.d] applying ownership & permissions fixes...
+[fix-attrs.d] done.
+[cont-init.d] executing container initialization scripts...
+[cont-init.d] done.
+[services.d] starting services
+system call monitor started
+[services.d] done.
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+2022-05-14 08:11:53,349 [main] INFO  co.elastic.apm.agent.util.JmxUtils - Found JVM-specific OperatingSystemMXBean interface: com.sun.management.OperatingSystemMXBean
+2022-05-14 08:11:53,668 [main] INFO  co.elastic.apm.agent.configuration.StartupInfo - Starting Elastic APM 1.30.1 as run_pobs_java-oauth-server_0 on Java 1.8.0_151 Runtime version: 1.8.0_151-8u151-b12-1~deb9u1-b12 VM version: 25.151-b12 (Oracle Corporation) Linux 5.4.0-1070-azure
+2022-05-14 08:11:53,668 [main] INFO  co.elastic.apm.agent.configuration.StartupInfo - service_name: 'run_pobs_java-oauth-server_0' (source: Environment Variables)
+2022-05-14 08:11:53,669 [main] INFO  co.elastic.apm.agent.configuration.StartupInfo - server_url: 'http://172.17.0.1:8200' (source: Environment Variables)
+2022-05-14 08:11:53,669 [main] INFO  co.elastic.apm.agent.configuration.StartupInfo - log_ecs_reformatting: 'OVERRIDE' (source: Java System Properties)
+2022-05-14 08:11:53,669 [main] WARN  co.elastic.apm.agent.configuration.StartupInfo - To enable all features and decrease startup time, please configure application_packages
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+2022-05-14 08:12:00,012 [main] INFO  co.elastic.apm.agent.impl.ElasticApmTracer - Tracer switched to RUNNING state
+2022-05-14 08:12:00,105 [elastic-apm-server-healthcheck] INFO  co.elastic.apm.agent.report.ApmServerHealthChecker - Elastic APM server is available: {  "build_date": "2021-11-04T13:10:15Z",  "build_sha": "0702551667e5319822d00dee613ea2a1501615bf",  "version": "7.15.2"}
+2022-05-14 08:12:00,211 [elastic-apm-remote-config-poller] INFO  co.elastic.apm.agent.configuration.ApmServerConfigurationSource - Received new configuration from APM Server: {}
+system call monitor started
+system call monitor started
+system call monitor started
+[INFO] Scanning for projects...
+system call monitor started
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building java-oauth-server 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ java-oauth-server ---
+[INFO] Deleting /authlete/app/target
+[INFO] 
+[INFO] >>> jetty-maven-plugin:9.4.27.v20200227:run (default-cli) > test-compile @ java-oauth-server >>>
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ java-oauth-server ---
+system call monitor started
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ java-oauth-server ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 51 source files to /authlete/app/target/classes
+system call monitor started
+system call monitor started
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ java-oauth-server ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /authlete/app/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ java-oauth-server ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< jetty-maven-plugin:9.4.27.v20200227:run (default-cli) < test-compile @ java-oauth-server <<<
+[INFO] 
+[INFO] 
+[INFO] --- jetty-maven-plugin:9.4.27.v20200227:run (default-cli) @ java-oauth-server ---
+system call monitor started
+[INFO] Logging initialized @15626ms to org.eclipse.jetty.util.log.Slf4jLog
+[INFO] webAppSourceDirectory not set. Trying src/main/webapp
+[INFO] Reload Mechanic: automatic
+[INFO] nonBlocking:false
+[INFO] Classes = /authlete/app/target/classes
+[INFO] Configuring Jetty for project: java-oauth-server
+[INFO] Context path = /
+[INFO] Tmp directory = /authlete/app/target/tmp
+[INFO] Web defaults = org/eclipse/jetty/webapp/webdefault.xml
+[INFO] Web overrides =  none
+[INFO] web.xml file = file:///authlete/app/src/main/webapp/WEB-INF/web.xml
+[INFO] Webapp directory = /authlete/app/src/main/webapp
+[INFO] jetty-9.4.27.v20200227; built: 2020-02-27T18:37:21.340Z; git: a304fd9f351f337e7c0e2a7c28878dd536149c6c; jvm 1.8.0_151-8u151-b12-1~deb9u1-b12
+system call monitor started
+[INFO] Scanning elapsed time=149ms
+system call monitor started
+[INFO] DefaultSessionIdManager workerName=node0
+[INFO] No SessionScavenger set, using defaults
+[INFO] node0 Scavenging every 660000ms
+system call monitor started
+system call monitor started
+2022-05-14 08:12:11,684 [main] INFO  co.elastic.apm.agent.servlet.ServletVersionInstrumentation - Servlet container info = jetty/9.4.27.v20200227
+[INFO] Started o.e.j.m.p.JettyWebAppContext@b3c7c75{/,file:///authlete/app/src/main/webapp/,AVAILABLE}{file:///authlete/app/src/main/webapp/}
+[INFO] Started ServerConnector@6ca95b1e{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+[INFO] Started @19507ms
+[INFO] Started Jetty Server
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started

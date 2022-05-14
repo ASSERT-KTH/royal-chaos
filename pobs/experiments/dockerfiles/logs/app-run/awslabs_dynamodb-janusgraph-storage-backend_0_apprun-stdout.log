@@ -1,0 +1,145 @@
+[s6-init] making user provided files available at /var/run/s6/etc...exited 0.
+[s6-init] ensuring user provided files have correct perms...exited 0.
+[fix-attrs.d] applying ownership & permissions fixes...
+[fix-attrs.d] done.
+[cont-init.d] executing container initialization scripts...
+[cont-init.d] done.
+[services.d] starting services
+system call monitor started
+[services.d] done.
+system call monitor started
+2022-05-14 03:54:03,090 [main] INFO  co.elastic.apm.agent.util.JmxUtils - Found JVM-specific OperatingSystemMXBean interface: com.sun.management.OperatingSystemMXBean
+2022-05-14 03:54:03,291 [main] INFO  co.elastic.apm.agent.configuration.StartupInfo - Starting Elastic APM 1.30.1 as run_pobs_dynamodb-janusgraph-storage-backend_0 on Java 1.8.0_312 Runtime version: 1.8.0_312-b07 VM version: 25.312-b07 (Red Hat, Inc.) Linux 5.4.0-1070-azure
+2022-05-14 03:54:03,292 [main] INFO  co.elastic.apm.agent.configuration.StartupInfo - service_name: 'run_pobs_dynamodb-janusgraph-storage-backend_0' (source: Environment Variables)
+2022-05-14 03:54:03,292 [main] INFO  co.elastic.apm.agent.configuration.StartupInfo - server_url: 'http://172.17.0.1:8200' (source: Environment Variables)
+2022-05-14 03:54:03,292 [main] INFO  co.elastic.apm.agent.configuration.StartupInfo - log_ecs_reformatting: 'OVERRIDE' (source: Java System Properties)
+2022-05-14 03:54:03,293 [main] WARN  co.elastic.apm.agent.configuration.StartupInfo - To enable all features and decrease startup time, please configure application_packages
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+2022-05-14 03:54:10,706 [main] INFO  co.elastic.apm.agent.impl.ElasticApmTracer - Tracer switched to RUNNING state
+2022-05-14 03:54:10,780 [elastic-apm-server-healthcheck] INFO  co.elastic.apm.agent.report.ApmServerHealthChecker - Elastic APM server is available: {  "build_date": "2021-11-04T13:10:15Z",  "build_sha": "0702551667e5319822d00dee613ea2a1501615bf",  "version": "7.15.2"}
+2022-05-14 03:54:10,900 [elastic-apm-remote-config-poller] INFO  co.elastic.apm.agent.configuration.ApmServerConfigurationSource - Received new configuration from APM Server: {}
+system call monitor started
+Initializing DynamoDB Local with the following configuration:
+Port:	8000
+InMemory:	true
+DbPath:	null
+SharedDb:	false
+shouldDelayTransientStatuses:	false
+CorsParams:	*
+
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started

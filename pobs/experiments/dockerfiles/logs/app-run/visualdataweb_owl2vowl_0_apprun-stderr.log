@@ -1,0 +1,1999 @@
+strace: option requires an argument -- p
+Try 'strace -h' for more information.
+Picked up JAVA_TOOL_OPTIONS:  -javaagent:/home/elastic/elastic-apm-agent-1.30.1.jar -Delastic.apm.log_ecs_reformatting=OVERRIDE
+[pid   209] 1652528437.858710 connect(16, {sa_family=AF_INET, sin_port=htons(80), sin_addr=inet_addr("169.254.169.254")}, 16) = -1 EINPROGRESS (Operation in progress) <0.000059>
+ > /lib/ld-musl-x86_64.so.1(__clone+0x62) [0x53407]
+ > No DWARF information found
+[pid   199] 1652528438.366405 stat("/owl2vowl/com/alibaba/dubbo/rpc/protocol/dubbo/filter/FutureFilter.class", 0x7fb97c341570) = -1 ENOENT (No such file or directory) <0.000051>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528438.911192 stat("/owl2vowl/org/slf4j/ext/EventData.class", 0x7fb97c341380) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528438.968018 stat("/owl2vowl/org/apache/http/impl/execchain/ClientExecChain.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528438.970201 stat("/owl2vowl/org/apache/http/nio/client/HttpAsyncClient.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528438.983146 stat("/owl2vowl/co/elastic/apm/api/CaptureTransaction.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528438.983871 stat("/owl2vowl/co/elastic/apm/api/CaptureSpan.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528438.984602 stat("/owl2vowl/co/elastic/apm/api/Traced.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528438.986875 stat("/owl2vowl/org/asynchttpclient/AsyncHandler.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528438.987572 stat("/owl2vowl/com/datastax/driver/core/BoundStatement.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528438.989289 stat("/owl2vowl/org/grails/web/mapping/mvc/GrailsControllerUrlMappingInfo.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528438.996387 stat("/owl2vowl/org/hibernate/search/FullTextQuery.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.001606 stat("/owl2vowl/io/javalin/http/Handler.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000052>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.002767 stat("/owl2vowl/io/javalin/http/Handler.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.006447 stat("/owl2vowl/javax/ws/rs/Path.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.009749 stat("/owl2vowl/jakarta/ws/rs/Path.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000041>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.010618 stat("/owl2vowl/jakarta/jws/WebService.class", 0x7fb97c341e10) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.018009 stat("/owl2vowl/javax/jms/Message.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.018691 stat("/owl2vowl/javax/jms/Message.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.019402 stat("/owl2vowl/javax/jms/Message.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.020047 stat("/owl2vowl/javax/jms/Message.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.020702 stat("/owl2vowl/javax/jms/Message.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.021317 stat("/owl2vowl/javax/faces/lifecycle/Lifecycle.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.021980 stat("/owl2vowl/javax/faces/lifecycle/Lifecycle.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.022618 stat("/owl2vowl/jakarta/faces/lifecycle/Lifecycle.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.023208 stat("/owl2vowl/jakarta/faces/lifecycle/Lifecycle.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.023810 stat("/owl2vowl/org/apache/kafka/clients/consumer/ConsumerRecord.class", 0x7fb97c341dc0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.024200 stat("/owl2vowl/org/apache/kafka/common/header/Headers.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.024817 stat("/owl2vowl/org/apache/kafka/clients/consumer/ConsumerRecord.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.025406 stat("/owl2vowl/org/apache/kafka/clients/consumer/ConsumerRecord.class", 0x7fb97c341dc0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.025808 stat("/owl2vowl/org/apache/kafka/common/header/Headers.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.026413 stat("/owl2vowl/org/apache/kafka/clients/consumer/ConsumerRecord.class", 0x7fb97c341dc0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.026806 stat("/owl2vowl/org/apache/kafka/common/header/Headers.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.027556 stat("/owl2vowl/org/apache/kafka/clients/consumer/ConsumerRecord.class", 0x7fb97c341dc0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.027986 stat("/owl2vowl/org/apache/kafka/common/header/Headers.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.028675 stat("/owl2vowl/org/apache/kafka/clients/consumer/ConsumerRecord.class", 0x7fb97c341dc0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.029088 stat("/owl2vowl/org/apache/kafka/common/header/Headers.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.029782 stat("/owl2vowl/com/lambdaworks/redis/event/EventBus.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.030191 stat("/owl2vowl/com/lambdaworks/redis/api/sync/RedisServerCommands.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.030857 stat("/owl2vowl/com/lambdaworks/redis/event/EventBus.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.031261 stat("/owl2vowl/com/lambdaworks/redis/api/sync/RedisServerCommands.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.031897 stat("/owl2vowl/com/lambdaworks/redis/event/EventBus.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.032297 stat("/owl2vowl/com/lambdaworks/redis/api/sync/RedisServerCommands.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.032952 stat("/owl2vowl/com/lambdaworks/redis/event/EventBus.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000017>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.033374 stat("/owl2vowl/com/lambdaworks/redis/api/sync/RedisServerCommands.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.035394 stat("/owl2vowl/org/apache/log4j/WriterAppender.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.035992 stat("/owl2vowl/org/apache/log4j/WriterAppender.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.037003 stat("/owl2vowl/org/apache/logging/log4j/core/Appender.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.037620 stat("/owl2vowl/org/apache/logging/log4j/core/Appender.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.038422 stat("/owl2vowl/org/apache/logging/log4j/core/Appender.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000042>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.039270 stat("/owl2vowl/org/apache/logging/log4j/core/impl/LogEventFactory.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.039920 stat("/owl2vowl/org/apache/logging/log4j/core/impl/LogEventFactory.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.040812 stat("/owl2vowl/ch/qos/logback/core/OutputStreamAppender.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000045>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.041257 stat("/owl2vowl/ch/qos/logback/classic/LoggerContext.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.048430 stat("/owl2vowl/ch/qos/logback/core/OutputStreamAppender.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.049326 stat("/owl2vowl/ch/qos/logback/classic/LoggerContext.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.050204 stat("/owl2vowl/org/jboss/logging/JDKLogger.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.050913 stat("/owl2vowl/org/jboss/logmanager/Logger.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.057497 stat("/owl2vowl/com/rabbitmq/client/Channel.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.058172 stat("/owl2vowl/com/rabbitmq/client/Channel.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.058797 stat("/owl2vowl/com/rabbitmq/client/Channel.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.059431 stat("/owl2vowl/org/springframework/amqp/core/MessageListener.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.060043 stat("/owl2vowl/org/springframework/amqp/core/MessageListener.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.060647 stat("/owl2vowl/org/springframework/amqp/core/MessageListener.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.062939 stat("/owl2vowl/javax/servlet/AsyncContext.class", 0x7fb97c341dd0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.063821 stat("/owl2vowl/javax/servlet/http/HttpServlet.class", 0x7fb97c341dc0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.064522 stat("/owl2vowl/jakarta/servlet/AsyncContext.class", 0x7fb97c341dd0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.064965 stat("/owl2vowl/jakarta/servlet/http/HttpServlet.class", 0x7fb97c341dc0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.066476 stat("/owl2vowl/javax/servlet/AsyncContext.class", 0x7fb97c341dd0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.067042 stat("/owl2vowl/javax/servlet/http/HttpServlet.class", 0x7fb97c341dc0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.067755 stat("/owl2vowl/jakarta/servlet/AsyncContext.class", 0x7fb97c341dd0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.068193 stat("/owl2vowl/jakarta/servlet/http/HttpServlet.class", 0x7fb97c341dc0) = -1 ENOENT (No such file or directory) <0.000034>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.068852 stat("/owl2vowl/javax/servlet/AsyncContext.class", 0x7fb97c341dd0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.069270 stat("/owl2vowl/javax/servlet/http/HttpServlet.class", 0x7fb97c341dc0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.069945 stat("/owl2vowl/jakarta/servlet/AsyncContext.class", 0x7fb97c341dd0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.070317 stat("/owl2vowl/jakarta/servlet/http/HttpServlet.class", 0x7fb97c341dc0) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.071175 stat("/owl2vowl/javax/servlet/AsyncContext.class", 0x7fb97c341dd0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.071579 stat("/owl2vowl/javax/servlet/http/HttpServlet.class", 0x7fb97c341dc0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.072270 stat("/owl2vowl/javax/servlet/AsyncContext.class", 0x7fb97c341dd0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.072677 stat("/owl2vowl/javax/servlet/http/HttpServlet.class", 0x7fb97c341dc0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.073320 stat("/owl2vowl/jakarta/servlet/AsyncContext.class", 0x7fb97c341dd0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.073889 stat("/owl2vowl/jakarta/servlet/http/HttpServlet.class", 0x7fb97c341dc0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.074551 stat("/owl2vowl/jakarta/servlet/AsyncContext.class", 0x7fb97c341dd0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.074963 stat("/owl2vowl/jakarta/servlet/http/HttpServlet.class", 0x7fb97c341dc0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.075593 stat("/owl2vowl/javax/servlet/AsyncContext.class", 0x7fb97c341dd0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.075967 stat("/owl2vowl/javax/servlet/http/HttpServlet.class", 0x7fb97c341dc0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.076558 stat("/owl2vowl/jakarta/servlet/AsyncContext.class", 0x7fb97c341dd0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.076936 stat("/owl2vowl/jakarta/servlet/http/HttpServlet.class", 0x7fb97c341dc0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.077598 stat("/owl2vowl/javax/servlet/AsyncContext.class", 0x7fb97c341dd0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.077988 stat("/owl2vowl/javax/servlet/http/HttpServlet.class", 0x7fb97c341dc0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.078654 stat("/owl2vowl/jakarta/servlet/AsyncContext.class", 0x7fb97c341dd0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.079030 stat("/owl2vowl/jakarta/servlet/http/HttpServlet.class", 0x7fb97c341dc0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.079668 stat("/owl2vowl/javax/servlet/AsyncContext.class", 0x7fb97c341dd0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.080037 stat("/owl2vowl/javax/servlet/http/HttpServlet.class", 0x7fb97c341dc0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.080660 stat("/owl2vowl/jakarta/servlet/AsyncContext.class", 0x7fb97c341dd0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.081024 stat("/owl2vowl/jakarta/servlet/http/HttpServlet.class", 0x7fb97c341dc0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.082179 stat("/owl2vowl/org/springframework/web/method/HandlerMethod.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.085239 stat("/owl2vowl/jakarta/websocket/server/ServerEndpoint.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.085996 stat("/owl2vowl/javax/websocket/server/ServerEndpoint.class", 0x7fb97c341e20) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.250031 stat("/owl2vowl/co/elastic/apm/agent/bbwarmup/WarmupInstrumentation$AdviceClass.class", 0x7fb97c340cc0) = -1 ENOENT (No such file or directory) <0.000020>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.291410 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c340b10) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.292141 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c340b10) = -1 ENOENT (No such file or directory) <0.000047>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.320021 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToReturned.class", 0x7fb97c340b10) = -1 ENOENT (No such file or directory) <0.000020>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.322522 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c340b10) = -1 ENOENT (No such file or directory) <0.000017>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.372257 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c3407d0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.381491 stat("/owl2vowl/co/elastic/apm/agent/bci/bytebuddy/SimpleMethodSignatureOffsetMappingFactory$SimpleMethodSignature.class", 0x7fb97c3407d0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.389991 stat("/owl2vowl/net/bytebuddy/asm/Advice$Enter.class", 0x7fb97c340a70) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.391107 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c340a70) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.615323 stat("/owl2vowl/co/elastic/apm/agent/bbwarmup/WarmupInstrumentation$AdviceClass.class", 0x7fb97c340cc0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.617270 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c340b10) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.618200 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c340b10) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.619436 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToReturned.class", 0x7fb97c340b10) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.620554 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c340b10) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.624069 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c3407d0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.625645 stat("/owl2vowl/co/elastic/apm/agent/bci/bytebuddy/SimpleMethodSignatureOffsetMappingFactory$SimpleMethodSignature.class", 0x7fb97c3407d0) = -1 ENOENT (No such file or directory) <0.000063>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.626942 stat("/owl2vowl/net/bytebuddy/asm/Advice$Enter.class", 0x7fb97c340a70) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.628250 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c340a70) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.635203 stat("/owl2vowl/org/slf4j/ext/EventData.class", 0x7fb97c341ac0) = -1 ENOENT (No such file or directory) <0.000034>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528439.673217 stat("/owl2vowl/META-INF/services/java.nio.file.spi.FileSystemProvider", 0x7fb97c33f720) = -1 ENOENT (No such file or directory) <0.000034>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.324763 stat("/owl2vowl/org/apache/http/impl/execchain/ClientExecChain.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000035>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.325873 stat("/owl2vowl/org/apache/http/nio/client/HttpAsyncClient.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.326619 stat("/owl2vowl/co/elastic/apm/api/CaptureTransaction.class", 0x7fb97c341c70) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.327067 stat("/owl2vowl/co/elastic/apm/api/CaptureSpan.class", 0x7fb97c341c70) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.327515 stat("/owl2vowl/co/elastic/apm/api/Traced.class", 0x7fb97c341c70) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.327987 stat("/owl2vowl/org/asynchttpclient/AsyncHandler.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.328413 stat("/owl2vowl/com/datastax/driver/core/BoundStatement.class", 0x7fb97c341c70) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.328933 stat("/owl2vowl/org/grails/web/mapping/mvc/GrailsControllerUrlMappingInfo.class", 0x7fb97c341c70) = -1 ENOENT (No such file or directory) <0.000038>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.329449 stat("/owl2vowl/org/hibernate/search/FullTextQuery.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.330146 stat("/owl2vowl/io/javalin/http/Handler.class", 0x7fb97c341c70) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.330578 stat("/owl2vowl/io/javalin/http/Handler.class", 0x7fb97c341c70) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.331024 stat("/owl2vowl/javax/ws/rs/Path.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.331444 stat("/owl2vowl/jakarta/ws/rs/Path.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.333342 stat("/owl2vowl/javax/jms/Message.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.334241 stat("/owl2vowl/javax/jms/Message.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.334686 stat("/owl2vowl/javax/jms/Message.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.335118 stat("/owl2vowl/javax/jms/Message.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.335561 stat("/owl2vowl/javax/jms/Message.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000041>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.336178 stat("/owl2vowl/javax/faces/lifecycle/Lifecycle.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.336738 stat("/owl2vowl/javax/faces/lifecycle/Lifecycle.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.337130 stat("/owl2vowl/jakarta/faces/lifecycle/Lifecycle.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.337495 stat("/owl2vowl/jakarta/faces/lifecycle/Lifecycle.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.337886 stat("/owl2vowl/org/apache/kafka/clients/consumer/ConsumerRecord.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.338244 stat("/owl2vowl/org/apache/kafka/clients/consumer/ConsumerRecord.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.338607 stat("/owl2vowl/org/apache/kafka/clients/consumer/ConsumerRecord.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.338968 stat("/owl2vowl/org/apache/kafka/clients/consumer/ConsumerRecord.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.339327 stat("/owl2vowl/org/apache/kafka/clients/consumer/ConsumerRecord.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.339685 stat("/owl2vowl/org/apache/kafka/clients/consumer/ConsumerRecord.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.340055 stat("/owl2vowl/com/lambdaworks/redis/event/EventBus.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.340414 stat("/owl2vowl/com/lambdaworks/redis/api/sync/RedisServerCommands.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.340802 stat("/owl2vowl/com/lambdaworks/redis/event/EventBus.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.341159 stat("/owl2vowl/com/lambdaworks/redis/api/sync/RedisServerCommands.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.341545 stat("/owl2vowl/com/lambdaworks/redis/event/EventBus.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.341921 stat("/owl2vowl/com/lambdaworks/redis/api/sync/RedisServerCommands.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.342280 stat("/owl2vowl/com/lambdaworks/redis/event/EventBus.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.342641 stat("/owl2vowl/com/lambdaworks/redis/api/sync/RedisServerCommands.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.343013 stat("/owl2vowl/org/apache/log4j/WriterAppender.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.343371 stat("/owl2vowl/org/apache/log4j/WriterAppender.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.343738 stat("/owl2vowl/org/apache/logging/log4j/core/Appender.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.344101 stat("/owl2vowl/org/apache/logging/log4j/core/Appender.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.344455 stat("/owl2vowl/org/apache/logging/log4j/core/Appender.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.344815 stat("/owl2vowl/org/apache/logging/log4j/core/impl/LogEventFactory.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.345185 stat("/owl2vowl/org/apache/logging/log4j/core/impl/LogEventFactory.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.345609 stat("/owl2vowl/ch/qos/logback/core/OutputStreamAppender.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000076>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.346050 stat("/owl2vowl/ch/qos/logback/core/OutputStreamAppender.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.346410 stat("/owl2vowl/org/jboss/logging/JDKLogger.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.346767 stat("/owl2vowl/org/jboss/logmanager/Logger.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.347194 stat("/owl2vowl/com/rabbitmq/client/Channel.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.347550 stat("/owl2vowl/com/rabbitmq/client/Channel.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.347908 stat("/owl2vowl/com/rabbitmq/client/Channel.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.348277 stat("/owl2vowl/org/springframework/amqp/core/MessageListener.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.348638 stat("/owl2vowl/org/springframework/amqp/core/MessageListener.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.348998 stat("/owl2vowl/org/springframework/amqp/core/MessageListener.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.349360 stat("/owl2vowl/javax/servlet/AsyncContext.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.349733 stat("/owl2vowl/jakarta/servlet/AsyncContext.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.350251 stat("/owl2vowl/javax/servlet/AsyncContext.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.350601 stat("/owl2vowl/jakarta/servlet/AsyncContext.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.350952 stat("/owl2vowl/javax/servlet/AsyncContext.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.351298 stat("/owl2vowl/jakarta/servlet/AsyncContext.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.351655 stat("/owl2vowl/javax/servlet/AsyncContext.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.352010 stat("/owl2vowl/javax/servlet/AsyncContext.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.352360 stat("/owl2vowl/jakarta/servlet/AsyncContext.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.352724 stat("/owl2vowl/jakarta/servlet/AsyncContext.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.353081 stat("/owl2vowl/javax/servlet/AsyncContext.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.353432 stat("/owl2vowl/jakarta/servlet/AsyncContext.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.353812 stat("/owl2vowl/javax/servlet/AsyncContext.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.354170 stat("/owl2vowl/jakarta/servlet/AsyncContext.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.354531 stat("/owl2vowl/javax/servlet/AsyncContext.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.354902 stat("/owl2vowl/jakarta/servlet/AsyncContext.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.355297 stat("/owl2vowl/org/springframework/web/method/HandlerMethod.class", 0x7fb97c341c70) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.356606 stat("/owl2vowl/jakarta/websocket/server/ServerEndpoint.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528443.356999 stat("/owl2vowl/javax/websocket/server/ServerEndpoint.class", 0x7fb97c341c00) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.430667 stat("/owl2vowl/co/elastic/apm/agent/bbwarmup/WarmupInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000036>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.432549 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.433163 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.434508 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToReturned.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.435627 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.439133 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.440754 stat("/owl2vowl/co/elastic/apm/agent/bci/bytebuddy/SimpleMethodSignatureOffsetMappingFactory$SimpleMethodSignature.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.442086 stat("/owl2vowl/net/bytebuddy/asm/Advice$Enter.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.443181 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.451890 stat("/owl2vowl/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorRunnableInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.466924 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.467474 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000034>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.468713 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000033>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.470276 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000036>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.474473 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fb97c33ebb0) = -1 ENOENT (No such file or directory) <0.000037>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.499918 stat("/owl2vowl/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fb97c33ec70) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.505424 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.507104 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000033>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.512034 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000036>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.515643 stat("/owl2vowl/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorCallableInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000034>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.517448 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.518110 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000034>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.519424 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000034>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.521030 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000038>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.522906 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fb97c33ebb0) = -1 ENOENT (No such file or directory) <0.000034>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.524577 stat("/owl2vowl/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fb97c33ec70) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.528492 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.530276 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.532003 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.535584 stat("/owl2vowl/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorInvokeAnyAllInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.537130 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.537802 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.539078 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000024>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.540698 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000038>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.542433 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fb97c33ebb0) = -1 ENOENT (No such file or directory) <0.000048>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.544855 stat("/owl2vowl/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fb97c33ec70) = -1 ENOENT (No such file or directory) <0.000035>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.551991 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.553535 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.561921 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.586461 stat("/owl2vowl/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorRunnableInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.587942 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.588725 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.589709 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.590866 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.592147 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fb97c33ebb0) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.593395 stat("/owl2vowl/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fb97c33ec70) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.596607 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.598105 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.599916 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.602381 stat("/owl2vowl/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorCallableInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.603707 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.604212 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.605214 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.606411 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.607735 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fb97c33ebb0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.609039 stat("/owl2vowl/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fb97c33ec70) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.612332 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.613834 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.615518 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.618004 stat("/owl2vowl/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorInvokeAnyAllInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.619457 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.620153 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.621280 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.622567 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.624187 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fb97c33ebb0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.625959 stat("/owl2vowl/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fb97c33ec70) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.629251 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.630793 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.632436 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.645442 stat("/owl2vowl/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorRunnableInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.646733 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.647228 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.648196 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.649394 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.650721 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fb97c33ebb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.651988 stat("/owl2vowl/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fb97c33ec70) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.655235 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.656712 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.658438 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.660868 stat("/owl2vowl/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorCallableInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.662229 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.662729 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.663715 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.664890 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.666240 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fb97c33ebb0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.667501 stat("/owl2vowl/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fb97c33ec70) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.670805 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.672326 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.674052 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.676678 stat("/owl2vowl/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorInvokeAnyAllInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.678067 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.678561 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.679541 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.680699 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.682014 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fb97c33ebb0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.683829 stat("/owl2vowl/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fb97c33ec70) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.686982 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.688485 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.690159 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.698030 stat("/owl2vowl/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorRunnableInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.699278 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.699906 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.701018 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.702274 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.703647 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fb97c33ebb0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.704986 stat("/owl2vowl/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fb97c33ec70) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.708310 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.709863 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.711611 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.714149 stat("/owl2vowl/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorCallableInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.715536 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.716246 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.717306 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.718704 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.720110 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fb97c33ebb0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.721597 stat("/owl2vowl/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fb97c33ec70) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.724936 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.726528 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.728376 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.730890 stat("/owl2vowl/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorInvokeAnyAllInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.732327 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.733025 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.734101 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.735476 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.736889 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fb97c33ebb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.738259 stat("/owl2vowl/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fb97c33ec70) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.741502 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.743128 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.744846 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.754581 stat("/owl2vowl/co/elastic/apm/agent/loginstr/error/AbstractLoggerErrorCapturingInstrumentation$LoggingAdvice.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.755880 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.756449 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000033>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.757667 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.761056 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.762617 stat("/owl2vowl/net/bytebuddy/asm/Advice$Origin.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.764764 stat("/owl2vowl/net/bytebuddy/asm/Advice$Enter.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.822713 stat("/owl2vowl/co/elastic/apm/agent/loginstr/error/AbstractLoggerErrorCapturingInstrumentation$LoggingAdvice.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.824014 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.824604 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.825847 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.829130 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.830815 stat("/owl2vowl/net/bytebuddy/asm/Advice$Origin.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000100>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.832261 stat("/owl2vowl/net/bytebuddy/asm/Advice$Enter.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.858674 stat("/owl2vowl/co/elastic/apm/agent/loginstr/error/AbstractLoggerErrorCapturingInstrumentation$LoggingAdvice.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000033>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.860432 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.861152 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.862395 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.865612 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.867393 stat("/owl2vowl/net/bytebuddy/asm/Advice$Origin.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.868574 stat("/owl2vowl/net/bytebuddy/asm/Advice$Enter.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.906123 stat("/owl2vowl/co/elastic/apm/agent/concurrent/ForkJoinTaskInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.907340 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.908526 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.911709 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.913302 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000033>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.913802 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.961508 stat("/owl2vowl/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorRunnableInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.963275 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.963810 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.964817 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.966056 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.967421 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fb97c33ebb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.968777 stat("/owl2vowl/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fb97c33ec70) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.972045 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.973548 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.975367 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.977920 stat("/owl2vowl/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorCallableInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.979288 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.979828 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.980835 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.982171 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000045>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.983686 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fb97c33ebb0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.985062 stat("/owl2vowl/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fb97c33ec70) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.988316 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.989859 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.991549 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.994039 stat("/owl2vowl/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorInvokeAnyAllInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.995488 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.996038 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000042>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.998152 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528444.999461 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.000880 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fb97c33ebb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.002265 stat("/owl2vowl/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fb97c33ec70) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.006940 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000440>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.009041 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.010895 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.013316 stat("/owl2vowl/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ForkJoinPoolInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.014758 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.015311 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.016335 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.017530 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.018924 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fb97c33ebb0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.020232 stat("/owl2vowl/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fb97c33ec70) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.023341 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.024827 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.026711 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000060>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.141082 stat("/owl2vowl/co/elastic/apm/agent/urlconnection/HttpUrlConnectionInstrumentation$CreateSpanInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.143128 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.143735 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.144982 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.148628 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.150354 stat("/owl2vowl/net/bytebuddy/asm/Advice$FieldValue.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.154027 stat("/owl2vowl/net/bytebuddy/asm/Advice$Origin.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.157924 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.159051 stat("/owl2vowl/net/bytebuddy/asm/Advice$Enter.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.162561 stat("/owl2vowl/co/elastic/apm/agent/urlconnection/HttpUrlConnectionInstrumentation$DisconnectInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.163786 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.165035 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.166150 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.167225 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.167778 stat("/owl2vowl/net/bytebuddy/asm/Advice$FieldValue.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.279982 stat("/owl2vowl/co/elastic/apm/agent/urlconnection/HttpUrlConnectionInstrumentation$CreateSpanInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000034>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.281954 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.282501 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.283706 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.287053 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.288559 stat("/owl2vowl/net/bytebuddy/asm/Advice$FieldValue.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.290171 stat("/owl2vowl/net/bytebuddy/asm/Advice$Origin.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.291578 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.292669 stat("/owl2vowl/net/bytebuddy/asm/Advice$Enter.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.296166 stat("/owl2vowl/co/elastic/apm/agent/urlconnection/HttpUrlConnectionInstrumentation$DisconnectInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.297336 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.298546 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.299616 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.300683 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.301210 stat("/owl2vowl/net/bytebuddy/asm/Advice$FieldValue.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.316255 stat("/owl2vowl/co/elastic/apm/agent/process/ProcessExitInstrumentation$WaitFor$WaitForAdvice.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.317380 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.318689 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000033>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.322498 stat("/owl2vowl/co/elastic/apm/agent/process/ProcessExitInstrumentation$Destroy$DestroyAdvice.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.323588 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.324815 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.328587 stat("/owl2vowl/co/elastic/apm/agent/process/ProcessExitInstrumentation$ExitValue$ExitValueAdvice.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.329775 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.330990 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.332099 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.333181 stat("/owl2vowl/net/bytebuddy/asm/Advice$Return.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.397299 stat("/owl2vowl/co/elastic/apm/agent/process/ProcessExitInstrumentation$WaitFor$WaitForAdvice.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.398456 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.399657 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.403805 stat("/owl2vowl/co/elastic/apm/agent/process/ProcessExitInstrumentation$Destroy$DestroyAdvice.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.404925 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000025>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.406145 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.409944 stat("/owl2vowl/co/elastic/apm/agent/process/ProcessExitInstrumentation$ExitValue$ExitValueAdvice.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.411085 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000024>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.412309 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.413396 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000024>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.414458 stat("/owl2vowl/net/bytebuddy/asm/Advice$Return.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.423948 stat("/owl2vowl/co/elastic/apm/agent/process/ProcessStartInstrumentation$ProcessBuilderStartAdvice.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.425215 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.426595 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.427821 stat("/owl2vowl/net/bytebuddy/asm/Advice$Return.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.428992 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.429672 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.453550 stat("/owl2vowl/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorRunnableInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.462867 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000039>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.463503 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000036>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.469404 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000034>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.470705 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000041>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.472067 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fb97c33ebb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.473443 stat("/owl2vowl/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fb97c33ec70) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.476950 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000036>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.478696 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.003034>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.484203 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000033>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.487357 stat("/owl2vowl/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorCallableInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.489222 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.489862 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.491136 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.492691 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.494525 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fb97c33ebb0) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.496247 stat("/owl2vowl/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fb97c33ec70) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.500463 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.502550 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000047>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.504882 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.508409 stat("/owl2vowl/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorInvokeAnyAllInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000034>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.510339 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000035>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.510975 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000035>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.512306 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000034>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.513889 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000035>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.515686 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fb97c33ebb0) = -1 ENOENT (No such file or directory) <0.000036>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.517453 stat("/owl2vowl/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fb97c33ec70) = -1 ENOENT (No such file or directory) <0.000035>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.522752 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000033>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.524750 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.526939 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.585760 stat("/owl2vowl/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorRunnableInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000033>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.588241 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.588795 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.590047 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.591278 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.592629 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fb97c33ebb0) = -1 ENOENT (No such file or directory) <0.000035>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.593991 stat("/owl2vowl/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fb97c33ec70) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.597430 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.599217 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.601121 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.603699 stat("/owl2vowl/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorCallableInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.605152 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000019>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.606071 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000016>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.607232 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000016>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.608616 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000021>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.610208 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fb97c33ebb0) = -1 ENOENT (No such file or directory) <0.000019>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.611768 stat("/owl2vowl/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fb97c33ec70) = -1 ENOENT (No such file or directory) <0.000018>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.615050 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.616720 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.618462 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.620946 stat("/owl2vowl/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorInvokeAnyAllInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.622453 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.623100 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000041>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.624305 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.625555 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.627011 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fb97c33ebb0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.628473 stat("/owl2vowl/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fb97c33ec70) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.631834 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.633325 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.635005 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.672763 stat("/owl2vowl/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorRunnableInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000034>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.674112 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.674617 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.675593 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.676817 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.678213 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fb97c33ebb0) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.679511 stat("/owl2vowl/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fb97c33ec70) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.682801 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.684304 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.686038 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.688585 stat("/owl2vowl/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorCallableInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000033>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.689943 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.690439 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.691423 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.692606 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.693924 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fb97c33ebb0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.695750 stat("/owl2vowl/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fb97c33ec70) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.702880 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000020>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.704704 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000016>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.706878 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000020>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.710484 stat("/owl2vowl/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorInvokeAnyAllInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000019>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.712374 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000019>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.712910 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000019>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.714013 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000019>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.715396 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000018>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.716938 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fb97c33ebb0) = -1 ENOENT (No such file or directory) <0.000017>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.718469 stat("/owl2vowl/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fb97c33ec70) = -1 ENOENT (No such file or directory) <0.000018>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.721949 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.723849 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000020>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.729734 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.798953 stat("/owl2vowl/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorRunnableInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000033>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.800646 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000019>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.801236 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000020>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.803550 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000022>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.804708 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.806234 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fb97c33ebb0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.807577 stat("/owl2vowl/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fb97c33ec70) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.811048 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.812600 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.814373 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.816932 stat("/owl2vowl/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorCallableInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.818359 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.818882 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.819948 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.821182 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.822612 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fb97c33ebb0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.823966 stat("/owl2vowl/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fb97c33ec70) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.827233 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.828996 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.830827 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.833381 stat("/owl2vowl/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorInvokeAnyAllInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000033>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.834863 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.835409 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.836474 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.837750 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.839163 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fb97c33ebb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.840504 stat("/owl2vowl/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fb97c33ec70) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.843898 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.845419 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.847147 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.856816 stat("/owl2vowl/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorRunnableInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.858148 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.858714 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.862208 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.863414 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.864949 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fb97c33ebb0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.866386 stat("/owl2vowl/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fb97c33ec70) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.869516 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.870992 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.872678 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.875166 stat("/owl2vowl/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorCallableInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.876545 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.877083 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.878168 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000058>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.879479 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.880820 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fb97c33ebb0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.882304 stat("/owl2vowl/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fb97c33ec70) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.885540 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.887151 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.888892 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.891383 stat("/owl2vowl/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorInvokeAnyAllInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.892814 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.893344 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.894394 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.895635 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.897023 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fb97c33ebb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.898447 stat("/owl2vowl/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fb97c33ec70) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.901776 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000018>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.903241 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.904989 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.924373 stat("/owl2vowl/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorRunnableInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000020>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.925939 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000019>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.926418 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000018>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.927435 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000018>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.928857 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000019>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.930346 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fb97c33ebb0) = -1 ENOENT (No such file or directory) <0.000018>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.931783 stat("/owl2vowl/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fb97c33ec70) = -1 ENOENT (No such file or directory) <0.000019>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.935160 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000019>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.937258 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000023>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.939772 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000019>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.942859 stat("/owl2vowl/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorCallableInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000020>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.944388 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000020>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.944889 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000018>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.945941 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000019>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.947274 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000019>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.949179 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fb97c33ebb0) = -1 ENOENT (No such file or directory) <0.000021>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.950806 stat("/owl2vowl/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fb97c33ec70) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.954126 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.955955 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000020>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.958096 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000032>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.960726 stat("/owl2vowl/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorInvokeAnyAllInstrumentation$AdviceClass.class", 0x7fb97c33ef60) = -1 ENOENT (No such file or directory) <0.000031>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.962617 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.963179 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000029>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.964256 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000027>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.965532 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb97c33edb0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.966929 stat("/owl2vowl/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fb97c33ebb0) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.968307 stat("/owl2vowl/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fb97c33ec70) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.971536 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.973039 stat("/owl2vowl/net/bytebuddy/asm/Advice$Argument.class", 0x7fb97c33ea70) = -1 ENOENT (No such file or directory) <0.000030>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528445.974740 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb97c33ed10) = -1 ENOENT (No such file or directory) <0.000028>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528446.015438 stat("/owl2vowl/org/apache/catalina/startup/Bootstrap.class", 0x7fb97c342290) = -1 ENOENT (No such file or directory) <0.000033>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   222] 1652528446.055433 stat("/owl2vowl/co/elastic/apm/agent/urlconnection/HttpUrlConnectionInstrumentation$CreateSpanInstrumentation$AdviceClass.class", 0x7fb960d7ed70) = -1 ENOENT (No such file or directory) <0.000021>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   222] 1652528446.060033 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb960d7ebc0) = -1 ENOENT (No such file or directory) <0.000019>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   222] 1652528446.062261 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fb960d7ebc0) = -1 ENOENT (No such file or directory) <0.000019>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   222] 1652528446.066508 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb960d7ebc0) = -1 ENOENT (No such file or directory) <0.000018>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   222] 1652528446.072938 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb960d7e880) = -1 ENOENT (No such file or directory) <0.000019>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   222] 1652528446.079088 stat("/owl2vowl/net/bytebuddy/asm/Advice$FieldValue.class", 0x7fb960d7e880) = -1 ENOENT (No such file or directory) <0.000019>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   222] 1652528446.083002 stat("/owl2vowl/net/bytebuddy/asm/Advice$Origin.class", 0x7fb960d7e880) = -1 ENOENT (No such file or directory) <0.000021>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   222] 1652528446.086022 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb960d7eb20) = -1 ENOENT (No such file or directory) <0.000026>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   222] 1652528446.087789 stat("/owl2vowl/net/bytebuddy/asm/Advice$Enter.class", 0x7fb960d7eb20) = -1 ENOENT (No such file or directory) <0.000018>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   222] 1652528446.092701 stat("/owl2vowl/co/elastic/apm/agent/urlconnection/HttpUrlConnectionInstrumentation$DisconnectInstrumentation$AdviceClass.class", 0x7fb960d7ed70) = -1 ENOENT (No such file or directory) <0.000023>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   222] 1652528446.095018 stat("/owl2vowl/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fb960d7ebc0) = -1 ENOENT (No such file or directory) <0.000046>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   222] 1652528446.099387 stat("/owl2vowl/net/bytebuddy/asm/Advice$This.class", 0x7fb960d7eb20) = -1 ENOENT (No such file or directory) <0.000018>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   222] 1652528446.101712 stat("/owl2vowl/net/bytebuddy/asm/Advice$Thrown.class", 0x7fb960d7eb20) = -1 ENOENT (No such file or directory) <0.000017>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   222] 1652528446.103464 stat("/owl2vowl/javax/annotation/Nullable.class", 0x7fb960d7eb20) = -1 ENOENT (No such file or directory) <0.000017>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   222] 1652528446.105640 stat("/owl2vowl/net/bytebuddy/asm/Advice$FieldValue.class", 0x7fb960d7eb20) = -1 ENOENT (No such file or directory) <0.000780>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528446.267654 stat("/owl2vowl/sun/launcher/resources/launcher_en.class", 0x7fb97c342990) = -1 ENOENT (No such file or directory) <0.000044>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528446.279108 stat("/owl2vowl/sun/launcher/resources/launcher_en.properties", 0x7fb97c341f40) = -1 ENOENT (No such file or directory) <0.000019>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528446.280532 stat("/owl2vowl/sun/launcher/resources/launcher_en_US.class", 0x7fb97c342a50) = -1 ENOENT (No such file or directory) <0.000161>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+[pid   199] 1652528446.281168 stat("/owl2vowl/sun/launcher/resources/launcher_en_US.properties", 0x7fb97c342000) = -1 ENOENT (No such file or directory) <0.000557>
+ > /lib/ld-musl-x86_64.so.1(stat+0x8) [0x4618d]
+ > No DWARF information found
+Usage: java [-options] class [args...]
+           (to execute a class)
+   or  java [-options] -jar jarfile [args...]
+           (to execute a jar file)
+where options include:
+    -d32	  use a 32-bit data model if available
+    -d64	  use a 64-bit data model if available
+    -server	  to select the "server" VM
+                  The default VM is server,
+                  because you are running on a server-class machine.
+
+
+    -cp <class search path of directories and zip/jar files>
+    -classpath <class search path of directories and zip/jar files>
+                  A : separated list of directories, JAR archives,
+                  and ZIP archives to search for class files.
+    -D<name>=<value>
+                  set a system property
+    -verbose:[class|gc|jni]
+                  enable verbose output
+    -version      print product version and exit
+    -version:<value>
+                  Warning: this feature is deprecated and will be removed
+                  in a future release.
+                  require the specified version to run
+    -showversion  print product version and continue
+    -jre-restrict-search | -no-jre-restrict-search
+                  Warning: this feature is deprecated and will be removed
+                  in a future release.
+                  include/exclude user private JREs in the version search
+    -? -help      print this help message
+    -X            print help on non-standard options
+    -ea[:<packagename>...|:<classname>]
+    -enableassertions[:<packagename>...|:<classname>]
+                  enable assertions with specified granularity
+    -da[:<packagename>...|:<classname>]
+    -disableassertions[:<packagename>...|:<classname>]
+                  disable assertions with specified granularity
+    -esa | -enablesystemassertions
+                  enable system assertions
+    -dsa | -disablesystemassertions
+                  disable system assertions
+    -agentlib:<libname>[=<options>]
+                  load native agent library <libname>, e.g. -agentlib:hprof
+                  see also, -agentlib:jdwp=help and -agentlib:hprof=help
+    -agentpath:<pathname>[=<options>]
+                  load native agent library by full pathname
+    -javaagent:<jarpath>[=<options>]
+                  load Java programming language agent, see java.lang.instrument
+    -splash:<imagepath>
+                  show splash screen with specified image
+See http://www.oracle.com/technetwork/java/javase/documentation/index.html for more details.
+[pid   224] 1652528446.429857 connect(18, {sa_family=AF_INET, sin_port=htons(8200), sin_addr=inet_addr("172.17.0.1")}, 16) = -1 EINPROGRESS (Operation in progress) <0.000889>
+ > /lib/ld-musl-x86_64.so.1(__clone+0x62) [0x53407]
+ > No DWARF information found
+[pid   222] 1652528446.433820 connect(21, {sa_family=AF_INET, sin_port=htons(8200), sin_addr=inet_addr("172.17.0.1")}, 16) = -1 EINPROGRESS (Operation in progress) <0.000632>
+ > /lib/ld-musl-x86_64.so.1(__clone+0x62) [0x53407]
+ > No DWARF information found
+[pid   199] 1652528447.391515 unlink("/tmp/elasticapm-java-af37efc7-8245-4ba7-93c7-23a2ab6820b9.log.json.1") = -1 ENOENT (No such file or directory) <0.000140>
+ > /lib/ld-musl-x86_64.so.1(remove+0x8) [0x492b9]
+ > No DWARF information found

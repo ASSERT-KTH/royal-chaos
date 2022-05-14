@@ -1,0 +1,183 @@
+[s6-init] making user provided files available at /var/run/s6/etc...exited 0.
+[s6-init] ensuring user provided files have correct perms...exited 0.
+[fix-attrs.d] applying ownership & permissions fixes...
+[fix-attrs.d] done.
+[cont-init.d] executing container initialization scripts...
+[cont-init.d] done.
+[services.d] starting services
+system call monitor started
+[services.d] done.
+system call monitor started
+2022-05-13 23:40:06,946 [main] INFO  co.elastic.apm.agent.util.JmxUtils - Found JVM-specific OperatingSystemMXBean interface: com.sun.management.OperatingSystemMXBean
+2022-05-13 23:40:07,216 [main] INFO  co.elastic.apm.agent.configuration.StartupInfo - Starting Elastic APM 1.30.1 as run_pobs_seata_0 on Java 1.8.0_232 Runtime version: 1.8.0_232-b09 VM version: 25.232-b09 (Oracle Corporation) Linux 5.4.0-1070-azure
+2022-05-13 23:40:07,217 [main] INFO  co.elastic.apm.agent.configuration.StartupInfo - service_name: 'run_pobs_seata_0' (source: Environment Variables)
+2022-05-13 23:40:07,217 [main] INFO  co.elastic.apm.agent.configuration.StartupInfo - server_url: 'http://172.17.0.1:8200' (source: Environment Variables)
+2022-05-13 23:40:07,218 [main] INFO  co.elastic.apm.agent.configuration.StartupInfo - log_ecs_reformatting: 'OVERRIDE' (source: Java System Properties)
+2022-05-13 23:40:07,218 [main] WARN  co.elastic.apm.agent.configuration.StartupInfo - To enable all features and decrease startup time, please configure application_packages
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+2022-05-13 23:40:14,263 [main] INFO  co.elastic.apm.agent.impl.ElasticApmTracer - Tracer switched to RUNNING state
+2022-05-13 23:40:14,378 [elastic-apm-server-healthcheck] INFO  co.elastic.apm.agent.report.ApmServerHealthChecker - Elastic APM server is available: {  "build_date": "2021-11-04T13:10:15Z",  "build_sha": "0702551667e5319822d00dee613ea2a1501615bf",  "version": "7.15.2"}
+2022-05-13 23:40:14,480 [elastic-apm-remote-config-poller] INFO  co.elastic.apm.agent.configuration.ApmServerConfigurationSource - Received new configuration from APM Server: {}
+system call monitor started
+23:40:14,819 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+23:40:14,820 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
+23:40:14,827 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/seata-server/conf/logback.xml]
+23:40:14,830 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs multiple times on the classpath.
+23:40:14,830 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [file:/seata-server/conf/logback.xml]
+23:40:14,830 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [jar:file:/seata-server/lib/seata-server-1.2.0.jar!/logback.xml]
+23:40:15,244 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - debug attribute not set
+23:40:15,263 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - Will scan for changes in [file:/seata-server/conf/logback.xml] 
+23:40:15,263 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - Setting ReconfigureOnChangeTask scanning period to 1 minutes
+23:40:15,278 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+23:40:15,380 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [stdout]
+23:40:15,599 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.rolling.RollingFileAppender]
+23:40:15,607 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [seata-default]
+23:40:15,643 |-INFO in c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@2090953436 - Archive files will be limited to [2048 MB] each.
+23:40:15,655 |-INFO in c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@2090953436 - No compression will be used
+23:40:15,658 |-INFO in c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@2090953436 - Will use the pattern /root/logs/seata/seata-server.log.%d{yyyy-MM-dd}.%i for the active file
+23:40:15,679 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@5ae1c281 - The date pattern is 'yyyy-MM-dd' from file name pattern '/root/logs/seata/seata-server.log.%d{yyyy-MM-dd}.%i'.
+23:40:15,679 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@5ae1c281 - Roll-over at midnight.
+23:40:15,690 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@5ae1c281 - Setting initial period to Fri May 13 23:40:15 UTC 2022
+23:40:15,696 |-INFO in c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@2090953436 - Cleaning on start up
+23:40:15,697 |-INFO in c.q.l.core.rolling.helper.TimeBasedArchiveRemover - first clean up after appender initialization
+23:40:15,697 |-INFO in c.q.l.core.rolling.helper.TimeBasedArchiveRemover - Multiple periods, i.e. 32 periods, seem to have elapsed. This is expected at application start.
+23:40:15,706 |-INFO in c.q.l.core.rolling.helper.TimeBasedArchiveRemover - Removed  0 Bytes of files
+23:40:15,707 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+23:40:15,714 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[seata-default] - Active log file name: /root/logs/seata/seata-server.log
+23:40:15,714 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[seata-default] - File property is set to [/root/logs/seata/seata-server.log]
+23:40:15,722 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting additivity of logger [io.seata.server.storage.file.store.FileTransactionStoreManager] to false
+23:40:15,722 |-INFO in ch.qos.logback.classic.joran.action.LevelAction - io.seata.server.storage.file.store.FileTransactionStoreManager level set to INFO
+23:40:15,722 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [seata-default] to Logger[io.seata.server.storage.file.store.FileTransactionStoreManager]
+23:40:15,724 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to INFO
+23:40:15,724 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [seata-default] to Logger[ROOT]
+23:40:15,724 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [stdout] to Logger[ROOT]
+23:40:15,724 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+23:40:15,727 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@4ac8768e - Registering current configuration as safe fallback point
+
+system call monitor started
+{"@timestamp":"2022-05-13T23:40:15.796Z", "log.level": "INFO", "message":"The server is running in container.", "ecs.version": "1.2.0","service.name":"run_pobs_seata_0","event.dataset":"run_pobs_seata_0.stdout","process.thread.name":"main","log.logger":"io.seata.server.ParameterParser"}
+{"@timestamp":"2022-05-13T23:40:16.272Z", "log.level": "INFO", "message":"The configuration file used is registry.conf", "ecs.version": "1.2.0","service.name":"run_pobs_seata_0","event.dataset":"run_pobs_seata_0.stdout","process.thread.name":"main","log.logger":"io.seata.config.FileConfiguration"}
+{"@timestamp":"2022-05-13T23:40:16.532Z", "log.level": "INFO", "message":"The configuration file used is file.conf", "ecs.version": "1.2.0","service.name":"run_pobs_seata_0","event.dataset":"run_pobs_seata_0.stdout","process.thread.name":"main","log.logger":"io.seata.config.FileConfiguration"}
+system call monitor started
+{"@timestamp":"2022-05-13T23:40:16.977Z", "log.level": "WARN", "message":"The same extension io.seata.server.storage.file.session.FileSessionManager has already been loaded, skipped", "ecs.version": "1.2.0","service.name":"run_pobs_seata_0","event.dataset":"run_pobs_seata_0.stdout","process.thread.name":"main","log.logger":"io.seata.common.loader.EnhancedServiceLoader$InnerEnhancedServiceLoader"}
+{"@timestamp":"2022-05-13T23:40:16.978Z", "log.level": "WARN", "message":"The same extension io.seata.server.storage.db.session.DataBaseSessionManager has already been loaded, skipped", "ecs.version": "1.2.0","service.name":"run_pobs_seata_0","event.dataset":"run_pobs_seata_0.stdout","process.thread.name":"main","log.logger":"io.seata.common.loader.EnhancedServiceLoader$InnerEnhancedServiceLoader"}
+{"@timestamp":"2022-05-13T23:40:17.196Z", "log.level": "WARN", "message":"The same extension io.seata.server.transaction.at.ATCore has already been loaded, skipped", "ecs.version": "1.2.0","service.name":"run_pobs_seata_0","event.dataset":"run_pobs_seata_0.stdout","process.thread.name":"main","log.logger":"io.seata.common.loader.EnhancedServiceLoader$InnerEnhancedServiceLoader"}
+{"@timestamp":"2022-05-13T23:40:17.196Z", "log.level": "WARN", "message":"The same extension io.seata.server.transaction.tcc.TccCore has already been loaded, skipped", "ecs.version": "1.2.0","service.name":"run_pobs_seata_0","event.dataset":"run_pobs_seata_0.stdout","process.thread.name":"main","log.logger":"io.seata.common.loader.EnhancedServiceLoader$InnerEnhancedServiceLoader"}
+{"@timestamp":"2022-05-13T23:40:17.197Z", "log.level": "WARN", "message":"The same extension io.seata.server.transaction.saga.SagaCore has already been loaded, skipped", "ecs.version": "1.2.0","service.name":"run_pobs_seata_0","event.dataset":"run_pobs_seata_0.stdout","process.thread.name":"main","log.logger":"io.seata.common.loader.EnhancedServiceLoader$InnerEnhancedServiceLoader"}
+{"@timestamp":"2022-05-13T23:40:17.198Z", "log.level": "WARN", "message":"The same extension io.seata.server.transaction.xa.XACore has already been loaded, skipped", "ecs.version": "1.2.0","service.name":"run_pobs_seata_0","event.dataset":"run_pobs_seata_0.stdout","process.thread.name":"main","log.logger":"io.seata.common.loader.EnhancedServiceLoader$InnerEnhancedServiceLoader"}
+{"@timestamp":"2022-05-13T23:40:17.210Z", "log.level": "WARN", "message":"The same extension io.seata.server.storage.db.lock.DataBaseLockManager has already been loaded, skipped", "ecs.version": "1.2.0","service.name":"run_pobs_seata_0","event.dataset":"run_pobs_seata_0.stdout","process.thread.name":"main","log.logger":"io.seata.common.loader.EnhancedServiceLoader$InnerEnhancedServiceLoader"}
+{"@timestamp":"2022-05-13T23:40:17.211Z", "log.level": "WARN", "message":"The same extension io.seata.server.storage.file.lock.FileLockManager has already been loaded, skipped", "ecs.version": "1.2.0","service.name":"run_pobs_seata_0","event.dataset":"run_pobs_seata_0.stdout","process.thread.name":"main","log.logger":"io.seata.common.loader.EnhancedServiceLoader$InnerEnhancedServiceLoader"}
+{"@timestamp":"2022-05-13T23:40:17.548Z", "log.level": "INFO", "message":"Server started ... ", "ecs.version": "1.2.0","service.name":"run_pobs_seata_0","event.dataset":"run_pobs_seata_0.stdout","process.thread.name":"main","log.logger":"io.seata.core.rpc.netty.RpcServerBootstrap"}
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
