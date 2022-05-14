@@ -52,12 +52,14 @@ def install_syscall_monitor(package_manager):
         "apt": """
 # System call monitoring
 RUN apt-get update; exit 0
-RUN apt-get install -y procps strace
+RUN apt-get install -y procps
+COPY ./strace-v5.17-static-build/strace /usr/bin/strace
 
 """,
         "yum": """
 # System call monitoring
-RUN yum install -y sysvinit-tools strace
+RUN yum install -y sysvinit-tools
+COPY ./strace-v5.17-static-build/strace /usr/bin/strace
 
 """,
         "apk": """

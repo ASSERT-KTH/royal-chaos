@@ -115,9 +115,11 @@ def inspect_original_dockerfile(ori_dockerfile, ori_filepath):
     return {"username": username, "s6_installed": s6_installed, "package_manager": package_manager, "ori_entrypoint": ori_entrypoint, "ori_cmd": ori_cmd}
 
 def augment_image_from_dockerfile(ori_dockerfile, target_dockerfile_path, ori_dockerfile_info):
+    # copy pobs files to the target folder
     if not os.path.exists(os.path.join(target_dockerfile_path, "pobs_files")):
-        # copy pobs files to the target folder
         os.system("cp -r ./pobs_files %s"%target_dockerfile_path)
+    if not os.path.exists(os.path.join(target_dockerfile_path, "strace-v5.17-static-build")):
+        os.system("cp -r ./strace-v5.17-static-build %s"%target_dockerfile_path)
     target_dockerfile = os.path.join(target_dockerfile_path, "Dockerfile-pobs")
     with open(ori_dockerfile, 'rt') as original, open(target_dockerfile, 'wt') as target:
         original_content = original.readlines()
