@@ -25,6 +25,12 @@ ELASTIC_USERNAME = "elastic"
 ELASTIC_PASSWORD = "changeme"
 ELASTIC_LOG_INDEX = "log_index_name"
 ELASTIC_APM_INDEX = "apm_index_name"
+# Create the client instance
+ELASTIC_CLIENT = elasticsearch.Elasticsearch(
+    ELASTIC_HOST,
+    ca_certs=ELASTIC_CERT_PATH,
+    basic_auth=(ELASTIC_USERNAME, ELASTIC_PASSWORD)
+)
 
 def parse_options():
     usage = r'usage: python3 %prog [options] -d /path/to/json-data-set.json'
@@ -118,18 +124,11 @@ def run_original_image(image_name):
         return (stdoutdata.decode("utf-8"), stderrdata.decode("utf-8"), exit_code, continuously_running, java_process_detected, agent_exists, cpu_and_memory_usage)
 
 def query_elasticsearch(container_name):
-    # Create the client instance
-    client = elasticsearch.Elasticsearch(
-        ELASTIC_HOST,
-        ca_certs=ELASTIC_CERT_PATH,
-        basic_auth=(ELASTIC_USERNAME, ELASTIC_PASSWORD)
-    )
-
     syscall_monitor_enabled = False
     apm_agent_attached = False
 
     try:
-        resp = client.search(index=ELASTIC_LOG_INDEX, size=10000, query={"match": {"container.name":container_name}})
+        resp = ELASTIC_CLIENT.search(index=ELASTIC_LOG_INDEX, size=10000, query={"match": {"container.name":container_name}})
         for hit in resp['hits']['hits']:
             log_message = hit["_source"]["message"]
             if log_message.startswith("[pid"): syscall_monitor_enabled = True
@@ -139,7 +138,7 @@ def query_elasticsearch(container_name):
         logging.info("query logs from elasticsearch for container %s failed"%container_name)
 
     try:
-        resp = client.search(index=ELASTIC_APM_INDEX, query={"match": {"service.name":container_name}})
+        resp = ELASTIC_CLIENT.search(index=ELASTIC_APM_INDEX, query={"match": {"service.name":container_name}})
         if resp["hits"]["total"]["value"] > 0:
             apm_agent_attached = True
     except elasticsearch.NotFoundError as err:
