@@ -12,6 +12,7 @@ __version__ = "0.1"
 OPTIONS = None
 AUGMENTER_WORKDIR = "../../tools/dockerfile_augmentation"
 CMD_TRANSFORM_DOCKERFILE = "python ./dockerfile_augmenter.py -f %s -o %s" # path to the Dockerfile and output folder
+CMD_LINT_DOCKERFILE = "docker run --rm -i -e HADOLINT_IGNORE=DL3010,DL3020 -e HADOLINT_FAILURE_THRESHOLD=error hadolint/hadolint < %s" # path to the Dockerfile
 CMD_BUILD_IMAGE = "docker build -t %s -f %s ." # tag name and Dockerfile path
 CMD_RUN_APPLICATION = "docker run --rm --name %s --cap-add=SYS_PTRACE -e ELASTIC_APM_SERVICE_NAME=%s %s-pobs:%d" # give the project name and the index of the dockerfile
 CLEAN_CONTAINERS_SINCE = "elastic_filebeat_1" # give a container name after which the created containers will be removed
@@ -277,6 +278,12 @@ def evaluate_project(project):
                             logging.info("Failed to augment the dockerfile, exitcode: %d"%exitcode)
                         else:
                             dockerfile["pobs_augmentation"] = "successful"
+                            # linting Dockerfile-pobs
+                            stdout, stderr, exitcode, execution_time = run_command(CMD_LINT_DOCKERFILE%filepath, AUGMENTER_WORKDIR)
+                            dockerfile["pobs_dockerfile_validation"] = "successful" if exitcode == 0 else "failed"
+                            if exitcode != 0:
+                                logging.info("The validation of the augmented dockerfile failed: %d"%exitcode)
+                                dump_logs(stdout, stderr, "./logs/linting/", "%s_%d_linting"%(project_full_name, fileindex))
 
                             # build the PBOS application image
                             logging.info("Begin to build the application image using: %s-pobs"%(dockerfile["path"]))
