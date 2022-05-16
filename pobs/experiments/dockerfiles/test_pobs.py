@@ -68,7 +68,6 @@ def get_image_size(image_name):
     size = subprocess.check_output(command, shell=True).decode("utf-8").strip()
     return size
 
-
 def run_command(command, workdir, timeout=600):
     with tempfile.NamedTemporaryFile(mode="w+b") as stdout_f, tempfile.NamedTemporaryFile(mode="w+b") as stderr_f:
         start_time = time.time()
@@ -226,13 +225,13 @@ def evaluate_project(project):
             if "build_tools" in project:
                 logging.info("Try to build the project with some default commands")
                 if "Maven" in project["build_tools"]:
-                    stdout, stderr, exitcode, execution_time = run_command("mvn package -DskipTests=true", tmprepo)
+                    stdout, stderr, exitcode, execution_time = run_command("mvn package -DskipTests=true", tmprepo, timeout=900)
                     if exitcode == 0: project["is_able_to_build"].append({"Maven": execution_time})
                 if "Gradle" in project["build_tools"]:
-                    stdout, stderr, exitcode, execution_time = run_command("gradle build -x test", tmprepo)
+                    stdout, stderr, exitcode, execution_time = run_command("gradle build -x test", tmprepo, timeout=900)
                     if exitcode == 0: project["is_able_to_build"].append({"Gradle": execution_time})
                 if "Ant" in project["build_tools"]:
-                    stdout, stderr, exitcode, execution_time = run_command("ant compile jar", tmprepo)
+                    stdout, stderr, exitcode, execution_time = run_command("ant compile jar", tmprepo, timeout=900)
                     if exitcode == 0: project["is_able_to_build"].append({"Ant": execution_time})
                 if len(project["is_able_to_build"]) > 0:
                     logging.info("Successfully build the project using: %s"%project["is_able_to_build"])
@@ -248,7 +247,7 @@ def evaluate_project(project):
                 # sanity check: try to build the original docker image
                 logging.info("Check whether the dockerfile is buildable: %s"%dockerfile["path"])
                 image_name = project_name + ":%d"%fileindex
-                stdout, stderr, exitcode, execution_time = run_command(CMD_BUILD_IMAGE%(image_name, filename), dirname)
+                stdout, stderr, exitcode, execution_time = run_command(CMD_BUILD_IMAGE%(image_name, filename), dirname, timeout=900)
                 if exitcode != 0:
                     dockerfile["ori_build"] = "failed"
                     dump_logs(stdout, stderr, "./logs/ori_build/", "%s_%d_ori_build"%(project_full_name, fileindex))
@@ -282,7 +281,7 @@ def evaluate_project(project):
                             # build the PBOS application image
                             logging.info("Begin to build the application image using: %s-pobs"%(dockerfile["path"]))
                             image_name = project_name + "-pobs:%d"%fileindex
-                            stdout, stderr, exitcode, execution_time = run_command(CMD_BUILD_IMAGE%(image_name, "Dockerfile-pobs"), dirname)
+                            stdout, stderr, exitcode, execution_time = run_command(CMD_BUILD_IMAGE%(image_name, "Dockerfile-pobs"), dirname, timeout=900)
                             if exitcode != 0:
                                 dump_logs(stdout, stderr, "./logs/app-build/", "%s_%d_appbuild"%(project_full_name, fileindex))
                                 dockerfile["pobs_application_build"] = "failed"
