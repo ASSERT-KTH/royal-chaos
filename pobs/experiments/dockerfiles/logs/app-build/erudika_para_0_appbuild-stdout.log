@@ -3,39 +3,62 @@ Step 1/24 : FROM openjdk:8-jdk-alpine
  ---> a3562aa0b991
 Step 2/24 : ENV BOOT_SLEEP=0     JAVA_OPTS=""     REPO_URL="https://oss.sonatype.org/service/local/repositories/releases/content/com/erudika"     PARA_VERSION="1.37.0"
  ---> Using cache
- ---> 1db4527403cb
+ ---> db877c4bc41b
 Step 3/24 : RUN addgroup -S para && adduser -S -G para para && 	mkdir -p /para/lib && 	mkdir -p /para/data && 	chown -R para:para /para
  ---> Using cache
- ---> 91c0bfe43b97
+ ---> 0e33777a7e68
 Step 4/24 : USER para
  ---> Using cache
- ---> 98df2243ab52
+ ---> 84f7d5898f6b
 Step 5/24 : WORKDIR /para
  ---> Using cache
- ---> a7ee68820e3d
+ ---> d60b41a35980
 Step 6/24 : RUN wget -q -P /para/ $REPO_URL/para-jar/$PARA_VERSION/para-jar-$PARA_VERSION.jar
  ---> Using cache
- ---> 41367d30e52e
+ ---> 7dc6b13e5b73
 Step 7/24 : VOLUME ["/para/data"]
  ---> Using cache
- ---> 9f570d25715d
+ ---> 5f939636e4fb
 Step 8/24 : EXPOSE 8080
  ---> Using cache
- ---> 1986aee0f079
+ ---> 4cad13791c11
 Step 9/24 : CMD sleep $BOOT_SLEEP &&     java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar para-*.jar
  ---> Using cache
- ---> f1ded76dc7db
+ ---> d17fbb180d7c
 Step 10/24 : USER root
- ---> Running in 6878d95126e2
-Removing intermediate container 6878d95126e2
- ---> af574ebac470
+ ---> Running in 75d4614e9471
+Removing intermediate container 75d4614e9471
+ ---> 359771b77175
 Step 11/24 : ADD https://github.com/just-containers/s6-overlay/releases/download/v2.2.0.1/s6-overlay-amd64-installer /tmp/
 
 
- ---> fd2b60a3bec9
+ ---> b081b9b40e32
 Step 12/24 : RUN chmod +x /tmp/s6-overlay-amd64-installer && /tmp/s6-overlay-amd64-installer /
- ---> Running in 2bbdacce990a
-./
+ ---> Running in e09ddac9b6ba
+[91munable to lstat /./usr/bin/execlineb: No such file or directory
+unable to utime /./usr/bin/execlineb: No such file or directory
+unable to stat /./libexec/: No such file or directory
+unable to stat /./etc/cont-finish.d/: No such file or directory
+unable to stat /./etc/s6/: No such file or directory
+unable to stat /./etc/s6/init-no-catchall/: No such file or directory
+unable to stat /./etc/s6/services/: No such file or directory
+unable to stat /./etc/s6/services/s6-svscan-log/: No such file or directory
+unable to stat /./etc/s6/services/s6-fdholderd/: No such file or directory
+unable to stat /./etc/s6/services/s6-fdholderd/rules/: No such file or directory
+unable to stat /./etc/s6/services/s6-fdholderd/rules/uid/: No such file or directory
+unable to stat /./etc/s6/services/s6-fdholderd/rules/uid/0/: No such file or directory
+unable to stat /./etc/s6/services/s6-fdholderd/rules/uid/0/env/: No such file or directory
+unable to stat /./etc/s6/services/s6-fdholderd/rules/uid/default/: No such file or directory
+unable to stat /./etc/s6/services/s6-fdholderd/rules/uid/default/env/: No such file or directory
+unable to stat /./etc/s6/services/.s6-svscan/: No such file or directory
+unable to stat /./etc/s6/init-catchall/: No such file or directory
+unable to stat /./etc/s6/init/: No such file or directory
+unable to stat /./etc/s6/init/env-stage2/: No such file or directory
+unable to stat /./etc/s6/init/env/: No such file or directory
+unable to stat /./etc/services.d/: No such file or directory
+unable to stat /./etc/fix-attrs.d/: No such file or directory
+unable to stat /./etc/cont-init.d/: No such file or directory
+[0m./
 ./usr/
 ./usr/bin/
 ./usr/bin/justc-envdir
@@ -64,30 +87,7 @@ Step 12/24 : RUN chmod +x /tmp/s6-overlay-amd64-installer && /tmp/s6-overlay-amd
 ./etc/s6/services/s6-fdholderd/rules/
 ./etc/s6/services/s6-fdholderd/rules/uid/
 ./etc/s6/services/s6-fdholderd/rules/uid/0/
-[91munable to lstat /./usr/bin/execlineb: No such file or directory
-unable to utime /./usr/bin/execlineb: No such file or directory
-unable to stat /./libexec/: No such file or directory
-unable to stat /./etc/cont-finish.d/: No such file or directory
-unable to stat /./etc/s6/: No such file or directory
-unable to stat /./etc/s6/init-no-catchall/: No such file or directory
-unable to stat /./etc/s6/services/: No such file or directory
-unable to stat /./etc/s6/services/s6-svscan-log/: No such file or directory
-unable to stat /./etc/s6/services/s6-fdholderd/: No such file or directory
-unable to stat /./etc/s6/services/s6-fdholderd/rules/: No such file or directory
-unable to stat /./etc/s6/services/s6-fdholderd/rules/uid/: No such file or directory
-[0m[91munable to stat /./etc/s6/services/s6-fdholderd/rules/uid/0/: No such file or directory
-unable to stat /./etc/s6/services/s6-fdholderd/rules/uid/0/env/: No such file or directory
-unable to stat /./etc/s6/services/s6-fdholderd/rules/uid/default/: No such file or directory
-unable to stat /./etc/s6/services/s6-fdholderd/rules/uid/default/env/: No such file or directory
-unable to stat /./etc/s6/services/.s6-svscan/: No such file or directory
-unable to stat /./etc/s6/init-catchall/: No such file or directory
-unable to stat /./etc/s6/init/: No such file or directory
-unable to stat /./etc/s6/init/env-stage2/: No such file or directory
-unable to stat /./etc/s6/init/env/: No such file or directory
-unable to stat /./etc/services.d/: No such file or directory
-unable to stat /./etc/fix-attrs.d/: No such file or directory
-unable to stat /./etc/cont-init.d/: No such file or directory
-[0m./etc/s6/services/s6-fdholderd/rules/uid/0/env/
+./etc/s6/services/s6-fdholderd/rules/uid/0/env/
 ./etc/s6/services/s6-fdholderd/rules/uid/0/env/S6_FDHOLDER_GETDUMP
 ./etc/s6/services/s6-fdholderd/rules/uid/0/env/S6_FDHOLDER_LIST
 ./etc/s6/services/s6-fdholderd/rules/uid/0/env/S6_FDHOLDER_RETRIEVE_REGEX
@@ -214,9 +214,7 @@ unable to stat /./etc/cont-init.d/: No such file or directory
 ./bin/homeof
 ./bin/s6-chroot
 ./bin/s6-rmrf
-[91munable to lstat /./bin/umask: No such file or directory
-unable to utime /./bin/umask: No such file or directory
-[0m./bin/s6-true
+./bin/s6-true
 ./bin/s6-ln
 ./bin/forbacktickx
 ./bin/s6-umount
@@ -226,7 +224,9 @@ unable to utime /./bin/umask: No such file or directory
 ./bin/exec
 ./bin/s6-dnsname
 ./bin/execline-umask
-./bin/s6-echo
+[91munable to lstat /./bin/umask: No such file or directory
+unable to utime /./bin/umask: No such file or directory
+[0m./bin/s6-echo
 ./bin/s6-seq
 ./bin/s6-dnsname-filter
 ./bin/s6-ipcserver-socketbinder
@@ -279,7 +279,8 @@ unable to utime /./bin/umask: No such file or directory
 ./bin/s6-dnsqr
 ./bin/s6-connlimit
 ./bin/s6-svlisten
-./bin/heredoc
+[91munable to lstat /./bin/cd: No such file or directory
+[0m./bin/heredoc
 ./bin/s6-swapon
 ./bin/elgetpositionals
 ./bin/posix-umask
@@ -289,8 +290,7 @@ unable to utime /./bin/umask: No such file or directory
 ./bin/s6-grep
 ./bin/s6-svscan
 ./bin/cd./bin/s6-ftrigrd
-[91munable to lstat /./bin/cd: No such file or directory
-[0m./bin/s6-tcpserver-access
+./bin/s6-tcpserver-access
 ./bin/s6-dnsns
 ./bin/piperw
 ./bin/minidentd
@@ -327,6 +327,6 @@ unable to utime /./bin/umask: No such file or directory
 ./bin/s6-env
 ./bin/s6-tai64nlocal
 ./init
-Removing intermediate container 2bbdacce990a
- ---> d65d7a512541
+Removing intermediate container e09ddac9b6ba
+ ---> 5bf3d143e7ee
 Step 13/24 : COPY ./pobs_files/ /

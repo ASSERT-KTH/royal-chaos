@@ -1,32 +1,35 @@
-Sending build context to Docker daemon     30MB
-Step 1/15 : FROM dexterbt1/kestrel
+Sending build context to Docker daemon  38.05MB
+Step 1/16 : FROM dexterbt1/kestrel
  ---> dc76046c1309
-Step 2/15 : WORKDIR /usr/local/kestrel/current
+Step 2/16 : WORKDIR /usr/local/kestrel/current
  ---> Using cache
- ---> 14955ec21f44
-Step 3/15 : CMD ["java","-jar","kestrel_2.9.2-2.4.2-SNAPSHOT.jar","-f","config/development.scala"]
+ ---> e879d59f43c6
+Step 3/16 : CMD ["java","-jar","kestrel_2.9.2-2.4.2-SNAPSHOT.jar","-f","config/development.scala"]
  ---> Using cache
- ---> 11e86db59a0b
-Step 4/15 : ADD https://github.com/just-containers/s6-overlay/releases/download/v2.2.0.1/s6-overlay-amd64-installer /tmp/
+ ---> e683958e148e
+Step 4/16 : ADD https://github.com/just-containers/s6-overlay/releases/download/v2.2.0.1/s6-overlay-amd64-installer /tmp/
 
 
- ---> 94185a111232
-Step 5/15 : RUN chmod +x /tmp/s6-overlay-amd64-installer && /tmp/s6-overlay-amd64-installer /
- ---> Running in 57195b3a354c
+ ---> d4ed564fe1a3
+Step 5/16 : RUN chmod +x /tmp/s6-overlay-amd64-installer && /tmp/s6-overlay-amd64-installer /
+ ---> Running in 32b94da20b0b
 ./
 ./usr/
 ./usr/bin/
 ./usr/bin/justc-envdir
 ./usr/bin/with-contenv-legacy
 ./usr/bin/execlineb./usr/bin/printcontenv
-./usr/bin/logutil-newfifo
+[91munable to lstat /./usr/bin/execlineb: No such file or directory
+unable to utime /./usr/bin/execlineb: No such file or directory
+[0m./usr/bin/logutil-newfifo
 ./usr/bin/logutil-service
 ./usr/bin/logutil-service-main
 ./usr/bin/with-retries
 ./usr/bin/with-contenv
 ./usr/bin/fix-attrs
 ./libexec/
-./libexec/s6-rc-oneshot-run
+[91munable to stat /./libexec/: No such file or directory
+[0m./libexec/s6-rc-oneshot-run
 ./libexec/s6-rc-fdholder-filler
 ./libexec/s6lockd-helper
 ./etc/
@@ -38,7 +41,21 @@ Step 5/15 : RUN chmod +x /tmp/s6-overlay-amd64-installer && /tmp/s6-overlay-amd6
 ./etc/s6/services/
 ./etc/s6/services/s6-svscan-log/
 ./etc/s6/services/s6-svscan-log/run
-./etc/s6/services/s6-fdholderd/
+[91munable to stat /./etc/cont-finish.d/: No such file or directory
+unable to stat /./etc/s6/: No such file or directory
+unable to stat /./etc/s6/init-no-catchall/: No such file or directory
+unable to stat /./etc/s6/services/: No such file or directory
+unable to stat /./etc/s6/services/s6-svscan-log/: No such file or directory
+[0m[91munable to stat /./etc/s6/services/s6-fdholderd/: No such file or directory
+unable to stat /./etc/s6/services/s6-fdholderd/rules/: No such file or directory
+unable to stat /./etc/s6/services/s6-fdholderd/rules/uid/: No such file or directory
+unable to stat /./etc/s6/services/s6-fdholderd/rules/uid/0/: No such file or directory
+unable to stat /./etc/s6/services/s6-fdholderd/rules/uid/0/env/: No such file or directory
+unable to stat /./etc/s6/services/s6-fdholderd/rules/uid/default/: No such file or directory
+unable to stat /./etc/s6/services/s6-fdholderd/rules/uid/default/env/: No such file or directory
+unable to stat /./etc/s6/services/.s6-svscan/: No such file or directory
+unable to stat /./etc/s6/init-catchall/: No such file or directory
+[0m./etc/s6/services/s6-fdholderd/
 ./etc/s6/services/s6-fdholderd/rules/
 ./etc/s6/services/s6-fdholderd/rules/uid/
 ./etc/s6/services/s6-fdholderd/rules/uid/0/
@@ -63,10 +80,16 @@ Step 5/15 : RUN chmod +x /tmp/s6-overlay-amd64-installer && /tmp/s6-overlay-amd6
 ./etc/s6/init-catchall/init-stage1
 ./etc/s6/init-catchall/init-stage2
 ./etc/s6/init/
-./etc/s6/init/env-stage2/
-./etc/s6/init/init-stage2-fixattrs.txt
+[91munable to stat /./etc/s6/init/: No such file or directory
+[0m./etc/s6/init/env-stage2/
+[91munable to stat /./etc/s6/init/env-stage2/: No such file or directory
+[0m./etc/s6/init/init-stage2-fixattrs.txt
 ./etc/s6/init/init-stage1
-./etc/s6/init/env/
+[91munable to stat /./etc/s6/init/env/: No such file or directory
+unable to stat /./etc/services.d/: No such file or directory
+unable to stat /./etc/fix-attrs.d/: No such file or directory
+unable to stat /./etc/cont-init.d/: No such file or directory
+[0m./etc/s6/init/env/
 ./etc/s6/init/env/PATH
 ./etc/s6/init/init-stage2
 ./etc/s6/init/init-stage2-redirfd
@@ -95,30 +118,7 @@ Step 5/15 : RUN chmod +x /tmp/s6-overlay-amd64-installer && /tmp/s6-overlay-amd6
 ./bin/s6-sync
 ./bin/s6-fdholder-list
 ./bin/fdclose
-[91munable to lstat /./usr/bin/execlineb: No such file or directory
-unable to utime /./usr/bin/execlineb: No such file or directory
-unable to stat /./libexec/: No such file or directory
-unable to stat /./etc/cont-finish.d/: No such file or directory
-unable to stat /./etc/s6/: No such file or directory
-unable to stat /./etc/s6/init-no-catchall/: No such file or directory
-unable to stat /./etc/s6/services/: No such file or directory
-unable to stat /./etc/s6/services/s6-svscan-log/: No such file or directory
-unable to stat /./etc/s6/services/s6-fdholderd/: No such file or directory
-unable to stat /./etc/s6/services/s6-fdholderd/rules/: No such file or directory
-unable to stat /./etc/s6/services/s6-fdholderd/rules/uid/: No such file or directory
-unable to stat /./etc/s6/services/s6-fdholderd/rules/uid/0/: No such file or directory
-unable to stat /./etc/s6/services/s6-fdholderd/rules/uid/0/env/: No such file or directory
-unable to stat /./etc/s6/services/s6-fdholderd/rules/uid/default/: No such file or directory
-unable to stat /./etc/s6/services/s6-fdholderd/rules/uid/default/env/: No such file or directory
-unable to stat /./etc/s6/services/.s6-svscan/: No such file or directory
-unable to stat /./etc/s6/init-catchall/: No such file or directory
-unable to stat /./etc/s6/init/: No such file or directory
-unable to stat /./etc/s6/init/env-stage2/: No such file or directory
-unable to stat /./etc/s6/init/env/: No such file or directory
-unable to stat /./etc/services.d/: No such file or directory
-unable to stat /./etc/fix-attrs.d/: No such file or directory
-unable to stat /./etc/cont-init.d/: No such file or directory
-[0m./bin/define
+./bin/define
 ./bin/s6-svperms
 ./bin/background
 ./bin/s6-applyuidgid
@@ -171,7 +171,9 @@ unable to stat /./etc/cont-init.d/: No such file or directory
 ./bin/s6-rc-db
 ./bin/s6-svc
 ./bin/s6-tcpserver6
-./bin/umask./bin/s6-dnssoa
+[91munable to lstat /./bin/umask: No such file or directory
+unable to utime /./bin/umask: No such file or directory
+[0m./bin/umask./bin/s6-dnssoa
 ./bin/s6-tcpclient
 ./bin/s6-pause
 ./bin/pipeline
@@ -215,9 +217,7 @@ unable to stat /./etc/cont-init.d/: No such file or directory
 ./bin/s6-rename
 ./bin/s6-dumpenv
 ./bin/s6-setlock
-[91munable to lstat /./bin/umask: No such file or directory
-unable to utime /./bin/umask: No such file or directory
-[0m./bin/emptyenv
+./bin/emptyenv
 ./bin/multidefine
 ./bin/s6-sntpclock
 ./bin/s6-svdt
@@ -266,9 +266,9 @@ unable to utime /./bin/umask: No such file or directory
 ./bin/s6-touch
 ./bin/s6-grep
 ./bin/s6-svscan
-./bin/cd./bin/s6-ftrigrd
 [91munable to lstat /./bin/cd: No such file or directory
-[0m./bin/s6-tcpserver-access
+[0m./bin/cd./bin/s6-ftrigrd
+./bin/s6-tcpserver-access
 ./bin/s6-dnsns
 ./bin/piperw
 ./bin/minidentd
@@ -305,50 +305,50 @@ unable to utime /./bin/umask: No such file or directory
 ./bin/s6-env
 ./bin/s6-tai64nlocal
 ./init
-Removing intermediate container 57195b3a354c
- ---> d4d0fb88d13a
-Step 6/15 : COPY ./pobs_files/ /
- ---> 9add0b269543
-Step 7/15 : ENV ELASTIC_APM_SERVICE_NAME=app
- ---> Running in a747b51d0ed0
-Removing intermediate container a747b51d0ed0
- ---> 12df32dcb574
-Step 8/15 : ENV ELASTIC_APM_APPLICATION_PACKAGES=
- ---> Running in 25f85b0d377d
-Removing intermediate container 25f85b0d377d
- ---> 717006db1dd8
-Step 9/15 : ENV ELASTIC_APM_SERVER_URL=http://172.17.0.1:8200
- ---> Running in f7fd4ed9ec02
-Removing intermediate container f7fd4ed9ec02
- ---> e5c0774ee421
-Step 10/15 : ENV JAVA_TOOL_OPTIONS "$JAVA_TOOL_OPTIONS -javaagent:/home/elastic/elastic-apm-agent-1.30.1.jar -Delastic.apm.log_ecs_reformatting=OVERRIDE"
- ---> Running in 1769393a9611
-Removing intermediate container 1769393a9611
- ---> cfffd279cc52
-Step 11/15 : ENV JAVA_OPTS "$JAVA_OPTS -noverify"
- ---> Running in 0848e422f529
-Removing intermediate container 0848e422f529
- ---> 5cc84811a5e5
-Step 12/15 : RUN apt-get update; exit 0
- ---> Running in 56f1355680d2
+Removing intermediate container 32b94da20b0b
+ ---> 3a475626d066
+Step 6/16 : COPY ./pobs_files/ /
+ ---> 1a2023be2e24
+Step 7/16 : ENV ELASTIC_APM_SERVICE_NAME=app
+ ---> Running in b7159efb302e
+Removing intermediate container b7159efb302e
+ ---> 9519d0eebc23
+Step 8/16 : ENV ELASTIC_APM_APPLICATION_PACKAGES=
+ ---> Running in f84198839452
+Removing intermediate container f84198839452
+ ---> 9d419fe62b30
+Step 9/16 : ENV ELASTIC_APM_SERVER_URL=http://172.17.0.1:8200
+ ---> Running in d01bd6caf8cc
+Removing intermediate container d01bd6caf8cc
+ ---> b799028614b3
+Step 10/16 : ENV JAVA_TOOL_OPTIONS "$JAVA_TOOL_OPTIONS -javaagent:/home/elastic/elastic-apm-agent-1.30.1.jar -Delastic.apm.log_ecs_reformatting=OVERRIDE"
+ ---> Running in d66fff973990
+Removing intermediate container d66fff973990
+ ---> 911f0c88370e
+Step 11/16 : ENV JAVA_OPTS "$JAVA_OPTS -noverify"
+ ---> Running in 379f4294f442
+Removing intermediate container 379f4294f442
+ ---> 1ae45a5d9a23
+Step 12/16 : RUN apt-get update; exit 0
+ ---> Running in b330ee6c48d9
 Get:1 http://security.debian.org jessie/updates InRelease [44.9 kB]
 Get:2 http://ppa.launchpad.net trusty InRelease [15.5 kB]
-Ign http://http.debian.net jessie InRelease
-Get:3 http://http.debian.net jessie-updates InRelease [16.3 kB]
 Err http://security.debian.org jessie/updates InRelease
   
+Ign http://http.debian.net jessie InRelease
+Get:3 http://http.debian.net jessie-updates InRelease [16.3 kB]
 Get:4 http://http.debian.net jessie Release.gpg [1652 B]
 Get:5 http://http.debian.net jessie Release [77.3 kB]
 Get:6 http://ppa.launchpad.net trusty/main Sources [14 B]
 Err http://http.debian.net jessie-updates InRelease
   
 Ign http://http.debian.net jessie Release
-Get:7 http://ppa.launchpad.net trusty/main amd64 Packages [14 B]
 Ign http://http.debian.net jessie/main amd64 Packages/DiffIndex
+Get:7 http://ppa.launchpad.net trusty/main amd64 Packages [14 B]
 Err http://http.debian.net jessie/main amd64 Packages
   
 Get:8 http://http.debian.net jessie/main amd64 Packages [6818 kB]
-Fetched 6973 kB in 13s (531 kB/s)
+Fetched 6973 kB in 13s (536 kB/s)
 Reading package lists...
 [91mW: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: http://security.debian.org jessie/updates InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 9D6D8F6BC857C906 NO_PUBKEY AA8E81B4331F7F50
 
@@ -356,25 +356,23 @@ W: An error occurred during the signature verification. The repository is not up
 
 W: GPG error: http://http.debian.net jessie Release: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 7638D0442B90D010
 W: Failed to fetch http://http.debian.net/debian/dists/jessie-updates/InRelease  
-[0m[91m
+
 W: Failed to fetch http://security.debian.org/dists/jessie/updates/InRelease  
 
 W: Some index files failed to download. They have been ignored, or old ones used instead.
-[0mRemoving intermediate container 56f1355680d2
- ---> 30cdb2261b13
-Step 13/15 : RUN apt-get install -y procps strace
- ---> Running in cebb226b1e79
+[0mRemoving intermediate container b330ee6c48d9
+ ---> d5b04054075c
+Step 13/16 : RUN apt-get install -y procps
+ ---> Running in bc00a3a26e0b
 Reading package lists...
 Building dependency tree...
 Reading state information...
-The following NEW packages will be installed:
-  strace
 The following packages will be upgraded:
   procps
-1 upgraded, 1 newly installed, 0 to remove and 140 not upgraded.
-Need to get 510 kB of archives.
-After this operation, 919 kB of additional disk space will be used.
+1 upgraded, 0 newly installed, 0 to remove and 140 not upgraded.
+Need to get 236 kB of archives.
+After this operation, 95.2 kB disk space will be freed.
 WARNING: The following packages cannot be authenticated!
-  procps strace
+  procps
 [91mE: There are problems and -y was used without --force-yes
 [0m

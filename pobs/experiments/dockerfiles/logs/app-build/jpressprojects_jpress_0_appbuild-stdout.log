@@ -3,42 +3,40 @@ Step 1/23 : FROM fuhai/jpress-base:v1.4
  ---> d08a9de97b53
 Step 2/23 : LABEL maintainer="Michael Yang<fuhai999@gmail.com>"
  ---> Using cache
- ---> ffa3b01f5b5c
+ ---> e9ecfd71f561
 Step 3/23 : WORKDIR /opt/jpress
  ---> Using cache
- ---> c24b900416ac
+ ---> b1bfecbdb032
 Step 4/23 : COPY ./starter/target/starter-3.0/ /opt/jpress/
  ---> Using cache
- ---> a8cfda8ec1c4
+ ---> 82703af0d5a1
 Step 5/23 : COPY ./docker/files/jpress.sh /opt/jpress/jpress.sh
  ---> Using cache
- ---> bbc5a0496a91
+ ---> cf3a943557ed
 Step 6/23 : COPY ./docker/files/jboot.properties /opt/jpress/config/jboot.properties
  ---> Using cache
- ---> 24861acaae73
+ ---> f3589aa7d4be
 Step 7/23 : RUN chmod +x /opt/jpress/jpress.sh &&      rm -rf /opt/jpress/jpress.bat &&     rm -rf /opt/jpress/config/undertow.txt &&     rm -rf /opt/jpress/config/install.lock
  ---> Using cache
- ---> f5611f4df241
+ ---> 6f04c9af1e93
 Step 8/23 : EXPOSE 8080
  ---> Using cache
- ---> 894463cb20a6
+ ---> 61c07c373a42
 Step 9/23 : CMD ["/opt/jpress/jpress.sh", "start"]
  ---> Using cache
- ---> ece334c65fb1
+ ---> bc97c499e106
 Step 10/23 : ADD https://github.com/just-containers/s6-overlay/releases/download/v2.2.0.1/s6-overlay-amd64-installer /tmp/
 
 
- ---> c72db864cc95
+ ---> cda819f01c93
 Step 11/23 : RUN chmod +x /tmp/s6-overlay-amd64-installer && /tmp/s6-overlay-amd64-installer /
- ---> Running in 9b9448a74921
+ ---> Running in bbf1398b5130
 ./
 ./usr/
 ./usr/bin/
 ./usr/bin/justc-envdir
 ./usr/bin/with-contenv-legacy
-[91munable to lstat /./usr/bin/execlineb: No such file or directory
-unable to utime /./usr/bin/execlineb: No such file or directory
-[0m./usr/bin/execlineb./usr/bin/printcontenv
+./usr/bin/execlineb./usr/bin/printcontenv
 ./usr/bin/logutil-newfifo
 ./usr/bin/logutil-service
 ./usr/bin/logutil-service-main
@@ -46,30 +44,19 @@ unable to utime /./usr/bin/execlineb: No such file or directory
 ./usr/bin/with-contenv
 ./usr/bin/fix-attrs
 ./libexec/
-[91munable to stat /./libexec/: No such file or directory
-[0m./libexec/s6-rc-oneshot-run
+./libexec/s6-rc-oneshot-run
 ./libexec/s6-rc-fdholder-filler
 ./libexec/s6lockd-helper
 ./etc/
 ./etc/cont-finish.d/
-[91munable to stat /./etc/cont-finish.d/: No such file or directory
-[0m./etc/s6/
+./etc/s6/
 ./etc/s6/init-no-catchall/
 ./etc/s6/init-no-catchall/init-stage1
 ./etc/s6/init-no-catchall/init-stage2
 ./etc/s6/services/
 ./etc/s6/services/s6-svscan-log/
 ./etc/s6/services/s6-svscan-log/run
-[91munable to stat /./etc/s6/: No such file or directory
-unable to stat /./etc/s6/init-no-catchall/: No such file or directory
-unable to stat /./etc/s6/services/: No such file or directory
-unable to stat /./etc/s6/services/s6-svscan-log/: No such file or directory
-unable to stat /./etc/s6/services/s6-fdholderd/: No such file or directory
-unable to stat /./etc/s6/services/s6-fdholderd/rules/: No such file or directory
-unable to stat /./etc/s6/services/s6-fdholderd/rules/uid/: No such file or directory
-[0m[91munable to stat /./etc/s6/services/s6-fdholderd/rules/uid/0/: No such file or directory
-unable to stat /./etc/s6/services/s6-fdholderd/rules/uid/0/env/: No such file or directory
-[0m./etc/s6/services/s6-fdholderd/
+./etc/s6/services/s6-fdholderd/
 ./etc/s6/services/s6-fdholderd/rules/
 ./etc/s6/services/s6-fdholderd/rules/uid/
 ./etc/s6/services/s6-fdholderd/rules/uid/0/
@@ -80,9 +67,7 @@ unable to stat /./etc/s6/services/s6-fdholderd/rules/uid/0/env/: No such file or
 ./etc/s6/services/s6-fdholderd/rules/uid/0/env/S6_FDHOLDER_SETDUMP
 ./etc/s6/services/s6-fdholderd/rules/uid/0/env/S6_FDHOLDER_STORE_REGEX
 ./etc/s6/services/s6-fdholderd/rules/uid/0/allow
-[91munable to stat /./etc/s6/services/s6-fdholderd/rules/uid/default/: No such file or directory
-unable to stat /./etc/s6/services/s6-fdholderd/rules/uid/default/env/: No such file or directory
-[0m./etc/s6/services/s6-fdholderd/rules/uid/default/
+./etc/s6/services/s6-fdholderd/rules/uid/default/
 ./etc/s6/services/s6-fdholderd/rules/uid/default/env/
 ./etc/s6/services/s6-fdholderd/rules/uid/default/env/S6_FDHOLDER_LIST
 ./etc/s6/services/s6-fdholderd/rules/uid/default/allow
@@ -92,31 +77,46 @@ unable to stat /./etc/s6/services/s6-fdholderd/rules/uid/default/env/: No such f
 ./etc/s6/services/.s6-svscan/
 ./etc/s6/services/.s6-svscan/crash
 ./etc/s6/services/.s6-svscan/finish
-[91munable to stat /./etc/s6/services/.s6-svscan/: No such file or directory
-[0m[91munable to stat /./etc/s6/init-catchall/: No such file or directory
-[0m./etc/s6/init-catchall/
+./etc/s6/init-catchall/
 ./etc/s6/init-catchall/init-stage1
 ./etc/s6/init-catchall/init-stage2
-[91munable to stat /./etc/s6/init/: No such file or directory
-unable to stat /./etc/s6/init/env-stage2/: No such file or directory
-[0m./etc/s6/init/
+./etc/s6/init/
 ./etc/s6/init/env-stage2/
-./etc/s6/init/init-stage2-fixattrs.txt
+[91munable to lstat /./usr/bin/execlineb: No such file or directory
+unable to utime /./usr/bin/execlineb: No such file or directory
+unable to stat /./libexec/: No such file or directory
+unable to stat /./etc/cont-finish.d/: No such file or directory
+unable to stat /./etc/s6/: No such file or directory
+unable to stat /./etc/s6/init-no-catchall/: No such file or directory
+unable to stat /./etc/s6/services/: No such file or directory
+unable to stat /./etc/s6/services/s6-svscan-log/: No such file or directory
+unable to stat /./etc/s6/services/s6-fdholderd/: No such file or directory
+unable to stat /./etc/s6/services/s6-fdholderd/rules/: No such file or directory
+unable to stat /./etc/s6/services/s6-fdholderd/rules/uid/: No such file or directory
+unable to stat /./etc/s6/services/s6-fdholderd/rules/uid/0/: No such file or directory
+unable to stat /./etc/s6/services/s6-fdholderd/rules/uid/0/env/: No such file or directory
+unable to stat /./etc/s6/services/s6-fdholderd/rules/uid/default/: No such file or directory
+unable to stat /./etc/s6/services/s6-fdholderd/rules/uid/default/env/: No such file or directory
+unable to stat /./etc/s6/services/.s6-svscan/: No such file or directory
+unable to stat /./etc/s6/init-catchall/: No such file or directory
+unable to stat /./etc/s6/init/: No such file or directory
+unable to stat /./etc/s6/init/env-stage2/: No such file or directory
+[0m[91munable to stat /./etc/s6/init/env/: No such file or directory
+[0m[91munable to stat /./etc/services.d/: No such file or directory
+[0m[91munable to stat /./etc/fix-attrs.d/: No such file or directory
+unable to stat /./etc/cont-init.d/: No such file or directory
+[0m./etc/s6/init/init-stage2-fixattrs.txt
 ./etc/s6/init/init-stage1
 ./etc/s6/init/env/
 ./etc/s6/init/env/PATH
 ./etc/s6/init/init-stage2
-[91munable to stat /./etc/s6/init/env/: No such file or directory
-[0m[91munable to stat /./etc/services.d/: No such file or directory
-[0m./etc/s6/init/init-stage2-redirfd
+./etc/s6/init/init-stage2-redirfd
 ./etc/s6/init/init-stage3
 ./etc/services.d/
 ./etc/leapsecs.dat
 ./etc/fix-attrs.d/
 ./etc/cont-init.d/
-[91munable to stat /./etc/fix-attrs.d/: No such file or directory
-[0m[91munable to stat /./etc/cont-init.d/: No such file or directory
-[0m./bin/
+./bin/
 ./bin/s6-dnssrv
 ./bin/s6-ftrig-listen1
 ./bin/s6-taiclock
@@ -189,16 +189,16 @@ unable to stat /./etc/s6/init/env-stage2/: No such file or directory
 ./bin/s6-rc-db
 ./bin/s6-svc
 ./bin/s6-tcpserver6
-[91munable to lstat /./bin/umask: No such file or directory
-[0m[91munable to utime /./bin/umask: No such file or directory
-[0m./bin/umask./bin/s6-dnssoa
+./bin/umask./bin/s6-dnssoa
 ./bin/s6-tcpclient
 ./bin/s6-pause
 ./bin/pipeline
 ./bin/s6-quote
 ./bin/s6-clock
 ./bin/s6-printenv
-./bin/s6-setsid
+[91munable to lstat /./bin/umask: No such file or directory
+unable to utime /./bin/umask: No such file or directory
+[0m./bin/s6-setsid
 ./bin/if
 ./bin/seekablepipe
 ./bin/s6-tail
@@ -285,9 +285,9 @@ unable to stat /./etc/s6/init/env-stage2/: No such file or directory
 ./bin/s6-grep
 ./bin/s6-svscan
 ./bin/cd./bin/s6-ftrigrd
+./bin/s6-tcpserver-access
 [91munable to lstat /./bin/cd: No such file or directory
-[0m./bin/s6-tcpserver-access
-./bin/s6-dnsns
+[0m./bin/s6-dnsns
 ./bin/piperw
 ./bin/minidentd
 ./bin/s6-envuidgid
@@ -323,6 +323,6 @@ unable to stat /./etc/s6/init/env-stage2/: No such file or directory
 ./bin/s6-env
 ./bin/s6-tai64nlocal
 ./init
-Removing intermediate container 9b9448a74921
- ---> 15c3e337b589
+Removing intermediate container bbf1398b5130
+ ---> 652f46408c20
 Step 12/23 : COPY ./pobs_files/ /

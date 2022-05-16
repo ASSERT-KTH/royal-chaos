@@ -8,28 +8,21 @@
 system call monitor started
 [services.d] done.
 system call monitor started
-2022-05-14 02:28:37,891 [main] INFO  co.elastic.apm.agent.util.JmxUtils - Found JVM-specific OperatingSystemMXBean interface: com.sun.management.OperatingSystemMXBean
-2022-05-14 02:28:38,147 [main] INFO  co.elastic.apm.agent.configuration.StartupInfo - Starting Elastic APM 1.30.1 as run_pobs_vertx-blueprint-microservice_2 on Java 1.8.0_111 Runtime version: 1.8.0_111-8u111-b14-2~bpo8+1-b14 VM version: 25.111-b14 (Oracle Corporation) Linux 5.4.0-1070-azure
-2022-05-14 02:28:38,148 [main] INFO  co.elastic.apm.agent.configuration.StartupInfo - service_name: 'run_pobs_vertx-blueprint-microservice_2' (source: Environment Variables)
-2022-05-14 02:28:38,148 [main] INFO  co.elastic.apm.agent.configuration.StartupInfo - server_url: 'http://172.17.0.1:8200' (source: Environment Variables)
-2022-05-14 02:28:38,149 [main] INFO  co.elastic.apm.agent.configuration.StartupInfo - log_ecs_reformatting: 'OVERRIDE' (source: Java System Properties)
-2022-05-14 02:28:38,149 [main] WARN  co.elastic.apm.agent.configuration.StartupInfo - To enable all features and decrease startup time, please configure application_packages
-system call monitor started
-system call monitor started
-system call monitor started
-system call monitor started
-system call monitor started
-system call monitor started
-2022-05-14 02:28:44,483 [main] INFO  co.elastic.apm.agent.impl.ElasticApmTracer - Tracer switched to RUNNING state
-2022-05-14 02:28:44,555 [elastic-apm-init-instrumentation-shutdown-hook] INFO  co.elastic.apm.agent.bci.InstrumentationStatsLifecycleListener - Used instrumentation groups: [executor, executor-collection, fork-join, slf4j-error, urlconnection]
-2022-05-14 02:28:44,561 [elastic-apm-circuit-breaker] INFO  co.elastic.apm.agent.impl.circuitbreaker.CircuitBreaker - Stopping the Circuit Breaker thread.
-2022-05-14 02:28:44,658 [elastic-apm-server-healthcheck] INFO  co.elastic.apm.agent.report.ApmServerHealthChecker - Elastic APM server is available: {  "build_date": "2021-11-04T13:10:15Z",  "build_sha": "0702551667e5319822d00dee613ea2a1501615bf",  "version": "7.15.2"}
-2022-05-14 02:28:44,741 [elastic-apm-remote-config-poller] INFO  co.elastic.apm.agent.configuration.ApmServerConfigurationSource - Received new configuration from APM Server: {}
-system call monitor started
-2022-05-14 02:28:45,576 [elastic-apm-init-instrumentation-shutdown-hook] INFO  co.elastic.apm.agent.impl.ElasticApmTracer - Tracer switched to STOPPED state
-2022-05-14 02:28:45,577 [elastic-apm-init-instrumentation-shutdown-hook] INFO  co.elastic.apm.agent.report.ApmServerReporter - dropped events because of full queue: 0
-2022-05-14 02:28:45,586 [elastic-apm-init-instrumentation-shutdown-hook] INFO  co.elastic.apm.agent.report.IntakeV2ReportingEventHandler - Reported events: 0
-2022-05-14 02:28:45,586 [elastic-apm-init-instrumentation-shutdown-hook] INFO  co.elastic.apm.agent.report.IntakeV2ReportingEventHandler - Dropped events: 0
+2022-05-15 15:11:37,027 [main] INFO  co.elastic.apm.agent.util.JmxUtils - Found JVM-specific OperatingSystemMXBean interface: com.sun.management.OperatingSystemMXBean
+2022-05-15 15:11:37,307 [main] INFO  co.elastic.apm.agent.configuration.StartupInfo - Starting Elastic APM 1.30.1 as run_pobs_vertx-blueprint-microservice_2 on Java 1.8.0_111 Runtime version: 1.8.0_111-8u111-b14-2~bpo8+1-b14 VM version: 25.111-b14 (Oracle Corporation) Linux 5.4.0-1070-azure
+2022-05-15 15:11:37,308 [main] INFO  co.elastic.apm.agent.configuration.StartupInfo - service_name: 'run_pobs_vertx-blueprint-microservice_2' (source: Environment Variables)
+2022-05-15 15:11:37,308 [main] INFO  co.elastic.apm.agent.configuration.StartupInfo - server_url: 'http://172.17.0.1:8200' (source: Environment Variables)
+2022-05-15 15:11:37,309 [main] INFO  co.elastic.apm.agent.configuration.StartupInfo - log_ecs_reformatting: 'OVERRIDE' (source: Java System Properties)
+2022-05-15 15:11:37,309 [main] WARN  co.elastic.apm.agent.configuration.StartupInfo - To enable all features and decrease startup time, please configure application_packages
+2022-05-15 15:11:45,365 [main] INFO  co.elastic.apm.agent.impl.ElasticApmTracer - Tracer switched to RUNNING state
+2022-05-15 15:11:45,422 [elastic-apm-server-healthcheck] INFO  co.elastic.apm.agent.report.ApmServerHealthChecker - Elastic APM server is available: {  "build_date": "2021-11-04T13:10:15Z",  "build_sha": "0702551667e5319822d00dee613ea2a1501615bf",  "version": "7.15.2"}
+2022-05-15 15:11:45,466 [elastic-apm-init-instrumentation-shutdown-hook] INFO  co.elastic.apm.agent.bci.InstrumentationStatsLifecycleListener - Used instrumentation groups: [executor, executor-collection, fork-join, slf4j-error, urlconnection]
+2022-05-15 15:11:45,500 [elastic-apm-circuit-breaker] INFO  co.elastic.apm.agent.impl.circuitbreaker.CircuitBreaker - Stopping the Circuit Breaker thread.
+2022-05-15 15:11:45,574 [elastic-apm-remote-config-poller] INFO  co.elastic.apm.agent.configuration.ApmServerConfigurationSource - Received new configuration from APM Server: {}
+2022-05-15 15:11:46,538 [elastic-apm-init-instrumentation-shutdown-hook] INFO  co.elastic.apm.agent.impl.ElasticApmTracer - Tracer switched to STOPPED state
+2022-05-15 15:11:46,539 [elastic-apm-init-instrumentation-shutdown-hook] INFO  co.elastic.apm.agent.report.ApmServerReporter - dropped events because of full queue: 0
+2022-05-15 15:11:46,552 [elastic-apm-init-instrumentation-shutdown-hook] INFO  co.elastic.apm.agent.report.IntakeV2ReportingEventHandler - Reported events: 0
+2022-05-15 15:11:46,552 [elastic-apm-init-instrumentation-shutdown-hook] INFO  co.elastic.apm.agent.report.IntakeV2ReportingEventHandler - Dropped events: 0
 [cmd] /usr/bin/execlineb exited 1
 [cont-finish.d] executing container finish scripts...
 [cont-finish.d] done.

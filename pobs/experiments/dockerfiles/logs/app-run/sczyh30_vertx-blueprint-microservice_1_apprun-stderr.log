@@ -1,316 +1,648 @@
-strace: invalid option -- 'Z'
-usage: strace [-CdffhiqrtttTvVxxy] [-I n] [-e expr]...
-              [-a column] [-o file] [-s strsize] [-P path]...
-              -p pid... / [-D] [-E var=val]... [-u username] PROG [ARGS]
-   or: strace -c[df] [-I n] [-e expr]... [-O overhead] [-S sortby]
-              -p pid... / [-D] [-E var=val]... [-u username] PROG [ARGS]
--c -- count time, calls, and errors for each syscall and report summary
--C -- like -c but also print regular output
--w -- summarise syscall latency (default is system time)
--d -- enable debug output to stderr
--D -- run tracer process as a detached grandchild, not as parent
--f -- follow forks, -ff -- with output into separate files
--i -- print instruction pointer at time of syscall
--q -- suppress messages about attaching, detaching, etc.
--r -- print relative timestamp, -t -- absolute timestamp, -tt -- with usecs
--T -- print time spent in each syscall
--v -- verbose mode: print unabbreviated argv, stat, termios, etc. args
--x -- print non-ascii strings in hex, -xx -- print all strings in hex
--y -- print paths associated with file descriptor arguments
--h -- print help message, -V -- print version
--a column -- alignment COLUMN for printing syscall results (default 40)
--b execve -- detach on this syscall
--e expr -- a qualifying expression: option=[!]all or option=[!]val1[,val2]...
-   options: trace, abbrev, verbose, raw, signal, read, write
--I interruptible --
-   1: no signals are blocked
-   2: fatal signals are blocked while decoding syscall (default)
-   3: fatal signals are always blocked (default if '-o FILE PROG')
-   4: fatal signals and SIGTSTP (^Z) are always blocked
-      (useful to make 'strace -o FILE PROG' not stop on ^Z)
--o file -- send trace output to FILE instead of stderr
--O overhead -- set overhead for tracing syscalls to OVERHEAD usecs
--p pid -- trace process with process id PID, may be repeated
--s strsize -- limit length of print strings to STRSIZE chars (default 32)
--S sortby -- sort syscall counts by: time, calls, name, nothing (default time)
--u username -- run command as username handling setuid and/or setgid
--E var=val -- put var=val in the environment for command
--E var -- remove var from the environment for command
--P path -- trace accesses to path
+strace: option requires an argument -- 'p'
+Try 'strace -h' for more information.
 Picked up JAVA_TOOL_OPTIONS:  -javaagent:/home/elastic/elastic-apm-agent-1.30.1.jar -Delastic.apm.log_ecs_reformatting=OVERRIDE
-strace: invalid option -- 'Z'
-usage: strace [-CdffhiqrtttTvVxxy] [-I n] [-e expr]...
-              [-a column] [-o file] [-s strsize] [-P path]...
-              -p pid... / [-D] [-E var=val]... [-u username] PROG [ARGS]
-   or: strace -c[df] [-I n] [-e expr]... [-O overhead] [-S sortby]
-              -p pid... / [-D] [-E var=val]... [-u username] PROG [ARGS]
--c -- count time, calls, and errors for each syscall and report summary
--C -- like -c but also print regular output
--w -- summarise syscall latency (default is system time)
--d -- enable debug output to stderr
--D -- run tracer process as a detached grandchild, not as parent
--f -- follow forks, -ff -- with output into separate files
--i -- print instruction pointer at time of syscall
--q -- suppress messages about attaching, detaching, etc.
--r -- print relative timestamp, -t -- absolute timestamp, -tt -- with usecs
--T -- print time spent in each syscall
--v -- verbose mode: print unabbreviated argv, stat, termios, etc. args
--x -- print non-ascii strings in hex, -xx -- print all strings in hex
--y -- print paths associated with file descriptor arguments
--h -- print help message, -V -- print version
--a column -- alignment COLUMN for printing syscall results (default 40)
--b execve -- detach on this syscall
--e expr -- a qualifying expression: option=[!]all or option=[!]val1[,val2]...
-   options: trace, abbrev, verbose, raw, signal, read, write
--I interruptible --
-   1: no signals are blocked
-   2: fatal signals are blocked while decoding syscall (default)
-   3: fatal signals are always blocked (default if '-o FILE PROG')
-   4: fatal signals and SIGTSTP (^Z) are always blocked
-      (useful to make 'strace -o FILE PROG' not stop on ^Z)
--o file -- send trace output to FILE instead of stderr
--O overhead -- set overhead for tracing syscalls to OVERHEAD usecs
--p pid -- trace process with process id PID, may be repeated
--s strsize -- limit length of print strings to STRSIZE chars (default 32)
--S sortby -- sort syscall counts by: time, calls, name, nothing (default time)
--u username -- run command as username handling setuid and/or setgid
--E var=val -- put var=val in the environment for command
--E var -- remove var from the environment for command
--P path -- trace accesses to path
-strace: invalid option -- 'Z'
-usage: strace [-CdffhiqrtttTvVxxy] [-I n] [-e expr]...
-              [-a column] [-o file] [-s strsize] [-P path]...
-              -p pid... / [-D] [-E var=val]... [-u username] PROG [ARGS]
-   or: strace -c[df] [-I n] [-e expr]... [-O overhead] [-S sortby]
-              -p pid... / [-D] [-E var=val]... [-u username] PROG [ARGS]
--c -- count time, calls, and errors for each syscall and report summary
--C -- like -c but also print regular output
--w -- summarise syscall latency (default is system time)
--d -- enable debug output to stderr
--D -- run tracer process as a detached grandchild, not as parent
--f -- follow forks, -ff -- with output into separate files
--i -- print instruction pointer at time of syscall
--q -- suppress messages about attaching, detaching, etc.
--r -- print relative timestamp, -t -- absolute timestamp, -tt -- with usecs
--T -- print time spent in each syscall
--v -- verbose mode: print unabbreviated argv, stat, termios, etc. args
--x -- print non-ascii strings in hex, -xx -- print all strings in hex
--y -- print paths associated with file descriptor arguments
--h -- print help message, -V -- print version
--a column -- alignment COLUMN for printing syscall results (default 40)
--b execve -- detach on this syscall
--e expr -- a qualifying expression: option=[!]all or option=[!]val1[,val2]...
-   options: trace, abbrev, verbose, raw, signal, read, write
--I interruptible --
-   1: no signals are blocked
-   2: fatal signals are blocked while decoding syscall (default)
-   3: fatal signals are always blocked (default if '-o FILE PROG')
-   4: fatal signals and SIGTSTP (^Z) are always blocked
-      (useful to make 'strace -o FILE PROG' not stop on ^Z)
--o file -- send trace output to FILE instead of stderr
--O overhead -- set overhead for tracing syscalls to OVERHEAD usecs
--p pid -- trace process with process id PID, may be repeated
--s strsize -- limit length of print strings to STRSIZE chars (default 32)
--S sortby -- sort syscall counts by: time, calls, name, nothing (default time)
--u username -- run command as username handling setuid and/or setgid
--E var=val -- put var=val in the environment for command
--E var -- remove var from the environment for command
--P path -- trace accesses to path
-strace: invalid option -- 'Z'
-usage: strace [-CdffhiqrtttTvVxxy] [-I n] [-e expr]...
-              [-a column] [-o file] [-s strsize] [-P path]...
-              -p pid... / [-D] [-E var=val]... [-u username] PROG [ARGS]
-   or: strace -c[df] [-I n] [-e expr]... [-O overhead] [-S sortby]
-              -p pid... / [-D] [-E var=val]... [-u username] PROG [ARGS]
--c -- count time, calls, and errors for each syscall and report summary
--C -- like -c but also print regular output
--w -- summarise syscall latency (default is system time)
--d -- enable debug output to stderr
--D -- run tracer process as a detached grandchild, not as parent
--f -- follow forks, -ff -- with output into separate files
--i -- print instruction pointer at time of syscall
--q -- suppress messages about attaching, detaching, etc.
--r -- print relative timestamp, -t -- absolute timestamp, -tt -- with usecs
--T -- print time spent in each syscall
--v -- verbose mode: print unabbreviated argv, stat, termios, etc. args
--x -- print non-ascii strings in hex, -xx -- print all strings in hex
--y -- print paths associated with file descriptor arguments
--h -- print help message, -V -- print version
--a column -- alignment COLUMN for printing syscall results (default 40)
--b execve -- detach on this syscall
--e expr -- a qualifying expression: option=[!]all or option=[!]val1[,val2]...
-   options: trace, abbrev, verbose, raw, signal, read, write
--I interruptible --
-   1: no signals are blocked
-   2: fatal signals are blocked while decoding syscall (default)
-   3: fatal signals are always blocked (default if '-o FILE PROG')
-   4: fatal signals and SIGTSTP (^Z) are always blocked
-      (useful to make 'strace -o FILE PROG' not stop on ^Z)
--o file -- send trace output to FILE instead of stderr
--O overhead -- set overhead for tracing syscalls to OVERHEAD usecs
--p pid -- trace process with process id PID, may be repeated
--s strsize -- limit length of print strings to STRSIZE chars (default 32)
--S sortby -- sort syscall counts by: time, calls, name, nothing (default time)
--u username -- run command as username handling setuid and/or setgid
--E var=val -- put var=val in the environment for command
--E var -- remove var from the environment for command
--P path -- trace accesses to path
-strace: invalid option -- 'Z'
-usage: strace [-CdffhiqrtttTvVxxy] [-I n] [-e expr]...
-              [-a column] [-o file] [-s strsize] [-P path]...
-              -p pid... / [-D] [-E var=val]... [-u username] PROG [ARGS]
-   or: strace -c[df] [-I n] [-e expr]... [-O overhead] [-S sortby]
-              -p pid... / [-D] [-E var=val]... [-u username] PROG [ARGS]
--c -- count time, calls, and errors for each syscall and report summary
--C -- like -c but also print regular output
--w -- summarise syscall latency (default is system time)
--d -- enable debug output to stderr
--D -- run tracer process as a detached grandchild, not as parent
--f -- follow forks, -ff -- with output into separate files
--i -- print instruction pointer at time of syscall
--q -- suppress messages about attaching, detaching, etc.
--r -- print relative timestamp, -t -- absolute timestamp, -tt -- with usecs
--T -- print time spent in each syscall
--v -- verbose mode: print unabbreviated argv, stat, termios, etc. args
--x -- print non-ascii strings in hex, -xx -- print all strings in hex
--y -- print paths associated with file descriptor arguments
--h -- print help message, -V -- print version
--a column -- alignment COLUMN for printing syscall results (default 40)
--b execve -- detach on this syscall
--e expr -- a qualifying expression: option=[!]all or option=[!]val1[,val2]...
-   options: trace, abbrev, verbose, raw, signal, read, write
--I interruptible --
-   1: no signals are blocked
-   2: fatal signals are blocked while decoding syscall (default)
-   3: fatal signals are always blocked (default if '-o FILE PROG')
-   4: fatal signals and SIGTSTP (^Z) are always blocked
-      (useful to make 'strace -o FILE PROG' not stop on ^Z)
--o file -- send trace output to FILE instead of stderr
--O overhead -- set overhead for tracing syscalls to OVERHEAD usecs
--p pid -- trace process with process id PID, may be repeated
--s strsize -- limit length of print strings to STRSIZE chars (default 32)
--S sortby -- sort syscall counts by: time, calls, name, nothing (default time)
--u username -- run command as username handling setuid and/or setgid
--E var=val -- put var=val in the environment for command
--E var -- remove var from the environment for command
--P path -- trace accesses to path
-strace: invalid option -- 'Z'
-usage: strace [-CdffhiqrtttTvVxxy] [-I n] [-e expr]...
-              [-a column] [-o file] [-s strsize] [-P path]...
-              -p pid... / [-D] [-E var=val]... [-u username] PROG [ARGS]
-   or: strace -c[df] [-I n] [-e expr]... [-O overhead] [-S sortby]
-              -p pid... / [-D] [-E var=val]... [-u username] PROG [ARGS]
--c -- count time, calls, and errors for each syscall and report summary
--C -- like -c but also print regular output
--w -- summarise syscall latency (default is system time)
--d -- enable debug output to stderr
--D -- run tracer process as a detached grandchild, not as parent
--f -- follow forks, -ff -- with output into separate files
--i -- print instruction pointer at time of syscall
--q -- suppress messages about attaching, detaching, etc.
--r -- print relative timestamp, -t -- absolute timestamp, -tt -- with usecs
--T -- print time spent in each syscall
--v -- verbose mode: print unabbreviated argv, stat, termios, etc. args
--x -- print non-ascii strings in hex, -xx -- print all strings in hex
--y -- print paths associated with file descriptor arguments
--h -- print help message, -V -- print version
--a column -- alignment COLUMN for printing syscall results (default 40)
--b execve -- detach on this syscall
--e expr -- a qualifying expression: option=[!]all or option=[!]val1[,val2]...
-   options: trace, abbrev, verbose, raw, signal, read, write
--I interruptible --
-   1: no signals are blocked
-   2: fatal signals are blocked while decoding syscall (default)
-   3: fatal signals are always blocked (default if '-o FILE PROG')
-   4: fatal signals and SIGTSTP (^Z) are always blocked
-      (useful to make 'strace -o FILE PROG' not stop on ^Z)
--o file -- send trace output to FILE instead of stderr
--O overhead -- set overhead for tracing syscalls to OVERHEAD usecs
--p pid -- trace process with process id PID, may be repeated
--s strsize -- limit length of print strings to STRSIZE chars (default 32)
--S sortby -- sort syscall counts by: time, calls, name, nothing (default time)
--u username -- run command as username handling setuid and/or setgid
--E var=val -- put var=val in the environment for command
--E var -- remove var from the environment for command
--P path -- trace accesses to path
-strace: invalid option -- 'Z'
-usage: strace [-CdffhiqrtttTvVxxy] [-I n] [-e expr]...
-              [-a column] [-o file] [-s strsize] [-P path]...
-              -p pid... / [-D] [-E var=val]... [-u username] PROG [ARGS]
-   or: strace -c[df] [-I n] [-e expr]... [-O overhead] [-S sortby]
-              -p pid... / [-D] [-E var=val]... [-u username] PROG [ARGS]
--c -- count time, calls, and errors for each syscall and report summary
--C -- like -c but also print regular output
--w -- summarise syscall latency (default is system time)
--d -- enable debug output to stderr
--D -- run tracer process as a detached grandchild, not as parent
--f -- follow forks, -ff -- with output into separate files
--i -- print instruction pointer at time of syscall
--q -- suppress messages about attaching, detaching, etc.
--r -- print relative timestamp, -t -- absolute timestamp, -tt -- with usecs
--T -- print time spent in each syscall
--v -- verbose mode: print unabbreviated argv, stat, termios, etc. args
--x -- print non-ascii strings in hex, -xx -- print all strings in hex
--y -- print paths associated with file descriptor arguments
--h -- print help message, -V -- print version
--a column -- alignment COLUMN for printing syscall results (default 40)
--b execve -- detach on this syscall
--e expr -- a qualifying expression: option=[!]all or option=[!]val1[,val2]...
-   options: trace, abbrev, verbose, raw, signal, read, write
--I interruptible --
-   1: no signals are blocked
-   2: fatal signals are blocked while decoding syscall (default)
-   3: fatal signals are always blocked (default if '-o FILE PROG')
-   4: fatal signals and SIGTSTP (^Z) are always blocked
-      (useful to make 'strace -o FILE PROG' not stop on ^Z)
--o file -- send trace output to FILE instead of stderr
--O overhead -- set overhead for tracing syscalls to OVERHEAD usecs
--p pid -- trace process with process id PID, may be repeated
--s strsize -- limit length of print strings to STRSIZE chars (default 32)
--S sortby -- sort syscall counts by: time, calls, name, nothing (default time)
--u username -- run command as username handling setuid and/or setgid
--E var=val -- put var=val in the environment for command
--E var -- remove var from the environment for command
--P path -- trace accesses to path
-strace: invalid option -- 'Z'
-usage: strace [-CdffhiqrtttTvVxxy] [-I n] [-e expr]...
-              [-a column] [-o file] [-s strsize] [-P path]...
-              -p pid... / [-D] [-E var=val]... [-u username] PROG [ARGS]
-   or: strace -c[df] [-I n] [-e expr]... [-O overhead] [-S sortby]
-              -p pid... / [-D] [-E var=val]... [-u username] PROG [ARGS]
--c -- count time, calls, and errors for each syscall and report summary
--C -- like -c but also print regular output
--w -- summarise syscall latency (default is system time)
--d -- enable debug output to stderr
--D -- run tracer process as a detached grandchild, not as parent
--f -- follow forks, -ff -- with output into separate files
--i -- print instruction pointer at time of syscall
--q -- suppress messages about attaching, detaching, etc.
--r -- print relative timestamp, -t -- absolute timestamp, -tt -- with usecs
--T -- print time spent in each syscall
--v -- verbose mode: print unabbreviated argv, stat, termios, etc. args
--x -- print non-ascii strings in hex, -xx -- print all strings in hex
--y -- print paths associated with file descriptor arguments
--h -- print help message, -V -- print version
--a column -- alignment COLUMN for printing syscall results (default 40)
--b execve -- detach on this syscall
--e expr -- a qualifying expression: option=[!]all or option=[!]val1[,val2]...
-   options: trace, abbrev, verbose, raw, signal, read, write
--I interruptible --
-   1: no signals are blocked
-   2: fatal signals are blocked while decoding syscall (default)
-   3: fatal signals are always blocked (default if '-o FILE PROG')
-   4: fatal signals and SIGTSTP (^Z) are always blocked
-      (useful to make 'strace -o FILE PROG' not stop on ^Z)
--o file -- send trace output to FILE instead of stderr
--O overhead -- set overhead for tracing syscalls to OVERHEAD usecs
--p pid -- trace process with process id PID, may be repeated
--s strsize -- limit length of print strings to STRSIZE chars (default 32)
--S sortby -- sort syscall counts by: time, calls, name, nothing (default time)
--u username -- run command as username handling setuid and/or setgid
--E var=val -- put var=val in the environment for command
--E var -- remove var from the environment for command
--P path -- trace accesses to path
+[pid   201] 1652627293.316181 stat("/opt/verticles/com/alibaba/dubbo/rpc/protocol/dubbo/filter/FutureFilter.class", 0x7fd66f3b78b0) = -1 ENOENT (No such file or directory) <0.000054>
+[pid   201] 1652627293.850698 stat("/opt/verticles/org/slf4j/ext/EventData.class", 0x7fd66f3b75c0) = -1 ENOENT (No such file or directory) <0.000033>
+[pid   201] 1652627293.904124 stat("/opt/verticles/org/apache/http/impl/execchain/ClientExecChain.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627293.905859 stat("/opt/verticles/org/apache/http/nio/client/HttpAsyncClient.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627293.922900 stat("/opt/verticles/co/elastic/apm/api/CaptureTransaction.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627293.923675 stat("/opt/verticles/co/elastic/apm/api/CaptureSpan.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627293.924405 stat("/opt/verticles/co/elastic/apm/api/Traced.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627293.926685 stat("/opt/verticles/org/asynchttpclient/AsyncHandler.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627293.927357 stat("/opt/verticles/com/datastax/driver/core/BoundStatement.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627293.928967 stat("/opt/verticles/org/grails/web/mapping/mvc/GrailsControllerUrlMappingInfo.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627293.935794 stat("/opt/verticles/org/hibernate/search/FullTextQuery.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000032>
+[pid   201] 1652627293.940359 stat("/opt/verticles/io/javalin/http/Handler.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000055>
+[pid   201] 1652627293.941047 stat("/opt/verticles/io/javalin/http/Handler.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000033>
+[pid   201] 1652627293.942553 stat("/opt/verticles/javax/ws/rs/Path.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627293.945750 stat("/opt/verticles/jakarta/ws/rs/Path.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000041>
+[pid   201] 1652627293.946609 stat("/opt/verticles/jakarta/jws/WebService.class", 0x7fd66f3b81c0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627293.953834 stat("/opt/verticles/javax/jms/Message.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000026>
+[pid   201] 1652627293.954487 stat("/opt/verticles/javax/jms/Message.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627293.955156 stat("/opt/verticles/javax/jms/Message.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627293.955824 stat("/opt/verticles/javax/jms/Message.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627293.956495 stat("/opt/verticles/javax/jms/Message.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627293.957143 stat("/opt/verticles/javax/faces/lifecycle/Lifecycle.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627293.957814 stat("/opt/verticles/javax/faces/lifecycle/Lifecycle.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627293.958436 stat("/opt/verticles/jakarta/faces/lifecycle/Lifecycle.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627293.959032 stat("/opt/verticles/jakarta/faces/lifecycle/Lifecycle.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627293.959651 stat("/opt/verticles/org/apache/kafka/clients/consumer/ConsumerRecord.class", 0x7fd66f3b8170) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627293.960044 stat("/opt/verticles/org/apache/kafka/common/header/Headers.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000026>
+[pid   201] 1652627293.960732 stat("/opt/verticles/org/apache/kafka/clients/consumer/ConsumerRecord.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000034>
+[pid   201] 1652627293.961342 stat("/opt/verticles/org/apache/kafka/clients/consumer/ConsumerRecord.class", 0x7fd66f3b8170) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627293.961771 stat("/opt/verticles/org/apache/kafka/common/header/Headers.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627293.962402 stat("/opt/verticles/org/apache/kafka/clients/consumer/ConsumerRecord.class", 0x7fd66f3b8170) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627293.962797 stat("/opt/verticles/org/apache/kafka/common/header/Headers.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627293.963493 stat("/opt/verticles/org/apache/kafka/clients/consumer/ConsumerRecord.class", 0x7fd66f3b8170) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627293.963893 stat("/opt/verticles/org/apache/kafka/common/header/Headers.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627293.964529 stat("/opt/verticles/org/apache/kafka/clients/consumer/ConsumerRecord.class", 0x7fd66f3b8170) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627293.964927 stat("/opt/verticles/org/apache/kafka/common/header/Headers.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627293.965573 stat("/opt/verticles/com/lambdaworks/redis/event/EventBus.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627293.965989 stat("/opt/verticles/com/lambdaworks/redis/api/sync/RedisServerCommands.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627293.966654 stat("/opt/verticles/com/lambdaworks/redis/event/EventBus.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000032>
+[pid   201] 1652627293.967055 stat("/opt/verticles/com/lambdaworks/redis/api/sync/RedisServerCommands.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627293.967682 stat("/opt/verticles/com/lambdaworks/redis/event/EventBus.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627293.968075 stat("/opt/verticles/com/lambdaworks/redis/api/sync/RedisServerCommands.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627293.968698 stat("/opt/verticles/com/lambdaworks/redis/event/EventBus.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627293.969092 stat("/opt/verticles/com/lambdaworks/redis/api/sync/RedisServerCommands.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627293.970476 stat("/opt/verticles/org/apache/log4j/WriterAppender.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000043>
+[pid   201] 1652627293.971179 stat("/opt/verticles/org/apache/log4j/WriterAppender.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627293.972200 stat("/opt/verticles/org/apache/logging/log4j/core/Appender.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000032>
+[pid   201] 1652627293.972820 stat("/opt/verticles/org/apache/logging/log4j/core/Appender.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627293.973415 stat("/opt/verticles/org/apache/logging/log4j/core/Appender.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627293.974082 stat("/opt/verticles/org/apache/logging/log4j/core/impl/LogEventFactory.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627293.974702 stat("/opt/verticles/org/apache/logging/log4j/core/impl/LogEventFactory.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627293.975551 stat("/opt/verticles/ch/qos/logback/core/OutputStreamAppender.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000041>
+[pid   201] 1652627293.975971 stat("/opt/verticles/ch/qos/logback/classic/LoggerContext.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627293.982660 stat("/opt/verticles/ch/qos/logback/core/OutputStreamAppender.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627293.983056 stat("/opt/verticles/ch/qos/logback/classic/LoggerContext.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627293.983838 stat("/opt/verticles/org/jboss/logging/JDKLogger.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627293.984456 stat("/opt/verticles/org/jboss/logmanager/Logger.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627293.990750 stat("/opt/verticles/com/rabbitmq/client/Channel.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000038>
+[pid   201] 1652627293.991463 stat("/opt/verticles/com/rabbitmq/client/Channel.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627293.992086 stat("/opt/verticles/com/rabbitmq/client/Channel.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627293.992726 stat("/opt/verticles/org/springframework/amqp/core/MessageListener.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627293.993352 stat("/opt/verticles/org/springframework/amqp/core/MessageListener.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627293.993988 stat("/opt/verticles/org/springframework/amqp/core/MessageListener.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627293.996199 stat("/opt/verticles/javax/servlet/AsyncContext.class", 0x7fd66f3b8180) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627293.996585 stat("/opt/verticles/javax/servlet/http/HttpServlet.class", 0x7fd66f3b8170) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627293.997221 stat("/opt/verticles/jakarta/servlet/AsyncContext.class", 0x7fd66f3b8180) = -1 ENOENT (No such file or directory) <0.000032>
+[pid   201] 1652627293.997604 stat("/opt/verticles/jakarta/servlet/http/HttpServlet.class", 0x7fd66f3b8170) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627293.998986 stat("/opt/verticles/javax/servlet/AsyncContext.class", 0x7fd66f3b8180) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627293.999382 stat("/opt/verticles/javax/servlet/http/HttpServlet.class", 0x7fd66f3b8170) = -1 ENOENT (No such file or directory) <0.000026>
+[pid   201] 1652627294.000025 stat("/opt/verticles/jakarta/servlet/AsyncContext.class", 0x7fd66f3b8180) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627294.000398 stat("/opt/verticles/jakarta/servlet/http/HttpServlet.class", 0x7fd66f3b8170) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627294.001019 stat("/opt/verticles/javax/servlet/AsyncContext.class", 0x7fd66f3b8180) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627294.001416 stat("/opt/verticles/javax/servlet/http/HttpServlet.class", 0x7fd66f3b8170) = -1 ENOENT (No such file or directory) <0.000055>
+[pid   201] 1652627294.002090 stat("/opt/verticles/jakarta/servlet/AsyncContext.class", 0x7fd66f3b8180) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627294.002470 stat("/opt/verticles/jakarta/servlet/http/HttpServlet.class", 0x7fd66f3b8170) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627294.003098 stat("/opt/verticles/javax/servlet/AsyncContext.class", 0x7fd66f3b8180) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627294.003480 stat("/opt/verticles/javax/servlet/http/HttpServlet.class", 0x7fd66f3b8170) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627294.004137 stat("/opt/verticles/javax/servlet/AsyncContext.class", 0x7fd66f3b8180) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627294.004521 stat("/opt/verticles/javax/servlet/http/HttpServlet.class", 0x7fd66f3b8170) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627294.005136 stat("/opt/verticles/jakarta/servlet/AsyncContext.class", 0x7fd66f3b8180) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627294.005635 stat("/opt/verticles/jakarta/servlet/http/HttpServlet.class", 0x7fd66f3b8170) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627294.006259 stat("/opt/verticles/jakarta/servlet/AsyncContext.class", 0x7fd66f3b8180) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627294.006636 stat("/opt/verticles/jakarta/servlet/http/HttpServlet.class", 0x7fd66f3b8170) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627294.007259 stat("/opt/verticles/javax/servlet/AsyncContext.class", 0x7fd66f3b8180) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627294.007637 stat("/opt/verticles/javax/servlet/http/HttpServlet.class", 0x7fd66f3b8170) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627294.008240 stat("/opt/verticles/jakarta/servlet/AsyncContext.class", 0x7fd66f3b8180) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627294.008612 stat("/opt/verticles/jakarta/servlet/http/HttpServlet.class", 0x7fd66f3b8170) = -1 ENOENT (No such file or directory) <0.001082>
+[pid   201] 1652627294.010399 stat("/opt/verticles/javax/servlet/AsyncContext.class", 0x7fd66f3b8180) = -1 ENOENT (No such file or directory) <0.000017>
+[pid   201] 1652627294.010742 stat("/opt/verticles/javax/servlet/http/HttpServlet.class", 0x7fd66f3b8170) = -1 ENOENT (No such file or directory) <0.000086>
+[pid   201] 1652627294.011539 stat("/opt/verticles/jakarta/servlet/AsyncContext.class", 0x7fd66f3b8180) = -1 ENOENT (No such file or directory) <0.000018>
+[pid   201] 1652627294.011881 stat("/opt/verticles/jakarta/servlet/http/HttpServlet.class", 0x7fd66f3b8170) = -1 ENOENT (No such file or directory) <0.000018>
+[pid   201] 1652627294.012624 stat("/opt/verticles/javax/servlet/AsyncContext.class", 0x7fd66f3b8180) = -1 ENOENT (No such file or directory) <0.000462>
+[pid   201] 1652627294.013512 stat("/opt/verticles/javax/servlet/http/HttpServlet.class", 0x7fd66f3b8170) = -1 ENOENT (No such file or directory) <0.000026>
+[pid   201] 1652627294.014167 stat("/opt/verticles/jakarta/servlet/AsyncContext.class", 0x7fd66f3b8180) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627294.014541 stat("/opt/verticles/jakarta/servlet/http/HttpServlet.class", 0x7fd66f3b8170) = -1 ENOENT (No such file or directory) <0.000026>
+[pid   201] 1652627294.015630 stat("/opt/verticles/org/springframework/web/method/HandlerMethod.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627294.018603 stat("/opt/verticles/jakarta/websocket/server/ServerEndpoint.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627294.019324 stat("/opt/verticles/javax/websocket/server/ServerEndpoint.class", 0x7fd66f3b81d0) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627294.172784 stat("/opt/verticles/co/elastic/apm/agent/bbwarmup/WarmupInstrumentation$AdviceClass.class", 0x7fd66f3b7060) = -1 ENOENT (No such file or directory) <0.000046>
+[pid   201] 1652627294.197506 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b6eb0) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627294.198197 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b6eb0) = -1 ENOENT (No such file or directory) <0.000049>
+[pid   201] 1652627294.217864 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToReturned.class", 0x7fd66f3b6eb0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627294.218980 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b6eb0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627294.259929 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b6b70) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627294.268393 stat("/opt/verticles/co/elastic/apm/agent/bci/bytebuddy/SimpleMethodSignatureOffsetMappingFactory$SimpleMethodSignature.class", 0x7fd66f3b6b70) = -1 ENOENT (No such file or directory) <0.000026>
+[pid   201] 1652627294.276082 stat("/opt/verticles/net/bytebuddy/asm/Advice$Enter.class", 0x7fd66f3b6e10) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627294.277114 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b6e10) = -1 ENOENT (No such file or directory) <0.000026>
+[pid   201] 1652627294.460500 stat("/opt/verticles/co/elastic/apm/agent/bbwarmup/WarmupInstrumentation$AdviceClass.class", 0x7fd66f3b7060) = -1 ENOENT (No such file or directory) <0.000019>
+[pid   201] 1652627294.462095 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b6eb0) = -1 ENOENT (No such file or directory) <0.000017>
+[pid   201] 1652627294.465723 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b6eb0) = -1 ENOENT (No such file or directory) <0.000036>
+[pid   201] 1652627294.467328 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToReturned.class", 0x7fd66f3b6eb0) = -1 ENOENT (No such file or directory) <0.000035>
+[pid   201] 1652627294.468658 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b6eb0) = -1 ENOENT (No such file or directory) <0.000036>
+[pid   201] 1652627294.475441 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b6b70) = -1 ENOENT (No such file or directory) <0.000033>
+[pid   201] 1652627294.477517 stat("/opt/verticles/co/elastic/apm/agent/bci/bytebuddy/SimpleMethodSignatureOffsetMappingFactory$SimpleMethodSignature.class", 0x7fd66f3b6b70) = -1 ENOENT (No such file or directory) <0.000032>
+[pid   201] 1652627294.479131 stat("/opt/verticles/net/bytebuddy/asm/Advice$Enter.class", 0x7fd66f3b6e10) = -1 ENOENT (No such file or directory) <0.000032>
+[pid   201] 1652627294.480562 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b6e10) = -1 ENOENT (No such file or directory) <0.000034>
+[pid   201] 1652627294.489733 stat("/opt/verticles/org/slf4j/ext/EventData.class", 0x7fd66f3b7e70) = -1 ENOENT (No such file or directory) <0.000026>
+[pid   201] 1652627294.545262 stat("/opt/verticles/META-INF/services/java.nio.file.spi.FileSystemProvider", 0x7fd66f3b5a30) = -1 ENOENT (No such file or directory) <0.000026>
+[pid   201] 1652627298.121433 stat("/opt/verticles/org/apache/http/impl/execchain/ClientExecChain.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627298.121973 stat("/opt/verticles/org/apache/http/nio/client/HttpAsyncClient.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627298.122462 stat("/opt/verticles/co/elastic/apm/api/CaptureTransaction.class", 0x7fd66f3b8020) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627298.122846 stat("/opt/verticles/co/elastic/apm/api/CaptureSpan.class", 0x7fd66f3b8020) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627298.123223 stat("/opt/verticles/co/elastic/apm/api/Traced.class", 0x7fd66f3b8020) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627298.123617 stat("/opt/verticles/org/asynchttpclient/AsyncHandler.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627298.123998 stat("/opt/verticles/com/datastax/driver/core/BoundStatement.class", 0x7fd66f3b8020) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627298.124404 stat("/opt/verticles/org/grails/web/mapping/mvc/GrailsControllerUrlMappingInfo.class", 0x7fd66f3b8020) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627298.124782 stat("/opt/verticles/org/hibernate/search/FullTextQuery.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627298.125195 stat("/opt/verticles/io/javalin/http/Handler.class", 0x7fd66f3b8020) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627298.125553 stat("/opt/verticles/io/javalin/http/Handler.class", 0x7fd66f3b8020) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627298.125926 stat("/opt/verticles/javax/ws/rs/Path.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000025>
+[pid   201] 1652627298.126490 stat("/opt/verticles/jakarta/ws/rs/Path.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000199>
+[pid   201] 1652627298.135971 stat("/opt/verticles/javax/jms/Message.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000019>
+[pid   201] 1652627298.136564 stat("/opt/verticles/javax/jms/Message.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000018>
+[pid   201] 1652627298.137186 stat("/opt/verticles/javax/jms/Message.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000055>
+[pid   201] 1652627298.137817 stat("/opt/verticles/javax/jms/Message.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000017>
+[pid   201] 1652627298.138373 stat("/opt/verticles/javax/jms/Message.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000126>
+[pid   201] 1652627298.139088 stat("/opt/verticles/javax/faces/lifecycle/Lifecycle.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627298.139846 stat("/opt/verticles/javax/faces/lifecycle/Lifecycle.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627298.140480 stat("/opt/verticles/jakarta/faces/lifecycle/Lifecycle.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000032>
+[pid   201] 1652627298.141102 stat("/opt/verticles/jakarta/faces/lifecycle/Lifecycle.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000032>
+[pid   201] 1652627298.141740 stat("/opt/verticles/org/apache/kafka/clients/consumer/ConsumerRecord.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000017>
+[pid   201] 1652627298.142328 stat("/opt/verticles/org/apache/kafka/clients/consumer/ConsumerRecord.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000015>
+[pid   201] 1652627298.142893 stat("/opt/verticles/org/apache/kafka/clients/consumer/ConsumerRecord.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000015>
+[pid   201] 1652627298.143463 stat("/opt/verticles/org/apache/kafka/clients/consumer/ConsumerRecord.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000015>
+[pid   201] 1652627298.144022 stat("/opt/verticles/org/apache/kafka/clients/consumer/ConsumerRecord.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000015>
+[pid   201] 1652627298.144576 stat("/opt/verticles/org/apache/kafka/clients/consumer/ConsumerRecord.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000016>
+[pid   201] 1652627298.145126 stat("/opt/verticles/com/lambdaworks/redis/event/EventBus.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000016>
+[pid   201] 1652627298.145763 stat("/opt/verticles/com/lambdaworks/redis/api/sync/RedisServerCommands.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000016>
+[pid   201] 1652627298.146331 stat("/opt/verticles/com/lambdaworks/redis/event/EventBus.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000016>
+[pid   201] 1652627298.146968 stat("/opt/verticles/com/lambdaworks/redis/api/sync/RedisServerCommands.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000016>
+[pid   201] 1652627298.147673 stat("/opt/verticles/com/lambdaworks/redis/event/EventBus.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000016>
+[pid   201] 1652627298.148234 stat("/opt/verticles/com/lambdaworks/redis/api/sync/RedisServerCommands.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000016>
+[pid   201] 1652627298.148826 stat("/opt/verticles/com/lambdaworks/redis/event/EventBus.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000018>
+[pid   201] 1652627298.149433 stat("/opt/verticles/com/lambdaworks/redis/api/sync/RedisServerCommands.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000017>
+[pid   201] 1652627298.150043 stat("/opt/verticles/org/apache/log4j/WriterAppender.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000017>
+[pid   201] 1652627298.150611 stat("/opt/verticles/org/apache/log4j/WriterAppender.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000018>
+[pid   201] 1652627298.151190 stat("/opt/verticles/org/apache/logging/log4j/core/Appender.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000016>
+[pid   201] 1652627298.151829 stat("/opt/verticles/org/apache/logging/log4j/core/Appender.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000015>
+[pid   201] 1652627298.152388 stat("/opt/verticles/org/apache/logging/log4j/core/Appender.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000016>
+[pid   201] 1652627298.152953 stat("/opt/verticles/org/apache/logging/log4j/core/impl/LogEventFactory.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000016>
+[pid   201] 1652627298.153524 stat("/opt/verticles/org/apache/logging/log4j/core/impl/LogEventFactory.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000015>
+[pid   201] 1652627298.154117 stat("/opt/verticles/ch/qos/logback/core/OutputStreamAppender.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000016>
+[pid   201] 1652627298.154669 stat("/opt/verticles/ch/qos/logback/core/OutputStreamAppender.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000016>
+[pid   201] 1652627298.155267 stat("/opt/verticles/org/jboss/logging/JDKLogger.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000016>
+[pid   201] 1652627298.155980 stat("/opt/verticles/org/jboss/logmanager/Logger.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000017>
+[pid   201] 1652627298.156706 stat("/opt/verticles/com/rabbitmq/client/Channel.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000019>
+[pid   201] 1652627298.157438 stat("/opt/verticles/com/rabbitmq/client/Channel.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000019>
+[pid   201] 1652627298.158052 stat("/opt/verticles/com/rabbitmq/client/Channel.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000018>
+[pid   201] 1652627298.158677 stat("/opt/verticles/org/springframework/amqp/core/MessageListener.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000019>
+[pid   201] 1652627298.159336 stat("/opt/verticles/org/springframework/amqp/core/MessageListener.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000017>
+[pid   201] 1652627298.159914 stat("/opt/verticles/org/springframework/amqp/core/MessageListener.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000017>
+[pid   201] 1652627298.160464 stat("/opt/verticles/javax/servlet/AsyncContext.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000017>
+[pid   201] 1652627298.161009 stat("/opt/verticles/jakarta/servlet/AsyncContext.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000033>
+[pid   201] 1652627298.161873 stat("/opt/verticles/javax/servlet/AsyncContext.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000018>
+[pid   201] 1652627298.162411 stat("/opt/verticles/jakarta/servlet/AsyncContext.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000017>
+[pid   201] 1652627298.162974 stat("/opt/verticles/javax/servlet/AsyncContext.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000016>
+[pid   201] 1652627298.163576 stat("/opt/verticles/jakarta/servlet/AsyncContext.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000018>
+[pid   201] 1652627298.164137 stat("/opt/verticles/javax/servlet/AsyncContext.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000016>
+[pid   201] 1652627298.164679 stat("/opt/verticles/javax/servlet/AsyncContext.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000016>
+[pid   201] 1652627298.165225 stat("/opt/verticles/jakarta/servlet/AsyncContext.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000017>
+[pid   201] 1652627298.165838 stat("/opt/verticles/jakarta/servlet/AsyncContext.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000018>
+[pid   201] 1652627298.166394 stat("/opt/verticles/javax/servlet/AsyncContext.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000016>
+[pid   201] 1652627298.166980 stat("/opt/verticles/jakarta/servlet/AsyncContext.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000017>
+[pid   201] 1652627298.167532 stat("/opt/verticles/javax/servlet/AsyncContext.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000017>
+[pid   201] 1652627298.169814 stat("/opt/verticles/jakarta/servlet/AsyncContext.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000017>
+[pid   201] 1652627298.170369 stat("/opt/verticles/javax/servlet/AsyncContext.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000103>
+[pid   201] 1652627298.170990 stat("/opt/verticles/jakarta/servlet/AsyncContext.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000016>
+[pid   201] 1652627298.171563 stat("/opt/verticles/org/springframework/web/method/HandlerMethod.class", 0x7fd66f3b8020) = -1 ENOENT (No such file or directory) <0.000017>
+[pid   201] 1652627298.172226 stat("/opt/verticles/jakarta/websocket/server/ServerEndpoint.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000018>
+[pid   201] 1652627298.172790 stat("/opt/verticles/javax/websocket/server/ServerEndpoint.class", 0x7fd66f3b7fb0) = -1 ENOENT (No such file or directory) <0.000016>
+[pid   201] 1652627299.226962 stat("/opt/verticles/co/elastic/apm/agent/bbwarmup/WarmupInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000034>
+[pid   201] 1652627299.228358 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627299.228930 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627299.230163 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToReturned.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627299.231222 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627299.234751 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627299.236315 stat("/opt/verticles/co/elastic/apm/agent/bci/bytebuddy/SimpleMethodSignatureOffsetMappingFactory$SimpleMethodSignature.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627299.237556 stat("/opt/verticles/net/bytebuddy/asm/Advice$Enter.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627299.238604 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627299.247044 stat("/opt/verticles/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorRunnableInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627299.251816 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627299.252415 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627299.253397 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627299.254561 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000025>
+[pid   201] 1652627299.257202 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fd66f3b4ea0) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627299.270683 stat("/opt/verticles/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fd66f3b4f60) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627299.275643 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627299.277126 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627299.279166 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627299.281620 stat("/opt/verticles/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorCallableInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000049>
+[pid   201] 1652627299.282985 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627299.283508 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627299.284490 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627299.285699 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627299.287070 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fd66f3b4ea0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627299.288381 stat("/opt/verticles/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fd66f3b4f60) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627299.291560 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627299.293027 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627299.294716 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627299.298123 stat("/opt/verticles/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorInvokeAnyAllInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627299.299495 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627299.300014 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627299.301016 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627299.302231 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000032>
+[pid   201] 1652627299.303656 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fd66f3b4ea0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627299.304934 stat("/opt/verticles/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fd66f3b4f60) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627299.308018 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627299.309525 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627299.311192 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627299.334714 stat("/opt/verticles/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorRunnableInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627299.335969 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627299.336481 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627299.337464 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000044>
+[pid   201] 1652627299.338653 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627299.339960 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fd66f3b4ea0) = -1 ENOENT (No such file or directory) <0.000049>
+[pid   201] 1652627299.341298 stat("/opt/verticles/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fd66f3b4f60) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627299.344602 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627299.346095 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627299.347791 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627299.350234 stat("/opt/verticles/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorCallableInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627299.351525 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627299.352031 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000037>
+[pid   201] 1652627299.353070 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627299.354256 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627299.355564 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fd66f3b4ea0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627299.356875 stat("/opt/verticles/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fd66f3b4f60) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627299.360070 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627299.361648 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627299.363346 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627299.365816 stat("/opt/verticles/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorInvokeAnyAllInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000032>
+[pid   201] 1652627299.367208 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627299.367721 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627299.368710 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627299.369915 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000026>
+[pid   201] 1652627299.371202 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fd66f3b4ea0) = -1 ENOENT (No such file or directory) <0.000026>
+[pid   201] 1652627299.372478 stat("/opt/verticles/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fd66f3b4f60) = -1 ENOENT (No such file or directory) <0.000026>
+[pid   201] 1652627299.375566 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627299.377022 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627299.378695 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627299.391804 stat("/opt/verticles/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorRunnableInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627299.393034 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000025>
+[pid   201] 1652627299.393540 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000026>
+[pid   201] 1652627299.394552 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000026>
+[pid   201] 1652627299.395761 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000026>
+[pid   201] 1652627299.397060 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fd66f3b4ea0) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627299.398377 stat("/opt/verticles/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fd66f3b4f60) = -1 ENOENT (No such file or directory) <0.000026>
+[pid   201] 1652627299.402567 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627299.404027 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627299.405715 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627299.408103 stat("/opt/verticles/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorCallableInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627299.409563 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627299.410153 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627299.411126 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627299.412280 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627299.413586 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fd66f3b4ea0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627299.414895 stat("/opt/verticles/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fd66f3b4f60) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627299.418017 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627299.419439 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627299.421081 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627299.423546 stat("/opt/verticles/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorInvokeAnyAllInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627299.425055 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627299.425578 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000033>
+[pid   201] 1652627299.426643 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627299.427821 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627299.429182 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fd66f3b4ea0) = -1 ENOENT (No such file or directory) <0.000016>
+[pid   201] 1652627299.430647 stat("/opt/verticles/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fd66f3b4f60) = -1 ENOENT (No such file or directory) <0.000021>
+[pid   201] 1652627299.433838 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627299.435257 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627299.436904 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627299.444615 stat("/opt/verticles/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorRunnableInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627299.446254 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000035>
+[pid   201] 1652627299.446854 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000036>
+[pid   201] 1652627299.448091 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000017>
+[pid   201] 1652627299.449205 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627299.450542 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fd66f3b4ea0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627299.451818 stat("/opt/verticles/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fd66f3b4f60) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627299.454958 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000043>
+[pid   201] 1652627299.456434 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000025>
+[pid   201] 1652627299.469718 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000043>
+[pid   201] 1652627299.473238 stat("/opt/verticles/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorCallableInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000036>
+[pid   201] 1652627299.475131 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000037>
+[pid   201] 1652627299.475683 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.005014>
+[pid   201] 1652627299.482006 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000038>
+[pid   201] 1652627299.483617 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000037>
+[pid   201] 1652627299.485961 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fd66f3b4ea0) = -1 ENOENT (No such file or directory) <0.000049>
+[pid   201] 1652627299.490961 stat("/opt/verticles/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fd66f3b4f60) = -1 ENOENT (No such file or directory) <0.000036>
+[pid   201] 1652627299.495550 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000032>
+[pid   201] 1652627299.498752 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627299.500871 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000032>
+[pid   201] 1652627299.504418 stat("/opt/verticles/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorInvokeAnyAllInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000033>
+[pid   201] 1652627299.506254 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000034>
+[pid   201] 1652627299.506850 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000032>
+[pid   201] 1652627299.508083 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627299.509664 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627299.511451 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fd66f3b4ea0) = -1 ENOENT (No such file or directory) <0.000039>
+[pid   201] 1652627299.513147 stat("/opt/verticles/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fd66f3b4f60) = -1 ENOENT (No such file or directory) <0.000034>
+[pid   201] 1652627299.517367 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000035>
+[pid   201] 1652627299.519296 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000032>
+[pid   201] 1652627299.521471 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627299.535390 stat("/opt/verticles/co/elastic/apm/agent/loginstr/error/AbstractLoggerErrorCapturingInstrumentation$LoggingAdvice.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000034>
+[pid   201] 1652627299.536984 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000034>
+[pid   201] 1652627299.537569 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000044>
+[pid   201] 1652627299.539089 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000036>
+[pid   201] 1652627299.545494 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000036>
+[pid   201] 1652627299.547089 stat("/opt/verticles/net/bytebuddy/asm/Advice$Origin.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627299.549329 stat("/opt/verticles/net/bytebuddy/asm/Advice$Enter.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000032>
+[pid   201] 1652627299.614334 stat("/opt/verticles/co/elastic/apm/agent/loginstr/error/AbstractLoggerErrorCapturingInstrumentation$LoggingAdvice.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000026>
+[pid   201] 1652627299.615608 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000026>
+[pid   201] 1652627299.616132 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627299.617271 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000025>
+[pid   201] 1652627299.620608 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627299.622143 stat("/opt/verticles/net/bytebuddy/asm/Advice$Origin.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627299.623319 stat("/opt/verticles/net/bytebuddy/asm/Advice$Enter.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627299.650098 stat("/opt/verticles/co/elastic/apm/agent/loginstr/error/AbstractLoggerErrorCapturingInstrumentation$LoggingAdvice.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627299.651443 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627299.651956 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627299.653111 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627299.656325 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627299.657859 stat("/opt/verticles/net/bytebuddy/asm/Advice$Origin.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627299.659060 stat("/opt/verticles/net/bytebuddy/asm/Advice$Enter.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000088>
+[pid   201] 1652627299.696164 stat("/opt/verticles/co/elastic/apm/agent/concurrent/ForkJoinTaskInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000033>
+[pid   201] 1652627299.697414 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627299.698594 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627299.701841 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627299.703409 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627299.703881 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627299.749235 stat("/opt/verticles/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorRunnableInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627299.750587 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627299.751082 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627299.752063 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627299.753255 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627299.754619 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fd66f3b4ea0) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627299.755943 stat("/opt/verticles/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fd66f3b4f60) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627299.759224 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627299.760714 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000032>
+[pid   201] 1652627299.762515 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627299.764936 stat("/opt/verticles/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorCallableInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627299.766289 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627299.766784 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627299.767782 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627299.768965 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627299.770332 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fd66f3b4ea0) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627299.771635 stat("/opt/verticles/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fd66f3b4f60) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627299.774849 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000032>
+[pid   201] 1652627299.776304 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627299.777981 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627299.780413 stat("/opt/verticles/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorInvokeAnyAllInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000032>
+[pid   201] 1652627299.781813 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627299.782323 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627299.783298 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627299.784458 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627299.785790 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fd66f3b4ea0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627299.787068 stat("/opt/verticles/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fd66f3b4f60) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627299.790822 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000019>
+[pid   201] 1652627299.792336 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627299.793989 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627299.796337 stat("/opt/verticles/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ForkJoinPoolInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627299.797634 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000048>
+[pid   201] 1652627299.798146 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000026>
+[pid   201] 1652627299.799093 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000025>
+[pid   201] 1652627299.800223 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000025>
+[pid   201] 1652627299.801506 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fd66f3b4ea0) = -1 ENOENT (No such file or directory) <0.000026>
+[pid   201] 1652627299.802849 stat("/opt/verticles/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fd66f3b4f60) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627299.806002 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627299.807569 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627299.809222 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627299.920384 stat("/opt/verticles/co/elastic/apm/agent/urlconnection/HttpUrlConnectionInstrumentation$CreateSpanInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627299.921858 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627299.922424 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000026>
+[pid   201] 1652627299.923677 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000026>
+[pid   201] 1652627299.927593 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627299.929031 stat("/opt/verticles/net/bytebuddy/asm/Advice$FieldValue.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000044>
+[pid   201] 1652627299.932421 stat("/opt/verticles/net/bytebuddy/asm/Advice$Origin.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627299.936136 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627299.937179 stat("/opt/verticles/net/bytebuddy/asm/Advice$Enter.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627299.940519 stat("/opt/verticles/co/elastic/apm/agent/urlconnection/HttpUrlConnectionInstrumentation$DisconnectInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627299.941745 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000026>
+[pid   201] 1652627299.942917 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627299.943931 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627299.944919 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627299.945409 stat("/opt/verticles/net/bytebuddy/asm/Advice$FieldValue.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627300.056687 stat("/opt/verticles/co/elastic/apm/agent/urlconnection/HttpUrlConnectionInstrumentation$CreateSpanInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627300.058207 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627300.058719 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627300.059902 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000026>
+[pid   201] 1652627300.063202 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627300.064693 stat("/opt/verticles/net/bytebuddy/asm/Advice$FieldValue.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627300.066368 stat("/opt/verticles/net/bytebuddy/asm/Advice$Origin.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627300.067720 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627300.068772 stat("/opt/verticles/net/bytebuddy/asm/Advice$Enter.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627300.072186 stat("/opt/verticles/co/elastic/apm/agent/urlconnection/HttpUrlConnectionInstrumentation$DisconnectInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627300.073423 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000034>
+[pid   201] 1652627300.074779 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000025>
+[pid   201] 1652627300.075994 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000025>
+[pid   201] 1652627300.077052 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627300.077571 stat("/opt/verticles/net/bytebuddy/asm/Advice$FieldValue.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627300.092728 stat("/opt/verticles/co/elastic/apm/agent/process/ProcessExitInstrumentation$WaitFor$WaitForAdvice.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000034>
+[pid   201] 1652627300.093851 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000025>
+[pid   201] 1652627300.095007 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000026>
+[pid   201] 1652627300.098695 stat("/opt/verticles/co/elastic/apm/agent/process/ProcessExitInstrumentation$Destroy$DestroyAdvice.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627300.099758 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627300.100935 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627300.104617 stat("/opt/verticles/co/elastic/apm/agent/process/ProcessExitInstrumentation$ExitValue$ExitValueAdvice.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627300.105766 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627300.106926 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627300.107945 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627300.108965 stat("/opt/verticles/net/bytebuddy/asm/Advice$Return.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627300.146517 stat("/opt/verticles/co/elastic/apm/agent/process/ProcessExitInstrumentation$WaitFor$WaitForAdvice.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000033>
+[pid   201] 1652627300.147639 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627300.148838 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627300.152679 stat("/opt/verticles/co/elastic/apm/agent/process/ProcessExitInstrumentation$Destroy$DestroyAdvice.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627300.153812 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627300.155177 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000017>
+[pid   201] 1652627300.158913 stat("/opt/verticles/co/elastic/apm/agent/process/ProcessExitInstrumentation$ExitValue$ExitValueAdvice.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627300.160022 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000026>
+[pid   201] 1652627300.161168 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000026>
+[pid   201] 1652627300.162221 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627300.163259 stat("/opt/verticles/net/bytebuddy/asm/Advice$Return.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627300.172438 stat("/opt/verticles/co/elastic/apm/agent/process/ProcessStartInstrumentation$ProcessBuilderStartAdvice.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000033>
+[pid   201] 1652627300.173626 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627300.174817 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627300.175888 stat("/opt/verticles/net/bytebuddy/asm/Advice$Return.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627300.176925 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627300.177442 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627300.200334 stat("/opt/verticles/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorRunnableInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627300.201615 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627300.202145 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627300.203155 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000026>
+[pid   201] 1652627300.204365 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627300.205777 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fd66f3b4ea0) = -1 ENOENT (No such file or directory) <0.000033>
+[pid   201] 1652627300.207097 stat("/opt/verticles/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fd66f3b4f60) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627300.210368 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627300.211831 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627300.213549 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000032>
+[pid   201] 1652627300.216004 stat("/opt/verticles/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorCallableInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627300.217366 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627300.217899 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627300.218902 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627300.220104 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627300.221442 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fd66f3b4ea0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627300.222749 stat("/opt/verticles/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fd66f3b4f60) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627300.226678 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627300.228604 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627300.230304 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627300.232698 stat("/opt/verticles/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorInvokeAnyAllInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627300.234087 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627300.234596 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627300.235573 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000026>
+[pid   201] 1652627300.236763 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627300.238110 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fd66f3b4ea0) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627300.239395 stat("/opt/verticles/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fd66f3b4f60) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627300.242533 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627300.243983 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627300.245630 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000068>
+[pid   201] 1652627300.301851 stat("/opt/verticles/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorRunnableInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627300.303159 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627300.303678 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627300.304711 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627300.305936 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627300.307244 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fd66f3b4ea0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627300.308532 stat("/opt/verticles/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fd66f3b4f60) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627300.311829 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627300.313275 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627300.314971 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000032>
+[pid   201] 1652627300.317375 stat("/opt/verticles/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorCallableInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000036>
+[pid   201] 1652627300.318830 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627300.319351 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627300.320342 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627300.321523 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627300.322835 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fd66f3b4ea0) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627300.324112 stat("/opt/verticles/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fd66f3b4f60) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627300.327201 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627300.328682 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627300.330366 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627300.332826 stat("/opt/verticles/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorInvokeAnyAllInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000033>
+[pid   201] 1652627300.334230 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627300.334720 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627300.335695 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627300.336849 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627300.338208 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fd66f3b4ea0) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627300.339498 stat("/opt/verticles/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fd66f3b4f60) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627300.342686 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000032>
+[pid   201] 1652627300.344132 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627300.345787 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000033>
+[pid   201] 1652627300.382580 stat("/opt/verticles/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorRunnableInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627300.383868 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627300.384384 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627300.385360 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627300.386555 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627300.387853 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fd66f3b4ea0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627300.389146 stat("/opt/verticles/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fd66f3b4f60) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627300.392279 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000032>
+[pid   201] 1652627300.393761 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627300.395408 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627300.397808 stat("/opt/verticles/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorCallableInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627300.399129 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627300.399624 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627300.400613 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627300.401809 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627300.403090 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fd66f3b4ea0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627300.404371 stat("/opt/verticles/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fd66f3b4f60) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627300.407541 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627300.409023 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000032>
+[pid   201] 1652627300.410699 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000032>
+[pid   201] 1652627300.413088 stat("/opt/verticles/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorInvokeAnyAllInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627300.414477 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627300.414958 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627300.415930 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   201] 1652627300.417084 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627300.418454 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fd66f3b4ea0) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627300.419738 stat("/opt/verticles/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fd66f3b4f60) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627300.423081 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627300.424515 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627300.426259 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627300.499456 stat("/opt/verticles/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorRunnableInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.002237>
+[pid   201] 1652627300.503654 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000036>
+[pid   201] 1652627300.504206 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627300.510313 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000034>
+[pid   201] 1652627300.511840 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000034>
+[pid   201] 1652627300.513186 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fd66f3b4ea0) = -1 ENOENT (No such file or directory) <0.000033>
+[pid   201] 1652627300.514796 stat("/opt/verticles/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fd66f3b4f60) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627300.518684 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000033>
+[pid   201] 1652627300.520287 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000038>
+[pid   201] 1652627300.522933 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627300.525497 stat("/opt/verticles/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorCallableInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627300.527286 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000032>
+[pid   201] 1652627300.527970 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000033>
+[pid   201] 1652627300.529263 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627300.530761 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000033>
+[pid   201] 1652627300.532482 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fd66f3b4ea0) = -1 ENOENT (No such file or directory) <0.000035>
+[pid   201] 1652627300.534230 stat("/opt/verticles/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fd66f3b4f60) = -1 ENOENT (No such file or directory) <0.000035>
+[pid   201] 1652627300.538325 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000036>
+[pid   201] 1652627300.540434 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000036>
+[pid   201] 1652627300.542821 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000033>
+[pid   201] 1652627300.546457 stat("/opt/verticles/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorInvokeAnyAllInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000019>
+[pid   201] 1652627300.548266 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000034>
+[pid   201] 1652627300.548924 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000032>
+[pid   201] 1652627300.550275 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000037>
+[pid   201] 1652627300.551909 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000036>
+[pid   201] 1652627300.553845 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fd66f3b4ea0) = -1 ENOENT (No such file or directory) <0.000035>
+[pid   201] 1652627300.555732 stat("/opt/verticles/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fd66f3b4f60) = -1 ENOENT (No such file or directory) <0.000034>
+[pid   201] 1652627300.564258 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000036>
+[pid   201] 1652627300.566258 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000036>
+[pid   201] 1652627300.568637 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000034>
+[pid   201] 1652627300.586576 stat("/opt/verticles/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorRunnableInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000036>
+[pid   201] 1652627300.588320 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000036>
+[pid   201] 1652627300.588967 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000035>
+[pid   201] 1652627300.590180 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000056>
+[pid   201] 1652627300.591683 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000035>
+[pid   201] 1652627300.593174 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fd66f3b4ea0) = -1 ENOENT (No such file or directory) <0.000035>
+[pid   201] 1652627300.594991 stat("/opt/verticles/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fd66f3b4f60) = -1 ENOENT (No such file or directory) <0.000036>
+[pid   201] 1652627300.599261 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000034>
+[pid   201] 1652627300.601163 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000033>
+[pid   201] 1652627300.603388 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000034>
+[pid   201] 1652627300.606831 stat("/opt/verticles/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorCallableInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000034>
+[pid   201] 1652627300.608643 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627300.609304 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000032>
+[pid   201] 1652627300.610680 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000033>
+[pid   201] 1652627300.612373 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000035>
+[pid   201] 1652627300.614155 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fd66f3b4ea0) = -1 ENOENT (No such file or directory) <0.000035>
+[pid   201] 1652627300.615908 stat("/opt/verticles/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fd66f3b4f60) = -1 ENOENT (No such file or directory) <0.000034>
+[pid   201] 1652627300.619877 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000018>
+[pid   201] 1652627300.621620 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000050>
+[pid   201] 1652627300.623882 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000032>
+[pid   201] 1652627300.627183 stat("/opt/verticles/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorInvokeAnyAllInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000038>
+[pid   201] 1652627300.629055 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000035>
+[pid   201] 1652627300.629620 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000032>
+[pid   201] 1652627300.631122 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000035>
+[pid   201] 1652627300.633104 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000073>
+[pid   201] 1652627300.634867 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fd66f3b4ea0) = -1 ENOENT (No such file or directory) <0.000033>
+[pid   201] 1652627300.636511 stat("/opt/verticles/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fd66f3b4f60) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627300.640706 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627300.642588 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000032>
+[pid   201] 1652627300.644759 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627300.665563 stat("/opt/verticles/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorRunnableInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000033>
+[pid   201] 1652627300.667244 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000035>
+[pid   201] 1652627300.667851 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000034>
+[pid   201] 1652627300.669161 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000033>
+[pid   201] 1652627300.670688 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000033>
+[pid   201] 1652627300.672428 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fd66f3b4ea0) = -1 ENOENT (No such file or directory) <0.000038>
+[pid   201] 1652627300.674662 stat("/opt/verticles/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fd66f3b4f60) = -1 ENOENT (No such file or directory) <0.000033>
+[pid   201] 1652627300.680211 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000021>
+[pid   201] 1652627300.681943 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000018>
+[pid   201] 1652627300.685032 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000018>
+[pid   201] 1652627300.688225 stat("/opt/verticles/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorCallableInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000020>
+[pid   201] 1652627300.690240 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.001017>
+[pid   201] 1652627300.692238 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627300.693596 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000029>
+[pid   201] 1652627300.695160 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000032>
+[pid   201] 1652627300.697009 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fd66f3b4ea0) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627300.698714 stat("/opt/verticles/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fd66f3b4f60) = -1 ENOENT (No such file or directory) <0.000032>
+[pid   201] 1652627300.703432 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627300.705277 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000032>
+[pid   201] 1652627300.707533 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000030>
+[pid   201] 1652627300.710851 stat("/opt/verticles/co/elastic/apm/agent/concurrent/ExecutorInstrumentation$ExecutorInvokeAnyAllInstrumentation$AdviceClass.class", 0x7fd66f3b5250) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627300.712625 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   201] 1652627300.713183 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000028>
+[pid   201] 1652627300.714444 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000035>
+[pid   201] 1652627300.715970 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd66f3b50a0) = -1 ENOENT (No such file or directory) <0.000200>
+[pid   201] 1652627300.717960 stat("/opt/verticles/net/bytebuddy/asm/Advice$AssignReturned$ToArguments$ToArgument.class", 0x7fd66f3b4ea0) = -1 ENOENT (No such file or directory) <0.000482>
+[pid   201] 1652627300.720363 stat("/opt/verticles/net/bytebuddy/implementation/bytecode/assign/Assigner$Typing.class", 0x7fd66f3b4f60) = -1 ENOENT (No such file or directory) <0.000036>
+[pid   201] 1652627300.724500 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000033>
+[pid   201] 1652627300.726446 stat("/opt/verticles/net/bytebuddy/asm/Advice$Argument.class", 0x7fd66f3b4d60) = -1 ENOENT (No such file or directory) <0.000040>
+[pid   201] 1652627300.728022 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd66f3b5000) = -1 ENOENT (No such file or directory) <0.000032>
+[pid   201] 1652627300.766874 stat("/opt/verticles/org/apache/catalina/startup/Bootstrap.class", 0x7fd66f3b8640) = -1 ENOENT (No such file or directory) <0.000033>
+[pid   226] 1652627300.812067 stat("/opt/verticles/co/elastic/apm/agent/urlconnection/HttpUrlConnectionInstrumentation$CreateSpanInstrumentation$AdviceClass.class", 0x7fd64dcb02e0) = -1 ENOENT (No such file or directory) <0.000020>
+[pid   226] 1652627300.813986 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd64dcb0130) = -1 ENOENT (No such file or directory) <0.000018>
+[pid   226] 1652627300.814804 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodEnter.class", 0x7fd64dcb0130) = -1 ENOENT (No such file or directory) <0.000017>
+[pid   226] 1652627300.816297 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd64dcb0130) = -1 ENOENT (No such file or directory) <0.001400>
+[pid   226] 1652627300.824829 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd64dcafdf0) = -1 ENOENT (No such file or directory) <0.000017>
+[pid   226] 1652627300.826625 stat("/opt/verticles/net/bytebuddy/asm/Advice$FieldValue.class", 0x7fd64dcafdf0) = -1 ENOENT (No such file or directory) <0.000101>
+[pid   226] 1652627300.830368 stat("/opt/verticles/net/bytebuddy/asm/Advice$Origin.class", 0x7fd64dcafdf0) = -1 ENOENT (No such file or directory) <0.000018>
+[pid   226] 1652627300.832044 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd64dcb0090) = -1 ENOENT (No such file or directory) <0.000019>
+[pid   226] 1652627300.833160 stat("/opt/verticles/net/bytebuddy/asm/Advice$Enter.class", 0x7fd64dcb0090) = -1 ENOENT (No such file or directory) <0.000031>
+[pid   226] 1652627300.836578 stat("/opt/verticles/co/elastic/apm/agent/urlconnection/HttpUrlConnectionInstrumentation$DisconnectInstrumentation$AdviceClass.class", 0x7fd64dcb02e0) = -1 ENOENT (No such file or directory) <0.000027>
+[pid   226] 1652627300.838090 stat("/opt/verticles/net/bytebuddy/asm/Advice$OnMethodExit.class", 0x7fd64dcb0130) = -1 ENOENT (No such file or directory) <0.000959>
+[pid   226] 1652627300.841099 stat("/opt/verticles/net/bytebuddy/asm/Advice$This.class", 0x7fd64dcb0090) = -1 ENOENT (No such file or directory) <0.000035>
+[pid   226] 1652627300.842709 stat("/opt/verticles/net/bytebuddy/asm/Advice$Thrown.class", 0x7fd64dcb0090) = -1 ENOENT (No such file or directory) <0.000018>
+[pid   226] 1652627300.843998 stat("/opt/verticles/javax/annotation/Nullable.class", 0x7fd64dcb0090) = -1 ENOENT (No such file or directory) <0.000090>
+[pid   226] 1652627300.844822 stat("/opt/verticles/net/bytebuddy/asm/Advice$FieldValue.class", 0x7fd64dcb0090) = -1 ENOENT (No such file or directory) <0.000018>
+[pid   201] 1652627301.000388 stat("/opt/verticles/sun/launcher/resources/launcher_en.class", 0x7fd66f3b8d90) = -1 ENOENT (No such file or directory) <0.000044>
+[pid   201] 1652627301.004102 stat("/opt/verticles/sun/launcher/resources/launcher_en.properties", 0x7fd66f3b8330) = -1 ENOENT (No such file or directory) <0.000019>
 Usage: java [-options] class [args...]
            (to execute a class)
    or  java [-options] -jar jarfile [args...]
@@ -366,42 +698,6 @@ where options include:
     -splash:<imagepath>
                   show splash screen with specified image
 See http://www.oracle.com/technetwork/java/javase/documentation/index.html for more details.
-strace: invalid option -- 'Z'
-usage: strace [-CdffhiqrtttTvVxxy] [-I n] [-e expr]...
-              [-a column] [-o file] [-s strsize] [-P path]...
-              -p pid... / [-D] [-E var=val]... [-u username] PROG [ARGS]
-   or: strace -c[df] [-I n] [-e expr]... [-O overhead] [-S sortby]
-              -p pid... / [-D] [-E var=val]... [-u username] PROG [ARGS]
--c -- count time, calls, and errors for each syscall and report summary
--C -- like -c but also print regular output
--w -- summarise syscall latency (default is system time)
--d -- enable debug output to stderr
--D -- run tracer process as a detached grandchild, not as parent
--f -- follow forks, -ff -- with output into separate files
--i -- print instruction pointer at time of syscall
--q -- suppress messages about attaching, detaching, etc.
--r -- print relative timestamp, -t -- absolute timestamp, -tt -- with usecs
--T -- print time spent in each syscall
--v -- verbose mode: print unabbreviated argv, stat, termios, etc. args
--x -- print non-ascii strings in hex, -xx -- print all strings in hex
--y -- print paths associated with file descriptor arguments
--h -- print help message, -V -- print version
--a column -- alignment COLUMN for printing syscall results (default 40)
--b execve -- detach on this syscall
--e expr -- a qualifying expression: option=[!]all or option=[!]val1[,val2]...
-   options: trace, abbrev, verbose, raw, signal, read, write
--I interruptible --
-   1: no signals are blocked
-   2: fatal signals are blocked while decoding syscall (default)
-   3: fatal signals are always blocked (default if '-o FILE PROG')
-   4: fatal signals and SIGTSTP (^Z) are always blocked
-      (useful to make 'strace -o FILE PROG' not stop on ^Z)
--o file -- send trace output to FILE instead of stderr
--O overhead -- set overhead for tracing syscalls to OVERHEAD usecs
--p pid -- trace process with process id PID, may be repeated
--s strsize -- limit length of print strings to STRSIZE chars (default 32)
--S sortby -- sort syscall counts by: time, calls, name, nothing (default time)
--u username -- run command as username handling setuid and/or setgid
--E var=val -- put var=val in the environment for command
--E var -- remove var from the environment for command
--P path -- trace accesses to path
+[pid   226] 1652627301.101525 connect(26, {sa_family=AF_INET, sin_port=htons(8200), sin_addr=inet_addr("172.17.0.1")}, 16) = -1 EINPROGRESS (Operation now in progress) <0.000165>
+[pid   228] 1652627301.124581 connect(25, {sa_family=AF_INET, sin_port=htons(8200), sin_addr=inet_addr("172.17.0.1")}, 16) = -1 EINPROGRESS (Operation now in progress) <0.000159>
+[pid   201] 1652627302.083873 unlink("/tmp/elasticapm-java-2eaaf3ac-453b-45f5-b495-da791b14f9b7.log.json.1") = -1 ENOENT (No such file or directory) <0.000112>
