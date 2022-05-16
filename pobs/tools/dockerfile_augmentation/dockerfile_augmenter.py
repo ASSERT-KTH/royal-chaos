@@ -46,6 +46,12 @@ def get_template_contents(username, s6_installed, package_manager, ori_entrypoin
     contents = list()
     contents.append(pobs_templates.header())
 
+    # TODO: a better idea to handle these key words in the entrypoint/cmd
+    to_be_removed = ["/bin/sh -c", "/bin/bash -c"]
+    for word in to_be_removed:
+        ori_entrypoint = ori_entrypoint.replace(word, "")
+        ori_cmd = ori_cmd.replace(word, "")
+
     if username != "root":
         # we have to use root to install POBS
         contents.append("USER root\n")
