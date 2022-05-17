@@ -3,41 +3,47 @@ Step 1/24 : FROM openjdk:8-jdk-alpine
  ---> a3562aa0b991
 Step 2/24 : ENV BOOT_SLEEP=0     JAVA_OPTS=""     REPO_URL="https://oss.sonatype.org/service/local/repositories/releases/content/com/erudika"     PARA_VERSION="1.37.0"
  ---> Using cache
- ---> db877c4bc41b
+ ---> 249b249c5c9b
 Step 3/24 : RUN addgroup -S para && adduser -S -G para para && 	mkdir -p /para/lib && 	mkdir -p /para/data && 	chown -R para:para /para
  ---> Using cache
- ---> 0e33777a7e68
+ ---> 71a81939bb46
 Step 4/24 : USER para
  ---> Using cache
- ---> 84f7d5898f6b
+ ---> 358d972ab0ca
 Step 5/24 : WORKDIR /para
  ---> Using cache
- ---> d60b41a35980
+ ---> ed9eeb25060d
 Step 6/24 : RUN wget -q -P /para/ $REPO_URL/para-jar/$PARA_VERSION/para-jar-$PARA_VERSION.jar
  ---> Using cache
- ---> 7dc6b13e5b73
+ ---> a27bc8881757
 Step 7/24 : VOLUME ["/para/data"]
  ---> Using cache
- ---> 5f939636e4fb
+ ---> 4bc4394f564d
 Step 8/24 : EXPOSE 8080
  ---> Using cache
- ---> 4cad13791c11
+ ---> 16fc3549dfab
 Step 9/24 : CMD sleep $BOOT_SLEEP &&     java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar para-*.jar
  ---> Using cache
- ---> d17fbb180d7c
+ ---> 7c8f4907323f
 Step 10/24 : USER root
- ---> Running in 75d4614e9471
-Removing intermediate container 75d4614e9471
- ---> 359771b77175
+ ---> Running in 59ff4545bf30
+Removing intermediate container 59ff4545bf30
+ ---> e4594af7f05b
 Step 11/24 : ADD https://github.com/just-containers/s6-overlay/releases/download/v2.2.0.1/s6-overlay-amd64-installer /tmp/
 
 
- ---> b081b9b40e32
+ ---> 1540ca83634b
 Step 12/24 : RUN chmod +x /tmp/s6-overlay-amd64-installer && /tmp/s6-overlay-amd64-installer /
- ---> Running in e09ddac9b6ba
+ ---> Running in ffaa1605d364
+./
+./usr/
+./usr/bin/
+./usr/bin/justc-envdir
+./usr/bin/with-contenv-legacy
+./usr/bin/execlineb./usr/bin/printcontenv
 [91munable to lstat /./usr/bin/execlineb: No such file or directory
 unable to utime /./usr/bin/execlineb: No such file or directory
-unable to stat /./libexec/: No such file or directory
+[0m[91munable to stat /./libexec/: No such file or directory
 unable to stat /./etc/cont-finish.d/: No such file or directory
 unable to stat /./etc/s6/: No such file or directory
 unable to stat /./etc/s6/init-no-catchall/: No such file or directory
@@ -58,13 +64,7 @@ unable to stat /./etc/s6/init/env/: No such file or directory
 unable to stat /./etc/services.d/: No such file or directory
 unable to stat /./etc/fix-attrs.d/: No such file or directory
 unable to stat /./etc/cont-init.d/: No such file or directory
-[0m./
-./usr/
-./usr/bin/
-./usr/bin/justc-envdir
-./usr/bin/with-contenv-legacy
-./usr/bin/execlineb./usr/bin/printcontenv
-./usr/bin/logutil-newfifo
+[0m./usr/bin/logutil-newfifo
 ./usr/bin/logutil-service
 ./usr/bin/logutil-service-main
 ./usr/bin/with-retries
@@ -224,9 +224,7 @@ unable to stat /./etc/cont-init.d/: No such file or directory
 ./bin/exec
 ./bin/s6-dnsname
 ./bin/execline-umask
-[91munable to lstat /./bin/umask: No such file or directory
-unable to utime /./bin/umask: No such file or directory
-[0m./bin/s6-echo
+./bin/s6-echo
 ./bin/s6-seq
 ./bin/s6-dnsname-filter
 ./bin/s6-ipcserver-socketbinder
@@ -237,7 +235,9 @@ unable to utime /./bin/umask: No such file or directory
 ./bin/s6-clockadd
 ./bin/ucspilogd
 ./bin/s6-rename
-./bin/s6-dumpenv
+[91munable to lstat /./bin/umask: No such file or directory
+unable to utime /./bin/umask: No such file or directory
+[0m./bin/s6-dumpenv
 ./bin/s6-setlock
 ./bin/emptyenv
 ./bin/multidefine
@@ -279,8 +279,7 @@ unable to utime /./bin/umask: No such file or directory
 ./bin/s6-dnsqr
 ./bin/s6-connlimit
 ./bin/s6-svlisten
-[91munable to lstat /./bin/cd: No such file or directory
-[0m./bin/heredoc
+./bin/heredoc
 ./bin/s6-swapon
 ./bin/elgetpositionals
 ./bin/posix-umask
@@ -290,7 +289,8 @@ unable to utime /./bin/umask: No such file or directory
 ./bin/s6-grep
 ./bin/s6-svscan
 ./bin/cd./bin/s6-ftrigrd
-./bin/s6-tcpserver-access
+[91munable to lstat /./bin/cd: No such file or directory
+[0m./bin/s6-tcpserver-access
 ./bin/s6-dnsns
 ./bin/piperw
 ./bin/minidentd
@@ -327,6 +327,6 @@ unable to utime /./bin/umask: No such file or directory
 ./bin/s6-env
 ./bin/s6-tai64nlocal
 ./init
-Removing intermediate container e09ddac9b6ba
- ---> 5bf3d143e7ee
+Removing intermediate container ffaa1605d364
+ ---> df3bcd39fdfb
 Step 13/24 : COPY ./pobs_files/ /

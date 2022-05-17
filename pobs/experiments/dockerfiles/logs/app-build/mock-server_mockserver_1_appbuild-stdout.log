@@ -3,40 +3,40 @@ Step 1/22 : FROM alpine as build
  ---> 0ac33e5f5afa
 Step 2/22 : RUN apk add --update openssl ca-certificates bash wget
  ---> Using cache
- ---> a832fb6e3a32
+ ---> 08091bf19725
 Step 3/22 : ARG REPOSITORY=releases
  ---> Using cache
- ---> 20dcc5f7f9b9
+ ---> 9a121355d448
 Step 4/22 : ARG VERSION=RELEASE
  ---> Using cache
- ---> a53677318e74
+ ---> 9cdd196f1c56
 Step 5/22 : ARG REPOSITORY_URL=https://oss.sonatype.org/service/local/artifact/maven/redirect?r=${REPOSITORY}&g=org.mock-server&a=mockserver-netty&c=jar-with-dependencies&e=jar&v=${VERSION}
  ---> Using cache
- ---> a69a567e54e0
+ ---> d2b7671fcade
 Step 6/22 : RUN wget --max-redirect=10 -O mockserver-netty-jar-with-dependencies.jar "$REPOSITORY_URL"
  ---> Using cache
- ---> 726c5ce4550d
+ ---> 9fd61adbdee0
 Step 7/22 : FROM gcr.io/distroless/java:11
  ---> 4c4b3da468da
 Step 8/22 : MAINTAINER James Bloom "jamesdbloom@gmail.com"
  ---> Using cache
- ---> 51295da91e16
+ ---> f4e44aa0c65f
 Step 9/22 : EXPOSE 1080
  ---> Using cache
- ---> 98d1b2d16417
+ ---> 9cafd75720ba
 Step 10/22 : COPY --from=build mockserver-netty-jar-with-dependencies.jar /
  ---> Using cache
- ---> 52c6fc7127f8
+ ---> 10e99dabf09a
 Step 11/22 : USER nonroot
  ---> Using cache
- ---> ca00367eb4fc
+ ---> f01c36ee5357
 Step 12/22 : CMD ["-serverPort", "1080"]
- ---> Running in 2e3b4c03d08c
-Removing intermediate container 2e3b4c03d08c
- ---> bcce6bb63d72
+ ---> Running in cc8986b70c05
+Removing intermediate container cc8986b70c05
+ ---> 30e3737719d9
 Step 13/22 : ADD https://github.com/just-containers/s6-overlay/releases/download/v2.2.0.1/s6-overlay-amd64-installer /tmp/
 
 
- ---> 515508a77cd4
+ ---> 38db5dc11f67
 Step 14/22 : RUN chmod +x /tmp/s6-overlay-amd64-installer && /tmp/s6-overlay-amd64-installer /
- ---> Running in 7e9e6dcf754b
+ ---> Running in c1829e7b5b0f

@@ -1,0 +1,8 @@
+-:20 DL4000 [1m[91merror[0m: MAINTAINER is deprecated
+-:31 SC2006 [96mstyle[0m: Use $(...) notation instead of legacy backticks `...`.
+-:31 DL4006 [1m[93mwarning[0m: Set the SHELL option -o pipefail before RUN with a pipe in it. If you are using /bin/sh in an alpine image or if your shell is symlinked to busybox then consider explicitly setting your SHELL to /bin/ash, or disable this check
+-:33 DL3059 [92minfo[0m: Multiple consecutive `RUN` instructions. Consider consolidation.
+-:35 DL3018 [1m[93mwarning[0m: Pin versions in apk add. Instead of `apk add <package>` use `apk add <package>=<version>`
+-:35 DL3059 [92minfo[0m: Multiple consecutive `RUN` instructions. Consider consolidation.
+-:40 DL4006 [1m[93mwarning[0m: Set the SHELL option -o pipefail before RUN with a pipe in it. If you are using /bin/sh in an alpine image or if your shell is symlinked to busybox then consider explicitly setting your SHELL to /bin/ash, or disable this check
+-:51 DL3025 [1m[93mwarning[0m: Use arguments JSON notation for CMD and ENTRYPOINT arguments
