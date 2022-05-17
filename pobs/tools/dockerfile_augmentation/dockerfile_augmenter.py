@@ -132,10 +132,7 @@ def augment_image_from_dockerfile(ori_dockerfile, target_dockerfile_path, ori_do
         contents = get_template_contents(ori_dockerfile_info["username"], ori_dockerfile_info["s6_installed"], ori_dockerfile_info["package_manager"], ori_dockerfile_info["ori_entrypoint"], ori_dockerfile_info["ori_cmd"])
 
         for line in original_content:
-            if line.startswith("ENTRYPOINT"):
-                target.write(line.replace("ENTRYPOINT", "# ENTRYPOINT"))
-            else:
-                target.write(line)
+            target.write(line)
         target.write("\n")
         target.writelines(contents)
 
