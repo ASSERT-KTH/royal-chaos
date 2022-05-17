@@ -2252,76 +2252,6 @@
         "is_able_to_run": []
     },
     {
-        "current_timestamp": 1594335715,
-        "name": "sekiro",
-        "full_name": "virjar/sekiro",
-        "fork": false,
-        "clone_url": "https://github.com/virjar/sekiro.git",
-        "stargazers_count": 437,
-        "language": "Java",
-        "default_branch": "master",
-        "commit_sha": "f2075964c32da51996f1f394b66adae9c545d743",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM registry.cn-hangzhou.aliyuncs.com/kennylee/gradle-node:v5.4.1-v12 as build",
-                    "FROM openjdk:8-alpine"
-                ],
-                "cmds": [
-                    "CMD [\"java\", \"-jar\", \"/app/sekiro-server-0.0.1-SNAPSHOT.jar\"]"
-                ],
-                "entrypoints": [],
-                "args": [],
-                "ori_build": "successful",
-                "ori_build_execution_time": 266.0427038669586,
-                "ori_build_image_size": "129MB",
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true,
-                "ori_application_run_agent": "none",
-                "ori_application_run_metrics": {
-                    "cpu_mean": 0.0008194346875,
-                    "memory_mean": 394835968.0
-                },
-                "pobs_augmentation": "successful",
-                "pobs_dockerfile_validation": "successful",
-                "pobs_application_build": "failed"
-            }
-        ],
-        "build_tools": [
-            "Gradle"
-        ],
-        "languages": {
-            "Java": 246741,
-            "JavaScript": 10269,
-            "HTML": 2636,
-            "Shell": 1612,
-            "Dockerfile": 384
-        },
-        "contributors": 3,
-        "number_of_commits": 105,
-        "age_days": 275,
-        "loc_info": {
-            "java": {
-                "files": "138",
-                "code": "21492"
-            },
-            "sum": {
-                "files": "166",
-                "code": "22955"
-            }
-        },
-        "is_able_to_clone": true,
-        "is_able_to_build": [
-            {
-                "Gradle": 19.478407859802246
-            }
-        ],
-        "is_able_to_run": []
-    },
-    {
         "current_timestamp": 1594335744,
         "name": "spring-boot-security-saml-sample",
         "full_name": "vdenotaris/spring-boot-security-saml-sample",
@@ -4561,74 +4491,6 @@
         ]
     },
     {
-        "current_timestamp": 1594338066,
-        "name": "bag-database",
-        "full_name": "swri-robotics/bag-database",
-        "fork": false,
-        "clone_url": "https://github.com/swri-robotics/bag-database.git",
-        "stargazers_count": 149,
-        "language": "Java",
-        "default_branch": "master",
-        "tag_name": "v2.7.1",
-        "commit_sha": "dea78a6202d3d3f0a4fc75c82bf2d57e692a1441",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM maven:3.5.2-jdk-8-slim as base-layer",
-                    "FROM tomcat:9-alpine"
-                ],
-                "cmds": [
-                    "CMD [\"/entrypoint.sh\"]"
-                ],
-                "entrypoints": [],
-                "args": [],
-                "ori_build": "successful",
-                "ori_build_execution_time": 176.9876081943512,
-                "ori_build_image_size": "220MB",
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true,
-                "ori_application_run_agent": "none",
-                "ori_application_run_metrics": {
-                    "cpu_mean": NaN,
-                    "memory_mean": 541319168.0
-                },
-                "pobs_augmentation": "successful",
-                "pobs_dockerfile_validation": "successful",
-                "pobs_application_build": "failed"
-            }
-        ],
-        "build_tools": [
-            "Maven"
-        ],
-        "languages": {
-            "Java": 336025,
-            "JavaScript": 153780,
-            "HTML": 7372,
-            "CSS": 2155,
-            "Shell": 1518,
-            "Dockerfile": 784
-        },
-        "contributors": 6,
-        "number_of_commits": 101,
-        "age_days": 1498,
-        "loc_info": {
-            "java": {
-                "files": "68",
-                "code": "4712"
-            },
-            "sum": {
-                "files": "256",
-                "code": "113451"
-            }
-        },
-        "is_able_to_clone": true,
-        "is_able_to_build": [],
-        "is_able_to_run": []
-    },
-    {
         "current_timestamp": 1594338090,
         "name": "RCT",
         "full_name": "xaecbd/RCT",
@@ -5676,19 +5538,30 @@
                 ],
                 "args": [],
                 "ori_build": "successful",
-                "ori_build_execution_time": 36.86100220680237,
+                "ori_build_execution_time": 34.18173789978027,
                 "ori_build_image_size": "280MB",
                 "ori_application_run_exitcode": 0,
                 "ori_application_run_continuously": true,
                 "ori_application_run_java": true,
                 "ori_application_run_agent": "none",
                 "ori_application_run_metrics": {
-                    "cpu_mean": 0.00076912575,
-                    "memory_mean": 117764096.0
+                    "cpu_mean": 0.0007869156036036034,
+                    "memory_mean": 120445453.12820514
                 },
                 "pobs_augmentation": "successful",
                 "pobs_dockerfile_validation": "successful",
-                "pobs_application_build": "failed"
+                "pobs_application_build": "successful",
+                "pobs_application_build_execution_time": 52.14047312736511,
+                "pobs_application_build_image_size": "332MB",
+                "pobs_syscall_monitor_enabled": true,
+                "pobs_apm_agent_attached": true,
+                "pobs_application_run_exitcode": 0,
+                "pobs_application_run_continuously": true,
+                "pobs_application_run_metrics": {
+                    "cpu_mean": 0.02048836,
+                    "memory_mean": 258908160.0
+                },
+                "pobs_application_run": "successful"
             }
         ],
         "build_tools": [
@@ -5716,10 +5589,12 @@
         "is_able_to_clone": true,
         "is_able_to_build": [
             {
-                "Maven": 13.658973217010498
+                "Maven": 11.730224370956421
             }
         ],
-        "is_able_to_run": []
+        "is_able_to_run": [
+            0
+        ]
     },
     {
         "current_timestamp": 1594339369,

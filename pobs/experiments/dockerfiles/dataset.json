@@ -1353,55 +1353,6 @@
         }
     },
     {
-        "current_timestamp": 1594335715,
-        "name": "sekiro",
-        "full_name": "virjar/sekiro",
-        "fork": false,
-        "clone_url": "https://github.com/virjar/sekiro.git",
-        "stargazers_count": 437,
-        "language": "Java",
-        "default_branch": "master",
-        "commit_sha": "f2075964c32da51996f1f394b66adae9c545d743",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM registry.cn-hangzhou.aliyuncs.com/kennylee/gradle-node:v5.4.1-v12 as build",
-                    "FROM openjdk:8-alpine"
-                ],
-                "cmds": [
-                    "CMD [\"java\", \"-jar\", \"/app/sekiro-server-0.0.1-SNAPSHOT.jar\"]"
-                ],
-                "entrypoints": [],
-                "args": []
-            }
-        ],
-        "build_tools": [
-            "Gradle"
-        ],
-        "languages": {
-            "Java": 246741,
-            "JavaScript": 10269,
-            "HTML": 2636,
-            "Shell": 1612,
-            "Dockerfile": 384
-        },
-        "contributors": 3,
-        "number_of_commits": 105,
-        "age_days": 275,
-        "loc_info": {
-            "java": {
-                "files": "138",
-                "code": "21492"
-            },
-            "sum": {
-                "files": "166",
-                "code": "22955"
-            }
-        }
-    },
-    {
         "current_timestamp": 1594335744,
         "name": "spring-boot-security-saml-sample",
         "full_name": "vdenotaris/spring-boot-security-saml-sample",
@@ -2504,57 +2455,6 @@
             "sum": {
                 "files": "20",
                 "code": "6256"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594338066,
-        "name": "bag-database",
-        "full_name": "swri-robotics/bag-database",
-        "fork": false,
-        "clone_url": "https://github.com/swri-robotics/bag-database.git",
-        "stargazers_count": 149,
-        "language": "Java",
-        "default_branch": "master",
-        "tag_name": "v2.7.1",
-        "commit_sha": "dea78a6202d3d3f0a4fc75c82bf2d57e692a1441",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM maven:3.5.2-jdk-8-slim as base-layer",
-                    "FROM tomcat:9-alpine"
-                ],
-                "cmds": [
-                    "CMD [\"/entrypoint.sh\"]"
-                ],
-                "entrypoints": [],
-                "args": []
-            }
-        ],
-        "build_tools": [
-            "Maven"
-        ],
-        "languages": {
-            "Java": 336025,
-            "JavaScript": 153780,
-            "HTML": 7372,
-            "CSS": 2155,
-            "Shell": 1518,
-            "Dockerfile": 784
-        },
-        "contributors": 6,
-        "number_of_commits": 101,
-        "age_days": 1498,
-        "loc_info": {
-            "java": {
-                "files": "68",
-                "code": "4712"
-            },
-            "sum": {
-                "files": "256",
-                "code": "113451"
             }
         }
     },
