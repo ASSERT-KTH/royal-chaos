@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # Filename: result_analyzer.py
 
-import os, sys, time, json, re, numpy, logging
+import os, sys, time, json, re, numpy, math, logging
 import matplotlib.pyplot as plt
 from prettytable import PrettyTable
 from optparse import OptionParser, OptionGroup
@@ -45,6 +45,16 @@ def parse_options():
 
     return options
 
+def image_size_to_float(size):
+    if "MB" in size:
+        size = size.replace("MB", "")
+        return float(size) * 1000000
+    elif "GB" in size:
+        size = size.replace("GB", "")
+        return float(size) * 1000000000
+    else:
+        return float(size)
+
 def clean_image_name(name_str):
     clean_name = name_str.strip()[5:]
     clean_name = re.split(" as ", clean_name, flags=re.IGNORECASE)[0].strip()
@@ -52,13 +62,16 @@ def clean_image_name(name_str):
 
 def draw_distribution(data, labels):
     def format_num(label_name, value):
-        value = int(value)
         if label_name == "Lines of All Code" and value > 1000:
-            value = "%dK"%(value/1000)
+            value = "%dK"%(int(value)/1000)
+        if label_name == "Image Size" or label_name == "Memory":
+            value = "%dMB"%(value/1000000)
+        if label_name == "CPU":
+            value = "%.2f%%"%(value*100)
         return value
 
     for i in range(len(data)):
-        figure, ax = plt.subplots(figsize=(9, 1))
+        figure, ax = plt.subplots(figsize=(9, 1.5))
         boxplot = ax.boxplot(data[i], widths=0.6, vert=False, showfliers=False)
 
         # The following code about adding labels is taken from this answer
@@ -84,18 +97,23 @@ def draw_distribution(data, labels):
         captop = caps[1].get_xdata()[0]
 
         # Make some labels on the figure using the values derived above
-        ax.text(median + xoff, 1.1, format_num(labels[i], median), va='center', fontsize=10)
-        ax.text(pc25 + xoff, 1.1, format_num(labels[i], pc25), va='center', fontsize=10)
-        ax.text(pc75 + xoff, 1.1, format_num(labels[i], pc75), va='center', fontsize=10)
-        ax.text(capbottom + xoff, 1.1, format_num(labels[i], capbottom), va='center', fontsize=10)
-        ax.text(captop + xoff, 1.1, format_num(labels[i], captop), va='center', fontsize=10)
+        ax.text(median + xoff, 1.1, format_num(labels[i], median), va='center', fontsize=12)
+        ax.text(pc25 + xoff, 1.1, format_num(labels[i], pc25), va='center', fontsize=12)
+        ax.text(pc75 + xoff, 1.1, format_num(labels[i], pc75), va='center', fontsize=12)
+        ax.text(capbottom + xoff, 1.1, format_num(labels[i], capbottom), va='center', fontsize=12)
+        ax.text(captop + xoff, 1.1, format_num(labels[i], captop), va='center', fontsize=12)
 
         ax.set_yticklabels([labels[i]], fontsize=14)
         if labels[i] == "Lines of All Code":
             ax.xaxis.set_major_formatter(lambda x, pos: 0 if x == 0 else "%dK"%(x/1000))
-        plt.subplots_adjust(left=0.2, right=0.99, top=0.75, bottom=0.3)
+        if labels[i] == "Image Size" or labels[i] == "Memory":
+            ax.xaxis.set_major_formatter(lambda x, pos: 0 if x == 0 else "%dMB"%(x/1000000))
+        if labels[i] == "CPU":
+            ax.xaxis.set_major_formatter(lambda x, pos: 0 if x == 0 else "%.2f%%"%(x*100))
+
+        plt.subplots_adjust(left=0.14, right=0.95, top=0.9, bottom=0.2)
         plt.xticks(fontsize=14)
-        plt.show()
+        plt.savefig("%s.pdf"%labels[i])
 
 def main():
     options = parse_options()
@@ -123,6 +141,11 @@ def main():
         pobs_syscall_monitor_enabled_count = 0
         pobs_apm_agent_attached_count = 0
         pobs_application_run_passed_count = 0
+
+        # overhead related
+        image_size_increasement = list()
+        cpu_usage_increasement = list()
+        memory_usage_increasement = list()
 
         for project in projects:
             if "is_able_to_clone" in project and project["is_able_to_clone"]:
@@ -154,11 +177,18 @@ def main():
                                 if dockerfile["pobs_augmentation"] == "successful":
                                     pobs_augmentation_passed_count = pobs_augmentation_passed_count + 1
                                     if dockerfile["pobs_application_build"] == "successful":
+                                        # increasement of the image size
+                                        image_size_increasement.append(image_size_to_float(dockerfile["pobs_application_build_image_size"]) - image_size_to_float(dockerfile["ori_build_image_size"]))
                                         pobs_application_build_passed_count = pobs_application_build_passed_count + 1
                                         if dockerfile["pobs_syscall_monitor_enabled"]: pobs_syscall_monitor_enabled_count = pobs_syscall_monitor_enabled_count + 1
                                         if dockerfile["pobs_apm_agent_attached"]: pobs_apm_agent_attached_count = pobs_apm_agent_attached_count + 1
                                         if dockerfile["pobs_application_run"] == "successful":
                                             pobs_application_run_passed_count = pobs_application_run_passed_count + 1
+                                            # increasement of the cpu usage and memory usage
+                                            if not math.isnan(dockerfile["pobs_application_run_metrics"]["cpu_mean"]) and not math.isnan(dockerfile["ori_application_run_metrics"]["cpu_mean"]):
+                                                cpu_usage_increasement.append(dockerfile["pobs_application_run_metrics"]["cpu_mean"] - dockerfile["ori_application_run_metrics"]["cpu_mean"])
+                                            if not math.isnan(dockerfile["pobs_application_run_metrics"]["memory_mean"]) and not math.isnan(dockerfile["ori_application_run_metrics"]["memory_mean"]):
+                                                memory_usage_increasement.append(dockerfile["pobs_application_run_metrics"]["memory_mean"] - dockerfile["ori_application_run_metrics"]["memory_mean"])
                                         # else:
                                         #     print("%s: %s"%(project["full_name"], dockerfile["path"]))
                                         # if not dockerfile["pobs_syscall_monitor_enabled"] and dockerfile["pobs_apm_agent_attached"]:
@@ -188,6 +218,9 @@ def main():
         # project_info_data = [experiment_project_sum_loc, stargazers_count, commits_count, contributors_count]
         # project_info_labels = ["Lines of All Code", "GitHub Stars", "Commits", "Contributors"]
         # draw_distribution(project_info_data, project_info_labels)
+        # overhead_data = [image_size_increasement, cpu_usage_increasement, memory_usage_increasement]
+        # overhead_labels = ["Image Size", "CPU", "Memory"]
+        # draw_distribution(overhead_data, overhead_labels)
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
