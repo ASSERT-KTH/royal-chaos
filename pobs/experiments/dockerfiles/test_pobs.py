@@ -54,6 +54,26 @@ def parse_options():
     
     return options
 
+def perf_instructions(container_name, seconds):
+    # get all the pids in this container
+    try:
+        top_output = subprocess.check_output("docker top %s -o pid"%container_name, shell=True).decode("utf-8")
+        pids = ",".join(top_output.split("\n")[1:])
+    except subprocess.TimeoutExpired as err:
+        logging.info(err.output)
+
+    perf_cmd = "perf stat -e instructions --timeout %d -p %s"%(seconds*1000, pids) # --timeout takes miliseconds as input
+    cpu_instructions = -1
+    try:
+        top_output = subprocess.check_output(perf_cmd, shell=True).decode("utf-8")
+        pattern_cpu_instructions = re.compile(r'([0-9][0-9,]+)\s+instructions')
+        match = pattern_cpu_instructions.search(summary)
+        cpu_instructions = int(match.group(1).replace(",", ""))
+    except subprocess.TimeoutExpired as err:
+        logging.info(err.output)
+
+    return cpu_instructions
+
 def cadvisor_metrics(container_name, duration):
     query_str_cpu = 'SELECT derivative(mean("value"), 1s)/2000000000 FROM "cpu_usage_total" WHERE ("container_name" = $container_name) AND time >= now() - %s GROUP BY time(500ms) fill(null)'%duration
     query_str_memory = 'SELECT mean("value") FROM "memory_usage" WHERE ("container_name" = $container_name) AND time >= now() - %s GROUP BY time(5s) fill(null)'%duration
@@ -119,7 +139,9 @@ def run_original_image(image_name):
         stdoutdata = stdout_f.read()
         stderrdata = stderr_f.read()
 
+        cpu_instructions = perf_instructions(container_name, 60)
         cpu_and_memory_usage = cadvisor_metrics(container_name, "1m")
+        cpu_and_memory_usage["cpu_instructions"] = cpu_instructions
 
         return (stdoutdata.decode("utf-8"), stderrdata.decode("utf-8"), exit_code, continuously_running, java_process_detected, agent, cpu_and_memory_usage)
 
@@ -163,7 +185,9 @@ def test_application(project_name, image_index):
         stdoutdata = stdout_f.read()
         stderrdata = stderr_f.read()
 
+        cpu_instructions = perf_instructions(container_name, 60)
         cpu_and_memory_usage = cadvisor_metrics(container_name, "1m")
+        cpu_and_memory_usage["cpu_instructions"] = cpu_instructions
         syscall_monitor_enabled, apm_agent_attached = query_elasticsearch(container_name)
 
         return (syscall_monitor_enabled, apm_agent_attached, stdoutdata.decode("utf-8"), stderrdata.decode("utf-8"), exit_code, continuously_running, cpu_and_memory_usage)
