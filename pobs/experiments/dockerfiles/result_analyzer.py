@@ -60,16 +60,16 @@ def clean_image_name(name_str):
     clean_name = re.split(" as ", clean_name, flags=re.IGNORECASE)[0].strip()
     return clean_name
 
-def draw_distribution(data, labels):
-    def format_num(label_name, value):
-        if label_name == "Lines of All Code" and value > 1000:
-            value = "%dK"%(int(value)/1000)
-        if label_name == "Image Size" or label_name == "Memory":
-            value = "%dMB"%(value/1000000)
-        if label_name == "CPU":
-            value = "%.2f%%"%(value*100)
-        return value
+def format_num(label_name, value):
+    if label_name == "Lines of All Code" and value > 1000:
+        value = "%dK"%(int(value)/1000)
+    if label_name == "Image Size" or label_name == "Memory":
+        value = "%dMB"%(value/1000000)
+    if label_name == "CPU":
+        value = "%.2f%%"%(value*100)
+    return value
 
+def draw_distribution_box(data, labels):
     for i in range(len(data)):
         figure, ax = plt.subplots(figsize=(9, 1.5))
         boxplot = ax.boxplot(data[i], widths=0.6, vert=False, showfliers=False)
@@ -114,6 +114,40 @@ def draw_distribution(data, labels):
         plt.subplots_adjust(left=0.14, right=0.95, top=0.9, bottom=0.2)
         plt.xticks(fontsize=14)
         plt.savefig("%s.pdf"%labels[i])
+
+def draw_distribution_violin(data, labels):
+    def percentage_str(percentage_value):
+        if percentage_value > 1:
+            return "%.0f%%"%(percentage_value*100)
+        else:
+            return "%.1f%%"%(percentage_value*100)
+
+    def whiskers(values, q1, q3):
+        upper_adjacent_value = q3 + (q3 - q1) * 1.5
+        whiskers_max = numpy.clip(upper_adjacent_value, q3, max(values))
+
+        lower_adjacent_value = q1 - (q3 - q1) * 1.5
+        whiskers_min = numpy.clip(lower_adjacent_value, min(values), q1)
+        return whiskers_min, whiskers_max
+
+    figure, axs = plt.subplots(figsize=(9, 6), nrows=1, ncols=len(data))
+    colors_list = ['#78C850', '#F08030',  '#6890F0',  '#A8B820',  '#F8D030', '#E0C068', '#C03028', '#F85888', '#98D8D8']
+    for i in range(len(data)):
+        violinplot = axs[i].violinplot(data[i], showmeans=False, showmedians=False, showextrema=False)
+        quartile1, median, quartile3 = numpy.percentile(data[i], [25, 50, 75])
+        whiskers_min, whiskers_max = whiskers(data[i], quartile1, quartile3)
+        axs[i].scatter(1, median, marker='o', color='white', s=10, zorder=3)
+        axs[i].vlines(1, quartile1, quartile3, color='k', linestyle='-', lw=5)
+        axs[i].vlines(1, whiskers_min, whiskers_max, color='k', linestyle='-', lw=1)
+        for pc in violinplot["bodies"]:
+            pc.set_facecolor(colors_list[i%len(colors_list)])
+            pc.set_edgecolor('black')
+            pc.set_alpha(1)
+        # Make some labels on the figure using the values derived above
+        axs[i].text(1.02, median, percentage_str(median), va='center', fontsize=12)
+        axs[i].set_title(labels[i])
+        # plt.savefig("%s.pdf"%labels[i])
+    plt.savefig("new.pdf")
 
 def main():
     options = parse_options()
@@ -178,7 +212,7 @@ def main():
                                     pobs_augmentation_passed_count = pobs_augmentation_passed_count + 1
                                     if dockerfile["pobs_application_build"] == "successful":
                                         # increasement of the image size
-                                        image_size_increasement.append(image_size_to_float(dockerfile["pobs_application_build_image_size"]) - image_size_to_float(dockerfile["ori_build_image_size"]))
+                                        image_size_increasement.append((image_size_to_float(dockerfile["pobs_application_build_image_size"]) - image_size_to_float(dockerfile["ori_build_image_size"]))/image_size_to_float(dockerfile["ori_build_image_size"]))
                                         pobs_application_build_passed_count = pobs_application_build_passed_count + 1
                                         if dockerfile["pobs_syscall_monitor_enabled"]: pobs_syscall_monitor_enabled_count = pobs_syscall_monitor_enabled_count + 1
                                         if dockerfile["pobs_apm_agent_attached"]: pobs_apm_agent_attached_count = pobs_apm_agent_attached_count + 1
@@ -186,9 +220,9 @@ def main():
                                             pobs_application_run_passed_count = pobs_application_run_passed_count + 1
                                             # increasement of the cpu usage and memory usage
                                             if not math.isnan(dockerfile["pobs_application_run_metrics"]["cpu_mean"]) and not math.isnan(dockerfile["ori_application_run_metrics"]["cpu_mean"]):
-                                                cpu_usage_increasement.append(dockerfile["pobs_application_run_metrics"]["cpu_mean"] - dockerfile["ori_application_run_metrics"]["cpu_mean"])
+                                                cpu_usage_increasement.append((dockerfile["pobs_application_run_metrics"]["cpu_mean"] - dockerfile["ori_application_run_metrics"]["cpu_mean"])/dockerfile["ori_application_run_metrics"]["cpu_mean"])
                                             if not math.isnan(dockerfile["pobs_application_run_metrics"]["memory_mean"]) and not math.isnan(dockerfile["ori_application_run_metrics"]["memory_mean"]):
-                                                memory_usage_increasement.append(dockerfile["pobs_application_run_metrics"]["memory_mean"] - dockerfile["ori_application_run_metrics"]["memory_mean"])
+                                                memory_usage_increasement.append((dockerfile["pobs_application_run_metrics"]["memory_mean"] - dockerfile["ori_application_run_metrics"]["memory_mean"])/dockerfile["ori_application_run_metrics"]["memory_mean"])
                                         # else:
                                         #     print("%s: %s"%(project["full_name"], dockerfile["path"]))
                                         # if not dockerfile["pobs_syscall_monitor_enabled"] and dockerfile["pobs_apm_agent_attached"]:
@@ -220,7 +254,7 @@ def main():
         # draw_distribution(project_info_data, project_info_labels)
         # overhead_data = [image_size_increasement, cpu_usage_increasement, memory_usage_increasement]
         # overhead_labels = ["Image Size", "CPU", "Memory"]
-        # draw_distribution(overhead_data, overhead_labels)
+        # draw_distribution_violin(overhead_data, overhead_labels)
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
