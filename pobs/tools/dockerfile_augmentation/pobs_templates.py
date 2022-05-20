@@ -36,6 +36,7 @@ COPY ./pobs_files/ /
 def set_env():
     scripts = """
 # set up environment variables
+ENV POBS_SYSCALL_MONITOR=ON
 ENV ELASTIC_APM_SERVICE_NAME=app
 ENV ELASTIC_APM_APPLICATION_PACKAGES=
 ENV ELASTIC_APM_SERVER_URL=http://172.17.0.1:8200
