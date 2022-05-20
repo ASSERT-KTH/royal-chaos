@@ -1,0 +1,32 @@
+Sending build context to Docker daemon  11.28MB
+Step 1/13 : FROM openjdk:8-jdk-alpine
+ ---> a3562aa0b991
+Step 2/13 : LABEL maintainer="SNOMED International <tooling@snomed.org>"
+ ---> Running in 3c747e780810
+Removing intermediate container 3c747e780810
+ ---> 0a016d4a0656
+Step 3/13 : ARG SUID=1042
+ ---> Running in 3116354d05c8
+Removing intermediate container 3116354d05c8
+ ---> db29a4f45bb6
+Step 4/13 : ARG SGID=1042
+ ---> Running in 42a40e61168c
+Removing intermediate container 42a40e61168c
+ ---> 19c5a50a4416
+Step 5/13 : VOLUME /tmp
+ ---> Running in 9b38bb501830
+Removing intermediate container 9b38bb501830
+ ---> c57a817123d1
+Step 6/13 : RUN mkdir /app
+ ---> Running in bead492457c6
+Removing intermediate container bead492457c6
+ ---> 830c7b1d22bf
+Step 7/13 : WORKDIR /app
+ ---> Running in def437e6ded1
+Removing intermediate container def437e6ded1
+ ---> b26c93a84bbd
+Step 8/13 : RUN mkdir /snomed-drools-rules
+ ---> Running in 744845b81741
+Removing intermediate container 744845b81741
+ ---> 71dc7dab1b83
+Step 9/13 : ADD target/snowstorm-*.jar snowstorm.jar

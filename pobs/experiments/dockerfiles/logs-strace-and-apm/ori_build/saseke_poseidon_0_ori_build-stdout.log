@@ -1,0 +1,8 @@
+Sending build context to Docker daemon  11.78kB
+Step 1/5 : FROM openjdk:8-jdk-alpine
+ ---> a3562aa0b991
+Step 2/5 : VOLUME /tmp
+ ---> Running in 06b3f3f45ec9
+Removing intermediate container 06b3f3f45ec9
+ ---> 6db25b873dbe
+Step 3/5 : ADD ./build/libs/poseidon-eureka-server-0.1.0.jar eureka.jar

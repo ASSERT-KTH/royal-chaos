@@ -1,0 +1,378 @@
+Sending build context to Docker daemon  38.05MB
+Step 1/16 : FROM dexterbt1/kestrel
+ ---> dc76046c1309
+Step 2/16 : WORKDIR /usr/local/kestrel/current
+ ---> Using cache
+ ---> af847175821f
+Step 3/16 : CMD ["java","-jar","kestrel_2.9.2-2.4.2-SNAPSHOT.jar","-f","config/development.scala"]
+ ---> Using cache
+ ---> 1145631ee577
+Step 4/16 : ADD https://github.com/just-containers/s6-overlay/releases/download/v2.2.0.1/s6-overlay-amd64-installer /tmp/
+
+
+ ---> f8b1c6f4c886
+Step 5/16 : RUN chmod +x /tmp/s6-overlay-amd64-installer && /tmp/s6-overlay-amd64-installer /
+ ---> Running in f416be535883
+./
+./usr/
+./usr/bin/
+./usr/bin/justc-envdir
+./usr/bin/with-contenv-legacy
+[91munable to lstat /./usr/bin/execlineb: No such file or directory
+unable to utime /./usr/bin/execlineb: No such file or directory
+[0m./usr/bin/execlineb./usr/bin/printcontenv
+./usr/bin/logutil-newfifo
+./usr/bin/logutil-service
+./usr/bin/logutil-service-main
+./usr/bin/with-retries
+./usr/bin/with-contenv
+./usr/bin/fix-attrs
+./libexec/
+[91munable to stat /./libexec/: No such file or directory
+[0m./libexec/s6-rc-oneshot-run
+./libexec/s6-rc-fdholder-filler
+./libexec/s6lockd-helper
+./etc/
+./etc/cont-finish.d/
+[91munable to stat /./etc/cont-finish.d/: No such file or directory
+[0m./etc/s6/
+[91munable to stat /./etc/s6/: No such file or directory
+[0m./etc/s6/init-no-catchall/
+[91munable to stat /./etc/s6/init-no-catchall/: No such file or directory
+[0m./etc/s6/init-no-catchall/init-stage1
+./etc/s6/init-no-catchall/init-stage2
+./etc/s6/services/
+[91munable to stat /./etc/s6/services/: No such file or directory
+[0m./etc/s6/services/s6-svscan-log/
+[91munable to stat /./etc/s6/services/s6-svscan-log/: No such file or directory
+[0m./etc/s6/services/s6-svscan-log/run
+./etc/s6/services/s6-fdholderd/
+[91munable to stat /./etc/s6/services/s6-fdholderd/: No such file or directory
+[0m./etc/s6/services/s6-fdholderd/rules/
+[91munable to stat /./etc/s6/services/s6-fdholderd/rules/: No such file or directory
+[0m./etc/s6/services/s6-fdholderd/rules/uid/
+[91munable to stat /./etc/s6/services/s6-fdholderd/rules/uid/: No such file or directory
+[0m./etc/s6/services/s6-fdholderd/rules/uid/0/
+[91munable to stat /./etc/s6/services/s6-fdholderd/rules/uid/0/: No such file or directory
+[0m./etc/s6/services/s6-fdholderd/rules/uid/0/env/
+[91munable to stat /./etc/s6/services/s6-fdholderd/rules/uid/0/env/: No such file or directory
+[0m./etc/s6/services/s6-fdholderd/rules/uid/0/env/S6_FDHOLDER_GETDUMP
+./etc/s6/services/s6-fdholderd/rules/uid/0/env/S6_FDHOLDER_LIST
+./etc/s6/services/s6-fdholderd/rules/uid/0/env/S6_FDHOLDER_RETRIEVE_REGEX
+./etc/s6/services/s6-fdholderd/rules/uid/0/env/S6_FDHOLDER_SETDUMP
+./etc/s6/services/s6-fdholderd/rules/uid/0/env/S6_FDHOLDER_STORE_REGEX
+./etc/s6/services/s6-fdholderd/rules/uid/0/allow
+./etc/s6/services/s6-fdholderd/rules/uid/default/
+[91munable to stat /./etc/s6/services/s6-fdholderd/rules/uid/default/: No such file or directory
+[0m./etc/s6/services/s6-fdholderd/rules/uid/default/env/
+./etc/s6/services/s6-fdholderd/rules/uid/default/env/S6_FDHOLDER_LIST
+[91munable to stat /./etc/s6/services/s6-fdholderd/rules/uid/default/env/: No such file or directory
+[0m./etc/s6/services/s6-fdholderd/rules/uid/default/allow
+./etc/s6/services/s6-fdholderd/down
+./etc/s6/services/s6-fdholderd/run
+./etc/s6/services/s6-fdholderd/notification-fd
+./etc/s6/services/.s6-svscan/
+[91munable to stat /./etc/s6/services/.s6-svscan/: No such file or directory
+[0m./etc/s6/services/.s6-svscan/crash
+./etc/s6/services/.s6-svscan/finish
+./etc/s6/init-catchall/
+[91munable to stat /./etc/s6/init-catchall/: No such file or directory
+[0m./etc/s6/init-catchall/init-stage1
+./etc/s6/init-catchall/init-stage2
+./etc/s6/init/
+[91munable to stat /./etc/s6/init/: No such file or directory
+[0m./etc/s6/init/env-stage2/
+[91munable to stat /./etc/s6/init/env-stage2/: No such file or directory
+[0m./etc/s6/init/init-stage2-fixattrs.txt
+./etc/s6/init/init-stage1
+./etc/s6/init/env/
+[91munable to stat /./etc/s6/init/env/: No such file or directory
+[0m./etc/s6/init/env/PATH
+./etc/s6/init/init-stage2
+./etc/s6/init/init-stage2-redirfd
+./etc/s6/init/init-stage3
+./etc/services.d/
+[91munable to stat /./etc/services.d/: No such file or directory
+[0m./etc/leapsecs.dat
+./etc/fix-attrs.d/
+[91munable to stat /./etc/fix-attrs.d/: No such file or directory
+[0m./etc/cont-init.d/
+[91munable to stat /./etc/cont-init.d/: No such file or directory
+[0m./bin/
+./bin/s6-dnssrv
+./bin/s6-ftrig-listen1
+./bin/s6-taiclock
+./bin/s6-linkname
+./bin/runblock
+./bin/s6-dnsip
+./bin/s6-rc
+./bin/s6-sudoc
+./bin/s6-setuidgid
+./bin/s6-rc-compile
+./bin/s6-update-symlinks
+./bin/fdreserve
+./bin/export
+./bin/s6-cat
+./bin/s6-tcpserver4-socketbinder
+./bin/foreground
+./bin/s6-sync
+./bin/s6-fdholder-list
+./bin/fdclose
+./bin/define
+./bin/s6-svperms
+./bin/background
+./bin/s6-applyuidgid
+./bin/s6-rc-update
+./bin/fdmove
+./bin/s6-ftrig-notify
+./bin/s6-tcpserver4
+./bin/posix-cd
+./bin/s6-ftrig-listen
+./bin/s6-freeramdisk
+./bin/redirfd
+./bin/s6-svok
+./bin/shift
+./bin/wait
+./bin/execlineb
+./bin/s6-tcpserver
+./bin/s6-fdholder-transferdump
+./bin/s6-dnsq
+./bin/s6-sleep
+./bin/s6-head
+./bin/s6-hostname
+./bin/multisubstitute
+./bin/withstdinas
+./bin/fdblock
+./bin/s6-ipcserver
+./bin/s6-test
+./bin/s6-dnsqualify
+./bin/s6-svlisten1
+./bin/importas
+./bin/s6-ident-client
+./bin/s6-supervise
+./bin/s6-getservbyname
+./bin/s6-svscanctl
+./bin/s6-dnsip6-filter
+./bin/s6-basename
+./bin/s6-false
+./bin/s6-dnsmx
+./bin/s6-rc-format-upgrade
+./bin/s6-ioconnect
+./bin/s6-softlimit
+./bin/s6-sort
+./bin/s6-quote-filter
+./bin/s6-fghack
+./bin/s6-dnsip4
+./bin/getpid
+./bin/s6-unquote-filter
+./bin/forstdin
+./bin/s6-fdholder-daemon
+./bin/trap
+./bin/s6-rc-db
+./bin/s6-svc
+./bin/s6-tcpserver6
+[91munable to lstat /./bin/umask: No such file or directory
+unable to utime /./bin/umask: No such file or directory
+[0m./bin/umask./bin/s6-dnssoa
+./bin/s6-tcpclient
+./bin/s6-pause
+./bin/pipeline
+./bin/s6-quote
+./bin/s6-clock
+./bin/s6-printenv
+./bin/s6-setsid
+./bin/if
+./bin/seekablepipe
+./bin/s6-tail
+./bin/ifthenelse
+./bin/s6-permafailon
+./bin/s6-fdholder-retrieve
+./bin/s6-fillurandompool
+./bin/fdswap
+./bin/s6-envdir
+./bin/s6-tcpserver6-socketbinder
+./bin/homeof
+./bin/s6-chroot
+./bin/s6-rmrf
+./bin/s6-true
+./bin/s6-ln
+./bin/forbacktickx
+./bin/s6-umount
+./bin/s6-fdholder-setdump
+./bin/envfile
+./bin/s6-format-filter
+./bin/exec
+./bin/s6-dnsname
+./bin/execline-umask
+./bin/s6-echo
+./bin/s6-seq
+./bin/s6-dnsname-filter
+./bin/s6-ipcserver-socketbinder
+./bin/s6-cut
+./bin/s6-svwait
+./bin/s6-randomip
+./bin/s6-taiclockd
+./bin/s6-clockadd
+./bin/ucspilogd
+./bin/s6-rename
+./bin/s6-dumpenv
+./bin/s6-setlock
+./bin/emptyenv
+./bin/multidefine
+./bin/s6-sntpclock
+./bin/s6-svdt
+./bin/s6lockd
+./bin/s6-tai64ndiff
+./bin/s6-fdholderd
+./bin/dollarat
+./bin/s6-dnsip4-filter
+./bin/s6-expr
+./bin/execline-cd
+./bin/s6-overlay-preinit
+./bin/s6-ipcclient
+./bin/s6-chmod
+./bin/s6-cleanfifodir
+./bin/s6-tcpserver4d
+./bin/s6-ipcserverd
+./bin/s6-ftrig-wait
+./bin/s6-svstat
+./bin/loopwhilex
+./bin/s6-fdholder-getdump
+./bin/s6-hiercopy
+./bin/s6-rc-dryrun
+./bin/s6-fdholder-delete
+./bin/s6-tcpserver6d
+./bin/skadnsd
+./bin/s6-ps
+./bin/exit
+./bin/s6-sudod
+./bin/elglob
+./bin/s6-clockview
+./bin/s6-tai64n
+./bin/ifte
+./bin/ifelse
+./bin/s6-swapoff
+./bin/elgetopt
+./bin/s6-accessrules-fs-from-cdb
+./bin/s6-dnsqr
+./bin/s6-connlimit
+./bin/s6-svlisten
+./bin/heredoc
+./bin/s6-swapon
+./bin/elgetpositionals
+./bin/posix-umask
+./bin/tryexec
+./bin/s6-usertree-maker
+./bin/s6-touch
+./bin/s6-grep
+./bin/s6-svscan
+[91munable to lstat /./bin/cd: No such file or directory
+[0m./bin/cd./bin/s6-ftrigrd
+./bin/s6-tcpserver-access
+./bin/s6-dnsns
+./bin/piperw
+./bin/minidentd
+./bin/s6-envuidgid
+./bin/backtick
+./bin/s6-dnstxt
+./bin/unexport
+./bin/s6-uniquename
+./bin/s6-nice
+./bin/s6-mkdir
+./bin/s6-mkfifodir
+./bin/s6-sudo
+./bin/getcwd
+./bin/s6-mkfifo
+./bin/s6-log
+./bin/s6-mount
+./bin/s6-maximumtime
+./bin/s6-nuke
+./bin/s6-dirname
+./bin/forx
+./bin/s6-ls
+./bin/s6-unquote
+./bin/s6-rc-init
+./bin/s6-chown
+./bin/s6-dnsip6
+./bin/s6-accessrules-cdb-from-fs
+./bin/s6-svdt-clear
+./bin/s6-notifyoncheck
+./bin/s6-pivotchroot
+./bin/s6-logwatch
+./bin/s6-ipcserver-access
+./bin/s6-rc-bundle
+./bin/s6-fdholder-store
+./bin/s6-env
+./bin/s6-tai64nlocal
+./init
+Removing intermediate container f416be535883
+ ---> 49064cefe205
+Step 6/16 : COPY ./pobs_files/ /
+ ---> d792e8a3e918
+Step 7/16 : ENV ELASTIC_APM_SERVICE_NAME=app
+ ---> Running in 33fa74e71a7c
+Removing intermediate container 33fa74e71a7c
+ ---> aa4babe7e5f1
+Step 8/16 : ENV ELASTIC_APM_APPLICATION_PACKAGES=
+ ---> Running in 915640de45cf
+Removing intermediate container 915640de45cf
+ ---> 9144a50ff0b8
+Step 9/16 : ENV ELASTIC_APM_SERVER_URL=http://172.17.0.1:8200
+ ---> Running in 55f1633423bb
+Removing intermediate container 55f1633423bb
+ ---> f1051f15bb23
+Step 10/16 : ENV JAVA_TOOL_OPTIONS "$JAVA_TOOL_OPTIONS -javaagent:/home/elastic/elastic-apm-agent-1.30.1.jar -Delastic.apm.log_ecs_reformatting=OVERRIDE"
+ ---> Running in fae59f021a66
+Removing intermediate container fae59f021a66
+ ---> 28ca60131f84
+Step 11/16 : ENV JAVA_OPTS "$JAVA_OPTS -noverify"
+ ---> Running in e78893d0c474
+Removing intermediate container e78893d0c474
+ ---> ecad533b0ed6
+Step 12/16 : RUN apt-get update; exit 0
+ ---> Running in 7508b0d1b556
+Get:1 http://security.debian.org jessie/updates InRelease [44.9 kB]
+Get:2 http://ppa.launchpad.net trusty InRelease [15.5 kB]
+Err http://security.debian.org jessie/updates InRelease
+  
+Ign http://http.debian.net jessie InRelease
+Get:3 http://http.debian.net jessie-updates InRelease [16.3 kB]
+Get:4 http://http.debian.net jessie Release.gpg [1652 B]
+Get:5 http://http.debian.net jessie Release [77.3 kB]
+Get:6 http://ppa.launchpad.net trusty/main Sources [14 B]
+Err http://http.debian.net jessie-updates InRelease
+  
+Ign http://http.debian.net jessie Release
+Get:7 http://ppa.launchpad.net trusty/main amd64 Packages [14 B]
+Ign http://http.debian.net jessie/main amd64 Packages/DiffIndex
+Err http://http.debian.net jessie/main amd64 Packages
+  
+Get:8 http://http.debian.net jessie/main amd64 Packages [6818 kB]
+Fetched 6973 kB in 10s (691 kB/s)
+Reading package lists...
+[91mW: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: http://security.debian.org jessie/updates InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 9D6D8F6BC857C906 NO_PUBKEY AA8E81B4331F7F50
+
+W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: http://http.debian.net jessie-updates InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 7638D0442B90D010
+
+W: GPG error: http://http.debian.net jessie Release: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 7638D0442B90D010
+W: Failed to fetch http://http.debian.net/debian/dists/jessie-updates/InRelease  
+
+W: Failed to fetch http://security.debian.org/dists/jessie/updates/InRelease  
+
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+[0mRemoving intermediate container 7508b0d1b556
+ ---> 0d73750e118f
+Step 13/16 : RUN apt-get install -y procps
+ ---> Running in 0cc1f6fc967e
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages will be upgraded:
+  procps
+1 upgraded, 0 newly installed, 0 to remove and 140 not upgraded.
+Need to get 236 kB of archives.
+After this operation, 95.2 kB disk space will be freed.
+WARNING: The following packages cannot be authenticated!
+  procps
+[91mE: There are problems and -y was used without --force-yes
+[0m

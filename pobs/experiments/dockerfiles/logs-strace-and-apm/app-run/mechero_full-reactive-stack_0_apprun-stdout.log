@@ -1,0 +1,161 @@
+[s6-init] making user provided files available at /var/run/s6/etc...exited 0.
+[s6-init] ensuring user provided files have correct perms...exited 0.
+[fix-attrs.d] applying ownership & permissions fixes...
+[fix-attrs.d] done.
+[cont-init.d] executing container initialization scripts...
+[cont-init.d] done.
+[services.d] starting services
+system call monitor started
+[services.d] done.
+2022-05-20 12:50:23,821 [main] INFO  co.elastic.apm.agent.util.JmxUtils - Found JVM-specific OperatingSystemMXBean interface: com.sun.management.OperatingSystemMXBean
+2022-05-20 12:50:23,905 [main] INFO  co.elastic.apm.agent.configuration.StartupInfo - Starting Elastic APM 1.30.1 as run_pobs_full-reactive-stack_0 (1.0.0-SNAPSHOT) on Java 14.0.2 Runtime version: 14.0.2+12-46 VM version: 14.0.2+12-46 (Oracle Corporation) Linux 5.4.0-42-generic
+2022-05-20 12:50:23,906 [main] INFO  co.elastic.apm.agent.configuration.StartupInfo - service_name: 'run_pobs_full-reactive-stack_0' (source: Environment Variables)
+2022-05-20 12:50:23,906 [main] INFO  co.elastic.apm.agent.configuration.StartupInfo - server_url: 'http://172.17.0.1:8200' (source: Environment Variables)
+2022-05-20 12:50:23,906 [main] INFO  co.elastic.apm.agent.configuration.StartupInfo - log_ecs_reformatting: 'OVERRIDE' (source: Java System Properties)
+2022-05-20 12:50:23,906 [main] WARN  co.elastic.apm.agent.configuration.StartupInfo - To enable all features and decrease startup time, please configure application_packages
+system call monitor started
+system call monitor started
+2022-05-20 12:50:25,222 [elastic-apm-server-healthcheck] INFO  co.elastic.apm.agent.report.ApmServerHealthChecker - Elastic APM server is available: {  "build_date": "2021-11-04T13:10:15Z",  "build_sha": "0702551667e5319822d00dee613ea2a1501615bf",  "version": "7.15.2"}
+2022-05-20 12:50:25,227 [main] INFO  co.elastic.apm.agent.impl.ElasticApmTracer - Tracer switched to RUNNING state
+2022-05-20 12:50:25,830 [elastic-apm-remote-config-poller] INFO  co.elastic.apm.agent.configuration.ApmServerConfigurationSource - Received new configuration from APM Server: {}
+system call monitor started
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.3.0.RELEASE)
+
+{"@timestamp":"2022-05-20T12:50:26.313Z", "log.level": "INFO", "message":"Starting ReactiveWebApplication v1.0.0-SNAPSHOT on 1fe05935c2eb with PID 194 (/usr/src/reactive-backend/reactive-web-1.0.0-SNAPSHOT.jar started by root in /usr/src/reactive-backend)", "ecs.version": "1.2.0","service.name":"run_pobs_full-reactive-stack_0","event.dataset":"run_pobs_full-reactive-stack_0.CONSOLE","process.thread.name":"main","log.logger":"com.thepracticaldeveloper.reactiveweb.ReactiveWebApplication"}
+{"@timestamp":"2022-05-20T12:50:26.325Z", "log.level": "INFO", "message":"No active profile set, falling back to default profiles: default", "ecs.version": "1.2.0","service.name":"run_pobs_full-reactive-stack_0","event.dataset":"run_pobs_full-reactive-stack_0.CONSOLE","process.thread.name":"main","log.logger":"com.thepracticaldeveloper.reactiveweb.ReactiveWebApplication"}
+2022-05-20 12:50:26,689 [main] INFO  co.elastic.apm.agent.bci.bytebuddy.ErrorLoggingListener - org.springframework.web.context.support.GenericWebApplicationContext refers to a missing class.
+2022-05-20 12:50:26,691 [main] INFO  co.elastic.apm.agent.bci.bytebuddy.ErrorLoggingListener - org.springframework.web.context.ConfigurableWebApplicationContext refers to a missing class.
+2022-05-20 12:50:26,692 [main] INFO  co.elastic.apm.agent.bci.bytebuddy.ErrorLoggingListener - org.springframework.web.context.WebApplicationContext refers to a missing class.
+system call monitor started
+{"@timestamp":"2022-05-20T12:50:27.380Z", "log.level": "INFO", "message":"Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.", "ecs.version": "1.2.0","service.name":"run_pobs_full-reactive-stack_0","event.dataset":"run_pobs_full-reactive-stack_0.CONSOLE","process.thread.name":"main","log.logger":"org.springframework.data.repository.config.RepositoryConfigurationDelegate"}
+{"@timestamp":"2022-05-20T12:50:27.547Z", "log.level": "INFO", "message":"Finished Spring Data repository scanning in 161ms. Found 1 Reactive MongoDB repository interfaces.", "ecs.version": "1.2.0","service.name":"run_pobs_full-reactive-stack_0","event.dataset":"run_pobs_full-reactive-stack_0.CONSOLE","process.thread.name":"main","log.logger":"org.springframework.data.repository.config.RepositoryConfigurationDelegate"}
+{"@timestamp":"2022-05-20T12:50:27.553Z", "log.level": "INFO", "message":"Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.", "ecs.version": "1.2.0","service.name":"run_pobs_full-reactive-stack_0","event.dataset":"run_pobs_full-reactive-stack_0.CONSOLE","process.thread.name":"main","log.logger":"org.springframework.data.repository.config.RepositoryConfigurationDelegate"}
+{"@timestamp":"2022-05-20T12:50:27.557Z", "log.level": "INFO", "message":"Finished Spring Data repository scanning in 4ms. Found 1 MongoDB repository interfaces.", "ecs.version": "1.2.0","service.name":"run_pobs_full-reactive-stack_0","event.dataset":"run_pobs_full-reactive-stack_0.CONSOLE","process.thread.name":"main","log.logger":"org.springframework.data.repository.config.RepositoryConfigurationDelegate"}
+system call monitor started
+{"@timestamp":"2022-05-20T12:50:28.881Z", "log.level": "INFO", "message":"Exposing 2 endpoint(s) beneath base path '/actuator'", "ecs.version": "1.2.0","service.name":"run_pobs_full-reactive-stack_0","event.dataset":"run_pobs_full-reactive-stack_0.CONSOLE","process.thread.name":"main","log.logger":"org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver"}
+2022-05-20 12:50:29,021 [main] INFO  co.elastic.apm.agent.micrometer.MicrometerMetricsReporter - Registering Micrometer MeterRegistry: io.micrometer.core.instrument.simple.SimpleMeterRegistry@3739f3c9
+system call monitor started
+{"@timestamp":"2022-05-20T12:50:29.208Z", "log.level": "INFO", "message":"Netty started on port(s): 8080", "ecs.version": "1.2.0","service.name":"run_pobs_full-reactive-stack_0","event.dataset":"run_pobs_full-reactive-stack_0.CONSOLE","process.thread.name":"main","log.logger":"org.springframework.boot.web.embedded.netty.NettyWebServer"}
+{"@timestamp":"2022-05-20T12:50:29.227Z", "log.level": "INFO", "message":"Started ReactiveWebApplication in 3.52 seconds (JVM running for 6.086)", "ecs.version": "1.2.0","service.name":"run_pobs_full-reactive-stack_0","event.dataset":"run_pobs_full-reactive-stack_0.CONSOLE","process.thread.name":"main","log.logger":"com.thepracticaldeveloper.reactiveweb.ReactiveWebApplication"}
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+{"@timestamp":"2022-05-20T12:51:29.345Z", "log.level": "INFO", "message":"\n\nError starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.", "ecs.version": "1.2.0","service.name":"run_pobs_full-reactive-stack_0","event.dataset":"run_pobs_full-reactive-stack_0.CONSOLE","process.thread.name":"main","log.logger":"org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener"}
+{"@timestamp":"2022-05-20T12:51:29.360Z", "log.level":"ERROR", "message":"Application run failed", "ecs.version": "1.2.0","service.name":"run_pobs_full-reactive-stack_0","event.dataset":"run_pobs_full-reactive-stack_0.CONSOLE","process.thread.name":"main","log.logger":"org.springframework.boot.SpringApplication","error.type":"java.lang.IllegalStateException","error.message":"Failed to execute ApplicationRunner","error.stack_trace":"java.lang.IllegalStateException: Failed to execute ApplicationRunner\n\tat org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:789)\n\tat org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:776)\n\tat org.springframework.boot.SpringApplication.run(SpringApplication.java:322)\n\tat org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)\n\tat org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)\n\tat com.thepracticaldeveloper.reactiveweb.ReactiveWebApplication.main(ReactiveWebApplication.java:10)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:564)\n\tat org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49)\n\tat org.springframework.boot.loader.Launcher.launch(Launcher.java:109)\n\tat org.springframework.boot.loader.Launcher.launch(Launcher.java:58)\n\tat org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:88)\nCaused by: org.springframework.dao.DataAccessResourceFailureException: Timed out after 30000 ms while waiting for a server that matches ReadPreferenceServerSelector{readPreference=primary}. Client view of cluster state is {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:27017}, caused by {java.net.ConnectException: Connection refused}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches ReadPreferenceServerSelector{readPreference=primary}. Client view of cluster state is {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:27017}, caused by {java.net.ConnectException: Connection refused}}]\n\tat org.springframework.data.mongodb.core.MongoExceptionTranslator.translateExceptionIfPossible(MongoExceptionTranslator.java:88)\n\tat org.springframework.data.mongodb.core.ReactiveMongoTemplate.potentiallyConvertRuntimeException(ReactiveMongoTemplate.java:2806)\n\tat org.springframework.data.mongodb.core.ReactiveMongoTemplate.lambda$translateException$90(ReactiveMongoTemplate.java:2789)\n\tat reactor.core.publisher.Mono.lambda$onErrorMap$30(Mono.java:3284)\n\tat reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:88)\n\tat reactor.core.publisher.MonoFlatMap$FlatMapMain.secondError(MonoFlatMap.java:185)\n\tat reactor.core.publisher.MonoFlatMap$FlatMapInner.onError(MonoFlatMap.java:251)\n\tat reactor.core.publisher.MonoNext$NextSubscriber.onError(MonoNext.java:87)\n\tat com.mongodb.reactivestreams.client.internal.AbstractSubscription.onError(AbstractSubscription.java:139)\n\tat com.mongodb.reactivestreams.client.internal.SingleResultCallbackSubscription.lambda$requestInitialData$0(SingleResultCallbackSubscription.java:41)\n\tat com.mongodb.internal.async.ErrorHandlingResultCallback.onResult(ErrorHandlingResultCallback.java:48)\n\tat com.mongodb.internal.async.client.OperationExecutorImpl$1$1$1.onResult(OperationExecutorImpl.java:92)\n\tat com.mongodb.internal.operation.CountOperation$1.onResult(CountOperation.java:272)\n\tat com.mongodb.internal.operation.CountOperation$1.onResult(CountOperation.java:268)\n\tat com.mongodb.internal.async.ErrorHandlingResultCallback.onResult(ErrorHandlingResultCallback.java:48)\n\tat com.mongodb.internal.operation.OperationHelper$ReferenceCountedReleasingWrappedCallback.onResult(OperationHelper.java:411)\n\tat com.mongodb.internal.operation.CommandOperationHelper$8.call(CommandOperationHelper.java:413)\n\tat com.mongodb.internal.operation.OperationHelper$AsyncCallableWithConnectionAndSourceCallback.onResult(OperationHelper.java:628)\n\tat com.mongodb.internal.operation.OperationHelper$AsyncCallableWithConnectionAndSourceCallback.onResult(OperationHelper.java:618)\n\tat com.mongodb.internal.async.ErrorHandlingResultCallback.onResult(ErrorHandlingResultCallback.java:48)\n\tat com.mongodb.internal.binding.AsyncClusterBinding$1.onResult(AsyncClusterBinding.java:96)\n\tat com.mongodb.internal.binding.AsyncClusterBinding$1.onResult(AsyncClusterBinding.java:92)\n\tat com.mongodb.internal.connection.BaseCluster$ServerSelectionRequest.onResult(BaseCluster.java:428)\n\tat com.mongodb.internal.connection.BaseCluster.handleServerSelectionRequest(BaseCluster.java:311)\n\tat com.mongodb.internal.connection.BaseCluster.access$800(BaseCluster.java:62)\n\tat com.mongodb.internal.connection.BaseCluster$WaitQueueHandler.run(BaseCluster.java:474)\n\tat java.base/java.lang.Thread.run(Thread.java:832)\n\tSuppressed: java.lang.Exception: #block terminated with an error\n\t\tat reactor.core.publisher.BlockingSingleSubscriber.blockingGet(BlockingSingleSubscriber.java:99)\n\t\tat reactor.core.publisher.Mono.block(Mono.java:1678)\n\t\tat com.thepracticaldeveloper.reactiveweb.configuration.QuijoteDataLoader.run(QuijoteDataLoader.java:32)\n\t\tat org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:786)\n\t\tat org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:776)\n\t\tat org.springframework.boot.SpringApplication.run(SpringApplication.java:322)\n\t\tat org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)\n\t\tat org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)\n\t\tat com.thepracticaldeveloper.reactiveweb.ReactiveWebApplication.main(ReactiveWebApplication.java:10)\n\t\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\t\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\t\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\t\tat java.base/java.lang.reflect.Method.invoke(Method.java:564)\n\t\tat org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49)\n\t\tat org.springframework.boot.loader.Launcher.launch(Launcher.java:109)\n\t\tat org.springframework.boot.loader.Launcher.launch(Launcher.java:58)\n\t\tat org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:88)\nCaused by: com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches ReadPreferenceServerSelector{readPreference=primary}. Client view of cluster state is {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:27017}, caused by {java.net.ConnectException: Connection refused}}]\n\tat com.mongodb.internal.connection.BaseCluster.createTimeoutException(BaseCluster.java:403)\n\t... 4 more\n"}
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started

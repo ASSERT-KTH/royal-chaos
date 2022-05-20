@@ -1,0 +1,4 @@
+Sending build context to Docker daemon  340.5kB
+Step 1/2 : FROM sdaschner/wildfly:javaee8-kafka-b1
+ ---> 7a638cd4a3c8
+Step 2/2 : COPY build/libs/beans.war $DEPLOYMENT_DIR
