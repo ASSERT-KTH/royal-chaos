@@ -130,7 +130,7 @@ def draw_distribution_violin(data, labels):
         whiskers_min = numpy.clip(lower_adjacent_value, min(values), q1)
         return whiskers_min, whiskers_max
 
-    figure, axs = plt.subplots(figsize=(9, 6), nrows=1, ncols=len(data))
+    figure, axs = plt.subplots(figsize=(9, 5), nrows=1, ncols=len(data))
     colors_list = ['#78C850', '#F08030',  '#6890F0',  '#A8B820',  '#F8D030', '#E0C068', '#C03028', '#F85888', '#98D8D8']
     for i in range(len(data)):
         violinplot = axs[i].violinplot(data[i], showmeans=False, showmedians=False, showextrema=False)
@@ -147,6 +147,7 @@ def draw_distribution_violin(data, labels):
         axs[i].text(1.02, median, percentage_str(median), va='center', fontsize=12)
         axs[i].set_title(labels[i])
         # plt.savefig("%s.pdf"%labels[i])
+    plt.subplots_adjust(left=0.1, right=0.95, wspace=0.5)
     plt.savefig("new.pdf")
 
 def main():
@@ -179,6 +180,7 @@ def main():
         # overhead related
         image_size_increasement = list()
         cpu_usage_increasement = list()
+        cpu_instructions_increasement = list()
         memory_usage_increasement = list()
 
         for project in projects:
@@ -223,6 +225,8 @@ def main():
                                                 cpu_usage_increasement.append((dockerfile["pobs_application_run_metrics"]["cpu_mean"] - dockerfile["ori_application_run_metrics"]["cpu_mean"])/dockerfile["ori_application_run_metrics"]["cpu_mean"])
                                             if not math.isnan(dockerfile["pobs_application_run_metrics"]["memory_mean"]) and not math.isnan(dockerfile["ori_application_run_metrics"]["memory_mean"]):
                                                 memory_usage_increasement.append((dockerfile["pobs_application_run_metrics"]["memory_mean"] - dockerfile["ori_application_run_metrics"]["memory_mean"])/dockerfile["ori_application_run_metrics"]["memory_mean"])
+                                            if dockerfile["pobs_application_run_metrics"]["cpu_instructions"] != -1 and dockerfile["ori_application_run_metrics"]["cpu_instructions"] != -1:
+                                                cpu_instructions_increasement.append((dockerfile["pobs_application_run_metrics"]["cpu_instructions"] - dockerfile["ori_application_run_metrics"]["cpu_instructions"])/dockerfile["ori_application_run_metrics"]["cpu_instructions"])
                                         # else:
                                         #     print("%s: %s"%(project["full_name"], dockerfile["path"]))
                                         # if not dockerfile["pobs_syscall_monitor_enabled"] and dockerfile["pobs_apm_agent_attached"]:
@@ -252,9 +256,9 @@ def main():
         # project_info_data = [experiment_project_sum_loc, stargazers_count, commits_count, contributors_count]
         # project_info_labels = ["Lines of All Code", "GitHub Stars", "Commits", "Contributors"]
         # draw_distribution(project_info_data, project_info_labels)
-        # overhead_data = [image_size_increasement, cpu_usage_increasement, memory_usage_increasement]
-        # overhead_labels = ["Image Size", "CPU", "Memory"]
-        # draw_distribution_violin(overhead_data, overhead_labels)
+        overhead_data = [image_size_increasement, cpu_usage_increasement, cpu_instructions_increasement, memory_usage_increasement]
+        overhead_labels = ["Image Size", "CPU %Usage", "CPU Instructions", "Memory"]
+        draw_distribution_violin(overhead_data, overhead_labels)
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
