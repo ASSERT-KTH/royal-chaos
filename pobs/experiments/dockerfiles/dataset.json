@@ -104,11 +104,11 @@
         "loc_info": {
             "java": {
                 "files": "5130",
-                "code": "437183"
+                "code": "437148"
             },
             "sum": {
-                "files": "7804",
-                "code": "923344"
+                "files": "7853",
+                "code": "1119601"
             }
         }
     },
@@ -167,11 +167,11 @@
         "loc_info": {
             "java": {
                 "files": "2821",
-                "code": "304027"
+                "code": "303988"
             },
             "sum": {
-                "files": "14683",
-                "code": "1256411"
+                "files": "14717",
+                "code": "1258217"
             }
         }
     },
@@ -224,8 +224,8 @@
                 "code": "84859"
             },
             "sum": {
-                "files": "996",
-                "code": "106026"
+                "files": "1017",
+                "code": "110054"
             }
         }
     },
@@ -298,11 +298,11 @@
         "loc_info": {
             "java": {
                 "files": "938",
-                "code": "136263"
+                "code": "136153"
             },
             "sum": {
-                "files": "1142",
-                "code": "161291"
+                "files": "1143",
+                "code": "161182"
             }
         }
     },
@@ -353,8 +353,8 @@
                 "code": "35320"
             },
             "sum": {
-                "files": "1229",
-                "code": "128767"
+                "files": "1234",
+                "code": "133991"
             }
         }
     },
@@ -422,8 +422,8 @@
                 "code": "26020"
             },
             "sum": {
-                "files": "380",
-                "code": "41733"
+                "files": "385",
+                "code": "42473"
             }
         }
     },
@@ -479,11 +479,11 @@
         "loc_info": {
             "java": {
                 "files": "1076",
-                "code": "176130"
+                "code": "176044"
             },
             "sum": {
-                "files": "1550",
-                "code": "243697"
+                "files": "1552",
+                "code": "243930"
             }
         }
     },
@@ -534,8 +534,8 @@
                 "code": "54566"
             },
             "sum": {
-                "files": "734",
-                "code": "58457"
+                "files": "735",
+                "code": "58745"
             }
         }
     },
@@ -625,11 +625,11 @@
         "loc_info": {
             "java": {
                 "files": "226",
-                "code": "22394"
+                "code": "22360"
             },
             "sum": {
-                "files": "288",
-                "code": "26538"
+                "files": "338",
+                "code": "28991"
             }
         }
     },
@@ -684,8 +684,8 @@
                 "code": "33400"
             },
             "sum": {
-                "files": "418",
-                "code": "49510"
+                "files": "420",
+                "code": "49888"
             }
         }
     },
@@ -745,8 +745,8 @@
                 "code": "60774"
             },
             "sum": {
-                "files": "5964",
-                "code": "690064"
+                "files": "5975",
+                "code": "690629"
             }
         }
     },
@@ -860,8 +860,8 @@
                 "code": "38854"
             },
             "sum": {
-                "files": "1394",
-                "code": "156837"
+                "files": "1395",
+                "code": "156735"
             }
         }
     },
@@ -1002,11 +1002,11 @@
         "loc_info": {
             "java": {
                 "files": "153",
-                "code": "17959"
+                "code": "17894"
             },
             "sum": {
                 "files": "207",
-                "code": "20556"
+                "code": "20491"
             }
         }
     },
@@ -1133,8 +1133,8 @@
                 "code": "7488"
             },
             "sum": {
-                "files": "203",
-                "code": "13562"
+                "files": "213",
+                "code": "13794"
             }
         }
     },
@@ -1188,8 +1188,8 @@
                 "code": "17974"
             },
             "sum": {
-                "files": "1025",
-                "code": "47789"
+                "files": "1026",
+                "code": "47835"
             }
         }
     },
@@ -1231,11 +1231,11 @@
         "loc_info": {
             "java": {
                 "files": "83",
-                "code": "3574"
+                "code": "3558"
             },
             "sum": {
-                "files": "102",
-                "code": "5852"
+                "files": "103",
+                "code": "5901"
             }
         }
     },
@@ -1298,57 +1298,11 @@
         "loc_info": {
             "java": {
                 "files": "2169",
-                "code": "156405"
+                "code": "156000"
             },
             "sum": {
-                "files": "2344",
-                "code": "226916"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594335623,
-        "name": "spring-boot-thin-launcher",
-        "full_name": "spring-projects-experimental/spring-boot-thin-launcher",
-        "fork": false,
-        "clone_url": "https://github.com/spring-projects-experimental/spring-boot-thin-launcher.git",
-        "stargazers_count": 457,
-        "language": "Java",
-        "default_branch": "master",
-        "tag_name": "v1.0.23.RELEASE",
-        "commit_sha": "020bd048d7ea3e0ab32b3a5943bdf203765b853e",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./samples/other/Dockerfile",
-                "base_images": [
-                    "FROM openjdk:8-jdk-alpine"
-                ],
-                "cmds": [],
-                "entrypoints": [
-                    "ENTRYPOINT [ \"sh\", \"-c\", \"java -Djava.security.egd=file:/dev/./urandom -jar app.jar --thin.root=/m2\" ]"
-                ],
-                "args": []
-            }
-        ],
-        "build_tools": [
-            "Maven",
-            "Gradle"
-        ],
-        "languages": {
-            "Java": 274899
-        },
-        "contributors": 15,
-        "number_of_commits": 424,
-        "age_days": 1360,
-        "loc_info": {
-            "java": {
-                "files": "103",
-                "code": "8379"
-            },
-            "sum": {
-                "files": "225",
-                "code": "17969"
+                "files": "2345",
+                "code": "226603"
             }
         }
     },
@@ -1394,11 +1348,11 @@
         "loc_info": {
             "java": {
                 "files": "14",
-                "code": "868"
+                "code": "845"
             },
             "sum": {
                 "files": "32",
-                "code": "1473"
+                "code": "1450"
             }
         }
     },
@@ -1454,8 +1408,8 @@
                 "code": "412790"
             },
             "sum": {
-                "files": "6139",
-                "code": "510705"
+                "files": "6180",
+                "code": "513123"
             }
         }
     },
@@ -1548,8 +1502,8 @@
                 "code": "4874"
             },
             "sum": {
-                "files": "294",
-                "code": "6665"
+                "files": "295",
+                "code": "6833"
             }
         }
     },
@@ -1601,68 +1555,6 @@
         }
     },
     {
-        "current_timestamp": 1594336102,
-        "name": "scalable-coffee-shop",
-        "full_name": "sdaschner/scalable-coffee-shop",
-        "fork": false,
-        "clone_url": "https://github.com/sdaschner/scalable-coffee-shop.git",
-        "stargazers_count": 342,
-        "language": "Java",
-        "default_branch": "master",
-        "commit_sha": "e99b15f88b47b1d25255f1be8d4fd56f397e3d26",
-        "number_of_dockerfiles": 3,
-        "info_from_dockerfiles": [
-            {
-                "path": "./barista/Dockerfile",
-                "base_images": [
-                    "FROM sdaschner/wildfly:javaee8-kafka-b1"
-                ],
-                "cmds": [],
-                "entrypoints": [],
-                "args": []
-            },
-            {
-                "path": "./orders/Dockerfile",
-                "base_images": [
-                    "FROM sdaschner/wildfly:javaee8-kafka-b1"
-                ],
-                "cmds": [],
-                "entrypoints": [],
-                "args": []
-            },
-            {
-                "path": "./beans/Dockerfile",
-                "base_images": [
-                    "FROM sdaschner/wildfly:javaee8-kafka-b1"
-                ],
-                "cmds": [],
-                "entrypoints": [],
-                "args": []
-            }
-        ],
-        "build_tools": [
-            "Maven",
-            "Gradle"
-        ],
-        "languages": {
-            "Java": 123789,
-            "Shell": 513
-        },
-        "contributors": 2,
-        "number_of_commits": 27,
-        "age_days": 1247,
-        "loc_info": {
-            "java": {
-                "files": "57",
-                "code": "1763"
-            },
-            "sum": {
-                "files": "72",
-                "code": "2225"
-            }
-        }
-    },
-    {
         "current_timestamp": 1594336130,
         "name": "mamute",
         "full_name": "caelum/mamute",
@@ -1707,8 +1599,8 @@
                 "code": "21421"
             },
             "sum": {
-                "files": "667",
-                "code": "43332"
+                "files": "668",
+                "code": "43364"
             }
         }
     },
@@ -1837,11 +1729,11 @@
         "loc_info": {
             "java": {
                 "files": "199",
-                "code": "18828"
+                "code": "18811"
             },
             "sum": {
                 "files": "400",
-                "code": "50847"
+                "code": "50830"
             }
         }
     },
@@ -2057,57 +1949,11 @@
         "loc_info": {
             "java": {
                 "files": "1252",
-                "code": "106738"
+                "code": "106634"
             },
             "sum": {
-                "files": "1519",
-                "code": "125960"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594337118,
-        "name": "poseidon",
-        "full_name": "Saseke/poseidon",
-        "fork": false,
-        "clone_url": "https://github.com/Saseke/poseidon.git",
-        "stargazers_count": 216,
-        "language": "Java",
-        "default_branch": "master",
-        "commit_sha": "917d165d89f3a568c4fd15ffad4eac3ff12a1708",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./psd-discovery/Dockerfile",
-                "base_images": [
-                    "FROM openjdk:8-jdk-alpine"
-                ],
-                "cmds": [],
-                "entrypoints": [
-                    "ENTRYPOINT [\"java\",\"-jar\",\"eureka.jar\"]"
-                ],
-                "args": []
-            }
-        ],
-        "build_tools": [
-            "Gradle"
-        ],
-        "languages": {
-            "Java": 202335,
-            "TSQL": 40446,
-            "Dockerfile": 1000
-        },
-        "contributors": 2,
-        "number_of_commits": 46,
-        "age_days": 658,
-        "loc_info": {
-            "java": {
-                "files": "147",
-                "code": "6048"
-            },
-            "sum": {
-                "files": "213",
-                "code": "8288"
+                "files": "1543",
+                "code": "129373"
             }
         }
     },
@@ -2162,8 +2008,8 @@
                 "code": "229979"
             },
             "sum": {
-                "files": "15037",
-                "code": "558588"
+                "files": "15048",
+                "code": "568315"
             }
         }
     },
@@ -2719,11 +2565,11 @@
         "loc_info": {
             "java": {
                 "files": "469",
-                "code": "27444"
+                "code": "27336"
             },
             "sum": {
-                "files": "964",
-                "code": "81130"
+                "files": "975",
+                "code": "91077"
             }
         }
     },
@@ -2813,57 +2659,6 @@
         }
     },
     {
-        "current_timestamp": 1594338312,
-        "name": "nexus-repository-composer",
-        "full_name": "sonatype-nexus-community/nexus-repository-composer",
-        "fork": false,
-        "clone_url": "https://github.com/sonatype-nexus-community/nexus-repository-composer.git",
-        "stargazers_count": 132,
-        "language": "Java",
-        "default_branch": "master",
-        "commit_sha": "0d1eb84430c61731d99061110b11d24ffa508c73",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM maven:3-jdk-8-alpine AS build",
-                    "FROM sonatype/nexus3:$NEXUS_VERSION"
-                ],
-                "cmds": [],
-                "entrypoints": [],
-                "args": [
-                    "ARG NEXUS_VERSION=latest",
-                    "ARG DEPLOY_DIR=/opt/sonatype/nexus/deploy/"
-                ]
-            }
-        ],
-        "build_tools": [
-            "Maven"
-        ],
-        "languages": {
-            "Java": 199488,
-            "Groovy": 21467,
-            "JavaScript": 7970,
-            "CSS": 799,
-            "Dockerfile": 565,
-            "Shell": 382
-        },
-        "contributors": 12,
-        "number_of_commits": 53,
-        "age_days": 863,
-        "loc_info": {
-            "java": {
-                "files": "42",
-                "code": "3517"
-            },
-            "sum": {
-                "files": "87",
-                "code": "5969"
-            }
-        }
-    },
-    {
         "current_timestamp": 1594338448,
         "name": "openremote",
         "full_name": "openremote/openremote",
@@ -2924,8 +2719,8 @@
                 "code": "82875"
             },
             "sum": {
-                "files": "1549",
-                "code": "155063"
+                "files": "1554",
+                "code": "166837"
             }
         }
     },
@@ -2974,8 +2769,8 @@
                 "code": "2785"
             },
             "sum": {
-                "files": "66",
-                "code": "4746"
+                "files": "68",
+                "code": "4878"
             }
         }
     },
@@ -3248,8 +3043,8 @@
                 "code": "42669"
             },
             "sum": {
-                "files": "948",
-                "code": "52364"
+                "files": "969",
+                "code": "55649"
             }
         }
     },
@@ -3299,62 +3094,11 @@
         "loc_info": {
             "java": {
                 "files": "532",
-                "code": "28632"
+                "code": "28564"
             },
             "sum": {
                 "files": "653",
-                "code": "36412"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594339421,
-        "name": "snowstorm",
-        "full_name": "IHTSDO/snowstorm",
-        "fork": false,
-        "clone_url": "https://github.com/IHTSDO/snowstorm.git",
-        "stargazers_count": 105,
-        "language": "Java",
-        "default_branch": "master",
-        "tag_name": "4.10.2",
-        "commit_sha": "8d6df57ca6484a53f42d7dfac50ffa51bce553ab",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM openjdk:8-jdk-alpine"
-                ],
-                "cmds": [],
-                "entrypoints": [
-                    "ENTRYPOINT [\"java\",\"-Djava.security.egd=file:/dev/./urandom\",\"-jar\",\"snowstorm.jar\"]"
-                ],
-                "args": [
-                    "ARG SUID=1042",
-                    "ARG SGID=1042"
-                ]
-            }
-        ],
-        "build_tools": [
-            "Maven"
-        ],
-        "languages": {
-            "Java": 1963329,
-            "HTML": 2403,
-            "Shell": 937,
-            "Dockerfile": 589
-        },
-        "contributors": 17,
-        "number_of_commits": 1647,
-        "age_days": 1477,
-        "loc_info": {
-            "java": {
-                "files": "361",
-                "code": "35138"
-            },
-            "sum": {
-                "files": "405",
-                "code": "38727"
+                "code": "36344"
             }
         }
     },
@@ -3496,8 +3240,8 @@
                 "code": "123420"
             },
             "sum": {
-                "files": "1338",
-                "code": "219942"
+                "files": "1457",
+                "code": "226074"
             }
         }
     },
@@ -3655,8 +3399,8 @@
                 "code": "16220"
             },
             "sum": {
-                "files": "502",
-                "code": "28818"
+                "files": "505",
+                "code": "29415"
             }
         }
     },
@@ -3705,8 +3449,8 @@
                 "code": "1505"
             },
             "sum": {
-                "files": "37",
-                "code": "10936"
+                "files": "38",
+                "code": "11224"
             }
         }
     },
@@ -3935,8 +3679,8 @@
                 "code": "63040"
             },
             "sum": {
-                "files": "1395",
-                "code": "122987"
+                "files": "1396",
+                "code": "123065"
             }
         }
     }
