@@ -1,0 +1,18 @@
+[s6-init] making user provided files available at /var/run/s6/etc...exited 0.
+[s6-init] ensuring user provided files have correct perms...exited 0.
+[fix-attrs.d] applying ownership & permissions fixes...
+[fix-attrs.d] done.
+[cont-init.d] executing container initialization scripts...
+[cont-init.d] done.
+[services.d] starting services
+system call monitor is not activated
+[services.d] done.
+No suitable Java Virtual Machine could be found on your system.
+The version of the JVM must be at least 1.8 and at most 1.8.
+Please define INSTALL4J_JAVA_HOME to point to a suitable JVM.
+[cmd] /usr/bin/execlineb exited 83
+[cont-finish.d] executing container finish scripts...
+[cont-finish.d] done.
+[s6-finish] waiting for services.
+[s6-finish] sending all processes the TERM signal.
+[s6-finish] sending all processes the KILL signal and exiting.
