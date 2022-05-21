@@ -60,16 +60,13 @@ def clean_image_name(name_str):
     clean_name = re.split(" as ", clean_name, flags=re.IGNORECASE)[0].strip()
     return clean_name
 
-def format_num(label_name, value):
-    if label_name == "Lines of All Code" and value > 1000:
-        value = "%dK"%(int(value)/1000)
-    if label_name == "Image Size" or label_name == "Memory":
-        value = "%dMB"%(value/1000000)
-    if label_name == "CPU":
-        value = "%.2f%%"%(value*100)
-    return value
+def percentage_str(percentage_value):
+    if percentage_value > 1:
+        return "%.0f%%"%(percentage_value*100)
+    else:
+        return "%.1f%%"%(percentage_value*100)
 
-def draw_distribution_box(data, labels):
+def draw_box_plots(data, labels):
     for i in range(len(data)):
         figure, ax = plt.subplots(figsize=(9, 1.5))
         boxplot = ax.boxplot(data[i], widths=0.6, vert=False, showfliers=False)
@@ -97,31 +94,20 @@ def draw_distribution_box(data, labels):
         captop = caps[1].get_xdata()[0]
 
         # Make some labels on the figure using the values derived above
-        ax.text(median + xoff, 1.1, format_num(labels[i], median), va='center', fontsize=12)
-        ax.text(pc25 + xoff, 1.1, format_num(labels[i], pc25), va='center', fontsize=12)
-        ax.text(pc75 + xoff, 1.1, format_num(labels[i], pc75), va='center', fontsize=12)
-        ax.text(capbottom + xoff, 1.1, format_num(labels[i], capbottom), va='center', fontsize=12)
-        ax.text(captop + xoff, 1.1, format_num(labels[i], captop), va='center', fontsize=12)
+        ax.text(median + xoff, 1.1, percentage_str(median), va='center', fontsize=12)
+        ax.text(pc25 + xoff, 1.1, percentage_str(pc25), va='center', fontsize=12)
+        ax.text(pc75 + xoff, 1.1, percentage_str(pc75), va='center', fontsize=12)
+        ax.text(capbottom + xoff, 1.1, percentage_str(capbottom), va='center', fontsize=12)
+        ax.text(captop + xoff, 1.1, percentage_str(captop), va='center', fontsize=12)
 
         ax.set_yticklabels([labels[i]], fontsize=14)
-        if labels[i] == "Lines of All Code":
-            ax.xaxis.set_major_formatter(lambda x, pos: 0 if x == 0 else "%dK"%(x/1000))
-        if labels[i] == "Image Size" or labels[i] == "Memory":
-            ax.xaxis.set_major_formatter(lambda x, pos: 0 if x == 0 else "%dMB"%(x/1000000))
-        if labels[i] == "CPU":
-            ax.xaxis.set_major_formatter(lambda x, pos: 0 if x == 0 else "%.2f%%"%(x*100))
+        ax.xaxis.set_major_formatter(lambda x, pos: 0 if x == 0 else "%.0f%%"%(x*100))
 
         plt.subplots_adjust(left=0.14, right=0.95, top=0.9, bottom=0.2)
         plt.xticks(fontsize=14)
         plt.savefig("%s.pdf"%labels[i])
 
-def draw_distribution_violin(data, labels):
-    def percentage_str(percentage_value):
-        if percentage_value > 1:
-            return "%.0f%%"%(percentage_value*100)
-        else:
-            return "%.1f%%"%(percentage_value*100)
-
+def draw_violin_plots(data, labels):
     def whiskers(values, q1, q3):
         upper_adjacent_value = q3 + (q3 - q1) * 1.5
         whiskers_max = numpy.clip(upper_adjacent_value, q3, max(values))
@@ -143,10 +129,9 @@ def draw_distribution_violin(data, labels):
             pc.set_facecolor(colors_list[i%len(colors_list)])
             pc.set_edgecolor('black')
             pc.set_alpha(1)
-        # Make some labels on the figure using the values derived above
         axs[i].text(1.02, median, percentage_str(median), va='center', fontsize=12)
+        axs[i].yaxis.set_major_formatter(lambda x, pos: 0 if x == 0 else "%.0f%%"%(x*100))
         axs[i].set_title(labels[i])
-        # plt.savefig("%s.pdf"%labels[i])
     plt.subplots_adjust(left=0.1, right=0.95, wspace=0.5)
     plt.savefig("new.pdf")
 
@@ -178,10 +163,10 @@ def main():
         pobs_application_run_passed_count = 0
 
         # overhead related
-        image_size_increasement = list()
-        cpu_usage_increasement = list()
-        cpu_instructions_increasement = list()
-        memory_usage_increasement = list()
+        image_size_increase = list()
+        cpu_usage_increase = list()
+        cpu_instructions_increase = list()
+        memory_usage_increase = list()
 
         for project in projects:
             if "is_able_to_clone" in project and project["is_able_to_clone"]:
@@ -213,20 +198,20 @@ def main():
                                 if dockerfile["pobs_augmentation"] == "successful":
                                     pobs_augmentation_passed_count = pobs_augmentation_passed_count + 1
                                     if dockerfile["pobs_application_build"] == "successful":
-                                        # increasement of the image size
-                                        image_size_increasement.append((image_size_to_float(dockerfile["pobs_application_build_image_size"]) - image_size_to_float(dockerfile["ori_build_image_size"]))/image_size_to_float(dockerfile["ori_build_image_size"]))
+                                        # increase of the image size
+                                        image_size_increase.append((image_size_to_float(dockerfile["pobs_application_build_image_size"]) - image_size_to_float(dockerfile["ori_build_image_size"]))/image_size_to_float(dockerfile["ori_build_image_size"]))
                                         pobs_application_build_passed_count = pobs_application_build_passed_count + 1
                                         if dockerfile["pobs_syscall_monitor_enabled"]: pobs_syscall_monitor_enabled_count = pobs_syscall_monitor_enabled_count + 1
                                         if dockerfile["pobs_apm_agent_attached"]: pobs_apm_agent_attached_count = pobs_apm_agent_attached_count + 1
                                         if dockerfile["pobs_application_run"] == "successful":
                                             pobs_application_run_passed_count = pobs_application_run_passed_count + 1
-                                            # increasement of the cpu usage and memory usage
+                                            # increase of the cpu usage and memory usage
                                             if not math.isnan(dockerfile["pobs_application_run_metrics"]["cpu_mean"]) and not math.isnan(dockerfile["ori_application_run_metrics"]["cpu_mean"]):
-                                                cpu_usage_increasement.append((dockerfile["pobs_application_run_metrics"]["cpu_mean"] - dockerfile["ori_application_run_metrics"]["cpu_mean"])/dockerfile["ori_application_run_metrics"]["cpu_mean"])
+                                                cpu_usage_increase.append((dockerfile["pobs_application_run_metrics"]["cpu_mean"] - dockerfile["ori_application_run_metrics"]["cpu_mean"])/dockerfile["ori_application_run_metrics"]["cpu_mean"])
                                             if not math.isnan(dockerfile["pobs_application_run_metrics"]["memory_mean"]) and not math.isnan(dockerfile["ori_application_run_metrics"]["memory_mean"]):
-                                                memory_usage_increasement.append((dockerfile["pobs_application_run_metrics"]["memory_mean"] - dockerfile["ori_application_run_metrics"]["memory_mean"])/dockerfile["ori_application_run_metrics"]["memory_mean"])
+                                                memory_usage_increase.append((dockerfile["pobs_application_run_metrics"]["memory_mean"] - dockerfile["ori_application_run_metrics"]["memory_mean"])/dockerfile["ori_application_run_metrics"]["memory_mean"])
                                             if dockerfile["pobs_application_run_metrics"]["cpu_instructions"] != -1 and dockerfile["ori_application_run_metrics"]["cpu_instructions"] != -1:
-                                                cpu_instructions_increasement.append((dockerfile["pobs_application_run_metrics"]["cpu_instructions"] - dockerfile["ori_application_run_metrics"]["cpu_instructions"])/dockerfile["ori_application_run_metrics"]["cpu_instructions"])
+                                                cpu_instructions_increase.append((dockerfile["pobs_application_run_metrics"]["cpu_instructions"] - dockerfile["ori_application_run_metrics"]["cpu_instructions"])/dockerfile["ori_application_run_metrics"]["cpu_instructions"])
                                         # else:
                                         #     print("%s: %s"%(project["full_name"], dockerfile["path"]))
                                         # if not dockerfile["pobs_syscall_monitor_enabled"] and dockerfile["pobs_apm_agent_attached"]:
@@ -251,14 +236,18 @@ def main():
         logging.info("pobs_syscall_monitor_enabled_count: %d"%pobs_syscall_monitor_enabled_count)
         logging.info("pobs_apm_agent_attached_count: %d"%pobs_apm_agent_attached_count)
         logging.info("pobs_application_run_passed_count: %d"%pobs_application_run_passed_count)
+        logging.info("image_size_increase (min, median, max): %.2f, %.2f, %.2f"%(min(image_size_increase), numpy.median(image_size_increase), max(image_size_increase)))
+        logging.info("cpu_instructions_increase (min, median, max): %.2f, %.2f, %.2f"%(min(cpu_instructions_increase), numpy.median(cpu_instructions_increase), max(cpu_instructions_increase)))
+        logging.info("memory_usage_increase (min, median, max): %.2f, %.2f, %.2f"%(min(memory_usage_increase), numpy.median(memory_usage_increase), max(memory_usage_increase)))
 
         # draw_distribution([ori_build_execution_time], ["ori_build_execution_time"])
         # project_info_data = [experiment_project_sum_loc, stargazers_count, commits_count, contributors_count]
         # project_info_labels = ["Lines of All Code", "GitHub Stars", "Commits", "Contributors"]
         # draw_distribution(project_info_data, project_info_labels)
-        overhead_data = [image_size_increasement, cpu_usage_increasement, cpu_instructions_increasement, memory_usage_increasement]
-        overhead_labels = ["Image Size", "CPU %Usage", "CPU Instructions", "Memory"]
-        draw_distribution_violin(overhead_data, overhead_labels)
+        # overhead_data = [image_size_increase, cpu_instructions_increase, memory_usage_increase]
+        # overhead_labels = ["Image Size", "CPU Instructions", "Memory"]
+        # draw_violin_plots(overhead_data, overhead_labels)
+        # draw_box_plots(overhead_data, overhead_labels)
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
