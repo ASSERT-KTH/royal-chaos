@@ -1,0 +1,13 @@
+-:2 DL4000 [1m[91merror[0m: MAINTAINER is deprecated
+-:14 DL3008 [1m[93mwarning[0m: Pin versions in apt get install. Instead of `apt-get install <package>` use `apt-get install <package>=<version>`
+-:14 DL3009 [92minfo[0m: Delete the apt-get lists after installing something
+-:14 DL3015 [92minfo[0m: Avoid additional packages by specifying `--no-install-recommends`
+-:17 DL3002 [1m[93mwarning[0m: Last USER should not be root
+-:44 DL3009 [92minfo[0m: Delete the apt-get lists after installing something
+-:44 SC2028 [92minfo[0m: echo may not expand escape sequences. Use printf.
+-:44 DL3047 [92minfo[0m: Avoid use of wget without progress bar. Use `wget --progress=dot:giga <url>`.Or consider using `-q` or `-nv` (shorthands for `--quiet` or `--no-verbose`).
+-:44 DL3003 [1m[93mwarning[0m: Use WORKDIR to switch to a directory
+-:44 DL3008 [1m[93mwarning[0m: Pin versions in apt get install. Instead of `apt-get install <package>` use `apt-get install <package>=<version>`
+-:44 DL4006 [1m[93mwarning[0m: Set the SHELL option -o pipefail before RUN with a pipe in it. If you are using /bin/sh in an alpine image or if your shell is symlinked to busybox then consider explicitly setting your SHELL to /bin/ash, or disable this check
+-:44 DL3001 [92minfo[0m: For some bash commands it makes no sense running them in a Docker container like `ssh`, `vim`, `shutdown`, `service`, `ps`, `free`, `top`, `kill`, `mount`, `ifconfig`
+-:85 DL3025 [1m[93mwarning[0m: Use arguments JSON notation for CMD and ENTRYPOINT arguments

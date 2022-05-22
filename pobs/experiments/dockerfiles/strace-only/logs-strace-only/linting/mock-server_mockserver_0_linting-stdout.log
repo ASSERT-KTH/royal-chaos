@@ -1,0 +1,5 @@
+-:9 DL3006 [1m[93mwarning[0m: Always tag the version of an image explicitly
+-:12 DL3018 [1m[93mwarning[0m: Pin versions in apk add. Instead of `apk add <package>` use `apk add <package>=<version>`
+-:12 DL3019 [92minfo[0m: Use the `--no-cache` switch to avoid the need to use `--update` and remove `/var/cache/apk/*` when done installing packages
+-:19 DL3047 [92minfo[0m: Avoid use of wget without progress bar. Use `wget --progress=dot:giga <url>`.Or consider using `-q` or `-nv` (shorthands for `--quiet` or `--no-verbose`).
+-:25 DL4000 [1m[91merror[0m: MAINTAINER is deprecated
