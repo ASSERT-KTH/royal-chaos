@@ -2299,16 +2299,20 @@ Or undo this operation with:
 Turn off this advice by setting config variable advice.detachedHead to false
 
 HEAD is now at fb379d0 update readme
-2022-05-20 10:46:31,765 INFO     Try to build the project with some default commands
-2022-05-20 10:50:51,067 INFO     Successfully build the project using: [{'Maven': 259.29890727996826}]
-2022-05-20 10:50:51,068 INFO     Check whether the dockerfile is buildable: ./Dockerfile
-2022-05-20 10:51:03,502 INFO     Begin to check if the original docker image can be run for 2 mins, with a java process detected
+/home/gluckzhang/.pyenv/versions/3.6.4/lib/python3.6/site-packages/requests/__init__.py:91: RequestsDependencyWarning: urllib3 (1.26.9) or chardet (3.0.4) doesn't match a supported version!
+  RequestsDependencyWarning)
+2022-05-22 19:02:55,818 INFO     Try to build the project with some default commands
+2022-05-22 19:03:02,837 INFO     Successfully build the project using: [{'Maven': 7.018787145614624}]
+2022-05-22 19:03:02,838 INFO     Check whether the dockerfile is buildable: ./Dockerfile
+2022-05-22 19:03:04,554 INFO     Begin to check if the original docker image can be run for 2 mins, with a java process detected
 Error response from daemon: No such container: run_original_bootshiro_0
-2022-05-20 10:54:03,667 INFO     ori_application_run, exitcode: 0, continuously: True, java: True, agent: none
-2022-05-20 10:54:03,667 INFO     Begin to augment the dockerfile and build POBS application image: ./Dockerfile
-2022-05-20 10:54:07,329 INFO     The validation of the augmented dockerfile failed: 1
-2022-05-20 10:54:07,330 INFO     Begin to build the application image using: ./Dockerfile-pobs
-2022-05-20 10:54:17,740 ERROR    Failed to build the application image using ./Dockerfile-pobs-application, project bootshiro
+2022-05-22 19:06:04,793 INFO     ori_application_run, exitcode: 0, continuously: True, java: True, agent: none
+2022-05-22 19:06:04,793 INFO     Begin to augment the dockerfile and build POBS application image: ./Dockerfile
+2022-05-22 19:06:08,356 INFO     The validation of the augmented dockerfile failed: 1
+2022-05-22 19:06:08,358 INFO     Begin to build the application image using: ./Dockerfile-pobs
+2022-05-22 19:09:14,979 INFO     POST https://localhost:9200/.ds-logs-generic-default-2022.05.11-000001/_search [status:200 duration:0.937s]
+2022-05-22 19:09:14,995 INFO     POST https://localhost:9200/apm-7.15.2-metric-000001/_search [status:200 duration:0.002s]
+2022-05-22 19:09:14,998 INFO     pobs_application_run succeeded
 "docker stop" requires at least 1 argument.
 See 'docker stop --help'.
 
@@ -2328,20 +2332,37 @@ Usage:  docker rm [OPTIONS] CONTAINER [CONTAINER...]
 
 Remove one or more containers
 Total reclaimed space: 0B
-"docker image rm" requires at least 1 argument.
-See 'docker image rm --help'.
-
-Usage:  docker image rm [OPTIONS] IMAGE [IMAGE...]
-
-Remove one or more images
+Untagged: bootshiro-pobs:0
+Deleted: sha256:1f555ceb69a60d086451ab083a2897109e6587b1e337e2252590fc6ea8ef1dda
+Deleted: sha256:fda30c3308c1ecabef0dfdcd16184644d421bb96d7b03b2b8e707e93237967c1
+Deleted: sha256:96b9a2a84f7564541e1ee90b2404d78acc707c949a0b07d4b62e47a861a34024
+Deleted: sha256:0f83b7c38655f9daeab983f711e859fd5dcf14815a8b32f2f921e2c4a22bc236
+Deleted: sha256:7f5049caa46d6b54590a3be7dc0b3d99e5838bdeb6ea1b5c96b4bbc8c3f70363
+Deleted: sha256:7a6466b642013779a414b04f1038d240df389481340daa1ee9d1b0515a1ec34c
+Deleted: sha256:e1887379aaf2a2616cad952e0e1531796be3f2cd578e8bd961a96c17dc730dae
+Deleted: sha256:f9dcc34054bfb0ca030cc3574386a78dd764dd30af83e6c96d764dae7c921698
+Deleted: sha256:09000964d5c5d20c201667e2fb07578f75385f08481f2aee1c149ead95b6e9f3
+Deleted: sha256:6d6a485fe357a9cf7b418630b47420d0ca78e8026596a22138f6191ce949e99a
+Deleted: sha256:e14d70edc462b4257b4db738886178ced3c34464792163f033644622c784411e
+Deleted: sha256:70669467520fc9f3ab308c42ad2a5ed1f7ebc728553422585d6b10aa021902a0
+Deleted: sha256:f0c9dc3fb4ce13c39be5739579877a049773d511908dc745e8aa62795e939a0b
+Deleted: sha256:1b14d2f1e8c9004dd4db06c2391880ce5eb32cbc40f96dc74daf7342b8d5089d
+Deleted: sha256:b61edd3a61847a29978d833fecdbca7c263e2742f0faca1584d07fec7d72fe5b
+Deleted: sha256:7ba3ba275f1c9c3cff784016e689dd5aec98bb59de749a069024051517187342
+Deleted: sha256:4bebb6a160397b660bf3cacf27c17277bb4b629edd8241c9280ef47e5b72c53d
+Deleted: sha256:d4b83df16dd6fb42e696fdfccfe68e759eddaa4353e4dc70a2dfd7a32b9729b6
+Deleted: sha256:f971a0b1f507e5de745a251e62c5d3a47790a42331280740eb473a69e93fee9d
+Deleted: sha256:d276e438f92fc566da6ad9826ed2a56179b9903bec0dd3b561b1416de41a8730
+Deleted: sha256:4f04a2f21bfd90fb5e4e910594dbb9bf92dd29637fddc4aaef580b460d6bccf7
+Deleted: sha256:e64859c8f62b9661393ae0efb1a57285bd2d5f52e8707e00e5d75c0fa03ebed9
 Untagged: bootshiro:0
-Deleted: sha256:40ab480b37a0c308168b6141783683fbbe9b4387b69a03337fbb01f3da7d8741
-Deleted: sha256:5765a15e97fbe37c389fabdea220cb7b961cf25d35187bd418a8e01c670d629f
-Deleted: sha256:fe23b57cad69e99ffa5712422b03ea097f68e133405f8405be6b90f5803a0d26
-Deleted: sha256:8ca1508452e3676f518434f15ceea96aa8616c38c769a8b8ce480ebde01510d0
-Deleted: sha256:f5db371f30d2909cd540f1246bead43c804518d9524ab85e86473753c433554f
-Deleted: sha256:b3d14548f03111635201e0900d6b4a72d4e4b192593fc7086780312104ead97d
-Deleted: sha256:18d146b9a989d82811be17f739174f4cf99cf368ff641f802f0dfa7c6a893835
+Deleted: sha256:213456175a97f7b25f11546e073734eb814f5306ed6399f0f32f6c1fe2ac044f
+Deleted: sha256:be729262255d11624aa2ed2fe104c367402c4158afd9986ea0f2df032c3d771f
+Deleted: sha256:1e6aaee21474b838f7e02dcf338a47b8b0f9fe5b4af06020cca5a22a4f928536
+Deleted: sha256:c06a930e9cfccf3a231e8367827c1df0228398e0eda90c6cec4afe0aa115ca29
+Deleted: sha256:4171b92f5afaf433d9a714236a033c0e123ea11172d627749fdc21593dc407b6
+Deleted: sha256:479ff2cad5c0b3a372d36957804660d5f0381eafc40635759af8140fbe0ec478
+Deleted: sha256:9cb39aa3be593efad883aee62670f2e8c9352af86e22a7c79a6b8a9a3b0beb07
 Cloning into 'basex'...
 Note: switching to '93b2148b5a1dd0441b3bfe3e7f15821d27abe53f'.
 

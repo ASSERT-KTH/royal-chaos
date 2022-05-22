@@ -2057,20 +2057,32 @@
                 "entrypoints": [],
                 "args": [],
                 "ori_build": "successful",
-                "ori_build_execution_time": 12.31062388420105,
+                "ori_build_execution_time": 1.628126859664917,
                 "ori_build_image_size": "377MB",
                 "ori_application_run_exitcode": 0,
                 "ori_application_run_continuously": true,
                 "ori_application_run_java": true,
                 "ori_application_run_agent": "none",
                 "ori_application_run_metrics": {
-                    "cpu_mean": 0.006218578685185185,
-                    "memory_mean": 321135616.0,
-                    "cpu_instructions": 845105327
+                    "cpu_mean": 0.009969669308333333,
+                    "memory_mean": 291859660.8,
+                    "cpu_instructions": 1004382492
                 },
                 "pobs_augmentation": "successful",
                 "pobs_dockerfile_validation": "failed",
-                "pobs_application_build": "failed"
+                "pobs_application_build": "successful",
+                "pobs_application_build_execution_time": 5.362100839614868,
+                "pobs_application_build_image_size": "411MB",
+                "pobs_syscall_monitor_enabled": true,
+                "pobs_apm_agent_attached": true,
+                "pobs_application_run_exitcode": 0,
+                "pobs_application_run_continuously": true,
+                "pobs_application_run_metrics": {
+                    "cpu_mean": 0.027311608032051286,
+                    "memory_mean": 370012586.6666667,
+                    "cpu_instructions": 1749302124
+                },
+                "pobs_application_run": "successful"
             }
         ],
         "build_tools": [
@@ -2097,10 +2109,12 @@
         "is_able_to_clone": true,
         "is_able_to_build": [
             {
-                "Maven": 259.29890727996826
+                "Maven": 7.018787145614624
             }
         ],
-        "is_able_to_run": []
+        "is_able_to_run": [
+            0
+        ]
     },
     {
         "current_timestamp": 1594335566,
@@ -2201,56 +2215,6 @@
                 "Maven": 24.893296241760254
             }
         ],
-        "is_able_to_run": []
-    },
-    {
-        "current_timestamp": 1594335623,
-        "name": "spring-boot-thin-launcher",
-        "full_name": "spring-projects-experimental/spring-boot-thin-launcher",
-        "fork": false,
-        "clone_url": "https://github.com/spring-projects-experimental/spring-boot-thin-launcher.git",
-        "stargazers_count": 457,
-        "language": "Java",
-        "default_branch": "master",
-        "tag_name": "v1.0.23.RELEASE",
-        "commit_sha": "020bd048d7ea3e0ab32b3a5943bdf203765b853e",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./samples/other/Dockerfile",
-                "base_images": [
-                    "FROM openjdk:8-jdk-alpine"
-                ],
-                "cmds": [],
-                "entrypoints": [
-                    "ENTRYPOINT [ \"sh\", \"-c\", \"java -Djava.security.egd=file:/dev/./urandom -jar app.jar --thin.root=/m2\" ]"
-                ],
-                "args": [],
-                "ori_build": "failed"
-            }
-        ],
-        "build_tools": [
-            "Maven",
-            "Gradle"
-        ],
-        "languages": {
-            "Java": 274899
-        },
-        "contributors": 15,
-        "number_of_commits": 424,
-        "age_days": 1360,
-        "loc_info": {
-            "java": {
-                "files": "103",
-                "code": "8357"
-            },
-            "sum": {
-                "files": "228",
-                "code": "27121"
-            }
-        },
-        "is_able_to_clone": true,
-        "is_able_to_build": [],
         "is_able_to_run": []
     },
     {
@@ -2651,78 +2615,6 @@
         "is_able_to_build": [
             {
                 "Maven": 35.74033451080322
-            }
-        ],
-        "is_able_to_run": []
-    },
-    {
-        "current_timestamp": 1594336102,
-        "name": "scalable-coffee-shop",
-        "full_name": "sdaschner/scalable-coffee-shop",
-        "fork": false,
-        "clone_url": "https://github.com/sdaschner/scalable-coffee-shop.git",
-        "stargazers_count": 342,
-        "language": "Java",
-        "default_branch": "master",
-        "commit_sha": "e99b15f88b47b1d25255f1be8d4fd56f397e3d26",
-        "number_of_dockerfiles": 3,
-        "info_from_dockerfiles": [
-            {
-                "path": "./barista/Dockerfile",
-                "base_images": [
-                    "FROM sdaschner/wildfly:javaee8-kafka-b1"
-                ],
-                "cmds": [],
-                "entrypoints": [],
-                "args": [],
-                "ori_build": "failed"
-            },
-            {
-                "path": "./orders/Dockerfile",
-                "base_images": [
-                    "FROM sdaschner/wildfly:javaee8-kafka-b1"
-                ],
-                "cmds": [],
-                "entrypoints": [],
-                "args": [],
-                "ori_build": "failed"
-            },
-            {
-                "path": "./beans/Dockerfile",
-                "base_images": [
-                    "FROM sdaschner/wildfly:javaee8-kafka-b1"
-                ],
-                "cmds": [],
-                "entrypoints": [],
-                "args": [],
-                "ori_build": "failed"
-            }
-        ],
-        "build_tools": [
-            "Maven",
-            "Gradle"
-        ],
-        "languages": {
-            "Java": 123789,
-            "Shell": 513
-        },
-        "contributors": 2,
-        "number_of_commits": 27,
-        "age_days": 1247,
-        "loc_info": {
-            "java": {
-                "files": "57",
-                "code": "1763"
-            },
-            "sum": {
-                "files": "73",
-                "code": "2269"
-            }
-        },
-        "is_able_to_clone": true,
-        "is_able_to_build": [
-            {
-                "Maven": 4.643733978271484
             }
         ],
         "is_able_to_run": []
@@ -3684,56 +3576,6 @@
             10,
             11
         ]
-    },
-    {
-        "current_timestamp": 1594337118,
-        "name": "poseidon",
-        "full_name": "Saseke/poseidon",
-        "fork": false,
-        "clone_url": "https://github.com/Saseke/poseidon.git",
-        "stargazers_count": 216,
-        "language": "Java",
-        "default_branch": "master",
-        "commit_sha": "917d165d89f3a568c4fd15ffad4eac3ff12a1708",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./psd-discovery/Dockerfile",
-                "base_images": [
-                    "FROM openjdk:8-jdk-alpine"
-                ],
-                "cmds": [],
-                "entrypoints": [
-                    "ENTRYPOINT [\"java\",\"-jar\",\"eureka.jar\"]"
-                ],
-                "args": [],
-                "ori_build": "failed"
-            }
-        ],
-        "build_tools": [
-            "Gradle"
-        ],
-        "languages": {
-            "Java": 202335,
-            "TSQL": 40446,
-            "Dockerfile": 1000
-        },
-        "contributors": 2,
-        "number_of_commits": 46,
-        "age_days": 658,
-        "loc_info": {
-            "java": {
-                "files": "147",
-                "code": "6048"
-            },
-            "sum": {
-                "files": "213",
-                "code": "8288"
-            }
-        },
-        "is_able_to_clone": true,
-        "is_able_to_build": [],
-        "is_able_to_run": []
     },
     {
         "current_timestamp": 1594337287,
@@ -5143,61 +4985,6 @@
         ]
     },
     {
-        "current_timestamp": 1594338312,
-        "name": "nexus-repository-composer",
-        "full_name": "sonatype-nexus-community/nexus-repository-composer",
-        "fork": false,
-        "clone_url": "https://github.com/sonatype-nexus-community/nexus-repository-composer.git",
-        "stargazers_count": 132,
-        "language": "Java",
-        "default_branch": "master",
-        "commit_sha": "0d1eb84430c61731d99061110b11d24ffa508c73",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM maven:3-jdk-8-alpine AS build",
-                    "FROM sonatype/nexus3:$NEXUS_VERSION"
-                ],
-                "cmds": [],
-                "entrypoints": [],
-                "args": [
-                    "ARG NEXUS_VERSION=latest",
-                    "ARG DEPLOY_DIR=/opt/sonatype/nexus/deploy/"
-                ],
-                "ori_build": "failed"
-            }
-        ],
-        "build_tools": [
-            "Maven"
-        ],
-        "languages": {
-            "Java": 199488,
-            "Groovy": 21467,
-            "JavaScript": 7970,
-            "CSS": 799,
-            "Dockerfile": 565,
-            "Shell": 382
-        },
-        "contributors": 12,
-        "number_of_commits": 53,
-        "age_days": 863,
-        "loc_info": {
-            "java": {
-                "files": "42",
-                "code": "3517"
-            },
-            "sum": {
-                "files": "87",
-                "code": "5969"
-            }
-        },
-        "is_able_to_clone": true,
-        "is_able_to_build": [],
-        "is_able_to_run": []
-    },
-    {
         "current_timestamp": 1594338448,
         "name": "openremote",
         "full_name": "openremote/openremote",
@@ -6145,61 +5932,6 @@
                 "Maven": 103.55370903015137
             }
         ],
-        "is_able_to_run": []
-    },
-    {
-        "current_timestamp": 1594339421,
-        "name": "snowstorm",
-        "full_name": "IHTSDO/snowstorm",
-        "fork": false,
-        "clone_url": "https://github.com/IHTSDO/snowstorm.git",
-        "stargazers_count": 105,
-        "language": "Java",
-        "default_branch": "master",
-        "tag_name": "4.10.2",
-        "commit_sha": "8d6df57ca6484a53f42d7dfac50ffa51bce553ab",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM openjdk:8-jdk-alpine"
-                ],
-                "cmds": [],
-                "entrypoints": [
-                    "ENTRYPOINT [\"java\",\"-Djava.security.egd=file:/dev/./urandom\",\"-jar\",\"snowstorm.jar\"]"
-                ],
-                "args": [
-                    "ARG SUID=1042",
-                    "ARG SGID=1042"
-                ],
-                "ori_build": "failed"
-            }
-        ],
-        "build_tools": [
-            "Maven"
-        ],
-        "languages": {
-            "Java": 1963329,
-            "HTML": 2403,
-            "Shell": 937,
-            "Dockerfile": 589
-        },
-        "contributors": 17,
-        "number_of_commits": 1647,
-        "age_days": 1477,
-        "loc_info": {
-            "java": {
-                "files": "361",
-                "code": "35081"
-            },
-            "sum": {
-                "files": "406",
-                "code": "38671"
-            }
-        },
-        "is_able_to_clone": true,
-        "is_able_to_build": [],
         "is_able_to_run": []
     },
     {
