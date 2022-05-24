@@ -21,10 +21,7 @@
                     "CMD [\"sh\",\"/seata-server/bin/seata-server.sh\"]"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -78,10 +75,7 @@
                 "entrypoints": [
                     "ENTRYPOINT [\"java\", \"SAdvertise\"]"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -110,11 +104,11 @@
         "loc_info": {
             "java": {
                 "files": "5130",
-                "code": "437183"
+                "code": "437148"
             },
             "sum": {
-                "files": "7804",
-                "code": "923344"
+                "files": "7853",
+                "code": "1119601"
             }
         }
     },
@@ -140,10 +134,7 @@
                     "CMD [\"java\", \"-jar\", \"/generator/openapi-generator-online.jar\" ]"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -176,11 +167,11 @@
         "loc_info": {
             "java": {
                 "files": "2821",
-                "code": "304027"
+                "code": "303988"
             },
             "sum": {
-                "files": "14683",
-                "code": "1256411"
+                "files": "14717",
+                "code": "1258217"
             }
         }
     },
@@ -209,10 +200,7 @@
                 "entrypoints": [
                     "ENTRYPOINT [ \"./graphhopper.sh\", \"web\" ]"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -236,8 +224,8 @@
                 "code": "84859"
             },
             "sum": {
-                "files": "996",
-                "code": "106026"
+                "files": "1017",
+                "code": "110054"
             }
         }
     },
@@ -269,10 +257,7 @@
                     "ARG REPOSITORY=snapshots",
                     "ARG VERSION=LATEST",
                     "ARG REPOSITORY_URL=https://oss.sonatype.org/service/local/artifact/maven/redirect?r=${REPOSITORY}&g=org.mock-server&a=mockserver-netty&c=jar-with-dependencies&e=jar&v=${VERSION}"
-                ],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                ]
             },
             {
                 "path": "./docker/Dockerfile",
@@ -290,10 +275,7 @@
                     "ARG REPOSITORY=releases",
                     "ARG VERSION=RELEASE",
                     "ARG REPOSITORY_URL=https://oss.sonatype.org/service/local/artifact/maven/redirect?r=${REPOSITORY}&g=org.mock-server&a=mockserver-netty&c=jar-with-dependencies&e=jar&v=${VERSION}"
-                ],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                ]
             }
         ],
         "build_tools": [
@@ -316,11 +298,11 @@
         "loc_info": {
             "java": {
                 "files": "938",
-                "code": "136263"
+                "code": "136153"
             },
             "sum": {
-                "files": "1142",
-                "code": "161291"
+                "files": "1143",
+                "code": "161182"
             }
         }
     },
@@ -346,10 +328,7 @@
                     "CMD [\"/opt/jpress/jpress.sh\", \"start\"]"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -374,8 +353,8 @@
                 "code": "35320"
             },
             "sum": {
-                "files": "1229",
-                "code": "128767"
+                "files": "1234",
+                "code": "133991"
             }
         }
     },
@@ -405,10 +384,7 @@
                 "args": [
                     "ARG BRANCH",
                     "ARG COMMIT_HASH"
-                ],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                ]
             },
             {
                 "path": "./Dockerfile",
@@ -419,10 +395,7 @@
                     "CMD [\"bin/start.sh\", \"-Idn\"]"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -449,8 +422,8 @@
                 "code": "26020"
             },
             "sum": {
-                "files": "380",
-                "code": "41733"
+                "files": "385",
+                "code": "42473"
             }
         }
     },
@@ -475,10 +448,7 @@
                     "CMD [\"/bin/sh\",\"/opt/yacy_search_server/startYACY.sh\",\"-f\"]"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -509,11 +479,11 @@
         "loc_info": {
             "java": {
                 "files": "1076",
-                "code": "176130"
+                "code": "176044"
             },
             "sum": {
-                "files": "1550",
-                "code": "243697"
+                "files": "1552",
+                "code": "243930"
             }
         }
     },
@@ -539,10 +509,7 @@
                 "entrypoints": [
                     "ENTRYPOINT [\"/usr/local/bin/run.sh\"]"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -567,8 +534,8 @@
                 "code": "54566"
             },
             "sum": {
-                "files": "734",
-                "code": "58457"
+                "files": "735",
+                "code": "58745"
             }
         }
     },
@@ -595,10 +562,7 @@
                 "entrypoints": [
                     "ENTRYPOINT [\"/app/start.sh\"]"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -618,58 +582,6 @@
             "sum": {
                 "files": "208",
                 "code": "34965"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594333765,
-        "name": "kubernetes-plugin",
-        "full_name": "jenkinsci/kubernetes-plugin",
-        "fork": false,
-        "clone_url": "https://github.com/jenkinsci/kubernetes-plugin.git",
-        "stargazers_count": 1654,
-        "language": "Java",
-        "default_branch": "master",
-        "tag_name": "kubernetes-1.26.3",
-        "commit_sha": "88d1260a10e1d683317782d9efd0e2510be72643",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM jenkins/jenkins:lts-alpine"
-                ],
-                "cmds": [],
-                "entrypoints": [],
-                "args": [
-                    "ARG VERSION=1.15.5"
-                ],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            }
-        ],
-        "build_tools": [
-            "Maven"
-        ],
-        "languages": {
-            "Java": 717795,
-            "Groovy": 48782,
-            "HTML": 22439,
-            "Shell": 2331,
-            "Dockerfile": 826
-        },
-        "contributors": 168,
-        "number_of_commits": 2707,
-        "age_days": 1969,
-        "loc_info": {
-            "java": {
-                "files": "121",
-                "code": "13730"
-            },
-            "sum": {
-                "files": "339",
-                "code": "20076"
             }
         }
     },
@@ -695,10 +607,7 @@
                 "entrypoints": [],
                 "args": [
                     "ARG deploymentDir"
-                ],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                ]
             }
         ],
         "build_tools": [
@@ -716,11 +625,11 @@
         "loc_info": {
             "java": {
                 "files": "226",
-                "code": "22394"
+                "code": "22360"
             },
             "sum": {
-                "files": "288",
-                "code": "26538"
+                "files": "338",
+                "code": "28991"
             }
         }
     },
@@ -746,10 +655,7 @@
                     "CMD [\"/loklak_server/bin/start.sh\", \"-Idn\"]"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -778,63 +684,8 @@
                 "code": "33400"
             },
             "sum": {
-                "files": "418",
-                "code": "49510"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594334113,
-        "name": "iri",
-        "full_name": "iotaledger/iri",
-        "fork": false,
-        "clone_url": "https://github.com/iotaledger/iri.git",
-        "stargazers_count": 1187,
-        "language": "Java",
-        "default_branch": "dev",
-        "tag_name": "v1.8.6-RELEASE",
-        "commit_sha": "a3e9022d3616046ba6e7fa7048dd121d4a898fa9",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM iotacafe/maven:3.5.4.oracle8u181.1.webupd8.1.1-1@sha256:5e30eb28d778a65af2498bf1b7ef594adf046d44a8e4f7b32b326d8d10626e93 as local_stage_build",
-                    "FROM iotacafe/java:oracle8u181.1.webupd8.1-1@sha256:21b0fb1e5b5be7cd239a742238f346e076a46dc0003670cd50f079780288773f"
-                ],
-                "cmds": [],
-                "entrypoints": [
-                    "ENTRYPOINT [ \"/entrypoint.sh\" ]"
-                ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            }
-        ],
-        "build_tools": [
-            "Maven"
-        ],
-        "languages": {
-            "Java": 2268569,
-            "Python": 72609,
-            "Gherkin": 23282,
-            "Standard ML": 14103,
-            "Shell": 4608,
-            "Dockerfile": 3996,
-            "JavaScript": 1440
-        },
-        "contributors": 72,
-        "number_of_commits": 2699,
-        "age_days": 1353,
-        "loc_info": {
-            "java": {
-                "files": "351",
-                "code": "26224"
-            },
-            "sum": {
-                "files": "419",
-                "code": "30900"
+                "files": "420",
+                "code": "49888"
             }
         }
     },
@@ -865,10 +716,7 @@
                 ],
                 "args": [
                     "ARG GROBID_VERSION"
-                ],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                ]
             }
         ],
         "build_tools": [
@@ -897,64 +745,8 @@
                 "code": "60774"
             },
             "sum": {
-                "files": "5964",
-                "code": "690064"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594334487,
-        "name": "validator",
-        "full_name": "validator/validator",
-        "fork": false,
-        "clone_url": "https://github.com/validator/validator.git",
-        "stargazers_count": 898,
-        "language": "Java",
-        "default_branch": "master",
-        "tag_name": "20.6.30",
-        "commit_sha": "3e56505f8e4aa4364a28de79d6dc15215a0bd5d2",
-        "has_modules": true,
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM debian:stable-slim"
-                ],
-                "cmds": [
-                    "CMD CONNECTION_TIMEOUT=$((CONNECTION_TIMEOUT_SECONDS * 1000)); \\SOCKET_TIMEOUT=$((SOCKET_TIMEOUT_SECONDS * 1000)); \\./vnu-runtime-image/bin/java \\-Dnu.validator.servlet.connection-timeout=$CONNECTION_TIMEOUT \\-Dnu.validator.servlet.socket-timeout=$SOCKET_TIMEOUT \\-Dnu.validator.servlet.bind-address=$BIND_ADDRESS \\-m vnu/nu.validator.servlet.Main 8888"
-                ],
-                "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            }
-        ],
-        "build_tools": [
-            "Ant"
-        ],
-        "languages": {
-            "Java": 2125059,
-            "Python": 103292,
-            "HTML": 99669,
-            "JavaScript": 49345,
-            "CSS": 20890,
-            "Dockerfile": 2491,
-            "Makefile": 2342,
-            "Shell": 139
-        },
-        "contributors": 57,
-        "number_of_commits": 3871,
-        "age_days": 3505,
-        "loc_info": {
-            "java": {
-                "files": "267",
-                "code": "38015"
-            },
-            "sum": {
-                "files": "323",
-                "code": "82406"
+                "files": "5975",
+                "code": "690629"
             }
         }
     },
@@ -982,10 +774,7 @@
                 "entrypoints": [
                     "ENTRYPOINT [\"/opt/s3proxy/run-docker-container.sh\"]"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -1007,53 +796,6 @@
             "sum": {
                 "files": "48",
                 "code": "8886"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594334525,
-        "name": "FakeSMTP",
-        "full_name": "Nilhcem/FakeSMTP",
-        "fork": false,
-        "clone_url": "https://github.com/Nilhcem/FakeSMTP.git",
-        "stargazers_count": 844,
-        "language": "Java",
-        "default_branch": "master",
-        "commit_sha": "1fea9ab114f836188974763c69254003c514437c",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM java:8"
-                ],
-                "cmds": [],
-                "entrypoints": [
-                    "ENTRYPOINT [\"java\",\"-jar\",\"/fakeSMTP-2.0.jar\",\"--background\", \"--output-dir\", \"/output\", \"--port\", \"25\", \"--start-server\"]"
-                ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            }
-        ],
-        "build_tools": [
-            "Maven"
-        ],
-        "languages": {
-            "Java": 100941
-        },
-        "contributors": 13,
-        "number_of_commits": 182,
-        "age_days": 3212,
-        "loc_info": {
-            "java": {
-                "files": "52",
-                "code": "2000"
-            },
-            "sum": {
-                "files": "59",
-                "code": "2513"
             }
         }
     },
@@ -1090,10 +832,7 @@
                     "ARG TLS_KEYSTORE_PASS",
                     "ARG ALIAS",
                     "ARG HTTPS_PORT"
-                ],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                ]
             }
         ],
         "build_tools": [
@@ -1121,181 +860,8 @@
                 "code": "38854"
             },
             "sum": {
-                "files": "1394",
-                "code": "156837"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594334614,
-        "name": "heroic",
-        "full_name": "spotify/heroic",
-        "fork": false,
-        "clone_url": "https://github.com/spotify/heroic.git",
-        "stargazers_count": 788,
-        "language": "Java",
-        "default_branch": "master",
-        "tag_name": "2.1.0",
-        "commit_sha": "26d23e113d6094b56d0f6731dd753b59ab6e318e",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM maven:3.5.4-jdk-11 as builder",
-                    "FROM openjdk:11"
-                ],
-                "cmds": [
-                    "CMD [\"/heroic.yml\"]"
-                ],
-                "entrypoints": [
-                    "ENTRYPOINT [\"/usr/bin/heroic.sh\"]"
-                ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            }
-        ],
-        "build_tools": [
-            "Gradle"
-        ],
-        "languages": {
-            "Java": 2621595,
-            "Kotlin": 512180,
-            "Python": 9692,
-            "ANTLR": 4623,
-            "Shell": 1807,
-            "Dockerfile": 646
-        },
-        "contributors": 34,
-        "number_of_commits": 1257,
-        "age_days": 1868,
-        "loc_info": {
-            "java": {
-                "files": "809",
-                "code": "47974"
-            },
-            "sum": {
-                "files": "1326",
-                "code": "67380"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594334625,
-        "name": "pcap4j",
-        "full_name": "kaitoy/pcap4j",
-        "fork": false,
-        "clone_url": "https://github.com/kaitoy/pcap4j.git",
-        "stargazers_count": 778,
-        "language": "Java",
-        "default_branch": "v1",
-        "commit_sha": "0b4fad83439808c32f61054b2693641991572f6f",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM openjdk:11-jdk-slim"
-                ],
-                "cmds": [
-                    "CMD [\"eth0\", \"false\"]"
-                ],
-                "entrypoints": [
-                    "ENTRYPOINT [\"/bin/sh\", \"/usr/local/src/pcap4j/bin/capture.sh\"]"
-                ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            }
-        ],
-        "build_tools": [
-            "Maven"
-        ],
-        "languages": {
-            "Java": 3326369,
-            "Dockerfile": 1684,
-            "HTML": 1675,
-            "Perl": 1613,
-            "Shell": 103
-        },
-        "contributors": 24,
-        "number_of_commits": 866,
-        "age_days": 3126,
-        "loc_info": {
-            "java": {
-                "files": "444",
-                "code": "67539"
-            },
-            "sum": {
-                "files": "485",
-                "code": "70848"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594334641,
-        "name": "metron",
-        "full_name": "apache/metron",
-        "fork": false,
-        "clone_url": "https://github.com/apache/metron.git",
-        "stargazers_count": 769,
-        "language": "Java",
-        "default_branch": "master",
-        "commit_sha": "1252573eab087e87fb2938f8651c5b0b393aca9e",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./metron-contrib/metron-docker/compose/kafkazk/Dockerfile",
-                "base_images": [
-                    "FROM centos"
-                ],
-                "cmds": [
-                    "CMD ./bin/start.sh"
-                ],
-                "entrypoints": [],
-                "args": [
-                    "ARG DOCKER_HOST",
-                    "ARG BROKER_IP_ADDR",
-                    "ARG METRON_VERSION"
-                ],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            }
-        ],
-        "build_tools": [
-            "Maven"
-        ],
-        "languages": {
-            "Java": 7489872,
-            "HTML": 2157386,
-            "TypeScript": 1299353,
-            "CSS": 786331,
-            "Python": 356749,
-            "Shell": 226434,
-            "JavaScript": 185836,
-            "C": 49573,
-            "Ruby": 26376,
-            "Dockerfile": 16693,
-            "ANTLR": 12811,
-            "Scala": 2700,
-            "Makefile": 2579,
-            "TSQL": 2401
-        },
-        "contributors": 80,
-        "number_of_commits": 1453,
-        "age_days": 1669,
-        "loc_info": {
-            "java": {
-                "files": "1344",
-                "code": "128344"
-            },
-            "sum": {
-                "files": "2716",
-                "code": "332046"
+                "files": "1395",
+                "code": "156735"
             }
         }
     },
@@ -1321,10 +887,7 @@
                     "CMD java -Djetty.contextpath=/ -jar target/dependency/jetty-runner.jar target/plantuml.war"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -1372,10 +935,7 @@
                     "CMD [\"java\",\"-jar\",\"kestrel_2.9.2-2.4.2-SNAPSHOT.jar\",\"-f\",\"config/development.scala\"]"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -1424,10 +984,7 @@
                     "CMD [\"sh\", \"-c\", \"/apache-ftpserver-1.1.1/bin/ftpd.sh res/conf/ftpd-typical.xml\"]"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -1445,59 +1002,11 @@
         "loc_info": {
             "java": {
                 "files": "153",
-                "code": "17959"
+                "code": "17894"
             },
             "sum": {
                 "files": "207",
-                "code": "20556"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594334854,
-        "name": "java-client-api",
-        "full_name": "jenkinsci/java-client-api",
-        "fork": false,
-        "clone_url": "https://github.com/jenkinsci/java-client-api.git",
-        "stargazers_count": 663,
-        "language": "Java",
-        "default_branch": "master",
-        "commit_sha": "5ac251377875083027d5e54c0e611f6b59deb335",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./jenkins-client-it-docker/Dockerfile",
-                "base_images": [
-                    "FROM jenkins:1.651.3"
-                ],
-                "cmds": [],
-                "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            }
-        ],
-        "build_tools": [
-            "Ant",
-            "Maven"
-        ],
-        "languages": {
-            "Java": 407733,
-            "Shell": 493,
-            "Dockerfile": 222
-        },
-        "contributors": 66,
-        "number_of_commits": 539,
-        "age_days": 2791,
-        "loc_info": {
-            "java": {
-                "files": "125",
-                "code": "8635"
-            },
-            "sum": {
-                "files": "148",
-                "code": "10871"
+                "code": "20491"
             }
         }
     },
@@ -1524,10 +1033,7 @@
                 "entrypoints": [
                     "ENTRYPOINT [\"sh\", \"-c\"]"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./order-microservice/Dockerfile",
@@ -1540,10 +1046,7 @@
                 "entrypoints": [
                     "ENTRYPOINT [\"sh\", \"-c\"]"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./shopping-ui/Dockerfile",
@@ -1556,10 +1059,7 @@
                 "entrypoints": [
                     "ENTRYPOINT [\"sh\", \"-c\"]"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./product-microservice/Dockerfile",
@@ -1572,10 +1072,7 @@
                 "entrypoints": [
                     "ENTRYPOINT [\"sh\", \"-c\"]"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./api-gateway/Dockerfile",
@@ -1588,10 +1085,7 @@
                 "entrypoints": [
                     "ENTRYPOINT [\"sh\", \"-c\"]"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./cache-infrastructure/Dockerfile",
@@ -1604,10 +1098,7 @@
                 "entrypoints": [
                     "ENTRYPOINT [\"sh\", \"-c\"]"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./monitor-dashboard/Dockerfile",
@@ -1620,10 +1111,7 @@
                 "entrypoints": [
                     "ENTRYPOINT [\"sh\", \"-c\"]"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -1645,8 +1133,8 @@
                 "code": "7488"
             },
             "sum": {
-                "files": "203",
-                "code": "13562"
+                "files": "213",
+                "code": "13794"
             }
         }
     },
@@ -1673,10 +1161,7 @@
                 "entrypoints": [
                     "ENTRYPOINT [\"java\", \"-Djava.security.egd=file:/dev/./urandom\"]"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -1703,8 +1188,8 @@
                 "code": "17974"
             },
             "sum": {
-                "files": "1025",
-                "code": "47789"
+                "files": "1026",
+                "code": "47835"
             }
         }
     },
@@ -1729,10 +1214,7 @@
                     "CMD [\"java\", \"-jar\", \"bootshiro.jar\",\"--spring.profiles.active=prod\"]"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -1749,11 +1231,11 @@
         "loc_info": {
             "java": {
                 "files": "83",
-                "code": "3574"
+                "code": "3558"
             },
             "sum": {
-                "files": "102",
-                "code": "5852"
+                "files": "103",
+                "code": "5901"
             }
         }
     },
@@ -1778,10 +1260,7 @@
                     "CMD [\"/usr/local/bin/basexhttp\"]"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -1819,165 +1298,11 @@
         "loc_info": {
             "java": {
                 "files": "2169",
-                "code": "156405"
+                "code": "156000"
             },
             "sum": {
-                "files": "2344",
-                "code": "226916"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594335592,
-        "name": "openrouteservice",
-        "full_name": "GIScience/openrouteservice",
-        "fork": false,
-        "clone_url": "https://github.com/GIScience/openrouteservice.git",
-        "stargazers_count": 463,
-        "language": "Java",
-        "default_branch": "master",
-        "tag_name": "v6.1.1",
-        "commit_sha": "f5f118178da820573d08f84698b8fdbc0828ab22",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM openjdk:8-jdk"
-                ],
-                "cmds": [],
-                "entrypoints": [
-                    "ENTRYPOINT [\"/bin/bash\", \"/docker-entrypoint.sh\"]"
-                ],
-                "args": [
-                    "ARG APP_CONFIG=./docker/conf/app.config.sample",
-                    "ARG OSM_FILE=./docker/data/heidelberg.osm.gz"
-                ],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            }
-        ],
-        "build_tools": [
-            "Maven"
-        ],
-        "languages": {
-            "Java": 3281235,
-            "Shell": 3617,
-            "Dockerfile": 2557
-        },
-        "contributors": 56,
-        "number_of_commits": 2037,
-        "age_days": 1031,
-        "loc_info": {
-            "java": {
-                "files": "565",
-                "code": "58511"
-            },
-            "sum": {
-                "files": "596",
-                "code": "60717"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594335623,
-        "name": "spring-boot-thin-launcher",
-        "full_name": "spring-projects-experimental/spring-boot-thin-launcher",
-        "fork": false,
-        "clone_url": "https://github.com/spring-projects-experimental/spring-boot-thin-launcher.git",
-        "stargazers_count": 457,
-        "language": "Java",
-        "default_branch": "master",
-        "tag_name": "v1.0.23.RELEASE",
-        "commit_sha": "020bd048d7ea3e0ab32b3a5943bdf203765b853e",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./samples/other/Dockerfile",
-                "base_images": [
-                    "FROM openjdk:8-jdk-alpine"
-                ],
-                "cmds": [],
-                "entrypoints": [
-                    "ENTRYPOINT [ \"sh\", \"-c\", \"java -Djava.security.egd=file:/dev/./urandom -jar app.jar --thin.root=/m2\" ]"
-                ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            }
-        ],
-        "build_tools": [
-            "Maven",
-            "Gradle"
-        ],
-        "languages": {
-            "Java": 274899
-        },
-        "contributors": 15,
-        "number_of_commits": 424,
-        "age_days": 1360,
-        "loc_info": {
-            "java": {
-                "files": "103",
-                "code": "8379"
-            },
-            "sum": {
-                "files": "225",
-                "code": "17969"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594335715,
-        "name": "sekiro",
-        "full_name": "virjar/sekiro",
-        "fork": false,
-        "clone_url": "https://github.com/virjar/sekiro.git",
-        "stargazers_count": 437,
-        "language": "Java",
-        "default_branch": "master",
-        "commit_sha": "f2075964c32da51996f1f394b66adae9c545d743",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM registry.cn-hangzhou.aliyuncs.com/kennylee/gradle-node:v5.4.1-v12 as build",
-                    "FROM openjdk:8-alpine"
-                ],
-                "cmds": [
-                    "CMD [\"java\", \"-jar\", \"/app/sekiro-server-0.0.1-SNAPSHOT.jar\"]"
-                ],
-                "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            }
-        ],
-        "build_tools": [
-            "Gradle"
-        ],
-        "languages": {
-            "Java": 246741,
-            "JavaScript": 10269,
-            "HTML": 2636,
-            "Shell": 1612,
-            "Dockerfile": 384
-        },
-        "contributors": 3,
-        "number_of_commits": 105,
-        "age_days": 275,
-        "loc_info": {
-            "java": {
-                "files": "138",
-                "code": "21492"
-            },
-            "sum": {
-                "files": "166",
-                "code": "22955"
+                "files": "2345",
+                "code": "226603"
             }
         }
     },
@@ -2004,10 +1329,7 @@
                 "entrypoints": [
                     "ENTRYPOINT [\"java\",\"-jar\",\"/home/appuser/app/springsamlsp.jar\"]"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -2026,11 +1348,11 @@
         "loc_info": {
             "java": {
                 "files": "14",
-                "code": "868"
+                "code": "845"
             },
             "sum": {
                 "files": "32",
-                "code": "1473"
+                "code": "1450"
             }
         }
     },
@@ -2055,10 +1377,7 @@
                 "entrypoints": [
                     "ENTRYPOINT [\"./startup.sh\"]"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -2089,8 +1408,8 @@
                 "code": "412790"
             },
             "sum": {
-                "files": "6139",
-                "code": "510705"
+                "files": "6180",
+                "code": "513123"
             }
         }
     },
@@ -2115,10 +1434,7 @@
                 "entrypoints": [
                     "ENTRYPOINT [\"java\", \"-jar\", \"DynamoDBLocal.jar\", \"-inMemory\"]"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -2164,10 +1480,7 @@
                     "CMD [\"apache-activemq-5.15.6/bin/activemq\", \"console\"]"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -2189,62 +1502,8 @@
                 "code": "4874"
             },
             "sum": {
-                "files": "294",
-                "code": "6665"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594336006,
-        "name": "scoold",
-        "full_name": "Erudika/scoold",
-        "fork": false,
-        "clone_url": "https://github.com/Erudika/scoold.git",
-        "stargazers_count": 368,
-        "language": "Java",
-        "default_branch": "master",
-        "tag_name": "1.39.3",
-        "commit_sha": "47e8223878b11daeb6c3fafc574edd72be2f2cd5",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM openjdk:8-jdk-alpine"
-                ],
-                "cmds": [
-                    "CMD sleep $BOOT_SLEEP && \\java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar scoold-*.jar"
-                ],
-                "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            }
-        ],
-        "build_tools": [
-            "Maven"
-        ],
-        "languages": {
-            "Java": 387464,
-            "JavaScript": 42209,
-            "CSS": 30529,
-            "HTML": 4725,
-            "Shell": 1877,
-            "Smarty": 1042,
-            "Dockerfile": 668
-        },
-        "contributors": 27,
-        "number_of_commits": 1016,
-        "age_days": 1251,
-        "loc_info": {
-            "java": {
-                "files": "46",
-                "code": "7886"
-            },
-            "sum": {
-                "files": "127",
-                "code": "19892"
+                "files": "295",
+                "code": "6833"
             }
         }
     },
@@ -2270,10 +1529,7 @@
                     "CMD sleep $BOOT_SLEEP && \\java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar para-*.jar"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -2299,77 +1555,6 @@
         }
     },
     {
-        "current_timestamp": 1594336102,
-        "name": "scalable-coffee-shop",
-        "full_name": "sdaschner/scalable-coffee-shop",
-        "fork": false,
-        "clone_url": "https://github.com/sdaschner/scalable-coffee-shop.git",
-        "stargazers_count": 342,
-        "language": "Java",
-        "default_branch": "master",
-        "commit_sha": "e99b15f88b47b1d25255f1be8d4fd56f397e3d26",
-        "number_of_dockerfiles": 3,
-        "info_from_dockerfiles": [
-            {
-                "path": "./barista/Dockerfile",
-                "base_images": [
-                    "FROM sdaschner/wildfly:javaee8-kafka-b1"
-                ],
-                "cmds": [],
-                "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            },
-            {
-                "path": "./orders/Dockerfile",
-                "base_images": [
-                    "FROM sdaschner/wildfly:javaee8-kafka-b1"
-                ],
-                "cmds": [],
-                "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            },
-            {
-                "path": "./beans/Dockerfile",
-                "base_images": [
-                    "FROM sdaschner/wildfly:javaee8-kafka-b1"
-                ],
-                "cmds": [],
-                "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            }
-        ],
-        "build_tools": [
-            "Maven",
-            "Gradle"
-        ],
-        "languages": {
-            "Java": 123789,
-            "Shell": 513
-        },
-        "contributors": 2,
-        "number_of_commits": 27,
-        "age_days": 1247,
-        "loc_info": {
-            "java": {
-                "files": "57",
-                "code": "1763"
-            },
-            "sum": {
-                "files": "72",
-                "code": "2225"
-            }
-        }
-    },
-    {
         "current_timestamp": 1594336130,
         "name": "mamute",
         "full_name": "caelum/mamute",
@@ -2391,10 +1576,7 @@
                     "CMD sleep 15 && VRAPTOR_ENV=production ./run.sh"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -2417,122 +1599,8 @@
                 "code": "21421"
             },
             "sum": {
-                "files": "667",
-                "code": "43332"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594336201,
-        "name": "bigtop",
-        "full_name": "apache/bigtop",
-        "fork": false,
-        "clone_url": "https://github.com/apache/bigtop.git",
-        "stargazers_count": 330,
-        "language": "Java",
-        "default_branch": "master",
-        "commit_sha": "cd8903aab346aa38f83cb1a2177bf8a56fc8d1c4",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./bigtop-bigpetstore/bigpetstore-transaction-queue/Dockerfile",
-                "base_images": [
-                    "FROM gradle:5.6.3-jdk12 as build",
-                    "FROM openjdk:14-ea-12-jdk-alpine3.10"
-                ],
-                "cmds": [],
-                "entrypoints": [
-                    "ENTRYPOINT [\"java\", \"-jar\", \"bigpetstore-transaction-queue-all-1.0.jar\"]"
-                ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            }
-        ],
-        "build_tools": [
-            "Maven",
-            "Gradle"
-        ],
-        "languages": {
-            "Java": 670985,
-            "Groovy": 639368,
-            "Shell": 594014,
-            "Python": 240919,
-            "Puppet": 181304,
-            "Scala": 85334,
-            "HTML": 55085,
-            "Makefile": 54104,
-            "Roff": 35443,
-            "Ruby": 14182,
-            "TSQL": 13064,
-            "CSS": 4822,
-            "PigLatin": 3196,
-            "Dockerfile": 2684,
-            "HiveQL": 1658,
-            "XSLT": 1323,
-            "CodeQL": 129
-        },
-        "contributors": 187,
-        "number_of_commits": 2530,
-        "age_days": 3260,
-        "loc_info": {
-            "java": {
-                "files": "215",
-                "code": "11269"
-            },
-            "sum": {
-                "files": "1291",
-                "code": "155382"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594336385,
-        "name": "sorryJava",
-        "full_name": "li24361/sorryJava",
-        "fork": false,
-        "clone_url": "https://github.com/li24361/sorryJava.git",
-        "stargazers_count": 299,
-        "language": "Java",
-        "default_branch": "master",
-        "commit_sha": "2324f68e70fe430fd80e85b036ef52bde525133b",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM openjdk:8-alpine"
-                ],
-                "cmds": [
-                    "CMD java -jar /opt/site/app.jar"
-                ],
-                "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            }
-        ],
-        "build_tools": [
-            "Maven"
-        ],
-        "languages": {
-            "Java": 11553,
-            "FreeMarker": 1501,
-            "Dockerfile": 682
-        },
-        "contributors": 3,
-        "number_of_commits": 73,
-        "age_days": 850,
-        "loc_info": {
-            "java": {
-                "files": "8",
-                "code": "260"
-            },
-            "sum": {
-                "files": "15",
-                "code": "1145"
+                "files": "668",
+                "code": "43364"
             }
         }
     },
@@ -2557,10 +1625,7 @@
                 "entrypoints": [
                     "ENTRYPOINT java $JVM_OPTS -jar /service.jar $ARGS"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./movie-database-monitoring/Dockerfile",
@@ -2571,10 +1636,7 @@
                 "entrypoints": [
                     "ENTRYPOINT java $JVM_OPTS -jar /service.jar $ARGS"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./movie-database-navigation/Dockerfile",
@@ -2585,10 +1647,7 @@
                 "entrypoints": [
                     "ENTRYPOINT java $JVM_OPTS -jar /service.jar $ARGS"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./movie-database-actors/Dockerfile",
@@ -2599,10 +1658,7 @@
                 "entrypoints": [
                     "ENTRYPOINT java $JVM_OPTS -jar /service.jar $ARGS"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -2630,54 +1686,6 @@
         }
     },
     {
-        "current_timestamp": 1594336516,
-        "name": "rundeck-ansible-plugin",
-        "full_name": "Batix/rundeck-ansible-plugin",
-        "fork": false,
-        "clone_url": "https://github.com/Batix/rundeck-ansible-plugin.git",
-        "stargazers_count": 287,
-        "language": "Java",
-        "default_branch": "master",
-        "tag_name": "3.1.1",
-        "commit_sha": "ee626c1c3f338edbc0893b99c870aef079d25b35",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM rundeck/rundeck:3.0.17"
-                ],
-                "cmds": [],
-                "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            }
-        ],
-        "build_tools": [
-            "Gradle"
-        ],
-        "languages": {
-            "Java": 157847,
-            "Dockerfile": 1241,
-            "Shell": 223
-        },
-        "contributors": 28,
-        "number_of_commits": 218,
-        "age_days": 1574,
-        "loc_info": {
-            "java": {
-                "files": "20",
-                "code": "3290"
-            },
-            "sum": {
-                "files": "31",
-                "code": "3805"
-            }
-        }
-    },
-    {
         "current_timestamp": 1594336519,
         "name": "kafka-webview",
         "full_name": "SourceLabOrg/kafka-webview",
@@ -2699,10 +1707,7 @@
                 "entrypoints": [
                     "ENTRYPOINT [ \"/app/start.sh\" ]"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -2724,11 +1729,11 @@
         "loc_info": {
             "java": {
                 "files": "199",
-                "code": "18828"
+                "code": "18811"
             },
             "sum": {
                 "files": "400",
-                "code": "50847"
+                "code": "50830"
             }
         }
     },
@@ -2754,10 +1759,7 @@
                     "CMD CLASSPATH=\"$(find target/ -type f -name '*.jar'| grep '\\-package' | tr '\\n' ':')\" connect-standalone config/worker.properties config/GitHubSourceConnectorExample.properties"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -2804,10 +1806,7 @@
                 "entrypoints": [
                     "ENTRYPOINT [\"java\",\"-jar\",\"hawkbit-update-server.jar\",\"-Xms768m -Xmx768m -XX:MaxMetaspaceSize=250m -XX:MetaspaceSize=250m -Xss300K -XX:+UseG1GC -XX:+UseStringDeduplication -XX:+UseCompressedOops -XX:+HeapDumpOnOutOfMemoryError\"]"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./hawkbit-runtime/docker/0.2.3/Dockerfile",
@@ -2818,10 +1817,7 @@
                 "entrypoints": [
                     "ENTRYPOINT [\"java\",\"-jar\",\"hawkbit-update-server.jar\",\"-Xms768m -Xmx768m -XX:MaxMetaspaceSize=250m -XX:MetaspaceSize=250m -Xss300K -XX:+UseG1GC -XX:+UseStringDeduplication -XX:+UseCompressedOops -XX:+HeapDumpOnOutOfMemoryError\"]"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./hawkbit-runtime/docker/0.3.0M4/Dockerfile",
@@ -2832,10 +1828,7 @@
                 "entrypoints": [
                     "ENTRYPOINT [\"java\",\"-jar\",\"hawkbit-update-server.jar\",\"-Xms768m -Xmx768m -XX:MaxMetaspaceSize=250m -XX:MetaspaceSize=250m -Xss300K -XX:+UseG1GC -XX:+UseStringDeduplication -XX:+UseCompressedOops -XX:+HeapDumpOnOutOfMemoryError\"]"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./hawkbit-runtime/docker/0.2.2/Dockerfile",
@@ -2846,10 +1839,7 @@
                 "entrypoints": [
                     "ENTRYPOINT [\"java\",\"-jar\",\"hawkbit-update-server.jar\",\"-Xms768m -Xmx768m -XX:MaxMetaspaceSize=250m -XX:MetaspaceSize=250m -Xss300K -XX:+UseG1GC -XX:+UseStringDeduplication -XX:+UseCompressedOops -XX:+HeapDumpOnOutOfMemoryError\"]"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./hawkbit-runtime/docker/0.2.0M9/Dockerfile",
@@ -2860,10 +1850,7 @@
                 "entrypoints": [
                     "ENTRYPOINT [\"java\",\"-jar\",\"hawkbit-update-server.jar\",\"-Xms768m -Xmx768m -XX:MaxMetaspaceSize=250m -XX:MetaspaceSize=250m -Xss300K -XX:+UseG1GC -XX:+UseStringDeduplication -XX:+UseCompressedOops -XX:+HeapDumpOnOutOfMemoryError\"]"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./hawkbit-runtime/docker/0.2.0M4/Dockerfile",
@@ -2874,10 +1861,7 @@
                 "entrypoints": [
                     "ENTRYPOINT [\"java\",\"-jar\",\"hawkbit-update-server.jar\",\"-Xms768m -Xmx768m -XX:MaxMetaspaceSize=250m -XX:MetaspaceSize=250m -Xss300K -XX:+UseG1GC -XX:+UseStringDeduplication -XX:+UseCompressedOops -XX:+HeapDumpOnOutOfMemoryError\"]"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./hawkbit-runtime/docker/0.2.0/Dockerfile",
@@ -2888,10 +1872,7 @@
                 "entrypoints": [
                     "ENTRYPOINT [\"java\",\"-jar\",\"hawkbit-update-server.jar\",\"-Xms768m -Xmx768m -XX:MaxMetaspaceSize=250m -XX:MetaspaceSize=250m -Xss300K -XX:+UseG1GC -XX:+UseStringDeduplication -XX:+UseCompressedOops -XX:+HeapDumpOnOutOfMemoryError\"]"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./hawkbit-runtime/docker/0.3.0M5/Dockerfile",
@@ -2902,10 +1883,7 @@
                 "entrypoints": [
                     "ENTRYPOINT [\"java\",\"-jar\",\"hawkbit-update-server.jar\",\"-Xms768m -Xmx768m -XX:MaxMetaspaceSize=250m -XX:MetaspaceSize=250m -Xss300K -XX:+UseG1GC -XX:+UseStringDeduplication -XX:+UseCompressedOops -XX:+HeapDumpOnOutOfMemoryError\"]"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./hawkbit-runtime/docker/0.2.5/Dockerfile",
@@ -2916,10 +1894,7 @@
                 "entrypoints": [
                     "ENTRYPOINT [\"java\",\"-jar\",\"hawkbit-update-server.jar\",\"-Xms768m -Xmx768m -XX:MaxMetaspaceSize=250m -XX:MetaspaceSize=250m -Xss300K -XX:+UseG1GC -XX:+UseStringDeduplication -XX:+UseCompressedOops -XX:+HeapDumpOnOutOfMemoryError\"]"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./hawkbit-runtime/docker/0.2.1/Dockerfile",
@@ -2930,10 +1905,7 @@
                 "entrypoints": [
                     "ENTRYPOINT [\"java\",\"-jar\",\"hawkbit-update-server.jar\",\"-Xms768m -Xmx768m -XX:MaxMetaspaceSize=250m -XX:MetaspaceSize=250m -Xss300K -XX:+UseG1GC -XX:+UseStringDeduplication -XX:+UseCompressedOops -XX:+HeapDumpOnOutOfMemoryError\"]"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./hawkbit-runtime/docker/0.3.0M3/Dockerfile",
@@ -2944,10 +1916,7 @@
                 "entrypoints": [
                     "ENTRYPOINT [\"java\",\"-jar\",\"hawkbit-update-server.jar\",\"-Xms768m -Xmx768m -XX:MaxMetaspaceSize=250m -XX:MetaspaceSize=250m -Xss300K -XX:+UseG1GC -XX:+UseStringDeduplication -XX:+UseCompressedOops -XX:+HeapDumpOnOutOfMemoryError\"]"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./hawkbit-runtime/docker/0.2.4/Dockerfile",
@@ -2958,10 +1927,7 @@
                 "entrypoints": [
                     "ENTRYPOINT [\"java\",\"-jar\",\"hawkbit-update-server.jar\",\"-Xms768m -Xmx768m -XX:MaxMetaspaceSize=250m -XX:MetaspaceSize=250m -Xss300K -XX:+UseG1GC -XX:+UseStringDeduplication -XX:+UseCompressedOops -XX:+HeapDumpOnOutOfMemoryError\"]"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -2983,60 +1949,11 @@
         "loc_info": {
             "java": {
                 "files": "1252",
-                "code": "106738"
+                "code": "106634"
             },
             "sum": {
-                "files": "1519",
-                "code": "125960"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594337118,
-        "name": "poseidon",
-        "full_name": "Saseke/poseidon",
-        "fork": false,
-        "clone_url": "https://github.com/Saseke/poseidon.git",
-        "stargazers_count": 216,
-        "language": "Java",
-        "default_branch": "master",
-        "commit_sha": "917d165d89f3a568c4fd15ffad4eac3ff12a1708",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./psd-discovery/Dockerfile",
-                "base_images": [
-                    "FROM openjdk:8-jdk-alpine"
-                ],
-                "cmds": [],
-                "entrypoints": [
-                    "ENTRYPOINT [\"java\",\"-jar\",\"eureka.jar\"]"
-                ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            }
-        ],
-        "build_tools": [
-            "Gradle"
-        ],
-        "languages": {
-            "Java": 202335,
-            "TSQL": 40446,
-            "Dockerfile": 1000
-        },
-        "contributors": 2,
-        "number_of_commits": 46,
-        "age_days": 658,
-        "loc_info": {
-            "java": {
-                "files": "147",
-                "code": "6048"
-            },
-            "sum": {
-                "files": "213",
-                "code": "8288"
+                "files": "1543",
+                "code": "129373"
             }
         }
     },
@@ -3063,10 +1980,7 @@
                     "CMD service mysql start && \\sleep 5 && \\service xvfb start && \\echo \"JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/\" >> /etc/default/tomcat7 && \\service tomcat7 start ; \\tail -f /var/log/tomcat7/catalina.out \\/var/log/asqatasun/asqatasun.log"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -3094,116 +2008,8 @@
                 "code": "229979"
             },
             "sum": {
-                "files": "15037",
-                "code": "558588"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594337569,
-        "name": "credhub",
-        "full_name": "cloudfoundry-incubator/credhub",
-        "fork": false,
-        "clone_url": "https://github.com/cloudfoundry-incubator/credhub.git",
-        "stargazers_count": 176,
-        "language": "Java",
-        "default_branch": "master",
-        "commit_sha": "43a07997401048e3fff23796556855156198e9da",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM openjdk:8 as build",
-                    "FROM openjdk:8-jre as run"
-                ],
-                "cmds": [
-                    "CMD /app/setup_trust_store.sh && /app/start_server.sh"
-                ],
-                "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            }
-        ],
-        "build_tools": [
-            "Gradle"
-        ],
-        "languages": {
-            "Java": 1296047,
-            "Kotlin": 1075840,
-            "TSQL": 44569,
-            "Shell": 22882,
-            "Groovy": 3620,
-            "HTML": 1305,
-            "Dockerfile": 989,
-            "Vim Snippet": 593,
-            "PLSQL": 271
-        },
-        "contributors": 74,
-        "number_of_commits": 2322,
-        "age_days": 1535,
-        "loc_info": {
-            "java": {
-                "files": "232",
-                "code": "25703"
-            },
-            "sum": {
-                "files": "821",
-                "code": "53841"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594337637,
-        "name": "jenkins-client-plugin",
-        "full_name": "openshift/jenkins-client-plugin",
-        "fork": false,
-        "clone_url": "https://github.com/openshift/jenkins-client-plugin.git",
-        "stargazers_count": 172,
-        "language": "Java",
-        "default_branch": "master",
-        "commit_sha": "3bd3894ea9c1ea8ee68cbc8482449eddd77d043b",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM quay.io/openshift/origin-jenkins-agent-maven:v4.0 AS builder",
-                    "FROM quay.io/openshift/origin-jenkins:v4.0"
-                ],
-                "cmds": [],
-                "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            }
-        ],
-        "build_tools": [
-            "Maven"
-        ],
-        "languages": {
-            "Java": 95664,
-            "Groovy": 75390,
-            "Go": 30485,
-            "HTML": 2608,
-            "Shell": 1711,
-            "Dockerfile": 671,
-            "Makefile": 113
-        },
-        "contributors": 29,
-        "number_of_commits": 369,
-        "age_days": 1281,
-        "loc_info": {
-            "java": {
-                "files": "21",
-                "code": "2009"
-            },
-            "sum": {
-                "files": "1499",
-                "code": "654731"
+                "files": "15048",
+                "code": "568315"
             }
         }
     },
@@ -3218,7 +2024,7 @@
         "default_branch": "master",
         "tag_name": "v2.0.0",
         "commit_sha": "b84034550cfaf5ce20d84c4200f736ad73beb806",
-        "number_of_dockerfiles": 8,
+        "number_of_dockerfiles": 7,
         "info_from_dockerfiles": [
             {
                 "path": "./examples/ruby/Dockerfile",
@@ -3227,10 +2033,7 @@
                 ],
                 "cmds": [],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./examples/c/Dockerfile",
@@ -3240,23 +2043,7 @@
                 ],
                 "cmds": [],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            },
-            {
-                "path": "./examples/golang/Dockerfile",
-                "base_images": [
-                    "FROM golang:1.11 as builder",
-                    "FROM jerverless:latest"
-                ],
-                "cmds": [],
-                "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./examples/bash/Dockerfile",
@@ -3265,10 +2052,7 @@
                 ],
                 "cmds": [],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./examples/php/Dockerfile",
@@ -3277,10 +2061,7 @@
                 ],
                 "cmds": [],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./examples/java/Dockerfile",
@@ -3290,10 +2071,7 @@
                 ],
                 "cmds": [],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./examples/rust/Dockerfile",
@@ -3303,10 +2081,7 @@
                 ],
                 "cmds": [],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./examples/cpp/Dockerfile",
@@ -3316,10 +2091,7 @@
                 ],
                 "cmds": [],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -3366,10 +2138,7 @@
                 "entrypoints": [],
                 "args": [
                     "ARG jenkins_tag=2.190.3-alpine"
-                ],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                ]
             }
         ],
         "build_tools": [
@@ -3416,10 +2185,7 @@
                     "CMD [\"java\", \"-jar\", \"reactive-web-1.0.0-SNAPSHOT.jar\"]"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -3466,10 +2232,7 @@
                 ],
                 "cmds": [],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -3516,10 +2279,7 @@
                     "CMD java -jar -DswaggerUrl=swagger.yaml -DrejectLocal=${REJECT_LOCAL} -DrejectRedirect=${REJECT_REDIRECT} /validator/jetty-runner.jar /validator/server.war"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -3545,60 +2305,6 @@
         }
     },
     {
-        "current_timestamp": 1594338066,
-        "name": "bag-database",
-        "full_name": "swri-robotics/bag-database",
-        "fork": false,
-        "clone_url": "https://github.com/swri-robotics/bag-database.git",
-        "stargazers_count": 149,
-        "language": "Java",
-        "default_branch": "master",
-        "tag_name": "v2.7.1",
-        "commit_sha": "dea78a6202d3d3f0a4fc75c82bf2d57e692a1441",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM maven:3.5.2-jdk-8-slim as base-layer",
-                    "FROM tomcat:9-alpine"
-                ],
-                "cmds": [
-                    "CMD [\"/entrypoint.sh\"]"
-                ],
-                "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            }
-        ],
-        "build_tools": [
-            "Maven"
-        ],
-        "languages": {
-            "Java": 336025,
-            "JavaScript": 153780,
-            "HTML": 7372,
-            "CSS": 2155,
-            "Shell": 1518,
-            "Dockerfile": 784
-        },
-        "contributors": 6,
-        "number_of_commits": 101,
-        "age_days": 1498,
-        "loc_info": {
-            "java": {
-                "files": "68",
-                "code": "4712"
-            },
-            "sum": {
-                "files": "256",
-                "code": "113451"
-            }
-        }
-    },
-    {
         "current_timestamp": 1594338090,
         "name": "RCT",
         "full_name": "xaecbd/RCT",
@@ -3620,10 +2326,7 @@
                     "CMD [\"sh\",\"start.sh\"]"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./RCT-Dashboard/docker/Dockerfile",
@@ -3634,10 +2337,7 @@
                     "CMD [\"sh\",\"start.sh\"]"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -3688,10 +2388,7 @@
                 "entrypoints": [
                     "ENTRYPOINT [\"/usr/bin/java\"]"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -3717,108 +2414,6 @@
         }
     },
     {
-        "current_timestamp": 1594338121,
-        "name": "standalone-hystrix-dashboard",
-        "full_name": "kennedyoliveira/standalone-hystrix-dashboard",
-        "fork": false,
-        "clone_url": "https://github.com/kennedyoliveira/standalone-hystrix-dashboard.git",
-        "stargazers_count": 146,
-        "language": "Java",
-        "default_branch": "master",
-        "commit_sha": "8db0c97e0640dc51e24ea9823489d3f5559520b6",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./docker/Dockerfile",
-                "base_images": [
-                    "FROM kennedyoliveira/java8"
-                ],
-                "cmds": [],
-                "entrypoints": [
-                    "ENTRYPOINT exec java -jar $JVM_ARGS standalone-hystrix-dashboard-$STANDALONE_HYSTRIX_VERSION-all.jar"
-                ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            }
-        ],
-        "build_tools": [
-            "Gradle"
-        ],
-        "languages": {
-            "Java": 40057,
-            "Shell": 106
-        },
-        "contributors": 2,
-        "number_of_commits": 52,
-        "age_days": 1534,
-        "loc_info": {
-            "java": {
-                "files": "11",
-                "code": "716"
-            },
-            "sum": {
-                "files": "23",
-                "code": "1294"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594338127,
-        "name": "db",
-        "full_name": "blobcity/db",
-        "fork": false,
-        "clone_url": "https://github.com/blobcity/db.git",
-        "stargazers_count": 146,
-        "language": "Java",
-        "default_branch": "master",
-        "tag_name": "1.7.10",
-        "commit_sha": "3e0e2d78725570f8c7695d07167694fb31ae2b85",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM blobcity/java8-ubuntu"
-                ],
-                "cmds": [
-                    "CMD [\"bin/blobcity.sh\"]"
-                ],
-                "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            }
-        ],
-        "build_tools": [
-            "Ant",
-            "Maven"
-        ],
-        "languages": {
-            "Java": 2672480,
-            "C++": 157121,
-            "C": 61776,
-            "Makefile": 6014,
-            "Shell": 2832,
-            "Dockerfile": 1035
-        },
-        "contributors": 8,
-        "number_of_commits": 336,
-        "age_days": 662,
-        "loc_info": {
-            "java": {
-                "files": "523",
-                "code": "41292"
-            },
-            "sum": {
-                "files": "612",
-                "code": "47352"
-            }
-        }
-    },
-    {
         "current_timestamp": 1594338154,
         "name": "etcd-viewer",
         "full_name": "nikfoundas/etcd-viewer",
@@ -3838,10 +2433,7 @@
                 ],
                 "cmds": [],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -3876,46 +2468,8 @@
         "default_branch": "dev",
         "tag_name": "2.1.0",
         "commit_sha": "0bffd4a6d7218303170b990874bce73dfa5b4b54",
-        "number_of_dockerfiles": 10,
+        "number_of_dockerfiles": 5,
         "info_from_dockerfiles": [
-            {
-                "path": "./cu-services/images/servers/tomcat-8/Dockerfile",
-                "base_images": [
-                    "FROM openjdk:8-jdk"
-                ],
-                "cmds": [
-                    "CMD [ \"run\" ]"
-                ],
-                "entrypoints": [
-                    "ENTRYPOINT [\"docker-entrypoint.sh\"]"
-                ],
-                "args": [
-                    "ARG TOMCAT_VERSION",
-                    "ARG TOMCAT_VERSION"
-                ],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            },
-            {
-                "path": "./cu-services/images/servers/tomcat-85/Dockerfile",
-                "base_images": [
-                    "FROM openjdk:8-jdk"
-                ],
-                "cmds": [
-                    "CMD [ \"run\" ]"
-                ],
-                "entrypoints": [
-                    "ENTRYPOINT [\"docker-entrypoint.sh\"]"
-                ],
-                "args": [
-                    "ARG TOMCAT_VERSION",
-                    "ARG TOMCAT_VERSION"
-                ],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            },
             {
                 "path": "./cu-services/images/servers/wildfly-9/Dockerfile",
                 "base_images": [
@@ -3930,10 +2484,7 @@
                 "args": [
                     "ARG WILDFLY_VERSION",
                     "ARG WILDFLY_SHA1"
-                ],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                ]
             },
             {
                 "path": "./cu-services/images/servers/wildfly-10/Dockerfile",
@@ -3949,29 +2500,7 @@
                 "args": [
                     "ARG WILDFLY_VERSION",
                     "ARG WILDFLY_SHA1"
-                ],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            },
-            {
-                "path": "./cu-services/images/servers/tomcat-9/Dockerfile",
-                "base_images": [
-                    "FROM openjdk:8-jdk"
-                ],
-                "cmds": [
-                    "CMD [ \"run\" ]"
-                ],
-                "entrypoints": [
-                    "ENTRYPOINT [\"docker-entrypoint.sh\"]"
-                ],
-                "args": [
-                    "ARG TOMCAT_VERSION",
-                    "ARG TOMCAT_VERSION"
-                ],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                ]
             },
             {
                 "path": "./cu-services/images/servers/wildfly-8/Dockerfile",
@@ -3987,10 +2516,7 @@
                 "args": [
                     "ARG WILDFLY_VERSION",
                     "ARG WILDFLY_SHA1"
-                ],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                ]
             },
             {
                 "path": "./cu-services/images/servers/vertx33-groovy/Dockerfile",
@@ -4003,29 +2529,7 @@
                 "entrypoints": [
                     "ENTRYPOINT [\"docker-entrypoint.sh\"]"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            },
-            {
-                "path": "./cu-services/images/servers/tomcat-7/Dockerfile",
-                "base_images": [
-                    "FROM openjdk:8-jdk"
-                ],
-                "cmds": [
-                    "CMD [ \"run\" ]"
-                ],
-                "entrypoints": [
-                    "ENTRYPOINT [\"docker-entrypoint.sh\"]"
-                ],
-                "args": [
-                    "ARG TOMCAT_VERSION",
-                    "ARG TOMCAT_VERSION"
-                ],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./cu-services/images/servers/fatjar/Dockerfile",
@@ -4036,29 +2540,7 @@
                 "entrypoints": [
                     "ENTRYPOINT [\"/tini\", \"--\", \"/docker-entrypoint.sh\"]"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            },
-            {
-                "path": "./cu-services/images/servers/tomcat-6/Dockerfile",
-                "base_images": [
-                    "FROM openjdk:7-jdk"
-                ],
-                "cmds": [
-                    "CMD [ \"run\" ]"
-                ],
-                "entrypoints": [
-                    "ENTRYPOINT [\"docker-entrypoint.sh\"]"
-                ],
-                "args": [
-                    "ARG TOMCAT_VERSION",
-                    "ARG TOMCAT_VERSION"
-                ],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -4083,11 +2565,11 @@
         "loc_info": {
             "java": {
                 "files": "469",
-                "code": "27444"
+                "code": "27336"
             },
             "sum": {
-                "files": "964",
-                "code": "81130"
+                "files": "975",
+                "code": "91077"
             }
         }
     },
@@ -4111,10 +2593,7 @@
                 ],
                 "cmds": [],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "languages": {
@@ -4153,10 +2632,7 @@
                     "CMD [\"mvn\", \"-s\", \"/usr/share/maven/ref/settings-docker.xml\", \"clean\", \"jetty:run\"]"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -4179,171 +2655,6 @@
             "sum": {
                 "files": "67",
                 "code": "4680"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594338312,
-        "name": "nexus-repository-composer",
-        "full_name": "sonatype-nexus-community/nexus-repository-composer",
-        "fork": false,
-        "clone_url": "https://github.com/sonatype-nexus-community/nexus-repository-composer.git",
-        "stargazers_count": 132,
-        "language": "Java",
-        "default_branch": "master",
-        "commit_sha": "0d1eb84430c61731d99061110b11d24ffa508c73",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM maven:3-jdk-8-alpine AS build",
-                    "FROM sonatype/nexus3:$NEXUS_VERSION"
-                ],
-                "cmds": [],
-                "entrypoints": [],
-                "args": [
-                    "ARG NEXUS_VERSION=latest",
-                    "ARG DEPLOY_DIR=/opt/sonatype/nexus/deploy/"
-                ],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            }
-        ],
-        "build_tools": [
-            "Maven"
-        ],
-        "languages": {
-            "Java": 199488,
-            "Groovy": 21467,
-            "JavaScript": 7970,
-            "CSS": 799,
-            "Dockerfile": 565,
-            "Shell": 382
-        },
-        "contributors": 12,
-        "number_of_commits": 53,
-        "age_days": 863,
-        "loc_info": {
-            "java": {
-                "files": "42",
-                "code": "3517"
-            },
-            "sum": {
-                "files": "87",
-                "code": "5969"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594338441,
-        "name": "hawkular-apm",
-        "full_name": "hawkular/hawkular-apm",
-        "fork": false,
-        "clone_url": "https://github.com/hawkular/hawkular-apm.git",
-        "stargazers_count": 131,
-        "language": "Java",
-        "default_branch": "master",
-        "tag_name": "0.14.4.Final",
-        "commit_sha": "0f1de397120aaaaa9ceacda7e3b5b7729c3e69c8",
-        "number_of_dockerfiles": 5,
-        "info_from_dockerfiles": [
-            {
-                "path": "./examples/polyglot-zipkin/java-wildfly-swarm/Dockerfile",
-                "base_images": [
-                    "FROM maven:3.3.9-jdk-8"
-                ],
-                "cmds": [
-                    "CMD [\"java\", \"-jar\", \"target/hawkular-apm-example-zipkin-wildfly-swarm.jar\", \"-Dswarm.http.port=3003\"]"
-                ],
-                "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            },
-            {
-                "path": "./examples/vertx-opentracing/order-manager/Dockerfile",
-                "base_images": [
-                    "FROM openjdk:8-jdk"
-                ],
-                "cmds": [
-                    "CMD [\"java\", \"-jar\", \"hawkular-apm-examples-vertx-opentracing-order-manager-fat.jar\", \"-cluster\"]"
-                ],
-                "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            },
-            {
-                "path": "./examples/vertx-opentracing/order-log/Dockerfile",
-                "base_images": [
-                    "FROM openjdk:8-jdk"
-                ],
-                "cmds": [
-                    "CMD [\"java\", \"-jar\", \"hawkular-apm-examples-vertx-opentracing-order-log-fat.jar\", \"-cluster\"]"
-                ],
-                "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            },
-            {
-                "path": "./examples/vertx-opentracing/account-manager/Dockerfile",
-                "base_images": [
-                    "FROM openjdk:8-jdk"
-                ],
-                "cmds": [
-                    "CMD [\"java\", \"-jar\", \"hawkular-apm-examples-vertx-opentracing-account-manager-fat.jar\", \"-cluster\"]"
-                ],
-                "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            },
-            {
-                "path": "./examples/vertx-opentracing/inventory-manager/Dockerfile",
-                "base_images": [
-                    "FROM openjdk:8-jdk"
-                ],
-                "cmds": [
-                    "CMD [\"java\", \"-jar\", \"hawkular-apm-examples-vertx-opentracing-inventory-manager-fat.jar\", \"-cluster\"]"
-                ],
-                "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            }
-        ],
-        "build_tools": [
-            "Maven"
-        ],
-        "languages": {
-            "Java": 2334955,
-            "TypeScript": 124064,
-            "HTML": 76677,
-            "CSS": 62273,
-            "JavaScript": 15108,
-            "Shell": 11350,
-            "Batchfile": 5271,
-            "XSLT": 2230
-        },
-        "contributors": 17,
-        "number_of_commits": 1659,
-        "age_days": 1812,
-        "loc_info": {
-            "java": {
-                "files": "529",
-                "code": "42303"
-            },
-            "sum": {
-                "files": "756",
-                "code": "60576"
             }
         }
     },
@@ -4372,10 +2683,7 @@
                 ],
                 "args": [
                     "ARG GIT_COMMIT=unknown"
-                ],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                ]
             }
         ],
         "build_tools": [
@@ -4411,126 +2719,8 @@
                 "code": "82875"
             },
             "sum": {
-                "files": "1549",
-                "code": "155063"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594338990,
-        "name": "delivery-pipeline-plugin",
-        "full_name": "Diabol/delivery-pipeline-plugin",
-        "fork": false,
-        "clone_url": "https://github.com/Diabol/delivery-pipeline-plugin.git",
-        "stargazers_count": 117,
-        "language": "Java",
-        "default_branch": "master",
-        "tag_name": "release-1.4.2",
-        "commit_sha": "49002f9f76ca8f664c1de1c0546011179f81a367",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM jenkins/jenkins:2.107.3-alpine"
-                ],
-                "cmds": [],
-                "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            }
-        ],
-        "build_tools": [
-            "Maven"
-        ],
-        "languages": {
-            "Java": 658324,
-            "JavaScript": 31826,
-            "CSS": 10620,
-            "HTML": 5716,
-            "Shell": 1367,
-            "Groovy": 1273,
-            "Dockerfile": 704
-        },
-        "contributors": 52,
-        "number_of_commits": 1064,
-        "age_days": 2576,
-        "loc_info": {
-            "java": {
-                "files": "151",
-                "code": "11832"
-            },
-            "sum": {
-                "files": "214",
-                "code": "14893"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594339068,
-        "name": "miso-lims",
-        "full_name": "miso-lims/miso-lims",
-        "fork": false,
-        "clone_url": "https://github.com/miso-lims/miso-lims.git",
-        "stargazers_count": 115,
-        "language": "Java",
-        "default_branch": "develop",
-        "tag_name": "v1.7.1",
-        "commit_sha": "5cec68d5949f4ccfec8c4309aeea899c50b930c4",
-        "has_modules": true,
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM maven:3.6.0-jdk-8 as builder",
-                    "FROM boxfuse/flyway:5.2.4-alpine as flyway-migration",
-                    "FROM tomcat:8.5.38-alpine as webapp"
-                ],
-                "cmds": [
-                    "CMD [\"catalina.sh\", \"run\"]"
-                ],
-                "entrypoints": [
-                    "ENTRYPOINT [\"/run-flyway\"]"
-                ],
-                "args": [
-                    "ARG MYSQL_JBDC_VERSION=8.0.15"
-                ],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            }
-        ],
-        "build_tools": [
-            "Maven"
-        ],
-        "languages": {
-            "Java": 5224941,
-            "JavaScript": 1809387,
-            "TSQL": 238395,
-            "CSS": 60301,
-            "PLpgSQL": 25059,
-            "XSLT": 19123,
-            "SQLPL": 16995,
-            "Groovy": 4515,
-            "Shell": 4042,
-            "Dockerfile": 3076,
-            "HTML": 2171,
-            "PLSQL": 1180
-        },
-        "contributors": 21,
-        "number_of_commits": 4088,
-        "age_days": 2941,
-        "loc_info": {
-            "java": {
-                "files": "1332",
-                "code": "113856"
-            },
-            "sum": {
-                "files": "2266",
-                "code": "297871"
+                "files": "1554",
+                "code": "166837"
             }
         }
     },
@@ -4558,10 +2748,7 @@
                 "entrypoints": [
                     "ENTRYPOINT [\"java\", \"-jar\", \"/rapid/jetty-runner.jar\"]"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -4582,60 +2769,8 @@
                 "code": "2785"
             },
             "sum": {
-                "files": "66",
-                "code": "4746"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594339152,
-        "name": "Orienteer",
-        "full_name": "OrienteerBAP/Orienteer",
-        "fork": false,
-        "clone_url": "https://github.com/OrienteerBAP/Orienteer.git",
-        "stargazers_count": 112,
-        "language": "Java",
-        "default_branch": "master",
-        "tag_name": "v1.4",
-        "commit_sha": "651a22b5d8e5a05c18b24ab80fbf62f78546f3f1",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM maven:3.5.0-jdk-8-alpine"
-                ],
-                "cmds": [
-                    "CMD [\"java\",  \"-server\", \"-DORIENTDB_HOME=/app/runtime\", \"-Dorientdb.url=plocal:databases/Orienteer\", \"-Dorienteer.loader.repository.local=/root/.m2/repository\", \"-jar\", \"../jetty-runner.jar\", \"../active.war\"]"
-                ],
-                "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            }
-        ],
-        "build_tools": [
-            "Maven"
-        ],
-        "languages": {
-            "Java": 2455334,
-            "JavaScript": 216379,
-            "HTML": 54233,
-            "CSS": 12019,
-            "Dockerfile": 1111
-        },
-        "contributors": 13,
-        "number_of_commits": 2065,
-        "age_days": 2154,
-        "loc_info": {
-            "java": {
-                "files": "848",
-                "code": "43865"
-            },
-            "sum": {
-                "files": "1063",
-                "code": "55381"
+                "files": "68",
+                "code": "4878"
             }
         }
     },
@@ -4670,10 +2805,7 @@
                     "ARG COMP_VERSION=1.18",
                     "ARG XZ_VERSION=1.8",
                     "ARG APT_TARGET=/opt/sonatype/nexus/system/net/staticsnow/nexus-repository-apt/${APT_VERSION}/"
-                ],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                ]
             }
         ],
         "build_tools": [
@@ -4725,10 +2857,7 @@
                 "entrypoints": [
                     "ENTRYPOINT [\"java\", \\\"-Dvertx.logger-delegate-factory-class-name=io.vertx.core.logging.SLF4JLogDelegateFactory\", \\\"--illegal-access=deny\", \"-jar\", \"nassh-relay-app.jar\" \\]"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -4775,10 +2904,7 @@
                     "CMD [\"/wildfly/bin/standalone.sh\", \"-b\", \"0.0.0.0\", \"-bmanagement\", \"0.0.0.0\"]"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./docker/ftest-container-star-operator/src/test/resources/wildfly/Dockerfile",
@@ -4789,10 +2915,7 @@
                     "CMD [\"/opt/jboss/wildfly/bin/standalone.sh\", \"-b\", \"0.0.0.0\", \"-bmanagement\", \"0.0.0.0\"]"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./docker/ftest-drone-custom/src/test/resources/browser/Dockerfile",
@@ -4801,10 +2924,7 @@
                 ],
                 "cmds": [],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./docker/ftest-docker-machine/src/test/resources/tomcat/Dockerfile",
@@ -4815,10 +2935,7 @@
                     "CMD [\"catalina.sh\",\"run\"]"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./docker/ftest-docker-compose/src/test/resources/tomcat/Dockerfile",
@@ -4829,10 +2946,7 @@
                     "CMD [\"catalina.sh\",\"run\"]"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./docker/ftest/src/test/resources/wildfly/Dockerfile",
@@ -4843,10 +2957,7 @@
                     "CMD [\"/opt/jboss/wildfly/bin/standalone.sh\", \"-b\", \"0.0.0.0\", \"-bmanagement\", \"0.0.0.0\"]"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./docker/ftest/src/test/resources/tomcat/Dockerfile",
@@ -4857,10 +2968,7 @@
                     "CMD [\"catalina.sh\",\"run\"]"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./docker/ftest-docker-compose-v2/src/test/resources/tomcat/Dockerfile",
@@ -4871,10 +2979,7 @@
                     "CMD [\"catalina.sh\",\"run\"]"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./docker/docker/src/test/resources/org/arquillian/cube/docker/impl/client/containerobject/DockerContainerObjectBuilderTest/TestContainerObjectDefinedUsingDockerfile/Dockerfile",
@@ -4883,10 +2988,7 @@
                 ],
                 "cmds": [],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./docker/ftest-boot2docker/src/test/resources/wildfly/Dockerfile",
@@ -4897,10 +2999,7 @@
                     "CMD [\"/opt/jboss/wildfly/bin/standalone.sh\", \"-b\", \"0.0.0.0\", \"-bmanagement\", \"0.0.0.0\"]"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./docker/ftest-boot2docker/src/test/resources/tomcat/Dockerfile",
@@ -4911,10 +3010,7 @@
                     "CMD [\"catalina.sh\",\"run\"]"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./docker/ftest-boot2docker/src/test/resources/tomee/Dockerfile",
@@ -4925,10 +3021,7 @@
                     "CMD [\"/usr/local/tomee/bin/catalina.sh\",\"run\"]"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -4950,8 +3043,8 @@
                 "code": "42669"
             },
             "sum": {
-                "files": "948",
-                "code": "52364"
+                "files": "969",
+                "code": "55649"
             }
         }
     },
@@ -4965,22 +3058,8 @@
         "language": "Java",
         "default_branch": "master",
         "commit_sha": "a1e0665af24b08f3930328b36e0ce5203030d4b0",
-        "number_of_dockerfiles": 2,
+        "number_of_dockerfiles": 1,
         "info_from_dockerfiles": [
-            {
-                "path": "./src/main/resources/org/jenkinsci/test/acceptance/docker/fixtures/ArtifactoryContainer/Dockerfile",
-                "base_images": [
-                    "FROM codingtony/java"
-                ],
-                "cmds": [
-                    "CMD [ \"/opt/artifactory/bin/artifactory.sh\" ]"
-                ],
-                "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            },
             {
                 "path": "./src/main/resources/org/jenkinsci/test/acceptance/docker/fixtures/Tomcat7Container/Dockerfile",
                 "base_images": [
@@ -4990,10 +3069,7 @@
                     "CMD CATALINA_BASE=/var/lib/tomcat7/ /usr/share/tomcat7/bin/catalina.sh run"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -5018,118 +3094,11 @@
         "loc_info": {
             "java": {
                 "files": "532",
-                "code": "28632"
+                "code": "28564"
             },
             "sum": {
                 "files": "653",
-                "code": "36412"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594339421,
-        "name": "snowstorm",
-        "full_name": "IHTSDO/snowstorm",
-        "fork": false,
-        "clone_url": "https://github.com/IHTSDO/snowstorm.git",
-        "stargazers_count": 105,
-        "language": "Java",
-        "default_branch": "master",
-        "tag_name": "4.10.2",
-        "commit_sha": "8d6df57ca6484a53f42d7dfac50ffa51bce553ab",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./Dockerfile",
-                "base_images": [
-                    "FROM openjdk:8-jdk-alpine"
-                ],
-                "cmds": [],
-                "entrypoints": [
-                    "ENTRYPOINT [\"java\",\"-Djava.security.egd=file:/dev/./urandom\",\"-jar\",\"snowstorm.jar\"]"
-                ],
-                "args": [
-                    "ARG SUID=1042",
-                    "ARG SGID=1042"
-                ],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            }
-        ],
-        "build_tools": [
-            "Maven"
-        ],
-        "languages": {
-            "Java": 1963329,
-            "HTML": 2403,
-            "Shell": 937,
-            "Dockerfile": 589
-        },
-        "contributors": 17,
-        "number_of_commits": 1647,
-        "age_days": 1477,
-        "loc_info": {
-            "java": {
-                "files": "361",
-                "code": "35138"
-            },
-            "sum": {
-                "files": "405",
-                "code": "38727"
-            }
-        }
-    },
-    {
-        "current_timestamp": 1594339456,
-        "name": "build-info",
-        "full_name": "jfrog/build-info",
-        "fork": false,
-        "clone_url": "https://github.com/jfrog/build-info.git",
-        "stargazers_count": 104,
-        "language": "Java",
-        "default_branch": "master",
-        "tag_name": "build-info-gradle-extractor-4.4.12",
-        "commit_sha": "ba4de26fb4ac92a5db66be8a3a7acf469b96e70a",
-        "number_of_dockerfiles": 1,
-        "info_from_dockerfiles": [
-            {
-                "path": "./itest/src/test/groovy/docker/images/Dockerfile",
-                "base_images": [
-                    "FROM codingtony/java"
-                ],
-                "cmds": [
-                    "CMD [ \"/opt/artifactory/bin/artifactory.sh\" ]"
-                ],
-                "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            }
-        ],
-        "build_tools": [
-            "Ant",
-            "Maven",
-            "Gradle"
-        ],
-        "languages": {
-            "Java": 1339495,
-            "Groovy": 60640,
-            "HTML": 1529,
-            "Go": 198
-        },
-        "contributors": 85,
-        "number_of_commits": 2353,
-        "age_days": 3425,
-        "loc_info": {
-            "java": {
-                "files": "201",
-                "code": "16272"
-            },
-            "sum": {
-                "files": "353",
-                "code": "24193"
+                "code": "36344"
             }
         }
     },
@@ -5144,7 +3113,7 @@
         "default_branch": "master",
         "tag_name": "cerberus-testing-4.7",
         "commit_sha": "793231f76918f821de95487a0e1ceda946a9fef3",
-        "number_of_dockerfiles": 13,
+        "number_of_dockerfiles": 6,
         "info_from_dockerfiles": [
             {
                 "path": "./docker/images/cerberus-as-tomcat/4.6/Dockerfile",
@@ -5161,10 +3130,7 @@
                     "ARG CERBERUS_PACKAGE_NAME=${CERBERUS_NAME}-${CERBERUS_VERSION}",
                     "ARG MYSQL_JAVA_CONNECTOR_VERSION=5.1.47",
                     "ARG MYSQL_JAVA_CONNECTOR_NAME=mysql-connector-java-${MYSQL_JAVA_CONNECTOR_VERSION}"
-                ],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                ]
             },
             {
                 "path": "./docker/images/cerberus-as-tomcat/latest/Dockerfile",
@@ -5181,10 +3147,7 @@
                     "ARG CERBERUS_PACKAGE_NAME=${CERBERUS_NAME}-${CERBERUS_VERSION}",
                     "ARG MYSQL_JAVA_CONNECTOR_VERSION=5.1.47",
                     "ARG MYSQL_JAVA_CONNECTOR_NAME=mysql-connector-java-${MYSQL_JAVA_CONNECTOR_VERSION}"
-                ],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                ]
             },
             {
                 "path": "./docker/images/cerberus-as-tomcat/4.5/Dockerfile",
@@ -5201,122 +3164,7 @@
                     "ARG CERBERUS_PACKAGE_NAME=${CERBERUS_NAME}-${CERBERUS_VERSION}",
                     "ARG MYSQL_JAVA_CONNECTOR_VERSION=5.1.47",
                     "ARG MYSQL_JAVA_CONNECTOR_NAME=mysql-connector-java-${MYSQL_JAVA_CONNECTOR_VERSION}"
-                ],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            },
-            {
-                "path": "./docker/images/cerberus-as-glassfish/1.1.4/Dockerfile",
-                "base_images": [
-                    "FROM glassfish:4.1"
-                ],
-                "cmds": [
-                    "CMD ${ASADMIN} start-domain --verbose ${GLASSFISH_DOMAIN}"
-                ],
-                "entrypoints": [
-                    "ENTRYPOINT [\"/entrypoint.sh\"]"
-                ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            },
-            {
-                "path": "./docker/images/cerberus-as-glassfish/1.1.5/Dockerfile",
-                "base_images": [
-                    "FROM glassfish:4.1"
-                ],
-                "cmds": [
-                    "CMD asadmin --user ${GLASSFISH_ADMIN_USER} --passwordfile /tmp/glassfish_admin_password.txt start-domain --verbose ${GLASSFISH_DOMAIN}"
-                ],
-                "entrypoints": [
-                    "ENTRYPOINT [\"/entrypoint.sh\"]"
-                ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            },
-            {
-                "path": "./docker/images/cerberus-as-glassfish/1.1.8/Dockerfile",
-                "base_images": [
-                    "FROM glassfish:4.1"
-                ],
-                "cmds": [
-                    "CMD asadmin --user ${GLASSFISH_ADMIN_USER} --passwordfile /tmp/glassfish_admin_password.txt start-domain --verbose ${GLASSFISH_DOMAIN}"
-                ],
-                "entrypoints": [
-                    "ENTRYPOINT [\"/entrypoint.sh\"]"
-                ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            },
-            {
-                "path": "./docker/images/cerberus-as-glassfish/1.1.7/Dockerfile",
-                "base_images": [
-                    "FROM glassfish:4.1"
-                ],
-                "cmds": [
-                    "CMD asadmin --user ${GLASSFISH_ADMIN_USER} --passwordfile /tmp/glassfish_admin_password.txt start-domain --verbose ${GLASSFISH_DOMAIN}"
-                ],
-                "entrypoints": [
-                    "ENTRYPOINT [\"/entrypoint.sh\"]"
-                ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            },
-            {
-                "path": "./docker/images/cerberus-as-glassfish/1.1.3/Dockerfile",
-                "base_images": [
-                    "FROM glassfish:4.1"
-                ],
-                "cmds": [
-                    "CMD ${ASADMIN} start-domain --verbose ${GLASSFISH_DOMAIN}"
-                ],
-                "entrypoints": [
-                    "ENTRYPOINT [\"/entrypoint.sh\"]"
-                ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            },
-            {
-                "path": "./docker/images/cerberus-as-glassfish/1.1.6/Dockerfile",
-                "base_images": [
-                    "FROM glassfish:4.1"
-                ],
-                "cmds": [
-                    "CMD asadmin --user ${GLASSFISH_ADMIN_USER} --passwordfile /tmp/glassfish_admin_password.txt start-domain --verbose ${GLASSFISH_DOMAIN}"
-                ],
-                "entrypoints": [
-                    "ENTRYPOINT [\"/entrypoint.sh\"]"
-                ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            },
-            {
-                "path": "./docker/images/cerberus-as-glassfish/1.1.3.1/Dockerfile",
-                "base_images": [
-                    "FROM glassfish:4.1"
-                ],
-                "cmds": [
-                    "CMD ${ASADMIN} start-domain --verbose ${GLASSFISH_DOMAIN}"
-                ],
-                "entrypoints": [
-                    "ENTRYPOINT [\"/entrypoint.sh\"]"
-                ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                ]
             },
             {
                 "path": "./docker/images/cerberus-as-tomcat-keycloak/4.6/Dockerfile",
@@ -5333,10 +3181,7 @@
                     "ARG CERBERUS_PACKAGE_NAME=${CERBERUS_NAME}-${CERBERUS_VERSION}",
                     "ARG MYSQL_JAVA_CONNECTOR_VERSION=5.1.47",
                     "ARG MYSQL_JAVA_CONNECTOR_NAME=mysql-connector-java-${MYSQL_JAVA_CONNECTOR_VERSION}"
-                ],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                ]
             },
             {
                 "path": "./docker/images/cerberus-as-tomcat-keycloak/latest/Dockerfile",
@@ -5353,10 +3198,7 @@
                     "ARG CERBERUS_PACKAGE_NAME=${CERBERUS_NAME}-${CERBERUS_VERSION}",
                     "ARG MYSQL_JAVA_CONNECTOR_VERSION=5.1.47",
                     "ARG MYSQL_JAVA_CONNECTOR_NAME=mysql-connector-java-${MYSQL_JAVA_CONNECTOR_VERSION}"
-                ],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                ]
             },
             {
                 "path": "./docker/images/cerberus-as-tomcat-keycloak/4.5/Dockerfile",
@@ -5373,10 +3215,7 @@
                     "ARG CERBERUS_PACKAGE_NAME=${CERBERUS_NAME}-${CERBERUS_VERSION}",
                     "ARG MYSQL_JAVA_CONNECTOR_VERSION=5.1.47",
                     "ARG MYSQL_JAVA_CONNECTOR_NAME=mysql-connector-java-${MYSQL_JAVA_CONNECTOR_VERSION}"
-                ],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                ]
             }
         ],
         "build_tools": [
@@ -5401,8 +3240,8 @@
                 "code": "123420"
             },
             "sum": {
-                "files": "1338",
-                "code": "219942"
+                "files": "1457",
+                "code": "226074"
             }
         }
     },
@@ -5431,10 +3270,7 @@
                     "ARG UID=1000",
                     "ARG GID=1000",
                     "ARG MINIFI_VERSION=0.5.0"
-                ],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                ]
             }
         ],
         "build_tools": [
@@ -5472,106 +3308,8 @@
         "default_branch": "master",
         "tag_name": "dc3.release.1.0.0",
         "commit_sha": "fa50be2e28a1d74d388abb1adc8cbad98f4dc7c7",
-        "number_of_dockerfiles": 13,
+        "number_of_dockerfiles": 6,
         "info_from_dockerfiles": [
-            {
-                "path": "./dc3-driver/dc3-driver-listening-virtual/Dockerfile",
-                "base_images": [
-                    "FROM pnoker/alpine-java:1.8.251"
-                ],
-                "cmds": [
-                    "CMD java ${JAVA_OPS} -Djava.security.egd=file:/dev/./urandom -jar dc3-driver-listening-virtual.jar"
-                ],
-                "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            },
-            {
-                "path": "./dc3-driver/dc3-driver-opc-ua/Dockerfile",
-                "base_images": [
-                    "FROM pnoker/alpine-java:1.8.251"
-                ],
-                "cmds": [
-                    "CMD java ${JAVA_OPS} -Djava.security.egd=file:/dev/./urandom -jar dc3-driver-opc-ua.jar"
-                ],
-                "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            },
-            {
-                "path": "./dc3-driver/dc3-driver-virtual/Dockerfile",
-                "base_images": [
-                    "FROM pnoker/alpine-java:1.8.251"
-                ],
-                "cmds": [
-                    "CMD java ${JAVA_OPS} -Djava.security.egd=file:/dev/./urandom -jar dc3-driver-virtual.jar"
-                ],
-                "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            },
-            {
-                "path": "./dc3-driver/dc3-driver-modbus-tcp/Dockerfile",
-                "base_images": [
-                    "FROM pnoker/alpine-java:1.8.251"
-                ],
-                "cmds": [
-                    "CMD java ${JAVA_OPS} -Djava.security.egd=file:/dev/./urandom -jar dc3-driver-modbus-tcp.jar"
-                ],
-                "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            },
-            {
-                "path": "./dc3-driver/dc3-driver-plcs7/Dockerfile",
-                "base_images": [
-                    "FROM pnoker/alpine-java:1.8.251"
-                ],
-                "cmds": [
-                    "CMD java ${JAVA_OPS} -Djava.security.egd=file:/dev/./urandom -jar dc3-driver-plcs7.jar"
-                ],
-                "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            },
-            {
-                "path": "./dc3-driver/dc3-driver-opc-da/Dockerfile",
-                "base_images": [
-                    "FROM pnoker/alpine-java:1.8.251"
-                ],
-                "cmds": [
-                    "CMD java ${JAVA_OPS} -Djava.security.egd=file:/dev/./urandom -jar dc3-driver-opc-da.jar"
-                ],
-                "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            },
-            {
-                "path": "./dc3-driver/dc3-driver-mqtt/Dockerfile",
-                "base_images": [
-                    "FROM pnoker/alpine-java:1.8.251"
-                ],
-                "cmds": [
-                    "CMD java ${JAVA_OPS} -Djava.security.egd=file:/dev/./urandom -jar dc3-driver-mqtt.jar"
-                ],
-                "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
-            },
             {
                 "path": "./dc3-center/dc3-auth/Dockerfile",
                 "base_images": [
@@ -5581,10 +3319,7 @@
                     "CMD java ${JAVA_OPS} -Djava.security.egd=file:/dev/./urandom -jar dc3-auth.jar"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./dc3-center/dc3-manager/Dockerfile",
@@ -5595,10 +3330,7 @@
                     "CMD java ${JAVA_OPS} -Djava.security.egd=file:/dev/./urandom -jar dc3-manager.jar"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./dc3-center/dc3-register/Dockerfile",
@@ -5609,10 +3341,7 @@
                     "CMD java ${JAVA_OPS} -Djava.security.egd=file:/dev/./urandom -jar dc3-register.jar"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./dc3-center/dc3-monitor/Dockerfile",
@@ -5623,10 +3352,7 @@
                     "CMD java ${JAVA_OPS} -Djava.security.egd=file:/dev/./urandom -jar dc3-monitor.jar"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./dc3-center/dc3-data/Dockerfile",
@@ -5637,10 +3363,7 @@
                     "CMD java ${JAVA_OPS} -Djava.security.egd=file:/dev/./urandom -jar dc3-data.jar"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             },
             {
                 "path": "./dc3-gateway/Dockerfile",
@@ -5651,10 +3374,7 @@
                     "CMD java ${JAVA_OPS} -Djava.security.egd=file:/dev/./urandom -jar dc3-gateway.jar"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -5679,8 +3399,8 @@
                 "code": "16220"
             },
             "sum": {
-                "files": "502",
-                "code": "28818"
+                "files": "505",
+                "code": "29415"
             }
         }
     },
@@ -5706,10 +3426,7 @@
                 "entrypoints": [
                     "ENTRYPOINT [\"/bin/sh\", \"-c\", \"/opt/excelastic/bootstrap.sh\"]"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -5732,8 +3449,8 @@
                 "code": "1505"
             },
             "sum": {
-                "files": "37",
-                "code": "10936"
+                "files": "38",
+                "code": "11224"
             }
         }
     },
@@ -5758,10 +3475,7 @@
                     "CMD [\"/usr/share/jetty9/bin/jetty.sh\", \"run\"]"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -5809,10 +3523,7 @@
                 "entrypoints": [
                     "ENTRYPOINT [\"/bootstrap.sh\"]"
                 ],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -5860,10 +3571,7 @@
                     "CMD java -jar owl2vowl.war"
                 ],
                 "entrypoints": [],
-                "args": [],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                "args": []
             }
         ],
         "build_tools": [
@@ -5913,10 +3621,7 @@
                     "ARG LP_ETL_BUILD_BRANCH=master",
                     "ARG LP_ETL_BUILD_JAVA_TEST=-DskipTests",
                     "ARG LP_ETL_USER=5987"
-                ],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                ]
             },
             {
                 "path": "./executor/Dockerfile",
@@ -5932,10 +3637,7 @@
                     "ARG LP_ETL_BUILD_BRANCH=master",
                     "ARG LP_ETL_BUILD_JAVA_TEST=-DskipTests",
                     "ARG LP_ETL_USER=5987"
-                ],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                ]
             },
             {
                 "path": "./executor-monitor/Dockerfile",
@@ -5951,10 +3653,7 @@
                     "ARG LP_ETL_BUILD_BRANCH=master",
                     "ARG LP_ETL_BUILD_JAVA_TEST=-DskipTests",
                     "ARG LP_ETL_USER=5987"
-                ],
-                "ori_application_run_exitcode": 0,
-                "ori_application_run_continuously": true,
-                "ori_application_run_java": true
+                ]
             }
         ],
         "build_tools": [
@@ -5980,8 +3679,8 @@
                 "code": "63040"
             },
             "sum": {
-                "files": "1395",
-                "code": "122987"
+                "files": "1396",
+                "code": "123065"
             }
         }
     }
