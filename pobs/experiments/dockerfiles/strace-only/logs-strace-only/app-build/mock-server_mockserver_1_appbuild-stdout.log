@@ -1,0 +1,44 @@
+Sending build context to Docker daemon  35.16MB
+Step 1/22 : FROM alpine as build
+ ---> d6e46aa2470d
+Step 2/22 : RUN apk add --update openssl ca-certificates bash wget
+ ---> Using cache
+ ---> fdb1d90d6e69
+Step 3/22 : ARG REPOSITORY=releases
+ ---> Using cache
+ ---> d9a0604ae5a8
+Step 4/22 : ARG VERSION=RELEASE
+ ---> Using cache
+ ---> ea80f971ed83
+Step 5/22 : ARG REPOSITORY_URL=https://oss.sonatype.org/service/local/artifact/maven/redirect?r=${REPOSITORY}&g=org.mock-server&a=mockserver-netty&c=jar-with-dependencies&e=jar&v=${VERSION}
+ ---> Using cache
+ ---> a9db501504f7
+Step 6/22 : RUN wget --max-redirect=10 -O mockserver-netty-jar-with-dependencies.jar "$REPOSITORY_URL"
+ ---> Using cache
+ ---> cf3af7868b96
+Step 7/22 : FROM gcr.io/distroless/java:11
+ ---> 4c4b3da468da
+Step 8/22 : MAINTAINER James Bloom "jamesdbloom@gmail.com"
+ ---> Using cache
+ ---> 093450127c1a
+Step 9/22 : EXPOSE 1080
+ ---> Using cache
+ ---> 7197fac70cb6
+Step 10/22 : COPY --from=build mockserver-netty-jar-with-dependencies.jar /
+ ---> Using cache
+ ---> b7779afff03b
+Step 11/22 : USER nonroot
+ ---> Using cache
+ ---> 73beb0d5898a
+Step 12/22 : ENTRYPOINT ["java", "-Dfile.encoding=UTF-8", "-cp", "/mockserver-netty-jar-with-dependencies.jar:/libs/*", "-Dmockserver.propertyFile=/config/mockserver.properties", "org.mockserver.cli.Main"]
+ ---> Using cache
+ ---> 29816731ecd3
+Step 13/22 : CMD ["-serverPort", "1080"]
+ ---> Using cache
+ ---> 94adadf05465
+Step 14/22 : ADD https://github.com/just-containers/s6-overlay/releases/download/v2.2.0.1/s6-overlay-amd64-installer /tmp/
+
+
+ ---> 933016db6b8a
+Step 15/22 : RUN chmod +x /tmp/s6-overlay-amd64-installer && /tmp/s6-overlay-amd64-installer /
+ ---> Running in 0eb7868e6bc1

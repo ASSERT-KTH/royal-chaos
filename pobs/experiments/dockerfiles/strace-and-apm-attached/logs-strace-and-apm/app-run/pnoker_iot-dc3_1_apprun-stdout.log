@@ -1,0 +1,32 @@
+[s6-init] making user provided files available at /var/run/s6/etc...exited 0.
+[s6-init] ensuring user provided files have correct perms...exited 0.
+[fix-attrs.d] applying ownership & permissions fixes...
+[fix-attrs.d] done.
+[cont-init.d] executing container initialization scripts...
+[cont-init.d] done.
+[services.d] starting services
+system call monitor started
+[services.d] done.
+2022-05-21 02:03:05,579 [main] INFO  co.elastic.apm.agent.util.JmxUtils - Found JVM-specific OperatingSystemMXBean interface: com.sun.management.OperatingSystemMXBean
+system call monitor started
+2022-05-21 02:03:05,998 [main] INFO  co.elastic.apm.agent.configuration.StartupInfo - Starting Elastic APM 1.30.1 as run_pobs_iot-dc3_1 on Java 1.8.0_251 Runtime version: 1.8.0_251-b08 VM version: 25.251-b08 (Oracle Corporation) Linux 5.4.0-42-generic
+2022-05-21 02:03:05,999 [main] INFO  co.elastic.apm.agent.configuration.StartupInfo - service_name: 'run_pobs_iot-dc3_1' (source: Environment Variables)
+2022-05-21 02:03:05,999 [main] INFO  co.elastic.apm.agent.configuration.StartupInfo - server_url: 'http://172.17.0.1:8200' (source: Environment Variables)
+2022-05-21 02:03:06,000 [main] INFO  co.elastic.apm.agent.configuration.StartupInfo - log_ecs_reformatting: 'OVERRIDE' (source: Java System Properties)
+2022-05-21 02:03:06,000 [main] WARN  co.elastic.apm.agent.configuration.StartupInfo - To enable all features and decrease startup time, please configure application_packages
+2022-05-21 02:03:15,490 [main] INFO  co.elastic.apm.agent.impl.ElasticApmTracer - Tracer switched to RUNNING state
+2022-05-21 02:03:15,770 [elastic-apm-init-instrumentation-shutdown-hook] INFO  co.elastic.apm.agent.bci.InstrumentationStatsLifecycleListener - Used instrumentation groups: [executor, executor-collection, fork-join, slf4j-error, urlconnection]
+2022-05-21 02:03:15,774 [elastic-apm-circuit-breaker] INFO  co.elastic.apm.agent.impl.circuitbreaker.CircuitBreaker - Stopping the Circuit Breaker thread.
+2022-05-21 02:03:16,143 [elastic-apm-server-healthcheck] INFO  co.elastic.apm.agent.report.ApmServerHealthChecker - Elastic APM server is available: {  "build_date": "2021-11-04T13:10:15Z",  "build_sha": "0702551667e5319822d00dee613ea2a1501615bf",  "version": "7.15.2"}
+2022-05-21 02:03:16,147 [elastic-apm-remote-config-poller] INFO  co.elastic.apm.agent.configuration.ApmServerConfigurationSource - Received new configuration from APM Server: {}
+2022-05-21 02:03:16,884 [elastic-apm-init-instrumentation-shutdown-hook] INFO  co.elastic.apm.agent.impl.ElasticApmTracer - Tracer switched to STOPPED state
+2022-05-21 02:03:16,884 [elastic-apm-init-instrumentation-shutdown-hook] INFO  co.elastic.apm.agent.report.ApmServerReporter - dropped events because of full queue: 0
+2022-05-21 02:03:16,891 [elastic-apm-init-instrumentation-shutdown-hook] INFO  co.elastic.apm.agent.report.IntakeV2ReportingEventHandler - Reported events: 0
+2022-05-21 02:03:16,892 [elastic-apm-init-instrumentation-shutdown-hook] INFO  co.elastic.apm.agent.report.IntakeV2ReportingEventHandler - Dropped events: 0
+[cmd] /usr/bin/execlineb exited 1
+system call monitor started
+[cont-finish.d] executing container finish scripts...
+[cont-finish.d] done.
+[s6-finish] waiting for services.
+[s6-finish] sending all processes the TERM signal.
+[s6-finish] sending all processes the KILL signal and exiting.

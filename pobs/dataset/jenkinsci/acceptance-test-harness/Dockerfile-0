@@ -1,14 +1,17 @@
-FROM codingtony/java
+#
+# Runs Tomcat7 on Ubuntu at port 8080, with the admin app
+#
+# The admin user has username 'admin' and password 'tomcat'
+#
 
-MAINTAINER tony.bussieres@ticksmith.com
+FROM ubuntu:xenial
 
-RUN apt-get update && apt-get install -y unzip
-RUN wget --content-disposition http://dl.bintray.com/jfrog/artifactory/artifactory-3.4.0.zip
-RUN cd /opt && unzip ~/artifactory-3.4.0.zip
-RUN mv /opt/artifactory-3.4.0 /opt/artifactory
-RUN rm ~/artifactory-3.4.0.zip
-RUN mkdir /opt/artifactory/data
+# Tomcat7 is from Universe
+RUN echo "deb http://archive.ubuntu.com/ubuntu xenial universe" >> /etc/apt/sources.list
+RUN apt-get update && apt-get install -y tomcat7 tomcat7-admin
 
-EXPOSE 8081
+# configure the admin user
+RUN echo '<tomcat-users><role rolename="tomcat"/><role rolename="manager-gui"/><role rolename="admin-gui"/><role rolename="manager-script"/><user username="admin" password="tomcat" roles="tomcat,admin-gui,manager-gui,manager-script"/></tomcat-users>' > /etc/tomcat7/tomcat-users.xml
 
-CMD [ "/opt/artifactory/bin/artifactory.sh" ]
+EXPOSE 8080
+CMD CATALINA_BASE=/var/lib/tomcat7/ /usr/share/tomcat7/bin/catalina.sh run

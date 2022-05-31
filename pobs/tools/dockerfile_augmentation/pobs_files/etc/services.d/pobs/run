@@ -1,9 +1,12 @@
 #!/usr/bin/with-contenv sh
 
-echo "system call monitor started"
-
-if strace -h | grep stack > /dev/null; then
-  strace -qqq -ttt -T -Z -k -f --trace=%file,%memory,%net -p $(pidof java)
-else
-  strace -qqq -ttt -T -Z -f --trace=%file,%memory,%net -p $(pidof java)
-fi
+case "$POBS_SYSCALL_MONITOR" in
+  ON)
+    if strace -h | grep stack > /dev/null; then
+      strace -qqq -ttt -T -Z -k -f --trace=%file,%memory,%net -p $(pidof java)
+    else
+      strace -qqq -ttt -T -Z -f --trace=%file,%memory,%net -p $(pidof java)
+    fi ;;
+  *)
+    echo "system call monitor is not activated" && sleep 10m ;;
+esac

@@ -1,0 +1,216 @@
+[s6-init] making user provided files available at /var/run/s6/etc...exited 0.
+[s6-init] ensuring user provided files have correct perms...exited 0.
+[fix-attrs.d] applying ownership & permissions fixes...
+[fix-attrs.d] done.
+[cont-init.d] executing container initialization scripts...
+[cont-init.d] done.
+[services.d] starting services
+system call monitor activated
+[services.d] done.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.3.0.RELEASE)
+
+2022-05-21 18:51:21.536  INFO 194 --- [           main] c.t.reactiveweb.ReactiveWebApplication   : Starting ReactiveWebApplication v1.0.0-SNAPSHOT on e6d4e6c27694 with PID 194 (/usr/src/reactive-backend/reactive-web-1.0.0-SNAPSHOT.jar started by root in /usr/src/reactive-backend)
+2022-05-21 18:51:21.539  INFO 194 --- [           main] c.t.reactiveweb.ReactiveWebApplication   : No active profile set, falling back to default profiles: default
+system call monitor activated
+2022-05-21 18:51:22.435  INFO 194 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2022-05-21 18:51:22.590  INFO 194 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 150ms. Found 1 Reactive MongoDB repository interfaces.
+2022-05-21 18:51:22.598  INFO 194 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-05-21 18:51:22.604  INFO 194 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5ms. Found 1 MongoDB repository interfaces.
+system call monitor activated
+system call monitor activated
+2022-05-21 18:51:23.777  INFO 194 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-05-21 18:51:24.071  INFO 194 --- [           main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port(s): 8080
+2022-05-21 18:51:24.086  INFO 194 --- [           main] c.t.reactiveweb.ReactiveWebApplication   : Started ReactiveWebApplication in 3.015 seconds (JVM running for 3.457)
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+2022-05-21 18:52:24.150  INFO 194 --- [           main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-05-21 18:52:24.156 ERROR 194 --- [           main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:789) ~[spring-boot-2.3.0.RELEASE.jar!/:2.3.0.RELEASE]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:776) ~[spring-boot-2.3.0.RELEASE.jar!/:2.3.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:322) ~[spring-boot-2.3.0.RELEASE.jar!/:2.3.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) ~[spring-boot-2.3.0.RELEASE.jar!/:2.3.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.3.0.RELEASE.jar!/:2.3.0.RELEASE]
+	at com.thepracticaldeveloper.reactiveweb.ReactiveWebApplication.main(ReactiveWebApplication.java:10) ~[classes!/:1.0.0-SNAPSHOT]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49) ~[reactive-web-1.0.0-SNAPSHOT.jar:1.0.0-SNAPSHOT]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:109) ~[reactive-web-1.0.0-SNAPSHOT.jar:1.0.0-SNAPSHOT]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:58) ~[reactive-web-1.0.0-SNAPSHOT.jar:1.0.0-SNAPSHOT]
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:88) ~[reactive-web-1.0.0-SNAPSHOT.jar:1.0.0-SNAPSHOT]
+Caused by: org.springframework.dao.DataAccessResourceFailureException: Timed out after 30000 ms while waiting for a server that matches ReadPreferenceServerSelector{readPreference=primary}. Client view of cluster state is {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:27017}, caused by {java.net.ConnectException: Connection refused}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches ReadPreferenceServerSelector{readPreference=primary}. Client view of cluster state is {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:27017}, caused by {java.net.ConnectException: Connection refused}}]
+	at org.springframework.data.mongodb.core.MongoExceptionTranslator.translateExceptionIfPossible(MongoExceptionTranslator.java:88) ~[spring-data-mongodb-3.0.0.RELEASE.jar!/:3.0.0.RELEASE]
+	at org.springframework.data.mongodb.core.ReactiveMongoTemplate.potentiallyConvertRuntimeException(ReactiveMongoTemplate.java:2806) ~[spring-data-mongodb-3.0.0.RELEASE.jar!/:3.0.0.RELEASE]
+	at org.springframework.data.mongodb.core.ReactiveMongoTemplate.lambda$translateException$90(ReactiveMongoTemplate.java:2789) ~[spring-data-mongodb-3.0.0.RELEASE.jar!/:3.0.0.RELEASE]
+	at reactor.core.publisher.Mono.lambda$onErrorMap$30(Mono.java:3284) ~[reactor-core-3.3.5.RELEASE.jar!/:3.3.5.RELEASE]
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:88) ~[reactor-core-3.3.5.RELEASE.jar!/:3.3.5.RELEASE]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.secondError(MonoFlatMap.java:185) ~[reactor-core-3.3.5.RELEASE.jar!/:3.3.5.RELEASE]
+	at reactor.core.publisher.MonoFlatMap$FlatMapInner.onError(MonoFlatMap.java:251) ~[reactor-core-3.3.5.RELEASE.jar!/:3.3.5.RELEASE]
+	at reactor.core.publisher.MonoNext$NextSubscriber.onError(MonoNext.java:87) ~[reactor-core-3.3.5.RELEASE.jar!/:3.3.5.RELEASE]
+	at com.mongodb.reactivestreams.client.internal.AbstractSubscription.onError(AbstractSubscription.java:139) ~[mongodb-driver-reactivestreams-4.0.3.jar!/:na]
+	at com.mongodb.reactivestreams.client.internal.SingleResultCallbackSubscription.lambda$requestInitialData$0(SingleResultCallbackSubscription.java:41) ~[mongodb-driver-reactivestreams-4.0.3.jar!/:na]
+	at com.mongodb.internal.async.ErrorHandlingResultCallback.onResult(ErrorHandlingResultCallback.java:48) ~[mongodb-driver-core-4.0.3.jar!/:na]
+	at com.mongodb.internal.async.client.OperationExecutorImpl$1$1$1.onResult(OperationExecutorImpl.java:92) ~[mongodb-driver-core-4.0.3.jar!/:na]
+	at com.mongodb.internal.operation.CountOperation$1.onResult(CountOperation.java:272) ~[mongodb-driver-core-4.0.3.jar!/:na]
+	at com.mongodb.internal.operation.CountOperation$1.onResult(CountOperation.java:268) ~[mongodb-driver-core-4.0.3.jar!/:na]
+	at com.mongodb.internal.async.ErrorHandlingResultCallback.onResult(ErrorHandlingResultCallback.java:48) ~[mongodb-driver-core-4.0.3.jar!/:na]
+	at com.mongodb.internal.operation.OperationHelper$ReferenceCountedReleasingWrappedCallback.onResult(OperationHelper.java:411) ~[mongodb-driver-core-4.0.3.jar!/:na]
+	at com.mongodb.internal.operation.CommandOperationHelper$8.call(CommandOperationHelper.java:413) ~[mongodb-driver-core-4.0.3.jar!/:na]
+	at com.mongodb.internal.operation.OperationHelper$AsyncCallableWithConnectionAndSourceCallback.onResult(OperationHelper.java:628) ~[mongodb-driver-core-4.0.3.jar!/:na]
+	at com.mongodb.internal.operation.OperationHelper$AsyncCallableWithConnectionAndSourceCallback.onResult(OperationHelper.java:618) ~[mongodb-driver-core-4.0.3.jar!/:na]
+	at com.mongodb.internal.async.ErrorHandlingResultCallback.onResult(ErrorHandlingResultCallback.java:48) ~[mongodb-driver-core-4.0.3.jar!/:na]
+	at com.mongodb.internal.binding.AsyncClusterBinding$1.onResult(AsyncClusterBinding.java:96) ~[mongodb-driver-core-4.0.3.jar!/:na]
+	at com.mongodb.internal.binding.AsyncClusterBinding$1.onResult(AsyncClusterBinding.java:92) ~[mongodb-driver-core-4.0.3.jar!/:na]
+	at com.mongodb.internal.connection.BaseCluster$ServerSelectionRequest.onResult(BaseCluster.java:428) ~[mongodb-driver-core-4.0.3.jar!/:na]
+	at com.mongodb.internal.connection.BaseCluster.handleServerSelectionRequest(BaseCluster.java:311) ~[mongodb-driver-core-4.0.3.jar!/:na]
+	at com.mongodb.internal.connection.BaseCluster.access$800(BaseCluster.java:62) ~[mongodb-driver-core-4.0.3.jar!/:na]
+	at com.mongodb.internal.connection.BaseCluster$WaitQueueHandler.run(BaseCluster.java:474) ~[mongodb-driver-core-4.0.3.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
+	Suppressed: java.lang.Exception: #block terminated with an error
+		at reactor.core.publisher.BlockingSingleSubscriber.blockingGet(BlockingSingleSubscriber.java:99) ~[reactor-core-3.3.5.RELEASE.jar!/:3.3.5.RELEASE]
+		at reactor.core.publisher.Mono.block(Mono.java:1678) ~[reactor-core-3.3.5.RELEASE.jar!/:3.3.5.RELEASE]
+		at com.thepracticaldeveloper.reactiveweb.configuration.QuijoteDataLoader.run(QuijoteDataLoader.java:32) ~[classes!/:1.0.0-SNAPSHOT]
+		at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:786) ~[spring-boot-2.3.0.RELEASE.jar!/:2.3.0.RELEASE]
+		at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:776) ~[spring-boot-2.3.0.RELEASE.jar!/:2.3.0.RELEASE]
+		at org.springframework.boot.SpringApplication.run(SpringApplication.java:322) ~[spring-boot-2.3.0.RELEASE.jar!/:2.3.0.RELEASE]
+		at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) ~[spring-boot-2.3.0.RELEASE.jar!/:2.3.0.RELEASE]
+		at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.3.0.RELEASE.jar!/:2.3.0.RELEASE]
+		at com.thepracticaldeveloper.reactiveweb.ReactiveWebApplication.main(ReactiveWebApplication.java:10) ~[classes!/:1.0.0-SNAPSHOT]
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+		at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+		at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49) ~[reactive-web-1.0.0-SNAPSHOT.jar:1.0.0-SNAPSHOT]
+		at org.springframework.boot.loader.Launcher.launch(Launcher.java:109) ~[reactive-web-1.0.0-SNAPSHOT.jar:1.0.0-SNAPSHOT]
+		at org.springframework.boot.loader.Launcher.launch(Launcher.java:58) ~[reactive-web-1.0.0-SNAPSHOT.jar:1.0.0-SNAPSHOT]
+		at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:88) ~[reactive-web-1.0.0-SNAPSHOT.jar:1.0.0-SNAPSHOT]
+Caused by: com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches ReadPreferenceServerSelector{readPreference=primary}. Client view of cluster state is {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:27017}, caused by {java.net.ConnectException: Connection refused}}]
+	at com.mongodb.internal.connection.BaseCluster.createTimeoutException(BaseCluster.java:403) ~[mongodb-driver-core-4.0.3.jar!/:na]
+	... 4 common frames omitted
+
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated
+system call monitor activated

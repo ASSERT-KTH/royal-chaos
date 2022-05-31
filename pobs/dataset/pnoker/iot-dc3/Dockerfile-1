@@ -17,15 +17,15 @@
 FROM pnoker/alpine-java:1.8.251
 MAINTAINER pnoker <pnokers.icloud.com>
 
-ENV JAVA_OPS -server -Xms128m -Xmx512m -XX:CompressedClassSpaceSize=128m -XX:MetaspaceSize=200m -XX:MaxMetaspaceSize=200m
+ENV JAVA_OPS -server -javaagent:/usr/local/java/lib/aspectjweaver.jar -Xms128m -Xmx512m -XX:CompressedClassSpaceSize=128m -XX:MetaspaceSize=200m -XX:MaxMetaspaceSize=200m
 
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
-    && mkdir -p /dc3-driver/dc3-driver-opc-ua
+    && mkdir -p /dc3-center/dc3-manager
 
-WORKDIR /dc3-driver/dc3-driver-opc-ua
+WORKDIR /dc3-center/dc3-manager
 
-ADD ./target/dc3-driver-opc-ua.jar ./
+ADD ./target/dc3-manager.jar ./
 
-EXPOSE 8603
+EXPOSE 8400
 
-CMD java ${JAVA_OPS} -Djava.security.egd=file:/dev/./urandom -jar dc3-driver-opc-ua.jar
+CMD java ${JAVA_OPS} -Djava.security.egd=file:/dev/./urandom -jar dc3-manager.jar

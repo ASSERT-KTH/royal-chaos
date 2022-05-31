@@ -1,10 +1,12 @@
-FROM rust:1.31 as builder
-WORKDIR /build
-COPY helloworld.rs .
-RUN rustc helloworld.rs
+FROM ubuntu:18.04 as builder
+WORKDIR /app
+COPY hello.cpp .
+RUN apt-get update \
+    && apt-get -y install build-essential \
+    && g++ hello.cpp -o hello
 
 FROM jerverless/jerverless:latest
 WORKDIR /app
-COPY --from=builder /build/helloworld .
+COPY --from=builder /app/hello .
 COPY jerverless.yml .
 EXPOSE 8080

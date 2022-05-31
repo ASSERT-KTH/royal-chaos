@@ -1,0 +1,341 @@
+[s6-init] making user provided files available at /var/run/s6/etc...exited 0.
+[s6-init] ensuring user provided files have correct perms...exited 0.
+[fix-attrs.d] applying ownership & permissions fixes...
+[fix-attrs.d] done.
+[cont-init.d] executing container initialization scripts...
+[cont-init.d] done.
+[services.d] starting services
+system call monitor started
+[services.d] done.
+-b 0.0.0.0
+=========================================================================
+
+  Using Embedded H2 database
+
+=========================================================================
+
+JAVA_OPTS already set in environment; overriding default settings with values:  -noverify
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+=========================================================================
+
+  JBoss Bootstrap Environment
+
+  JBOSS_HOME: /opt/jboss/keycloak
+
+  JAVA: java
+
+  JAVA_OPTS:  -server  -noverify  --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=jdk.unsupported/sun.misc=ALL-UNNAMED --add-exports=jdk.unsupported/sun.reflect=ALL-UNNAMED
+
+=========================================================================
+
+system call monitor started
+2022-05-20 14:52:41,259 [main] INFO  co.elastic.apm.agent.util.JmxUtils - Found JVM-specific OperatingSystemMXBean interface: com.sun.management.OperatingSystemMXBean
+2022-05-20 14:52:41,330 [main] INFO  co.elastic.apm.agent.configuration.StartupInfo - Starting Elastic APM 1.30.1 as run_pobs_openremote_0 on Java 11.0.5 Runtime version: 11.0.5+10-LTS VM version: 11.0.5+10-LTS (Oracle Corporation) Linux 5.4.0-42-generic
+2022-05-20 14:52:41,331 [main] INFO  co.elastic.apm.agent.configuration.StartupInfo - service_name: 'run_pobs_openremote_0' (source: Environment Variables)
+2022-05-20 14:52:41,331 [main] INFO  co.elastic.apm.agent.configuration.StartupInfo - server_url: 'http://172.17.0.1:8200' (source: Environment Variables)
+2022-05-20 14:52:41,331 [main] INFO  co.elastic.apm.agent.configuration.StartupInfo - log_ecs_reformatting: 'OVERRIDE' (source: Java System Properties)
+2022-05-20 14:52:41,331 [main] WARN  co.elastic.apm.agent.configuration.StartupInfo - To enable all features and decrease startup time, please configure application_packages
+system call monitor started
+2022-05-20 14:52:42,636 [main] INFO  co.elastic.apm.agent.impl.ElasticApmTracer - Tracer switched to RUNNING state
+2022-05-20 14:52:42,639 [elastic-apm-server-healthcheck] INFO  co.elastic.apm.agent.report.ApmServerHealthChecker - Elastic APM server is available: {  "build_date": "2021-11-04T13:10:15Z",  "build_sha": "0702551667e5319822d00dee613ea2a1501615bf",  "version": "7.15.2"}
+[0m14:52:42,945 INFO  [org.jboss.modules] (main) JBoss Modules version 1.9.1.Final
+[0msystem call monitor started
+2022-05-20 14:52:43,294 [elastic-apm-remote-config-poller] INFO  co.elastic.apm.agent.configuration.ApmServerConfigurationSource - Received new configuration from APM Server: {}
+[0m14:52:43,356 INFO  [org.jboss.msc] (main) JBoss MSC version 1.4.8.Final
+[0m[0m14:52:43,367 INFO  [org.jboss.threads] (main) JBoss Threads version 2.3.3.Final
+[0m[0m14:52:43,451 INFO  [org.jboss.as] (MSC service thread 1-2) WFLYSRV0049: Keycloak 7.0.1 (WildFly Core 9.0.2.Final) starting
+[0m[0m14:52:43,527 INFO  [org.jboss.vfs] (MSC service thread 1-1) VFS000002: Failed to clean existing content for temp file provider of type temp. Enable DEBUG level log to find what caused this
+[0m[0m14:52:43,974 INFO  [org.wildfly.security] (ServerService Thread Pool -- 20) ELY00001: WildFly Elytron version 1.9.1.Final
+[0msystem call monitor started
+[0m14:52:44,520 INFO  [org.jboss.as.controller.management-deprecated] (Controller Boot Thread) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/core-service=management/management-interface=http-interface' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+[0m[0m14:52:44,558 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 8) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/subsystem=undertow/server=default-server/https-listener=https' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+[0m[0m14:52:44,670 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+[0m[0m14:52:44,681 INFO  [org.xnio] (MSC service thread 1-6) XNIO version 3.7.2.Final
+[0m[0m14:52:44,687 INFO  [org.xnio.nio] (MSC service thread 1-6) XNIO NIO Implementation Version 3.7.2.Final
+[0m[0m14:52:44,731 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 39) WFLYCLINF0001: Activating Infinispan subsystem.
+[0m[0m14:52:44,769 INFO  [org.jboss.remoting] (MSC service thread 1-5) JBoss Remoting version 5.0.12.Final
+[0m[0m14:52:44,774 INFO  [org.jboss.as.clustering.jgroups] (ServerService Thread Pool -- 43) WFLYCLJG0001: Activating JGroups subsystem. JGroups version 4.0.19
+[0m[0m14:52:44,772 INFO  [org.jboss.as.connector] (MSC service thread 1-6) WFLYJCA0009: Starting JCA Subsystem (WildFly/IronJacamar 1.4.16.Final)
+[0m[0m14:52:44,773 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 34) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 1.4)
+[0m[0m14:52:44,817 INFO  [org.wildfly.extension.microprofile.config.smallrye._private] (ServerService Thread Pool -- 48) WFLYCONF0001: Activating WildFly MicroProfile Config Subsystem
+[0m[0m14:52:44,821 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 52) WFLYNAM0001: Activating Naming Subsystem
+[0m[0m14:52:44,784 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 40) WFLYIO001: Worker 'default' has auto-configured to 16 core threads with 128 task threads based on your 8 available processors
+[0m[0m14:52:44,853 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 56) WFLYSEC0002: Activating Security Subsystem
+[0m[0m14:52:44,840 INFO  [org.jboss.as.naming] (MSC service thread 1-2) WFLYNAM0003: Starting Naming Service
+[0m[0m14:52:44,856 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-3) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+[0m[0m14:52:44,817 INFO  [org.jboss.as.jaxrs] (ServerService Thread Pool -- 41) WFLYRS0016: RESTEasy version 3.7.0.Final
+[0m[33m14:52:44,861 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 58) WFLYTX0013: The node-identifier attribute on the /subsystem=transactions is set to the default value. This is a danger for environments running multiple servers. Please make sure the attribute value is unique.
+[0m[0m14:52:44,876 INFO  [org.wildfly.extension.microprofile.metrics.smallrye] (ServerService Thread Pool -- 50) WFLYMETRICS0001: Activating Eclipse MicroProfile Metrics Subsystem
+[0m[0m14:52:44,890 INFO  [org.wildfly.extension.microprofile.health.smallrye] (ServerService Thread Pool -- 49) WFLYHEALTH0001: Activating Eclipse MicroProfile Health Subsystem
+[0m[0m14:52:44,895 INFO  [io.smallrye.metrics] (MSC service thread 1-6) Converted [2] config entries and added [4] replacements
+[0m[0m14:52:44,903 INFO  [io.smallrye.metrics] (MSC service thread 1-6) Converted [3] config entries and added [18] replacements
+[0m[0m14:52:44,911 INFO  [org.jboss.as.ejb3] (MSC service thread 1-5) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 128 (per class), which is derived from thread worker pool sizing.
+[0m[0m14:52:44,887 INFO  [org.jboss.as.security] (MSC service thread 1-3) WFLYSEC0001: Current PicketBox version=5.0.3.Final
+[0m[0m14:52:44,924 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0003: Undertow 2.0.21.Final starting
+[0m[0m14:52:44,876 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0018: Started Driver service with driver-name = h2
+[0m[0m14:52:44,911 INFO  [org.jboss.as.ejb3] (MSC service thread 1-6) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 32 (per class), which is derived from the number of CPUs on this host.
+[0m[33m14:52:44,986 WARN  [org.wildfly.clustering.web.undertow] (ServerService Thread Pool -- 59) WFLYCLWEBUT0007: No routing provider found for default-server; using legacy provider based on static configuration
+[0msystem call monitor started
+[0m14:52:45,081 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 59) WFLYUT0014: Creating file handler for path '/opt/jboss/keycloak/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+[0m[0m14:52:45,087 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0012: Started server default-server.
+[0m[0m14:52:45,089 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0018: Host default-host starting
+[0m[31m14:52:45,118 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-6) MSC000001: Failed to start service org.wildfly.undertow.listener.default: org.jboss.msc.service.StartException in service org.wildfly.undertow.listener.default: WFLYUT0082: Could not start 'default' listener.
+	at org.wildfly.extension.undertow@17.0.1.Final//org.wildfly.extension.undertow.ListenerService.start(ListenerService.java:211)
+	at org.jboss.msc@1.4.8.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1737)
+	at org.jboss.msc@1.4.8.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.execute(ServiceControllerImpl.java:1699)
+	at org.jboss.msc@1.4.8.Final//org.jboss.msc.service.ServiceControllerImpl$ControllerTask.run(ServiceControllerImpl.java:1557)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1982)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1377)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.net.SocketException: Protocol family unavailable
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:455)
+	at java.base/sun.nio.ch.Net.bind(Net.java:447)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:227)
+	at java.base/sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:80)
+	at org.jboss.xnio.nio@3.7.2.Final//org.xnio.nio.NioXnioWorker.createTcpConnectionServer(NioXnioWorker.java:178)
+	at org.jboss.xnio@3.7.2.Final//org.xnio.XnioWorker.createStreamConnectionServer(XnioWorker.java:310)
+	at org.wildfly.extension.undertow@17.0.1.Final//org.wildfly.extension.undertow.HttpListenerService.startListening(HttpListenerService.java:106)
+	at org.wildfly.extension.undertow@17.0.1.Final//org.wildfly.extension.undertow.ListenerService.start(ListenerService.java:199)
+	... 8 more
+
+[0m[31m14:52:45,115 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-5) MSC000001: Failed to start service org.wildfly.undertow.listener.ajp: org.jboss.msc.service.StartException in service org.wildfly.undertow.listener.ajp: WFLYUT0082: Could not start 'ajp' listener.
+	at org.wildfly.extension.undertow@17.0.1.Final//org.wildfly.extension.undertow.ListenerService.start(ListenerService.java:211)
+	at org.jboss.msc@1.4.8.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1737)
+	at org.jboss.msc@1.4.8.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.execute(ServiceControllerImpl.java:1699)
+	at org.jboss.msc@1.4.8.Final//org.jboss.msc.service.ServiceControllerImpl$ControllerTask.run(ServiceControllerImpl.java:1557)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1982)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1377)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.net.SocketException: Protocol family unavailable
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:455)
+	at java.base/sun.nio.ch.Net.bind(Net.java:447)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:227)
+	at java.base/sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:80)
+	at org.jboss.xnio.nio@3.7.2.Final//org.xnio.nio.NioXnioWorker.createTcpConnectionServer(NioXnioWorker.java:178)
+	at org.jboss.xnio@3.7.2.Final//org.xnio.XnioWorker.createStreamConnectionServer(XnioWorker.java:310)
+	at org.wildfly.extension.undertow@17.0.1.Final//org.wildfly.extension.undertow.AjpListenerService.startListening(AjpListenerService.java:64)
+	at org.wildfly.extension.undertow@17.0.1.Final//org.wildfly.extension.undertow.ListenerService.start(ListenerService.java:199)
+	... 8 more
+
+[0m[0m14:52:45,175 INFO  [org.jboss.as.ejb3] (MSC service thread 1-2) WFLYEJB0493: EJB subsystem suspension complete
+[0m[0m14:52:45,259 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-1) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+[0m[0m14:52:45,260 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-2) WFLYJCA0001: Bound data source [java:jboss/datasources/KeycloakDS]
+[0m[0m14:52:45,324 INFO  [org.jboss.as.patching] (MSC service thread 1-1) WFLYPAT0050: Keycloak cumulative patch ID is: base, one-off patches include: none
+[0m[33m14:52:45,333 WARN  [org.jboss.as.domain.management.security] (MSC service thread 1-5) WFLYDM0111: Keystore /opt/jboss/keycloak/standalone/configuration/application.keystore not found, it will be auto generated on first use with a self signed certificate for host localhost
+[0m[0m14:52:45,346 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-3) WFLYDS0013: Started FileSystemDeploymentService for directory /opt/jboss/keycloak/standalone/deployments
+[0m[0m14:52:45,351 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0027: Starting deployment of "keycloak-server.war" (runtime-name: "keycloak-server.war")
+[0m[31m14:52:45,409 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-4) MSC000001: Failed to start service org.wildfly.undertow.listener.https: org.jboss.msc.service.StartException in service org.wildfly.undertow.listener.https: WFLYUT0082: Could not start 'https' listener.
+	at org.wildfly.extension.undertow@17.0.1.Final//org.wildfly.extension.undertow.ListenerService.start(ListenerService.java:211)
+	at org.jboss.msc@1.4.8.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1737)
+	at org.jboss.msc@1.4.8.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.execute(ServiceControllerImpl.java:1699)
+	at org.jboss.msc@1.4.8.Final//org.jboss.msc.service.ServiceControllerImpl$ControllerTask.run(ServiceControllerImpl.java:1557)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1982)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1377)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.net.SocketException: Protocol family unavailable
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:455)
+	at java.base/sun.nio.ch.Net.bind(Net.java:447)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:227)
+	at java.base/sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:80)
+	at org.jboss.xnio.nio@3.7.2.Final//org.xnio.nio.NioXnioWorker.createTcpConnectionServer(NioXnioWorker.java:178)
+	at org.jboss.xnio@3.7.2.Final//org.xnio.XnioWorker.createStreamConnectionServer(XnioWorker.java:310)
+	at io.undertow.core@2.0.21.Final//io.undertow.protocols.ssl.UndertowXnioSsl.createSslConnectionServer(UndertowXnioSsl.java:421)
+	at org.wildfly.extension.undertow@17.0.1.Final//org.wildfly.extension.undertow.HttpsListenerService.startListening(HttpsListenerService.java:143)
+	at org.wildfly.extension.undertow@17.0.1.Final//org.wildfly.extension.undertow.ListenerService.start(ListenerService.java:199)
+	... 8 more
+
+[0m[33m14:52:45,593 WARN  [org.jboss.as.dependency.private] (MSC service thread 1-6) WFLYSRV0018: Deployment "deployment.keycloak-server.war" is using a private module ("org.kie") which may be changed or removed in future versions without notice.
+[0m[33m14:52:45,821 WARN  [org.jgroups.protocols.UDP] (ServerService Thread Pool -- 55) JGRP000015: the send buffer of socket ManagedMulticastSocketBinding was set to 1.00MB, but the OS only allocated 212.99KB. This might lead to performance problems. Please set your max send buffer in the OS correctly (e.g. net.core.wmem_max on Linux)
+[0m[33m14:52:45,822 WARN  [org.jgroups.protocols.UDP] (ServerService Thread Pool -- 55) JGRP000015: the receive buffer of socket ManagedMulticastSocketBinding was set to 20.00MB, but the OS only allocated 212.99KB. This might lead to performance problems. Please set your max receive buffer in the OS correctly (e.g. net.core.rmem_max on Linux)
+[0m[33m14:52:45,822 WARN  [org.jgroups.protocols.UDP] (ServerService Thread Pool -- 55) JGRP000015: the send buffer of socket ManagedMulticastSocketBinding was set to 1.00MB, but the OS only allocated 212.99KB. This might lead to performance problems. Please set your max send buffer in the OS correctly (e.g. net.core.wmem_max on Linux)
+[0m[33m14:52:45,822 WARN  [org.jgroups.protocols.UDP] (ServerService Thread Pool -- 55) JGRP000015: the receive buffer of socket ManagedMulticastSocketBinding was set to 25.00MB, but the OS only allocated 212.99KB. This might lead to performance problems. Please set your max receive buffer in the OS correctly (e.g. net.core.rmem_max on Linux)
+[0msystem call monitor started
+system call monitor started
+system call monitor started
+[0m14:52:48,828 INFO  [org.jgroups.protocols.pbcast.GMS] (ServerService Thread Pool -- 55) 4e33cb589998: no members discovered after 3002 ms: creating cluster as first member
+[0msystem call monitor started
+[0m14:52:49,030 INFO  [org.infinispan.factories.GlobalComponentRegistry] (MSC service thread 1-1) ISPN000128: Infinispan version: Infinispan 'Infinity Minus ONE +2' 9.4.14.Final
+[0m[0m14:52:49,176 INFO  [org.infinispan.remoting.transport.jgroups.JGroupsTransport] (MSC service thread 1-1) ISPN000078: Starting JGroups channel ejb
+[0m[0m14:52:49,176 INFO  [org.infinispan.remoting.transport.jgroups.JGroupsTransport] (MSC service thread 1-5) ISPN000078: Starting JGroups channel ejb
+[0m[0m14:52:49,176 INFO  [org.infinispan.remoting.transport.jgroups.JGroupsTransport] (MSC service thread 1-6) ISPN000078: Starting JGroups channel ejb
+[0m[0m14:52:49,176 INFO  [org.infinispan.remoting.transport.jgroups.JGroupsTransport] (MSC service thread 1-7) ISPN000078: Starting JGroups channel ejb
+[0m[0m14:52:49,176 INFO  [org.infinispan.remoting.transport.jgroups.JGroupsTransport] (MSC service thread 1-3) ISPN000078: Starting JGroups channel ejb
+[0m[0m14:52:49,186 INFO  [org.infinispan.CLUSTER] (MSC service thread 1-7) ISPN000094: Received new cluster view for channel ejb: [4e33cb589998|0] (1) [4e33cb589998]
+[0m[0m14:52:49,186 INFO  [org.infinispan.CLUSTER] (MSC service thread 1-5) ISPN000094: Received new cluster view for channel ejb: [4e33cb589998|0] (1) [4e33cb589998]
+[0m[0m14:52:49,186 INFO  [org.infinispan.CLUSTER] (MSC service thread 1-3) ISPN000094: Received new cluster view for channel ejb: [4e33cb589998|0] (1) [4e33cb589998]
+[0m[0m14:52:49,186 INFO  [org.infinispan.CLUSTER] (MSC service thread 1-6) ISPN000094: Received new cluster view for channel ejb: [4e33cb589998|0] (1) [4e33cb589998]
+[0m[0m14:52:49,186 INFO  [org.infinispan.CLUSTER] (MSC service thread 1-1) ISPN000094: Received new cluster view for channel ejb: [4e33cb589998|0] (1) [4e33cb589998]
+[0m[0m14:52:49,195 INFO  [org.infinispan.remoting.transport.jgroups.JGroupsTransport] (MSC service thread 1-5) ISPN000079: Channel ejb local address is 4e33cb589998, physical addresses are [172.17.0.4:55200]
+[0m[0m14:52:49,195 INFO  [org.infinispan.remoting.transport.jgroups.JGroupsTransport] (MSC service thread 1-6) ISPN000079: Channel ejb local address is 4e33cb589998, physical addresses are [172.17.0.4:55200]
+[0m[0m14:52:49,195 INFO  [org.infinispan.remoting.transport.jgroups.JGroupsTransport] (MSC service thread 1-3) ISPN000079: Channel ejb local address is 4e33cb589998, physical addresses are [172.17.0.4:55200]
+[0m[0m14:52:49,203 INFO  [org.infinispan.remoting.transport.jgroups.JGroupsTransport] (MSC service thread 1-7) ISPN000079: Channel ejb local address is 4e33cb589998, physical addresses are [172.17.0.4:55200]
+[0m[0m14:52:49,203 INFO  [org.infinispan.remoting.transport.jgroups.JGroupsTransport] (MSC service thread 1-1) ISPN000079: Channel ejb local address is 4e33cb589998, physical addresses are [172.17.0.4:55200]
+[0m[0m14:52:49,331 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 70) WFLYCLINF0002: Started realms cache from keycloak container
+[0m[0m14:52:49,331 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 61) WFLYCLINF0002: Started users cache from keycloak container
+[0m[0m14:52:49,331 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 69) WFLYCLINF0002: Started keys cache from keycloak container
+[0m[0m14:52:49,331 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 67) WFLYCLINF0002: Started authorization cache from keycloak container
+[0m[0m14:52:49,444 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 62) WFLYCLINF0002: Started offlineSessions cache from keycloak container
+[0m[0m14:52:49,444 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 68) WFLYCLINF0002: Started loginFailures cache from keycloak container
+[0m[0m14:52:49,445 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 65) WFLYCLINF0002: Started authenticationSessions cache from keycloak container
+[0m[0m14:52:49,446 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 71) WFLYCLINF0002: Started offlineClientSessions cache from keycloak container
+[0m[0m14:52:49,448 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 63) WFLYCLINF0002: Started work cache from keycloak container
+[0m[0m14:52:49,450 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 55) WFLYCLINF0002: Started actionTokens cache from keycloak container
+[0m[0m14:52:49,450 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 66) WFLYCLINF0002: Started sessions cache from keycloak container
+[0m[0m14:52:49,453 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 64) WFLYCLINF0002: Started clientSessions cache from keycloak container
+[0m[0m14:52:49,457 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 72) WFLYCLINF0002: Started client-mappings cache from ejb container
+[0m[33m14:52:49,528 WARN  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0273: Excluded subsystem webservices via jboss-deployment-structure.xml does not exist.
+[0m[31m14:52:49,622 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) WFLYCTL0013: Operation ("add") failed - address: ([
+    ("subsystem" => "ejb3"),
+    ("service" => "remote")
+]) - failure description: {
+    "WFLYCTL0412: Required services that are not installed:" => ["jboss.remoting.remotingConnectorInfoService.http-remoting-connector"],
+    "WFLYCTL0180: Services with missing/unavailable dependencies" => ["org.wildfly.clustering.cache.registry-entry.ejb.client-mappings is missing [jboss.remoting.remotingConnectorInfoService.http-remoting-connector]"]
+}
+[0m[31m14:52:49,623 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) WFLYCTL0013: Operation ("add") failed - address: ([
+    ("subsystem" => "undertow"),
+    ("server" => "default-server"),
+    ("ajp-listener" => "ajp")
+]) - failure description: {"WFLYCTL0080: Failed services" => {"org.wildfly.undertow.listener.ajp" => "WFLYUT0082: Could not start 'ajp' listener.
+    Caused by: java.net.SocketException: Protocol family unavailable"}}
+[0m[31m14:52:49,623 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) WFLYCTL0013: Operation ("add") failed - address: ([
+    ("subsystem" => "undertow"),
+    ("server" => "default-server"),
+    ("http-listener" => "default")
+]) - failure description: {"WFLYCTL0080: Failed services" => {"org.wildfly.undertow.listener.default" => "WFLYUT0082: Could not start 'default' listener.
+    Caused by: java.net.SocketException: Protocol family unavailable"}}
+[0m[31m14:52:49,624 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) WFLYCTL0013: Operation ("add") failed - address: ([
+    ("subsystem" => "undertow"),
+    ("server" => "default-server"),
+    ("https-listener" => "https")
+]) - failure description: {"WFLYCTL0080: Failed services" => {"org.wildfly.undertow.listener.https" => "WFLYUT0082: Could not start 'https' listener.
+    Caused by: java.net.SocketException: Protocol family unavailable"}}
+[0m[0m14:52:49,631 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 46) WFLYSRV0010: Deployed "keycloak-server.war" (runtime-name : "keycloak-server.war")
+[0m[0m14:52:49,632 INFO  [org.jboss.as.controller] (Controller Boot Thread) WFLYCTL0183: Service status report
+WFLYCTL0184:    New missing/unsatisfied dependencies:
+      service jboss.remoting.remotingConnectorInfoService.http-remoting-connector (missing) dependents: [service org.wildfly.clustering.cache.registry-entry.ejb.client-mappings] 
+WFLYCTL0186:   Services which failed to start:      service org.wildfly.undertow.listener.default: WFLYUT0082: Could not start 'default' listener.
+      service org.wildfly.undertow.listener.ajp: WFLYUT0082: Could not start 'ajp' listener.
+      service org.wildfly.undertow.listener.https: WFLYUT0082: Could not start 'https' listener.
+WFLYCTL0448: 13 additional services are down due to their dependencies being missing or failed
+[0m[0m14:52:49,698 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0212: Resuming server
+[0m[0m14:52:49,701 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
+[0m[0m14:52:49,701 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
+[0m[31m14:52:49,701 ERROR [org.jboss.as] (Controller Boot Thread) WFLYSRV0026: Keycloak 7.0.1 (WildFly Core 9.0.2.Final) started (with errors) in 7061ms - Started 656 of 984 services (16 services failed or missing dependencies, 701 services are lazy, passive or on-demand)
+[0msystem call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
+system call monitor started
