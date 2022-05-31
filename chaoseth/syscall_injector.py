@@ -53,8 +53,15 @@ int inject_when_exit(struct pt_regs *ctx)
 #endif
 
 #ifdef FILTER_PROCESS
-    char process[] = FILTER_PROCESS;
-    if (!compare_process_name(process))
+    char process[PROCESS_ARRAY_SIZE][TASK_COMM_LEN] = FILTER_PROCESS;
+    int isProcessPresent = 0;
+    for (int i = 0; i < PROCESS_ARRAY_SIZE; i++) {
+        if (compare_process_name(process[i])) {
+            isProcessPresent = 1;
+            break;
+        }
+    }
+    if (isProcessPresent == 0)
         return 0;
 #endif
 
@@ -115,8 +122,8 @@ def get_arguments():
             epilog="./syscall_injector.py -p 12345 -p 54321 -P 0.8 --errorno=-ENOENT openat")
     parser.add_argument("-p", "--pid", action="append", type=int,
             help="inject failures in a pid (can be given for multiple times)")
-    parser.add_argument("--process",
-            help="monitor only this process name")
+    parser.add_argument("--process", action="append",
+            help="monitor this process name (can be given for multiple times)")
     parser.add_argument(metavar="syscall", dest="syscall",
             help="specify the syscall to be failed")
     parser.add_argument("-e", "--errorno", default="-1",
@@ -155,7 +162,9 @@ def main():
         pid_strs = [str(i) for i in args.pid]
         prog = ("#define FILTER_PID {%s}\n"%(", ".join(pid_strs))) + prog
     if args.process:
-        prog = ('#define FILTER_PROCESS "%s"\n' % args.process) + prog
+        process_strs = ['"%s"'%i for i in args.process]
+        prog = ('#define FILTER_PROCESS {%s}\n'%(", ".join(process_strs))) + prog
+        prog = ('#define PROCESS_ARRAY_SIZE %d\n'%len(args.process)) + prog
     if (not args.pid) and (not args.process):
         print("Either pid or process name should be given!")
         exit()
