@@ -6,7 +6,7 @@
 #
 # 18-Mar-2020   Long Zhang   Created this file based on bcc/tools/inject.py
 
-import argparse, signal, time
+import argparse, signal, time, json, logging
 from bcc import BPF
 
 prog = """
@@ -84,7 +84,7 @@ int inject_when_exit(struct pt_regs *ctx)
     }
 }
 """
-bpf = None
+bpfs = list()
 
 def calculate_probability(probability):
     if probability == 1:
@@ -124,7 +124,9 @@ def get_arguments():
             help="inject failures in a pid (can be given for multiple times)")
     parser.add_argument("--process", action="append",
             help="monitor this process name (can be given for multiple times)")
-    parser.add_argument(metavar="syscall", dest="syscall",
+    parser.add_argument("--config",
+            help="read error models from a config file")
+    parser.add_argument("-s", "--syscall",
             help="specify the syscall to be failed")
     parser.add_argument("-e", "--errorno", default="-1",
             metavar="errorno",
@@ -145,9 +147,12 @@ def get_arguments():
     return args
 
 def print_stats():
-    global bpf
-    count = bpf["count"] # type: c_unit
-    print("%s failures have been injected so far."%count[0].value)
+    global bpfs
+    for item in bpfs:
+        model = item["model"]
+        count = item["prog"]["count"] # type: c_unit
+        print("(%s,%s,%.2f): %s failures have been injected so far."%(model["syscall_name"], model["error_code"], model["failure_rate"], count[0].value))
+    print("-----------------")
 
 # signal handler
 def signal_ignore(signal, frame):
@@ -155,7 +160,7 @@ def signal_ignore(signal, frame):
 
 def main():
     global prog
-    global bpf
+    global bpfs
 
     args = get_arguments()
     if args.pid:
@@ -169,11 +174,32 @@ def main():
         print("Either pid or process name should be given!")
         exit()
 
-    prog = prog%(calculate_probability(args.probability), calculate_countdown(args.count), args.errorno)
-    if args.verbose: print(prog)
+    if args.config:
+        with open(args.config, 'rt') as error_models_file:
+            models = json.load(error_models_file)
+            unique_models = dict()
+            for model in models["experiments"]:
+                # we keep one error model for each type of system call
+                # one with the highest error rate is selected
+                key = model["syscall_name"]
+                if key not in unique_models or unique_models[key]["failure_rate"] < model["failure_rate"]:
+                    unique_models[key] = model
 
-    bpf = BPF(text = prog)
-    bpf.attach_kretprobe(event = bpf.get_syscall_fnname(args.syscall), fn_name = "inject_when_exit")
+            for key, model in unique_models.items():
+                bpf_prog = prog%(calculate_probability(model["failure_rate"]), calculate_countdown(args.count), model["error_code"])
+                if args.verbose: print(bpf_prog)
+
+                bpf = BPF(text = bpf_prog)
+                bpf.attach_kretprobe(event = bpf.get_syscall_fnname(model["syscall_name"]), fn_name = "inject_when_exit")
+                bpfs.append({"model":model, "prog":bpf})
+    else:
+        model = {"syscall_name": args.syscall, "error_code": args.errorno, "failure_rate": args.probability}
+        bpf_prog = prog%(calculate_probability(args.probability), calculate_countdown(args.count), args.errorno)
+        if args.verbose: print(bpf_prog)
+
+        bpf = BPF(text = bpf_prog)
+        bpf.attach_kretprobe(event = bpf.get_syscall_fnname(args.syscall), fn_name = "inject_when_exit")
+        bpfs.append({"model":model, "prog":bpf})
 
     exiting = 0
     seconds = 0
@@ -194,4 +220,6 @@ def main():
             exit()
 
 if __name__ == "__main__":
+    logger_format = '%(asctime)-15s %(levelname)-8s %(message)s'
+    logging.basicConfig(level=logging.INFO, format=logger_format)
     main()
