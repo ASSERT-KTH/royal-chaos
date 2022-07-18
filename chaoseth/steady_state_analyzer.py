@@ -27,6 +27,8 @@ def get_args():
         help="a json file name that saves query results, default: error_models.json")
     parser.add_argument("--from_json",
         help="generate steady state and error models from a json file that contains the metrics")
+    parser.add_argument("-a", "--application_name", default="",
+        help="process application name e.g. 'geth'")
     args = parser.parse_args()
 
     config = configparser.ConfigParser()
@@ -52,12 +54,12 @@ def calculate_stats(values):
     variance = numpy.var(values, axis=0)[1]
     return min_value, mean_value, max_value, variance
 
-def query_total_invocations(prometheus_url, syscall_name, error_code, start_time, end_time, step):
+def query_total_invocations(prometheus_url, syscall_name, error_code, start_time, end_time, step, application_name):
     range_query_api = "/api/v1/query_range"
     if error_code == "":
-        query_string = 'sum(failed_syscalls_total{syscall_name="%s"})'%(syscall_name)
+        query_string = 'sum(failed_syscalls_total{syscall_name="%s", application_name="%s"})'%(syscall_name, application_name)
     else:
-        query_string = 'failed_syscalls_total{syscall_name="%s", error_code="%s"}'%(syscall_name, error_code)
+        query_string = 'failed_syscalls_total{syscall_name="%s", error_code="%s", application_name="%s"}'%(syscall_name, error_code, application_name)
     response = requests.post(prometheus_url + range_query_api, data={'query': query_string, 'start': start_time, 'end': end_time, 'step': step})
     status = response.json()["status"]
 
@@ -80,12 +82,12 @@ def query_total_invocations(prometheus_url, syscall_name, error_code, start_time
 
     return total
 
-def query_syscall_errors(prometheus_url, start_time, end_time, step):
+def query_syscall_errors(prometheus_url, start_time, end_time, step, application_name):
     range_query_api = "/api/v1/query_range"
     error_list = list()
     syscall_type = list()
 
-    query_string = 'syscalls_failure_rate'
+    query_string = 'syscalls_failure_rate{application_name="%s"}'%(application_name)
     response = requests.post(prometheus_url + range_query_api, data={'query': query_string, 'start': start_time, 'end': end_time, 'step': step})
     status = response.json()["status"]
 
@@ -109,7 +111,7 @@ def query_syscall_errors(prometheus_url, start_time, end_time, step):
             "syscall_name": entry["metric"]["syscall_name"],
             "error_code": entry["metric"]["error_code"],
             "samples_in_total": len(entry["values"]),
-            "invocations_in_total": query_total_invocations(prometheus_url, entry["metric"]["syscall_name"], entry["metric"]["error_code"], start_time, end_time, step),
+            "invocations_in_total": query_total_invocations(prometheus_url, entry["metric"]["syscall_name"], entry["metric"]["error_code"], start_time, end_time, step, application_name),
             "rate_min": min_value,
             "rate_mean": mean_value,
             "rate_max": max_value,
@@ -121,7 +123,7 @@ def query_syscall_errors(prometheus_url, start_time, end_time, step):
             error_list.append({
                 "syscall_name": entry["metric"]["syscall_name"],
                 "error_code": "SUCCESS",
-                "invocations_in_total": query_total_invocations(prometheus_url, entry["metric"]["syscall_name"], "SUCCESS", start_time, end_time, step),
+                "invocations_in_total": query_total_invocations(prometheus_url, entry["metric"]["syscall_name"], "SUCCESS", start_time, end_time, step, application_name),
             })
             syscall_type.append(entry["metric"]["syscall_name"])
 
@@ -173,8 +175,8 @@ def query_metrics(metric_urls, start_time, end_time, step):
 
     return query_results
 
-def infer_steady_state(host, metric_urls, start_time, end_time, step):
-    error_list = query_syscall_errors(host, start_time, end_time, step)
+def infer_steady_state(host, metric_urls, start_time, end_time, step, application_name):
+    error_list = query_syscall_errors(host, start_time, end_time, step, application_name)
     other_metrics = query_metrics(metric_urls, start_time, end_time, step)
     return {"syscall_errors": error_list, "other_metrics": other_metrics}
 
@@ -261,7 +263,7 @@ def main(args):
         pretty_print_syscall_errors(error_list)
         generate_experiment_config(args, error_list)
     else:
-        steady_state = infer_steady_state(args.host, args.metric_urls, args.start, args.end, args.step)
+        steady_state = infer_steady_state(args.host, args.metric_urls, args.start, args.end, args.step, args.application_name)
         pretty_print_syscall_errors(steady_state["syscall_errors"])
         generate_experiment_config(args, steady_state["syscall_errors"])
         pretty_print_metrics(steady_state["other_metrics"])
