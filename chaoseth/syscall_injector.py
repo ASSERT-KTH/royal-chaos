@@ -64,34 +64,30 @@ int inject_when_exit(struct pt_regs *ctx)
     if (isProcessPresent == 0)
         return 0;
 #endif
+    int ret = PT_REGS_RC(ctx);
 
-    // calculate the probability
-    if (%s)
-    {
-        return 0;
-    }
-    else
-    {
-        // override the return value, only when the original return value >= 0
-        int ret = PT_REGS_RC(ctx);
-        if (ret >= 0)
-        {
+    // if return is successful
+    if(ret >= 0){
+        // error injection coin toss
+        if (%s){
             // calculate the countdown if necessary
             %s
             bpf_override_return(ctx, %s);
         }
-        return 0;
     }
+    return 0;
+
 }
 """
 bpfs = list()
 
-def calculate_probability(probability):
-    if probability == 1:
-        condition_str = "false"
+def calculate_probability(target_probability, original_probability):
+
+    if original_probability != None:
+        success_disrupt_prob = (target_probability - original_probability) / (1 - original_probability)
+        return "bpf_get_prandom_u32() > 1 - %s" % str(int((1<<32)*success_disrupt_prob))
     else:
-        condition_str = "bpf_get_prandom_u32() > %s" % str(int((1<<32)*probability))
-    return condition_str
+        return "bpf_get_prandom_u32() > 1 - %s" % str(int((1<<32)*target_probability))
 
 def calculate_countdown(count):
     snippet = """
@@ -186,7 +182,7 @@ def main():
                     unique_models[key] = model
 
             for key, model in unique_models.items():
-                bpf_prog = prog%(calculate_probability(model["failure_rate"]), calculate_countdown(args.count), model["error_code"])
+                bpf_prog = prog%(calculate_probability(model["failure_rate"], model["original_mean_rate"]), calculate_countdown(args.count), model["error_code"])
                 if args.verbose: print(bpf_prog)
 
                 bpf = BPF(text = bpf_prog)
