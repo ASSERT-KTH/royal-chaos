@@ -157,7 +157,10 @@ def query_metrics(metric_urls, start_time, end_time, step):
                 logging.error("peer stats query failed")
                 logging.error(response.json())
             else:
-                datapoints = response.json()["results"][0]["series"][0]["values"]
+                if "series" in response.json()["results"][0]:
+                    datapoints = response.json()["results"][0]["series"][0]["values"]
+                else:
+                    datapoints = None
 
         # calculate statistic information of the values
         if datapoints != None:

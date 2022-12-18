@@ -1,44 +1,435 @@
-$ python steady_state_analyzer.py -c ./experiments/go-ethereum/experiment_config_go-ethereum.ini --host http://localhost:9090 --start=2021-10-09T14:00:00+02:00 --end=2021-10-09T19:00:00+02:00
+$ python steady_state_analyzer.py -c experiments/go-ethereum/experiment_config_go-ethereum.ini --host http://localhost:9090 --start 2022-12-15T05:00:00Z --end 2022-12-15T10:00:00Z -a [unknown]
 
 +--------------+-------------+------------------+----------------------+------------------------------+------------------------+
 | Syscall Name |  Error Code | Samples in Total | Invocations in Total |         Failure Rate         |        Variance        |
 +--------------+-------------+------------------+----------------------+------------------------------+------------------------+
-|   accept4    |    EAGAIN   |       1201       |        43713         | 0.500000, 0.499821, 0.500000 | 1.402101495962259e-06  |
-|   accept4    |   SUCCESS   |        -         |        43745         |              -               |           -            |
-|   connect    | EINPROGRESS |       186        |         831          | 0.254167, 0.331521, 0.448052 |  0.003960142747791785  |
-|   connect    |   SUCCESS   |        -         |         5301         |              -               |           -            |
-|  epoll_ctl   |    EPERM    |       1201       |        12308         | 0.075188, 0.102145, 0.136986 | 0.00044175615459353233 |
-|  epoll_ctl   |   SUCCESS   |        -         |        111812        |              -               |           -            |
-| epoll_pwait  |    EINTR    |        17        |          17          | 0.000029, 0.000046, 0.000062 | 1.3052799979376627e-10 |
-| epoll_pwait  |   SUCCESS   |        -         |       31092610       |              -               |           -            |
-|    futex     |    EAGAIN   |       1201       |        71139         | 0.003206, 0.005250, 0.008349 | 2.946945684527905e-06  |
-|    futex     |  ETIMEDOUT  |       1201       |        60320         | 0.002086, 0.004477, 0.010853 | 2.488322993598766e-05  |
-|    futex     |   SUCCESS   |        -         |       13803925       |              -               |           -            |
-|  newfstatat  |    ENOENT   |        5         |          5           | 0.200000, 0.270000, 0.450000 |  0.013599999999999998  |
-|  newfstatat  |   SUCCESS   |        -         |         898          |              -               |           -            |
-|     read     |    EAGAIN   |       1201       |       7290540        | 0.492385, 0.495555, 0.497673 | 5.6396257368969615e-05 |
-|     read     |  ECONNRESET |        23        |          26          | 0.000062, 0.000103, 0.000160 | 1.3570235308650766e-09 |
-|     read     |   SUCCESS   |        -         |       7425372        |              -               |           -            |
-|   recvfrom   |    EAGAIN   |       1201       |        60038         | 0.472727, 0.494021, 0.500000 | 0.00011937503401555002 |
-|   recvfrom   |   SUCCESS   |        -         |        61838         |              -               |           -            |
+|   accept4    |    EAGAIN   |       1201       |        51989         | 0.490000, 0.498730, 0.500000 | 1.4849637680406924e-05 |
+|   accept4    |   SUCCESS   |        -         |        52262         |              -               |           -            |
+|   connect    | EINPROGRESS |        40        |         1347         | 0.512179, 0.597879, 0.685804 |  0.007681315152163528  |
+|   connect    |   SUCCESS   |        -         |         878          |              -               |           -            |
+|  epoll_ctl   |    EPERM    |       1201       |         6884         | 0.038168, 0.056461, 0.082353 | 0.0002498109236072319  |
+|  epoll_ctl   |   SUCCESS   |        -         |        120963        |              -               |           -            |
+| epoll_pwait  |    EINTR    |       312        |         352          | 0.000023, 0.000043, 0.000089 | 4.062455791840498e-10  |
+| epoll_pwait  |   SUCCESS   |        -         |       36570554       |              -               |           -            |
+|    futex     |    EAGAIN   |       1201       |       1507329        | 0.016064, 0.026050, 0.036695 |  4.16557451185239e-05  |
+|    futex     |  ETIMEDOUT  |       1152       |        143037        | 0.001456, 0.002688, 0.003923 | 6.175509124708874e-07  |
+|    futex     |   SUCCESS   |        -         |       56267963       |              -               |           -            |
+|  newfstatat  |    ENOENT   |        5         |          5           | 0.250000, 0.250000, 0.250000 |          0.0           |
+|  newfstatat  |   SUCCESS   |        -         |          93          |              -               |           -            |
+|     read     |    EAGAIN   |       1201       |       7191573        | 0.449813, 0.456171, 0.463190 | 1.768369573183863e-05  |
+|     read     |  ECONNRESET |        4         |          4           | 0.000051, 0.000075, 0.000096 | 3.8558265949460824e-10 |
+|     read     |   SUCCESS   |        -         |       8548364        |              -               |           -            |
+|   recvfrom   |    EAGAIN   |       1201       |        99608         | 0.487179, 0.495259, 0.500000 | 6.757899564226322e-05  |
+|   recvfrom   |   SUCCESS   |        -         |        101792        |              -               |           -            |
 |   unlinkat   |    EISDIR   |        5         |          10          | 0.333333, 0.333333, 0.333333 |          0.0           |
 |   unlinkat   |  ENOTEMPTY  |        5         |          5           | 0.166667, 0.166667, 0.166667 |          0.0           |
-|   unlinkat   |   SUCCESS   |        -         |          41          |              -               |           -            |
-|    write     |    EAGAIN   |        1         |          1           | 0.001667, 0.001667, 0.001667 |          0.0           |
-|    write     |  ECONNRESET |        3         |          3           | 0.001665, 0.002069, 0.002684 | 2.586643173904599e-07  |
-|    write     |    EPIPE    |        1         |          1           | 0.003745, 0.003745, 0.003745 |          0.0           |
-|    write     |   SUCCESS   |        -         |        620317        |              -               |           -            |
+|   unlinkat   |   SUCCESS   |        -         |          52          |              -               |           -            |
+|    write     |    EAGAIN   |        23        |          27          | 0.000039, 0.000068, 0.000149 | 1.1929381133103132e-09 |
+|    write     |  ECONNRESET |        15        |          22          | 0.000036, 0.000081, 0.000213 | 3.5742851329783797e-09 |
+|    write     |    EPIPE    |        4         |          5           | 0.000039, 0.000062, 0.000098 |  6.88836930592055e-10  |
+|    write     |   SUCCESS   |        -         |       22060002       |              -               |           -            |
 +--------------+-------------+------------------+----------------------+------------------------------+------------------------+
-
-+---------------------+--------------------+--------------------+--------------------+-----------------------+
-|     Metric Name     |        Min         |        Mean        |        Max         |        Variance       |
-+---------------------+--------------------+--------------------+--------------------+-----------------------+
-|      disk_read      | 15957876.627453428 | 22289658.533813067 | 38701491.58224461  |   44256213597409.07   |
-|      disk_write     | 2311.976519774683  | 35475.83946361646  | 104319.45388947321 |   29839539296.67194   |
-| known_announcements | 0.9895613321949464 | 1.9370057546321566 | 3.0109923128611342 |   0.3828268663717022  |
-|   known_broadcasts  | 0.3192300030327744 | 0.6234764221284657 | 0.9798119489786333 |  0.04021397220687566  |
-|     memory_used     |    1594069748.2    |   1824696775.76    |    2051030776.0    | 2.019107137218177e+16 |
-|      peer_stats     |        47.5        | 50.193333333333335 |        52.0        |   1.3159555555555549  |
-|    traffic_egress   | 2217.7878726279687 | 3673.3521152282933 | 6048.9575900690015 |   3167782.274539476   |
-|   traffic_ingress   | 132966.12680184116 | 171691.4769301007  | 220972.00383743222 |   712007031.3557333   |
-+---------------------+--------------------+--------------------+--------------------+-----------------------+
++-----------------------------------------------------------+-------------------------+-------------------------+-------------------------+-------------------------+
+|                        Metric Name                        |           Min           |           Mean          |           Max           |         Variance        |
++-----------------------------------------------------------+-------------------------+-------------------------+-------------------------+-------------------------+
+|              geth.chain.account.commits.timer             |   0.07489649645747788   |    0.0833490168016513   |   0.09090808128258024   |   2.85034702421426e-05  |
+|              geth.chain.account.hashes.timer              |   0.07477263727205959   |   0.08328305879103257   |   0.09089086787966902   |  2.8308995961399982e-05 |
+|               geth.chain.account.reads.timer              |   0.07477263727205959   |   0.08328789741813883   |   0.09089538499645607   |  2.8289419070480428e-05 |
+|              geth.chain.account.updates.timer             |   0.07477263727205959   |   0.08328789741813883   |   0.09089538499645607   |  2.8289419070480428e-05 |
+|                 geth.chain.execution.timer                |   0.07477263727205959   |   0.08328789741813883   |   0.09089538499645607   |  2.8289419070480428e-05 |
+|                geth.chain.head.block.gauge                |       16187940.95       |    16188610.705833333   |    16189281.575000001   |    185112.03429930532   |
+|              geth.chain.head.finalized.gauge              |        16187858.0       |    16188531.725416666   |        16189193.0       |    185095.89481232606   |
+|                geth.chain.head.header.gauge               |       16187940.95       |    16188610.705833333   |    16189281.575000001   |    185112.03429930532   |
+|               geth.chain.head.receipt.gauge               |       16187940.95       |    16188610.705833333   |    16189281.575000001   |    185112.03429930532   |
+|                 geth.chain.head.safe.gauge                |        16187890.0       |    16188563.504166666   |        16189224.0       |    185163.54164930238   |
+|                  geth.chain.inserts.timer                 |   0.07489649645747788   |    0.0833490168016513   |   0.09090808128258024   |   2.85034702421426e-05  |
+|             geth.chain.prefetch.executes.timer            |           0.0           |           0.0           |           0.0           |           0.0           |
+|            geth.chain.prefetch.interrupts.meter           |           0.0           |           0.0           |           0.0           |           0.0           |
+|                 geth.chain.reorg.add.meter                |     2.964393875e-314    |  5.773599987556467e-05  |  5.409884132412401e-09  |  4.3902203462400387e-07 |
+|                geth.chain.reorg.drop.meter                |     2.964393875e-314    |  5.773599987556467e-05  |  5.409884132412401e-09  |  4.3902203462400387e-07 |
+|              geth.chain.reorg.executes.meter              |     2.964393875e-314    |  5.773599987556467e-05  |  5.409884132412401e-09  |  4.3902203462400387e-07 |
+|              geth.chain.reorg.invalidtx.meter             |           0.0           |           0.0           |           0.0           |           0.0           |
+|          geth.chain.snapshot.account.reads.timer          |   0.07477263727205959   |   0.08328789741813883   |   0.09089538499645607   |  2.8289419070480428e-05 |
+|             geth.chain.snapshot.commits.timer             |   0.07489649645747788   |    0.0833490168016513   |   0.09090808128258024   |   2.85034702421426e-05  |
+|          geth.chain.snapshot.storage.reads.timer          |   0.07477263727205959   |   0.08328789741813883   |   0.09089538499645607   |  2.8289419070480428e-05 |
+|              geth.chain.storage.commits.timer             |   0.07489649645747788   |    0.0833490168016513   |   0.09090808128258024   |   2.85034702421426e-05  |
+|              geth.chain.storage.hashes.timer              |   0.07477263727205959   |   0.08328305879103257   |   0.09089086787966902   |  2.8308995961399982e-05 |
+|               geth.chain.storage.reads.timer              |   0.07477263727205959   |   0.08328789741813883   |   0.09089538499645607   |  2.8289419070480428e-05 |
+|              geth.chain.storage.updates.timer             |   0.07477263727205959   |   0.08328789741813883   |   0.09089538499645607   |  2.8289419070480428e-05 |
+|                geth.chain.validation.timer                |   0.07477263727205959   |   0.08328305879103257   |   0.09089086787966902   |  2.8308995961399982e-05 |
+|                   geth.chain.write.timer                  |   0.07489649645747788   |    0.0833490168016513   |   0.09090808128258024   |   2.85034702421426e-05  |
+|          geth.eth.db.chaindata.ancient.read.meter         |           0.0           |           0.0           |           0.0           |           0.0           |
+|          geth.eth.db.chaindata.ancient.size.gauge         |      378785033125.0     |      378785033125.0     |      378785033125.0     |           0.0           |
+|         geth.eth.db.chaindata.ancient.write.meter         |           0.0           |           0.0           |           0.0           |           0.0           |
+|         geth.eth.db.chaindata.compact.input.meter         |  2.487423739395512e-188 |  4.377052880820181e-67  |  3.5998876380900806e-71 |  2.838568012776606e-131 |
+|         geth.eth.db.chaindata.compact.level0.gauge        |           3.0           |           3.0           |           3.0           |           0.0           |
+|         geth.eth.db.chaindata.compact.memory.gauge        |           8.0           |          8.7975         |           9.0           |   0.16149375000000735   |
+|       geth.eth.db.chaindata.compact.nonlevel0.gauge       |          9300.0         |          9300.0         |          9300.0         |           0.0           |
+|         geth.eth.db.chaindata.compact.output.meter        |  3.0911057293760653e-91 |    22508.336879834143   |    1.8560034736988356   |    75125638558.83707    |
+|          geth.eth.db.chaindata.compact.seek.gauge         |           0.0           |           0.0           |           0.0           |           0.0           |
+|          geth.eth.db.chaindata.compact.time.meter         |  1.7203988563794032e-90 |    125273.35011243803   |    10.329851299626041   |    2327119828657.5215   |
+|   geth.eth.db.chaindata.compact.writedelay.counter.meter  |           0.0           |           0.0           |           0.0           |           0.0           |
+|  geth.eth.db.chaindata.compact.writedelay.duration.meter  |           0.0           |           0.0           |           0.0           |           0.0           |
+|           geth.eth.db.chaindata.disk.read.meter           |    1697925.3725519478   |    2369510.072399305    |    3467922.9105932205   |    357370392788.28284   |
+|           geth.eth.db.chaindata.disk.size.gauge           |      522966508786.0     |     523317822524.215    |      523407027580.0     |  3.1338961615506256e+16 |
+|           geth.eth.db.chaindata.disk.write.meter          |    18606.474851430772   |    59087.61154335858    |    73329.61312145377    |    75507339190.72679    |
+|           geth.eth.downloader.bodies.drop.meter           |           0.0           |           0.0           |           0.0           |           0.0           |
+|            geth.eth.downloader.bodies.in.meter            |           0.0           |           0.0           |           0.0           |           0.0           |
+|            geth.eth.downloader.bodies.req.timer           |           0.0           |           0.0           |           0.0           |           0.0           |
+|          geth.eth.downloader.bodies.timeout.meter         |           0.0           |           0.0           |           0.0           |           0.0           |
+|           geth.eth.downloader.headers.drop.meter          |           0.0           |           0.0           |           0.0           |           0.0           |
+|            geth.eth.downloader.headers.in.meter           |           0.0           |           0.0           |           0.0           |           0.0           |
+|           geth.eth.downloader.headers.req.timer           |           0.0           |           0.0           |           0.0           |           0.0           |
+|         geth.eth.downloader.headers.timeout.meter         |           0.0           |           0.0           |           0.0           |           0.0           |
+|          geth.eth.downloader.receipts.drop.meter          |           0.0           |           0.0           |           0.0           |           0.0           |
+|           geth.eth.downloader.receipts.in.meter           |           0.0           |           0.0           |           0.0           |           0.0           |
+|           geth.eth.downloader.receipts.req.timer          |           0.0           |           0.0           |           0.0           |           0.0           |
+|         geth.eth.downloader.receipts.timeout.meter        |           0.0           |           0.0           |           0.0           |           0.0           |
+|           geth.eth.downloader.states.drop.meter           |           0.0           |           0.0           |           0.0           |           0.0           |
+|            geth.eth.downloader.states.in.meter            |           0.0           |           0.0           |           0.0           |           0.0           |
+|         geth.eth.fetcher.block.announces.dos.meter        |           0.0           |           0.0           |           0.0           |           0.0           |
+|        geth.eth.fetcher.block.announces.drop.meter        |           0.0           |           0.0           |           0.0           |           0.0           |
+|         geth.eth.fetcher.block.announces.in.meter         |           0.0           |           0.0           |           0.0           |           0.0           |
+|         geth.eth.fetcher.block.announces.out.timer        |           0.0           |           0.0           |           0.0           |           0.0           |
+|            geth.eth.fetcher.block.bodies.meter            |           0.0           |           0.0           |           0.0           |           0.0           |
+|        geth.eth.fetcher.block.broadcasts.dos.meter        |           0.0           |           0.0           |           0.0           |           0.0           |
+|        geth.eth.fetcher.block.broadcasts.drop.meter       |           0.0           |           0.0           |           0.0           |           0.0           |
+|         geth.eth.fetcher.block.broadcasts.in.meter        |           0.0           |           0.0           |           0.0           |           0.0           |
+|        geth.eth.fetcher.block.broadcasts.out.timer        |           0.0           |           0.0           |           0.0           |           0.0           |
+|       geth.eth.fetcher.block.filter.bodies.in.meter       |           0.0           |           0.0           |           0.0           |           0.0           |
+|       geth.eth.fetcher.block.filter.bodies.out.meter      |           0.0           |           0.0           |           0.0           |           0.0           |
+|       geth.eth.fetcher.block.filter.headers.in.meter      |           0.0           |           0.0           |           0.0           |           0.0           |
+|      geth.eth.fetcher.block.filter.headers.out.meter      |           0.0           |           0.0           |           0.0           |           0.0           |
+|            geth.eth.fetcher.block.headers.meter           |           0.0           |           0.0           |           0.0           |           0.0           |
+|      geth.eth.fetcher.transaction.announces.dos.meter     |  6.027384875294995e-243 |  1.060622760584941e-121 |  8.723044634067255e-126 |  1.666700642442486e-240 |
+|      geth.eth.fetcher.transaction.announces.in.meter      |    321.59351185595045   |    413.64311295580785   |    549.9654900294602    |    5118.933307789284    |
+|     geth.eth.fetcher.transaction.announces.known.meter    |    123.51238611788892   |    163.73372521036114   |    232.9050450067088    |    1191.7724868296104   |
+|  geth.eth.fetcher.transaction.announces.underpriced.meter |    55.05882419628162    |    74.12373495257573    |     93.723665482313     |    144.7710849634321    |
+|      geth.eth.fetcher.transaction.broadcasts.in.meter     |    45.788054443968015   |    57.29154054328357    |    73.43934971550287    |    71.59298194478417    |
+|    geth.eth.fetcher.transaction.broadcasts.known.meter    |    15.51819199962968    |    20.561597856274798   |    27.980610714192238   |    14.407147064479972   |
+| geth.eth.fetcher.transaction.broadcasts.otherreject.meter |  0.0008131037237453159  |    0.1145250461849825   |    0.5588184281662179   |   0.10224562274856273   |
+| geth.eth.fetcher.transaction.broadcasts.underpriced.meter |    6.680987460184948    |    9.352760912062275    |    13.243279330848384   |    4.195813119661998    |
+|     geth.eth.fetcher.transaction.fetching.hashes.gauge    |           0.0           |    5.897083333333334    |           18.0          |     209.655449826389    |
+|     geth.eth.fetcher.transaction.fetching.peers.gauge     |           0.0           |    2.8116666666666665   |           9.0           |    8.957863888888888    |
+|     geth.eth.fetcher.transaction.queueing.hashes.gauge    |           0.0           |         71.6675         |    315.27499999999793   |    90647.68902708331    |
+|     geth.eth.fetcher.transaction.queueing.peers.gauge     |           0.0           |    2.3433333333333333   |           11.0          |    16.927955555555638   |
+|       geth.eth.fetcher.transaction.replies.in.meter       |    17.12789373699034    |    22.378389860163487   |     30.2425231332603    |    25.60093417429752    |
+|      geth.eth.fetcher.transaction.replies.known.meter     |    0.3304511357662234   |    0.4920240840219028   |    0.6919530551557919   |   0.012633923585536696  |
+|   geth.eth.fetcher.transaction.replies.otherreject.meter  |   0.09685022032675948   |    0.892519543599564    |    3.047511270082794    |    7.241039721186047    |
+|   geth.eth.fetcher.transaction.replies.underpriced.meter  |    8.373829298781384    |    11.295722778160313   |    14.641394403082307   |    3.775879251474595    |
+|      geth.eth.fetcher.transaction.request.done.meter      |    17.12710207066837    |    22.378398715069384   |    30.242523151988458   |    25.602971910908067   |
+|      geth.eth.fetcher.transaction.request.fail.meter      |     2.964393875e-314    |     2.964393875e-314    |     2.964393875e-314    |           0.0           |
+|       geth.eth.fetcher.transaction.request.out.meter      |    32.63495160593869    |    43.63958918646983    |    58.577943825242485   |    67.64183879581738    |
+|     geth.eth.fetcher.transaction.request.timeout.meter    |  1.3891283245910499e-05 |   0.16119249982478065   |    1.1743249198789818   |   0.26917160555765474   |
+|     geth.eth.fetcher.transaction.waiting.hashes.gauge     |           2.5           |    19.399583333333332   |           60.0          |    415.68054149305584   |
+|      geth.eth.fetcher.transaction.waiting.peers.gauge     |           3.0           |          12.61          |           22.0          |    34.326649999999916   |
+|               geth.les.client.req.rtt.timer               |           0.0           |           0.0           |           0.0           |           0.0           |
+|            geth.les.client.req.senddelay.timer            |           0.0           |           0.0           |           0.0           |           0.0           |
+|         geth.les.client.serverpool.connected.gauge        |           0.0           |           0.0           |           0.0           |           0.0           |
+|          geth.les.client.serverpool.dialed.meter          |           0.0           |           0.0           |           0.0           |           0.0           |
+|        geth.les.client.serverpool.selectable.gauge        |           0.0           |           0.0           |           0.0           |           0.0           |
+|       geth.les.client.serverpool.sessionvalue.meter       |           0.0           |           0.0           |           0.0           |           0.0           |
+|          geth.les.client.serverpool.timeout.gauge         |           0.0           |           0.0           |           0.0           |           0.0           |
+|        geth.les.client.serverpool.totalvalue.gauge        |           0.0           |           0.0           |           0.0           |           0.0           |
+|             geth.les.connection.duration.timer            |           0.0           |           0.0           |           0.0           |           0.0           |
+|              geth.les.connection.server.gauge             |           0.0           |           0.0           |           0.0           |           0.0           |
+|            geth.les.misc.in.packets.body.meter            |           0.0           |           0.0           |           0.0           |           0.0           |
+|            geth.les.misc.in.packets.code.meter            |           0.0           |           0.0           |           0.0           |           0.0           |
+|           geth.les.misc.in.packets.header.meter           |           0.0           |           0.0           |           0.0           |           0.0           |
+|         geth.les.misc.in.packets.helpertrie.meter         |           0.0           |           0.0           |           0.0           |           0.0           |
+|            geth.les.misc.in.packets.proof.meter           |           0.0           |           0.0           |           0.0           |           0.0           |
+|           geth.les.misc.in.packets.receipt.meter          |           0.0           |           0.0           |           0.0           |           0.0           |
+|            geth.les.misc.in.packets.total.meter           |           0.0           |           0.0           |           0.0           |           0.0           |
+|             geth.les.misc.in.packets.txs.meter            |           0.0           |           0.0           |           0.0           |           0.0           |
+|          geth.les.misc.in.packets.txstatus.meter          |           0.0           |           0.0           |           0.0           |           0.0           |
+|            geth.les.misc.in.traffic.body.meter            |           0.0           |           0.0           |           0.0           |           0.0           |
+|            geth.les.misc.in.traffic.code.meter            |           0.0           |           0.0           |           0.0           |           0.0           |
+|           geth.les.misc.in.traffic.header.meter           |           0.0           |           0.0           |           0.0           |           0.0           |
+|         geth.les.misc.in.traffic.helpertrie.meter         |           0.0           |           0.0           |           0.0           |           0.0           |
+|            geth.les.misc.in.traffic.proof.meter           |           0.0           |           0.0           |           0.0           |           0.0           |
+|           geth.les.misc.in.traffic.receipt.meter          |           0.0           |           0.0           |           0.0           |           0.0           |
+|            geth.les.misc.in.traffic.total.meter           |           0.0           |           0.0           |           0.0           |           0.0           |
+|             geth.les.misc.in.traffic.txs.meter            |           0.0           |           0.0           |           0.0           |           0.0           |
+|          geth.les.misc.in.traffic.txstatus.meter          |           0.0           |           0.0           |           0.0           |           0.0           |
+|            geth.les.misc.out.packets.body.meter           |           0.0           |           0.0           |           0.0           |           0.0           |
+|            geth.les.misc.out.packets.code.meter           |           0.0           |           0.0           |           0.0           |           0.0           |
+|           geth.les.misc.out.packets.header.meter          |           0.0           |           0.0           |           0.0           |           0.0           |
+|         geth.les.misc.out.packets.helpertrie.meter        |           0.0           |           0.0           |           0.0           |           0.0           |
+|           geth.les.misc.out.packets.proof.meter           |           0.0           |           0.0           |           0.0           |           0.0           |
+|          geth.les.misc.out.packets.receipt.meter          |           0.0           |           0.0           |           0.0           |           0.0           |
+|           geth.les.misc.out.packets.total.meter           |           0.0           |           0.0           |           0.0           |           0.0           |
+|            geth.les.misc.out.packets.txs.meter            |           0.0           |           0.0           |           0.0           |           0.0           |
+|          geth.les.misc.out.packets.txstatus.meter         |           0.0           |           0.0           |           0.0           |           0.0           |
+|            geth.les.misc.out.traffic.body.meter           |           0.0           |           0.0           |           0.0           |           0.0           |
+|            geth.les.misc.out.traffic.code.meter           |           0.0           |           0.0           |           0.0           |           0.0           |
+|           geth.les.misc.out.traffic.header.meter          |           0.0           |           0.0           |           0.0           |           0.0           |
+|         geth.les.misc.out.traffic.helpertrie.meter        |           0.0           |           0.0           |           0.0           |           0.0           |
+|           geth.les.misc.out.traffic.proof.meter           |           0.0           |           0.0           |           0.0           |           0.0           |
+|          geth.les.misc.out.traffic.receipt.meter          |           0.0           |           0.0           |           0.0           |           0.0           |
+|           geth.les.misc.out.traffic.total.meter           |           0.0           |           0.0           |           0.0           |           0.0           |
+|            geth.les.misc.out.traffic.txs.meter            |           0.0           |           0.0           |           0.0           |           0.0           |
+|          geth.les.misc.out.traffic.txstatus.meter         |           0.0           |           0.0           |           0.0           |           0.0           |
+|               geth.les.misc.serve.body.timer              |           0.0           |           0.0           |           0.0           |           0.0           |
+|               geth.les.misc.serve.code.timer              |           0.0           |           0.0           |           0.0           |           0.0           |
+|              geth.les.misc.serve.header.timer             |           0.0           |           0.0           |           0.0           |           0.0           |
+|            geth.les.misc.serve.helpertrie.timer           |           0.0           |           0.0           |           0.0           |           0.0           |
+|              geth.les.misc.serve.proof.timer              |           0.0           |           0.0           |           0.0           |           0.0           |
+|             geth.les.misc.serve.receipt.timer             |           0.0           |           0.0           |           0.0           |           0.0           |
+|               geth.les.misc.serve.txs.timer               |           0.0           |           0.0           |           0.0           |           0.0           |
+|             geth.les.misc.serve.txstatus.timer            |           0.0           |           0.0           |           0.0           |           0.0           |
+|         geth.les.server.blockprocessingtime.timer         |           0.0           |           0.0           |           0.0           |           0.0           |
+|          geth.les.server.clientevent.error.meter          |           0.0           |           0.0           |           0.0           |           0.0           |
+|          geth.les.server.clientevent.freeze.meter         |           0.0           |           0.0           |           0.0           |           0.0           |
+|             geth.les.server.globalfactor.gauge            |           0.0           |           0.0           |           0.0           |           0.0           |
+|        geth.les.server.recentrequestestimated.gauge       |           0.0           |           0.0           |           0.0           |           0.0           |
+|         geth.les.server.recentrequestserved.gauge         |           0.0           |           0.0           |           0.0           |           0.0           |
+|         geth.les.server.req.avgestimatedtime.meter        |           0.0           |           0.0           |           0.0           |           0.0           |
+|          geth.les.server.req.avgservedtime.meter          |           0.0           |           0.0           |           0.0           |           0.0           |
+|          geth.les.server.req.estimatedtime.timer          |           0.0           |           0.0           |           0.0           |           0.0           |
+|            geth.les.server.req.servedtime.timer           |           0.0           |           0.0           |           0.0           |           0.0           |
+|         geth.les.server.servingqueue.queued.gauge         |           0.0           |           0.0           |           0.0           |           0.0           |
+|         geth.les.server.servingqueue.served.gauge         |           0.0           |           0.0           |           0.0           |           0.0           |
+|            geth.les.server.totalcapacity.gauge            |           0.0           |           0.0           |           0.0           |           0.0           |
+|            geth.les.server.totalrecharge.gauge            |           0.0           |           0.0           |           0.0           |           0.0           |
+|                    geth.p2p.dials.meter                   |  2.1170220793152005e-81 |   0.07184380394384209   |   0.15468942279000866   |    0.1291007072686003   |
+|             geth.p2p.egress.eth.66.0x00.meter             |  1.330403665064437e-44  |    1.6171140490241778   |    13.807377459253047   |    38.90810883383228    |
+|         geth.p2p.egress.eth.66.0x00.packets.meter         |  1.4619820495213595e-46 |   0.017770484055210756  |    0.1517294226291544   |   0.004698479511391438  |
+|             geth.p2p.egress.eth.66.0x02.meter             |    9743.315652979178    |    12829.613529140037   |    16644.791439746783   |    4982014.878670535    |
+|         geth.p2p.egress.eth.66.0x02.packets.meter         |     39.1693844820355    |    48.45783620901117    |    62.48516565996965    |    50.73536154477886    |
+|             geth.p2p.egress.eth.66.0x03.meter             | 1.5312803398031814e-143 |   0.007773218202276411  |   0.02875762623188656   |  0.0014959142628091034  |
+|         geth.p2p.egress.eth.66.0x03.packets.meter         |  7.656401699015886e-145 |  0.0003886609101138206  |  0.0014378813115943276  |  3.739785657022782e-06  |
+|             geth.p2p.egress.eth.66.0x04.meter             |  8.876401957508313e-51  |   0.18681677263208304   |    0.4649430591441088   |    1.0459607537052324   |
+|         geth.p2p.egress.eth.66.0x04.packets.meter         |   1.61096224274198e-53  |  0.0003331494226992256  |   0.000838934381803805  |  3.3202091179042067e-06 |
+|             geth.p2p.egress.eth.66.0x06.meter             |     2.964393875e-314    |   8.4786763583823e-310  |     7.00338053e-314     |           0.0           |
+|         geth.p2p.egress.eth.66.0x06.packets.meter         |     2.964393875e-314    |     3.028416548e-314    |     2.964393875e-314    |           0.0           |
+|             geth.p2p.egress.eth.66.0x08.meter             |    7558.062920661102    |    9465.314267975275    |    12400.193805920218   |    2323926.6149159577   |
+|         geth.p2p.egress.eth.66.0x08.packets.meter         |    186.72419601975886   |    232.06366956790492   |    300.1168219376894    |    1212.9970913123393   |
+|             geth.p2p.egress.eth.66.0x09.meter             |    283.4961144801684    |    386.85068306331806   |    533.3561869713164    |    9849.785391260035    |
+|         geth.p2p.egress.eth.66.0x09.packets.meter         |    3.0155291970764937   |    4.222158362786283    |    5.433402099303526    |    0.5199630126559623   |
+|             geth.p2p.egress.eth.66.0x0a.meter             |    804.5237734041386    |    2449.926113462676    |    3995.4509804866557   |    963894.0380718362    |
+|         geth.p2p.egress.eth.66.0x0a.packets.meter         |    4.008551436425844    |    10.212301200898485   |    15.338405137705994   |    13.60910004159355    |
+|             geth.p2p.egress.eth.66.0x0e.meter             |     2.964393875e-314    |  5.30095026925235e-310  |    4.5207006594e-314    |           0.0           |
+|         geth.p2p.egress.eth.66.0x0e.packets.meter         |     2.964393875e-314    |    3.3499709397e-314    |     2.964393875e-314    |           0.0           |
+|             geth.p2p.egress.eth.66.0x10.meter             |     2.964393875e-314    |     2.964393875e-314    |     2.964393875e-314    |           0.0           |
+|         geth.p2p.egress.eth.66.0x10.packets.meter         |     2.964393875e-314    |     2.964393875e-314    |     2.964393875e-314    |           0.0           |
+|             geth.p2p.egress.eth.67.0x00.meter             |  8.073798935299844e-45  |    0.7161159768758296   |    4.708223912618861    |    8.966282859001906    |
+|         geth.p2p.egress.eth.67.0x00.packets.meter         |  8.872306522307511e-47  |   0.007869406339294836  |   0.05173872431449299   |  0.0010827536359137462  |
+|             geth.p2p.egress.eth.67.0x02.meter             |    24234.087063306793   |     31624.6066612947    |     41011.8503207133    |    28058776.74501302    |
+|         geth.p2p.egress.eth.67.0x02.packets.meter         |    98.13051275499978    |    123.33435806597852   |    159.9448454078728    |    359.95467557336076   |
+|             geth.p2p.egress.eth.67.0x03.meter             |   4.76213940066589e-46  |   0.013381807606267587  |   0.08473910876390305   |  0.0034862596172871314  |
+|         geth.p2p.egress.eth.67.0x03.packets.meter         |  2.381069700332941e-47  |  0.0006690903803133788  |   0.004236955438195152  |  8.715649043217905e-06  |
+|             geth.p2p.egress.eth.67.0x04.meter             |  1.403037184840658e-44  |   0.39770494409949014   |    1.959561822078467    |    3.8720852742602103   |
+|         geth.p2p.egress.eth.67.0x04.packets.meter         |  2.5009576031918053e-47 |  0.0007388425838462296  |  0.0035960549908736457  |  1.4032159225490425e-05 |
+|             geth.p2p.egress.eth.67.0x06.meter             |     2.964393875e-314    |  4.952888454086153e-262 |  4.073481039452933e-266 |           0.0           |
+|         geth.p2p.egress.eth.67.0x06.packets.meter         |     2.964393875e-314    |  4.208259738502957e-268 |  3.461064470317828e-272 |           0.0           |
+|             geth.p2p.egress.eth.67.0x08.meter             |    21245.40707945659    |    26554.388750506605   |    34336.09304755622    |    16048047.967529338   |
+|         geth.p2p.egress.eth.67.0x08.packets.meter         |    529.7626528157974    |    654.2360972866256    |    839.0779889248033    |     9071.34204750855    |
+|             geth.p2p.egress.eth.67.0x09.meter             |    1055.6229513581802   |    1400.8863633363007   |    1849.4829460148603   |    66225.19779111906    |
+|         geth.p2p.egress.eth.67.0x09.packets.meter         |    16.792300537461884   |    20.838919310051754   |    25.49970655541525    |     7.50860718661352    |
+|             geth.p2p.egress.eth.67.0x0a.meter             |    5073.507927855526    |    9414.263424485673    |    13870.935522934526   |    7062259.712647752    |
+|         geth.p2p.egress.eth.67.0x0a.packets.meter         |    23.648605271601983   |    37.790149316994544   |    50.24780767272571    |    67.95995230418985    |
+|             geth.p2p.egress.eth.67.0x10.meter             |     2.964393875e-314    |  3.946602718833799e-262 | 3.2458658204102704e-266 |           0.0           |
+|         geth.p2p.egress.eth.67.0x10.packets.meter         |     2.964393875e-314    | 1.0479291516545895e-267 |  8.618646613034986e-272 |           0.0           |
+|                   geth.p2p.egress.meter                   |    133663.29492657285   |    162747.38790226425   |    201538.06843227826   |    430402264.8268729    |
+|             geth.p2p.egress.snap.1.0x01.meter             |  0.0032390604075542727  |    0.1610238600252094   |   0.42422679750098236   |   0.02057323718929636   |
+|         geth.p2p.egress.snap.1.0x01.packets.meter         |  0.0002313614576824482  |   0.011501704287514968  |   0.03030191410721303   |  0.0001049654958637572  |
+|             geth.p2p.egress.snap.1.0x03.meter             |  2.3219177726451936e-32 |   0.006218981797073114  |   0.032937036189473065  |  0.0008316905102272297  |
+|         geth.p2p.egress.snap.1.0x03.packets.meter         |  1.6585126947465628e-33 |  0.0004442129855052216  |  0.0023526454421052188  |  4.243318929730695e-06  |
+|             geth.p2p.egress.snap.1.0x05.meter             |  4.913549506891481e-278 |  8.646241363531602e-157 |  7.111062682589343e-161 |   1.1076190770915e-310  |
+|         geth.p2p.egress.snap.1.0x05.packets.meter         |  5.052725865449612e-283 |  8.891146271175916e-162 |  7.312483632607926e-166 |       1.1714e-320       |
+|             geth.p2p.egress.snap.1.0x07.meter             |     2.964393875e-314    |     2.964393875e-314    |     2.964393875e-314    |           0.0           |
+|         geth.p2p.egress.snap.1.0x07.packets.meter         |     2.964393875e-314    |     2.964393875e-314    |     2.964393875e-314    |           0.0           |
+|             geth.p2p.ingress.eth.66.0x00.meter            |  2.212779527482367e-49  |    0.9644873481391496   |    6.248367311670492    |    17.891186723769753   |
+|         geth.p2p.ingress.eth.66.0x00.packets.meter        |  2.705208493193492e-51  |   0.012011628771126909  |   0.07897499084101987   |   0.002757425881557471  |
+|             geth.p2p.ingress.eth.66.0x01.meter            |  5.538327718387899e-261 |  9.745646835624032e-140 |  8.015263814263265e-144 | 1.4072039841121813e-276 |
+|         geth.p2p.ingress.eth.66.0x01.packets.meter        |  1.382646716265871e-262 | 2.4330063658791082e-141 | 2.0010152443672298e-145 |  8.770456683286719e-280 |
+|             geth.p2p.ingress.eth.66.0x02.meter            |    353.55442496586153   |    931.8467914889641    |    1832.6474409165535   |    218526.7979319762    |
+|         geth.p2p.ingress.eth.66.0x02.packets.meter        |    0.8277877177415028   |    1.8040976898475674   |    2.6067960892959916   |   0.33693950078510515   |
+|             geth.p2p.ingress.eth.66.0x03.meter            |  7.893714989435732e-52  |   0.01632432171226205   |   0.04110778470838645   |   0.007971822092088026  |
+|         geth.p2p.ingress.eth.66.0x03.packets.meter        |   1.61096224274198e-53  |  0.0003331494226992256  |   0.000838934381803805  |  3.3202091179042067e-06 |
+|             geth.p2p.ingress.eth.66.0x04.meter            |  9.589207301275358e-200 |   0.06301897267030966   |   0.016200820904348472  |   0.28567231373922247   |
+|         geth.p2p.ingress.eth.66.0x04.packets.meter        | 1.7093061143093281e-202 |  0.00016655841009278848 |  0.00010086729375619353 |  1.3519757423380028e-06 |
+|             geth.p2p.ingress.eth.66.0x05.meter            |     2.964393875e-314    |    6.9685900739e-313    |     2.964393875e-314    |           0.0           |
+|         geth.p2p.ingress.eth.66.0x05.packets.meter        |     2.964393875e-314    |     3.028416548e-314    |     2.964393875e-314    |           0.0           |
+|             geth.p2p.ingress.eth.66.0x07.meter            | 3.6644221598475063e-261 |  6.44818545279292e-140  |  5.303281393134987e-144 |  6.160426160198295e-277 |
+|         geth.p2p.ingress.eth.66.0x07.packets.meter        | 1.1331724413173917e-263 |  1.994013171209707e-142 | 1.6399672475242198e-146 | 5.8910371674688936e-282 |
+|             geth.p2p.ingress.eth.66.0x08.meter            |    2398.928556641026    |    3057.436209031628    |    4245.847484559943    |    377817.97934671683   |
+|         geth.p2p.ingress.eth.66.0x08.packets.meter        |    16.352728842900607   |    20.43332326402913    |    23.669402032200352   |    5.608091451342157    |
+|             geth.p2p.ingress.eth.66.0x09.meter            |    157.28023416588294   |    404.7646790371243    |    616.8143040987975    |    22351.61672489504    |
+|         geth.p2p.ingress.eth.66.0x09.packets.meter        |    4.008551436425844    |    10.21227323113685    |    15.338405137670886   |    13.609028275559071   |
+|             geth.p2p.ingress.eth.66.0x0a.meter            |    244.00827478249897   |    514.5981082726418    |    997.0923823734927    |    132120.81680907487   |
+|         geth.p2p.ingress.eth.66.0x0a.packets.meter        |    3.019540504481563    |    4.222190653974855    |    5.436675773996172    |    0.5202248692012174   |
+|             geth.p2p.ingress.eth.66.0x0d.meter            |     2.964393875e-314    |   5.4588409480587e-311  |     2.964393875e-314    |           0.0           |
+|         geth.p2p.ingress.eth.66.0x0d.packets.meter        |     2.964393875e-314    |    3.3499709397e-314    |     2.964393875e-314    |           0.0           |
+|             geth.p2p.ingress.eth.66.0x0f.meter            |     2.964393875e-314    |     2.964393875e-314    |     2.964393875e-314    |           0.0           |
+|         geth.p2p.ingress.eth.66.0x0f.packets.meter        |     2.964393875e-314    |     2.964393875e-314    |     2.964393875e-314    |           0.0           |
+|             geth.p2p.ingress.eth.67.0x00.meter            |   6.6905875975993e-45   |    0.5441103037133398   |    3.3379010547185253   |    5.431996431526709    |
+|         geth.p2p.ingress.eth.67.0x00.packets.meter        |   8.87230646007145e-47  |   0.006700766762796406  |   0.042842979528941394  |  0.0008345010001179516  |
+|             geth.p2p.ingress.eth.67.0x02.meter            |    9886.336209745437    |    13699.755673223533   |    18387.907496127787   |    7070518.094685411    |
+|         geth.p2p.ingress.eth.67.0x02.packets.meter        |    37.71156222583038    |    47.249443354821125   |    61.53728947648942    |    54.45622745176454    |
+|             geth.p2p.ingress.eth.67.0x03.meter            |  5.001915168376701e-46  |   0.01746109223229671   |   0.08386620292981667   |   0.007576930305162643  |
+|         geth.p2p.ingress.eth.67.0x03.packets.meter        |  2.5009576031918053e-47 |  0.0007388425838462296  |  0.0035960549908736457  |  1.4032159225490425e-05 |
+|             geth.p2p.ingress.eth.67.0x04.meter            |  1.4030370846960643e-44 |   0.34751603849764034   |    1.861169866281705    |    2.6396697113044385   |
+|         geth.p2p.ingress.eth.67.0x04.packets.meter        |  2.5009573702247116e-47 |  0.0006737066959803904  |   0.004236955438195152  |  8.777359945262536e-06  |
+|             geth.p2p.ingress.eth.67.0x05.meter            |     2.964393875e-314    |  1.595678568237245e-264 | 1.3123587282514566e-268 |           0.0           |
+|         geth.p2p.ingress.eth.67.0x05.packets.meter        |     2.964393875e-314    |  4.206120140278111e-268 |  3.459304767291657e-272 |           0.0           |
+|             geth.p2p.ingress.eth.67.0x08.meter            |    8761.453405266877    |    11532.462390807537   |    15199.443860687315   |    3975288.7617417346   |
+|         geth.p2p.ingress.eth.67.0x08.packets.meter        |    214.68571025007031   |    273.67621281430155   |    357.54052098091194   |    1964.1614229411753   |
+|             geth.p2p.ingress.eth.67.0x09.meter            |    1745.3957665288756   |    2448.3996007966434   |    3303.543664870129    |    249613.03627058063   |
+|         geth.p2p.ingress.eth.67.0x09.packets.meter        |    23.648603684194555   |    37.79024415251682    |    50.247795544070044   |    67.96202772606694    |
+|             geth.p2p.ingress.eth.67.0x0a.meter            |    2553.3557971206387   |    3668.6166658723364   |     5295.09266300685    |    1466158.259114889    |
+|         geth.p2p.ingress.eth.67.0x0a.packets.meter        |    16.810341490615073   |    20.832561421754516   |    25.498648312045837   |    7.500664550076612    |
+|             geth.p2p.ingress.eth.67.0x0b.meter            |     2.964393875e-314    |     2.964393875e-314    |     2.964393875e-314    |           0.0           |
+|         geth.p2p.ingress.eth.67.0x0b.packets.meter        |     2.964393875e-314    |     2.964393875e-314    |     2.964393875e-314    |           0.0           |
+|             geth.p2p.ingress.eth.67.0x0f.meter            |     2.964393875e-314    | 4.0034406739590115e-264 |  3.292611943338358e-268 |           0.0           |
+|         geth.p2p.ingress.eth.67.0x0f.packets.meter        |     2.964393875e-314    | 1.0478725784758606e-267 |  8.618181329447382e-272 |           0.0           |
+|                   geth.p2p.ingress.meter                  |    50733.06972804126    |    62308.257513258235   |    77445.33486116568    |    68023438.89113101    |
+|             geth.p2p.ingress.snap.1.0x00.meter            |   0.021747977022150124  |    1.0811602030264085   |    2.8483799260780254   |    0.9274751214521575   |
+|         geth.p2p.ingress.snap.1.0x00.packets.meter        |  0.0002313614576824482  |   0.011501704287514968  |   0.03030191410721303   |  0.0001049654958637572  |
+|             geth.p2p.ingress.snap.1.0x02.meter            |  2.5277943777536565e-31 |    0.3669198144736813   |    1.0998624088127076   |    4.780020695569566    |
+|         geth.p2p.ingress.snap.1.0x02.packets.meter        |  1.6585126947465628e-33 |  0.0004442129855052216  |  0.0023526454421052188  |  4.243318929730695e-06  |
+|             geth.p2p.ingress.snap.1.0x04.meter            | 4.3748732871286997e-280 |  7.698347258398166e-159 |  6.331471399550319e-163 |     8.780731805e-315    |
+|         geth.p2p.ingress.snap.1.0x04.packets.meter        |  5.052725865449612e-283 |  8.891146271175916e-162 |  7.312483632607926e-166 |       1.1714e-320       |
+|             geth.p2p.ingress.snap.1.0x06.meter            |     2.964393875e-314    |     2.964393875e-314    |     2.964393875e-314    |           0.0           |
+|         geth.p2p.ingress.snap.1.0x06.packets.meter        |     2.964393875e-314    |     2.964393875e-314    |     2.964393875e-314    |           0.0           |
+|              geth.p2p.lost.eth.66.0x03.meter              | 1.2255993107497284e-256 |   0.000222102500021032  |  0.00024792393800201324 |  1.8138005856058655e-06 |
+|              geth.p2p.lost.eth.66.0x09.meter              |     2.964393875e-314    |     9.01772734e-314     |     2.964393875e-314    |           0.0           |
+|              geth.p2p.lost.eth.67.0x03.meter              |  2.500861626524845e-147 |  0.00010421475026794582 |  8.912059029187104e-06  |  7.533280195466661e-07  |
+|              geth.p2p.lost.eth.67.0x09.meter              |  2.721907807846352e-212 |  0.0001663911175789784  |  0.00011800637401211417 |  1.2495421439495806e-06 |
+|                    geth.p2p.peers.gauge                   |           50.0          |          50.115         |           51.0          |    0.1401083333333356   |
+|                   geth.p2p.serves.meter                   |    2.021050151050084    |    2.5471184573974477   |    3.0950090653079445   |   0.10376108974659894   |
+|              geth.p2p.stale.eth.67.0x0a.meter             |  3.545300335613849e-282 |  0.00011327143229628002 |  9.686553048395696e-06  |  8.899519006003859e-07  |
+|             geth.p2p.tracked.eth.66.0x03.gauge            |           0.0           |   0.06666666666666667   |           1.0           |   0.08555555555555605   |
+|             geth.p2p.tracked.eth.66.0x09.gauge            |           0.0           |         0.35625         |           1.5           |   0.33204427083333504   |
+|             geth.p2p.tracked.eth.67.0x03.gauge            |           0.0           |   0.03333333333333333   |           0.0           |   0.03180555555555485   |
+|             geth.p2p.tracked.eth.67.0x09.gauge            |           0.0           |    2.450833333333333    |           8.0           |     7.25466597222213    |
+|                geth.rpc.duration.all.timer                |   0.46566800188951524   |    0.4945127465846509   |    0.5332218658161991   |  0.00034247814571154484 |
+|                   geth.rpc.failure.gauge                  |           0.0           |           0.0           |           0.0           |           0.0           |
+|                  geth.rpc.requests.gauge                  |        76917.625        |    80939.91291666667    |         84959.45        |    6667168.910124824    |
+|                   geth.rpc.success.gauge                  |        76917.625        |       80939.91375       |         84959.45        |    6667175.371102611    |
+|            geth.state.commit.accountnodes.meter           |    109.51553093184536   |    130.46485151880313   |    154.93017217902704   |    205.95182181872946   |
+|            geth.state.commit.storagenodes.meter           |    137.0415038347649    |    178.5218517181202    |    229.4097680276424    |    823.6191210406118    |
+|              geth.state.delete.account.meter              |  3.795065868278315e-09  |   0.04933518940086283   |    0.2566346404246072   |   0.039662225753112616  |
+|              geth.state.delete.storage.meter              |    1.9647349665841587   |    5.178237035568103    |    15.357933763490268   |    28.42495460968398    |
+|      geth.state.snapshot.bloom.account.falsehit.meter     |    3.7120330271996704   |    11.775831709968507   |    25.644021973343182   |    50.411933102161925   |
+|        geth.state.snapshot.bloom.account.miss.meter       |    396.73746388564984   |    450.6799845930255    |    501.4887829336704    |    1091.5197926076169   |
+|      geth.state.snapshot.bloom.account.truehit.meter      |    47.80507043810538    |    58.24544669618395    |    74.16445771139198    |    60.89160642210617    |
+|           geth.state.snapshot.bloom.error.gauge           |   0.01839623495330957   |    0.069989301282127    |   0.14028472880543388   |  0.0015962520741018024  |
+|      geth.state.snapshot.bloom.storage.falsehit.meter     |    0.6862657523508328   |    3.8195973470252906   |    9.067413714932714    |     23.7352109211945    |
+|        geth.state.snapshot.bloom.storage.miss.meter       |    122.6125088118907    |    150.66898186332187   |    185.11407791555195   |     437.775693883132    |
+|      geth.state.snapshot.bloom.storage.truehit.meter      |    24.236512592879688   |    31.88129732696248    |    41.57459967452239    |    32.44615977900911    |
+|        geth.state.snapshot.clean.account.hit.meter        |    405.2324602200347    |    456.13961455144454   |    504.4305645430471    |    1019.357313505208    |
+|        geth.state.snapshot.clean.account.inex.meter       |    0.6339123979231011   |    1.349866048213609    |    2.6787640304830775   |    0.545246742884894    |
+|        geth.state.snapshot.clean.account.miss.meter       |    4.1408705081505115   |    6.303673907199773    |    8.991010233958951    |    2.8032740623929477   |
+|        geth.state.snapshot.clean.account.read.meter       |    5378.931275415358    |    6049.008448217046    |    6686.0345789825815   |    171917.47933198305   |
+|       geth.state.snapshot.clean.account.write.meter       |    51.74032387057105    |    367.5629582963813    |    2109.3908335198007   |     725804.021889106    |
+|        geth.state.snapshot.clean.storage.hit.meter        |    98.62322186271123    |    121.65253072647135   |     148.858593117438    |    274.01586107317587   |
+|        geth.state.snapshot.clean.storage.inex.meter       |    15.081052328070026   |    22.19107229415361    |    30.783422471848706   |    23.70927931334015    |
+|        geth.state.snapshot.clean.storage.miss.meter       |    22.993186140675153   |    32.835248185297644   |    47.73254771341157    |    73.17535827842357    |
+|        geth.state.snapshot.clean.storage.read.meter       |     714.150344924116    |    934.3104209656539    |    1281.4241081934247   |    54336.96643128742    |
+|       geth.state.snapshot.clean.storage.write.meter       |    70.06782603648207    |    392.11647420641657   |    2291.4925004982338   |    835387.3063188654    |
+|        geth.state.snapshot.dirty.account.hit.meter        |    47.805089995981184   |    58.24543017732543    |    74.16449449412463    |    60.89199703408012    |
+|        geth.state.snapshot.dirty.account.inex.meter       |  2.6593742072148567e-33 |   0.007154179281966472  |   0.05000442452198671   |  0.0003049355282880009  |
+|        geth.state.snapshot.dirty.account.miss.meter       |    410.6281864766859    |    462.44315092494344   |    510.70929499310404   |    1057.985650756266    |
+|        geth.state.snapshot.dirty.account.read.meter       |    1432.1200867685575   |    1680.1781813690222   |    1973.3322658502193   |    25455.548175077918   |
+|       geth.state.snapshot.dirty.account.write.meter       |    638.7178782251067    |    749.7082395733837    |    865.6921091954275    |    4927.736221983599    |
+|        geth.state.snapshot.dirty.storage.hit.meter        |    24.236510667405216   |    31.88126661178998    |    41.574599674525594   |    32.446206500191096   |
+|        geth.state.snapshot.dirty.storage.inex.meter       |   0.35268502652888495   |    1.8355752020072793   |    8.647182119771404    |    14.440461408705113   |
+|        geth.state.snapshot.dirty.storage.miss.meter       |    126.92022958138685   |    154.48784928486242   |    189.43354187373396   |    441.86183635865785   |
+|        geth.state.snapshot.dirty.storage.read.meter       |    313.07626280608093   |    400.69712434923764   |    491.5186879714093    |    2752.7952940956234   |
+|       geth.state.snapshot.dirty.storage.write.meter       |    321.6556347817904    |    392.79816279774224   |    482.4480871087975    |     2858.5417835262     |
+|        geth.state.snapshot.flush.account.item.meter       |  9.757942187779734e-08  |    10.610772713736061   |    78.11316650516174    |    1087.416968813396    |
+|        geth.state.snapshot.flush.account.size.meter       |  2.483167507642685e-06  |    272.22453437906154   |    1987.2902653533429   |    711520.5577158491    |
+|        geth.state.snapshot.flush.storage.item.meter       |  3.060182224359298e-07  |    32.21499816491806    |    238.53039474288911   |    10003.254181252374   |
+|        geth.state.snapshot.flush.storage.size.meter       |  2.7503947245544287e-06 |    290.8485544069524    |    2163.4255897542125   |    825349.2292417802    |
+|   geth.state.snapshot.generation.account.generated.meter  |           0.0           |           0.0           |           0.0           |           0.0           |
+|    geth.state.snapshot.generation.account.missall.meter   |           0.0           |           0.0           |           0.0           |           0.0           |
+|   geth.state.snapshot.generation.account.recovered.meter  |           0.0           |           0.0           |           0.0           |           0.0           |
+|     geth.state.snapshot.generation.account.wiped.meter    |           0.0           |           0.0           |           0.0           |           0.0           |
+|     geth.state.snapshot.generation.proof.failure.meter    |           0.0           |           0.0           |           0.0           |           0.0           |
+|     geth.state.snapshot.generation.proof.success.meter    |           0.0           |           0.0           |           0.0           |           0.0           |
+|   geth.state.snapshot.generation.storage.dangling.meter   |           0.0           |           0.0           |           0.0           |           0.0           |
+|   geth.state.snapshot.generation.storage.generated.meter  |           0.0           |           0.0           |           0.0           |           0.0           |
+|    geth.state.snapshot.generation.storage.missall.meter   |           0.0           |           0.0           |           0.0           |           0.0           |
+|   geth.state.snapshot.generation.storage.recovered.meter  |           0.0           |           0.0           |           0.0           |           0.0           |
+|     geth.state.snapshot.generation.storage.wiped.meter    |           0.0           |           0.0           |           0.0           |           0.0           |
+|              geth.state.update.account.meter              |    18.09284571153094    |    21.713255440460642   |    25.802844763283762   |    6.049223908628917    |
+|              geth.state.update.storage.meter              |    27.425444656331926   |    34.19127127015052    |    42.256846859022374   |    20.272817519840544   |
+|              geth.system.cpu.goroutines.gauge             |          587.5          |    622.6516666666666    |          662.0          |     562.334497222221    |
+|               geth.system.cpu.procload.gauge              |           27.5          |          74.475         |          237.5          |    4787.758958333306    |
+|               geth.system.cpu.sysload.gauge               |          130.0          |         214.1375        |    381.57499999999993   |    5776.064843750027    |
+|               geth.system.cpu.syswait.gauge               |           1.0           |         5.12875         |    18.024999999999977   |    198.7069651041702    |
+|               geth.system.cpu.threads.gauge               |           58.0          |           58.0          |           58.0          |           0.0           |
+|              geth.system.disk.readbytes.count             |     496034112151.65     |    516526589706.0529    |     535657017393.925    |  1.5727456411155402e+20 |
+|              geth.system.disk.readcount.meter             |     931.395643838738    |    1093.266194387982    |    1302.3355810624869   |    12910.523686759652   |
+|              geth.system.disk.readdata.meter              |    1775015.0767137809   |    2457453.8188872533   |    3536814.4796895124   |    350897026911.6835    |
+|             geth.system.disk.writecount.meter             |    1013.2343934120667   |    1236.5348769376337   |    1565.3024764561703   |    30966.92665977734    |
+|              geth.system.disk.writedata.meter             |    173477.54884916102   |    425498.01516933535   |    1093740.6600867044   |    1025337949358.854    |
+|              geth.system.memory.allocs.meter              |    135948.2760678049    |    161327.0265023438    |    198857.80096890556   |    382297724.11846673   |
+|               geth.system.memory.frees.meter              |    95413.34596166987    |    162036.23516254357   |    236039.96680018184   |    1913292223.4800496   |
+|               geth.system.memory.held.gauge               |       6915977216.0      |      7048231895.04      |    7221864038.400001    |    8239696369828995.0   |
+|              geth.system.memory.pauses.meter              |    2406.556223312662    |    5430.613621838281    |     9032.61410061529    |    21605596.307973865   |
+|               geth.system.memory.used.gauge               |    5155264044.200001    |    5649399517.026667    |       6156038399.2      |  9.583009408681445e+16  |
+|             geth.trie.memcache.clean.hit.meter            |    58.66519291656515    |     85.924597444382     |    127.4617122204888    |    518.4550373934428    |
+|            geth.trie.memcache.clean.miss.meter            |    48.184908100860405   |    66.81960112311513    |    98.46748658498173    |    314.0297559081067    |
+|            geth.trie.memcache.clean.read.meter            |    15452.415299034126   |    21626.198262362843   |    30793.781061501955   |    22975702.17290407    |
+|            geth.trie.memcache.clean.write.meter           |    12357.51634447197    |    16301.148666675756   |    22402.04569522505    |    10566412.924727738   |
+|           geth.trie.memcache.commit.nodes.meter           |           0.0           |           0.0           |           0.0           |           0.0           |
+|            geth.trie.memcache.commit.size.meter           |           0.0           |           0.0           |           0.0           |           0.0           |
+|             geth.trie.memcache.dirty.hit.meter            |    420.99228061671215   |    479.66708225317717   |    553.0838137014618    |    1586.0901682475433   |
+|            geth.trie.memcache.dirty.miss.meter            |    48.214839538859344   |    66.83105396684796    |     98.468123880891     |    313.9886834625385    |
+|            geth.trie.memcache.dirty.read.meter            |    167136.92561278888   |    194156.4242321601    |    226853.61593272278   |    341320324.3998318    |
+|            geth.trie.memcache.dirty.write.meter           |    88859.15906665626    |    106495.88607889587   |    127228.46023667252   |    143819833.59637305   |
+|            geth.trie.memcache.flush.nodes.meter           |    21.592782284616156   |    84.19990728190666    |    156.66869839666504   |    1859.4077455617773   |
+|            geth.trie.memcache.flush.size.meter            |    5390.012942428337    |    20592.34765296299    |     38482.8820200805    |    113988380.81052108   |
+|             geth.trie.memcache.gc.nodes.meter             |    188.38747306703954   |     222.517238694227    |    261.0723607572935    |    491.5199872031815    |
+|              geth.trie.memcache.gc.size.meter             |    80307.50088734414    |    95918.71791310585    |    114795.26301722955   |    110454590.6157217    |
+|         geth.trie.prefetch.chain.account.dup.meter        |    14.202543320021531   |    18.97039956538959    |    25.51279490694898    |    11.970515706789278   |
+|        geth.trie.prefetch.chain.account.load.meter        |    18.09513002435467    |    21.702742669336967   |    25.72402618918154    |    5.705854659453575    |
+|        geth.trie.prefetch.chain.account.skip.meter        |  3.2550063589293113e-69 |    0.178656413416875    |   0.35372821918107605   |    1.7569030808271493   |
+|        geth.trie.prefetch.chain.account.waste.meter       |           0.0           |           0.0           |           0.0           |           0.0           |
+|        geth.trie.prefetch.chain.deliverymiss.meter        |   0.16122348423646543   |   0.23906175458219497   |   0.32960982425780533   |  0.0026158718901620843  |
+|         geth.trie.prefetch.chain.storage.dup.meter        |    1.2350899117423124   |    2.730331894068321    |    4.826981898810053    |    2.0801307872282755   |
+|        geth.trie.prefetch.chain.storage.load.meter        |    27.74918238464696    |    34.887416926812975   |    43.158120877973836   |    24.471273891735795   |
+|        geth.trie.prefetch.chain.storage.skip.meter        |   0.015345948295820621  |    4.352956126772072    |    13.390345788939493   |     19.8108863544536    |
+|        geth.trie.prefetch.chain.storage.waste.meter       |   0.010329758847725749  |   0.09208326295930096   |   0.26863212037301676   |   0.011465810400386037  |
+|         geth.trie.prefetch.miner.account.dup.meter        |    14.107613461115566   |    19.674143861491462   |    28.15170744654327    |    18.014893682637968   |
+|        geth.trie.prefetch.miner.account.load.meter        |    19.43536093066443    |    23.58419525345782    |    28.87739796630801    |    8.143667666030504    |
+|        geth.trie.prefetch.miner.account.skip.meter        | 1.0640861994753149e-151 |  1.8724439632413847e-30 |  1.5399831941317555e-34 |  5.194615131580221e-58  |
+|        geth.trie.prefetch.miner.account.waste.meter       |    19.43536093066443    |    23.58419525345782    |    28.87739796630801    |    8.143667666030504    |
+|        geth.trie.prefetch.miner.deliverymiss.meter        |  4.408212550295233e-106 |  0.00022204595176455877 |  1.8262070361265604e-08 |  7.305020464435343e-06  |
+|         geth.trie.prefetch.miner.storage.dup.meter        |    0.9561820518983322   |    2.425598173446609    |    4.854576651837895    |    2.7698092383510957   |
+|        geth.trie.prefetch.miner.storage.load.meter        |    34.424519961996815   |    47.157948257667826   |    65.66425360579434    |    93.71330657562882    |
+|        geth.trie.prefetch.miner.storage.skip.meter        |  5.380816192811364e-85  |  0.0008803322396195532  |   0.002044910988782543  |  4.0052251151790854e-05 |
+|        geth.trie.prefetch.miner.storage.waste.meter       |    34.424519961996815   |    47.157948257667826   |    65.66425360579434    |    93.71330657562882    |
+|                 geth.txpool.invalid.meter                 |   0.11644630511145745   |    1.0162078844649938   |    3.511115067246925    |    7.974491285673664    |
+|                  geth.txpool.known.meter                  |    15.925653811905013   |    21.05370645715458    |    28.62177681798625    |    14.93728773207107    |
+|                  geth.txpool.local.gauge                  |           0.0           |           0.0           |           0.0           |           0.0           |
+|                geth.txpool.overflowed.meter               |           0.0           |           0.0           |           0.0           |           0.0           |
+|             geth.txpool.pending.discard.meter             |  0.0008537120144358505  |   0.04957742007405983   |   0.17798248256311586   |   0.005479528617987438  |
+|                 geth.txpool.pending.gauge                 |          5117.0         |        5135.1725        |    5180.525000000001    |    884.2498270833337    |
+|             geth.txpool.pending.nofunds.meter             |  0.00017276821881584227 |   0.02694002850379304   |   0.09616168755709689   |   0.006493156388268918  |
+|            geth.txpool.pending.ratelimit.meter            |   0.06859996514458609   |   0.30232181966061195   |    0.7706949471014298   |   0.062220971486127374  |
+|             geth.txpool.pending.replace.meter             |   0.030825662868848625  |    0.1162200305846937   |   0.31014546984301716   |    0.0158863979943338   |
+|              geth.txpool.queued.discard.meter             |  1.0850375186219735e-07 |   0.004364886094178662  |   0.017899477118884267  |  4.8318653101905484e-05 |
+|             geth.txpool.queued.eviction.meter             |           0.0           |           0.0           |           0.0           |           0.0           |
+|                  geth.txpool.queued.gauge                 |    961.4749999999999    |    1004.7529166666667   |          1024.0         |    528.8041581597216    |
+|              geth.txpool.queued.nofunds.meter             |  2.8980438203917293e-45 |   0.001575972222564355  |   0.009220391278620014  |  4.4432451656810365e-05 |
+|             geth.txpool.queued.ratelimit.meter            |    0.5411003473379314   |    1.5235050433223811   |    2.4156996492367218   |    5.311040921279158    |
+|              geth.txpool.queued.replace.meter             |  1.8695084952214232e-59 |   0.00056736928966156   |   0.004215945054148125  |  4.979842018597791e-06  |
+|                  geth.txpool.reheap.timer                 |   0.07491740466075594   |   0.08343744944396618   |   0.09102511486122233   |  2.9197746323442586e-05 |
+|                geth.txpool.reorgtime.timer                |    37.96082395579944    |    45.37392911851571    |    55.09069129416479    |    27.984616778972867   |
+|                  geth.txpool.slots.gauge                  |          6140.0         |    6140.660416666667    |          6144.0         |    350.85447482638506   |
+|                 geth.txpool.throttle.meter                |           0.0           |           0.0           |           0.0           |           0.0           |
+|               geth.txpool.underpriced.meter               |    36.186973702621465   |    44.83406195526539    |     55.2680428474263    |    35.27001533093419    |
+|                  geth.txpool.valid.meter                  |    28.59748103612456    |    36.256655657270024   |    47.76065279796133    |    36.922493349763315   |
+|          geth.vflux.server.active.capacity.gauge          |           0.0           |           0.0           |           0.0           |           0.0           |
+|            geth.vflux.server.active.count.gauge           |           0.0           |           0.0           |           0.0           |           0.0           |
+|          geth.vflux.server.capquerynonzero.meter          |           0.0           |           0.0           |           0.0           |           0.0           |
+|            geth.vflux.server.capqueryzero.meter           |           0.0           |           0.0           |           0.0           |           0.0           |
+|       geth.vflux.server.clientevent.activated.meter       |           0.0           |           0.0           |           0.0           |           0.0           |
+|       geth.vflux.server.clientevent.connected.meter       |           0.0           |           0.0           |           0.0           |           0.0           |
+|      geth.vflux.server.clientevent.deactivated.meter      |           0.0           |           0.0           |           0.0           |           0.0           |
+|      geth.vflux.server.clientevent.disconnected.meter     |           0.0           |           0.0           |           0.0           |           0.0           |
+|           geth.vflux.server.inactive.count.gauge          |           0.0           |           0.0           |           0.0           |           0.0           |
++-----------------------------------------------------------+-------------------------+-------------------------+-------------------------+-------------------------+
