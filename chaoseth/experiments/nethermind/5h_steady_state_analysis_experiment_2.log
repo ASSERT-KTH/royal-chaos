@@ -1,0 +1,262 @@
+$ python steady_state_analyzer.py -c experiments/nethermind/experiment_config_nethermind.ini --host http://localhost:9090 --start 2022-12-15T10:00:00Z --end 2022-12-15T15:00:00Z -a [unknown]
+
++--------------+-------------+------------------+----------------------+------------------------------+------------------------+
+| Syscall Name |  Error Code | Samples in Total | Invocations in Total |         Failure Rate         |        Variance        |
++--------------+-------------+------------------+----------------------+------------------------------+------------------------+
+|   accept4    |    EAGAIN   |       1201       |        130394        | 0.983333, 0.996623, 1.000000 | 3.9380568665880396e-05 |
+|   accept4    |   SUCCESS   |        -         |         442          |              -               |           -            |
+|    access    |    ENOENT   |        2         |          4           | 1.000000, 1.000000, 1.000000 |          0.0           |
+|    access    |   SUCCESS   |        -         |          0           |              -               |           -            |
+|   connect    | EINPROGRESS |       694        |         2767         | 1.000000, 1.000000, 1.000000 |          0.0           |
+|   connect    |   SUCCESS   |        -         |          0           |              -               |           -            |
+|    futex     |    EAGAIN   |       1201       |       7029778        | 0.036267, 0.041947, 0.048572 | 1.4176266096393544e-05 |
+|    futex     |  ETIMEDOUT  |       1201       |        835977        | 0.003565, 0.005271, 0.007099 | 1.9008440364449796e-06 |
+|    futex     |   SUCCESS   |        -         |      157608553       |              -               |           -            |
+|   recvfrom   |    EAGAIN   |       1201       |       17376849       | 0.452035, 0.455084, 0.457857 | 3.235326518243034e-06  |
+|   recvfrom   |  ECONNRESET |       298        |         476          | 0.000023, 0.000053, 0.000129 | 1.1785349153907514e-09 |
+|   recvfrom   |   SUCCESS   |        -         |       20812669       |              -               |           -            |
+|   recvmsg    |    EAGAIN   |       1201       |        344737        | 0.756303, 0.813751, 0.863799 | 0.0010499369607456146  |
+|   recvmsg    |   SUCCESS   |        -         |        78973         |              -               |           -            |
+|   sendmsg    |    EAGAIN   |        72        |         341          | 0.000702, 0.001534, 0.003743 | 1.054331330872159e-06  |
+|   sendmsg    |  ECONNRESET |        19        |          19          | 0.000292, 0.000330, 0.000364 | 4.673950953271102e-10  |
+|   sendmsg    |   SUCCESS   |        -         |       3656519        |              -               |           -            |
+|   shutdown   |   ENOTCONN  |       304        |         501          | 0.007874, 0.014632, 0.035485 |  8.13629558478266e-05  |
+|   shutdown   |   SUCCESS   |        -         |        132547        |              -               |           -            |
+|    unlink    |    ENOENT   |        2         |          4           | 0.143750, 0.312500, 0.481250 |       0.03515625       |
+|    unlink    |   SUCCESS   |        -         |         249          |              -               |           -            |
++--------------+-------------+------------------+----------------------+------------------------------+------------------------+
++----------------------------------------------------------+-----------------------+------------------------+----------------------+------------------------+
+|                       Metric Name                        |          Min          |          Mean          |         Max          |        Variance        |
++----------------------------------------------------------+-----------------------+------------------------+----------------------+------------------------+
+|                dotnet_total_memory_bytes                 |   5616341.866666666   |   26890967.02836523    |     162649457.6      |   2232083991679497.5   |
+|         nethermind_already_connected_disconnects         |          0.0          |  0.01648626144879264   | 0.13333333333333333  | 0.0016858310861157639  |
+|                  nethermind_au_ra_step                   |          0.0          |          0.0           |         0.0          |          0.0           |
+|             nethermind_block_infos_db_reads              |  0.06666666666666667  |  0.24979184013321937   | 0.26666666666666666  |   2.0065317820002444   |
+|             nethermind_block_infos_db_writes             |  0.26666666666666666  |  0.33205661948376425   |  0.5333333333333333  |  0.013309499615956673  |
+|               nethermind_blockhash_opcode                |          0.0          |  0.06477935054121606   |         0.2          |  0.006058053358408763  |
+|                    nethermind_blocks                     |  0.06666666666666667  |   0.0829308909242301   | 0.13333333333333333  |  0.000878966544131766  |
+|                nethermind_blocks_db_reads                |  0.06666666666666667  |    8.54343602553424    |         43.4         |   235.5871011921531    |
+|               nethermind_blocks_db_writes                |  0.06666666666666667  |   0.0829308909242301   | 0.13333333333333333  | 0.0008715653044241152  |
+|                 nethermind_blocks_sealed                 |          0.0          |          0.0           |         0.0          |          0.0           |
+|                nethermind_bloom_db_reads                 |          0.0          |          0.0           |         0.0          |          0.0           |
+|                nethermind_bloom_db_writes                |  0.06666666666666667  |   0.0829308909242301   | 0.13333333333333333  |  0.000878966544131766  |
+|              nethermind_bn256add_precompile              |          0.0          |  0.031529281154593386  |         0.0          |  0.05273890470742271   |
+|              nethermind_bn256mul_precompile              |          0.0          |  0.031917846239245075  |         0.0          |  0.054464644559852164  |
+|            nethermind_bn256pairing_precompile            |          0.0          | 0.0018873161254510133  |         0.0          | 0.00013706159228798136 |
+|        nethermind_breach_of_protocol_disconnects         |          0.0          | 5.550929780738274e-05  |         0.0          |  3.69753857168278e-06  |
+|               nethermind_bundles_received                |          0.0          |          0.0           |         0.0          |          0.0           |
+|               nethermind_bundles_simulated               |          0.0          |          0.0           |         0.0          |          0.0           |
+|              nethermind_cached_nodes_count               |         216.0         |   1213.2917568692758   |  950.5333333333333   |    54038837.2973333    |
+|                     nethermind_calls                     |   18.066666666666666  |   46.101582014987514   |  88.46666666666667   |   535.6229052592788    |
+|              nethermind_can_produce_blocks               |          0.0          |          0.0           |         0.0          |          0.0           |
+|                  nethermind_chtdb_reads                  |          0.0          |          0.0           |         0.0          |          0.0           |
+|                 nethermind_chtdb_writes                  |          0.0          |          0.0           |         0.0          |          0.0           |
+|          nethermind_client_quitting_disconnects          |          0.0          |  0.22137107965584155   |  0.7333333333333333  |  0.06022234069752062   |
+|                 nethermind_code_db_reads                 |  0.06666666666666667  |   0.7069664168748259   |  1.6666666666666667  |   1.1537612571754376   |
+|                nethermind_code_db_writes                 |          0.0          |   0.5544823757979545   |  2.6666666666666665  |    7.36640996659175    |
+|            nethermind_commit_hash_transaction            |          0.0          |          0.0           |         0.0          |          0.0           |
+|             nethermind_committed_nodes_count             |   149.33333333333334  |   314.99034138218184   |  578.3333333333334   |   19942.58818684801    |
+|            nethermind_dark_pool_ratio_level1             |          0.0          | 0.0018159008403986795  | 0.004999139775563445 | 4.952225981320865e-06  |
+|            nethermind_dark_pool_ratio_level2             |          0.0          | 0.0018681506284151897  | 0.004965582453997598 | 4.9625033669832656e-06 |
+|       nethermind_deep_pruned_persisted_nodes_count       |          0.0          |   129.8774354704413    |         0.0          |   2272264.358326074    |
+|               nethermind_deep_pruning_time               |          0.0          |          0.0           |         0.0          |          0.0           |
+|       nethermind_disconnect_requested_disconnects        |          0.0          | 0.0006661115736885928  |         0.0          | 4.3963733617303745e-05 |
+|           nethermind_discovery_bytes_received            |   4841.666666666667   |   6263.080210935327    |  8147.333333333333   |   1137592.2336735227   |
+|             nethermind_discovery_bytes_sent              |         5769.0        |   7572.9728559533805   |       10415.2        |   3019683.8871455225   |
+|             nethermind_ec_recover_precompile             |   0.3333333333333333  |   1.6098251457119073   |  3.6666666666666665  |   1.751662186097272    |
+|           nethermind_eip1559transactions_ratio           | 0.0005699872970581054 |  0.029362159026122343  | 0.05909090836842855  | 0.0006488095174337675  |
+|             nethermind_emit_initiate_change              |          0.0          |          0.0           |         0.0          |          0.0           |
+|          nethermind_eth62block_bodies_received           |          0.0          |          0.0           |         0.0          |          0.0           |
+|          nethermind_eth62block_headers_received          |          0.0          |          0.0           |         0.0          |          0.0           |
+|        nethermind_eth62get_block_bodies_received         |          0.0          |          0.0           |         0.0          |          0.0           |
+|        nethermind_eth62get_block_headers_received        |          0.0          |          0.0           |         0.0          |          0.0           |
+|        nethermind_eth62new_block_hashes_received         |          0.0          |          0.0           |         0.0          |          0.0           |
+|            nethermind_eth62new_block_received            |          0.0          | 0.0003330557868442964  |         0.0          | 2.209279296580281e-05  |
+|          nethermind_eth62transactions_received           |   87.66666666666667   |   139.09969469886192   |  206.13333333333333  |   1597.6642065864105   |
+|          nethermind_eth63get_node_data_received          |          0.0          |          0.0           |         0.0          |          0.0           |
+|          nethermind_eth63get_receipts_received           |          0.0          |          0.0           |         0.0          |          0.0           |
+|            nethermind_eth63node_data_received            |          0.0          |          0.0           |         0.0          |          0.0           |
+|            nethermind_eth63receipts_received             |          0.0          |          0.0           |         0.0          |          0.0           |
+|     nethermind_eth65get_pooled_transactions_received     |          0.0          |          0.0           |         0.0          |          0.0           |
+|    nethermind_eth65get_pooled_transactions_requested     |          0.0          |          0.0           |         0.0          |          0.0           |
+|  nethermind_eth65new_pooled_transaction_hashes_received  |          0.0          |          0.0           |         0.0          |          0.0           |
+|    nethermind_eth65new_pooled_transaction_hashes_sent    |   104.53333333333333  |   111.36291978906493   |        113.0         |   5.276019821579861    |
+|       nethermind_eth65pooled_transactions_received       |          0.0          |          0.0           |         0.0          |          0.0           |
+|          nethermind_eth66block_bodies_received           |          0.0          |          0.0           |         0.0          |          0.0           |
+|          nethermind_eth66block_headers_received          |          0.0          | 0.0004995836802664446  |         0.0          | 3.305599483084085e-05  |
+|        nethermind_eth66get_block_bodies_received         |          0.0          |  0.29175686927560085   |         1.0          |  0.13604917541423595   |
+|        nethermind_eth66get_block_headers_received        |          0.0          |  0.22581182348043272   |  0.5333333333333333  |  0.10406499225173099   |
+|          nethermind_eth66get_node_data_received          |          0.0          |  0.009214543436025522  | 0.06666666666666667  |  0.003186440140047339  |
+|     nethermind_eth66get_pooled_transactions_received     |          25.4         |   44.31479322786562    |         69.0         |   183.88990328086462   |
+|    nethermind_eth66get_pooled_transactions_requested     |   10.066666666666666  |   13.718234804329706   |  19.666666666666668  |   10.44218853918649    |
+|          nethermind_eth66get_receipts_received           |          0.0          |  0.028864834859839015  | 0.13333333333333333  |  0.019475823066308802  |
+|            nethermind_eth66node_data_received            |          0.0          |          0.0           |         0.0          |          0.0           |
+|       nethermind_eth66pooled_transactions_received       |   10.066666666666666  |   13.715958923119612   |  19.666666666666668  |   10.434894725299475   |
+|            nethermind_eth66receipts_received             |          0.0          |          0.0           |         0.0          |          0.0           |
+|                nethermind_evm_exceptions                 |          0.0          |          0.0           |         0.0          |          0.0           |
+|              nethermind_failed_block_seals               |          0.0          |          0.0           |         0.0          |          0.0           |
+|                  nethermind_fast_bodies                  |          0.0          |          0.0           |         0.0          |          0.0           |
+|                 nethermind_fast_headers                  |          0.0          |          0.0           |         0.0          |          0.0           |
+|                 nethermind_fast_receipts                 |          0.0          |          0.0           |         0.0          |          0.0           |
+|        nethermind_forkchoice_upded_execution_time        |          0.0          |  0.005346981219354242  | 0.042028888888888886 | 0.00033404966364217756 |
+|             nethermind_get_payload_requests              |          0.0          |          0.0           |         0.0          |          0.0           |
+|              nethermind_handshake_timeouts               |          0.0          |  0.06716625034693348   |         0.2          |  0.004496003538544436  |
+|                  nethermind_handshakes                   |          6.2          |   7.328115459339439    |  8.533333333333333   |   0.5020358693594905   |
+|                nethermind_header_db_reads                |          0.0          |   11.360643907854593   |  12.066666666666666  |   2467.213412704061    |
+|               nethermind_header_db_writes                |  0.06666666666666667  |   0.0829308909242301   | 0.13333333333333333  | 0.0008715653044241152  |
+|                nethermind_hellos_received                |          0.0          |   0.321898417985011    |  1.4666666666666666  |  0.25854997173308836   |
+|                  nethermind_hellos_sent                  |          0.0          |   0.4507354981959471   |         2.0          |  0.44618527641682165   |
+|             nethermind_incoming_connections              |   6.133333333333333   |   7.272273105745209    |  8.466666666666667   |   0.477959131260231    |
+|          nethermind_incompatible_p2pdisconnects          |          0.0          |          0.0           |         0.0          |          0.0           |
+|            nethermind_json_rpc_bytes_received            |   4156.933333333333   |   14074.026644462945   |  30135.733333333334  |   74690211.33388162    |
+|         nethermind_json_rpc_bytes_received_http          |   4156.933333333333   |   14074.026644462945   |  30135.733333333334  |   74690211.33388162    |
+|          nethermind_json_rpc_bytes_received_ipc          |          0.0          |          0.0           |         0.0          |          0.0           |
+|      nethermind_json_rpc_bytes_received_web_sockets      |          0.0          |          0.0           |         0.0          |          0.0           |
+|              nethermind_json_rpc_bytes_sent              |   492.6666666666667   |   1157.6234249236752   |        2286.2        |   362964.7029539098    |
+|           nethermind_json_rpc_bytes_sent_http            |   492.6666666666667   |   1157.6234249236752   |        2286.2        |   362964.7029539098    |
+|            nethermind_json_rpc_bytes_sent_ipc            |          0.0          |          0.0           |         0.0          |          0.0           |
+|        nethermind_json_rpc_bytes_sent_web_sockets        |          0.0          |          0.0           |         0.0          |          0.0           |
+|                nethermind_json_rpc_errors                |          0.0          |          0.0           |         0.0          |          0.0           |
+|           nethermind_json_rpc_invalid_requests           |          0.0          |          0.0           |         0.0          |          0.0           |
+|   nethermind_json_rpc_request_deserialization_failures   |          0.0          |          0.0           |         0.0          |          0.0           |
+|               nethermind_json_rpc_requests               |          0.2          |   0.318623369414374    |  0.5333333333333333  |  0.010511713917743182  |
+|              nethermind_json_rpc_successes               |          0.2          |  0.31862336941437397   |  0.5333333333333333  |  0.010607930033942647  |
+|       nethermind_last_block_processing_time_in_ms        |          1.4          |   19.235365560181325   |  43.02455777777777   |   271.16474076857287   |
+|                nethermind_last_difficulty                |          0.0          |          0.0           |         0.0          |          0.0           |
+|          nethermind_last_persisted_block_number          |          0.0          |  0.08964751595892313   |         0.0          |    1.60144801156776    |
+|             nethermind_les_statuses_received             |          0.0          |          0.0           |         0.0          |          0.0           |
+|               nethermind_les_statuses_sent               |          0.0          |          0.0           |         0.0          |          0.0           |
+|         nethermind_loaded_from_cache_nodes_count         |   1826.5333333333333  |   2767.362420205386    |  4179.266666666666   |   610878.0411115821    |
+|          nethermind_loaded_from_db_nodes_count           |   1173.8666666666666  |   1930.8329725228998   |        3115.0        |   395542.8191552036    |
+|       nethermind_loaded_from_rlp_cache_nodes_count       |   1042.6666666666667  |   1718.4497918401323   |  2815.0666666666666  |   310778.1416488143    |
+|      nethermind_local_already_connected_disconnects      |          0.0          | 0.0037191229530946462  | 0.06666666666666667  | 0.00024151089437372483 |
+|     nethermind_local_breach_of_protocol_disconnects      |          0.0          | 0.0017207882320288647  |         0.0          | 0.00011915934303675196 |
+|       nethermind_local_client_quitting_disconnects       |          0.0          |          0.0           |         0.0          |          0.0           |
+|    nethermind_local_disconnect_requested_disconnects     |          0.0          |          0.0           |         0.0          |          0.0           |
+|       nethermind_local_incompatible_p2pdisconnects       |          0.0          |          0.0           |         0.0          |          0.0           |
+|     nethermind_local_null_node_identity_disconnects      |          0.0          |          0.0           |         0.0          |          0.0           |
+|            nethermind_local_other_disconnects            |          0.0          |          0.0           |         0.0          |          0.0           |
+|   nethermind_local_receive_message_timeout_disconnects   |          0.0          |  0.002164862614487928  |         0.0          | 0.00016184126328254317 |
+|        nethermind_local_same_as_self_disconnects         |          0.0          |          0.0           |         0.0          |          0.0           |
+|     nethermind_local_tcp_subsystem_error_disconnects     |          0.0          |          0.0           |         0.0          |          0.0           |
+|       nethermind_local_too_many_peers_disconnects        |   5.333333333333333   |   6.9038023868998195   |  8.266666666666666   |   0.7772794635857485   |
+|     nethermind_local_unexpected_identity_disconnects     |          0.0          |          0.0           |         0.0          |          0.0           |
+|        nethermind_local_useless_peer_disconnects         |          0.0          |   0.255453788509574    |  1.2666666666666666  |  0.19699888973701069   |
+|             nethermind_megabundles_received              |          0.0          |          0.0           |         0.0          |          0.0           |
+|             nethermind_memory_used_by_cache              |   129898.13333333333  |   721873.5644740496    |  521610.1333333333   |   25753417292270.492   |
+|               nethermind_metadata_db_reads               |          0.0          |          0.0           |         0.0          |          0.0           |
+|              nethermind_metadata_db_writes               |  0.13333333333333333  |  0.16630585623091923   | 0.26666666666666666  | 0.0036348036672496325  |
+|                     nethermind_mgas                      |   0.5344562000129371  |   1.2610344167638097   |  2.4052383999961116  |   0.3656897654207471   |
+|                nethermind_mod_exp_opcode                 |          11.6         |   35.09292256452955    |  70.53333333333333   |   479.5139558308988    |
+|              nethermind_mod_exp_precompile               |          0.0          |  0.030419095198445725  | 0.06666666666666667  |  0.13954280705881908   |
+|          nethermind_new_payload_execution_time           |          1.4          |   19.34339635303912    |  43.08252888888889   |   272.8523679921938    |
+|        nethermind_null_node_identity_disconnects         |          0.0          |          0.0           |         0.0          |          0.0           |
+|     nethermind_number_of_transactions_in_get_payload     |          0.0          |          0.0           |         0.0          |          0.0           |
+|                nethermind_other_db_reads                 |          0.0          |          0.0           |         0.0          |          0.0           |
+|                nethermind_other_db_writes                |          0.0          |          0.0           |         0.0          |          0.0           |
+|               nethermind_other_disconnects               |          0.0          |  0.002719955592561757  |         0.0          | 0.00019613593353490035 |
+|             nethermind_outgoing_connections              |          0.0          |  0.15381626422425737   |         0.6          |  0.04399898964758514   |
+|               nethermind_p2pbytes_received               |   94193.86666666667   |   146836.02964196508   |       224451.6       |   1769337732.3557348   |
+|                 nethermind_p2pbytes_sent                 |        93856.0        |   518522.4122675547    |      1309638.2       |   589849102312.3019    |
+|         nethermind_pending1559transactions_added         |   12.133333333333333  |   20.26106022758813    |  33.13333333333333   |   49.104925548135014   |
+|          nethermind_pending_transactions_added           |   21.666666666666668  |   39.44490702192612    |  63.733333333333334  |   182.10221871880393   |
+|        nethermind_pending_transactions_discarded         |   84.33333333333333   |   132.50946433527622   |        197.6         |   1697.3241189562868   |
+|         nethermind_pending_transactions_evicted          |          14.6         |   26.79733555370524    |  43.46666666666667   |   87.65254170265011    |
+|       nethermind_pending_transactions_hashes_sent        |         2405.4        |   4342.789952817091    |  6936.066666666667   |   2198847.0753546907   |
+|          nethermind_pending_transactions_known           |          72.6         |   111.84840410768803   |  165.66666666666666  |   1002.9979049838895   |
+|        nethermind_pending_transactions_nonce_gap         |   1.5333333333333332  |   5.320233139050786    |         12.2         |   26.125146175639752   |
+|         nethermind_pending_transactions_received         |   108.86666666666666  |   172.03136275326122   |  259.5333333333333   |   2768.4652981799068   |
+|           nethermind_pending_transactions_sent           |          0.0          |          0.0           |         0.0          |          0.0           |
+|       nethermind_pending_transactions_too_low_fee        |          5.6          |   14.429142381348901   |  27.866666666666667  |   60.63461006104864    |
+| nethermind_pending_transactions_with_expensive_filtering |   33.733333333333334  |   60.182126006105904   |  97.73333333333333   |   727.2833959426766    |
+|             nethermind_persisted_node_count              |          0.0          |   140.62769913960588   |         0.0          |   3949060.6817270345   |
+|                nethermind_priority_peers                 |          0.0          |          0.0           |         0.0          |          0.0           |
+|             nethermind_processing_queue_size             |          0.0          |          0.0           |         0.0          |          0.0           |
+|         nethermind_pruned_persisted_nodes_count          |          0.0          |   308.2324174299195    |         0.0          |   8993052.423062284    |
+|         nethermind_pruned_transient_nodes_count          |          0.0          |   192.32506244796002   |         0.0          |   7380492.588326376    |
+|                 nethermind_pruning_time                  |          0.0          |   0.3966694421315571   |         0.0          |   14.49317051530353    |
+|               nethermind_receipts_db_reads               |          0.0          |          0.0           |         0.0          |          0.0           |
+|              nethermind_receipts_db_writes               |  0.06666666666666667  |   0.0829308909242301   | 0.13333333333333333  |  0.000878966544131766  |
+|      nethermind_receive_message_timeout_disconnects      |          0.0          | 0.00022203719122953095 |         0.0          | 2.2154418608663925e-05 |
+|              nethermind_recovery_queue_size              |          0.0          |          0.0           |         0.0          |          0.0           |
+|                nethermind_reorganizations                |  0.06666666666666667  |   0.0829308909242301   | 0.13333333333333333  | 0.0008715653044241152  |
+|             nethermind_replaced_nodes_count              |   0.6666666666666666  |   3.643019705800721    |  8.133333333333333   |   9.807149212397334    |
+|         nethermind_reported_benign_misbehaviour          |          0.0          |          0.0           |         0.0          |          0.0           |
+|        nethermind_reported_malicious_misbehaviour        |          0.0          |          0.0           |         0.0          |          0.0           |
+|                 nethermind_reveal_number                 |          0.0          |          0.0           |         0.0          |          0.0           |
+|              nethermind_ripemd160precompile              |          0.0          |          0.0           |         0.0          |          0.0           |
+|           nethermind_same_as_self_disconnects            |          0.0          |          0.0           |         0.0          |          0.0           |
+|              nethermind_sealed_transactions              |          0.0          |          0.0           |         0.0          |          0.0           |
+|                nethermind_self_destructs                 |          0.0          |  0.13594227033028014   | 0.06666666666666667  |   0.8002411349779202   |
+|               nethermind_sha256precompile                |          0.0          |  0.13572023313905093   |         0.4          |   1.4958181532042842   |
+|                 nethermind_sload_opcode                  |   79.46666666666667   |   200.84285317790741   |        387.8         |   10106.722730170046   |
+|          nethermind_snap_account_range_received          |          0.0          |          0.0           |         0.0          |          0.0           |
+|           nethermind_snap_byte_codes_received            |          0.0          |          0.0           |         0.0          |          0.0           |
+|        nethermind_snap_get_account_range_received        |          0.0          |          0.0           |         0.0          |          0.0           |
+|          nethermind_snap_get_account_range_sent          |          0.0          |          0.0           |         0.0          |          0.0           |
+|         nethermind_snap_get_byte_codes_received          |          0.0          |          0.0           |         0.0          |          0.0           |
+|           nethermind_snap_get_byte_codes_sent            |          0.0          |          0.0           |         0.0          |          0.0           |
+|       nethermind_snap_get_storage_ranges_received        |          0.0          |          0.0           |         0.0          |          0.0           |
+|         nethermind_snap_get_storage_ranges_sent          |          0.0          |          0.0           |         0.0          |          0.0           |
+|         nethermind_snap_get_trie_nodes_received          |          0.0          |          0.0           |         0.0          |          0.0           |
+|           nethermind_snap_get_trie_nodes_sent            |          0.0          |          0.0           |         0.0          |          0.0           |
+|               nethermind_snap_state_synced               |          0.0          |          0.0           |         0.0          |          0.0           |
+|         nethermind_snap_storage_ranges_received          |          0.0          |          0.0           |         0.0          |          0.0           |
+|             nethermind_snap_synced_accounts              |          0.0          |          0.0           |         0.0          |          0.0           |
+|               nethermind_snap_synced_codes               |          0.0          |          0.0           |         0.0          |          0.0           |
+|           nethermind_snap_synced_storage_slots           |          0.0          |          0.0           |         0.0          |          0.0           |
+|           nethermind_snap_trie_nodes_received            |          0.0          |          0.0           |         0.0          |          0.0           |
+|           nethermind_snapshot_persistence_time           |          0.0          |  0.03358312517346656   |         0.0          |   0.4250466579296919   |
+|                 nethermind_sstore_opcode                 |   25.53333333333333   |   66.45395503746889    |  130.86666666666667  |   1279.3265957463343   |
+|             nethermind_state_branch_progress             |          0.0          |          0.0           |         0.0          |          0.0           |
+|          nethermind_state_db_in_pruning_writes           |          0.0          |          0.0           |         0.0          |          0.0           |
+|               nethermind_state_db_pruning                |          0.0          |          0.0           |         0.0          |          0.0           |
+|                nethermind_state_db_reads                 |   98.86666666666666   |   213.94443519289476   |  385.26666666666665  |   12334.353493179486   |
+|                nethermind_state_db_writes                |          0.0          |          0.0           |         0.0          |          0.0           |
+|              nethermind_state_sync_requests              |          0.0          |          0.0           |         0.0          |          0.0           |
+|                 nethermind_state_synced                  |          0.0          |          0.0           |         0.0          |          0.0           |
+|               nethermind_state_tree_reads                |   363.26666666666665  |   568.1636969192343    |  877.8666666666667   |   29134.650553674834   |
+|               nethermind_state_tree_writes               |   28.133333333333333  |   60.05273383291697    |        107.0         |    680.895270766512    |
+|               nethermind_statuses_received               |          0.0          |   0.2811545933943918   |  1.2666666666666666  |  0.19342503383055473   |
+|                 nethermind_statuses_sent                 |          0.0          |  0.28859283930058116   |  1.2666666666666666  |   0.2037823570252358   |
+|              nethermind_storage_tree_reads               |   47.333333333333336  |   113.94038301415496   |  217.66666666666666  |   2956.1516498116653   |
+|              nethermind_storage_tree_writes              |   19.066666666666666  |   45.625645295586985   |         88.0         |   531.2762560018567    |
+|                  nethermind_sync_peers                   |          0.0          |   0.6335831251734689   |         6.6          |   3.743340672177017    |
+|                 nethermind_synced_codes                  |          0.0          |          0.0           |         0.0          |          0.0           |
+|            nethermind_synced_state_trie_nodes            |          0.0          |          0.0           |         0.0          |          0.0           |
+|           nethermind_synced_storage_trie_nodes           |          0.0          |          0.0           |         0.0          |          0.0           |
+|        nethermind_tcp_subsystem_error_disconnects        |          0.0          |          0.0           |         0.0          |          0.0           |
+|                 nethermind_tload_opcode                  |          0.0          |          0.0           |         0.0          |          0.0           |
+|          nethermind_too_many_peers_disconnects           |          0.0          |  0.017152373022481227  | 0.13333333333333333  | 0.0018040475568167358  |
+|            nethermind_total_coinbase_payments            |          0.0          |          0.0           |         0.0          |          0.0           |
+|               nethermind_total_difficulty                |          0.0          |          0.0           |         0.0          |          0.0           |
+|               nethermind_transaction_count               |          0.0          |   3.7515403830141545   |  1.0666666666666667  |   470.59695594898307   |
+|                 nethermind_transactions                  |   5.933333333333334   |   13.107132944768233   |         24.0         |   36.12189287167714    |
+|          nethermind_tree_node_hash_calculations          |         181.4         |   428.76047737996134   |  708.3333333333334   |   327300.76598352654   |
+|            nethermind_tree_node_rlp_decodings            |   2827.133333333333   |   4374.967027477103    |  6813.466666666666   |   1634784.7755841033   |
+|            nethermind_tree_node_rlp_encodings            |         181.4         |   386.9770191507076    |  691.6666666666666   |   28070.184732311678   |
+|                 nethermind_tstore_opcode                 |          0.0          |          0.0           |         0.0          |          0.0           |
+|        nethermind_unexpected_identity_disconnects        |          0.0          |          0.0           |         0.0          |          0.0           |
+|           nethermind_useless_peer_disconnects            |          0.0          | 0.0003330557868442964  |         0.0          | 2.2092792965803427e-05 |
+|           nethermind_user_operations_included            |          0.0          |          0.0           |         0.0          |          0.0           |
+|       nethermind_user_operations_messages_received       |          0.0          |          0.0           |         0.0          |          0.0           |
+|         nethermind_user_operations_messages_sent         |          0.0          |          0.0           |         0.0          |          0.0           |
+|            nethermind_user_operations_pending            |          0.0          |          0.0           |         0.0          |          0.0           |
+|           nethermind_user_operations_received            |          0.0          |          0.0           |         0.0          |          0.0           |
+|           nethermind_user_operations_simulated           |          0.0          |          0.0           |         0.0          |          0.0           |
+|            nethermind_valid_bundles_received             |          0.0          |          0.0           |         0.0          |          0.0           |
+|          nethermind_valid_megabundles_received           |          0.0          |          0.0           |         0.0          |          0.0           |
+|               nethermind_validators_count                |          0.0          |          0.0           |         0.0          |          0.0           |
+|                    nethermind_version                    |          0.0          |          0.0           |         0.0          |          0.0           |
+|            nethermind_witness_block_requests             |          0.0          |          0.0           |         0.0          |          0.0           |
+|               nethermind_witness_db_reads                |          0.0          |          0.0           |         0.0          |          0.0           |
+|               nethermind_witness_db_writes               |          0.0          |          0.0           |         0.0          |          0.0           |
+|            nethermind_witness_state_requests             |          0.0          |          0.0           |         0.0          |          0.0           |
+|                process_cpu_seconds_total                 |   1.3399999999984478  |    1.51744879267277    |  1.691333333333023   |  0.01427868852636236   |
+|                   process_num_threads                    |          0.0          |   5.822536774909772    |  13.733333333333333  |   42.819320014953206   |
+|                   process_open_handles                   |          0.0          |   151.00105467665907   |        786.0         |   95714.58820871367    |
+|               process_private_memory_bytes               |          0.0          |   621693848.7189552    |     1608599961.6     | 6.035434776066227e+17  |
+|                process_start_time_seconds                |          0.0          |          0.0           |         0.0          |          0.0           |
+|               process_virtual_memory_bytes               |          0.0          |   1743087954.6617818   |  3912374135.4666667  | 3.774378614405481e+18  |
+|                process_working_set_bytes                 |          0.0          |   189234838.03319427   |  1469668283.7333333  | 2.4078272250541587e+17 |
++----------------------------------------------------------+-----------------------+------------------------+----------------------+------------------------+
