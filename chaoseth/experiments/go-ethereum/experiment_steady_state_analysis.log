@@ -1,0 +1,477 @@
+$ python results_to_latex.py -f go-ethereum/5h_steady_state_analysis_experiment_2.json -s go-ethereum/5h_steady_state_analysis_experiment_1.json -p 0.03 -t normal -c geth
+
+geth.chain.account.commits.timer
+ks compare, p-value: 0.6929850099895342
+geth.chain.account.hashes.timer
+ks compare, p-value: 0.4042443890846903
+geth.chain.account.reads.timer
+ks compare, p-value: 0.44219348810189807
+geth.chain.account.updates.timer
+ks compare, p-value: 0.44219348810189807
+geth.chain.execution.timer
+ks compare, p-value: 0.44219348810189807
+geth.chain.head.block.gauge
+ks compare, p-value: 0.0
+geth.chain.head.finalized.gauge
+ks compare, p-value: 0.0
+geth.chain.head.header.gauge
+ks compare, p-value: 0.0
+geth.chain.head.receipt.gauge
+ks compare, p-value: 0.0
+geth.chain.head.safe.gauge
+ks compare, p-value: 0.0
+geth.chain.inserts.timer
+ks compare, p-value: 0.6929850099895342
+geth.chain.reorg.add.meter
+ks compare, p-value: 3.1690774760079673e-264
+geth.chain.reorg.drop.meter
+ks compare, p-value: 3.1690774760079673e-264
+geth.chain.reorg.executes.meter
+ks compare, p-value: 3.1690774760079673e-264
+geth.chain.snapshot.account.reads.timer
+ks compare, p-value: 0.44219348810189807
+geth.chain.snapshot.commits.timer
+ks compare, p-value: 0.6929850099895342
+geth.chain.snapshot.storage.reads.timer
+ks compare, p-value: 0.44219348810189807
+geth.chain.storage.commits.timer
+ks compare, p-value: 0.6929850099895342
+geth.chain.storage.hashes.timer
+ks compare, p-value: 0.4042443890846903
+geth.chain.storage.reads.timer
+ks compare, p-value: 0.44219348810189807
+geth.chain.storage.updates.timer
+ks compare, p-value: 0.44219348810189807
+geth.chain.validation.timer
+ks compare, p-value: 0.4042443890846903
+geth.chain.write.timer
+ks compare, p-value: 0.6929850099895342
+geth.eth.db.chaindata.compact.memory.gauge
+ks compare, p-value: 0.0
+geth.eth.db.chaindata.compact.output.meter
+ks compare, p-value: 6.509333565246131e-22
+geth.eth.db.chaindata.compact.time.meter
+ks compare, p-value: 1.5895691204839657e-21
+geth.eth.db.chaindata.disk.read.meter
+ks compare, p-value: 1.5639364363647434e-29
+geth.eth.db.chaindata.disk.size.gauge
+ks compare, p-value: 0.0
+geth.eth.db.chaindata.disk.write.meter
+ks compare, p-value: 0.3987233532738921
+geth.eth.fetcher.transaction.announces.dos.meter
+ks compare, p-value: 1.0187846516549498e-36
+geth.eth.fetcher.transaction.announces.in.meter
+ks compare, p-value: 3.843816984564157e-182
+geth.eth.fetcher.transaction.announces.known.meter
+ks compare, p-value: 1.2812071357648745e-180
+geth.eth.fetcher.transaction.announces.underpriced.meter
+ks compare, p-value: 2.2143703955684218e-69
+geth.eth.fetcher.transaction.broadcasts.in.meter
+ks compare, p-value: 1.508560100506548e-146
+geth.eth.fetcher.transaction.broadcasts.known.meter
+ks compare, p-value: 6.441562490561032e-195
+geth.eth.fetcher.transaction.broadcasts.otherreject.meter
+ks compare, p-value: 1.7677453611351465e-08
+geth.eth.fetcher.transaction.broadcasts.underpriced.meter
+ks compare, p-value: 5.789950276465521e-42
+geth.eth.fetcher.transaction.fetching.hashes.gauge
+ks compare, p-value: 0.0022767490320725996
+geth.eth.fetcher.transaction.fetching.peers.gauge
+ks compare, p-value: 0.005162041666733824
+geth.eth.fetcher.transaction.queueing.hashes.gauge
+ks compare, p-value: 1.62980897214868e-07
+geth.eth.fetcher.transaction.queueing.peers.gauge
+ks compare, p-value: 0.11764831900486565
+geth.eth.fetcher.transaction.replies.in.meter
+ks compare, p-value: 7.438956889752615e-64
+geth.eth.fetcher.transaction.replies.known.meter
+ks compare, p-value: 4.703531681604006e-96
+geth.eth.fetcher.transaction.replies.otherreject.meter
+ks compare, p-value: 0.018515367118870602
+geth.eth.fetcher.transaction.replies.underpriced.meter
+ks compare, p-value: 5.813671250994056e-15
+geth.eth.fetcher.transaction.request.done.meter
+ks compare, p-value: 7.611565512763962e-64
+geth.eth.fetcher.transaction.request.out.meter
+ks compare, p-value: 6.0943779870656865e-90
+geth.eth.fetcher.transaction.request.timeout.meter
+ks compare, p-value: 1.0630237590287319e-39
+geth.eth.fetcher.transaction.waiting.hashes.gauge
+ks compare, p-value: 0.1345089052105071
+geth.eth.fetcher.transaction.waiting.peers.gauge
+ks compare, p-value: 0.08533030677565277
+geth.p2p.dials.meter
+ks compare, p-value: 7.793886233354885e-42
+geth.p2p.egress.meter
+ks compare, p-value: 2.7307463301010383e-73
+geth.p2p.egress.eth.66.0x00.meter
+ks compare, p-value: 5.100850305320002e-18
+geth.p2p.egress.eth.66.0x00.packets.meter
+ks compare, p-value: 5.100850305320002e-18
+geth.p2p.egress.eth.66.0x02.meter
+ks compare, p-value: 1.450861123494913e-07
+geth.p2p.egress.eth.66.0x02.packets.meter
+ks compare, p-value: 5.906687177583174e-50
+geth.p2p.egress.eth.66.0x03.meter
+ks compare, p-value: 6.919665951213422e-06
+geth.p2p.egress.eth.66.0x03.packets.meter
+ks compare, p-value: 6.919665951213422e-06
+geth.p2p.egress.eth.66.0x04.meter
+ks compare, p-value: 0.45617210932135965
+geth.p2p.egress.eth.66.0x04.packets.meter
+ks compare, p-value: 0.4419311260476335
+geth.p2p.egress.eth.66.0x08.meter
+ks compare, p-value: 3.1700121986381158e-77
+geth.p2p.egress.eth.66.0x08.packets.meter
+ks compare, p-value: 3.08810567896376e-78
+geth.p2p.egress.eth.66.0x09.meter
+ks compare, p-value: 4.830292725177036e-17
+geth.p2p.egress.eth.66.0x09.packets.meter
+ks compare, p-value: 4.7684776963084686e-182
+geth.p2p.egress.eth.66.0x0a.meter
+ks compare, p-value: 4.988513972179783e-231
+geth.p2p.egress.eth.66.0x0a.packets.meter
+ks compare, p-value: 3.266341080549463e-221
+geth.p2p.egress.eth.66.0x0e.meter
+ks compare, p-value: 0.05735028923920881
+geth.p2p.egress.eth.66.0x0e.packets.meter
+ks compare, p-value: 0.0001788575688810326
+geth.p2p.egress.eth.67.0x00.meter
+ks compare, p-value: 4.062920049158997e-18
+geth.p2p.egress.eth.67.0x00.packets.meter
+ks compare, p-value: 4.062920049158997e-18
+geth.p2p.egress.eth.67.0x02.meter
+ks compare, p-value: 6.426628290742593e-103
+geth.p2p.egress.eth.67.0x02.packets.meter
+ks compare, p-value: 8.2327595574395e-178
+geth.p2p.egress.eth.67.0x03.meter
+ks compare, p-value: 6.715641686162269e-06
+geth.p2p.egress.eth.67.0x03.packets.meter
+ks compare, p-value: 6.715641686162269e-06
+geth.p2p.egress.eth.67.0x04.meter
+ks compare, p-value: 2.5816863146806354e-104
+geth.p2p.egress.eth.67.0x04.packets.meter
+ks compare, p-value: 1.6006459349848977e-88
+geth.p2p.egress.eth.67.0x06.meter
+ks compare, p-value: 0.0
+geth.p2p.egress.eth.67.0x06.packets.meter
+ks compare, p-value: 0.0
+geth.p2p.egress.eth.67.0x08.meter
+ks compare, p-value: 6.910419967467118e-150
+geth.p2p.egress.eth.67.0x08.packets.meter
+ks compare, p-value: 2.9542651245819735e-158
+geth.p2p.egress.eth.67.0x09.meter
+ks compare, p-value: 8.490946521713517e-95
+geth.p2p.egress.eth.67.0x09.packets.meter
+ks compare, p-value: 7.969403719082865e-101
+geth.p2p.egress.eth.67.0x0a.meter
+ks compare, p-value: 9.865744773490575e-215
+geth.p2p.egress.eth.67.0x0a.packets.meter
+ks compare, p-value: 2.5254246412256498e-198
+geth.p2p.egress.snap.1.0x01.meter
+ks compare, p-value: 4.375643008593157e-07
+geth.p2p.egress.snap.1.0x01.packets.meter
+ks compare, p-value: 4.375643008593157e-07
+geth.p2p.egress.snap.1.0x03.meter
+ks compare, p-value: 3.4557109265283324e-06
+geth.p2p.egress.snap.1.0x03.packets.meter
+ks compare, p-value: 3.4557109265283324e-06
+geth.p2p.ingress.meter
+ks compare, p-value: 5.914931742981063e-104
+geth.p2p.ingress.eth.66.0x00.meter
+ks compare, p-value: 8.690784924197856e-30
+geth.p2p.ingress.eth.66.0x00.packets.meter
+ks compare, p-value: 6.566695161749507e-30
+geth.p2p.ingress.eth.66.0x02.meter
+ks compare, p-value: 4.6517246545345705e-05
+geth.p2p.ingress.eth.66.0x02.packets.meter
+ks compare, p-value: 4.3552264891570266e-80
+geth.p2p.ingress.eth.66.0x03.meter
+ks compare, p-value: 0.4419311260476335
+geth.p2p.ingress.eth.66.0x03.packets.meter
+ks compare, p-value: 0.4419311260476335
+geth.p2p.ingress.eth.66.0x04.meter
+ks compare, p-value: 1.033372112169144e-70
+geth.p2p.ingress.eth.66.0x04.packets.meter
+ks compare, p-value: 9.680394320562004e-69
+geth.p2p.ingress.eth.66.0x08.meter
+ks compare, p-value: 3.8005791085850043e-125
+geth.p2p.ingress.eth.66.0x08.packets.meter
+ks compare, p-value: 1.5366875677681073e-236
+geth.p2p.ingress.eth.66.0x09.meter
+ks compare, p-value: 5.4046142921030014e-222
+geth.p2p.ingress.eth.66.0x09.packets.meter
+ks compare, p-value: 3.266341080549463e-221
+geth.p2p.ingress.eth.66.0x0a.meter
+ks compare, p-value: 6.602925867359259e-10
+geth.p2p.ingress.eth.66.0x0a.packets.meter
+ks compare, p-value: 5.766596013695494e-182
+geth.p2p.ingress.eth.66.0x0d.meter
+ks compare, p-value: 0.3295815577731308
+geth.p2p.ingress.eth.66.0x0d.packets.meter
+ks compare, p-value: 0.0001788575688810326
+geth.p2p.ingress.eth.67.0x00.meter
+ks compare, p-value: 5.896465963760956e-18
+geth.p2p.ingress.eth.67.0x00.packets.meter
+ks compare, p-value: 5.716899418867921e-18
+geth.p2p.ingress.eth.67.0x02.meter
+ks compare, p-value: 2.3882194127800282e-71
+geth.p2p.ingress.eth.67.0x02.packets.meter
+ks compare, p-value: 1.0183730065204902e-172
+geth.p2p.ingress.eth.67.0x03.meter
+ks compare, p-value: 1.4969234704193366e-87
+geth.p2p.ingress.eth.67.0x03.packets.meter
+ks compare, p-value: 1.6006459349848977e-88
+geth.p2p.ingress.eth.67.0x04.meter
+ks compare, p-value: 4.460105857192275e-07
+geth.p2p.ingress.eth.67.0x04.packets.meter
+ks compare, p-value: 7.362888241512198e-06
+geth.p2p.ingress.eth.67.0x05.meter
+ks compare, p-value: 0.0
+geth.p2p.ingress.eth.67.0x05.packets.meter
+ks compare, p-value: 0.0
+geth.p2p.ingress.eth.67.0x08.meter
+ks compare, p-value: 1.4968543632097185e-193
+geth.p2p.ingress.eth.67.0x08.packets.meter
+ks compare, p-value: 1.5157651513104676e-208
+geth.p2p.ingress.eth.67.0x09.meter
+ks compare, p-value: 9.611457840799002e-66
+geth.p2p.ingress.eth.67.0x09.packets.meter
+ks compare, p-value: 2.534390687281707e-198
+geth.p2p.ingress.eth.67.0x0a.meter
+ks compare, p-value: 4.626937657855249e-19
+geth.p2p.ingress.eth.67.0x0a.packets.meter
+ks compare, p-value: 7.722545752466174e-101
+geth.p2p.ingress.snap.1.0x00.meter
+ks compare, p-value: 4.375643008593157e-07
+geth.p2p.ingress.snap.1.0x00.packets.meter
+ks compare, p-value: 4.375643008593157e-07
+geth.p2p.ingress.snap.1.0x02.meter
+ks compare, p-value: 3.834303394676148e-05
+geth.p2p.ingress.snap.1.0x02.packets.meter
+ks compare, p-value: 3.4557109265283324e-06
+geth.p2p.lost.eth.66.0x03.meter
+ks compare, p-value: 6.013981686258382e-17
+geth.p2p.lost.eth.66.0x09.meter
+ks compare, p-value: 0.443095916419319
+geth.p2p.lost.eth.67.0x03.meter
+ks compare, p-value: 2.4481537816390467e-14
+geth.p2p.lost.eth.67.0x09.meter
+ks compare, p-value: 7.047224094363111e-07
+geth.p2p.peers.gauge
+ks compare, p-value: 0.31448506392572884
+geth.p2p.serves.meter
+ks compare, p-value: 1.5909812696490974e-241
+geth.p2p.stale.eth.67.0x0a.meter
+ks compare, p-value: 1.7543935434822755e-42
+geth.p2p.tracked.eth.66.0x03.gauge
+ks compare, p-value: 0.08810617014386408
+geth.p2p.tracked.eth.66.0x09.gauge
+ks compare, p-value: 0.5250842773558206
+geth.p2p.tracked.eth.67.0x03.gauge
+ks compare, p-value: 0.003297878627547933
+geth.p2p.tracked.eth.67.0x09.gauge
+ks compare, p-value: 0.007285084177505815
+geth.rpc.duration.all.timer
+ks compare, p-value: 0.6106413868429108
+geth.rpc.requests.gauge
+ks compare, p-value: 0.0
+geth.rpc.success.gauge
+ks compare, p-value: 0.0
+geth.state.commit.accountnodes.meter
+ks compare, p-value: 1.1688781751104647e-164
+geth.state.commit.storagenodes.meter
+ks compare, p-value: 6.763835577726252e-26
+geth.state.delete.account.meter
+ks compare, p-value: 1.4816809488484042e-44
+geth.state.delete.storage.meter
+ks compare, p-value: 6.512965928896901e-19
+geth.state.snapshot.bloom.account.falsehit.meter
+ks compare, p-value: 7.533542567765353e-06
+geth.state.snapshot.bloom.account.miss.meter
+ks compare, p-value: 6.500787386157636e-50
+geth.state.snapshot.bloom.account.truehit.meter
+ks compare, p-value: 1.3084445642438223e-173
+geth.state.snapshot.bloom.error.gauge
+ks compare, p-value: 0.04640275908685864
+geth.state.snapshot.bloom.storage.falsehit.meter
+ks compare, p-value: 2.0316205726944752e-16
+geth.state.snapshot.bloom.storage.miss.meter
+ks compare, p-value: 7.931966189095108e-06
+geth.state.snapshot.bloom.storage.truehit.meter
+ks compare, p-value: 4.1972513218004405e-80
+geth.state.snapshot.clean.account.hit.meter
+ks compare, p-value: 2.859281718362642e-30
+geth.state.snapshot.clean.account.inex.meter
+ks compare, p-value: 1.5209668234914157e-08
+geth.state.snapshot.clean.account.miss.meter
+ks compare, p-value: 0.0
+geth.state.snapshot.clean.account.read.meter
+ks compare, p-value: 3.8918054359780786e-32
+geth.state.snapshot.clean.account.write.meter
+ks compare, p-value: 4.9478011687989995e-79
+geth.state.snapshot.clean.storage.hit.meter
+ks compare, p-value: 1.5307611127599257e-11
+geth.state.snapshot.clean.storage.inex.meter
+ks compare, p-value: 2.0256719114357754e-50
+geth.state.snapshot.clean.storage.miss.meter
+ks compare, p-value: 2.6528199422332113e-18
+geth.state.snapshot.clean.storage.read.meter
+ks compare, p-value: 7.859444042345246e-62
+geth.state.snapshot.clean.storage.write.meter
+ks compare, p-value: 1.2238745858040594e-16
+geth.state.snapshot.dirty.account.hit.meter
+ks compare, p-value: 1.3062783307145803e-173
+geth.state.snapshot.dirty.account.inex.meter
+ks compare, p-value: 2.186621202481791e-118
+geth.state.snapshot.dirty.account.miss.meter
+ks compare, p-value: 6.330615356387044e-48
+geth.state.snapshot.dirty.account.read.meter
+ks compare, p-value: 5.301433476926288e-175
+geth.state.snapshot.dirty.account.write.meter
+ks compare, p-value: 4.627659721379172e-128
+geth.state.snapshot.dirty.storage.hit.meter
+ks compare, p-value: 4.220814415317746e-80
+geth.state.snapshot.dirty.storage.inex.meter
+ks compare, p-value: 0.04124282779208847
+geth.state.snapshot.dirty.storage.miss.meter
+ks compare, p-value: 0.0023716921003963756
+geth.state.snapshot.dirty.storage.read.meter
+ks compare, p-value: 9.778701704897454e-92
+geth.state.snapshot.dirty.storage.write.meter
+ks compare, p-value: 2.290974251286142e-07
+geth.state.snapshot.flush.account.item.meter
+ks compare, p-value: 0.16734652264901217
+geth.state.snapshot.flush.account.size.meter
+ks compare, p-value: 0.25709435522489965
+geth.state.snapshot.flush.storage.item.meter
+ks compare, p-value: 0.7518824441080103
+geth.state.snapshot.flush.storage.size.meter
+ks compare, p-value: 0.5998658650263091
+geth.state.update.account.meter
+ks compare, p-value: 1.8888952367828622e-163
+geth.state.update.storage.meter
+ks compare, p-value: 3.5095198066908433e-22
+geth.system.cpu.goroutines.gauge
+ks compare, p-value: 1.0120672486006954e-18
+geth.system.cpu.procload.gauge
+ks compare, p-value: 3.5396965930165225e-13
+geth.system.cpu.sysload.gauge
+ks compare, p-value: 6.956212200742179e-07
+geth.system.cpu.syswait.gauge
+ks compare, p-value: 2.3306684437059723e-06
+geth.system.disk.readbytes.count
+ks compare, p-value: 0.0
+geth.system.disk.readcount.meter
+ks compare, p-value: 7.042723897235471e-136
+geth.system.disk.readdata.meter
+ks compare, p-value: 6.228738027386008e-31
+geth.system.disk.writecount.meter
+ks compare, p-value: 2.4894198387619618e-118
+geth.system.disk.writedata.meter
+ks compare, p-value: 1.8233291853288463e-31
+geth.system.memory.allocs.meter
+ks compare, p-value: 1.345433589569819e-182
+geth.system.memory.frees.meter
+ks compare, p-value: 9.690132546040764e-48
+geth.system.memory.held.gauge
+ks compare, p-value: 0.004765851262569087
+geth.system.memory.pauses.meter
+ks compare, p-value: 1.8971704807513923e-24
+geth.system.memory.used.gauge
+ks compare, p-value: 0.014613888091435242
+geth.trie.memcache.clean.hit.meter
+ks compare, p-value: 0.4292882516184393
+geth.trie.memcache.clean.miss.meter
+ks compare, p-value: 0.0005531867259219057
+geth.trie.memcache.clean.read.meter
+ks compare, p-value: 0.9639351792341224
+geth.trie.memcache.clean.write.meter
+ks compare, p-value: 0.001746460332758035
+geth.trie.memcache.dirty.hit.meter
+ks compare, p-value: 3.883381990763352e-96
+geth.trie.memcache.dirty.miss.meter
+ks compare, p-value: 0.0005607257654040191
+geth.trie.memcache.dirty.read.meter
+ks compare, p-value: 1.1630751573079311e-43
+geth.trie.memcache.dirty.write.meter
+ks compare, p-value: 3.048341451968368e-14
+geth.trie.memcache.flush.nodes.meter
+ks compare, p-value: 0.3158472233271157
+geth.trie.memcache.flush.size.meter
+ks compare, p-value: 0.06558542986418849
+geth.trie.memcache.gc.nodes.meter
+ks compare, p-value: 6.245782472999506e-49
+geth.trie.memcache.gc.size.meter
+ks compare, p-value: 6.0952519787046714e-27
+geth.trie.prefetch.chain.account.dup.meter
+ks compare, p-value: 6.26373822488264e-140
+geth.trie.prefetch.chain.account.load.meter
+ks compare, p-value: 1.4995038450165463e-168
+geth.trie.prefetch.chain.account.skip.meter
+ks compare, p-value: 1.7661583937438532e-31
+geth.trie.prefetch.chain.deliverymiss.meter
+ks compare, p-value: 1.3849115812844468e-05
+geth.trie.prefetch.chain.storage.dup.meter
+ks compare, p-value: 4.0239074790901484e-16
+geth.trie.prefetch.chain.storage.load.meter
+ks compare, p-value: 2.1486593272568698e-09
+geth.trie.prefetch.chain.storage.skip.meter
+ks compare, p-value: 3.2178134991780656e-96
+geth.trie.prefetch.chain.storage.waste.meter
+ks compare, p-value: 9.018644094330237e-07
+geth.trie.prefetch.miner.account.dup.meter
+ks compare, p-value: 1.0764689738499535e-168
+geth.trie.prefetch.miner.account.load.meter
+ks compare, p-value: 5.374032900072541e-221
+geth.trie.prefetch.miner.account.skip.meter
+ks compare, p-value: 0.0
+geth.trie.prefetch.miner.account.waste.meter
+ks compare, p-value: 5.374032900072541e-221
+geth.trie.prefetch.miner.deliverymiss.meter
+ks compare, p-value: 8.415158167727115e-39
+geth.trie.prefetch.miner.storage.dup.meter
+ks compare, p-value: 4.104057402967802e-33
+geth.trie.prefetch.miner.storage.load.meter
+ks compare, p-value: 6.941872829031931e-11
+geth.trie.prefetch.miner.storage.skip.meter
+ks compare, p-value: 6.976175529411826e-76
+geth.trie.prefetch.miner.storage.waste.meter
+ks compare, p-value: 6.876718262769845e-11
+geth.txpool.invalid.meter
+ks compare, p-value: 3.391674419768688e-07
+geth.txpool.known.meter
+ks compare, p-value: 1.802112349921608e-194
+geth.txpool.pending.gauge
+ks compare, p-value: 0.0014054663023655104
+geth.txpool.pending.discard.meter
+ks compare, p-value: 0.9032414907031442
+geth.txpool.pending.nofunds.meter
+ks compare, p-value: 0.21846864503984786
+geth.txpool.pending.ratelimit.meter
+ks compare, p-value: 4.698435197642368e-07
+geth.txpool.pending.replace.meter
+ks compare, p-value: 6.385672938190548e-06
+geth.txpool.queued.gauge
+ks compare, p-value: 0.0008460340618247527
+geth.txpool.queued.discard.meter
+ks compare, p-value: 3.174742791018736e-08
+geth.txpool.queued.nofunds.meter
+ks compare, p-value: 2.9257461973198525e-36
+geth.txpool.queued.ratelimit.meter
+ks compare, p-value: 5.772986602068161e-32
+geth.txpool.queued.replace.meter
+ks compare, p-value: 6.370779329820513e-118
+geth.txpool.reheap.timer
+ks compare, p-value: 0.45670644243818703
+geth.txpool.reorgtime.timer
+ks compare, p-value: 4.581539419807562e-103
+geth.txpool.slots.gauge
+ks compare, p-value: 0.20335069513601178
+geth.txpool.underpriced.meter
+ks compare, p-value: 4.52836472326696e-76
+geth.txpool.valid.meter
+ks compare, p-value: 4.156843429927786e-142
+400 metrics in total
+164 inactive metrics: geth.chain.prefetch.executes.timer, geth.chain.prefetch.interrupts.meter, geth.chain.reorg.invalidtx.meter, geth.eth.db.chaindata.ancient.read.meter, geth.eth.db.chaindata.ancient.size.gauge, geth.eth.db.chaindata.ancient.write.meter, geth.eth.db.chaindata.compact.input.meter, geth.eth.db.chaindata.compact.level0.gauge, geth.eth.db.chaindata.compact.nonlevel0.gauge, geth.eth.db.chaindata.compact.seek.gauge, geth.eth.db.chaindata.compact.writedelay.counter.meter, geth.eth.db.chaindata.compact.writedelay.duration.meter, geth.eth.downloader.bodies.drop.meter, geth.eth.downloader.bodies.in.meter, geth.eth.downloader.bodies.req.timer, geth.eth.downloader.bodies.timeout.meter, geth.eth.downloader.headers.drop.meter, geth.eth.downloader.headers.in.meter, geth.eth.downloader.headers.req.timer, geth.eth.downloader.headers.timeout.meter, geth.eth.downloader.receipts.drop.meter, geth.eth.downloader.receipts.in.meter, geth.eth.downloader.receipts.req.timer, geth.eth.downloader.receipts.timeout.meter, geth.eth.downloader.states.drop.meter, geth.eth.downloader.states.in.meter, geth.eth.fetcher.block.announces.dos.meter, geth.eth.fetcher.block.announces.drop.meter, geth.eth.fetcher.block.announces.in.meter, geth.eth.fetcher.block.announces.out.timer, geth.eth.fetcher.block.bodies.meter, geth.eth.fetcher.block.broadcasts.dos.meter, geth.eth.fetcher.block.broadcasts.drop.meter, geth.eth.fetcher.block.broadcasts.in.meter, geth.eth.fetcher.block.broadcasts.out.timer, geth.eth.fetcher.block.filter.bodies.in.meter, geth.eth.fetcher.block.filter.bodies.out.meter, geth.eth.fetcher.block.filter.headers.in.meter, geth.eth.fetcher.block.filter.headers.out.meter, geth.eth.fetcher.block.headers.meter, geth.eth.fetcher.transaction.request.fail.meter, geth.les.client.req.rtt.timer, geth.les.client.req.senddelay.timer, geth.les.client.serverpool.connected.gauge, geth.les.client.serverpool.dialed.meter, geth.les.client.serverpool.selectable.gauge, geth.les.client.serverpool.sessionvalue.meter, geth.les.client.serverpool.timeout.gauge, geth.les.client.serverpool.totalvalue.gauge, geth.les.connection.duration.timer, geth.les.connection.server.gauge, geth.les.misc.in.packets.body.meter, geth.les.misc.in.packets.code.meter, geth.les.misc.in.packets.header.meter, geth.les.misc.in.packets.helpertrie.meter, geth.les.misc.in.packets.proof.meter, geth.les.misc.in.packets.receipt.meter, geth.les.misc.in.packets.total.meter, geth.les.misc.in.packets.txstatus.meter, geth.les.misc.in.packets.txs.meter, geth.les.misc.in.traffic.body.meter, geth.les.misc.in.traffic.code.meter, geth.les.misc.in.traffic.header.meter, geth.les.misc.in.traffic.helpertrie.meter, geth.les.misc.in.traffic.proof.meter, geth.les.misc.in.traffic.receipt.meter, geth.les.misc.in.traffic.total.meter, geth.les.misc.in.traffic.txstatus.meter, geth.les.misc.in.traffic.txs.meter, geth.les.misc.out.packets.body.meter, geth.les.misc.out.packets.code.meter, geth.les.misc.out.packets.header.meter, geth.les.misc.out.packets.helpertrie.meter, geth.les.misc.out.packets.proof.meter, geth.les.misc.out.packets.receipt.meter, geth.les.misc.out.packets.total.meter, geth.les.misc.out.packets.txstatus.meter, geth.les.misc.out.packets.txs.meter, geth.les.misc.out.traffic.body.meter, geth.les.misc.out.traffic.code.meter, geth.les.misc.out.traffic.header.meter, geth.les.misc.out.traffic.helpertrie.meter, geth.les.misc.out.traffic.proof.meter, geth.les.misc.out.traffic.receipt.meter, geth.les.misc.out.traffic.total.meter, geth.les.misc.out.traffic.txstatus.meter, geth.les.misc.out.traffic.txs.meter, geth.les.misc.serve.body.timer, geth.les.misc.serve.code.timer, geth.les.misc.serve.header.timer, geth.les.misc.serve.helpertrie.timer, geth.les.misc.serve.proof.timer, geth.les.misc.serve.receipt.timer, geth.les.misc.serve.txstatus.timer, geth.les.misc.serve.txs.timer, geth.les.server.blockprocessingtime.timer, geth.les.server.clientevent.error.meter, geth.les.server.clientevent.freeze.meter, geth.les.server.globalfactor.gauge, geth.les.server.recentrequestestimated.gauge, geth.les.server.recentrequestserved.gauge, geth.les.server.req.avgestimatedtime.meter, geth.les.server.req.avgservedtime.meter, geth.les.server.req.estimatedtime.timer, geth.les.server.req.servedtime.timer, geth.les.server.servingqueue.queued.gauge, geth.les.server.servingqueue.served.gauge, geth.les.server.totalcapacity.gauge, geth.les.server.totalrecharge.gauge, geth.p2p.egress.eth.66.0x06.meter, geth.p2p.egress.eth.66.0x06.packets.meter, geth.p2p.egress.eth.66.0x10.meter, geth.p2p.egress.eth.66.0x10.packets.meter, geth.p2p.egress.eth.67.0x10.meter, geth.p2p.egress.eth.67.0x10.packets.meter, geth.p2p.egress.snap.1.0x05.meter, geth.p2p.egress.snap.1.0x05.packets.meter, geth.p2p.egress.snap.1.0x07.meter, geth.p2p.egress.snap.1.0x07.packets.meter, geth.p2p.ingress.eth.66.0x01.meter, geth.p2p.ingress.eth.66.0x01.packets.meter, geth.p2p.ingress.eth.66.0x05.meter, geth.p2p.ingress.eth.66.0x05.packets.meter, geth.p2p.ingress.eth.66.0x07.meter, geth.p2p.ingress.eth.66.0x07.packets.meter, geth.p2p.ingress.eth.66.0x0f.meter, geth.p2p.ingress.eth.66.0x0f.packets.meter, geth.p2p.ingress.eth.67.0x0b.meter, geth.p2p.ingress.eth.67.0x0b.packets.meter, geth.p2p.ingress.eth.67.0x0f.meter, geth.p2p.ingress.eth.67.0x0f.packets.meter, geth.p2p.ingress.snap.1.0x04.meter, geth.p2p.ingress.snap.1.0x04.packets.meter, geth.p2p.ingress.snap.1.0x06.meter, geth.p2p.ingress.snap.1.0x06.packets.meter, geth.rpc.failure.gauge, geth.state.snapshot.generation.account.generated.meter, geth.state.snapshot.generation.account.missall.meter, geth.state.snapshot.generation.account.recovered.meter, geth.state.snapshot.generation.account.wiped.meter, geth.state.snapshot.generation.proof.failure.meter, geth.state.snapshot.generation.proof.success.meter, geth.state.snapshot.generation.storage.dangling.meter, geth.state.snapshot.generation.storage.generated.meter, geth.state.snapshot.generation.storage.missall.meter, geth.state.snapshot.generation.storage.recovered.meter, geth.state.snapshot.generation.storage.wiped.meter, geth.system.cpu.threads.gauge, geth.trie.memcache.commit.nodes.meter, geth.trie.memcache.commit.size.meter, geth.trie.prefetch.chain.account.waste.meter, geth.txpool.local.gauge, geth.txpool.overflowed.meter, geth.txpool.queued.eviction.meter, geth.txpool.throttle.meter, geth.vflux.server.active.capacity.gauge, geth.vflux.server.active.count.gauge, geth.vflux.server.capquerynonzero.meter, geth.vflux.server.capqueryzero.meter, geth.vflux.server.clientevent.activated.meter, geth.vflux.server.clientevent.connected.meter, geth.vflux.server.clientevent.deactivated.meter, geth.vflux.server.clientevent.disconnected.meter, geth.vflux.server.inactive.count.gauge
+44 stable metrics (ks): geth.chain.account.commits.timer, geth.chain.account.hashes.timer, geth.chain.account.reads.timer, geth.chain.account.updates.timer, geth.chain.execution.timer, geth.chain.inserts.timer, geth.chain.snapshot.account.reads.timer, geth.chain.snapshot.commits.timer, geth.chain.snapshot.storage.reads.timer, geth.chain.storage.commits.timer, geth.chain.storage.hashes.timer, geth.chain.storage.reads.timer, geth.chain.storage.updates.timer, geth.chain.validation.timer, geth.chain.write.timer, geth.eth.db.chaindata.disk.write.meter, geth.eth.fetcher.transaction.queueing.peers.gauge, geth.eth.fetcher.transaction.waiting.hashes.gauge, geth.eth.fetcher.transaction.waiting.peers.gauge, geth.p2p.egress.eth.66.0x04.meter, geth.p2p.egress.eth.66.0x04.packets.meter, geth.p2p.egress.eth.66.0x0e.meter, geth.p2p.ingress.eth.66.0x03.meter, geth.p2p.ingress.eth.66.0x03.packets.meter, geth.p2p.ingress.eth.66.0x0d.meter, geth.p2p.lost.eth.66.0x09.meter, geth.p2p.peers.gauge, geth.p2p.tracked.eth.66.0x03.gauge, geth.p2p.tracked.eth.66.0x09.gauge, geth.rpc.duration.all.timer, geth.state.snapshot.bloom.error.gauge, geth.state.snapshot.dirty.storage.inex.meter, geth.state.snapshot.flush.account.item.meter, geth.state.snapshot.flush.account.size.meter, geth.state.snapshot.flush.storage.item.meter, geth.state.snapshot.flush.storage.size.meter, geth.trie.memcache.clean.hit.meter, geth.trie.memcache.clean.read.meter, geth.trie.memcache.flush.nodes.meter, geth.trie.memcache.flush.size.meter, geth.txpool.pending.discard.meter, geth.txpool.pending.nofunds.meter, geth.txpool.reheap.timer, geth.txpool.slots.gauge

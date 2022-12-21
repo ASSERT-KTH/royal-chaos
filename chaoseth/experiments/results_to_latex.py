@@ -38,7 +38,7 @@ def get_args():
     parser.add_argument("-l", "--logs", help="path to the logs of experiment results folder")
     parser.add_argument("-p", "--p-value", type=float, required=True, dest="p_value", help="p-value threshold")
     parser.add_argument("-t", "--template", default="ce", choices=['normal', 'ce', 'benchmark'], help="the template to be used")
-    parser.add_argument("-c", "--client", required=True, choices=['geth', 'openethereum'], help="the client's name")
+    parser.add_argument("-c", "--client", required=True, choices=['geth', 'openethereum', 'nethermind'], help="the client's name")
     parser.add_argument("--metrics", nargs="+", help="metric names that are used for a ks comparison")
     parser.add_argument("--csv", action='store_true', help="generate a csv file of the results")
     parser.add_argument("--plot", help="plot the samples", action='store_true')
@@ -143,8 +143,13 @@ def ks_compare_steady_states(ss_metrics_1, ss_metrics_2, p_value_threshold, plot
         ss_metrics_1_dict[metric["metric_name"]] = metric["data_points"]
 
     normal_metrics_ks = list()
+    inactive_metrics = list()
     for metric in ss_metrics_2:
         metric_name = metric["metric_name"]
+        # if a metric does not change at all (e.g., always 0), we skip it
+        if metric["stat"]["variance"] == 0:
+            inactive_metrics.append(metric_name)
+            continue
         print(metric_name)
         data_points_2 = np.array(metric["data_points"]).astype(float)
         data_points_1 = np.array(ss_metrics_1_dict[metric_name]).astype(float)
@@ -152,7 +157,9 @@ def ks_compare_steady_states(ss_metrics_1, ss_metrics_2, p_value_threshold, plot
         if t.pvalue > p_value_threshold: normal_metrics_ks.append(metric_name)
         print("ks compare, p-value: %s"%t.pvalue)
         if plot: plot_samples(data_points_1[:,1], data_points_2[:,1], metric_name)
-    print("stable metrics (ks): %s"%", ".join(normal_metrics_ks))
+    print("%d metrics in total"%len(ss_metrics_2))
+    print("%d inactive metrics: %s"%(len(inactive_metrics), ", ".join(inactive_metrics)))
+    print("%d stable metrics (ks): %s"%(len(normal_metrics_ks), ", ".join(normal_metrics_ks)))
 
 def plot_samples(sample1, sample2, metric_name):
     fig = plt.figure(figsize=(12, 1))

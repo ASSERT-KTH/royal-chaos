@@ -1,0 +1,237 @@
+$ python results_to_latex.py -f nethermind/5h_steady_state_analysis_experiment_2.json -s nethermind/5h_steady_state_analysis_experiment_1.json -p 0.03 -t normal -c nethermind
+
+nethermind_local_breach_of_protocol_disconnects
+ks compare, p-value: 0.8953246955392439
+nethermind_statuses_sent
+ks compare, p-value: 0.06318566125736973
+nethermind_reorganizations
+ks compare, p-value: 0.8614486989148642
+nethermind_pending_transactions_received
+ks compare, p-value: 7.103008879513772e-110
+nethermind_blocks_db_reads
+ks compare, p-value: 0.0010653428298068046
+nethermind_mod_exp_opcode
+ks compare, p-value: 6.498760034634336e-10
+nethermind_client_quitting_disconnects
+ks compare, p-value: 0.5337458323493771
+nethermind_pending_transactions_discarded
+ks compare, p-value: 4.282488822787562e-127
+nethermind_state_tree_writes
+ks compare, p-value: 7.364297141785397e-27
+nethermind_loaded_from_db_nodes_count
+ks compare, p-value: 2.988127838519747e-11
+nethermind_bloom_db_writes
+ks compare, p-value: 0.8617878742128849
+nethermind_transaction_count
+ks compare, p-value: 0.005166873991482753
+process_working_set_bytes
+ks compare, p-value: 1.185902145201797e-08
+nethermind_sync_peers
+ks compare, p-value: 0.004758848298602043
+nethermind_json_rpc_bytes_received
+ks compare, p-value: 0.022076887555058832
+nethermind_tree_node_rlp_decodings
+ks compare, p-value: 2.8418981070376167e-24
+nethermind_snapshot_persistence_time
+ks compare, p-value: 0.9989475991436858
+nethermind_eth66get_pooled_transactions_requested
+ks compare, p-value: 3.6358631886026355e-83
+nethermind_header_db_writes
+ks compare, p-value: 0.8614486989148642
+nethermind_breach_of_protocol_disconnects
+ks compare, p-value: 1.0
+nethermind_state_db_reads
+ks compare, p-value: 0.93549438190428
+nethermind_eth66get_block_headers_received
+ks compare, p-value: 0.33031515939141587
+nethermind_incoming_connections
+ks compare, p-value: 1.4519737525987941e-08
+nethermind_eip1559transactions_ratio
+ks compare, p-value: 0.0036414659646810594
+nethermind_json_rpc_bytes_sent_http
+ks compare, p-value: 0.003462383745555545
+nethermind_tree_node_hash_calculations
+ks compare, p-value: 0.0001107650116900482
+nethermind_already_connected_disconnects
+ks compare, p-value: 0.4250912724258059
+nethermind_code_db_writes
+ks compare, p-value: 0.13457674290707775
+nethermind_transactions
+ks compare, p-value: 4.173273519790679e-23
+nethermind_useless_peer_disconnects
+ks compare, p-value: 0.7627362049940425
+nethermind_eth66block_headers_received
+ks compare, p-value: 0.03445238403722415
+nethermind_pending_transactions_with_expensive_filtering
+ks compare, p-value: 1.1711814989487128e-38
+nethermind_p2pbytes_sent
+ks compare, p-value: 5.990533477005692e-07
+nethermind_metadata_db_writes
+ks compare, p-value: 0.9535260600896165
+nethermind_cached_nodes_count
+ks compare, p-value: 0.07865502298747991
+nethermind_bn256mul_precompile
+ks compare, p-value: 0.9079559673434929
+nethermind_eth66get_pooled_transactions_received
+ks compare, p-value: 3.5743537058327196e-43
+process_num_threads
+ks compare, p-value: 0.9615066936343617
+nethermind_other_disconnects
+ks compare, p-value: 0.6025785059598667
+nethermind_storage_tree_writes
+ks compare, p-value: 0.34124670119045175
+nethermind_self_destructs
+ks compare, p-value: 0.0004080751240253118
+nethermind_code_db_reads
+ks compare, p-value: 0.3783869736791746
+nethermind_bn256pairing_precompile
+ks compare, p-value: 0.9028548328020336
+nethermind_json_rpc_bytes_received_http
+ks compare, p-value: 0.022076887555058832
+nethermind_eth66get_block_bodies_received
+ks compare, p-value: 0.005047982722922907
+nethermind_json_rpc_successes
+ks compare, p-value: 9.071618005855819e-07
+nethermind_pruning_time
+ks compare, p-value: 0.8652468077836928
+nethermind_deep_pruned_persisted_nodes_count
+ks compare, p-value: 0.8722523007561782
+nethermind_local_already_connected_disconnects
+ks compare, p-value: 0.06822147116930147
+nethermind_mgas
+ks compare, p-value: 0.1777752612297019
+nethermind_discovery_bytes_received
+ks compare, p-value: 2.0191281733233557e-25
+nethermind_statuses_received
+ks compare, p-value: 0.06159319491661489
+nethermind_pending1559transactions_added
+ks compare, p-value: 5.217351067971849e-81
+nethermind_hellos_received
+ks compare, p-value: 0.04830781281491882
+nethermind_local_useless_peer_disconnects
+ks compare, p-value: 0.013464195603540214
+nethermind_forkchoice_upded_execution_time
+ks compare, p-value: 1.0327732411533941e-07
+nethermind_loaded_from_rlp_cache_nodes_count
+ks compare, p-value: 8.279996734973593e-14
+nethermind_calls
+ks compare, p-value: 0.06683207949806767
+nethermind_eth66pooled_transactions_received
+ks compare, p-value: 2.5844125342484703e-83
+nethermind_header_db_reads
+ks compare, p-value: 4.205889920353122e-76
+nethermind_new_payload_execution_time
+ks compare, p-value: 0.02619186972979023
+nethermind_last_persisted_block_number
+ks compare, p-value: 0.7652314317793397
+nethermind_discovery_bytes_sent
+ks compare, p-value: 8.043634856900495e-31
+nethermind_bn256add_precompile
+ks compare, p-value: 0.9085277717768367
+nethermind_json_rpc_bytes_sent
+ks compare, p-value: 0.003462383745555545
+nethermind_replaced_nodes_count
+ks compare, p-value: 0.07078403219693047
+nethermind_json_rpc_requests
+ks compare, p-value: 7.366411987783388e-08
+nethermind_outgoing_connections
+ks compare, p-value: 0.292951290265583
+nethermind_local_too_many_peers_disconnects
+ks compare, p-value: 1.3954764875252209e-09
+nethermind_state_tree_reads
+ks compare, p-value: 1.9028930407580236e-27
+nethermind_handshake_timeouts
+ks compare, p-value: 3.115307185347355e-08
+nethermind_blocks_db_writes
+ks compare, p-value: 0.8614486989148642
+nethermind_receipts_db_writes
+ks compare, p-value: 0.8709594821174865
+nethermind_loaded_from_cache_nodes_count
+ks compare, p-value: 3.051950785398901e-33
+nethermind_eth62transactions_received
+ks compare, p-value: 2.301220017671774e-136
+nethermind_sha256precompile
+ks compare, p-value: 0.567748163419578
+nethermind_handshakes
+ks compare, p-value: 6.39654912508911e-07
+nethermind_committed_nodes_count
+ks compare, p-value: 0.0018578341051579527
+nethermind_block_infos_db_reads
+ks compare, p-value: 0.07283906918435651
+nethermind_p2pbytes_received
+ks compare, p-value: 1.0149068551357664e-62
+nethermind_memory_used_by_cache
+ks compare, p-value: 0.005980545180584709
+nethermind_pending_transactions_nonce_gap
+ks compare, p-value: 1.4301149516126301e-13
+nethermind_persisted_node_count
+ks compare, p-value: 0.768497071398279
+nethermind_block_infos_db_writes
+ks compare, p-value: 0.9847252152969023
+nethermind_dark_pool_ratio_level2
+ks compare, p-value: 0.23132330591913208
+nethermind_eth66get_node_data_received
+ks compare, p-value: 0.0008824435980055546
+nethermind_hellos_sent
+ks compare, p-value: 0.08485383695783032
+nethermind_last_block_processing_time_in_ms
+ks compare, p-value: 0.028282396216947954
+nethermind_pruned_transient_nodes_count
+ks compare, p-value: 0.758138378553539
+nethermind_pending_transactions_too_low_fee
+ks compare, p-value: 0.0048411342158984185
+nethermind_tree_node_rlp_encodings
+ks compare, p-value: 8.741269378239451e-05
+nethermind_pending_transactions_hashes_sent
+ks compare, p-value: 9.739263196630133e-53
+nethermind_eth66get_receipts_received
+ks compare, p-value: 0.2336916444685584
+nethermind_ec_recover_precompile
+ks compare, p-value: 7.973022509000948e-07
+nethermind_dark_pool_ratio_level1
+ks compare, p-value: 0.40148698655099035
+nethermind_pruned_persisted_nodes_count
+ks compare, p-value: 0.8561899175089923
+nethermind_blocks
+ks compare, p-value: 0.8617878742128849
+nethermind_storage_tree_reads
+ks compare, p-value: 0.005157361634086391
+nethermind_local_receive_message_timeout_disconnects
+ks compare, p-value: 0.08187753414368908
+nethermind_sstore_opcode
+ks compare, p-value: 0.9944367828803202
+nethermind_sload_opcode
+ks compare, p-value: 0.0039038847057929716
+nethermind_pending_transactions_known
+ks compare, p-value: 5.807203637728605e-155
+nethermind_eth62new_block_received
+ks compare, p-value: 0.316637263886013
+process_private_memory_bytes
+ks compare, p-value: 0.04635152020123355
+nethermind_mod_exp_precompile
+ks compare, p-value: 0.1231392207193711
+process_open_handles
+ks compare, p-value: 0.0013958964667086379
+dotnet_total_memory_bytes
+ks compare, p-value: 2.90568162634085e-06
+nethermind_too_many_peers_disconnects
+ks compare, p-value: 0.02544363345612127
+nethermind_disconnect_requested_disconnects
+ks compare, p-value: 0.3494550381101681
+process_virtual_memory_bytes
+ks compare, p-value: 0.4129857827271286
+nethermind_pending_transactions_added
+ks compare, p-value: 2.0829250308784386e-54
+nethermind_blockhash_opcode
+ks compare, p-value: 0.12072236025682219
+nethermind_eth65new_pooled_transaction_hashes_sent
+ks compare, p-value: 5.637033392847653e-06
+process_cpu_seconds_total
+ks compare, p-value: 1.0415594798422964e-28
+nethermind_receive_message_timeout_disconnects
+ks compare, p-value: 0.3170410813912863
+nethermind_pending_transactions_evicted
+ks compare, p-value: 1.7652780881291215e-61
+231 metrics in total
+115 inactive metrics: nethermind_user_operations_pending, nethermind_bundles_simulated, nethermind_null_node_identity_disconnects, nethermind_ripemd160precompile, nethermind_state_db_in_pruning_writes, nethermind_failed_block_seals, nethermind_json_rpc_bytes_sent_ipc, nethermind_recovery_queue_size, nethermind_reveal_number, nethermind_eth63get_node_data_received, nethermind_local_disconnect_requested_disconnects, nethermind_state_branch_progress, nethermind_synced_codes, nethermind_evm_exceptions, nethermind_state_db_writes, nethermind_local_same_as_self_disconnects, nethermind_unexpected_identity_disconnects, nethermind_eth65get_pooled_transactions_requested, nethermind_snap_synced_codes, nethermind_eth62new_block_hashes_received, nethermind_megabundles_received, nethermind_snap_synced_accounts, nethermind_blocks_sealed, nethermind_other_db_writes, nethermind_fast_bodies, nethermind_fast_headers, nethermind_reported_benign_misbehaviour, nethermind_snap_get_storage_ranges_received, nethermind_snap_get_byte_codes_sent, nethermind_can_produce_blocks, nethermind_chtdb_reads, nethermind_snap_get_trie_nodes_sent, nethermind_fast_receipts, nethermind_eth66receipts_received, nethermind_json_rpc_request_deserialization_failures, nethermind_witness_db_reads, nethermind_local_other_disconnects, nethermind_json_rpc_invalid_requests, nethermind_total_difficulty, nethermind_sealed_transactions, nethermind_eth65pooled_transactions_received, nethermind_emit_initiate_change, nethermind_tcp_subsystem_error_disconnects, nethermind_tload_opcode, nethermind_state_synced, process_start_time_seconds, nethermind_number_of_transactions_in_get_payload, nethermind_eth63node_data_received, nethermind_synced_storage_trie_nodes, nethermind_bundles_received, nethermind_valid_bundles_received, nethermind_metadata_db_reads, nethermind_snap_state_synced, nethermind_json_rpc_bytes_received_ipc, nethermind_eth62block_headers_received, nethermind_chtdb_writes, nethermind_eth62block_bodies_received, nethermind_user_operations_simulated, nethermind_au_ra_step, nethermind_eth62get_block_headers_received, nethermind_local_tcp_subsystem_error_disconnects, nethermind_user_operations_messages_received, nethermind_synced_state_trie_nodes, nethermind_eth65new_pooled_transaction_hashes_received, nethermind_snap_get_byte_codes_received, nethermind_valid_megabundles_received, nethermind_deep_pruning_time, nethermind_snap_get_trie_nodes_received, nethermind_json_rpc_bytes_received_web_sockets, nethermind_witness_db_writes, nethermind_local_incompatible_p2pdisconnects, nethermind_local_unexpected_identity_disconnects, nethermind_commit_hash_transaction, nethermind_processing_queue_size, nethermind_user_operations_messages_sent, nethermind_witness_block_requests, nethermind_bloom_db_reads, nethermind_snap_get_account_range_sent, nethermind_get_payload_requests, nethermind_local_null_node_identity_disconnects, nethermind_last_difficulty, nethermind_les_statuses_received, nethermind_version, nethermind_eth66node_data_received, nethermind_receipts_db_reads, nethermind_witness_state_requests, nethermind_eth65get_pooled_transactions_received, nethermind_priority_peers, nethermind_total_coinbase_payments, nethermind_snap_byte_codes_received, nethermind_eth62get_block_bodies_received, nethermind_les_statuses_sent, nethermind_reported_malicious_misbehaviour, nethermind_incompatible_p2pdisconnects, nethermind_state_sync_requests, nethermind_snap_synced_storage_slots, nethermind_snap_trie_nodes_received, nethermind_tstore_opcode, nethermind_local_client_quitting_disconnects, nethermind_validators_count, nethermind_snap_storage_ranges_received, nethermind_eth63receipts_received, nethermind_other_db_reads, nethermind_eth66block_bodies_received, nethermind_json_rpc_errors, nethermind_user_operations_included, nethermind_user_operations_received, nethermind_snap_get_account_range_received, nethermind_same_as_self_disconnects, nethermind_eth63get_receipts_received, nethermind_snap_account_range_received, nethermind_pending_transactions_sent, nethermind_state_db_pruning, nethermind_json_rpc_bytes_sent_web_sockets, nethermind_snap_get_storage_ranges_sent
+55 stable metrics (ks): nethermind_local_breach_of_protocol_disconnects, nethermind_statuses_sent, nethermind_reorganizations, nethermind_client_quitting_disconnects, nethermind_bloom_db_writes, nethermind_snapshot_persistence_time, nethermind_header_db_writes, nethermind_breach_of_protocol_disconnects, nethermind_state_db_reads, nethermind_eth66get_block_headers_received, nethermind_already_connected_disconnects, nethermind_code_db_writes, nethermind_useless_peer_disconnects, nethermind_eth66block_headers_received, nethermind_metadata_db_writes, nethermind_cached_nodes_count, nethermind_bn256mul_precompile, process_num_threads, nethermind_other_disconnects, nethermind_storage_tree_writes, nethermind_code_db_reads, nethermind_bn256pairing_precompile, nethermind_pruning_time, nethermind_deep_pruned_persisted_nodes_count, nethermind_local_already_connected_disconnects, nethermind_mgas, nethermind_statuses_received, nethermind_hellos_received, nethermind_calls, nethermind_last_persisted_block_number, nethermind_bn256add_precompile, nethermind_replaced_nodes_count, nethermind_outgoing_connections, nethermind_blocks_db_writes, nethermind_receipts_db_writes, nethermind_sha256precompile, nethermind_block_infos_db_reads, nethermind_persisted_node_count, nethermind_block_infos_db_writes, nethermind_dark_pool_ratio_level2, nethermind_hellos_sent, nethermind_pruned_transient_nodes_count, nethermind_eth66get_receipts_received, nethermind_dark_pool_ratio_level1, nethermind_pruned_persisted_nodes_count, nethermind_blocks, nethermind_local_receive_message_timeout_disconnects, nethermind_sstore_opcode, nethermind_eth62new_block_received, process_private_memory_bytes, nethermind_mod_exp_precompile, nethermind_disconnect_requested_disconnects, process_virtual_memory_bytes, nethermind_blockhash_opcode, nethermind_receive_message_timeout_disconnects
