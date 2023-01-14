@@ -42,10 +42,15 @@ def restart_monitor(client_name, monitor_path):
     time.sleep(3)
 
 def restart_client(client_name, client_path, restart_cmd, client_log):
+    process_name = client_name
+    if "synchronize.sh" in restart_cmd:
+        # we use neth to start/restart the client
+        process_name = "synchronize.sh"
+
     pid = pgrep_the_process(client_name)
     if pid != None:
         logging.info("to restart the client, stop the current process (%s) first"%pid)
-        os.system("kill %s"%pid)
+        os.system("pkill %s"%process_name)
         time.sleep(3)
 
     # check whether the client process has completely stopped
