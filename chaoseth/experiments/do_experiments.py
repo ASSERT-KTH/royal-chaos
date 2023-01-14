@@ -38,7 +38,7 @@ def restart_monitor(client_name, monitor_path):
     global MONITOR
     if (MONITOR != None): os.killpg(os.getpgid(MONITOR.pid), signal.SIGTERM)
     time.sleep(1)
-    MONITOR = subprocess.Popen(full_monitor_path, close_fds = True, shell = True, preexec_fn = os.setsid)
+    MONITOR = subprocess.Popen(monitor_path, close_fds = True, shell = True, preexec_fn = os.setsid)
     time.sleep(3)
 
 def restart_client(client_name, client_path, restart_cmd, client_log):
