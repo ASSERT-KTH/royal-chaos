@@ -37,12 +37,9 @@ def pgrep_the_process(process_name):
 def restart_monitor(client_name, monitor_path):
     global MONITOR
     if (MONITOR != None): os.killpg(os.getpgid(MONITOR.pid), signal.SIGTERM)
-
-    pid = pgrep_the_process(client_name)
-    if pid != None:
-        full_monitor_path = monitor_path.format(pid = pid)
-        MONITOR = subprocess.Popen("%s"%full_monitor_path, close_fds = True, shell = True, preexec_fn = os.setsid)
-        time.sleep(3)
+    time.sleep(1)
+    MONITOR = subprocess.Popen(full_monitor_path, close_fds = True, shell = True, preexec_fn = os.setsid)
+    time.sleep(3)
 
 def restart_client(client_name, client_path, restart_cmd, client_log):
     pid = pgrep_the_process(client_name)
@@ -78,13 +75,15 @@ def tail_client_log(client_log, timeout):
 
     return output
 
-def query_metrics(metric_urls, last_n_seconds, ss_metrics):
+def query_metrics(metric_urls, last_n_seconds, ss_metrics, metrics_for_ce_experiments):
     end_ts = int(time.time())
     start_ts = end_ts - last_n_seconds
 
     results = dict()
     results["stat"] = dict()
     for metric_name, query_url in metric_urls:
+        if metric_name not in metrics_for_ce_experiments: continue
+
         response = requests.get(query_url.format(start = start_ts, end = end_ts))
 
         if "api/v1" in query_url:
@@ -141,14 +140,14 @@ def dump_metric(content, filepath, filename):
     with open(os.path.join(filepath, filename), "wt") as output:
         json.dump(content, output, indent = 2)
 
-def do_experiment(experiment, injector_path, client_name, client_log, dump_logs_path, metric_urls, ss_metrics):
+def do_experiment(experiment, injector_path, client_name, client_log, dump_logs_path, metric_urls, ss_metrics, metrics_for_ce_experiments):
     global INJECTOR
 
     # experiment principle
     # 5 min normal execution, tail the log
     # 5 min error injection, tail the log
     #   restart hedwig if necessary
-    # 5 min recovery phase + 5 min post-recovery steady state analysis
+    # 10 min recovery phase + 5 min post-recovery steady state analysis
 
     pid = pgrep_the_process(client_name)
     if pid == None:
@@ -165,7 +164,7 @@ def do_experiment(experiment, injector_path, client_name, client_log, dump_logs_
     logging.info("5 min pre-check phase begins")
     normal_execution_log = tail_client_log(client_log, 60*5)
     dump_logs(normal_execution_log, dump_logs_folder, "pre_check.log")
-    normal_execution_metrics = query_metrics(metric_urls, 60*5, ss_metrics)
+    normal_execution_metrics = query_metrics(metric_urls, 60*5, ss_metrics, metrics_for_ce_experiments)
     dump_metric(normal_execution_metrics, dump_logs_folder, "pre_check_metrics.json")
     result["metrics"] = dict()
     result["metrics"]["pre_check"] = normal_execution_metrics["stat"]
@@ -173,8 +172,8 @@ def do_experiment(experiment, injector_path, client_name, client_log, dump_logs_
     # step 2: error injection experiment
     # start the injector
     logging.info("%d seconds chaos engineering experiment begins"%experiment["experiment_duration"])
-    INJECTOR = subprocess.Popen("python -u %s -p %s -P %s --errorno=%s %s"%(
-        injector_path, pid, experiment["failure_rate"], experiment["error_code"], experiment["syscall_name"]
+    INJECTOR = subprocess.Popen("python -u %s --process %s -P %s --errorno=%s %s"%(
+        injector_path, client_name, experiment["failure_rate"], experiment["error_code"], experiment["syscall_name"]
     ), stdout = subprocess.PIPE, stderr = subprocess.PIPE, close_fds = True, shell = True, preexec_fn = os.setsid)
     ce_execution_log = tail_client_log(client_log, experiment["experiment_duration"])
     # end the injector
@@ -199,18 +198,18 @@ def do_experiment(experiment, injector_path, client_name, client_log, dump_logs_
     else:
         result["client_crashed"] = False
         # only query peer stats when the client is not crashed
-        ce_execution_metrics = query_metrics(metric_urls, experiment["experiment_duration"], ss_metrics)
+        ce_execution_metrics = query_metrics(metric_urls, experiment["experiment_duration"], ss_metrics, metrics_for_ce_experiments)
         dump_metric(ce_execution_metrics, dump_logs_folder, "ce_execution_metrics.json")
         result["metrics"]["ce"] = ce_execution_metrics["stat"]
 
-    # step 3: 5 mins recovery phase + 5 mins validation phase
+    # step 3: 10 mins recovery phase + 5 mins validation phase
     if not result["client_crashed"]:
         logging.info("5 mins recovery phase, we do nothing here.")
-        time.sleep(60*5)
+        time.sleep(60*10)
         logging.info("5 mins validation phase")
         validation_phase_log = tail_client_log(client_log, 60*5)
         dump_logs(validation_phase_log, dump_logs_folder, "validation_phase.log")
-        validation_phase_metrics = query_metrics(metric_urls, 60*5, ss_metrics)
+        validation_phase_metrics = query_metrics(metric_urls, 60*5, ss_metrics, metrics_for_ce_experiments)
         dump_metric(validation_phase_metrics, dump_logs_folder, "validation_phase_metrics.json")
         result["metrics"]["validation"] = validation_phase_metrics["stat"]
 
@@ -230,6 +229,8 @@ def main(config):
     syscall_injector = config["ChaosEVM"]["syscall_injector"]
     client_monitor = config["ChaosEVM"]["client_monitor"]
     dump_logs_path = config["ChaosEVM"]["dump_logs_path"]
+    metrics_for_ce_experiments = config["ChaosEVM"]["metrics_for_ce_experiments"]
+    metrics_for_ce_experiments_list = metrics_for_ce_experiments.replace(" ", "").split(",")
     client_name = config["EthClient"]["client_name"]
     client_path = config["EthClient"]["client_path"]
     restart_cmd = config["EthClient"]["restart_cmd"]
@@ -239,10 +240,9 @@ def main(config):
     # check whether the monitor is running
     monitor_pid = pgrep_the_process("client_monitor")
     if monitor_pid != None:
-        # kill the existing monitor as we need to take control of the monitor in this script
-        os.system("kill %s"%monitor_pid)
         time.sleep(3)
-    restart_monitor(client_name, client_monitor)
+    else:
+        restart_monitor(client_name, client_monitor)
 
     with open(error_models, 'rt') as error_models_file, open(steady_state, 'rt') as steady_state_file:
         experiments = json.load(error_models_file)
@@ -250,15 +250,13 @@ def main(config):
         ss_metrics = ss_data["other_metrics"]
 
         for experiment in experiments["experiments"]:
-            experiment = do_experiment(experiment, syscall_injector, client_name, client_log, dump_logs_path, metric_urls, ss_metrics)
+            experiment = do_experiment(experiment, syscall_injector, client_name, client_log, dump_logs_path, metric_urls, ss_metrics, metrics_for_ce_experiments_list)
             save_experiment_result(experiments, "%s-results.json"%client_name)
 
             # no matter the experiment crashes the client or not, we restart the client to avoid state corruptions
             new_pid = restart_client(client_name, client_path, restart_cmd, client_log)
             if new_pid == None:
                 break
-            else:
-                restart_monitor(client_name, client_monitor)
             # sleep for 2 hours to give the client time to warm up before a new experiment
             logging.info("2 hours warm up phase begins")
             time.sleep(60*60*2)
