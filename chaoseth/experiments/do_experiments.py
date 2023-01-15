@@ -120,8 +120,10 @@ def query_metrics(metric_urls, last_n_seconds, ss_metrics, metrics_for_ce_experi
             results["stat"][metric_name] = {"min": min_value, "mean": mean_value, "max": max_value, "variance": variance}
 
     # calculate the pvalues
-    for metric in metrics_for_ce_experiments:
+    for metric in ss_metrics:
         metric_name = metric["metric_name"]
+        if metric_name not in metrics_for_ce_experiments: continue
+
         ss_metric_points = numpy.array(metric["data_points"]).astype(float)
         experiment_metric_points = numpy.array(results[metric_name]["values"]).astype(float)
         t = mannwhitneyu(ss_metric_points[:,1], experiment_metric_points[:,1])
