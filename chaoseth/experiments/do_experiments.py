@@ -43,9 +43,11 @@ def restart_monitor(client_name, monitor_path):
 
 def restart_client(client_name, client_path, restart_cmd, client_log):
     process_name = client_name
+    restart_cmd_full = "cd %s && %s >> %s 2>&1 &"%(client_path, restart_cmd, client_log)
     if "synchronize.sh" in restart_cmd:
         # we use neth to start/restart the client
         process_name = "synchronize.sh"
+        restart_cmd_full = "cd %s && %s >> /dev/null 2>&1 &"%(client_path, restart_cmd)
 
     pid = pgrep_the_process(client_name)
     if pid != None:
@@ -61,7 +63,7 @@ def restart_client(client_name, client_path, restart_cmd, client_log):
         else:
             break
 
-    os.system("cd %s && %s >> %s 2>&1 &"%(client_path, restart_cmd, client_log))
+    os.system(restart_cmd_full)
     time.sleep(3)
 
     pid = pgrep_the_process(client_name)
