@@ -110,7 +110,11 @@ def query_metrics(metric_urls, last_n_seconds, ss_metrics, metrics_for_ce_experi
                 logging.error("peer stats query failed")
                 logging.error(response.json())
             else:
-                results[metric_name] = response.json()["results"][0]["series"][0]
+                if "series" in response.json()["results"][0]:
+                    results[metric_name] = response.json()["results"][0]["series"][0]
+                else:
+                    logging.warning("no data points found for metric %s"%metric_name)
+                    results[metric_name] = None
 
         # calculate statistic information of the values
         if results[metric_name] != None:
@@ -124,7 +128,7 @@ def query_metrics(metric_urls, last_n_seconds, ss_metrics, metrics_for_ce_experi
     # calculate the pvalues
     for metric in ss_metrics:
         metric_name = metric["metric_name"]
-        if metric_name not in metrics_for_ce_experiments: continue
+        if metric_name not in metrics_for_ce_experiments or results[metric_name] == None: continue
 
         ss_metric_points = numpy.array(metric["data_points"]).astype(float)
         experiment_metric_points = numpy.array(results[metric_name]["values"]).astype(float)
