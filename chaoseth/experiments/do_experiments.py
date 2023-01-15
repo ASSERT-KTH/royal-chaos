@@ -179,7 +179,7 @@ def do_experiment(experiment, injector_path, client_name, client_log, dump_logs_
     # step 2: error injection experiment
     # start the injector
     logging.info("%d seconds chaos engineering experiment begins"%experiment["experiment_duration"])
-    INJECTOR = subprocess.Popen("python -u %s --process %s -P %s --errorno=%s %s"%(
+    INJECTOR = subprocess.Popen("python -u %s --process %s -P %s --errorno=%s --syscall=%s"%(
         injector_path, client_name, experiment["failure_rate"], experiment["error_code"], experiment["syscall_name"]
     ), stdout = subprocess.PIPE, stderr = subprocess.PIPE, close_fds = True, shell = True, preexec_fn = os.setsid)
     ce_execution_log = tail_client_log(client_log, experiment["experiment_duration"])

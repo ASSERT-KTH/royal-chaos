@@ -115,7 +115,7 @@ def calculate_countdown(count):
 def get_arguments():
     parser = argparse.ArgumentParser(description="Syscall failure injector",
             formatter_class=argparse.RawDescriptionHelpFormatter,
-            epilog="./syscall_injector.py -p 12345 -p 54321 -P 0.8 --errorno=-ENOENT openat")
+            epilog="./syscall_injector.py -p 12345 -p 54321 -P 0.8 --errorno=-ENOENT --syscall=openat")
     parser.add_argument("-p", "--pid", action="append", type=int,
             help="inject failures in a pid (can be given for multiple times)")
     parser.add_argument("--process", action="append",
