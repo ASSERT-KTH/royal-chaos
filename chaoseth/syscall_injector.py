@@ -81,8 +81,7 @@ int inject_when_exit(struct pt_regs *ctx)
 """
 bpfs = list()
 
-def calculate_probability(target_probability, original_probability):
-
+def calculate_probability(target_probability, original_probability=None):
     if original_probability != None:
         success_disrupt_prob = (target_probability - original_probability) / (1 - original_probability)
         return "bpf_get_prandom_u32() > 1 - %s" % str(int((1<<32)*success_disrupt_prob))
