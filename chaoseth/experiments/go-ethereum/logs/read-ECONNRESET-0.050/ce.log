@@ -1,71 +1,119 @@
-INFO [10-10|10:23:12.529] Imported new block headers               count=2    elapsed=6.803ms   number=13,390,356 hash=cfdd59..c1b9da
-INFO [10-10|10:23:16.233] Imported new block headers               count=1    elapsed=6.102ms   number=13,390,357 hash=240325..dd014a
-INFO [10-10|10:23:17.929] State heal in progress                   accounts=41501@2.08MiB    slots=145,986@10.92MiB codes=13449@114.37MiB nodes=322,235,828@95.05GiB pending=94912
-INFO [10-10|10:23:19.847] Imported new block headers               count=1    elapsed=6.635ms   number=13,390,358 hash=b043da..7cb6f3
-INFO [10-10|10:23:28.828] State heal in progress                   accounts=41569@2.08MiB    slots=146,057@10.93MiB codes=13449@114.37MiB nodes=322,236,463@95.05GiB pending=95010
-INFO [10-10|10:23:33.011] Imported new block headers               count=1    elapsed=6.958ms   number=13,390,359 hash=0af75b..7a8ad4
-INFO [10-10|10:23:36.719] Imported new block headers               count=1    elapsed=7.615ms   number=13,390,360 hash=9dfebd..a440ae
-INFO [10-10|10:23:37.626] Downloader queue stats                   receiptTasks=0    blockTasks=0    itemSize=218.40KiB throttle=1201
-INFO [10-10|10:23:37.640] State heal in progress                   accounts=41603@2.09MiB    slots=146,169@10.93MiB codes=13449@114.37MiB nodes=322,237,041@95.05GiB pending=95075
-INFO [10-10|10:23:46.639] Imported new block headers               count=1    elapsed=5.998ms   number=13,390,361 hash=4ab1bd..331769
-INFO [10-10|10:23:49.014] State heal in progress                   accounts=41646@2.09MiB    slots=146,260@10.94MiB codes=13449@114.37MiB nodes=322,237,720@95.05GiB pending=95313
-WARN [10-10|10:23:56.213] Unexpected trienode heal packet          peer=cecf2923 reqid=9,093,719,323,585,694,394
-WARN [10-10|10:23:56.274] Unexpected trienode heal packet          peer=d671bdb8 reqid=1,121,176,044,504,972,465
-WARN [10-10|10:23:56.352] Unexpected trienode heal packet          peer=cfd618ea reqid=7,937,283,844,240,278,895
-WARN [10-10|10:23:56.608] Unexpected trienode heal packet          peer=7d8fda84 reqid=4,878,479,308,669,117,244
-INFO [10-10|10:24:01.053] State heal in progress                   accounts=41693@2.09MiB    slots=146,374@10.95MiB codes=13449@114.37MiB nodes=322,238,380@95.05GiB pending=95478
-INFO [10-10|10:24:07.104] State heal in progress                   accounts=41704@2.09MiB    slots=146,458@10.96MiB codes=13449@114.37MiB nodes=322,238,765@95.05GiB pending=95508
-WARN [10-10|10:24:07.113] Synchronisation failed, dropping peer    peer=d07f0f9d955b66709cafe01396706e59991e18136eafac52f63cfa42f6ece5f7 err="action from bad peer ignored: header request timed out"
-INFO [10-10|10:24:07.191] Disabling direct-ancient mode            origin=13,390,240 ancient=12,976,127
-INFO [10-10|10:24:13.192] State heal in progress                   accounts=41704@2.09MiB    slots=146,458@10.96MiB codes=13449@114.37MiB nodes=322,238,765@95.05GiB pending=1
-WARN [10-10|10:24:13.204] Synchronisation failed, dropping peer    peer=2e4a8b1ef9c33212a19d9fed09519883d71188a1de49aabec0eb48463e53cb53 err="action from bad peer ignored: header request timed out"
-INFO [10-10|10:24:13.968] Disabling direct-ancient mode            origin=13,390,241 ancient=12,976,127
-INFO [10-10|10:24:14.661] Imported new block headers               count=1    elapsed=306.574ms number=13,390,362 hash=8c438c..d9dc77 ignored=120
-INFO [10-10|10:24:17.554] Imported new block headers               count=1    elapsed=6.722ms   number=13,390,363 hash=17908f..cc7ece
-INFO [10-10|10:24:20.927] Imported new block receipts              count=20   elapsed=39.906ms  number=13,390,261 hash=56f6bf..a01d95 age=22m14s   size=2.58MiB
-INFO [10-10|10:24:21.105] Imported new block receipts              count=37   elapsed=75.943ms  number=13,390,298 hash=b52bae..ee60b2 age=14m8s    size=4.18MiB
-INFO [10-10|10:24:21.105] State heal in progress                   accounts=41704@2.09MiB    slots=146,458@10.96MiB codes=13449@114.37MiB nodes=322,238,765@95.05GiB pending=1
-ERROR[10-10|10:24:29.228] Snapshot extension registration failed   peer=51d80fd5 err="peer connected on snap without compatible eth support"
-WARN [10-10|10:24:29.270] Dropping unsynced node during sync       id=015a3ad26cebb106 conn=inbound addr=47.96.169.40:44866    type=OpenEthereum/v3.3.0-...
-INFO [10-10|10:24:36.242] Imported new block headers               count=1    elapsed=7.674ms   number=13,390,364 hash=2df089..c0afa7
-INFO [10-10|10:24:39.436] Imported new block headers               count=1    elapsed=6.217ms   number=13,390,365 hash=2aa924..5c1176
-INFO [10-10|10:24:40.117] Downloader queue stats                   receiptTasks=0    blockTasks=0    itemSize=221.44KiB throttle=1184
-INFO [10-10|10:24:45.816] Imported new block headers               count=1    elapsed=5.545ms   number=13,390,366 hash=637913..d9d49c
-ERROR[10-10|10:24:47.875] Snapshot extension registration failed   peer=1d4fc8e3 err="peer connected on snap without compatible eth support"
-ERROR[10-10|10:24:53.944] Snapshot extension registration failed   peer=044876c2 err="peer connected on snap without compatible eth support"
-INFO [10-10|10:24:55.291] Imported new block headers               count=1    elapsed=6.746ms   number=13,390,367 hash=5883a1..feae51
-INFO [10-10|10:24:58.749] Imported new block headers               count=1    elapsed=6.035ms   number=13,390,368 hash=b563bd..906754
-INFO [10-10|10:25:05.043] Imported new block headers               count=1    elapsed=5.862ms   number=13,390,369 hash=83149d..c7f9fd
-INFO [10-10|10:25:11.587] Imported new block headers               count=1    elapsed=5.889ms   number=13,390,370 hash=1d1e0b..0c83c7
-INFO [10-10|10:25:17.989] Imported new block headers               count=1    elapsed=5.469ms   number=13,390,371 hash=1cfc8c..950409
-INFO [10-10|10:25:32.149] State heal in progress                   accounts=41704@2.09MiB    slots=146,458@10.96MiB codes=13449@114.37MiB nodes=322,238,765@95.05GiB pending=1
-WARN [10-10|10:25:32.263] Dropping unsynced node during sync       id=9d926d99affb2bde conn=inbound addr=34.241.123.248:62965  type=Geth/v1.10.8-stable-...
-ERROR[10-10|10:25:41.644] Snapshot extension registration failed   peer=3a55a209 err="peer connected on snap without compatible eth support"
-INFO [10-10|10:25:49.441] Imported new block headers               count=1    elapsed=6.333ms   number=13,390,372 hash=8a5dd3..8b42e0
-INFO [10-10|10:25:50.163] Downloader queue stats                   receiptTasks=0    blockTasks=0    itemSize=195.62KiB throttle=1341
-INFO [10-10|10:25:59.022] Imported new block headers               count=1    elapsed=6.499ms   number=13,390,373 hash=817375..08121e
-INFO [10-10|10:26:02.624] State heal in progress                   accounts=41704@2.09MiB    slots=146,458@10.96MiB codes=13449@114.37MiB nodes=322,238,765@95.05GiB pending=1
-INFO [10-10|10:26:02.769] Imported new block headers               count=1    elapsed=5.964ms   number=13,390,374 hash=41c72b..1f4c5e
-ERROR[10-10|10:26:08.831] Snapshot extension registration failed   peer=219700a3 err="peer connected on snap without compatible eth support"
-INFO [10-10|10:26:15.532] State heal in progress                   accounts=41704@2.09MiB    slots=146,458@10.96MiB codes=13449@114.37MiB nodes=322,238,765@95.05GiB pending=1
-ERROR[10-10|10:26:27.447] Snapshot extension registration failed   peer=bda932ce err="peer connected on snap without compatible eth support"
-ERROR[10-10|10:26:30.661] Snapshot extension registration failed   peer=25bf4a98 err="peer connected on snap without compatible eth support"
-INFO [10-10|10:26:40.652] Imported new block headers               count=2    elapsed=7.109ms   number=13,390,376 hash=5d832b..35ec8d
-INFO [10-10|10:26:50.574] Imported new block headers               count=1    elapsed=5.622ms   number=13,390,377 hash=55ee42..0c621e
-INFO [10-10|10:26:51.202] Downloader queue stats                   receiptTasks=0    blockTasks=0    itemSize=228.89KiB throttle=1146
-ERROR[10-10|10:27:14.166] Snapshot extension registration failed   peer=250c7dca err="peer connected on snap without compatible eth support"
-INFO [10-10|10:27:18.322] State heal in progress                   accounts=41704@2.09MiB    slots=146,458@10.96MiB codes=13449@114.37MiB nodes=322,238,765@95.05GiB pending=1
-ERROR[10-10|10:27:27.254] Snapshot extension registration failed   peer=2eed2385 err="peer connected on snap without compatible eth support"
-ERROR[10-10|10:27:54.668] Snapshot extension registration failed   peer=934d1bb7 err="peer connected on snap without compatible eth support"
-ERROR[10-10|10:27:56.749] Snapshot extension registration failed   peer=f2d64dde err="peer connected on snap without compatible eth support"
-INFO [10-10|10:27:57.833] State heal in progress                   accounts=41704@2.09MiB    slots=146,458@10.96MiB codes=13449@114.37MiB nodes=322,238,765@95.05GiB pending=1
-ERROR[10-10|10:28:02.306] Snapshot extension registration failed   peer=cd976124 err="peer connected on snap without compatible eth support"
-INFO [10-10|10:28:03.943] Imported new block headers               count=2    elapsed=12.885ms  number=13,390,379 hash=cd668c..731405 age=1m28s
-INFO [10-10|10:28:04.249] Downloader queue stats                   receiptTasks=0    blockTasks=0    itemSize=217.64KiB throttle=1205
-INFO [10-10|10:28:09.163] State heal in progress                   accounts=41704@2.09MiB    slots=146,458@10.96MiB codes=13449@114.37MiB nodes=322,239,802@95.05GiB pending=13546
-ERROR[10-10|10:28:10.716] Snapshot extension registration failed   peer=78eb3493 err="peer connected on snap without compatible eth support"
-INFO [10-10|10:28:12.502] Imported new block headers               count=1    elapsed=6.459ms   number=13,390,380 hash=d33069..62f4f0 age=1m26s
-INFO [10-10|10:28:18.200] Imported new block headers               count=1    elapsed=6.385ms   number=13,390,381 hash=1a8c25..375363
-INFO [10-10|10:28:23.021] State heal in progress                   accounts=41704@2.09MiB    slots=146,458@10.96MiB codes=13449@114.37MiB nodes=322,241,655@95.06GiB pending=37474
-INFO [10-10|10:28:34.208] Imported new block headers               count=1    elapsed=9.269ms   number=13,390,382 hash=2fa47b..93e56d
-INFO [10-10|10:28:36.868] State heal in progress                   accounts=41704@2.09MiB    slots=146,458@10.96MiB codes=13449@114.37MiB nodes=322,243,005@95.06GiB pending=41168
+INFO [01-16|11:28:35.891] Unindexed transactions                   blocks=1    txs=187     tail=14,069,050 elapsed=3.529ms
+INFO [01-16|11:28:48.147] Imported new potential chain segment     blocks=1    txs=185     mgas=15.768  elapsed=176.266ms   mgasps=89.457  number=16,419,050 hash=9d14b4..afbfb9 dirty=1022.66MiB
+INFO [01-16|11:28:48.168] Chain head was updated                   number=16,419,050 hash=9d14b4..afbfb9 root=600891..076583 elapsed=10.105244ms
+INFO [01-16|11:28:48.170] Unindexed transactions                   blocks=1    txs=200     tail=14,069,051 elapsed=2.098ms
+INFO [01-16|11:29:00.237] Imported new potential chain segment     blocks=1    txs=125     mgas=11.328  elapsed=126.382ms   mgasps=89.637  number=16,419,051 hash=73832d..51e8da dirty=1022.75MiB
+INFO [01-16|11:29:00.248] Chain head was updated                   number=16,419,051 hash=73832d..51e8da root=afc092..9ec40d elapsed=3.580204ms
+INFO [01-16|11:29:00.250] Unindexed transactions                   blocks=1    txs=212     tail=14,069,052 elapsed=1.875ms
+INFO [01-16|11:29:13.093] Imported new potential chain segment     blocks=1    txs=138     mgas=13.300  elapsed=151.293ms   mgasps=87.907  number=16,419,052 hash=056a6a..40d0ac dirty=1022.47MiB
+INFO [01-16|11:29:13.109] Chain head was updated                   number=16,419,052 hash=056a6a..40d0ac root=2f4371..6b5e8a elapsed=2.427998ms
+INFO [01-16|11:29:13.110] Unindexed transactions                   blocks=1    txs=102     tail=14,069,053 elapsed=1.271ms
+ERROR[01-16|11:29:16.236] Error in block freeze operation          err="block receipts missing, can't freeze block 15256595"
+INFO [01-16|11:29:24.661] Imported new potential chain segment     blocks=1    txs=157     mgas=26.293  elapsed=171.623ms   mgasps=153.204 number=16,419,053 hash=caf085..4ad754 dirty=1023.23MiB
+INFO [01-16|11:29:24.674] Chain head was updated                   number=16,419,053 hash=caf085..4ad754 root=0cc247..5a128e elapsed=3.698894ms
+INFO [01-16|11:29:24.676] Unindexed transactions                   blocks=1    txs=130     tail=14,069,054 elapsed=1.273ms
+WARN [01-16|11:29:34.748] Snapshot extension registration failed   peer=443df8b7 err="peer connected on snap without compatible eth support"
+INFO [01-16|11:29:37.737] Imported new potential chain segment     blocks=1    txs=145     mgas=15.428  elapsed=182.884ms   mgasps=84.358  number=16,419,054 hash=9e0d6e..5730cb dirty=1020.69MiB
+INFO [01-16|11:29:37.758] Chain head was updated                   number=16,419,054 hash=9e0d6e..5730cb root=3b5e3a..8737a2 elapsed=7.445404ms
+INFO [01-16|11:29:37.759] Unindexed transactions                   blocks=1    txs=14      tail=14,069,055 elapsed="710.203µs"
+INFO [01-16|11:29:48.611] Imported new potential chain segment     blocks=1    txs=107     mgas=8.513   elapsed=134.365ms   mgasps=63.358  number=16,419,055 hash=1fcd27..e3cc40 dirty=1020.37MiB
+INFO [01-16|11:29:48.626] Chain head was updated                   number=16,419,055 hash=1fcd27..e3cc40 root=c16dab..148cf3 elapsed=7.011033ms
+INFO [01-16|11:29:48.629] Unindexed transactions                   blocks=1    txs=184     tail=14,069,056 elapsed=2.645ms
+WARN [01-16|11:29:59.144] Snapshot extension registration failed   peer=bb7714c1 err="peer connected on snap without compatible eth support"
+INFO [01-16|11:30:00.469] Imported new potential chain segment     blocks=1    txs=122     mgas=15.529  elapsed=235.721ms   mgasps=65.877  number=16,419,056 hash=176c64..c3812e dirty=1020.82MiB
+INFO [01-16|11:30:00.485] Chain head was updated                   number=16,419,056 hash=176c64..c3812e root=972c5f..c13c3d elapsed=6.747666ms
+INFO [01-16|11:30:00.485] Unindexed transactions                   blocks=1    txs=14      tail=14,069,057 elapsed="398.121µs"
+INFO [01-16|11:30:07.824] Looking for peers                        peercount=11 tried=41 static=0
+INFO [01-16|11:30:14.942] Imported new potential chain segment     blocks=1    txs=324     mgas=19.938  elapsed=246.170ms   mgasps=80.992  number=16,419,057 hash=67691e..303ac3 dirty=1022.21MiB
+INFO [01-16|11:30:14.977] Chain head was updated                   number=16,419,057 hash=67691e..303ac3 root=45aa72..9def5d elapsed=12.937196ms
+INFO [01-16|11:30:14.981] Unindexed transactions                   blocks=1    txs=180     tail=14,069,058 elapsed=3.520ms
+ERROR[01-16|11:30:16.246] Error in block freeze operation          err="block receipts missing, can't freeze block 15256595"
+ERROR[01-16|11:30:19.278] Empty cpu stats 
+INFO [01-16|11:30:23.854] Imported new potential chain segment     blocks=1    txs=80      mgas=28.227  elapsed=154.744ms   mgasps=182.411 number=16,419,058 hash=cda48c..c67942 dirty=1022.73MiB
+INFO [01-16|11:30:23.872] Chain head was updated                   number=16,419,058 hash=cda48c..c67942 root=b778fa..fc88ec elapsed=4.073007ms
+INFO [01-16|11:30:23.874] Unindexed transactions                   blocks=1    txs=82      tail=14,069,059 elapsed=1.740ms
+INFO [01-16|11:30:37.003] Imported new potential chain segment     blocks=1    txs=309     mgas=23.878  elapsed=322.984ms   mgasps=73.928  number=16,419,059 hash=615ee2..766791 dirty=1022.45MiB
+INFO [01-16|11:30:37.033] Chain head was updated                   number=16,419,059 hash=615ee2..766791 root=18d3eb..d8d96c elapsed=12.062691ms
+INFO [01-16|11:30:37.039] Unindexed transactions                   blocks=1    txs=302     tail=14,069,060 elapsed=5.683ms
+INFO [01-16|11:30:38.099] Looking for peers                        peercount=12 tried=41 static=0
+WARN [01-16|11:30:39.456] Checkpoint challenge timed out, dropping id=bdfa6602f579b499 conn=dyndial addr=34.202.193.18:30303  type=Geth/v1.10.26-stable...
+INFO [01-16|11:30:48.177] Looking for peers                        peercount=13 tried=39 static=0
+INFO [01-16|11:30:48.825] Imported new potential chain segment     blocks=1    txs=199     mgas=15.289  elapsed=206.107ms   mgasps=74.178  number=16,419,060 hash=4a1673..baa3e6 dirty=1022.68MiB
+INFO [01-16|11:30:48.837] Chain head was updated                   number=16,419,060 hash=4a1673..baa3e6 root=8aae77..f3155c elapsed=3.439638ms
+INFO [01-16|11:30:48.839] Unindexed transactions                   blocks=1    txs=147     tail=14,069,061 elapsed=1.312ms
+INFO [01-16|11:30:58.325] Looking for peers                        peercount=12 tried=41 static=0
+INFO [01-16|11:30:59.491] Imported new potential chain segment     blocks=1    txs=82      mgas=4.654   elapsed=102.706ms   mgasps=45.317  number=16,419,061 hash=ee23c4..398a96 dirty=1020.92MiB
+INFO [01-16|11:30:59.501] Chain head was updated                   number=16,419,061 hash=ee23c4..398a96 root=e185bb..9f150d elapsed=1.601878ms
+INFO [01-16|11:30:59.506] Unindexed transactions                   blocks=1    txs=228     tail=14,069,062 elapsed=2.326ms
+INFO [01-16|11:31:08.355] Looking for peers                        peercount=11 tried=40 static=0
+INFO [01-16|11:31:15.151] Imported new potential chain segment     blocks=1    txs=352     mgas=29.980  elapsed=397.788ms   mgasps=75.367  number=16,419,062 hash=590ec2..7d0a0c dirty=1022.61MiB
+INFO [01-16|11:31:15.172] Chain head was updated                   number=16,419,062 hash=590ec2..7d0a0c root=17304e..a92c03 elapsed=10.395087ms
+INFO [01-16|11:31:15.173] Unindexed transactions                   blocks=1    txs=85      tail=14,069,063 elapsed=1.001ms
+ERROR[01-16|11:31:16.252] Error in block freeze operation          err="block receipts missing, can't freeze block 15256595"
+INFO [01-16|11:31:18.402] Looking for peers                        peercount=12 tried=43 static=0
+INFO [01-16|11:31:24.879] Imported new potential chain segment     blocks=1    txs=124     mgas=9.866   elapsed=158.640ms   mgasps=62.193  number=16,419,063 hash=779c4f..7f812b dirty=1022.65MiB
+INFO [01-16|11:31:24.898] Chain head was updated                   number=16,419,063 hash=779c4f..7f812b root=e73f05..e76748 elapsed=5.854314ms
+INFO [01-16|11:31:24.902] Unindexed transactions                   blocks=1    txs=114     tail=14,069,064 elapsed=3.584ms
+INFO [01-16|11:31:28.431] Looking for peers                        peercount=11 tried=29 static=0
+INFO [01-16|11:31:36.544] Imported new potential chain segment     blocks=1    txs=131     mgas=15.679  elapsed=201.295ms   mgasps=77.892  number=16,419,064 hash=486cbf..468722 dirty=1022.83MiB
+INFO [01-16|11:31:36.558] Chain head was updated                   number=16,419,064 hash=486cbf..468722 root=3ed66a..b255ec elapsed=3.005179ms
+INFO [01-16|11:31:36.560] Unindexed transactions                   blocks=1    txs=256     tail=14,069,065 elapsed=1.979ms
+INFO [01-16|11:31:38.432] Looking for peers                        peercount=9  tried=36 static=0
+WARN [01-16|11:31:48.052] Snapshot extension registration failed   peer=6a0bcd3f err="peer connected on snap without compatible eth support"
+INFO [01-16|11:31:48.441] Imported new potential chain segment     blocks=1    txs=147     mgas=16.323  elapsed=196.130ms   mgasps=83.226  number=16,419,065 hash=02e3ae..390594 dirty=1022.54MiB
+INFO [01-16|11:31:48.462] Chain head was updated                   number=16,419,065 hash=02e3ae..390594 root=c6706d..b4f0fd elapsed=10.387829ms
+INFO [01-16|11:31:48.464] Unindexed transactions                   blocks=1    txs=61      tail=14,069,066 elapsed=1.280ms
+INFO [01-16|11:31:48.485] Looking for peers                        peercount=9  tried=38 static=0
+INFO [01-16|11:31:58.765] Looking for peers                        peercount=9  tried=40 static=0
+INFO [01-16|11:32:00.027] Imported new potential chain segment     blocks=1    txs=101     mgas=10.752  elapsed=151.287ms   mgasps=71.067  number=16,419,066 hash=2b283b..b44ffa dirty=1022.63MiB
+INFO [01-16|11:32:00.038] Chain head was updated                   number=16,419,066 hash=2b283b..b44ffa root=7843a0..235144 elapsed=3.906466ms
+INFO [01-16|11:32:00.039] Unindexed transactions                   blocks=1    txs=45      tail=14,069,067 elapsed="865.854µs"
+INFO [01-16|11:32:08.765] Looking for peers                        peercount=9  tried=41 static=0
+INFO [01-16|11:32:12.161] Imported new potential chain segment     blocks=1    txs=127     mgas=12.374  elapsed=149.582ms   mgasps=82.724  number=16,419,067 hash=327318..273403 dirty=1023.63MiB
+INFO [01-16|11:32:12.182] Chain head was updated                   number=16,419,067 hash=327318..273403 root=772f5d..c41a50 elapsed=8.386948ms
+INFO [01-16|11:32:12.186] Unindexed transactions                   blocks=1    txs=257     tail=14,069,068 elapsed=3.729ms
+ERROR[01-16|11:32:16.262] Error in block freeze operation          err="block receipts missing, can't freeze block 15256595"
+INFO [01-16|11:32:24.129] Imported new potential chain segment     blocks=1    txs=130     mgas=16.587  elapsed=178.065ms   mgasps=93.153  number=16,419,068 hash=efdf8a..6a8e24 dirty=1021.32MiB
+INFO [01-16|11:32:24.149] Chain head was updated                   number=16,419,068 hash=efdf8a..6a8e24 root=cefb50..a67eff elapsed=6.904908ms
+INFO [01-16|11:32:24.154] Unindexed transactions                   blocks=1    txs=312     tail=14,069,069 elapsed=5.144ms
+WARN [01-16|11:32:26.121] Checkpoint challenge timed out, dropping id=18efe0f89bb2fcee conn=dyndial addr=3.80.12.255:30325    type=
+INFO [01-16|11:32:29.097] Looking for peers                        peercount=8  tried=34 static=0
+INFO [01-16|11:32:36.731] Imported new potential chain segment     blocks=1    txs=144     mgas=14.205  elapsed=153.422ms   mgasps=92.584  number=16,419,069 hash=29f529..acde59 dirty=1022.24MiB
+INFO [01-16|11:32:36.753] Chain head was updated                   number=16,419,069 hash=29f529..acde59 root=124358..275e6a elapsed=7.958922ms
+INFO [01-16|11:32:36.754] Unindexed transactions                   blocks=1    txs=90      tail=14,069,070 elapsed=1.101ms
+INFO [01-16|11:32:39.098] Looking for peers                        peercount=6  tried=40 static=0
+INFO [01-16|11:32:48.267] Imported new potential chain segment     blocks=1    txs=116     mgas=10.840  elapsed=147.897ms   mgasps=73.296  number=16,419,070 hash=0b62ed..bba49f dirty=1021.30MiB
+INFO [01-16|11:32:48.286] Chain head was updated                   number=16,419,070 hash=0b62ed..bba49f root=370934..4615bd elapsed=4.996751ms
+INFO [01-16|11:32:48.293] Unindexed transactions                   blocks=1    txs=327     tail=14,069,071 elapsed=6.704ms
+INFO [01-16|11:32:49.098] Looking for peers                        peercount=6  tried=43 static=0
+INFO [01-16|11:32:59.099] Looking for peers                        peercount=6  tried=41 static=0
+INFO [01-16|11:33:09.176] Looking for peers                        peercount=7  tried=38 static=0
+INFO [01-16|11:33:10.629] Imported new potential chain segment     blocks=1    txs=215     mgas=15.578  elapsed=265.920ms   mgasps=58.583  number=16,419,071 hash=26d379..adeb67 dirty=1021.96MiB
+INFO [01-16|11:33:10.645] Chain head was updated                   number=16,419,071 hash=26d379..adeb67 root=ab5d9b..406f46 elapsed=5.783657ms
+INFO [01-16|11:33:10.647] Unindexed transactions                   blocks=1    txs=209     tail=14,069,072 elapsed=2.009ms
+INFO [01-16|11:33:11.529] Imported new potential chain segment     blocks=1    txs=19      mgas=1.526   elapsed=43.460ms    mgasps=35.102  number=16,419,072 hash=0f5af2..2c4698 dirty=1020.93MiB
+INFO [01-16|11:33:11.568] Chain head was updated                   number=16,419,072 hash=0f5af2..2c4698 root=dfecf4..7a6095 elapsed="448.156µs"
+INFO [01-16|11:33:11.572] Unindexed transactions                   blocks=1    txs=472     tail=14,069,073 elapsed=3.966ms
+ERROR[01-16|11:33:16.275] Error in block freeze operation          err="block receipts missing, can't freeze block 15256595"
+WARN [01-16|11:33:18.357] Snapshot extension registration failed   peer=3f53e438 err="peer connected on snap without compatible eth support"
+INFO [01-16|11:33:19.431] Looking for peers                        peercount=6  tried=35 static=0
+INFO [01-16|11:33:24.739] Imported new potential chain segment     blocks=1    txs=220     mgas=21.301  elapsed=320.576ms   mgasps=66.446  number=16,419,073 hash=9ebd0a..7355ed dirty=1021.86MiB
+INFO [01-16|11:33:24.761] Chain head was updated                   number=16,419,073 hash=9ebd0a..7355ed root=af6a29..daa393 elapsed=11.065149ms
+INFO [01-16|11:33:24.764] Unindexed transactions                   blocks=1    txs=167     tail=14,069,074 elapsed=2.682ms
+INFO [01-16|11:33:29.432] Looking for peers                        peercount=6  tried=36 static=0
+WARN [01-16|11:33:32.524] Unable to send to InfluxDB               err="Post \"http://localhost:8086/write?consistency=&db=chaoseth&precision=&rp=\": read tcp 127.0.0.1:35698->127.0.0.1:8086: read: connection reset by peer"
+INFO [01-16|11:33:39.192] Imported new potential chain segment     blocks=1    txs=152     mgas=16.659  elapsed=226.969ms   mgasps=73.396  number=16,419,074 hash=4bd5a9..f99bee dirty=1022.70MiB
+INFO [01-16|11:33:39.205] Chain head was updated                   number=16,419,074 hash=4bd5a9..f99bee root=cb5cbe..041f1e elapsed=5.279233ms
+INFO [01-16|11:33:39.206] Unindexed transactions                   blocks=1    txs=33      tail=14,069,075 elapsed="793.405µs"
+INFO [01-16|11:33:48.704] Imported new potential chain segment     blocks=1    txs=128     mgas=12.112  elapsed=155.177ms   mgasps=78.049  number=16,419,075 hash=94ca91..678184 dirty=1022.72MiB
+INFO [01-16|11:33:48.718] Chain head was updated                   number=16,419,075 hash=94ca91..678184 root=17f0d8..b391a3 elapsed=4.383267ms
+INFO [01-16|11:33:48.724] Unindexed transactions                   blocks=1    txs=518     tail=14,069,076 elapsed=5.365ms
+INFO [01-16|11:33:49.765] Looking for peers                        peercount=6  tried=36 static=0
+INFO [01-16|11:33:59.765] Looking for peers                        peercount=6  tried=35 static=0
+INFO [01-16|11:34:01.255] Imported new potential chain segment     blocks=1    txs=145     mgas=11.259  elapsed=185.753ms   mgasps=60.614  number=16,419,076 hash=60516d..dfbde7 dirty=1022.65MiB
+INFO [01-16|11:34:01.282] Chain head was updated                   number=16,419,076 hash=60516d..dfbde7 root=014372..1a9a9e elapsed=11.073255ms
+INFO [01-16|11:34:01.292] Unindexed transactions                   blocks=1    txs=367     tail=14,069,077 elapsed=10.081ms
+INFO [01-16|11:34:09.792] Looking for peers                        peercount=6  tried=39 static=0
+INFO [01-16|11:34:12.120] Imported new potential chain segment     blocks=1    txs=145     mgas=16.326  elapsed=235.357ms   mgasps=69.365  number=16,419,077 hash=efc122..d1cf11 dirty=1021.37MiB
+INFO [01-16|11:34:12.135] Chain head was updated                   number=16,419,077 hash=efc122..d1cf11 root=f234e2..71d40c elapsed=4.730504ms
+INFO [01-16|11:34:12.135] Unindexed transactions                   blocks=1    txs=0       tail=14,069,078 elapsed="195.458µs"

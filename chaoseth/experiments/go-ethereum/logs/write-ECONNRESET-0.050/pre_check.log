@@ -1,98 +1,94 @@
-WARN [10-10|12:38:33.805] Unexpected bytecode heal packet          peer=9fb0b7bf reqid=619,168,609,343,120,952
-WARN [10-10|12:38:33.805] Unexpected trienode heal packet          peer=9fb0b7bf reqid=6,711,382,384,082,611,308
-INFO [10-10|12:38:38.073] State heal in progress                   accounts=39529@2.07MiB    slots=82238@5.94MiB    codes=13469@114.56MiB nodes=322,861,076@95.24GiB pending=102,975
-INFO [10-10|12:38:47.205] State heal in progress                   accounts=39623@2.08MiB    slots=82238@5.94MiB    codes=13470@114.56MiB nodes=322,861,699@95.24GiB pending=103,332
-WARN [10-10|12:38:47.210] Unexpected trienode heal packet          peer=33c8dafa reqid=3,687,897,846,291,072,697
-WARN [10-10|12:38:52.137] Dropping unsynced node during sync       id=2d4e6cd831e6f375 conn=dyndial addr=114.242.26.15:3300    type=Geth/v1.10.6-stable-...
-INFO [10-10|12:38:58.040] State heal in progress                   accounts=39807@2.09MiB    slots=82238@5.94MiB    codes=13470@114.56MiB nodes=322,862,539@95.24GiB pending=103,635
-INFO [10-10|12:39:01.564] Writing clean trie cache to disk         path=/data/eth-data/geth/triecache threads=1
-INFO [10-10|12:39:01.585] Regenerated local transaction journal    transactions=0 accounts=0
-INFO [10-10|12:39:04.178] Persisted the clean trie cache           path=/data/eth-data/geth/triecache elapsed=2.608s
-WARN [10-10|12:39:06.032] Unexpected trienode heal packet          peer=51fd07eb reqid=8,321,307,057,676,940,885
-INFO [10-10|12:39:06.050] State heal in progress                   accounts=40075@2.10MiB    slots=82239@5.94MiB    codes=13470@114.56MiB nodes=322,863,314@95.24GiB pending=103,568
-ERROR[10-10|12:39:14.206] Snapshot extension registration failed   peer=5bdd7677 err="peer connected on snap without compatible eth support"
-INFO [10-10|12:39:15.111] State heal in progress                   accounts=40533@2.12MiB    slots=82241@5.94MiB    codes=13470@114.56MiB nodes=322,864,413@95.24GiB pending=103,287
-INFO [10-10|12:39:15.304] Imported new block headers               count=1    elapsed=10.380ms  number=13,390,933 hash=829613..f11ec6 age=1m39s
-INFO [10-10|12:39:15.840] Downloader queue stats                   receiptTasks=0    blockTasks=0    itemSize=220.27KiB throttle=1191
-INFO [10-10|12:39:18.623] Imported new block headers               count=1    elapsed=8.795ms   number=13,390,934 hash=847644..bccd06 age=1m33s
-INFO [10-10|12:39:25.109] Imported new block headers               count=1    elapsed=6.442ms   number=13,390,935 hash=f2e3af..72179f age=1m9s
-INFO [10-10|12:39:31.056] State heal in progress                   accounts=40749@2.13MiB    slots=82241@5.94MiB    codes=13470@114.56MiB nodes=322,865,321@95.24GiB pending=103,609
-ERROR[10-10|12:39:36.635] Snapshot extension registration failed   peer=98998f1a err="peer connected on snap without compatible eth support"
-INFO [10-10|12:39:41.846] State heal in progress                   accounts=40952@2.14MiB    slots=82242@5.94MiB    codes=13470@114.56MiB nodes=322,866,088@95.24GiB pending=103,755
-WARN [10-10|12:39:42.871] Unexpected bytecode heal packet          peer=3dc442ae reqid=8,854,791,414,474,650,938
-ERROR[10-10|12:39:43.334] Snapshot extension registration failed   peer=eddde080 err="peer connected on snap without compatible eth support"
-INFO [10-10|12:39:44.539] Imported new block headers               count=1    elapsed=7.469ms   number=13,390,936 hash=388c9c..ff14a1
-ERROR[10-10|12:39:49.783] Snapshot extension registration failed   peer=ecb0ba45 err="peer connected on snap without compatible eth support"
-INFO [10-10|12:39:51.468] State heal in progress                   accounts=41307@2.16MiB    slots=82244@5.94MiB    codes=13471@114.56MiB nodes=322,867,037@95.24GiB pending=103,718
-INFO [10-10|12:39:59.838] State heal in progress                   accounts=41456@2.17MiB    slots=82246@5.94MiB    codes=13471@114.56MiB nodes=322,867,612@95.24GiB pending=103,839
-INFO [10-10|12:40:03.852] Imported new block headers               count=1    elapsed=7.055ms   number=13,390,937 hash=5d0b64..39c2c5
-WARN [10-10|12:40:04.710] Unexpected trienode heal packet          peer=102725c6 reqid=7,171,599,806,018,182,383
-WARN [10-10|12:40:07.088] Unexpected trienode heal packet          peer=5984716c reqid=6,514,328,008,079,409,280
-INFO [10-10|12:40:11.030] State heal in progress                   accounts=41685@2.18MiB    slots=82249@5.94MiB    codes=13471@114.56MiB nodes=322,868,441@95.24GiB pending=104,048
-WARN [10-10|12:40:11.030] Unexpected trienode heal packet          peer=e46f5a16 reqid=2,199,039,121,519,395,923
-WARN [10-10|12:40:11.099] Unexpected trienode heal packet          peer=9fb0b7bf reqid=4,928,691,101,361,805,163
-WARN [10-10|12:40:11.213] Unexpected trienode heal packet          peer=30c6f265 reqid=2,669,338,435,154,721,925
-WARN [10-10|12:40:11.307] Unexpected trienode heal packet          peer=81e8669c reqid=1,618,752,780,400,861,289
-INFO [10-10|12:40:21.135] State heal in progress                   accounts=41968@2.19MiB    slots=82255@5.94MiB    codes=13471@114.56MiB nodes=322,869,277@95.24GiB pending=104,057
-INFO [10-10|12:40:29.214] State heal in progress                   accounts=42143@2.20MiB    slots=82257@5.94MiB    codes=13471@114.56MiB nodes=322,869,844@95.24GiB pending=104,195
-INFO [10-10|12:40:37.526] State heal in progress                   accounts=42276@2.21MiB    slots=82260@5.94MiB    codes=13471@114.56MiB nodes=322,870,368@95.24GiB pending=104,454
-INFO [10-10|12:40:41.940] Imported new block headers               count=1    elapsed=7.652ms   number=13,390,938 hash=07811d..1144a6 age=1m20s
-INFO [10-10|12:40:42.940] Downloader queue stats                   receiptTasks=0    blockTasks=0    itemSize=249.17KiB throttle=1053
-INFO [10-10|12:40:45.442] Imported new block headers               count=2    elapsed=11.800ms  number=13,390,940 hash=d9bedb..4363c7
-INFO [10-10|12:40:47.364] State heal in progress                   accounts=42507@2.22MiB    slots=82264@5.94MiB    codes=13471@114.56MiB nodes=322,871,100@95.24GiB pending=104,534
-INFO [10-10|12:40:57.965] State heal in progress                   accounts=42698@2.23MiB    slots=82267@5.94MiB    codes=13471@114.56MiB nodes=322,871,788@95.24GiB pending=104,673
-WARN [10-10|12:40:57.967] Unexpected trienode heal packet          peer=e46f5a16 reqid=3,070,827,059,162,428,709
-WARN [10-10|12:40:58.100] Unexpected trienode heal packet          peer=9fb0b7bf reqid=610,775,191,768,231,374
-WARN [10-10|12:40:58.469] Unexpected trienode heal packet          peer=81e8669c reqid=7,680,041,742,846,470,141
-WARN [10-10|12:40:59.612] Unexpected trienode heal packet          peer=57ff7296 reqid=4,794,062,051,936,940,260
-WARN [10-10|12:41:03.287] Unexpected trienode heal packet          peer=e70811b4 reqid=5,736,442,289,759,224,791
-INFO [10-10|12:41:06.278] State heal in progress                   accounts=42861@2.24MiB    slots=82269@5.94MiB    codes=13471@114.56MiB nodes=322,872,375@95.24GiB pending=104,795
-WARN [10-10|12:41:06.278] Unexpected trienode heal packet          peer=33c8dafa reqid=8,291,971,539,214,359,549
-WARN [10-10|12:41:06.291] Unexpected trienode heal packet          peer=51fd07eb reqid=6,823,603,581,341,426,662
-WARN [10-10|12:41:06.315] Unexpected trienode heal packet          peer=cfd618ea reqid=2,957,308,862,156,330,831
-INFO [10-10|12:41:15.316] State heal in progress                   accounts=43027@2.24MiB    slots=82273@5.94MiB    codes=13471@114.56MiB nodes=322,872,962@95.24GiB pending=104,921
-INFO [10-10|12:41:24.169] State heal in progress                   accounts=43207@2.25MiB    slots=82274@5.94MiB    codes=13471@114.56MiB nodes=322,873,605@95.24GiB pending=105,049
-INFO [10-10|12:41:30.159] Imported new block headers               count=2    elapsed=7.310ms   number=13,390,942 hash=83e68d..f00006
-INFO [10-10|12:41:34.803] State heal in progress                   accounts=43411@2.26MiB    slots=82286@5.94MiB    codes=13471@114.56MiB nodes=322,874,351@95.24GiB pending=105,231
-ERROR[10-10|12:41:36.767] Snapshot extension registration failed   peer=8541f801 err="peer connected on snap without compatible eth support"
-INFO [10-10|12:41:39.803] Imported new block headers               count=1    elapsed=6.491ms   number=13,390,943 hash=910aed..02a0d0
-INFO [10-10|12:41:45.572] State heal in progress                   accounts=43603@2.27MiB    slots=82302@5.94MiB    codes=13472@114.56MiB nodes=322,875,101@95.24GiB pending=105,417
-WARN [10-10|12:41:52.663] Unexpected trienode heal packet          peer=e70811b4 reqid=9,196,692,461,856,732,685
-WARN [10-10|12:41:52.811] Unexpected trienode heal packet          peer=33c8dafa reqid=3,770,133,930,726,262,231
-INFO [10-10|12:41:55.758] State heal in progress                   accounts=43751@2.28MiB    slots=82334@5.94MiB    codes=13472@114.56MiB nodes=322,875,845@95.24GiB pending=105,815
-INFO [10-10|12:42:02.430] Imported new block headers               count=1    elapsed=7.001ms   number=13,390,944 hash=523a3e..7f477b
-INFO [10-10|12:42:03.004] Downloader queue stats                   receiptTasks=0    blockTasks=0    itemSize=242.14KiB throttle=1083
-INFO [10-10|12:42:06.965] State heal in progress                   accounts=43851@2.29MiB    slots=82364@5.95MiB    codes=13472@114.56MiB nodes=322,876,562@95.24GiB pending=106,833
-WARN [10-10|12:42:09.993] Unexpected trienode heal packet          peer=e70811b4 reqid=4,653,626,441,880,064,690
-WARN [10-10|12:42:13.227] Unexpected trienode heal packet          peer=33c8dafa reqid=2,126,121,414,783,555,167
-WARN [10-10|12:42:13.237] Unexpected trienode heal packet          peer=cfd618ea reqid=322,801,221,150,373,287
-WARN [10-10|12:42:13.262] Unexpected trienode heal packet          peer=51fd07eb reqid=9,020,054,847,963,344,468
-WARN [10-10|12:42:13.269] Unexpected trienode heal packet          peer=e46f5a16 reqid=6,914,862,479,138,928,073
-INFO [10-10|12:42:15.634] State heal in progress                   accounts=44008@2.29MiB    slots=82408@5.95MiB    codes=13472@114.56MiB nodes=322,877,247@95.24GiB pending=107,096
-INFO [10-10|12:42:24.904] State heal in progress                   accounts=44251@2.31MiB    slots=82463@5.95MiB    codes=13472@114.56MiB nodes=322,878,125@95.24GiB pending=107,475
-INFO [10-10|12:42:35.689] State heal in progress                   accounts=44315@2.31MiB    slots=82519@5.96MiB    codes=13472@114.56MiB nodes=322,878,816@95.24GiB pending=108,057
-INFO [10-10|12:42:37.728] Imported new block headers               count=1    elapsed=9.358ms   number=13,390,945 hash=6c7b93..5143eb age=1m9s
-WARN [10-10|12:42:38.859] Unexpected trienode heal packet          peer=5984716c reqid=5,577,664,541,456,287,378
-INFO [10-10|12:42:44.753] State heal in progress                   accounts=44434@2.32MiB    slots=82589@5.96MiB    codes=13472@114.56MiB nodes=322,879,484@95.24GiB pending=108,349
-WARN [10-10|12:42:44.789] Unexpected trienode heal packet          peer=33c8dafa reqid=4,729,234,039,542,550,195
-WARN [10-10|12:42:45.007] Unexpected trienode heal packet          peer=51fd07eb reqid=8,784,642,802,435,047,129
-WARN [10-10|12:42:45.040] Unexpected trienode heal packet          peer=e46f5a16 reqid=3,915,125,667,909,753,794
-WARN [10-10|12:42:45.075] Unexpected trienode heal packet          peer=81e8669c reqid=4,618,082,529,085,714,948
-INFO [10-10|12:42:53.680] State heal in progress                   accounts=44564@2.32MiB    slots=82677@5.97MiB    codes=13472@114.56MiB nodes=322,880,210@95.24GiB pending=108,545
-INFO [10-10|12:43:00.034] Imported new block headers               count=1    elapsed=8.616ms   number=13,390,946 hash=91fa95..40b668 age=1m25s
-INFO [10-10|12:43:02.604] State heal in progress                   accounts=44679@2.33MiB    slots=82721@5.97MiB    codes=13472@114.56MiB nodes=322,880,803@95.24GiB pending=108,791
-INFO [10-10|12:43:10.884] State heal in progress                   accounts=44743@2.33MiB    slots=82908@5.99MiB    codes=13472@114.56MiB nodes=322,881,641@95.25GiB pending=109,025
-WARN [10-10|12:43:11.217] Unexpected bytecode heal packet          peer=51fd07eb reqid=3,804,847,011,802,831,572
-INFO [10-10|12:43:16.366] Imported new block headers               count=2    elapsed=14.844ms  number=13,390,948 hash=d1dacf..fefff3
-INFO [10-10|12:43:17.059] Downloader queue stats                   receiptTasks=0    blockTasks=0    itemSize=263.88KiB throttle=994
-INFO [10-10|12:43:19.324] State heal in progress                   accounts=44804@2.34MiB    slots=82952@5.99MiB    codes=13472@114.56MiB nodes=322,882,224@95.25GiB pending=109,997
-INFO [10-10|12:43:26.263] Imported new block headers               count=1    elapsed=6.138ms   number=13,390,949 hash=99fd74..bcaf85
-WARN [10-10|12:43:26.840] Unexpected trienode heal packet          peer=51fd07eb reqid=5,816,083,260,486,365,655
-WARN [10-10|12:43:26.884] Unexpected trienode heal packet          peer=e46f5a16 reqid=5,108,768,400,586,804,185
-WARN [10-10|12:43:26.982] Unexpected trienode heal packet          peer=33c8dafa reqid=1,013,238,985,293,424,498
-INFO [10-10|12:43:29.979] State heal in progress                   accounts=44825@2.34MiB    slots=83051@6.00MiB    codes=13473@114.58MiB nodes=322,882,916@95.25GiB pending=110,897
-WARN [10-10|12:43:35.852] Unexpected bytecode heal packet          peer=e70811b4 reqid=1,446,366,848,021,761,789
-INFO [10-10|12:43:38.744] State heal in progress                   accounts=44846@2.34MiB    slots=83240@6.01MiB    codes=13473@114.58MiB nodes=322,883,594@95.25GiB pending=111,092
-INFO [10-10|12:43:47.635] State heal in progress                   accounts=44945@2.34MiB    slots=83330@6.02MiB    codes=13473@114.58MiB nodes=322,884,289@95.25GiB pending=111,508
-INFO [10-10|12:43:56.388] State heal in progress                   accounts=44963@2.34MiB    slots=83476@6.03MiB    codes=13473@114.58MiB nodes=322,884,980@95.25GiB pending=112,728
-WARN [10-10|12:44:04.244] Unexpected trienode heal packet          peer=e70811b4 reqid=7,230,358,115,219,888,632
+INFO [01-16|13:49:13.160] Chain head was updated                   number=16,419,752 hash=171416..b372e0 root=dbc827..e7d7af elapsed=4.516599ms
+INFO [01-16|13:49:13.164] Unindexed transactions                   blocks=1    txs=157     tail=14,069,753 elapsed=4.035ms
+INFO [01-16|13:49:24.550] Imported new potential chain segment     blocks=1    txs=111     mgas=10.108  elapsed=91.070ms    mgasps=110.990 number=16,419,753 hash=9fb0bd..fd5589 dirty=1022.39MiB
+INFO [01-16|13:49:24.564] Chain head was updated                   number=16,419,753 hash=9fb0bd..fd5589 root=1bf4d7..a610b2 elapsed=4.819856ms
+INFO [01-16|13:49:24.567] Unindexed transactions                   blocks=1    txs=280     tail=14,069,754 elapsed=3.027ms
+WARN [01-16|13:49:26.878] Snapshot extension registration failed   peer=c5fb898d err="peer connected on snap without compatible eth support"
+WARN [01-16|13:49:27.803] Snapshot extension registration failed   peer=bc8af532 err="peer connected on snap without compatible eth support"
+INFO [01-16|13:49:39.611] Imported new potential chain segment     blocks=1    txs=199     mgas=19.723  elapsed=178.012ms   mgasps=110.795 number=16,419,754 hash=911530..d0ae2d dirty=1022.51MiB
+INFO [01-16|13:49:39.626] Chain head was updated                   number=16,419,754 hash=911530..d0ae2d root=0a8729..59520a elapsed=5.215394ms
+INFO [01-16|13:49:39.627] Unindexed transactions                   blocks=1    txs=26      tail=14,069,755 elapsed="701.335µs"
+ERROR[01-16|13:49:47.619] Error in block freeze operation          err="block receipts missing, can't freeze block 15256595"
+INFO [01-16|13:49:47.864] Imported new potential chain segment     blocks=1    txs=153     mgas=12.559  elapsed=88.237ms    mgasps=142.336 number=16,419,755 hash=c916b7..1fe5d7 dirty=1023.18MiB
+INFO [01-16|13:49:47.882] Chain head was updated                   number=16,419,755 hash=c916b7..1fe5d7 root=1d7ab6..a6fe56 elapsed=3.869295ms
+INFO [01-16|13:49:47.884] Unindexed transactions                   blocks=1    txs=143     tail=14,069,756 elapsed=1.240ms
+WARN [01-16|13:49:53.326] Snapshot extension registration failed   peer=6a0bcd3f err="peer connected on snap without compatible eth support"
+INFO [01-16|13:49:57.969] Writing clean trie cache to disk         path=/home/long/nvme/data-dir/geth/triecache threads=1
+INFO [01-16|13:49:57.970] Regenerated local transaction journal    transactions=0 accounts=0
+INFO [01-16|13:49:59.137] Persisted the clean trie cache           path=/home/long/nvme/data-dir/geth/triecache elapsed=1.167s
+INFO [01-16|13:50:00.349] Imported new potential chain segment     blocks=1    txs=158     mgas=18.812  elapsed=128.923ms   mgasps=145.915 number=16,419,756 hash=3276cb..d95f8d dirty=1021.06MiB
+INFO [01-16|13:50:00.362] Chain head was updated                   number=16,419,756 hash=3276cb..d95f8d root=5db5ea..de0547 elapsed=3.608202ms
+INFO [01-16|13:50:00.367] Unindexed transactions                   blocks=1    txs=186     tail=14,069,757 elapsed=5.012ms
+INFO [01-16|13:50:12.040] Imported new potential chain segment     blocks=1    txs=138     mgas=12.217  elapsed=84.977ms    mgasps=143.771 number=16,419,757 hash=5133f8..de6b45 dirty=1021.50MiB
+INFO [01-16|13:50:12.058] Chain head was updated                   number=16,419,757 hash=5133f8..de6b45 root=f242c8..a34762 elapsed=2.393319ms
+INFO [01-16|13:50:12.059] Unindexed transactions                   blocks=1    txs=44      tail=14,069,758 elapsed="750.634µs"
+INFO [01-16|13:50:24.061] Imported new potential chain segment     blocks=1    txs=146     mgas=9.641   elapsed=86.075ms    mgasps=112.001 number=16,419,758 hash=9fbb74..47e180 dirty=1021.54MiB
+INFO [01-16|13:50:24.095] Chain head was updated                   number=16,419,758 hash=9fbb74..47e180 root=61239f..6d4fb6 elapsed=2.806901ms
+INFO [01-16|13:50:24.101] Unindexed transactions                   blocks=1    txs=221     tail=14,069,759 elapsed=5.915ms
+INFO [01-16|13:50:36.114] Imported new potential chain segment     blocks=1    txs=157     mgas=17.077  elapsed=110.840ms   mgasps=154.063 number=16,419,759 hash=baebba..34de94 dirty=1021.93MiB
+INFO [01-16|13:50:36.136] Chain head was updated                   number=16,419,759 hash=baebba..34de94 root=05e86e..2b453b elapsed=11.625436ms
+INFO [01-16|13:50:36.143] Unindexed transactions                   blocks=1    txs=296     tail=14,069,760 elapsed=6.869ms
+ERROR[01-16|13:50:47.630] Error in block freeze operation          err="block receipts missing, can't freeze block 15256595"
+INFO [01-16|13:50:49.028] Imported new potential chain segment     blocks=1    txs=122     mgas=13.881  elapsed=85.947ms    mgasps=161.502 number=16,419,760 hash=a1337e..efae03 dirty=1022.35MiB
+INFO [01-16|13:50:49.047] Chain head was updated                   number=16,419,760 hash=a1337e..efae03 root=c324ee..3f3182 elapsed=6.06199ms
+INFO [01-16|13:50:49.053] Unindexed transactions                   blocks=1    txs=298     tail=14,069,761 elapsed=5.778ms
+INFO [01-16|13:51:00.335] Imported new potential chain segment     blocks=1    txs=134     mgas=11.012  elapsed=88.955ms    mgasps=123.793 number=16,419,761 hash=bdf275..387962 dirty=1021.75MiB
+INFO [01-16|13:51:00.350] Chain head was updated                   number=16,419,761 hash=bdf275..387962 root=ebbaec..827582 elapsed=2.827511ms
+INFO [01-16|13:51:00.354] Unindexed transactions                   blocks=1    txs=184     tail=14,069,762 elapsed=3.300ms
+INFO [01-16|13:51:12.982] Imported new potential chain segment     blocks=1    txs=168     mgas=15.117  elapsed=118.192ms   mgasps=127.897 number=16,419,762 hash=ce4d90..ad07cf dirty=1022.08MiB
+INFO [01-16|13:51:12.993] Chain head was updated                   number=16,419,762 hash=ce4d90..ad07cf root=a361c0..204ffb elapsed=3.111743ms
+INFO [01-16|13:51:12.997] Unindexed transactions                   blocks=1    txs=138     tail=14,069,763 elapsed=3.976ms
+INFO [01-16|13:51:25.050] Imported new potential chain segment     blocks=1    txs=191     mgas=16.320  elapsed=112.812ms   mgasps=144.662 number=16,419,763 hash=be3eb2..21746f dirty=1023.05MiB
+INFO [01-16|13:51:25.069] Chain head was updated                   number=16,419,763 hash=be3eb2..21746f root=58d850..f9d011 elapsed=7.741744ms
+INFO [01-16|13:51:25.071] Unindexed transactions                   blocks=1    txs=70      tail=14,069,764 elapsed=1.844ms
+INFO [01-16|13:51:37.308] Imported new potential chain segment     blocks=1    txs=133     mgas=17.106  elapsed=97.751ms    mgasps=174.997 number=16,419,764 hash=b00706..351027 dirty=1022.39MiB
+INFO [01-16|13:51:37.319] Chain head was updated                   number=16,419,764 hash=b00706..351027 root=549009..fe2de1 elapsed=3.455743ms
+INFO [01-16|13:51:37.319] Unindexed transactions                   blocks=1    txs=0       tail=14,069,765 elapsed="152.335µs"
+ERROR[01-16|13:51:47.637] Error in block freeze operation          err="block receipts missing, can't freeze block 15256595"
+INFO [01-16|13:51:48.696] Imported new potential chain segment     blocks=1    txs=149     mgas=13.509  elapsed=120.816ms   mgasps=111.813 number=16,419,765 hash=d839d4..20796f dirty=1022.76MiB
+INFO [01-16|13:51:48.713] Chain head was updated                   number=16,419,765 hash=d839d4..20796f root=d796e7..1822ab elapsed=7.237194ms
+INFO [01-16|13:51:48.718] Unindexed transactions                   blocks=1    txs=243     tail=14,069,766 elapsed=5.346ms
+INFO [01-16|13:52:00.334] Imported new potential chain segment     blocks=1    txs=143     mgas=13.035  elapsed=126.263ms   mgasps=103.233 number=16,419,766 hash=f93374..bb592c dirty=1022.28MiB
+INFO [01-16|13:52:00.345] Chain head was updated                   number=16,419,766 hash=f93374..bb592c root=c569ca..d72408 elapsed=3.594802ms
+INFO [01-16|13:52:00.349] Unindexed transactions                   blocks=1    txs=156     tail=14,069,767 elapsed=3.377ms
+INFO [01-16|13:52:12.531] Imported new potential chain segment     blocks=1    txs=148     mgas=19.436  elapsed=275.673ms   mgasps=70.503  number=16,419,767 hash=182c6c..6ccd56 dirty=1022.49MiB
+INFO [01-16|13:52:12.548] Chain head was updated                   number=16,419,767 hash=182c6c..6ccd56 root=6ce243..6823f1 elapsed=3.312459ms
+INFO [01-16|13:52:12.551] Unindexed transactions                   blocks=1    txs=343     tail=14,069,768 elapsed=2.745ms
+INFO [01-16|13:52:24.455] Imported new potential chain segment     blocks=1    txs=137     mgas=15.135  elapsed=113.084ms   mgasps=133.837 number=16,419,768 hash=4202d7..8f403d dirty=1022.61MiB
+INFO [01-16|13:52:24.472] Chain head was updated                   number=16,419,768 hash=4202d7..8f403d root=d7a839..4df9d7 elapsed=3.294036ms
+INFO [01-16|13:52:24.473] Unindexed transactions                   blocks=1    txs=88      tail=14,069,769 elapsed="783.398µs"
+INFO [01-16|13:52:36.272] Imported new potential chain segment     blocks=1    txs=125     mgas=11.475  elapsed=92.569ms    mgasps=123.958 number=16,419,769 hash=1aa938..acac8c dirty=1022.57MiB
+INFO [01-16|13:52:36.284] Chain head was updated                   number=16,419,769 hash=1aa938..acac8c root=502078..6ab437 elapsed=4.532597ms
+INFO [01-16|13:52:36.285] Unindexed transactions                   blocks=1    txs=109     tail=14,069,770 elapsed=1.348ms
+ERROR[01-16|13:52:47.642] Error in block freeze operation          err="block receipts missing, can't freeze block 15256595"
+INFO [01-16|13:52:48.229] Imported new potential chain segment     blocks=1    txs=133     mgas=10.842  elapsed=92.179ms    mgasps=117.620 number=16,419,770 hash=f280d6..e3c9c2 dirty=1022.53MiB
+INFO [01-16|13:52:48.267] Chain head was updated                   number=16,419,770 hash=f280d6..e3c9c2 root=b04f4f..a56d98 elapsed=5.213646ms
+INFO [01-16|13:52:48.275] Unindexed transactions                   blocks=1    txs=403     tail=14,069,771 elapsed=7.818ms
+INFO [01-16|13:53:00.250] Imported new potential chain segment     blocks=1    txs=144     mgas=15.375  elapsed=102.800ms   mgasps=149.563 number=16,419,771 hash=3c3608..5bcdba dirty=1022.52MiB
+INFO [01-16|13:53:00.262] Chain head was updated                   number=16,419,771 hash=3c3608..5bcdba root=df7d17..a7a132 elapsed=3.835026ms
+INFO [01-16|13:53:00.268] Unindexed transactions                   blocks=1    txs=321     tail=14,069,772 elapsed=6.586ms
+INFO [01-16|13:53:12.777] Imported new potential chain segment     blocks=1    txs=143     mgas=13.794  elapsed=130.915ms   mgasps=105.369 number=16,419,772 hash=70da31..b34f90 dirty=1022.84MiB
+INFO [01-16|13:53:12.797] Chain head was updated                   number=16,419,772 hash=70da31..b34f90 root=5f62ef..330ee3 elapsed=7.15416ms
+INFO [01-16|13:53:12.798] Unindexed transactions                   blocks=1    txs=116     tail=14,069,773 elapsed=1.454ms
+INFO [01-16|13:53:24.520] Imported new potential chain segment     blocks=1    txs=135     mgas=13.979  elapsed=117.452ms   mgasps=119.020 number=16,419,773 hash=ba2e8d..2c5bc3 dirty=1022.52MiB
+INFO [01-16|13:53:24.543] Chain head was updated                   number=16,419,773 hash=ba2e8d..2c5bc3 root=3db14d..6d3f41 elapsed=8.972105ms
+INFO [01-16|13:53:24.546] Unindexed transactions                   blocks=1    txs=301     tail=14,069,774 elapsed=3.474ms
+INFO [01-16|13:53:36.305] Imported new potential chain segment     blocks=1    txs=124     mgas=19.269  elapsed=153.654ms   mgasps=125.405 number=16,419,774 hash=e280bc..612cb7 dirty=1022.68MiB
+INFO [01-16|13:53:36.319] Chain head was updated                   number=16,419,774 hash=e280bc..612cb7 root=d9a655..fc95a0 elapsed=3.342122ms
+INFO [01-16|13:53:36.320] Unindexed transactions                   blocks=1    txs=30      tail=14,069,775 elapsed="945.349µs"
+ERROR[01-16|13:53:47.650] Error in block freeze operation          err="block receipts missing, can't freeze block 15256595"
+INFO [01-16|13:53:49.438] Imported new potential chain segment     blocks=1    txs=134     mgas=17.979  elapsed=103.523ms   mgasps=173.672 number=16,419,775 hash=c782cf..9ae712 dirty=1022.75MiB
+INFO [01-16|13:53:49.450] Chain head was updated                   number=16,419,775 hash=c782cf..9ae712 root=b58474..9b053c elapsed=3.780743ms
+INFO [01-16|13:53:49.452] Unindexed transactions                   blocks=1    txs=106     tail=14,069,776 elapsed=1.565ms
+INFO [01-16|13:54:00.600] Imported new potential chain segment     blocks=1    txs=94      mgas=11.875  elapsed=83.595ms    mgasps=142.049 number=16,419,776 hash=5e6472..4bf0fa dirty=1022.60MiB
+INFO [01-16|13:54:00.611] Chain head was updated                   number=16,419,776 hash=5e6472..4bf0fa root=c84a3c..295ae5 elapsed=3.910075ms
+INFO [01-16|13:54:00.615] Unindexed transactions                   blocks=1    txs=281     tail=14,069,777 elapsed=3.420ms
+INFO [01-16|13:54:12.095] Imported new potential chain segment     blocks=1    txs=99      mgas=11.931  elapsed=93.743ms    mgasps=127.272 number=16,419,777 hash=425260..42b1b9 dirty=1022.44MiB
+INFO [01-16|13:54:12.109] Chain head was updated                   number=16,419,777 hash=425260..42b1b9 root=b975d8..f9aa1a elapsed=2.827907ms
+INFO [01-16|13:54:12.111] Unindexed transactions                   blocks=1    txs=232     tail=14,069,778 elapsed=2.309ms
+INFO [01-16|13:54:24.153] Imported new potential chain segment     blocks=1    txs=190     mgas=17.786  elapsed=123.017ms   mgasps=144.584 number=16,419,778 hash=e987dc..a6150b dirty=1022.80MiB
+INFO [01-16|13:54:24.166] Chain head was updated                   number=16,419,778 hash=e987dc..a6150b root=2cba18..681be5 elapsed=4.577953ms
+INFO [01-16|13:54:24.168] Unindexed transactions                   blocks=1    txs=179     tail=14,069,779 elapsed=1.466ms
+INFO [01-16|13:54:37.397] Imported new potential chain segment     blocks=1    txs=160     mgas=12.988  elapsed=90.772ms    mgasps=143.085 number=16,419,779 hash=fba41f..2a08c7 dirty=1022.35MiB
+INFO [01-16|13:54:37.429] Chain head was updated                   number=16,419,779 hash=fba41f..2a08c7 root=8b9140..9e7826 elapsed=8.255274ms
+INFO [01-16|13:54:37.430] Unindexed transactions                   blocks=1    txs=0       tail=14,069,780 elapsed="108.415µs"

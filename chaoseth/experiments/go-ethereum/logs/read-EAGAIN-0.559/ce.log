@@ -1,0 +1,132 @@
+INFO [01-16|04:27:35.898] Unindexed transactions                   blocks=1    txs=194     tail=14,066,963 elapsed=5.835ms
+INFO [01-16|04:27:47.910] Imported new potential chain segment     blocks=1    txs=126     mgas=11.912  elapsed=133.925ms   mgasps=88.944  number=16,416,963 hash=150502..7ebbc6 dirty=1021.88MiB
+INFO [01-16|04:27:47.932] Chain head was updated                   number=16,416,963 hash=150502..7ebbc6 root=486d39..171c2b elapsed=4.384811ms
+INFO [01-16|04:27:47.942] Unindexed transactions                   blocks=1    txs=74      tail=14,066,964 elapsed=6.731ms
+INFO [01-16|04:28:00.587] Imported new potential chain segment     blocks=1    txs=80      mgas=29.990  elapsed=183.496ms   mgasps=163.435 number=16,416,964 hash=8e3b67..cd4cd5 dirty=1021.99MiB
+INFO [01-16|04:28:00.599] Chain head was updated                   number=16,416,964 hash=8e3b67..cd4cd5 root=74c4ad..556a04 elapsed=2.925803ms
+INFO [01-16|04:28:00.600] Unindexed transactions                   blocks=1    txs=59      tail=14,066,965 elapsed=1.212ms
+INFO [01-16|04:28:13.489] Imported new potential chain segment     blocks=1    txs=185     mgas=17.869  elapsed=132.199ms   mgasps=135.168 number=16,416,965 hash=8965bf..c4082a dirty=1022.40MiB
+INFO [01-16|04:28:13.511] Chain head was updated                   number=16,416,965 hash=8965bf..c4082a root=251556..2de044 elapsed=10.208543ms
+INFO [01-16|04:28:13.516] Unindexed transactions                   blocks=1    txs=179     tail=14,066,966 elapsed=3.988ms
+ERROR[01-16|04:28:20.790] Error in block freeze operation          err="block receipts missing, can't freeze block 15256595"
+WARN [01-16|04:28:29.815] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"
+WARN [01-16|04:28:29.827] Unable to send to InfluxDB               err="Post \"http://localhost:8086/write?consistency=&db=chaoseth&precision=&rp=\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:28:29.828] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:28:34.826] Unable to send to InfluxDB               err="Post \"http://localhost:8086/write?consistency=&db=chaoseth&precision=&rp=\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:28:34.826] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:28:39.816] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:28:44.825] Unable to send to InfluxDB               err="Post \"http://localhost:8086/write?consistency=&db=chaoseth&precision=&rp=\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:28:44.825] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:28:45.270] Beacon client online, but no consensus updates received in a while. Please fix your beacon client to follow the chain! 
+WARN [01-16|04:28:49.816] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:28:54.825] Unable to send to InfluxDB               err="Post \"http://localhost:8086/write?consistency=&db=chaoseth&precision=&rp=\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:28:54.825] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+INFO [01-16|04:28:57.209] Looking for peers                        peercount=0  tried=4  static=0
+WARN [01-16|04:28:59.816] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:29:04.826] Unable to send to InfluxDB               err="Post \"http://localhost:8086/write?consistency=&db=chaoseth&precision=&rp=\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:29:04.826] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+INFO [01-16|04:29:07.210] Looking for peers                        peercount=0  tried=3  static=0
+WARN [01-16|04:29:09.816] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:29:14.823] Unable to send to InfluxDB               err="Post \"http://localhost:8086/write?consistency=&db=chaoseth&precision=&rp=\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:29:14.823] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+INFO [01-16|04:29:17.211] Looking for peers                        peercount=0  tried=2  static=0
+WARN [01-16|04:29:19.815] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+ERROR[01-16|04:29:20.798] Error in block freeze operation          err="block receipts missing, can't freeze block 15256595"
+WARN [01-16|04:29:24.825] Unable to send to InfluxDB               err="Post \"http://localhost:8086/write?consistency=&db=chaoseth&precision=&rp=\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:29:24.825] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+INFO [01-16|04:29:27.212] Looking for peers                        peercount=0  tried=4  static=0
+WARN [01-16|04:29:29.815] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:29:34.824] Unable to send to InfluxDB               err="Post \"http://localhost:8086/write?consistency=&db=chaoseth&precision=&rp=\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:29:34.825] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+INFO [01-16|04:29:37.214] Looking for peers                        peercount=0  tried=3  static=0
+WARN [01-16|04:29:39.816] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:29:44.822] Unable to send to InfluxDB               err="Post \"http://localhost:8086/write?consistency=&db=chaoseth&precision=&rp=\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:29:44.822] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+INFO [01-16|04:29:47.216] Looking for peers                        peercount=0  tried=3  static=0
+WARN [01-16|04:29:49.816] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:29:54.826] Unable to send to InfluxDB               err="Post \"http://localhost:8086/write?consistency=&db=chaoseth&precision=&rp=\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:29:54.826] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+INFO [01-16|04:29:57.218] Looking for peers                        peercount=0  tried=3  static=0
+WARN [01-16|04:29:59.816] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:30:04.820] Unable to send to InfluxDB               err="Post \"http://localhost:8086/write?consistency=&db=chaoseth&precision=&rp=\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:30:04.820] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+INFO [01-16|04:30:07.219] Looking for peers                        peercount=0  tried=3  static=0
+WARN [01-16|04:30:09.816] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:30:14.825] Unable to send to InfluxDB               err="Post \"http://localhost:8086/write?consistency=&db=chaoseth&precision=&rp=\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:30:14.825] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+INFO [01-16|04:30:17.220] Looking for peers                        peercount=0  tried=3  static=0
+WARN [01-16|04:30:19.816] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+ERROR[01-16|04:30:20.807] Error in block freeze operation          err="block receipts missing, can't freeze block 15256595"
+WARN [01-16|04:30:24.826] Unable to send to InfluxDB               err="Post \"http://localhost:8086/write?consistency=&db=chaoseth&precision=&rp=\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:30:24.827] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+INFO [01-16|04:30:27.221] Looking for peers                        peercount=0  tried=3  static=0
+WARN [01-16|04:30:29.816] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:30:34.821] Unable to send to InfluxDB               err="Post \"http://localhost:8086/write?consistency=&db=chaoseth&precision=&rp=\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:30:34.821] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+INFO [01-16|04:30:37.223] Looking for peers                        peercount=0  tried=3  static=0
+WARN [01-16|04:30:39.816] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:30:44.820] Unable to send to InfluxDB               err="Post \"http://localhost:8086/write?consistency=&db=chaoseth&precision=&rp=\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:30:44.820] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+INFO [01-16|04:30:47.223] Looking for peers                        peercount=0  tried=3  static=0
+WARN [01-16|04:30:49.816] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:30:54.825] Unable to send to InfluxDB               err="Post \"http://localhost:8086/write?consistency=&db=chaoseth&precision=&rp=\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:30:54.825] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+INFO [01-16|04:30:57.225] Looking for peers                        peercount=0  tried=3  static=0
+WARN [01-16|04:30:59.816] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:31:04.820] Unable to send to InfluxDB               err="Post \"http://localhost:8086/write?consistency=&db=chaoseth&precision=&rp=\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:31:04.820] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+INFO [01-16|04:31:07.227] Looking for peers                        peercount=0  tried=2  static=0
+WARN [01-16|04:31:09.816] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:31:14.821] Unable to send to InfluxDB               err="Post \"http://localhost:8086/write?consistency=&db=chaoseth&precision=&rp=\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:31:14.822] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+INFO [01-16|04:31:17.228] Looking for peers                        peercount=0  tried=2  static=0
+WARN [01-16|04:31:19.816] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+ERROR[01-16|04:31:20.813] Error in block freeze operation          err="block receipts missing, can't freeze block 15256595"
+WARN [01-16|04:31:24.827] Unable to send to InfluxDB               err="Post \"http://localhost:8086/write?consistency=&db=chaoseth&precision=&rp=\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:31:24.827] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+INFO [01-16|04:31:27.230] Looking for peers                        peercount=0  tried=5  static=0
+WARN [01-16|04:31:29.816] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:31:34.820] Unable to send to InfluxDB               err="Post \"http://localhost:8086/write?consistency=&db=chaoseth&precision=&rp=\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:31:34.821] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+INFO [01-16|04:31:37.232] Looking for peers                        peercount=0  tried=3  static=0
+WARN [01-16|04:31:39.816] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:31:44.825] Unable to send to InfluxDB               err="Post \"http://localhost:8086/write?consistency=&db=chaoseth&precision=&rp=\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:31:44.825] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+INFO [01-16|04:31:47.233] Looking for peers                        peercount=0  tried=3  static=0
+WARN [01-16|04:31:49.816] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:31:54.822] Unable to send to InfluxDB               err="Post \"http://localhost:8086/write?consistency=&db=chaoseth&precision=&rp=\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:31:54.822] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+INFO [01-16|04:31:57.234] Looking for peers                        peercount=0  tried=3  static=0
+WARN [01-16|04:31:59.816] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:32:04.827] Unable to send to InfluxDB               err="Post \"http://localhost:8086/write?consistency=&db=chaoseth&precision=&rp=\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:32:04.828] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+INFO [01-16|04:32:07.236] Looking for peers                        peercount=0  tried=3  static=0
+WARN [01-16|04:32:09.816] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:32:14.826] Unable to send to InfluxDB               err="Post \"http://localhost:8086/write?consistency=&db=chaoseth&precision=&rp=\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:32:14.826] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+INFO [01-16|04:32:17.237] Looking for peers                        peercount=0  tried=3  static=0
+WARN [01-16|04:32:19.816] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+ERROR[01-16|04:32:20.817] Error in block freeze operation          err="block receipts missing, can't freeze block 15256595"
+WARN [01-16|04:32:24.825] Unable to send to InfluxDB               err="Post \"http://localhost:8086/write?consistency=&db=chaoseth&precision=&rp=\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:32:24.825] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+INFO [01-16|04:32:27.238] Looking for peers                        peercount=0  tried=2  static=0
+WARN [01-16|04:32:29.816] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:32:34.825] Unable to send to InfluxDB               err="Post \"http://localhost:8086/write?consistency=&db=chaoseth&precision=&rp=\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:32:34.825] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+INFO [01-16|04:32:37.240] Looking for peers                        peercount=0  tried=4  static=0
+WARN [01-16|04:32:39.816] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:32:44.821] Unable to send to InfluxDB               err="Post \"http://localhost:8086/write?consistency=&db=chaoseth&precision=&rp=\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:32:44.822] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+INFO [01-16|04:32:47.241] Looking for peers                        peercount=0  tried=3  static=0
+WARN [01-16|04:32:49.816] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:32:54.827] Unable to send to InfluxDB               err="Post \"http://localhost:8086/write?consistency=&db=chaoseth&precision=&rp=\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:32:54.827] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+INFO [01-16|04:32:57.242] Looking for peers                        peercount=0  tried=3  static=0
+WARN [01-16|04:32:59.816] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:33:04.820] Unable to send to InfluxDB               err="Post \"http://localhost:8086/write?consistency=&db=chaoseth&precision=&rp=\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:33:04.820] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+INFO [01-16|04:33:07.243] Looking for peers                        peercount=0  tried=3  static=0
+WARN [01-16|04:33:09.816] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:33:14.822] Unable to send to InfluxDB               err="Post \"http://localhost:8086/write?consistency=&db=chaoseth&precision=&rp=\": dial tcp: lookup localhost: no such host"
+WARN [01-16|04:33:14.822] Got error while sending a ping to InfluxDB, trying to recreate client err="Get \"http://localhost:8086/ping\": dial tcp: lookup localhost: no such host"
+INFO [01-16|04:33:17.244] Looking for peers                        peercount=0  tried=3  static=0

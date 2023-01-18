@@ -1,0 +1,17 @@
+INFO [01-16|09:18:24.211] Unindexed transactions                   blocks=1    txs=272     tail=14,068,404 elapsed=3.157ms
+INFO [01-16|09:18:36.581] Imported new potential chain segment     blocks=1    txs=140     mgas=23.222  elapsed=329.155ms   mgasps=70.551  number=16,418,404 hash=eac13d..4800b0 dirty=1022.52MiB
+INFO [01-16|09:18:36.601] Chain head was updated                   number=16,418,404 hash=eac13d..4800b0 root=92b1c1..9f1a8d elapsed=7.017477ms
+INFO [01-16|09:18:36.603] Unindexed transactions                   blocks=1    txs=145     tail=14,068,405 elapsed=2.488ms
+INFO [01-16|09:18:49.397] Imported new potential chain segment     blocks=1    txs=118     mgas=14.396  elapsed=124.719ms   mgasps=115.424 number=16,418,405 hash=4a8024..8a53a5 dirty=1021.35MiB
+INFO [01-16|09:18:49.415] Chain head was updated                   number=16,418,405 hash=4a8024..8a53a5 root=884cd7..d5748e elapsed=7.488476ms
+INFO [01-16|09:18:49.417] Unindexed transactions                   blocks=1    txs=130     tail=14,068,406 elapsed=1.887ms
+INFO [01-16|09:19:00.575] Imported new potential chain segment     blocks=1    txs=104     mgas=9.336   elapsed=104.329ms   mgasps=89.485  number=16,418,406 hash=a9ce90..3d6485 dirty=1020.99MiB
+INFO [01-16|09:19:00.590] Chain head was updated                   number=16,418,406 hash=a9ce90..3d6485 root=e83de7..941e12 elapsed=5.692106ms
+INFO [01-16|09:19:00.592] Unindexed transactions                   blocks=1    txs=91      tail=14,068,407 elapsed=2.076ms
+INFO [01-16|09:19:12.169] Imported new potential chain segment     blocks=1    txs=135     mgas=12.177  elapsed=71.054ms    mgasps=171.377 number=16,418,407 hash=d19219..d236fc dirty=1021.99MiB
+INFO [01-16|09:19:12.207] Chain head was updated                   number=16,418,407 hash=d19219..d236fc root=afaa4b..67506d elapsed=3.099106ms
+INFO [01-16|09:19:12.208] Unindexed transactions                   blocks=1    txs=47      tail=14,068,408 elapsed="408.141µs"
+ERROR[01-16|09:19:15.551] Error in block freeze operation          err="block receipts missing, can't freeze block 15256595"
+ERROR[01-16|09:19:25.694] Failed to write flush list to disk       err="write /home/long/nvme/data-dir/geth/chaindata/4829670.log: resource temporarily unavailable"
+INFO [01-16|09:19:25.713] Imported new potential chain segment     blocks=1    txs=150     mgas=24.043  elapsed=346.991ms   mgasps=69.290  number=16,418,408 hash=15f971..8e0e44 dirty=1023.77MiB
+CRIT [01-16|09:19:25.723] Failed to update chain indexes and markers err="write /home/long/nvme/data-dir/geth/chaindata/4829670.log: resource temporarily unavailable"
