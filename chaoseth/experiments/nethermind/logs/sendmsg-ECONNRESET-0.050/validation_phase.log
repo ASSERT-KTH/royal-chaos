@@ -1,0 +1,980 @@
+"topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafd8d",
+  "toBlock": "0xfafd8d",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-21 00:25:03.0512|Executing JSON RPC call eth_getBlockByNumber with params [0xfafd8d, False] 
+2023-01-21 00:25:12.6169|Received a new payload: 16451283 (0xfa381b7366ac1e02ebf1437cb0db68af16fef9ce8eb46cc3786d26007561eb43) 
+2023-01-21 00:25:12.8866|Processed   16451283 |      267ms of  12,241ms, mgasps   57.16 total   44.57, tps  490.01 total  470.68, bps    3.74 total    2.96, recv queue 0, proc queue 0 
+2023-01-21 00:25:12.8866|Valid. Result of a new payload: 16451283 (0xfa381b7366ac1e02ebf1437cb0db68af16fef9ce8eb46cc3786d26007561eb43). 
+2023-01-21 00:25:12.8915|Received: ForkchoiceState: (HeadBlockHash: 0xfa381b7366ac1e02ebf1437cb0db68af16fef9ce8eb46cc3786d26007561eb43, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff)  
+2023-01-21 00:25:12.8915|FCU - block 16451283 (0xfa381b...61eb43) was processed. 
+2023-01-21 00:25:12.8915|Block 0xfa381b7366ac1e02ebf1437cb0db68af16fef9ce8eb46cc3786d26007561eb43 was set as head. 
+2023-01-21 00:25:12.8915|Valid. Request: ForkchoiceState: (HeadBlockHash: 0xfa381b7366ac1e02ebf1437cb0db68af16fef9ce8eb46cc3786d26007561eb43, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff) . 
+2023-01-21 00:25:13.2079|Peers | with known best block: 101 | all: 101 | 
+2023-01-21 00:25:13.2079|Sync peers - Initialized: 101 | All: 101 | Max: 100
+===[Active][Sleep ][Peer (ProtocolVersion/Head/Host:Port)    ][Transfer Speeds (L/H/B/R/N/S)      ][Client Info (Name/Version/Operating System/Language)     ]
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+   [      ][      ][Peer|eth66|16451276|    3.80.12.255:30354][  114|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451273| 139.215.226.67:51390][  301|     |     |     |     |     ][Geth/v1.10.25-stable-69568c55/linux-amd64/go1.18.5]
+   [      ][      ][Peer|eth66|16451251| 104.188.157.88:30303][  138|    1|     |     |     |     ][Nethermind/v1.14.7+4fe81c6b/linux-x64/dotnet6.0.11]
+   [      ][      ][Peer|eth66|16451250|  73.78.202.116:30303][  235|    0|     |     |     |     ][Geth/v1.10.26-stable-e5eb32ac/linux-arm64/go1.18.5]
+   [      ][      ][Peer|eth66|16451249|    51.81.46.88:54556][  113|     |     |     |     |     ][Geth/1.10.23-stable-36c1449b/linux-amd64/go1.18]
+   [      ][      ][Peer|eth66|16451248|168.119.138.215:30303][ 1014|    0|     |     |     |     ][Geth/v1.10.25-stable-69568c55/linux-amd64/go1.18.5]
+   [      ][      ][Peer|eth66|16451243|  24.17.196.207:30303][  180|    0|     |     |     |     ][Nethermind/v1.14.2-0-08354f9fa-20221115/X64-Linux/6.0.9]
+   [      ][      ][Peer|eth66|16451240|  84.226.123.87:55072][   39|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451238|    3.80.12.255:30414][  114|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451238|    3.80.12.255:30554][  114|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451237| 24.113.239.254:30303][  179|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451237|  211.21.40.242:59708][  318|     |     |     |     |     ][Geth/v1.10.23-stable-d901d853/linux-amd64/go1.18.5]
+   [      ][      ][Peer|eth66|16451237| 167.235.34.105:31542][   56|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451237|    3.80.12.255:30351][  114|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451237|    3.80.12.255:30382][  114|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451237|    3.80.12.255:30439][  114|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451237|    3.80.12.255:30552][  114|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451237|    3.80.12.255:30577][  114|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451237|    3.80.12.255:30463][  114|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236| 185.243.216.35:30303][   29|   20|     |     |     |     ][Nethermind/v1.16.0+c7df68c6/linux-x64/dotnet7.0.2]
+   [      ][      ][Peer|eth66|16451236|    13.56.46.84:44296][  868|    0|     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451236| 142.132.211.94:30303][   28|    8|     |     |     |     ][Nethermind/v1.14.6+6aea7721/linux-x64/dotnet6.0.11]
+   [      ][      ][Peer|eth66|16451236|   3.122.193.60:30303][   22|   18|     |     |     |     ][Nethermind/v1.14.0-0-60f920b90-20221110/X64-Linux/6.0.8]
+   [      ][      ][Peer|eth66|16451236|   113.31.173.8:30303][  206|    0|     |     |     |     ][Geth/v1.11.0-unstable-88132afc/linux-arm64/go1.18.6]
+   [      ][      ][Peer|eth66|16451236|   3.88.141.173:30303][  114|     |     |     |     |     ][Geth/v1.10.9-stable-eae3b194/linux-amd64/go1.17.1]
+   [      ][      ][Peer|eth66|16451236|124.126.140.106: 2706][  182|    0|     |     |     |     ][Geth/v1.10.26-stable-e5eb32ac/linux-amd64/go1.19.2]
+   [      ][      ][Peer|eth66|16451236|  65.21.128.178:30303][   24|    5|     |     |     |     ][Geth/v1.10.26-stable-e5eb32ac/linux-amd64/go1.18]
+   [      ][      ][Peer|eth66|16451236|   65.109.19.71:30303][  120|   14|     |     |     |     ][Geth/v1.10.26-stable-525bd5df/linux-amd64/go1.18]
+   [      ][      ][Peer|eth66|16451236| 195.201.207.37:30303][   28|    2|     |     |     |     ][Geth/v1.10.25-stable-69568c55/linux-amd64/go1.18.5]
+   [      ][      ][Peer|eth66|16451236|     46.4.85.28:30303][  319|    0|     |     |     |     ][Geth/v1.10.25-stable-36449b3b/linux-amd64/go1.19]
+   [      ][      ][Peer|eth66|16451236|   37.19.216.43:30303][  126|    0|     |     |     |     ][Geth/v1.10.23-stable/linux-amd64/go1.19.4]
+   [      ][      ][Peer|eth66|16451236|   15.204.197.7:30303][  114|    0|     |     |     |     ][Geth/v1.10.23-stable/linux-amd64/go1.18.1]
+   [      ][      ][Peer|eth66|16451236| 162.19.171.169:30303][   30|    0|     |     |     |     ][Geth/v1.10.23-stable/linux-amd64/go1.18.1]
+   [      ][      ][Peer|eth66|16451236|  34.206.90.238:30303][  114|    0|     |     |     |     ][Geth/v1.10.23-stable/linux-amd64/go1.18.1]
+   [      ][      ][Peer|eth66|16451236|201.137.165.132:30303][  182|    0|     |     |     |     ][Geth/v1.10.23-stable/darwin-amd64/go1.19]
+   [      ][      ][Peer|eth66|16451236| 185.232.77.107:30303][   14|    1|     |     |     |     ][erigon/v2.35.2-stable-800645ee/linux-amd64/go1.19.5]
+   [      ][      ][Peer|eth66|16451236|  38.141.210.98:30303][  398|     |     |     |     |     ][besu/v22.10.3/linux-x86_64/openjdk-java-17]
+   [      ][      ][Peer|eth66|16451236| 167.235.34.105:31345][   56|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236| 167.235.34.105:31390][   31|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236| 167.235.34.105:31365][   56|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236| 167.235.34.105:31348][   32|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236| 167.235.34.105:31338][   28|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236| 167.235.34.105:31537][   27|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236| 167.235.34.105:31355][   53|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236| 167.235.34.105:31498][   27|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30514][  114|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30400][  114|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30335][  114|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30470][  114|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30388][  114|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30571][  114|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30573][  114|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30437][  114|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30429][  114|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30589][  114|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30360][  114|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30508][  114|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30479][  114|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30520][  114|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30342][  114|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30568][  114|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30441][  114|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30445][  114|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30525][  114|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30303][  114|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30337][  114|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30367][  114|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30328][  114|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451235| 76.126.203.176:34552][  378|    0|     |     |     |     ][Nethermind/v1.16.0+c7df68c6/linux-x64/dotnet7.0.2]
+   [      ][      ][Peer|eth66|16451235|   146.4.99.162:40844][   27|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451235|  73.247.38.223:42826][  139|    1|     |     |     |     ][Nethermind/v1.14.7+4fe81c6b/linux-x64/dotnet6.0.11]
+   [      ][      ][Peer|eth66|16451235|   91.64.144.95:47400][   76|     |     |     |     |     ][Nethermind/v1.14.7+4fe81c6b/linux-x64/dotnet6.0.11]
+   [      ][      ][Peer|eth66|16451235| 125.253.93.218:42772][  183|     |     |     |     |     ][Nethermind/v1.14.1-0-1a32d4541-20230116/X64-Linux/6.0.8]
+   [      ][      ][Peer|eth66|16451235|   76.97.244.80:49153][  146|     |     |     |     |     ][Nethermind/v1.14.1-0-1a32d4541-20221228/X64-Windows/6.0.8]
+   [      ][      ][Peer|eth66|16451235| 89.187.161.243:38186][  269|    0|     |     |     |     ][Geth/v1.10.23-stable/linux-amd64/go1.19.4]
+   [      ][      ][Peer|eth66|16451235| 167.235.34.105:31305][   53|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451235|    3.80.12.255:30539][  114|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451234| 153.92.111.197:44116][   83|     |     |     |     |     ][Nethermind/v1.14.7+4fe81c6b/linux-x64/dotnet6.0.11]
+   [      ][      ][Peer|eth66|16451234|    3.69.166.93:40270][   21|     |     |     |     |     ][Geth/v1.1.9-5404d9d8-20220420/linux-amd64/go1.17.5]
+   [      ][      ][Peer|eth66|16451234|    3.80.12.255:30572][  114|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451233|   1.64.229.244:56530][  278|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451233|  81.166.158.75:42086][   11|     |     |     |     |     ][Nethermind/v1.14.3-0-707461293-20230120/X64-Linux/6.0.9]
+   [      ][      ][Peer|eth66|16451233| 54.175.160.107:49978][  115|     |     |     |     |     ][Geth/v1.1.9-5404d9d8-20220420/linux-amd64/go1.17.5]
+   [      ][      ][Peer|eth66|16451233|  3.143.112.234:30303][  124|    2|     |     |     |     ][erigon/v2.34.0-stable-937fb2c4/linux-amd64/go1.19rc1]
+   [      ][      ][Peer|eth66|16451233|    3.80.12.255:30368][  114|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451226|   51.222.40.18:30304][  117|     |     |     |     |     ][Geth/v1.9.24-stable-cc05b050/linux-amd64/go1.15.5]
+   [      ][      ][Peer|eth66|16451226|    3.80.12.255:30551][  114|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451139|  162.55.89.238:30304][   27|     |     |     |     |     ][Geth/v1.9.24-stable-cc05b050/linux-amd64/go1.15.5]
+   [      ][      ][Peer|eth66|16446144|  18.197.184.51:51038][   21|     |     |     |     |     ][Geth/v1.10.25-stable-69568c55/linux-amd64/go1.19.2]
+   [      ][      ][Peer|eth66|16445665|     3.70.223.0:60244][   21|     |     |     |     |     ][Geth/v1.10.25-stable-69568c55/linux-amd64/go1.19.2]
+   [      ][      ][Peer|eth66|16439597| 102.132.254.51:30404][  171|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16432000|185.241.198.227:28653][   60|     |     |     |     |     ][Nethermind/v1.16.0+c7df68c6/linux-x64/dotnet7.0.2]
+   [      ][      ][Peer|eth66|16420405|    13.48.11.26:30303][    2|     |     |     |     |     ][erigon/v2.35.2-stable-800645ee/linux-amd64/go1.19.5]
+   [      ][      ][Peer|eth66|16335999|152.228.223.112:30303][   31|     |     |     |     |     ][erigon/v2.36.0-stable-3ec0ed76/linux-amd64/go1.19.5]
+   [      ][      ][Peer|eth66|16257000| 129.150.50.212:49226][  358|     |     |     |     |     ][Nethermind/v1.16.0+c7df68c6/linux-x64/dotnet7.0.2]
+   [      ][      ][Peer|eth66|16257000|    138.2.80.68:48540][  347|     |     |     |     |     ][Nethermind/v1.16.0+c7df68c6/linux-x64/dotnet7.0.2]
+   [      ][      ][Peer|eth66|16257000|   93.51.18.100:30303][   92|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|15830000|  108.59.36.168:30303][  136|     |     |     |     |     ][Nethermind/v1.16.0-unstable+9e8b3da2/linux-x64/dotnet7.0.1]
+   [      ][      ][Peer|eth66|15466495|  35.175.161.27:19946][  237|     |     |     |     |     ][Geth/v1.10.23-stable-d901d853/linux-amd64/go1.18.5]
+   [      ][      ][Peer|eth66|15214936| 162.218.65.219:31175][  105|     |     |     |     |     ][Nethermind/vd25715f-20230120/X64-Linux/6.0.11]
+   [      ][      ][Peer|eth66| 7856611| 34.234.215.244:30303][  115|     |     |     |     |     ][Geth/v1.11.0-unstable-b818e73e/linux-amd64/go1.19.2] 
+2023-01-21 00:25:15.0504|Executing JSON RPC call eth_getBlockByNumber with params [0xfafd8f, False] 
+2023-01-21 00:25:15.0504|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafd8e",
+  "toBlock": "0xfafd8e",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-21 00:25:15.0504|Executing JSON RPC call eth_getBlockByNumber with params [0xfafd8e, False] 
+2023-01-21 00:25:16.4863|Removing 901 out of 10901 peer candidates (candidates cleanup). 
+2023-01-21 00:25:24.7921|Received a new payload: 16451284 (0xc6cdd73f20995d72e66762ba1ba7cee4dabe9ce7dacb585df2be7e8aa1dfc090) 
+2023-01-21 00:25:25.3033|Processed   16451284 |      509ms of  12,417ms, mgasps   33.44 total   44.55, tps  318.09 total  470.42, bps    1.96 total    2.95, recv queue 0, proc queue 0 
+2023-01-21 00:25:25.3033|Valid. Result of a new payload: 16451284 (0xc6cdd73f20995d72e66762ba1ba7cee4dabe9ce7dacb585df2be7e8aa1dfc090). 
+2023-01-21 00:25:25.3096|Received: ForkchoiceState: (HeadBlockHash: 0xc6cdd73f20995d72e66762ba1ba7cee4dabe9ce7dacb585df2be7e8aa1dfc090, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff)  
+2023-01-21 00:25:25.3096|FCU - block 16451284 (0xc6cdd7...dfc090) was processed. 
+2023-01-21 00:25:25.3096|Block 0xc6cdd73f20995d72e66762ba1ba7cee4dabe9ce7dacb585df2be7e8aa1dfc090 was set as head. 
+2023-01-21 00:25:25.3096|Valid. Request: ForkchoiceState: (HeadBlockHash: 0xc6cdd73f20995d72e66762ba1ba7cee4dabe9ce7dacb585df2be7e8aa1dfc090, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff) . 
+2023-01-21 00:25:27.0524|Executing JSON RPC call eth_getBlockByNumber with params [0xfafd90, False] 
+2023-01-21 00:25:27.0524|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafd8f",
+  "toBlock": "0xfafd8f",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-21 00:25:27.0550|Executing JSON RPC call eth_getBlockByNumber with params [0xfafd8f, False] 
+2023-01-21 00:25:28.2085|Peers | with known best block: 100 | all: 100 | 
+2023-01-21 00:25:36.9880|Received a new payload: 16451285 (0x63eb8be889c96eb17d77e92c927868ed20bcbf1a30f777c4196a4fea92ff4008) 
+2023-01-21 00:25:37.5724|Processed   16451285 |      582ms of  12,269ms, mgasps   26.36 total   44.52, tps  266.49 total  470.02, bps    1.72 total    2.95, recv queue 0, proc queue 0 
+2023-01-21 00:25:37.5724|Valid. Result of a new payload: 16451285 (0x63eb8be889c96eb17d77e92c927868ed20bcbf1a30f777c4196a4fea92ff4008). 
+2023-01-21 00:25:37.5774|Received: ForkchoiceState: (HeadBlockHash: 0x63eb8be889c96eb17d77e92c927868ed20bcbf1a30f777c4196a4fea92ff4008, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff)  
+2023-01-21 00:25:37.5774|FCU - block 16451285 (0x63eb8b...ff4008) was processed. 
+2023-01-21 00:25:37.5774|Block 0x63eb8be889c96eb17d77e92c927868ed20bcbf1a30f777c4196a4fea92ff4008 was set as head. 
+2023-01-21 00:25:37.5774|Valid. Request: ForkchoiceState: (HeadBlockHash: 0x63eb8be889c96eb17d77e92c927868ed20bcbf1a30f777c4196a4fea92ff4008, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff) . 
+2023-01-21 00:25:39.0547|Executing JSON RPC call eth_getBlockByNumber with params [0xfafd91, False] 
+2023-01-21 00:25:39.0547|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafd90",
+  "toBlock": "0xfafd90",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-21 00:25:39.0547|Executing JSON RPC call eth_getBlockByNumber with params [0xfafd90, False] 
+2023-01-21 00:25:43.2075|Peers | with known best block: 100 | all: 100 | 
+2023-01-21 00:25:43.2075|Sync peers 100(100)/100
+===[Active][Sleep ][Peer (ProtocolVersion/Head/Host:Port)    ][Transfer Speeds (L/H/B/R/N/S)      ][Client Info (Name/Version/Operating System/Language)     ]
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+   [      ][      ][Peer|eth66|16451243|  24.17.196.207:30303][  178|    0|     |     |     |     ][Nethermind/v1.14.2-0-08354f9fa-20221115/X64-Linux/6.0.9]
+   [      ][      ][Peer|eth66|16451240|  84.226.123.87:55072][   39|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451237| 24.113.239.254:30303][  179|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451236| 185.243.216.35:30303][   31|   20|     |     |     |     ][Nethermind/v1.16.0+c7df68c6/linux-x64/dotnet7.0.2]
+   [      ][      ][Peer|eth66|16451236|    13.56.46.84:44296][  474|    0|     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451236| 142.132.211.94:30303][   28|    8|     |     |     |     ][Nethermind/v1.14.6+6aea7721/linux-x64/dotnet6.0.11]
+   [      ][      ][Peer|eth66|16451236|   3.122.193.60:30303][   22|   18|     |     |     |     ][Nethermind/v1.14.0-0-60f920b90-20221110/X64-Linux/6.0.8]
+   [      ][      ][Peer|eth66|16451235| 76.126.203.176:34552][  349|    0|     |     |     |     ][Nethermind/v1.16.0+c7df68c6/linux-x64/dotnet7.0.2]
+   [      ][      ][Peer|eth66|16451235|   146.4.99.162:40844][   28|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451235|  73.247.38.223:42826][  134|    1|     |     |     |     ][Nethermind/v1.14.7+4fe81c6b/linux-x64/dotnet6.0.11]
+   [      ][      ][Peer|eth66|16451235|   91.64.144.95:47400][   62|     |     |     |     |     ][Nethermind/v1.14.7+4fe81c6b/linux-x64/dotnet6.0.11]
+   [      ][      ][Peer|eth66|16451235| 125.253.93.218:42772][  184|     |     |     |     |     ][Nethermind/v1.14.1-0-1a32d4541-20230116/X64-Linux/6.0.8]
+   [      ][      ][Peer|eth66|16451235|   76.97.244.80:49153][  142|     |     |     |     |     ][Nethermind/v1.14.1-0-1a32d4541-20221228/X64-Windows/6.0.8]
+   [      ][      ][Peer|eth66|16451234| 153.92.111.197:44116][   62|     |     |     |     |     ][Nethermind/v1.14.7+4fe81c6b/linux-x64/dotnet6.0.11]
+   [      ][      ][Peer|eth66|16451233|   1.64.229.244:56530][  278|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451233|  81.166.158.75:42086][   11|     |     |     |     |     ][Nethermind/v1.14.3-0-707461293-20230120/X64-Linux/6.0.9]
+   [      ][      ][Peer|eth66|16439597| 102.132.254.51:30404][  171|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16432000|185.241.198.227:28653][   47|     |     |     |     |     ][Nethermind/v1.16.0+c7df68c6/linux-x64/dotnet7.0.2]
+   [      ][      ][Peer|eth66|16257000| 129.150.50.212:49226][  358|     |     |     |     |     ][Nethermind/v1.16.0+c7df68c6/linux-x64/dotnet7.0.2]
+   [      ][      ][Peer|eth66|16257000|    138.2.80.68:48540][  347|     |     |     |     |     ][Nethermind/v1.16.0+c7df68c6/linux-x64/dotnet7.0.2]
+   [      ][      ][Peer|eth66|16257000|   93.51.18.100:30303][   59|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|15830000|  108.59.36.168:30303][  136|     |     |     |     |     ][Nethermind/v1.16.0-unstable+9e8b3da2/linux-x64/dotnet7.0.1]
+   [      ][      ][Peer|eth66|15214936| 162.218.65.219:31175][  104|     |     |     |     |     ][Nethermind/vd25715f-20230120/X64-Linux/6.0.11] 
+2023-01-21 00:25:48.0291|Received a new payload: 16451286 (0x256a583d3d060c820ab994691508a74de0fb0eac82e93a4251a141d1036caa8b) 
+2023-01-21 00:25:48.4894|Processed   16451286 |      458ms of  10,917ms, mgasps   35.92 total   44.51, tps  345.31 total  469.82, bps    2.19 total    2.95, recv queue 0, proc queue 0 
+2023-01-21 00:25:48.4894|Valid. Result of a new payload: 16451286 (0x256a583d3d060c820ab994691508a74de0fb0eac82e93a4251a141d1036caa8b). 
+2023-01-21 00:25:48.4948|Received: ForkchoiceState: (HeadBlockHash: 0x256a583d3d060c820ab994691508a74de0fb0eac82e93a4251a141d1036caa8b, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff)  
+2023-01-21 00:25:48.4948|FCU - block 16451286 (0x256a58...6caa8b) was processed. 
+2023-01-21 00:25:48.4948|Block 0x256a583d3d060c820ab994691508a74de0fb0eac82e93a4251a141d1036caa8b was set as head. 
+2023-01-21 00:25:48.4948|Valid. Request: ForkchoiceState: (HeadBlockHash: 0x256a583d3d060c820ab994691508a74de0fb0eac82e93a4251a141d1036caa8b, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff) . 
+2023-01-21 00:25:51.0569|Executing JSON RPC call eth_getBlockByNumber with params [0xfafd92, False] 
+2023-01-21 00:25:51.0569|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafd91",
+  "toBlock": "0xfafd91",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-21 00:25:51.0593|Executing JSON RPC call eth_getBlockByNumber with params [0xfafd91, False] 
+2023-01-21 00:25:52.7287|Executing JSON RPC call engine_exchangeTransitionConfigurationV1 with params [{
+  "terminalTotalDifficulty": "0xc70d808a128d7380000",
+  "terminalBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+  "terminalBlockNumber": "0x0"
+}] 
+2023-01-21 00:25:53.3898|Executing JSON RPC call eth_chainId with params [] 
+2023-01-21 00:25:53.3917|Executing JSON RPC call eth_syncing with params [] 
+2023-01-21 00:25:58.2081|Peers | with known best block: 100 | all: 100 | 
+2023-01-21 00:26:00.0691|Received a new payload: 16451287 (0xb19ca1c363bc18e5a5e1139df0c758c62b55996e7deb66aaeb39de45d62fb4da) 
+2023-01-21 00:26:00.3202|Processed   16451287 |      249ms of  11,831ms, mgasps   46.19 total   44.51, tps  465.27 total  469.82, bps    4.01 total    2.95, recv queue 0, proc queue 0 
+2023-01-21 00:26:00.3202|Valid. Result of a new payload: 16451287 (0xb19ca1c363bc18e5a5e1139df0c758c62b55996e7deb66aaeb39de45d62fb4da). 
+2023-01-21 00:26:00.3260|Received: ForkchoiceState: (HeadBlockHash: 0xb19ca1c363bc18e5a5e1139df0c758c62b55996e7deb66aaeb39de45d62fb4da, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff)  
+2023-01-21 00:26:00.3260|FCU - block 16451287 (0xb19ca1...2fb4da) was processed. 
+2023-01-21 00:26:00.3266|Block 0xb19ca1c363bc18e5a5e1139df0c758c62b55996e7deb66aaeb39de45d62fb4da was set as head. 
+2023-01-21 00:26:00.3266|Valid. Request: ForkchoiceState: (HeadBlockHash: 0xb19ca1c363bc18e5a5e1139df0c758c62b55996e7deb66aaeb39de45d62fb4da, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff) . 
+2023-01-21 00:26:00.6301|Removing 901 out of 10901 peer candidates (candidates cleanup). 
+2023-01-21 00:26:03.0594|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafd92",
+  "toBlock": "0xfafd92",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-21 00:26:03.0594|Executing JSON RPC call eth_getBlockByNumber with params [0xfafd93, False] 
+2023-01-21 00:26:03.0594|Executing JSON RPC call eth_getBlockByNumber with params [0xfafd92, False] 
+2023-01-21 00:26:13.2077|Peers | with known best block: 100 | all: 100 | 
+2023-01-21 00:26:14.2163|Received a new payload: 16451288 (0xf7df56899cec53bc11a400c56dc577f76ab836fb79abc7003de4c4ca80f6aa80) 
+2023-01-21 00:26:14.5021|Processed   16451288 |      283ms of  14,182ms, mgasps   66.92 total   44.53, tps  561.04 total  469.91, bps    3.53 total    2.95, recv queue 0, proc queue 0 
+2023-01-21 00:26:14.5021|Valid. Result of a new payload: 16451288 (0xf7df56899cec53bc11a400c56dc577f76ab836fb79abc7003de4c4ca80f6aa80). 
+2023-01-21 00:26:14.5066|Received: ForkchoiceState: (HeadBlockHash: 0xf7df56899cec53bc11a400c56dc577f76ab836fb79abc7003de4c4ca80f6aa80, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff)  
+2023-01-21 00:26:14.5066|FCU - block 16451288 (0xf7df56...f6aa80) was processed. 
+2023-01-21 00:26:14.5066|Block 0xf7df56899cec53bc11a400c56dc577f76ab836fb79abc7003de4c4ca80f6aa80 was set as head. 
+2023-01-21 00:26:14.5066|Valid. Request: ForkchoiceState: (HeadBlockHash: 0xf7df56899cec53bc11a400c56dc577f76ab836fb79abc7003de4c4ca80f6aa80, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff) . 
+2023-01-21 00:26:15.0628|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafd93",
+  "toBlock": "0xfafd93",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-21 00:26:15.0628|Executing JSON RPC call eth_getBlockByNumber with params [0xfafd94, False] 
+2023-01-21 00:26:15.0628|Executing JSON RPC call eth_getBlockByNumber with params [0xfafd93, False] 
+2023-01-21 00:26:24.6259|Received a new payload: 16451289 (0xa5197fbe99c93dde4f6d78d3803894438738bc65f07c93713285f52a31c2f4cf) 
+2023-01-21 00:26:24.9229|Processed   16451289 |      293ms of  10,421ms, mgasps   84.73 total   44.57, tps  648.39 total  470.08, bps    3.41 total    2.95, recv queue 0, proc queue 0 
+2023-01-21 00:26:24.9229|Valid. Result of a new payload: 16451289 (0xa5197fbe99c93dde4f6d78d3803894438738bc65f07c93713285f52a31c2f4cf). 
+2023-01-21 00:26:24.9277|Received: ForkchoiceState: (HeadBlockHash: 0xa5197fbe99c93dde4f6d78d3803894438738bc65f07c93713285f52a31c2f4cf, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff)  
+2023-01-21 00:26:24.9277|FCU - block 16451289 (0xa5197f...c2f4cf) was processed. 
+2023-01-21 00:26:24.9277|Block 0xa5197fbe99c93dde4f6d78d3803894438738bc65f07c93713285f52a31c2f4cf was set as head. 
+2023-01-21 00:26:24.9277|Valid. Request: ForkchoiceState: (HeadBlockHash: 0xa5197fbe99c93dde4f6d78d3803894438738bc65f07c93713285f52a31c2f4cf, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff) . 
+2023-01-21 00:26:27.0653|Executing JSON RPC call eth_getBlockByNumber with params [0xfafd95, False] 
+2023-01-21 00:26:27.0653|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafd94",
+  "toBlock": "0xfafd94",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-21 00:26:27.0678|Executing JSON RPC call eth_getBlockByNumber with params [0xfafd94, False] 
+2023-01-21 00:26:28.2095|Peers | with known best block: 99 | all: 99 | 
+2023-01-21 00:26:35.0710|Removing 903 out of 10903 peer candidates (candidates cleanup). 
+2023-01-21 00:26:36.0149|Received a new payload: 16451290 (0x0770714b0f1d67eb197614b0d055aa68d4d3464221aa95aabf3a3a59c64b5473) 
+2023-01-21 00:26:36.2454|Processed   16451290 |      227ms of  11,323ms, mgasps   77.59 total   44.59, tps  883.92 total  470.40, bps    4.40 total    2.95, recv queue 0, proc queue 0 
+2023-01-21 00:26:36.2454|Valid. Result of a new payload: 16451290 (0x0770714b0f1d67eb197614b0d055aa68d4d3464221aa95aabf3a3a59c64b5473). 
+2023-01-21 00:26:36.2503|Received: ForkchoiceState: (HeadBlockHash: 0x0770714b0f1d67eb197614b0d055aa68d4d3464221aa95aabf3a3a59c64b5473, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff)  
+2023-01-21 00:26:36.2503|FCU - block 16451290 (0x077071...4b5473) was processed. 
+2023-01-21 00:26:36.2511|Block 0x0770714b0f1d67eb197614b0d055aa68d4d3464221aa95aabf3a3a59c64b5473 was set as head. 
+2023-01-21 00:26:36.2511|Valid. Request: ForkchoiceState: (HeadBlockHash: 0x0770714b0f1d67eb197614b0d055aa68d4d3464221aa95aabf3a3a59c64b5473, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff) . 
+2023-01-21 00:26:39.0677|Executing JSON RPC call eth_getBlockByNumber with params [0xfafd96, False] 
+2023-01-21 00:26:39.0677|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafd95",
+  "toBlock": "0xfafd95",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-21 00:26:39.0677|Executing JSON RPC call eth_getBlockByNumber with params [0xfafd95, False] 
+2023-01-21 00:26:43.2075|Peers | with known best block: 100 | all: 100 | 
+2023-01-21 00:26:47.7846|Executing JSON RPC call eth_getBlockByNumber with params [latest, False] 
+2023-01-21 00:26:47.9852|Received a new payload: 16451291 (0x1de96aedb75f467d4dc535fc09836fd6905747b38224f8459c665557a81955db) 
+2023-01-21 00:26:48.1377|Processed   16451291 |      151ms of  11,892ms, mgasps   55.17 total   44.60, tps  713.92 total  470.52, bps    6.61 total    2.96, recv queue 0, proc queue 0 
+2023-01-21 00:26:48.1377|Valid. Result of a new payload: 16451291 (0x1de96aedb75f467d4dc535fc09836fd6905747b38224f8459c665557a81955db). 
+2023-01-21 00:26:48.1423|Received: ForkchoiceState: (HeadBlockHash: 0x1de96aedb75f467d4dc535fc09836fd6905747b38224f8459c665557a81955db, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff)  
+2023-01-21 00:26:48.1423|FCU - block 16451291 (0x1de96a...1955db) was processed. 
+2023-01-21 00:26:48.1429|Block 0x1de96aedb75f467d4dc535fc09836fd6905747b38224f8459c665557a81955db was set as head. 
+2023-01-21 00:26:48.1429|Valid. Request: ForkchoiceState: (HeadBlockHash: 0x1de96aedb75f467d4dc535fc09836fd6905747b38224f8459c665557a81955db, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff) . 
+2023-01-21 00:26:51.0701|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafd96",
+  "toBlock": "0xfafd96",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-21 00:26:51.0711|Executing JSON RPC call eth_getBlockByNumber with params [0xfafd97, False] 
+2023-01-21 00:26:51.0785|Executing JSON RPC call eth_getBlockByNumber with params [0xfafd96, False] 
+2023-01-21 00:26:52.7299|Executing JSON RPC call engine_exchangeTransitionConfigurationV1 with params [{
+  "terminalTotalDifficulty": "0xc70d808a128d7380000",
+  "terminalBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+  "terminalBlockNumber": "0x0"
+}] 
+2023-01-21 00:26:53.3947|Executing JSON RPC call eth_chainId with params [] 
+2023-01-21 00:26:53.3947|***** JSON RPC report *****
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+method                                  | successes |  avg time (µs) |  max time (µs) |    errors |  avg time (µs) |  max time (µs) | avg size | total size |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+engine_exchangeTransitionConfigurationV1|         5 |            687 |            822 |         0 |              0 |              0 |      205 |       1025 | 
+engine_forkchoiceUpdatedV1              |        25 |            926 |           1227 |         0 |              0 |              0 |      200 |       5000 | 
+engine_newPayloadV1                     |        25 |         338677 |         629312 |         0 |              0 |              0 |      165 |       4125 | 
+eth_chainId                             |         5 |            449 |            531 |         0 |              0 |              0 |       42 |        210 | 
+eth_getBlockByNumber                    |        51 |           2151 |           7032 |         0 |              0 |              0 |    11365 |     579631 | 
+eth_getLogs                             |        25 |           2686 |           7778 |         0 |              0 |              0 |       39 |        975 | 
+eth_syncing                             |         5 |            361 |            573 |         0 |              0 |              0 |       42 |        210 | 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+TOTAL                                   |       141 |          61520 |         629312 |         0 |              0 |              0 |     4193 |     591176 | 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+2023-01-21 00:26:53.3947|Executing JSON RPC call eth_syncing with params [] 
+2023-01-21 00:26:58.2076|Peers | with known best block: 100 | all: 100 | 
+2023-01-21 00:27:00.3678|Received a new payload: 16451292 (0x2a0859a453aec60fcd269a42e0a54baedece10169cddf7252e0b7fe095d745ba) 
+2023-01-21 00:27:00.7205|Processed   16451292 |      351ms of  12,583ms, mgasps   42.07 total   44.60, tps  516.18 total  470.58, bps    2.85 total    2.95, recv queue 0, proc queue 0 
+2023-01-21 00:27:00.7205|Valid. Result of a new payload: 16451292 (0x2a0859a453aec60fcd269a42e0a54baedece10169cddf7252e0b7fe095d745ba). 
+2023-01-21 00:27:00.7248|Received: ForkchoiceState: (HeadBlockHash: 0x2a0859a453aec60fcd269a42e0a54baedece10169cddf7252e0b7fe095d745ba, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff)  
+2023-01-21 00:27:00.7248|FCU - block 16451292 (0x2a0859...d745ba) was processed. 
+2023-01-21 00:27:00.7248|Block 0x2a0859a453aec60fcd269a42e0a54baedece10169cddf7252e0b7fe095d745ba was set as head. 
+2023-01-21 00:27:00.7248|Valid. Request: ForkchoiceState: (HeadBlockHash: 0x2a0859a453aec60fcd269a42e0a54baedece10169cddf7252e0b7fe095d745ba, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff) . 
+2023-01-21 00:27:03.0731|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafd97",
+  "toBlock": "0xfafd97",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-21 00:27:03.0731|Executing JSON RPC call eth_getBlockByNumber with params [0xfafd98, False] 
+2023-01-21 00:27:03.0744|Executing JSON RPC call eth_getBlockByNumber with params [0xfafd97, False] 
+2023-01-21 00:27:10.2231|Removing 901 out of 10901 peer candidates (candidates cleanup). 
+2023-01-21 00:27:13.2090|Peers | with known best block: 100 | all: 100 | 
+2023-01-21 00:27:13.2090|Sync peers - Initialized: 100 | All: 100 | Max: 100
+===[Active][Sleep ][Peer (ProtocolVersion/Head/Host:Port)    ][Transfer Speeds (L/H/B/R/N/S)      ][Client Info (Name/Version/Operating System/Language)     ]
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+   [      ][      ][Peer|eth66|16451291|   46.69.32.115:30404][  161|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451289| 167.235.34.105:31400][   33|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451283| 54.196.170.204:30303][  114|    0|     |     |     |     ][Geth/v1.10.25-stable-69568c55/linux-amd64/go1.18.6]
+   [      ][      ][Peer|eth66|16451273| 139.215.226.67:51390][  300|     |     |     |     |     ][Geth/v1.10.25-stable-69568c55/linux-amd64/go1.18.5]
+   [      ][      ][Peer|eth66|16451250|  73.78.202.116:30303][  168|    0|     |     |     |     ][Geth/v1.10.26-stable-e5eb32ac/linux-arm64/go1.18.5]
+   [      ][      ][Peer|eth66|16451249|    51.81.46.88:54556][  112|     |     |     |     |     ][Geth/1.10.23-stable-36c1449b/linux-amd64/go1.18]
+   [      ][      ][Peer|eth66|16451248|168.119.138.215:30303][ 1610|    0|     |     |     |     ][Geth/v1.10.25-stable-69568c55/linux-amd64/go1.18.5]
+   [      ][      ][Peer|eth66|16451243|  24.17.196.207:30303][  179|    0|     |     |     |     ][Nethermind/v1.14.2-0-08354f9fa-20221115/X64-Linux/6.0.9]
+   [      ][      ][Peer|eth66|16451240|  84.226.123.87:55072][   40|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451238|    3.80.12.255:30414][  158|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451238|    3.80.12.255:30554][  157|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451237| 24.113.239.254:30303][  175|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451237|  211.21.40.242:59708][  318|     |     |     |     |     ][Geth/v1.10.23-stable-d901d853/linux-amd64/go1.18.5]
+   [      ][      ][Peer|eth66|16451237| 167.235.34.105:31542][   29|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451237|    3.80.12.255:30351][  158|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451237|    3.80.12.255:30382][  157|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451237|    3.80.12.255:30439][  158|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451237|    3.80.12.255:30552][  158|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451237|    3.80.12.255:30577][  158|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236| 185.243.216.35:30303][   16|   20|     |     |     |     ][Nethermind/v1.16.0+c7df68c6/linux-x64/dotnet7.0.2]
+   [      ][      ][Peer|eth66|16451236|    13.56.46.84:44296][ 1823|    0|     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451236| 142.132.211.94:30303][   27|    8|     |     |     |     ][Nethermind/v1.14.6+6aea7721/linux-x64/dotnet6.0.11]
+   [      ][      ][Peer|eth66|16451236|   3.122.193.60:30303][   22|   18|     |     |     |     ][Nethermind/v1.14.0-0-60f920b90-20221110/X64-Linux/6.0.8]
+   [      ][      ][Peer|eth66|16451236|   113.31.173.8:30303][  206|    0|     |     |     |     ][Geth/v1.11.0-unstable-88132afc/linux-arm64/go1.18.6]
+   [      ][      ][Peer|eth66|16451236|   3.88.141.173:30303][  114|     |     |     |     |     ][Geth/v1.10.9-stable-eae3b194/linux-amd64/go1.17.1]
+   [      ][      ][Peer|eth66|16451236|124.126.140.106: 2706][  182|    0|     |     |     |     ][Geth/v1.10.26-stable-e5eb32ac/linux-amd64/go1.19.2]
+   [      ][      ][Peer|eth66|16451236|  65.21.128.178:30303][   24|    5|     |     |     |     ][Geth/v1.10.26-stable-e5eb32ac/linux-amd64/go1.18]
+   [      ][      ][Peer|eth66|16451236|   65.109.19.71:30303][   86|   14|     |     |     |     ][Geth/v1.10.26-stable-525bd5df/linux-amd64/go1.18]
+   [      ][      ][Peer|eth66|16451236| 195.201.207.37:30303][   27|    2|     |     |     |     ][Geth/v1.10.25-stable-69568c55/linux-amd64/go1.18.5]
+   [      ][      ][Peer|eth66|16451236|     46.4.85.28:30303][  452|    0|     |     |     |     ][Geth/v1.10.25-stable-36449b3b/linux-amd64/go1.19]
+   [      ][      ][Peer|eth66|16451236|   37.19.216.43:30303][  126|    0|     |     |     |     ][Geth/v1.10.23-stable/linux-amd64/go1.19.4]
+   [      ][      ][Peer|eth66|16451236|   15.204.197.7:30303][  114|    0|     |     |     |     ][Geth/v1.10.23-stable/linux-amd64/go1.18.1]
+   [      ][      ][Peer|eth66|16451236| 162.19.171.169:30303][   29|    0|     |     |     |     ][Geth/v1.10.23-stable/linux-amd64/go1.18.1]
+   [      ][      ][Peer|eth66|16451236|  34.206.90.238:30303][  114|    0|     |     |     |     ][Geth/v1.10.23-stable/linux-amd64/go1.18.1]
+   [      ][      ][Peer|eth66|16451236|201.137.165.132:30303][  186|    0|     |     |     |     ][Geth/v1.10.23-stable/darwin-amd64/go1.19]
+   [      ][      ][Peer|eth66|16451236| 185.232.77.107:30303][   14|    1|     |     |     |     ][erigon/v2.35.2-stable-800645ee/linux-amd64/go1.19.5]
+   [      ][      ][Peer|eth66|16451236|  38.141.210.98:30303][  459|     |     |     |     |     ][besu/v22.10.3/linux-x86_64/openjdk-java-17]
+   [      ][      ][Peer|eth66|16451236| 167.235.34.105:31345][   37|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236| 167.235.34.105:31390][   35|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236| 167.235.34.105:31365][   29|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236| 167.235.34.105:31348][   28|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236| 167.235.34.105:31338][   28|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236| 167.235.34.105:31537][   28|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236| 167.235.34.105:31355][   29|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236| 167.235.34.105:31498][   28|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30514][  157|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30400][  158|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30335][  158|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30470][  158|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30388][  157|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30571][  158|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30573][  158|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30437][  158|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30429][  157|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30589][  158|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30360][  158|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30508][  157|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30479][  158|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30520][  158|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30342][  158|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30568][  157|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30441][  158|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30445][  157|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30525][  158|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30303][  158|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30337][  158|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30367][  158|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30328][  158|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451235| 76.126.203.176:34552][  471|    0|     |     |     |     ][Nethermind/v1.16.0+c7df68c6/linux-x64/dotnet7.0.2]
+   [      ][      ][Peer|eth66|16451235|   146.4.99.162:40844][   28|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451235|  73.247.38.223:42826][  141|    1|     |     |     |     ][Nethermind/v1.14.7+4fe81c6b/linux-x64/dotnet6.0.11]
+   [      ][      ][Peer|eth66|16451235|   91.64.144.95:47400][  100|     |     |     |     |     ][Nethermind/v1.14.7+4fe81c6b/linux-x64/dotnet6.0.11]
+   [      ][      ][Peer|eth66|16451235| 125.253.93.218:42772][  184|     |     |     |     |     ][Nethermind/v1.14.1-0-1a32d4541-20230116/X64-Linux/6.0.8]
+   [      ][      ][Peer|eth66|16451235|   76.97.244.80:49153][  138|     |     |     |     |     ][Nethermind/v1.14.1-0-1a32d4541-20221228/X64-Windows/6.0.8]
+   [      ][      ][Peer|eth66|16451235| 89.187.161.243:38186][  269|    0|     |     |     |     ][Geth/v1.10.23-stable/linux-amd64/go1.19.4]
+   [      ][      ][Peer|eth66|16451235|    3.80.12.255:30539][  158|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451234| 153.92.111.197:44116][   55|     |     |     |     |     ][Nethermind/v1.14.7+4fe81c6b/linux-x64/dotnet6.0.11]
+   [      ][      ][Peer|eth66|16451234|    3.69.166.93:40270][   21|     |     |     |     |     ][Geth/v1.1.9-5404d9d8-20220420/linux-amd64/go1.17.5]
+   [      ][      ][Peer|eth66|16451234|    3.80.12.255:30572][  158|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451233|   1.64.229.244:56530][  278|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451233|  81.166.158.75:42086][   11|     |     |     |     |     ][Nethermind/v1.14.3-0-707461293-20230120/X64-Linux/6.0.9]
+   [      ][      ][Peer|eth66|16451233| 54.175.160.107:49978][  114|     |     |     |     |     ][Geth/v1.1.9-5404d9d8-20220420/linux-amd64/go1.17.5]
+   [      ][      ][Peer|eth66|16451233|  3.143.112.234:30303][  124|    2|     |     |     |     ][erigon/v2.34.0-stable-937fb2c4/linux-amd64/go1.19rc1]
+   [      ][      ][Peer|eth66|16451233|    3.80.12.255:30368][  158|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451226|   51.222.40.18:30304][  117|     |     |     |     |     ][Geth/v1.9.24-stable-cc05b050/linux-amd64/go1.15.5]
+   [      ][      ][Peer|eth66|16451226|    3.80.12.255:30551][  157|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451139|  162.55.89.238:30304][   27|     |     |     |     |     ][Geth/v1.9.24-stable-cc05b050/linux-amd64/go1.15.5]
+   [      ][      ][Peer|eth66|16446144|  18.197.184.51:51038][   21|     |     |     |     |     ][Geth/v1.10.25-stable-69568c55/linux-amd64/go1.19.2]
+   [      ][      ][Peer|eth66|16445665|     3.70.223.0:60244][   21|     |     |     |     |     ][Geth/v1.10.25-stable-69568c55/linux-amd64/go1.19.2]
+   [      ][      ][Peer|eth66|16439597| 102.132.254.51:30404][  171|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16432000|185.241.198.227:28653][   78|     |     |     |     |     ][Nethermind/v1.16.0+c7df68c6/linux-x64/dotnet7.0.2]
+   [      ][      ][Peer|eth66|16420405|    13.48.11.26:30303][    2|     |     |     |     |     ][erigon/v2.35.2-stable-800645ee/linux-amd64/go1.19.5]
+   [      ][      ][Peer|eth66|16335999|152.228.223.112:30303][   31|     |     |     |     |     ][erigon/v2.36.0-stable-3ec0ed76/linux-amd64/go1.19.5]
+   [      ][      ][Peer|eth66|16257000| 129.150.50.212:49226][  358|     |     |     |     |     ][Nethermind/v1.16.0+c7df68c6/linux-x64/dotnet7.0.2]
+   [      ][      ][Peer|eth66|16257000|    138.2.80.68:48540][  347|     |     |     |     |     ][Nethermind/v1.16.0+c7df68c6/linux-x64/dotnet7.0.2]
+   [      ][      ][Peer|eth66|16257000|   93.51.18.100:30303][  882|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|15830000|  108.59.36.168:30303][  136|     |     |     |     |     ][Nethermind/v1.16.0-unstable+9e8b3da2/linux-x64/dotnet7.0.1]
+   [      ][      ][Peer|eth66|15466495|  35.175.161.27:19946][  164|     |     |     |     |     ][Geth/v1.10.23-stable-d901d853/linux-amd64/go1.18.5]
+   [      ][      ][Peer|eth66|15214936| 162.218.65.219:31175][  108|     |     |     |     |     ][Nethermind/vd25715f-20230120/X64-Linux/6.0.11]
+   [      ][      ][Peer|eth66| 7856611| 34.234.215.244:30303][  114|     |     |     |     |     ][Geth/v1.11.0-unstable-b818e73e/linux-amd64/go1.19.2] 
+2023-01-21 00:27:13.2880|Received a new payload: 16451293 (0x2d4f704648d634b5c19d2f2f5a499f60846dff45bbc069aea21109ea59a8164e) 
+2023-01-21 00:27:13.5697|Processed   16451293 |      279ms of  12,849ms, mgasps   51.13 total   44.60, tps  569.19 total  470.67, bps    3.58 total    2.96, recv queue 0, proc queue 0 
+2023-01-21 00:27:13.5697|Valid. Result of a new payload: 16451293 (0x2d4f704648d634b5c19d2f2f5a499f60846dff45bbc069aea21109ea59a8164e). 
+2023-01-21 00:27:13.5744|Received: ForkchoiceState: (HeadBlockHash: 0x2d4f704648d634b5c19d2f2f5a499f60846dff45bbc069aea21109ea59a8164e, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff)  
+2023-01-21 00:27:13.5744|FCU - block 16451293 (0x2d4f70...a8164e) was processed. 
+2023-01-21 00:27:13.5744|Block 0x2d4f704648d634b5c19d2f2f5a499f60846dff45bbc069aea21109ea59a8164e was set as head. 
+2023-01-21 00:27:13.5744|Valid. Request: ForkchoiceState: (HeadBlockHash: 0x2d4f704648d634b5c19d2f2f5a499f60846dff45bbc069aea21109ea59a8164e, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff) . 
+2023-01-21 00:27:15.0758|Executing JSON RPC call eth_getBlockByNumber with params [0xfafd99, False] 
+2023-01-21 00:27:15.0758|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafd98",
+  "toBlock": "0xfafd98",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-21 00:27:15.0758|Executing JSON RPC call eth_getBlockByNumber with params [0xfafd98, False] 
+2023-01-21 00:27:23.9641|Received a new payload: 16451294 (0xceefec3c33dd53ba850bbfec42f86b7204dcae6093360a4eb2fda6b53dcbf5b3) 
+2023-01-21 00:27:24.1587|Processed   16451294 |      186ms of  10,589ms, mgasps   76.26 total   44.62, tps  617.97 total  470.76, bps    5.37 total    2.96, recv queue 0, proc queue 0 
+2023-01-21 00:27:24.1587|Valid. Result of a new payload: 16451294 (0xceefec3c33dd53ba850bbfec42f86b7204dcae6093360a4eb2fda6b53dcbf5b3). 
+2023-01-21 00:27:24.1644|Received: ForkchoiceState: (HeadBlockHash: 0xceefec3c33dd53ba850bbfec42f86b7204dcae6093360a4eb2fda6b53dcbf5b3, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff)  
+2023-01-21 00:27:24.1644|FCU - block 16451294 (0xceefec...cbf5b3) was processed. 
+2023-01-21 00:27:24.1644|Block 0xceefec3c33dd53ba850bbfec42f86b7204dcae6093360a4eb2fda6b53dcbf5b3 was set as head. 
+2023-01-21 00:27:24.1644|Valid. Request: ForkchoiceState: (HeadBlockHash: 0xceefec3c33dd53ba850bbfec42f86b7204dcae6093360a4eb2fda6b53dcbf5b3, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff) . 
+2023-01-21 00:27:27.0782|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafd99",
+  "toBlock": "0xfafd99",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-21 00:27:27.0794|Executing JSON RPC call eth_getBlockByNumber with params [0xfafd9a, False] 
+2023-01-21 00:27:27.0794|Executing JSON RPC call eth_getBlockByNumber with params [0xfafd99, False] 
+2023-01-21 00:27:28.2131|Peers | with known best block: 100 | all: 100 | 
+2023-01-21 00:27:36.0841|Received a new payload: 16451295 (0x41cddd5ef289b32a1901572ad198a60e49cdea4f1fe7c4ccce458912b3bd4266) 
+2023-01-21 00:27:36.4098|Processed   16451295 |      324ms of  12,251ms, mgasps   37.06 total   44.61, tps  410.37 total  470.70, bps    3.09 total    2.96, recv queue 0, proc queue 0 
+2023-01-21 00:27:36.4098|Valid. Result of a new payload: 16451295 (0x41cddd5ef289b32a1901572ad198a60e49cdea4f1fe7c4ccce458912b3bd4266). 
+2023-01-21 00:27:36.4148|Received: ForkchoiceState: (HeadBlockHash: 0x41cddd5ef289b32a1901572ad198a60e49cdea4f1fe7c4ccce458912b3bd4266, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff)  
+2023-01-21 00:27:36.4148|FCU - block 16451295 (0x41cddd...bd4266) was processed. 
+2023-01-21 00:27:36.4148|Block 0x41cddd5ef289b32a1901572ad198a60e49cdea4f1fe7c4ccce458912b3bd4266 was set as head. 
+2023-01-21 00:27:36.4148|Valid. Request: ForkchoiceState: (HeadBlockHash: 0x41cddd5ef289b32a1901572ad198a60e49cdea4f1fe7c4ccce458912b3bd4266, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff) . 
+2023-01-21 00:27:39.0822|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafd9a",
+  "toBlock": "0xfafd9a",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-21 00:27:39.0836|Executing JSON RPC call eth_getBlockByNumber with params [0xfafd9b, False] 
+2023-01-21 00:27:39.0883|Executing JSON RPC call eth_getBlockByNumber with params [0xfafd9a, False] 
+2023-01-21 00:27:43.2106|Peers | with known best block: 99 | all: 99 | 
+2023-01-21 00:27:43.2106|Sync peers 99(99)/100
+===[Active][Sleep ][Peer (ProtocolVersion/Head/Host:Port)    ][Transfer Speeds (L/H/B/R/N/S)      ][Client Info (Name/Version/Operating System/Language)     ]
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+   [      ][      ][Peer|eth66|16451291|   46.69.32.115:30404][  106|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451243|  24.17.196.207:30303][  178|    0|     |     |     |     ][Nethermind/v1.14.2-0-08354f9fa-20221115/X64-Linux/6.0.9]
+   [      ][      ][Peer|eth66|16451240|  84.226.123.87:55072][   40|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451237| 24.113.239.254:30303][  174|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451236| 185.243.216.35:30303][   14|   20|     |     |     |     ][Nethermind/v1.16.0+c7df68c6/linux-x64/dotnet7.0.2]
+   [      ][      ][Peer|eth66|16451236|    13.56.46.84:44296][ 1319|    0|     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451236| 142.132.211.94:30303][   27|    8|     |     |     |     ][Nethermind/v1.14.6+6aea7721/linux-x64/dotnet6.0.11]
+   [      ][      ][Peer|eth66|16451236|   3.122.193.60:30303][   22|   18|     |     |     |     ][Nethermind/v1.14.0-0-60f920b90-20221110/X64-Linux/6.0.8]
+   [      ][      ][Peer|eth66|16451235| 76.126.203.176:34552][  401|    0|     |     |     |     ][Nethermind/v1.16.0+c7df68c6/linux-x64/dotnet7.0.2]
+   [      ][      ][Peer|eth66|16451235|   146.4.99.162:40844][   28|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451235|  73.247.38.223:42826][  137|    1|     |     |     |     ][Nethermind/v1.14.7+4fe81c6b/linux-x64/dotnet6.0.11]
+   [      ][      ][Peer|eth66|16451235|   91.64.144.95:47400][   85|     |     |     |     |     ][Nethermind/v1.14.7+4fe81c6b/linux-x64/dotnet6.0.11]
+   [      ][      ][Peer|eth66|16451235| 125.253.93.218:42772][  184|     |     |     |     |     ][Nethermind/v1.14.1-0-1a32d4541-20230116/X64-Linux/6.0.8]
+   [      ][      ][Peer|eth66|16451235|   76.97.244.80:49153][  138|     |     |     |     |     ][Nethermind/v1.14.1-0-1a32d4541-20221228/X64-Windows/6.0.8]
+   [      ][      ][Peer|eth66|16451234| 153.92.111.197:44116][   52|     |     |     |     |     ][Nethermind/v1.14.7+4fe81c6b/linux-x64/dotnet6.0.11]
+   [      ][      ][Peer|eth66|16451233|   1.64.229.244:56530][  279|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451233|  81.166.158.75:42086][   11|     |     |     |     |     ][Nethermind/v1.14.3-0-707461293-20230120/X64-Linux/6.0.9]
+   [      ][      ][Peer|eth66|16439597| 102.132.254.51:30404][  171|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16432000|185.241.198.227:28653][   84|     |     |     |     |     ][Nethermind/v1.16.0+c7df68c6/linux-x64/dotnet7.0.2]
+   [      ][      ][Peer|eth66|16257000| 129.150.50.212:49226][  358|     |     |     |     |     ][Nethermind/v1.16.0+c7df68c6/linux-x64/dotnet7.0.2]
+   [      ][      ][Peer|eth66|16257000|    138.2.80.68:48540][  347|     |     |     |     |     ][Nethermind/v1.16.0+c7df68c6/linux-x64/dotnet7.0.2]
+   [      ][      ][Peer|eth66|15830000|  108.59.36.168:30303][  136|     |     |     |     |     ][Nethermind/v1.16.0-unstable+9e8b3da2/linux-x64/dotnet7.0.1]
+   [      ][      ][Peer|eth66|15214936| 162.218.65.219:31175][  106|     |     |     |     |     ][Nethermind/vd25715f-20230120/X64-Linux/6.0.11] 
+2023-01-21 00:27:45.4964|Removing 900 out of 10900 peer candidates (candidates cleanup). 
+2023-01-21 00:27:49.1698|Received a new payload: 16451296 (0x166e28f0b02898137c0647755466f6219b55bbd219b9e7813fd0007fdcea578c) 
+2023-01-21 00:27:49.4437|Processed   16451296 |      271ms of  13,034ms, mgasps   46.86 total   44.62, tps  572.07 total  470.79, bps    3.69 total    2.96, recv queue 0, proc queue 0 
+2023-01-21 00:27:49.4437|Valid. Result of a new payload: 16451296 (0x166e28f0b02898137c0647755466f6219b55bbd219b9e7813fd0007fdcea578c). 
+2023-01-21 00:27:49.4482|Received: ForkchoiceState: (HeadBlockHash: 0x166e28f0b02898137c0647755466f6219b55bbd219b9e7813fd0007fdcea578c, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff)  
+2023-01-21 00:27:49.4482|FCU - block 16451296 (0x166e28...ea578c) was processed. 
+2023-01-21 00:27:49.4482|Block 0x166e28f0b02898137c0647755466f6219b55bbd219b9e7813fd0007fdcea578c was set as head. 
+2023-01-21 00:27:49.4482|Valid. Request: ForkchoiceState: (HeadBlockHash: 0x166e28f0b02898137c0647755466f6219b55bbd219b9e7813fd0007fdcea578c, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff) . 
+2023-01-21 00:27:51.0854|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafd9b",
+  "toBlock": "0xfafd9b",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-21 00:27:51.0854|Executing JSON RPC call eth_getBlockByNumber with params [0xfafd9c, False] 
+2023-01-21 00:27:51.0867|Executing JSON RPC call eth_getBlockByNumber with params [0xfafd9b, False] 
+2023-01-21 00:27:52.7314|Executing JSON RPC call engine_exchangeTransitionConfigurationV1 with params [{
+  "terminalTotalDifficulty": "0xc70d808a128d7380000",
+  "terminalBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+  "terminalBlockNumber": "0x0"
+}] 
+2023-01-21 00:27:53.3991|Executing JSON RPC call eth_chainId with params [] 
+2023-01-21 00:27:53.3991|Executing JSON RPC call eth_syncing with params [] 
+2023-01-21 00:27:58.2176|Peers | with known best block: 101 | all: 101 | 
+2023-01-21 00:28:00.8894|Received a new payload: 16451297 (0xb72494f598094e5bafe4606998dd368ed138a2794863cc718f5a28e97deb8baf) 
+2023-01-21 00:28:01.1853|Processed   16451297 |      294ms of  11,742ms, mgasps   34.16 total   44.60, tps  401.17 total  470.72, bps    3.40 total    2.96, recv queue 0, proc queue 0 
+2023-01-21 00:28:01.1853|Valid. Result of a new payload: 16451297 (0xb72494f598094e5bafe4606998dd368ed138a2794863cc718f5a28e97deb8baf). 
+2023-01-21 00:28:01.1896|Received: ForkchoiceState: (HeadBlockHash: 0xb72494f598094e5bafe4606998dd368ed138a2794863cc718f5a28e97deb8baf, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff)  
+2023-01-21 00:28:01.1896|FCU - block 16451297 (0xb72494...eb8baf) was processed. 
+2023-01-21 00:28:01.1896|Block 0xb72494f598094e5bafe4606998dd368ed138a2794863cc718f5a28e97deb8baf was set as head. 
+2023-01-21 00:28:01.1896|Valid. Request: ForkchoiceState: (HeadBlockHash: 0xb72494f598094e5bafe4606998dd368ed138a2794863cc718f5a28e97deb8baf, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff) . 
+2023-01-21 00:28:03.0898|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafd9c",
+  "toBlock": "0xfafd9c",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-21 00:28:03.0908|Executing JSON RPC call eth_getBlockByNumber with params [0xfafd9d, False] 
+2023-01-21 00:28:03.0908|Executing JSON RPC call eth_getBlockByNumber with params [0xfafd9c, False] 
+2023-01-21 00:28:12.3157|Received a new payload: 16451298 (0x0eae7b1f4c4afbd63012f71bd9a7039938f43baa34495d3c5cd2ed4d499e4c14) 
+2023-01-21 00:28:12.8360|Processed   16451298 |      517ms of  11,651ms, mgasps   51.36 total   44.62, tps  414.12 total  470.62, bps    1.94 total    2.96, recv queue 0, proc queue 0 
+2023-01-21 00:28:12.8360|Valid. Result of a new payload: 16451298 (0x0eae7b1f4c4afbd63012f71bd9a7039938f43baa34495d3c5cd2ed4d499e4c14). 
+2023-01-21 00:28:12.8405|Received: ForkchoiceState: (HeadBlockHash: 0x0eae7b1f4c4afbd63012f71bd9a7039938f43baa34495d3c5cd2ed4d499e4c14, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff)  
+2023-01-21 00:28:12.8405|FCU - block 16451298 (0x0eae7b...9e4c14) was processed. 
+2023-01-21 00:28:12.8405|Block 0x0eae7b1f4c4afbd63012f71bd9a7039938f43baa34495d3c5cd2ed4d499e4c14 was set as head. 
+2023-01-21 00:28:12.8405|Valid. Request: ForkchoiceState: (HeadBlockHash: 0x0eae7b1f4c4afbd63012f71bd9a7039938f43baa34495d3c5cd2ed4d499e4c14, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff) . 
+2023-01-21 00:28:13.2151|Peers | with known best block: 101 | all: 101 | 
+2023-01-21 00:28:13.2151|Sync peers 101(101)/100
+===[Active][Sleep ][Peer (ProtocolVersion/Head/Host:Port)    ][Transfer Speeds (L/H/B/R/N/S)      ][Client Info (Name/Version/Operating System/Language)     ]
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+   [      ][      ][Peer|eth66|16451295|   73.136.2.227:50048][  218|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451291|   46.69.32.115:30404][   74|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451243|  24.17.196.207:30303][  178|    0|     |     |     |     ][Nethermind/v1.14.2-0-08354f9fa-20221115/X64-Linux/6.0.9]
+   [      ][      ][Peer|eth66|16451240|  84.226.123.87:55072][   40|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451237| 24.113.239.254:30303][  175|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451236| 185.243.216.35:30303][   26|   20|     |     |     |     ][Nethermind/v1.16.0+c7df68c6/linux-x64/dotnet7.0.2]
+   [      ][      ][Peer|eth66|16451236|    13.56.46.84:44296][ 1820|    0|     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451236| 142.132.211.94:30303][   43|    8|     |     |     |     ][Nethermind/v1.14.6+6aea7721/linux-x64/dotnet6.0.11]
+   [      ][      ][Peer|eth66|16451236|   3.122.193.60:30303][   21|   18|     |     |     |     ][Nethermind/v1.14.0-0-60f920b90-20221110/X64-Linux/6.0.8]
+   [      ][      ][Peer|eth66|16451235| 76.126.203.176:34552][  286|    0|     |     |     |     ][Nethermind/v1.16.0+c7df68c6/linux-x64/dotnet7.0.2]
+   [      ][      ][Peer|eth66|16451235|   146.4.99.162:40844][   28|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451235|  73.247.38.223:42826][  137|    1|     |     |     |     ][Nethermind/v1.14.7+4fe81c6b/linux-x64/dotnet6.0.11]
+   [      ][      ][Peer|eth66|16451235|   91.64.144.95:47400][  108|     |     |     |     |     ][Nethermind/v1.14.7+4fe81c6b/linux-x64/dotnet6.0.11]
+   [      ][      ][Peer|eth66|16451235| 125.253.93.218:42772][  184|     |     |     |     |     ][Nethermind/v1.14.1-0-1a32d4541-20230116/X64-Linux/6.0.8]
+   [      ][      ][Peer|eth66|16451235|   76.97.244.80:49153][  136|     |     |     |     |     ][Nethermind/v1.14.1-0-1a32d4541-20221228/X64-Windows/6.0.8]
+   [      ][      ][Peer|eth66|16451234| 153.92.111.197:44116][   51|     |     |     |     |     ][Nethermind/v1.14.7+4fe81c6b/linux-x64/dotnet6.0.11]
+   [      ][      ][Peer|eth66|16451233|   1.64.229.244:56530][  279|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451233|  81.166.158.75:42086][   11|     |     |     |     |     ][Nethermind/v1.14.3-0-707461293-20230120/X64-Linux/6.0.9]
+   [      ][      ][Peer|eth66|16439597| 102.132.254.51:30404][  171|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16432000|185.241.198.227:28653][   85|     |     |     |     |     ][Nethermind/v1.16.0+c7df68c6/linux-x64/dotnet7.0.2]
+   [      ][      ][Peer|eth66|16257000| 129.150.50.212:49226][  358|     |     |     |     |     ][Nethermind/v1.16.0+c7df68c6/linux-x64/dotnet7.0.2]
+   [      ][      ][Peer|eth66|16257000|    138.2.80.68:48540][  347|     |     |     |     |     ][Nethermind/v1.16.0+c7df68c6/linux-x64/dotnet7.0.2]
+   [      ][      ][Peer|eth66|15830000|  108.59.36.168:30303][  136|     |     |     |     |     ][Nethermind/v1.16.0-unstable+9e8b3da2/linux-x64/dotnet7.0.1]
+   [      ][      ][Peer|eth66|15214936| 162.218.65.219:31175][  107|     |     |     |     |     ][Nethermind/vd25715f-20230120/X64-Linux/6.0.11] 
+2023-01-21 00:28:15.0932|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafd9d",
+  "toBlock": "0xfafd9d",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-21 00:28:15.0932|Executing JSON RPC call eth_getBlockByNumber with params [0xfafd9e, False] 
+2023-01-21 00:28:15.0956|Executing JSON RPC call eth_getBlockByNumber with params [0xfafd9d, False] 
+2023-01-21 00:28:24.2226|Received a new payload: 16451299 (0x63f9656e7731c41a3a1995af952ca8992fc63de4f77a87156c98f9cb690a8928) 
+2023-01-21 00:28:24.4919|Processed   16451299 |      268ms of  11,656ms, mgasps   43.18 total   44.62, tps  482.11 total  470.63, bps    3.74 total    2.96, recv queue 0, proc queue 0 
+2023-01-21 00:28:24.4919|Valid. Result of a new payload: 16451299 (0x63f9656e7731c41a3a1995af952ca8992fc63de4f77a87156c98f9cb690a8928). 
+2023-01-21 00:28:24.4972|Received: ForkchoiceState: (HeadBlockHash: 0x63f9656e7731c41a3a1995af952ca8992fc63de4f77a87156c98f9cb690a8928, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff)  
+2023-01-21 00:28:24.4972|FCU - block 16451299 (0x63f965...0a8928) was processed. 
+2023-01-21 00:28:24.4972|Block 0x63f9656e7731c41a3a1995af952ca8992fc63de4f77a87156c98f9cb690a8928 was set as head. 
+2023-01-21 00:28:24.4972|Valid. Request: ForkchoiceState: (HeadBlockHash: 0x63f9656e7731c41a3a1995af952ca8992fc63de4f77a87156c98f9cb690a8928, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff) . 
+2023-01-21 00:28:25.6956|Removing 901 out of 10901 peer candidates (candidates cleanup). 
+2023-01-21 00:28:27.0967|Executing JSON RPC call eth_getBlockByNumber with params [0xfafd9f, False] 
+2023-01-21 00:28:27.0967|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafd9e",
+  "toBlock": "0xfafd9e",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-21 00:28:27.0989|Executing JSON RPC call eth_getBlockByNumber with params [0xfafd9e, False] 
+2023-01-21 00:28:28.2165|Peers | with known best block: 99 | all: 99 | 
+2023-01-21 00:28:35.9573|Received a new payload: 16451300 (0x18f66ffffd69e844fbf8b5a8d7ef362e5f76df5d7785b80b7e83d49543ef40df) 
+2023-01-21 00:28:36.2684|Processed   16451300 |      308ms of  11,776ms, mgasps   45.37 total   44.62, tps  477.24 total  470.64, bps    3.25 total    2.96, recv queue 0, proc queue 0 
+2023-01-21 00:28:36.2684|Valid. Result of a new payload: 16451300 (0x18f66ffffd69e844fbf8b5a8d7ef362e5f76df5d7785b80b7e83d49543ef40df). 
+2023-01-21 00:28:36.2739|Received: ForkchoiceState: (HeadBlockHash: 0x18f66ffffd69e844fbf8b5a8d7ef362e5f76df5d7785b80b7e83d49543ef40df, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff)  
+2023-01-21 00:28:36.2739|FCU - block 16451300 (0x18f66f...ef40df) was processed. 
+2023-01-21 00:28:36.2746|Block 0x18f66ffffd69e844fbf8b5a8d7ef362e5f76df5d7785b80b7e83d49543ef40df was set as head. 
+2023-01-21 00:28:36.2746|Valid. Request: ForkchoiceState: (HeadBlockHash: 0x18f66ffffd69e844fbf8b5a8d7ef362e5f76df5d7785b80b7e83d49543ef40df, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff) . 
+2023-01-21 00:28:39.0993|Executing JSON RPC call eth_getBlockByNumber with params [0xfafda0, False] 
+2023-01-21 00:28:39.0993|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafd9f",
+  "toBlock": "0xfafd9f",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-21 00:28:39.1067|Executing JSON RPC call eth_getBlockByNumber with params [0xfafd9f, False] 
+2023-01-21 00:28:43.2159|Peers | with known best block: 100 | all: 100 | 
+2023-01-21 00:28:43.2159|Sync peers 100(100)/100
+===[Active][Sleep ][Peer (ProtocolVersion/Head/Host:Port)    ][Transfer Speeds (L/H/B/R/N/S)      ][Client Info (Name/Version/Operating System/Language)     ]
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+   [      ][      ][Peer|eth66|16451291|   46.69.32.115:30404][   66|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451243|  24.17.196.207:30303][  180|    0|     |     |     |     ][Nethermind/v1.14.2-0-08354f9fa-20221115/X64-Linux/6.0.9]
+   [      ][      ][Peer|eth66|16451240|  84.226.123.87:55072][   40|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451237| 24.113.239.254:30303][  175|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451236| 185.243.216.35:30303][   20|   20|     |     |     |     ][Nethermind/v1.16.0+c7df68c6/linux-x64/dotnet7.0.2]
+   [      ][      ][Peer|eth66|16451236|    13.56.46.84:44296][ 2056|    0|     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451236| 142.132.211.94:30303][   36|    8|     |     |     |     ][Nethermind/v1.14.6+6aea7721/linux-x64/dotnet6.0.11]
+   [      ][      ][Peer|eth66|16451236|   3.122.193.60:30303][   24|   18|     |     |     |     ][Nethermind/v1.14.0-0-60f920b90-20221110/X64-Linux/6.0.8]
+   [      ][      ][Peer|eth66|16451235| 76.126.203.176:34552][  553|    0|     |     |     |     ][Nethermind/v1.16.0+c7df68c6/linux-x64/dotnet7.0.2]
+   [      ][      ][Peer|eth66|16451235|   146.4.99.162:40844][   28|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451235|  73.247.38.223:42826][  169|    1|     |     |     |     ][Nethermind/v1.14.7+4fe81c6b/linux-x64/dotnet6.0.11]
+   [      ][      ][Peer|eth66|16451235|   91.64.144.95:47400][  114|     |     |     |     |     ][Nethermind/v1.14.7+4fe81c6b/linux-x64/dotnet6.0.11]
+   [      ][      ][Peer|eth66|16451235| 125.253.93.218:42772][  184|     |     |     |     |     ][Nethermind/v1.14.1-0-1a32d4541-20230116/X64-Linux/6.0.8]
+   [      ][      ][Peer|eth66|16451235|   76.97.244.80:49153][  144|     |     |     |     |     ][Nethermind/v1.14.1-0-1a32d4541-20221228/X64-Windows/6.0.8]
+   [      ][      ][Peer|eth66|16451234| 153.92.111.197:44116][   51|     |     |     |     |     ][Nethermind/v1.14.7+4fe81c6b/linux-x64/dotnet6.0.11]
+   [      ][      ][Peer|eth66|16451233|   1.64.229.244:56530][  279|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451233|  81.166.158.75:42086][   11|     |     |     |     |     ][Nethermind/v1.14.3-0-707461293-20230120/X64-Linux/6.0.9]
+   [      ][      ][Peer|eth66|16439597| 102.132.254.51:30404][  171|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16432000|185.241.198.227:28653][  238|     |     |     |     |     ][Nethermind/v1.16.0+c7df68c6/linux-x64/dotnet7.0.2]
+   [      ][      ][Peer|eth66|16257000| 129.150.50.212:49226][  358|     |     |     |     |     ][Nethermind/v1.16.0+c7df68c6/linux-x64/dotnet7.0.2]
+   [      ][      ][Peer|eth66|16257000|    138.2.80.68:48540][  347|     |     |     |     |     ][Nethermind/v1.16.0+c7df68c6/linux-x64/dotnet7.0.2]
+   [      ][      ][Peer|eth66|15830000|  108.59.36.168:30303][  136|     |     |     |     |     ][Nethermind/v1.16.0-unstable+9e8b3da2/linux-x64/dotnet7.0.1]
+   [      ][      ][Peer|eth66|15214936| 162.218.65.219:31175][  106|     |     |     |     |     ][Nethermind/vd25715f-20230120/X64-Linux/6.0.11] 
+2023-01-21 00:28:48.2164|Received a new payload: 16451301 (0xe30ca1140be3403482c4bfa32f547ef60f996b42b800bd946ce1055173b2f9be) 
+2023-01-21 00:28:49.0518|Processed   16451301 |      832ms of  12,783ms, mgasps   18.40 total   44.54, tps  191.05 total  469.86, bps    1.20 total    2.95, recv queue 0, proc queue 0 
+2023-01-21 00:28:49.0518|Valid. Result of a new payload: 16451301 (0xe30ca1140be3403482c4bfa32f547ef60f996b42b800bd946ce1055173b2f9be). 
+2023-01-21 00:28:49.0567|Received: ForkchoiceState: (HeadBlockHash: 0xe30ca1140be3403482c4bfa32f547ef60f996b42b800bd946ce1055173b2f9be, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff)  
+2023-01-21 00:28:49.0567|FCU - block 16451301 (0xe30ca1...b2f9be) was processed. 
+2023-01-21 00:28:49.0567|Block 0xe30ca1140be3403482c4bfa32f547ef60f996b42b800bd946ce1055173b2f9be was set as head. 
+2023-01-21 00:28:49.0567|Valid. Request: ForkchoiceState: (HeadBlockHash: 0xe30ca1140be3403482c4bfa32f547ef60f996b42b800bd946ce1055173b2f9be, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff) . 
+2023-01-21 00:28:51.1015|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafda0",
+  "toBlock": "0xfafda0",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-21 00:28:51.1025|Executing JSON RPC call eth_getBlockByNumber with params [0xfafda1, False] 
+2023-01-21 00:28:51.1072|Executing JSON RPC call eth_getBlockByNumber with params [0xfafda0, False] 
+2023-01-21 00:28:52.7316|Executing JSON RPC call engine_exchangeTransitionConfigurationV1 with params [{
+  "terminalTotalDifficulty": "0xc70d808a128d7380000",
+  "terminalBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+  "terminalBlockNumber": "0x0"
+}] 
+2023-01-21 00:28:53.4021|Executing JSON RPC call eth_chainId with params [] 
+2023-01-21 00:28:53.4028|Executing JSON RPC call eth_syncing with params [] 
+2023-01-21 00:28:57.2029|Removing 901 out of 10901 peer candidates (candidates cleanup). 
+2023-01-21 00:28:58.2170|Peers | with known best block: 99 | all: 99 | 
+2023-01-21 00:29:01.7296|Received a new payload: 16451302 (0x552df6aab0f55a53a2eed1cdfffac2cbc83ea44967bdaf7ca84eb996bd9d5ed3) 
+2023-01-21 00:29:02.1022|Processed   16451302 |      369ms of  13,050ms, mgasps   65.58 total   44.57, tps  362.99 total  469.73, bps    2.71 total    2.95, recv queue 0, proc queue 0 
+2023-01-21 00:29:02.1022|Valid. Result of a new payload: 16451302 (0x552df6aab0f55a53a2eed1cdfffac2cbc83ea44967bdaf7ca84eb996bd9d5ed3). 
+2023-01-21 00:29:02.1074|Received: ForkchoiceState: (HeadBlockHash: 0x552df6aab0f55a53a2eed1cdfffac2cbc83ea44967bdaf7ca84eb996bd9d5ed3, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff)  
+2023-01-21 00:29:02.1074|FCU - block 16451302 (0x552df6...9d5ed3) was processed. 
+2023-01-21 00:29:02.1074|Block 0x552df6aab0f55a53a2eed1cdfffac2cbc83ea44967bdaf7ca84eb996bd9d5ed3 was set as head. 
+2023-01-21 00:29:02.1074|Valid. Request: ForkchoiceState: (HeadBlockHash: 0x552df6aab0f55a53a2eed1cdfffac2cbc83ea44967bdaf7ca84eb996bd9d5ed3, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff) . 
+2023-01-21 00:29:03.1084|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafda1",
+  "toBlock": "0xfafda1",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-21 00:29:03.1084|Executing JSON RPC call eth_getBlockByNumber with params [0xfafda2, False] 
+2023-01-21 00:29:03.1084|Executing JSON RPC call eth_getBlockByNumber with params [0xfafda1, False] 
+2023-01-21 00:29:12.6597|Received a new payload: 16451303 (0xca932c5d9b1bffd436e72705c14112817cb357353ca878f03b53744769b09ec7) 
+2023-01-21 00:29:12.9280|Processed   16451303 |      266ms of  10,826ms, mgasps   42.41 total   44.57, tps  503.07 total  469.76, bps    3.75 total    2.95, recv queue 0, proc queue 0 
+2023-01-21 00:29:12.9280|Valid. Result of a new payload: 16451303 (0xca932c5d9b1bffd436e72705c14112817cb357353ca878f03b53744769b09ec7). 
+2023-01-21 00:29:12.9329|Received: ForkchoiceState: (HeadBlockHash: 0xca932c5d9b1bffd436e72705c14112817cb357353ca878f03b53744769b09ec7, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff)  
+2023-01-21 00:29:12.9329|FCU - block 16451303 (0xca932c...b09ec7) was processed. 
+2023-01-21 00:29:12.9329|Block 0xca932c5d9b1bffd436e72705c14112817cb357353ca878f03b53744769b09ec7 was set as head. 
+2023-01-21 00:29:12.9329|Valid. Request: ForkchoiceState: (HeadBlockHash: 0xca932c5d9b1bffd436e72705c14112817cb357353ca878f03b53744769b09ec7, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff) . 
+2023-01-21 00:29:13.2231|Peers | with known best block: 100 | all: 100 | 
+2023-01-21 00:29:13.2231|Sync peers - Initialized: 100 | All: 100 | Max: 100
+===[Active][Sleep ][Peer (ProtocolVersion/Head/Host:Port)    ][Transfer Speeds (L/H/B/R/N/S)      ][Client Info (Name/Version/Operating System/Language)     ]
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+   [      ][      ][Peer|eth66|16451299|    3.80.12.255:30463][  119|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451295|  23.175.146.34:30303][ 1313|    2|     |     |     |     ][Geth/v1.10.25-stable-69568c55/linux-amd64/go1.18.5]
+   [      ][      ][Peer|eth66|16451294|    3.80.12.255:30317][  115|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451291|   46.69.32.115:30404][   52|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451273| 139.215.226.67:51390][  301|     |     |     |     |     ][Geth/v1.10.25-stable-69568c55/linux-amd64/go1.18.5]
+   [      ][      ][Peer|eth66|16451250|  73.78.202.116:30303][  216|    0|     |     |     |     ][Geth/v1.10.26-stable-e5eb32ac/linux-arm64/go1.18.5]
+   [      ][      ][Peer|eth66|16451249|    51.81.46.88:54556][  113|     |     |     |     |     ][Geth/1.10.23-stable-36c1449b/linux-amd64/go1.18]
+   [      ][      ][Peer|eth66|16451248|168.119.138.215:30303][ 1218|    0|     |     |     |     ][Geth/v1.10.25-stable-69568c55/linux-amd64/go1.18.5]
+   [      ][      ][Peer|eth66|16451243|  24.17.196.207:30303][  180|    0|     |     |     |     ][Nethermind/v1.14.2-0-08354f9fa-20221115/X64-Linux/6.0.9]
+   [      ][      ][Peer|eth66|16451240|  84.226.123.87:55072][   40|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451238|    3.80.12.255:30414][  126|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451238|    3.80.12.255:30554][  139|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451237| 24.113.239.254:30303][  179|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451237|  211.21.40.242:59708][  319|     |     |     |     |     ][Geth/v1.10.23-stable-d901d853/linux-amd64/go1.18.5]
+   [      ][      ][Peer|eth66|16451237| 167.235.34.105:31542][   27|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451237|    3.80.12.255:30351][  128|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451237|    3.80.12.255:30382][  132|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451237|    3.80.12.255:30439][  139|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451237|    3.80.12.255:30552][  133|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451237|    3.80.12.255:30577][  126|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236| 185.243.216.35:30303][   25|   20|     |     |     |     ][Nethermind/v1.16.0+c7df68c6/linux-x64/dotnet7.0.2]
+   [      ][      ][Peer|eth66|16451236|    13.56.46.84:44296][ 1828|    0|     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451236| 142.132.211.94:30303][   34|    8|     |     |     |     ][Nethermind/v1.14.6+6aea7721/linux-x64/dotnet6.0.11]
+   [      ][      ][Peer|eth66|16451236|   3.122.193.60:30303][   23|   18|     |     |     |     ][Nethermind/v1.14.0-0-60f920b90-20221110/X64-Linux/6.0.8]
+   [      ][      ][Peer|eth66|16451236|   113.31.173.8:30303][  206|    0|     |     |     |     ][Geth/v1.11.0-unstable-88132afc/linux-arm64/go1.18.6]
+   [      ][      ][Peer|eth66|16451236|   3.88.141.173:30303][  115|     |     |     |     |     ][Geth/v1.10.9-stable-eae3b194/linux-amd64/go1.17.1]
+   [      ][      ][Peer|eth66|16451236|124.126.140.106: 2706][  182|    0|     |     |     |     ][Geth/v1.10.26-stable-e5eb32ac/linux-amd64/go1.19.2]
+   [      ][      ][Peer|eth66|16451236|  65.21.128.178:30303][   24|    5|     |     |     |     ][Geth/v1.10.26-stable-e5eb32ac/linux-amd64/go1.18]
+   [      ][      ][Peer|eth66|16451236|   65.109.19.71:30303][  223|   14|     |     |     |     ][Geth/v1.10.26-stable-525bd5df/linux-amd64/go1.18]
+   [      ][      ][Peer|eth66|16451236| 195.201.207.37:30303][   45|    2|     |     |     |     ][Geth/v1.10.25-stable-69568c55/linux-amd64/go1.18.5]
+   [      ][      ][Peer|eth66|16451236|     46.4.85.28:30303][  302|    0|     |     |     |     ][Geth/v1.10.25-stable-36449b3b/linux-amd64/go1.19]
+   [      ][      ][Peer|eth66|16451236|   37.19.216.43:30303][  127|    0|     |     |     |     ][Geth/v1.10.23-stable/linux-amd64/go1.19.4]
+   [      ][      ][Peer|eth66|16451236|   15.204.197.7:30303][  115|    0|     |     |     |     ][Geth/v1.10.23-stable/linux-amd64/go1.18.1]
+   [      ][      ][Peer|eth66|16451236| 162.19.171.169:30303][   29|    0|     |     |     |     ][Geth/v1.10.23-stable/linux-amd64/go1.18.1]
+   [      ][      ][Peer|eth66|16451236|  34.206.90.238:30303][  115|    0|     |     |     |     ][Geth/v1.10.23-stable/linux-amd64/go1.18.1]
+   [      ][      ][Peer|eth66|16451236|201.137.165.132:30303][  183|    0|     |     |     |     ][Geth/v1.10.23-stable/darwin-amd64/go1.19]
+   [      ][      ][Peer|eth66|16451236| 185.232.77.107:30303][   14|    1|     |     |     |     ][erigon/v2.35.2-stable-800645ee/linux-amd64/go1.19.5]
+   [      ][      ][Peer|eth66|16451236|  38.141.210.98:30303][  576|     |     |     |     |     ][besu/v22.10.3/linux-x86_64/openjdk-java-17]
+   [      ][      ][Peer|eth66|16451236| 167.235.34.105:31345][   28|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236| 167.235.34.105:31390][   28|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236| 167.235.34.105:31365][   27|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236| 167.235.34.105:31348][   27|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236| 167.235.34.105:31338][   27|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236| 167.235.34.105:31537][   27|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236| 167.235.34.105:31355][   27|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236| 167.235.34.105:31498][   27|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30514][  133|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30400][  134|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30335][  144|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30470][  133|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30388][  131|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30571][  137|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30573][  126|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30437][  127|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30429][  135|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30589][  124|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30360][  129|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30508][  128|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30479][  138|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30520][  133|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30342][  129|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30568][  128|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30441][  136|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30445][  131|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30525][  129|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30303][  139|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30337][  127|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30367][  136|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451236|    3.80.12.255:30328][  127|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451235| 76.126.203.176:34552][  723|    0|     |     |     |     ][Nethermind/v1.16.0+c7df68c6/linux-x64/dotnet7.0.2]
+   [      ][      ][Peer|eth66|16451235|   146.4.99.162:40844][   28|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451235|  73.247.38.223:42826][  152|    1|     |     |     |     ][Nethermind/v1.14.7+4fe81c6b/linux-x64/dotnet6.0.11]
+   [      ][      ][Peer|eth66|16451235|   91.64.144.95:47400][  107|     |     |     |     |     ][Nethermind/v1.14.7+4fe81c6b/linux-x64/dotnet6.0.11]
+   [      ][      ][Peer|eth66|16451235| 125.253.93.218:42772][  184|     |     |     |     |     ][Nethermind/v1.14.1-0-1a32d4541-20230116/X64-Linux/6.0.8]
+   [      ][      ][Peer|eth66|16451235|   76.97.244.80:49153][  142|     |     |     |     |     ][Nethermind/v1.14.1-0-1a32d4541-20221228/X64-Windows/6.0.8]
+   [      ][      ][Peer|eth66|16451235| 89.187.161.243:38186][  269|    0|     |     |     |     ][Geth/v1.10.23-stable/linux-amd64/go1.19.4]
+   [      ][      ][Peer|eth66|16451235|    3.80.12.255:30539][  132|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451234| 153.92.111.197:44116][   50|     |     |     |     |     ][Nethermind/v1.14.7+4fe81c6b/linux-x64/dotnet6.0.11]
+   [      ][      ][Peer|eth66|16451234|    3.69.166.93:40270][   21|     |     |     |     |     ][Geth/v1.1.9-5404d9d8-20220420/linux-amd64/go1.17.5]
+   [      ][      ][Peer|eth66|16451234|    3.80.12.255:30572][  136|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451233|   1.64.229.244:56530][  279|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16451233|  81.166.158.75:42086][   11|     |     |     |     |     ][Nethermind/v1.14.3-0-707461293-20230120/X64-Linux/6.0.9]
+   [      ][      ][Peer|eth66|16451233| 54.175.160.107:49978][  115|     |     |     |     |     ][Geth/v1.1.9-5404d9d8-20220420/linux-amd64/go1.17.5]
+   [      ][      ][Peer|eth66|16451233|  3.143.112.234:30303][  124|    2|     |     |     |     ][erigon/v2.34.0-stable-937fb2c4/linux-amd64/go1.19rc1]
+   [      ][      ][Peer|eth66|16451233|    3.80.12.255:30368][  128|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451226|   51.222.40.18:30304][  118|     |     |     |     |     ][Geth/v1.9.24-stable-cc05b050/linux-amd64/go1.15.5]
+   [      ][      ][Peer|eth66|16451226|    3.80.12.255:30551][  131|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16451139|  162.55.89.238:30304][   27|     |     |     |     |     ][Geth/v1.9.24-stable-cc05b050/linux-amd64/go1.15.5]
+   [      ][      ][Peer|eth66|16445665|     3.70.223.0:60244][   21|     |     |     |     |     ][Geth/v1.10.25-stable-69568c55/linux-amd64/go1.19.2]
+   [      ][      ][Peer|eth66|16439597| 102.132.254.51:30404][  171|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16432000|185.241.198.227:28653][  189|     |     |     |     |     ][Nethermind/v1.16.0+c7df68c6/linux-x64/dotnet7.0.2]
+   [      ][      ][Peer|eth66|16420405|    13.48.11.26:30303][    2|     |     |     |     |     ][erigon/v2.35.2-stable-800645ee/linux-amd64/go1.19.5]
+   [      ][      ][Peer|eth66|16335999|152.228.223.112:30303][   32|     |     |     |     |     ][erigon/v2.36.0-stable-3ec0ed76/linux-amd64/go1.19.5]
+   [      ][      ][Peer|eth66|16257000| 129.150.50.212:49226][  358|     |     |     |     |     ][Nethermind/v1.16.0+c7df68c6/linux-x64/dotnet7.0.2]
+   [      ][      ][Peer|eth66|16257000|    138.2.80.68:48540][  347|     |     |     |     |     ][Nethermind/v1.16.0+c7df68c6/linux-x64/dotnet7.0.2]
+   [      ][      ][Peer|eth66|15830000|  108.59.36.168:30303][  136|     |     |     |     |     ][Nethermind/v1.16.0-unstable+9e8b3da2/linux-x64/dotnet7.0.1]
+   [      ][      ][Peer|eth66|15655000| 158.160.11.213:30303][  333|     |     |     |     |     ][Nethermind/v1.14.3-0-707461293-20230108/X64-Linux/6.0.9]
+   [      ][      ][Peer|eth66|15466495|  35.175.161.27:19946][  485|     |     |     |     |     ][Geth/v1.10.23-stable-d901d853/linux-amd64/go1.18.5]
+   [      ][      ][Peer|eth66|15214936| 162.218.65.219:31175][  105|     |     |     |     |     ][Nethermind/vd25715f-20230120/X64-Linux/6.0.11]
+   [      ][      ][Peer|eth66| 7856611| 34.234.215.244:30303][  115|     |     |     |     |     ][Geth/v1.11.0-unstable-b818e73e/linux-amd64/go1.19.2] 
+2023-01-21 00:29:15.1112|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafda2",
+  "toBlock": "0xfafda2",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-21 00:29:15.1112|Executing JSON RPC call eth_getBlockByNumber with params [0xfafda3, False] 
+2023-01-21 00:29:15.1112|Executing JSON RPC call eth_getBlockByNumber with params [0xfafda2, False] 
+2023-01-21 00:29:24.1111|Received a new payload: 16451304 (0x39a11d69c3fb941f93fd4fa43d40101b45aff5f43dd38ca40c21f2509c39c6c6) 
+2023-01-21 00:29:24.1327|Processed   16451304 |       21ms of  11,205ms, mgasps   87.87 total   44.57, tps  956.11 total  469.80, bps   47.81 total    2.96, recv queue 0, proc queue 0 
+2023-01-21 00:29:24.1327|Valid. Result of a new payload: 16451304 (0x39a11d69c3fb941f93fd4fa43d40101b45aff5f43dd38ca40c21f2509c39c6c6). 
+2023-01-21 00:29:24.2282|Received: ForkchoiceState: (HeadBlockHash: 0x39a11d69c3fb941f93fd4fa43d40101b45aff5f43dd38ca40c21f2509c39c6c6, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff)  
+2023-01-21 00:29:24.2282|FCU - block 16451304 (0x39a11d...39c6c6) was processed. 
+2023-01-21 00:29:24.2282|Block 0x39a11d69c3fb941f93fd4fa43d40101b45aff5f43dd38ca40c21f2509c39c6c6 was set as head. 
+2023-01-21 00:29:24.2282|Valid. Request: ForkchoiceState: (HeadBlockHash: 0x39a11d69c3fb941f93fd4fa43d40101b45aff5f43dd38ca40c21f2509c39c6c6, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff) . 
+2023-01-21 00:29:26.5597|Removing 901 out of 10901 peer candidates (candidates cleanup). 
+2023-01-21 00:29:27.1151|Executing JSON RPC call eth_getBlockByNumber with params [0xfafda4, False] 
+2023-01-21 00:29:27.1151|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafda3",
+  "toBlock": "0xfafda3",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-21 00:29:27.1151|Executing JSON RPC call eth_getBlockByNumber with params [0xfafda3, False] 
+2023-01-21 00:29:28.2234|Peers | with known best block: 100 | all: 100 | 
+2023-01-21 00:29:35.9861|Received a new payload: 16451305 (0xa2371e537313612daef7134076e8c8c582c668fb7c6dbf5f3ada8afaef1fdb9a) 
+2023-01-21 00:29:36.4985|Processed   16451305 |      508ms of  12,366ms, mgasps   42.97 total   44.57, tps  495.76 total  469.84, bps    1.97 total    2.95, recv queue 0, proc queue 0 
+2023-01-21 00:29:36.4985|Valid. Result of a new payload: 16451305 (0xa2371e537313612daef7134076e8c8c582c668fb7c6dbf5f3ada8afaef1fdb9a). 
+2023-01-21 00:29:36.5032|Received: ForkchoiceState: (HeadBlockHash: 0xa2371e537313612daef7134076e8c8c582c668fb7c6dbf5f3ada8afaef1fdb9a, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff)  
+2023-01-21 00:29:36.5032|FCU - block 16451305 (0xa2371e...1fdb9a) was processed. 
+2023-01-21 00:29:36.5032|Block 0xa2371e537313612daef7134076e8c8c582c668fb7c6dbf5f3ada8afaef1fdb9a was set as head. 
+2023-01-21 00:29:36.5032|Valid. Request: ForkchoiceState: (HeadBlockHash: 0xa2371e537313612daef7134076e8c8c582c668fb7c6dbf5f3ada8afaef1fdb9a, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff) . 
+2023-01-21 00:29:39.1194|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafda4",
+  "toBlock": "0xfafda4",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-21 00:29:39.1194|Executing JSON RPC call eth_getBlockByNumber with params [0xfafda5, False] 
+2023-01-21 00:29:39.1194|Executing JSON RPC call eth_getBlockByNumber with params [0xfafda4, False] 
+2023-01-21 00:29:43.2229|Peers | with known best block: 100 | all: 100 | 
+2023-01-21 00:29:48.6516|Received a new payload: 16451306 (0x81d1fd01600f532c0d51aacced365cb907de8677ab0b181b0b4198a82b4b7d00) 
+2023-01-21 00:29:48.9322|Processed   16451306 |      279ms of  12,434ms, mgasps   47.73 total   44.57, tps  459.32 total  469.83, bps    3.59 total    2.96, recv queue 0, proc queue 0 
+2023-01-21 00:29:48.9322|Valid. Result of a new payload: 16451306 (0x81d1fd01600f532c0d51aacced365cb907de8677ab0b181b0b4198a82b4b7d00). 
+2023-01-21 00:29:48.9379|Received: ForkchoiceState: (HeadBlockHash: 0x81d1fd01600f532c0d51aacced365cb907de8677ab0b181b0b4198a82b4b7d00, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff)  
+2023-01-21 00:29:48.9379|FCU - block 16451306 (0x81d1fd...4b7d00) was processed. 
+2023-01-21 00:29:48.9386|Block 0x81d1fd01600f532c0d51aacced365cb907de8677ab0b181b0b4198a82b4b7d00 was set as head. 
+2023-01-21 00:29:48.9386|Valid. Request: ForkchoiceState: (HeadBlockHash: 0x81d1fd01600f532c0d51aacced365cb907de8677ab0b181b0b4198a82b4b7d00, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff) . 
+2023-01-21 00:29:51.1239|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafda5",
+  "toBlock": "0xfafda5",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-21 00:29:51.1239|Executing JSON RPC call eth_getBlockByNumber with params [0xfafda6, False] 
+2023-01-21 00:29:51.1329|Executing JSON RPC call eth_getBlockByNumber with params [0xfafda5, False] 
+2023-01-21 00:29:52.7300|Executing JSON RPC call engine_exchangeTransitionConfigurationV1 with params [{
+  "terminalTotalDifficulty": "0xc70d808a128d7380000",
+  "terminalBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+  "terminalBlockNumber": "0x0"
+}] 
+2023-01-21 00:29:53.4055|Executing JSON RPC call eth_chainId with params [] 
+2023-01-21 00:29:53.4055|Executing JSON RPC call eth_syncing with params [] 
+2023-01-21 00:29:58.2238|Peers | with known best block: 99 | all: 99 | 
+2023-01-21 00:30:00.5975|Received a new payload: 16451307 (0xc39210b8f1af90afe17cdb36c1bd22675b16a3d7cc618fd26cb4c6fe4940c21a) 
+2023-01-21 00:30:00.9032|Processed   16451307 |      303ms of  11,971ms, mgasps   40.66 total   44.57, tps  392.12 total  469.75, bps    3.30 total    2.96, recv queue 0, proc queue 0 
+2023-01-21 00:30:00.9032|Valid. Result of a new payload: 16451307 (0xc39210b8f1af90afe17cdb36c1bd22675b16a3d7cc618fd26cb4c6fe4940c21a). 
+2023-01-21 00:30:00.9107|Received: ForkchoiceState: (HeadBlockHash: 0xc39210b8f1af90afe17cdb36c1bd22675b16a3d7cc618fd26cb4c6fe4940c21a, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff)  
+2023-01-21 00:30:00.9107|FCU - block 16451307 (0xc39210...40c21a) was processed. 
+2023-01-21 00:30:00.9107|Block 0xc39210b8f1af90afe17cdb36c1bd22675b16a3d7cc618fd26cb4c6fe4940c21a was set as head. 
+2023-01-21 00:30:00.9107|Valid. Request: ForkchoiceState: (HeadBlockHash: 0xc39210b8f1af90afe17cdb36c1bd22675b16a3d7cc618fd26cb4c6fe4940c21a, SafeBlockHash: 0x252b058218a5d5d11794986f2152c5140ee04afa7fcd8be74cf3a23a55a202ed, FinalizedBlockHash: 0x72f475a2c2af4bc887bbb4fbbf8752d3d00c71d8a83a21669c99db28d67988ff) . 
+2023-01-21 00:30:03.1318|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafda6",
+  "toBlock": "0xfafda6",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-21 00:30:03.1318|Executing JSON RPC call eth_getBlockByNumber with params [0xfafda7, False] 
+2023-01-21 00:30:03.1318|Executing JSON RPC call eth_getBlockByNumber with params [0xfafda6, False] 
+2023-01-21 00:30:05.7530|Removing 901 out of 10901 peer candidates (candidates cleanup).

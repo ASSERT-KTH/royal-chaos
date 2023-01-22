@@ -1,0 +1,1328 @@
+"fromBlock": "0xfafa6a",
+  "toBlock": "0xfafa6a",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-20 21:44:15.9671|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa6b, False] 
+2023-01-20 21:44:15.9722|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa6a, False] 
+2023-01-20 21:44:24.6741|Removing 901 out of 10901 peer candidates (candidates cleanup). 
+2023-01-20 21:44:24.7581|Received a new payload: 16450481 (0x5ffc494a7c885d752366ab67b9197546bfefdcfa331c9bad7ee82113c2e8b102) 
+2023-01-20 21:44:27.3572|Processed   16450481 |    2,596ms of  13,075ms, mgasps    5.11 total   27.66, tps   54.32 total  287.13, bps    0.39 total    1.82, recv queue 0, proc queue 0 
+2023-01-20 21:44:27.3572|Valid. Result of a new payload: 16450481 (0x5ffc494a7c885d752366ab67b9197546bfefdcfa331c9bad7ee82113c2e8b102). 
+2023-01-20 21:44:27.3724|Received: ForkchoiceState: (HeadBlockHash: 0x5ffc494a7c885d752366ab67b9197546bfefdcfa331c9bad7ee82113c2e8b102, SafeBlockHash: 0xe0c28951c77fcca3ed52e746358daef2fd705e43f013102c3696cb56f0207a27, FinalizedBlockHash: 0x76b2075955e0d6819e8a6cc95b785fe722dfc69619730fcf6b921455b67d065a)  
+2023-01-20 21:44:27.3724|FCU - block 16450481 (0x5ffc49...e8b102) was processed. 
+2023-01-20 21:44:27.3724|Block 0x5ffc494a7c885d752366ab67b9197546bfefdcfa331c9bad7ee82113c2e8b102 was set as head. 
+2023-01-20 21:44:27.3724|Valid. Request: ForkchoiceState: (HeadBlockHash: 0x5ffc494a7c885d752366ab67b9197546bfefdcfa331c9bad7ee82113c2e8b102, SafeBlockHash: 0xe0c28951c77fcca3ed52e746358daef2fd705e43f013102c3696cb56f0207a27, FinalizedBlockHash: 0x76b2075955e0d6819e8a6cc95b785fe722dfc69619730fcf6b921455b67d065a) . 
+2023-01-20 21:44:27.9726|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa6c, False] 
+2023-01-20 21:44:27.9726|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafa6b",
+  "toBlock": "0xfafa6b",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-20 21:44:27.9753|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa6b, False] 
+2023-01-20 21:44:29.3600|Peers | with known best block: 78 | all: 81 | 
+2023-01-20 21:44:36.9850|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1ContentLengthMessageBody.ReadAsyncInternal(CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpRequestStream.ReadAsyncInternal(Memory`1 destination, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpRequestStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.StreamReader.ReadBuffer(Span`1 userBuffer, Boolean& readToUserBuffer)
+   at System.IO.StreamReader.ReadSpan(Span`1 buffer)
+   at Nethermind.Serialization.Json.CountingTextReader.Read(Char[] buffer, Int32 index, Int32 count) in /home/javier/nethermind/src/Nethermind/Nethermind.Serialization.Json/CountingTextReader.cs:line 58
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Nethermind.JsonRpc.Utils.JTokenUtils.ParseMulticontent(TextReader jsonReader)+MoveNext() in /home/javier/nethermind/src/Nethermind/Nethermind.JsonRpc/Utils/JTokenUtils.cs:line 30
+   at Nethermind.JsonRpc.JsonRpcProcessor.DeserializeObjectOrArray(TextReader json)+MoveNext() in /home/javier/nethermind/src/Nethermind/Nethermind.JsonRpc/JsonRpcProcessor.cs:line 90
+   at Nethermind.JsonRpc.JsonRpcProcessor.ProcessAsync(TextReader request, JsonRpcContext context)+MoveNext() in /home/javier/nethermind/src/Nethermind/Nethermind.JsonRpc/JsonRpcProcessor.cs:line 151
+2023-01-20 21:44:39.9782|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa6d, False] 
+2023-01-20 21:44:39.9782|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafa6c",
+  "toBlock": "0xfafa6c",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-20 21:44:39.9815|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa6c, False] 
+2023-01-20 21:44:42.8177|Executing JSON RPC call eth_chainId with params [] 
+2023-01-20 21:44:42.8177|***** JSON RPC report *****
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+method                                  | successes |  avg time (µs) |  max time (µs) |    errors |  avg time (µs) |  max time (µs) | avg size | total size |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+# parsing error #                       |         0 |              0 |              0 |         1 |          15931 |          15931 |       81 |         81 | 
+engine_exchangeTransitionConfigurationV1|         5 |            797 |            920 |         0 |              0 |              0 |      205 |       1025 | 
+engine_forkchoiceUpdatedV1              |        24 |           1232 |           8674 |         0 |              0 |              0 |      200 |       4800 | 
+engine_newPayloadV1                     |        24 |         787523 |        2681139 |         0 |              0 |              0 |      165 |       3960 | 
+eth_chainId                             |         5 |            539 |            631 |         0 |              0 |              0 |       42 |        210 | 
+eth_getBlockByHash                      |         6 |           4206 |           6293 |         0 |              0 |              0 |    11347 |      68081 | 
+eth_getBlockByNumber                    |        45 |           5002 |          73000 |         0 |              0 |              0 |    11257 |     506565 | 
+eth_getLogs                             |        25 |           7203 |          79526 |         0 |              0 |              0 |      418 |      10461 | 
+eth_syncing                             |         5 |            342 |            419 |         0 |              0 |              0 |       42 |        210 | 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+TOTAL                                   |       139 |         139345 |        2681139 |         1 |          15931 |          15931 |     4253 |     595393 | 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+2023-01-20 21:44:42.8188|Executing JSON RPC call eth_syncing with params [] 
+2023-01-20 21:44:43.1343|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:44:43.1347|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:44:43.1347|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:44:44.3762|Peers | with known best block: 65 | all: 68 | 
+2023-01-20 21:44:44.3762|Sync peers 65(68)/100
+===[Active][Sleep ][Peer (ProtocolVersion/Head/Host:Port)    ][Transfer Speeds (L/H/B/R/N/S)      ][Client Info (Name/Version/Operating System/Language)     ]
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+   [      ][      ][Peer|eth66|16450374|124.218.216.170:52008][  870|     |     |     |     |     ][Nethermind/v1.14.7+4fe81c6b/linux-x64/dotnet6.0.11]
+   [      ][      ][Peer|eth66|16449919|   3.122.193.60:30303][  129|     |     |     |     |     ][Nethermind/v1.14.0-0-60f920b90-20221110/X64-Linux/6.0.8]
+   [      ][      ][Peer|eth66|16432000|    86.58.12.59:38264][  195|     |     |     |     |     ][Nethermind/v1.16.0+c7df68c6/linux-x64/dotnet7.0.2]
+   [      ][      ][Peer|eth66|16430669|  66.94.103.114:30303][ 2399|     |     |     |     |     ][Nethermind/v1.14.5+380bf9c9/linux-x64/dotnet6.0.10]
+   [      ][      ][Peer|eth66|16257000|122.150.118.250:30303][ 2816|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16257000|  198.54.134.77:54865][  302|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16257000|  85.244.77.144:30307][  150|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-arm64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|15214936| 162.218.65.219:30303][  166|     |     |     |     |     ][Nethermind/vd25715f-20230120/X64-Linux/6.0.11]
+   [      ][      ][Peer|eth66|15128305| 73.158.250.236:34310][  204|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12] 
+2023-01-20 21:44:49.2018|Received a new payload: 16450482 (0xcfbbbd00e32af60fcac8f85ab3173a7a13b3a9f4f01699724dd1a5bc0704604b) 
+2023-01-20 21:44:51.1335|Processed   16450482 |    1,928ms of  23,776ms, mgasps    6.18 total   27.58, tps   68.99 total  286.32, bps    0.52 total    1.82, recv queue 0, proc queue 0 
+2023-01-20 21:44:51.1335|Valid. Result of a new payload: 16450482 (0xcfbbbd00e32af60fcac8f85ab3173a7a13b3a9f4f01699724dd1a5bc0704604b). 
+2023-01-20 21:44:51.1411|Received: ForkchoiceState: (HeadBlockHash: 0xcfbbbd00e32af60fcac8f85ab3173a7a13b3a9f4f01699724dd1a5bc0704604b, SafeBlockHash: 0xe0c28951c77fcca3ed52e746358daef2fd705e43f013102c3696cb56f0207a27, FinalizedBlockHash: 0x76b2075955e0d6819e8a6cc95b785fe722dfc69619730fcf6b921455b67d065a)  
+2023-01-20 21:44:51.1411|FCU - block 16450482 (0xcfbbbd...04604b) was processed. 
+2023-01-20 21:44:51.1411|Block 0xcfbbbd00e32af60fcac8f85ab3173a7a13b3a9f4f01699724dd1a5bc0704604b was set as head. 
+2023-01-20 21:44:51.1411|Valid. Request: ForkchoiceState: (HeadBlockHash: 0xcfbbbd00e32af60fcac8f85ab3173a7a13b3a9f4f01699724dd1a5bc0704604b, SafeBlockHash: 0xe0c28951c77fcca3ed52e746358daef2fd705e43f013102c3696cb56f0207a27, FinalizedBlockHash: 0x76b2075955e0d6819e8a6cc95b785fe722dfc69619730fcf6b921455b67d065a) . 
+2023-01-20 21:44:51.1454|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:44:51.9845|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafa6d",
+  "toBlock": "0xfafa6d",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-20 21:44:51.9845|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa6e, False] 
+2023-01-20 21:44:52.0547|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa6d, False] 
+2023-01-20 21:44:53.2289|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:44:53.2289|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:44:59.3846|Peers | with known best block: 59 | all: 62 | 
+2023-01-20 21:45:02.5135|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:45:03.9941|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafa6e",
+  "toBlock": "0xfafa6e",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-20 21:45:03.9965|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa6e, False] 
+2023-01-20 21:45:05.4108|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:45:05.4154|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:45:05.4582|Removing 968 out of 10968 peer candidates (candidates cleanup). 
+2023-01-20 21:45:06.0033|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa6f, False] 
+2023-01-20 21:45:12.2292|Executing JSON RPC call engine_exchangeTransitionConfigurationV1 with params [{
+  "terminalTotalDifficulty": "0xc70d808a128d7380000",
+  "terminalBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+  "terminalBlockNumber": "0x0"
+}] 
+2023-01-20 21:45:14.3837|Peers | with known best block: 68 | all: 71 | 
+2023-01-20 21:45:14.3837|Sync peers 68(71)/100
+===[Active][Sleep ][Peer (ProtocolVersion/Head/Host:Port)    ][Transfer Speeds (L/H/B/R/N/S)      ][Client Info (Name/Version/Operating System/Language)     ]
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+   [      ][      ][Peer|eth66|16285298| 136.55.242.123:41168][  898|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16257000|  198.54.134.77:54865][  281|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16257000|   82.18.186.80:37924][   44|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16257000|  85.244.77.144:30307][  113|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-arm64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|15830000|  108.59.36.168:30303][     |     |     |     |     |     ][Nethermind/v1.16.0-unstable+9e8b3da2/linux-x64/dotnet7.0.1]
+   [      ][      ][Peer|eth66|15655000| 158.160.11.213:30303][  356|     |     |     |     |     ][Nethermind/v1.14.3-0-707461293-20230108/X64-Linux/6.0.9]
+   [      ][      ][Peer|eth66|       0|    79.231.24.9:36232][   32|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12] 
+2023-01-20 21:45:15.0468|Received: ForkchoiceState: (HeadBlockHash: 0xcfbbbd00e32af60fcac8f85ab3173a7a13b3a9f4f01699724dd1a5bc0704604b, SafeBlockHash: 0x25cb3d7c2a32aeff549c00ba6caecbb7ea640a3aa18741effe743695d3d15ec6, FinalizedBlockHash: 0xe0c28951c77fcca3ed52e746358daef2fd705e43f013102c3696cb56f0207a27)  
+2023-01-20 21:45:15.0468|FCU - block 16450482 (0xcfbbbd...04604b) was processed. 
+2023-01-20 21:45:15.0468|Valid. Request: ForkchoiceState: (HeadBlockHash: 0xcfbbbd00e32af60fcac8f85ab3173a7a13b3a9f4f01699724dd1a5bc0704604b, SafeBlockHash: 0x25cb3d7c2a32aeff549c00ba6caecbb7ea640a3aa18741effe743695d3d15ec6, FinalizedBlockHash: 0xe0c28951c77fcca3ed52e746358daef2fd705e43f013102c3696cb56f0207a27) . 
+2023-01-20 21:45:15.1811|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafa6f",
+  "toBlock": "0xfafa6f",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-20 21:45:15.1811|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa70, False] 
+2023-01-20 21:45:15.1898|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa6f, False] 
+2023-01-20 21:45:21.5107|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:45:21.5107|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:45:27.1931|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa71, False] 
+2023-01-20 21:45:27.1931|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafa70",
+  "toBlock": "0xfafa70",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-20 21:45:27.1956|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa70, False] 
+2023-01-20 21:45:29.3836|Peers | with known best block: 60 | all: 62 | 
+2023-01-20 21:45:39.2007|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafa71",
+  "toBlock": "0xfafa71",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-20 21:45:39.2007|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa72, False] 
+2023-01-20 21:45:39.2007|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa71, False] 
+2023-01-20 21:45:42.8201|Executing JSON RPC call eth_chainId with params [] 
+2023-01-20 21:45:42.8201|Executing JSON RPC call eth_syncing with params [] 
+2023-01-20 21:45:44.3910|Peers | with known best block: 56 | all: 58 | 
+2023-01-20 21:45:44.3910|Sync peers - Initialized: 56 | All: 58 | Max: 100
+===[Active][Sleep ][Peer (ProtocolVersion/Head/Host:Port)    ][Transfer Speeds (L/H/B/R/N/S)      ][Client Info (Name/Version/Operating System/Language)     ]
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+   [      ][      ][Peer|eth66|16450482| 167.235.34.105:31369][   27|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16450482|    3.80.12.255:30445][  230|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16450482|    3.80.12.255:30350][  230|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16450482|    3.80.12.255:30577][  231|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16450482|    3.80.12.255:30382][  229|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16450482|    3.80.12.255:30463][  231|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16450482|    3.80.12.255:30354][  230|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16450482|    3.80.12.255:30570][  230|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16450482|    3.80.12.255:30317][  230|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16450482|    3.80.12.255:30373][  229|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16450482|    3.80.12.255:30403][  231|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16450482|    3.80.12.255:30539][  230|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16450482|    3.80.12.255:30547][  230|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16450481| 167.235.34.105:31542][   27|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16450481|    3.80.12.255:30351][  143|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16450481|    3.80.12.255:30439][  143|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16450480|    3.80.12.255:30553][  149|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16450476|    3.80.12.255:30342][  156|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16450469|    3.80.12.255:30360][  156|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16450186|124.218.216.170:46992][  955|     |     |     |     |     ][Nethermind/v1.14.7+4fe81c6b/linux-x64/dotnet6.0.11]
+   [      ][      ][Peer|eth66|16450115| 167.235.34.105:31365][   46|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16449983|    3.80.12.255:30517][  156|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16449980|    3.80.12.255:30430][  156|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16449904|    3.80.12.255:30508][  156|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16449896|    3.80.12.255:30408][  156|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16449894|    3.80.12.255:30429][  156|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16449892|   15.204.197.7:30303][  125|    0|     |     |     |     ][Geth/v1.10.23-stable/linux-amd64/go1.18.1]
+   [      ][      ][Peer|eth66|16449891| 167.235.34.105:31400][   47|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16449891| 167.235.34.105:31546][   47|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16449890| 162.19.171.169:30303][   48|    0|     |     |     |     ][Geth/v1.10.23-stable/linux-amd64/go1.18.1]
+   [      ][      ][Peer|eth66|16449890|    3.80.12.255:30441][  156|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16449890|    3.80.12.255:30556][  156|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16449890|    3.80.12.255:30337][  156|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16449890|    3.80.12.255:30421][  156|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16449890|    3.80.12.255:30400][  156|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16449890|    3.80.12.255:30585][  156|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16449890|    3.80.12.255:30514][  156|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16449890|    3.80.12.255:30568][  156|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16449890|    3.80.12.255:30573][  156|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16449889|    3.80.12.255:30388][  156|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16449889|    3.80.12.255:30520][  156|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16449889|    3.80.12.255:30470][  156|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16449889|    3.80.12.255:30335][  156|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16449889|    3.80.12.255:30437][  156|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16449888|    3.80.12.255:30453][  156|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16449860|   51.222.40.18:30304][  130|     |     |     |     |     ][Geth/v1.9.24-stable-cc05b050/linux-amd64/go1.15.5]
+   [      ][      ][Peer|eth66|16449809|  162.55.89.238:30304][   46|     |     |     |     |     ][Geth/v1.9.24-stable-cc05b050/linux-amd64/go1.15.5]
+   [      ][      ][Peer|eth66|16449774|    3.69.166.93:40194][   41|     |     |     |     |     ][Geth/v1.1.9-5404d9d8-20220420/linux-amd64/go1.17.5]
+   [      ][      ][Peer|eth66|16434989| 89.187.177.158:32874][     |     |     |     |     |     ][Geth/v1.10.25-stable/linux-amd64/go1.17.10]
+   [      ][      ][Peer|eth66|16335999|152.228.223.112:30303][   32|     |     |     |     |     ][erigon/v2.35.2-stable-800645ee/linux-amd64/go1.19.5]
+   [      ][      ][Peer|eth66|16258527| 89.187.185.158:36042][  472|     |     |     |     |     ][Geth/v1.10.25-stable/linux-amd64/go1.17.10]
+   [      ][      ][Peer|eth66|16257000|  198.54.134.77:54865][  368|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16257000|   82.18.186.80:37924][   43|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16257000|  85.244.77.144:30307][   84|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-arm64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|15830000|  108.59.36.168:30303][  133|     |     |     |     |     ][Nethermind/v1.16.0-unstable+9e8b3da2/linux-x64/dotnet7.0.1]
+   [      ][      ][Peer|eth66|15537393|   91.92.137.10:30303][   37|     |     |     |     |     ][Geth/v1.10.23-stable-d901d853/linux-amd64/go1.18.5] 
+2023-01-20 21:45:51.0637|Received: ForkchoiceState: (HeadBlockHash: 0xcfbbbd00e32af60fcac8f85ab3173a7a13b3a9f4f01699724dd1a5bc0704604b, SafeBlockHash: 0x25cb3d7c2a32aeff549c00ba6caecbb7ea640a3aa18741effe743695d3d15ec6, FinalizedBlockHash: 0xe0c28951c77fcca3ed52e746358daef2fd705e43f013102c3696cb56f0207a27)  
+2023-01-20 21:45:51.0637|FCU - block 16450482 (0xcfbbbd...04604b) was processed. 
+2023-01-20 21:45:51.0637|Valid. Request: ForkchoiceState: (HeadBlockHash: 0xcfbbbd00e32af60fcac8f85ab3173a7a13b3a9f4f01699724dd1a5bc0704604b, SafeBlockHash: 0x25cb3d7c2a32aeff549c00ba6caecbb7ea640a3aa18741effe743695d3d15ec6, FinalizedBlockHash: 0xe0c28951c77fcca3ed52e746358daef2fd705e43f013102c3696cb56f0207a27) . 
+2023-01-20 21:45:51.2038|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafa72",
+  "toBlock": "0xfafa72",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-20 21:45:51.2038|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa73, False] 
+2023-01-20 21:45:51.2068|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa72, False] 
+2023-01-20 21:45:51.7118|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:45:51.7118|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:45:51.7118|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:45:59.3920|Peers | with known best block: 57 | all: 60 | 
+2023-01-20 21:46:03.2108|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafa73",
+  "toBlock": "0xfafa73",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-20 21:46:03.2108|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa74, False] 
+2023-01-20 21:46:03.2185|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa73, False] 
+2023-01-20 21:46:07.5690|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:46:07.5704|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:46:12.2305|Executing JSON RPC call engine_exchangeTransitionConfigurationV1 with params [{
+  "terminalTotalDifficulty": "0xc70d808a128d7380000",
+  "terminalBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+  "terminalBlockNumber": "0x0"
+}] 
+2023-01-20 21:46:12.6446|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:46:14.3977|Peers | with known best block: 53 | all: 56 | 
+2023-01-20 21:46:14.3977|Sync peers 53(56)/100
+===[Active][Sleep ][Peer (ProtocolVersion/Head/Host:Port)    ][Transfer Speeds (L/H/B/R/N/S)      ][Client Info (Name/Version/Operating System/Language)     ]
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+   [      ][      ][Peer|eth66|16257000|  198.54.134.77:54865][  365|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16257000|   82.18.186.80:37924][   42|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16257000|   95.222.29.68: 7031][   50|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16257000|  85.244.77.144:30307][  111|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-arm64/dotnet6.0.12] 
+2023-01-20 21:46:15.2230|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa75, False] 
+2023-01-20 21:46:15.2230|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafa74",
+  "toBlock": "0xfafa74",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-20 21:46:15.2273|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa74, False] 
+2023-01-20 21:46:17.7226|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:46:17.7226|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:46:22.8083|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:46:27.0712|Received: ForkchoiceState: (HeadBlockHash: 0xcfbbbd00e32af60fcac8f85ab3173a7a13b3a9f4f01699724dd1a5bc0704604b, SafeBlockHash: 0x25cb3d7c2a32aeff549c00ba6caecbb7ea640a3aa18741effe743695d3d15ec6, FinalizedBlockHash: 0xe0c28951c77fcca3ed52e746358daef2fd705e43f013102c3696cb56f0207a27)  
+2023-01-20 21:46:27.0712|FCU - block 16450482 (0xcfbbbd...04604b) was processed. 
+2023-01-20 21:46:27.0712|Valid. Request: ForkchoiceState: (HeadBlockHash: 0xcfbbbd00e32af60fcac8f85ab3173a7a13b3a9f4f01699724dd1a5bc0704604b, SafeBlockHash: 0x25cb3d7c2a32aeff549c00ba6caecbb7ea640a3aa18741effe743695d3d15ec6, FinalizedBlockHash: 0xe0c28951c77fcca3ed52e746358daef2fd705e43f013102c3696cb56f0207a27) . 
+2023-01-20 21:46:27.2308|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa76, False] 
+2023-01-20 21:46:27.2308|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafa75",
+  "toBlock": "0xfafa75",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-20 21:46:27.2361|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa75, False] 
+2023-01-20 21:46:27.9072|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:46:27.9072|Received a new payload: 16450483 (0x457b09e7e7dc2dc8f4131f162d457f83bb5891779aef566cba2c60a2b1c4c963) 
+2023-01-20 21:46:28.5337|Processed   16450483 |      620ms of  97,400ms, mgasps   23.95 total   27.57, tps  274.23 total  286.30, bps    1.61 total    1.82, recv queue 0, proc queue 0 
+2023-01-20 21:46:28.5337|Valid. Result of a new payload: 16450483 (0x457b09e7e7dc2dc8f4131f162d457f83bb5891779aef566cba2c60a2b1c4c963). 
+2023-01-20 21:46:28.5421|Received: ForkchoiceState: (HeadBlockHash: 0x457b09e7e7dc2dc8f4131f162d457f83bb5891779aef566cba2c60a2b1c4c963, SafeBlockHash: 0x25cb3d7c2a32aeff549c00ba6caecbb7ea640a3aa18741effe743695d3d15ec6, FinalizedBlockHash: 0xe0c28951c77fcca3ed52e746358daef2fd705e43f013102c3696cb56f0207a27)  
+2023-01-20 21:46:28.5421|FCU - block 16450483 (0x457b09...c4c963) was processed. 
+2023-01-20 21:46:28.5430|Block 0x457b09e7e7dc2dc8f4131f162d457f83bb5891779aef566cba2c60a2b1c4c963 was set as head. 
+2023-01-20 21:46:28.5430|Valid. Request: ForkchoiceState: (HeadBlockHash: 0x457b09e7e7dc2dc8f4131f162d457f83bb5891779aef566cba2c60a2b1c4c963, SafeBlockHash: 0x25cb3d7c2a32aeff549c00ba6caecbb7ea640a3aa18741effe743695d3d15ec6, FinalizedBlockHash: 0xe0c28951c77fcca3ed52e746358daef2fd705e43f013102c3696cb56f0207a27) . 
+2023-01-20 21:46:28.5430|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:46:28.5430|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:46:29.3961|Peers | with known best block: 49 | all: 51 | 
+2023-01-20 21:46:30.9231|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:46:39.2402|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafa76",
+  "toBlock": "0xfafa76",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-20 21:46:39.2402|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa77, False] 
+2023-01-20 21:46:39.2450|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa76, False] 
+2023-01-20 21:46:42.8259|Executing JSON RPC call eth_chainId with params [] 
+2023-01-20 21:46:42.8275|Executing JSON RPC call eth_syncing with params [] 
+2023-01-20 21:46:43.8156|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:46:43.8156|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:46:44.3964|Peers | with known best block: 48 | all: 50 | 
+2023-01-20 21:46:44.3964|Sync peers 48(50)/100
+===[Active][Sleep ][Peer (ProtocolVersion/Head/Host:Port)    ][Transfer Speeds (L/H/B/R/N/S)      ][Client Info (Name/Version/Operating System/Language)     ]
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+   [      ][      ][Peer|eth66|16257000|   82.18.186.80:37924][   43|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16257000|  85.244.77.144:30307][   90|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-arm64/dotnet6.0.12] 
+2023-01-20 21:46:46.3528|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:46:47.0154|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:46:51.2508|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafa77",
+  "toBlock": "0xfafa77",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-20 21:46:51.2508|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa78, False] 
+2023-01-20 21:46:51.2562|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa77, False] 
+2023-01-20 21:46:51.8985|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:46:51.8985|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:46:59.3998|Peers | with known best block: 41 | all: 42 | 
+2023-01-20 21:47:03.0703|Received: ForkchoiceState: (HeadBlockHash: 0x457b09e7e7dc2dc8f4131f162d457f83bb5891779aef566cba2c60a2b1c4c963, SafeBlockHash: 0x25cb3d7c2a32aeff549c00ba6caecbb7ea640a3aa18741effe743695d3d15ec6, FinalizedBlockHash: 0xe0c28951c77fcca3ed52e746358daef2fd705e43f013102c3696cb56f0207a27)  
+2023-01-20 21:47:03.0703|FCU - block 16450483 (0x457b09...c4c963) was processed. 
+2023-01-20 21:47:03.0703|Valid. Request: ForkchoiceState: (HeadBlockHash: 0x457b09e7e7dc2dc8f4131f162d457f83bb5891779aef566cba2c60a2b1c4c963, SafeBlockHash: 0x25cb3d7c2a32aeff549c00ba6caecbb7ea640a3aa18741effe743695d3d15ec6, FinalizedBlockHash: 0xe0c28951c77fcca3ed52e746358daef2fd705e43f013102c3696cb56f0207a27) . 
+2023-01-20 21:47:03.2601|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafa78",
+  "toBlock": "0xfafa78",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-20 21:47:03.2601|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa79, False] 
+2023-01-20 21:47:03.2601|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa78, False] 
+2023-01-20 21:47:04.0819|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:47:04.0829|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:47:04.0829|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:47:04.1483|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:47:12.2308|Executing JSON RPC call engine_exchangeTransitionConfigurationV1 with params [{
+  "terminalTotalDifficulty": "0xc70d808a128d7380000",
+  "terminalBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+  "terminalBlockNumber": "0x0"
+}] 
+2023-01-20 21:47:14.4002|Peers | with known best block: 37 | all: 38 | 
+2023-01-20 21:47:14.4002|Sync peers 37(38)/100
+===[Active][Sleep ][Peer (ProtocolVersion/Head/Host:Port)    ][Transfer Speeds (L/H/B/R/N/S)      ][Client Info (Name/Version/Operating System/Language)     ]
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+   [      ][      ][Peer|eth66|16450493|  50.21.167.138:30303][  169|    2|     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16450492| 89.149.218.149:30303][   22|   10|     |     |     |     ][Nethermind/v1.14.1-0-1a32d4541-20230105/X64-Linux/6.0.8]
+   [      ][      ][Peer|eth66|16257000|   82.18.186.80:37924][   42|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16257000|  85.244.77.144:30307][   77|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-arm64/dotnet6.0.12] 
+2023-01-20 21:47:14.4425|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:47:15.2668|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa7a, False] 
+2023-01-20 21:47:15.2668|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafa79",
+  "toBlock": "0xfafa79",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-20 21:47:15.2668|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa79, False] 
+2023-01-20 21:47:19.5312|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:47:19.5312|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:47:19.5373|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:47:27.2745|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafa7a",
+  "toBlock": "0xfafa7a",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-20 21:47:27.2745|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa7b, False] 
+2023-01-20 21:47:27.2745|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa7a, False] 
+2023-01-20 21:47:29.4046|Peers | with known best block: 31 | all: 32 | 
+2023-01-20 21:47:29.6935|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:47:29.6935|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:47:34.7719|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:47:39.0659|Received: ForkchoiceState: (HeadBlockHash: 0x457b09e7e7dc2dc8f4131f162d457f83bb5891779aef566cba2c60a2b1c4c963, SafeBlockHash: 0x25cb3d7c2a32aeff549c00ba6caecbb7ea640a3aa18741effe743695d3d15ec6, FinalizedBlockHash: 0xe0c28951c77fcca3ed52e746358daef2fd705e43f013102c3696cb56f0207a27)  
+2023-01-20 21:47:39.0659|FCU - block 16450483 (0x457b09...c4c963) was processed. 
+2023-01-20 21:47:39.0659|Valid. Request: ForkchoiceState: (HeadBlockHash: 0x457b09e7e7dc2dc8f4131f162d457f83bb5891779aef566cba2c60a2b1c4c963, SafeBlockHash: 0x25cb3d7c2a32aeff549c00ba6caecbb7ea640a3aa18741effe743695d3d15ec6, FinalizedBlockHash: 0xe0c28951c77fcca3ed52e746358daef2fd705e43f013102c3696cb56f0207a27) . 
+2023-01-20 21:47:39.2806|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafa7b",
+  "toBlock": "0xfafa7b",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-20 21:47:39.2806|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa7c, False] 
+2023-01-20 21:47:39.2905|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa7b, False] 
+2023-01-20 21:47:39.8426|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:47:39.8426|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:47:42.8303|Executing JSON RPC call eth_syncing with params [] 
+2023-01-20 21:47:44.4076|Peers | with known best block: 31 | all: 32 | 
+2023-01-20 21:47:44.4076|Sync peers - Initialized: 31 | All: 32 | Max: 100
+===[Active][Sleep ][Peer (ProtocolVersion/Head/Host:Port)    ][Transfer Speeds (L/H/B/R/N/S)      ][Client Info (Name/Version/Operating System/Language)     ]
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+   [      ][      ][Peer|eth66|16450491|  3.143.112.234:30303][     |    4|     |     |     |     ][erigon/v2.34.0-stable-937fb2c4/linux-amd64/go1.19rc1]
+   [      ][      ][Peer|eth66|16450483|    3.69.166.93:45102][  769|     |     |     |     |     ][Geth/v1.1.9-5404d9d8-20220420/linux-amd64/go1.17.5]
+   [      ][      ][Peer|eth66|16450482| 54.175.160.107:41768][  122|     |     |     |     |     ][Geth/v1.1.9-5404d9d8-20220420/linux-amd64/go1.17.5]
+   [      ][      ][Peer|eth66|16450482|    3.80.12.255:30445][  134|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16450482|    3.80.12.255:30463][  134|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16450482|    3.80.12.255:30317][  134|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16450482|    3.80.12.255:30373][  134|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16450482|    3.80.12.255:30403][  134|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16450482|    3.80.12.255:30539][  134|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16450482|    3.80.12.255:30547][  134|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16450481|    3.80.12.255:30351][  128|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16450481|    3.80.12.255:30439][  128|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16450480|    3.80.12.255:30553][  128|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16450335|    51.81.93.21:37778][  356|     |     |     |     |     ][Geth/1.10.23-stable-36c1449b/linux-amd64/go1.18]
+   [      ][      ][Peer|eth66|16449983|    3.80.12.255:30517][  129|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16449904|    3.80.12.255:30508][  129|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16449894|    3.80.12.255:30429][  129|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16449892|   15.204.197.7:30303][  124|    0|     |     |     |     ][Geth/v1.10.23-stable/linux-amd64/go1.18.1]
+   [      ][      ][Peer|eth66|16449890| 162.19.171.169:30303][   31|    0|     |     |     |     ][Geth/v1.10.23-stable/linux-amd64/go1.18.1]
+   [      ][      ][Peer|eth66|16449890|    3.80.12.255:30441][  128|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16449890|    3.80.12.255:30337][  129|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16449890|    3.80.12.255:30421][  129|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16449890|    3.80.12.255:30585][  129|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16449889|    3.80.12.255:30470][  129|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16449889|    3.80.12.255:30437][  129|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16449888|    3.80.12.255:30453][  129|     |     |     |     |     ][]
+   [      ][      ][Peer|eth66|16449860|   51.222.40.18:30304][  129|     |     |     |     |     ][Geth/v1.9.24-stable-cc05b050/linux-amd64/go1.15.5]
+   [      ][      ][Peer|eth66|16434989| 89.187.177.158:32874][  137|     |     |     |     |     ][Geth/v1.10.25-stable/linux-amd64/go1.17.10]
+   [      ][      ][Peer|eth66|16257000|   82.18.186.80:37924][   42|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|16257000|  85.244.77.144:30307][   71|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-arm64/dotnet6.0.12]
+   [      ][      ][Peer|eth66|15537393|   91.92.137.10:30303][   37|     |     |     |     |     ][Geth/v1.10.23-stable-d901d853/linux-amd64/go1.18.5] 
+2023-01-20 21:47:44.9119|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:47:50.2582|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:47:51.2976|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa7d, False] 
+2023-01-20 21:47:51.2984|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafa7c",
+  "toBlock": "0xfafa7c",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-20 21:47:51.3084|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa7c, False] 
+2023-01-20 21:47:55.0571|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:47:55.0571|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:47:55.0584|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:47:59.4076|Peers | with known best block: 27 | all: 28 | 
+2023-01-20 21:48:03.3134|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafa7d",
+  "toBlock": "0xfafa7d",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-20 21:48:03.3155|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa7e, False] 
+2023-01-20 21:48:03.3219|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa7d, False] 
+2023-01-20 21:48:05.2094|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:48:05.2094|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:48:05.2112|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:48:12.2311|Executing JSON RPC call engine_exchangeTransitionConfigurationV1 with params [{
+  "terminalTotalDifficulty": "0xc70d808a128d7380000",
+  "terminalBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+  "terminalBlockNumber": "0x0"
+}] 
+2023-01-20 21:48:14.4160|Peers | with known best block: 23 | all: 24 | 
+2023-01-20 21:48:14.4160|Sync peers 23(24)/100
+===[Active][Sleep ][Peer (ProtocolVersion/Head/Host:Port)    ][Transfer Speeds (L/H/B/R/N/S)      ][Client Info (Name/Version/Operating System/Language)     ]
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+   [      ][      ][Peer|eth66|16257000|   82.18.186.80:37924][   44|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12] 
+2023-01-20 21:48:15.0770|Received: ForkchoiceState: (HeadBlockHash: 0x457b09e7e7dc2dc8f4131f162d457f83bb5891779aef566cba2c60a2b1c4c963, SafeBlockHash: 0x25cb3d7c2a32aeff549c00ba6caecbb7ea640a3aa18741effe743695d3d15ec6, FinalizedBlockHash: 0xe0c28951c77fcca3ed52e746358daef2fd705e43f013102c3696cb56f0207a27)  
+2023-01-20 21:48:15.0770|FCU - block 16450483 (0x457b09...c4c963) was processed. 
+2023-01-20 21:48:15.0770|Valid. Request: ForkchoiceState: (HeadBlockHash: 0x457b09e7e7dc2dc8f4131f162d457f83bb5891779aef566cba2c60a2b1c4c963, SafeBlockHash: 0x25cb3d7c2a32aeff549c00ba6caecbb7ea640a3aa18741effe743695d3d15ec6, FinalizedBlockHash: 0xe0c28951c77fcca3ed52e746358daef2fd705e43f013102c3696cb56f0207a27) . 
+2023-01-20 21:48:15.3286|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafa7e",
+  "toBlock": "0xfafa7e",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-20 21:48:15.3286|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa7f, False] 
+2023-01-20 21:48:15.3380|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa7e, False] 
+2023-01-20 21:48:15.3711|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:48:15.3711|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:48:15.3782|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:48:20.3542|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:48:20.4485|Received a new payload: 16450484 (0xc46b2fd3144117074d82724d04cfd0075a48ad101d1a3bd1ecfe9f4c5b94ca2d) 
+2023-01-20 21:48:21.0339|Processed   16450484 |      577ms of 112,500ms, mgasps   24.67 total   27.57, tps  252.85 total  286.27, bps    1.73 total    1.82, recv queue 0, proc queue 0 
+2023-01-20 21:48:21.0339|Valid. Result of a new payload: 16450484 (0xc46b2fd3144117074d82724d04cfd0075a48ad101d1a3bd1ecfe9f4c5b94ca2d). 
+2023-01-20 21:48:21.0403|Received: ForkchoiceState: (HeadBlockHash: 0xc46b2fd3144117074d82724d04cfd0075a48ad101d1a3bd1ecfe9f4c5b94ca2d, SafeBlockHash: 0x25cb3d7c2a32aeff549c00ba6caecbb7ea640a3aa18741effe743695d3d15ec6, FinalizedBlockHash: 0xe0c28951c77fcca3ed52e746358daef2fd705e43f013102c3696cb56f0207a27)  
+2023-01-20 21:48:21.0403|FCU - block 16450484 (0xc46b2f...94ca2d) was processed. 
+2023-01-20 21:48:21.0403|Block 0xc46b2fd3144117074d82724d04cfd0075a48ad101d1a3bd1ecfe9f4c5b94ca2d was set as head. 
+2023-01-20 21:48:21.0403|Valid. Request: ForkchoiceState: (HeadBlockHash: 0xc46b2fd3144117074d82724d04cfd0075a48ad101d1a3bd1ecfe9f4c5b94ca2d, SafeBlockHash: 0x25cb3d7c2a32aeff549c00ba6caecbb7ea640a3aa18741effe743695d3d15ec6, FinalizedBlockHash: 0xe0c28951c77fcca3ed52e746358daef2fd705e43f013102c3696cb56f0207a27) . 
+2023-01-20 21:48:22.0301|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:48:22.0305|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:48:27.2496|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:48:27.3417|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa80, False] 
+2023-01-20 21:48:27.3417|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafa7f",
+  "toBlock": "0xfafa7f",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-20 21:48:27.3484|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa7f, False] 
+2023-01-20 21:48:29.4257|Peers | with known best block: 21 | all: 21 | 
+2023-01-20 21:48:32.3339|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:48:32.3344|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:48:39.3521|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa81, False] 
+2023-01-20 21:48:39.3521|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafa80",
+  "toBlock": "0xfafa80",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-20 21:48:39.3615|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa80, False] 
+2023-01-20 21:48:42.4790|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:48:42.4790|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:48:42.8337|Executing JSON RPC call eth_chainId with params [] 
+2023-01-20 21:48:42.8353|Executing JSON RPC call eth_syncing with params [] 
+2023-01-20 21:48:44.4256|Peers | with known best block: 19 | all: 20 | 
+2023-01-20 21:48:44.4256|Sync peers 19(20)/100
+===[Active][Sleep ][Peer (ProtocolVersion/Head/Host:Port)    ][Transfer Speeds (L/H/B/R/N/S)      ][Client Info (Name/Version/Operating System/Language)     ]
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+   [      ][      ][Peer|eth66|10096528|   78.159.97.17:46488][  145|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12] 
+2023-01-20 21:48:47.5561|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:48:51.0704|Received: ForkchoiceState: (HeadBlockHash: 0xc46b2fd3144117074d82724d04cfd0075a48ad101d1a3bd1ecfe9f4c5b94ca2d, SafeBlockHash: 0x25cb3d7c2a32aeff549c00ba6caecbb7ea640a3aa18741effe743695d3d15ec6, FinalizedBlockHash: 0xe0c28951c77fcca3ed52e746358daef2fd705e43f013102c3696cb56f0207a27)  
+2023-01-20 21:48:51.0704|FCU - block 16450484 (0xc46b2f...94ca2d) was processed. 
+2023-01-20 21:48:51.0704|Valid. Request: ForkchoiceState: (HeadBlockHash: 0xc46b2fd3144117074d82724d04cfd0075a48ad101d1a3bd1ecfe9f4c5b94ca2d, SafeBlockHash: 0x25cb3d7c2a32aeff549c00ba6caecbb7ea640a3aa18741effe743695d3d15ec6, FinalizedBlockHash: 0xe0c28951c77fcca3ed52e746358daef2fd705e43f013102c3696cb56f0207a27) . 
+2023-01-20 21:48:51.3689|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa82, False] 
+2023-01-20 21:48:51.3689|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafa81",
+  "toBlock": "0xfafa81",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-20 21:48:51.3780|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa81, False] 
+2023-01-20 21:48:52.6283|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:48:52.6283|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:48:59.4366|Peers | with known best block: 17 | all: 17 | 
+2023-01-20 21:49:03.3835|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa83, False] 
+2023-01-20 21:49:05.3897|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafa82",
+  "toBlock": "0xfafa82",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-20 21:49:05.3991|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa82, False] 
+2023-01-20 21:49:07.8546|Received a new payload: 16450485 (0x858835d55aee587668899371c9cb8bec872c32c8fe63ab0b994cfc9477758b48) 
+2023-01-20 21:49:08.2906|Processed   16450485 |      424ms of  47,257ms, mgasps   39.15 total   27.58, tps  363.16 total  286.33, bps    2.36 total    1.82, recv queue 0, proc queue 0 
+2023-01-20 21:49:08.2906|Valid. Result of a new payload: 16450485 (0x858835d55aee587668899371c9cb8bec872c32c8fe63ab0b994cfc9477758b48). 
+2023-01-20 21:49:08.2986|Received: ForkchoiceState: (HeadBlockHash: 0x858835d55aee587668899371c9cb8bec872c32c8fe63ab0b994cfc9477758b48, SafeBlockHash: 0x25cb3d7c2a32aeff549c00ba6caecbb7ea640a3aa18741effe743695d3d15ec6, FinalizedBlockHash: 0xe0c28951c77fcca3ed52e746358daef2fd705e43f013102c3696cb56f0207a27)  
+2023-01-20 21:49:08.2986|FCU - block 16450485 (0x858835...758b48) was processed. 
+2023-01-20 21:49:08.2986|Block 0x858835d55aee587668899371c9cb8bec872c32c8fe63ab0b994cfc9477758b48 was set as head. 
+2023-01-20 21:49:08.2986|Valid. Request: ForkchoiceState: (HeadBlockHash: 0x858835d55aee587668899371c9cb8bec872c32c8fe63ab0b994cfc9477758b48, SafeBlockHash: 0x25cb3d7c2a32aeff549c00ba6caecbb7ea640a3aa18741effe743695d3d15ec6, FinalizedBlockHash: 0xe0c28951c77fcca3ed52e746358daef2fd705e43f013102c3696cb56f0207a27) . 
+2023-01-20 21:49:08.3028|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:49:08.3028|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:49:12.2301|Executing JSON RPC call engine_exchangeTransitionConfigurationV1 with params [{
+  "terminalTotalDifficulty": "0xc70d808a128d7380000",
+  "terminalBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+  "terminalBlockNumber": "0x0"
+}] 
+2023-01-20 21:49:12.3702|Received a new payload: 16450486 (0x748c8aed1102defc30e918ba11a458d628270723519d560d82868e980682ebc0) 
+2023-01-20 21:49:12.7467|Processed   16450486 |      367ms of   4,456ms, mgasps   32.11 total   27.58, tps  343.06 total  286.37, bps    2.72 total    1.82, recv queue 0, proc queue 0 
+2023-01-20 21:49:12.7467|Valid. Result of a new payload: 16450486 (0x748c8aed1102defc30e918ba11a458d628270723519d560d82868e980682ebc0). 
+2023-01-20 21:49:12.7542|Received: ForkchoiceState: (HeadBlockHash: 0x748c8aed1102defc30e918ba11a458d628270723519d560d82868e980682ebc0, SafeBlockHash: 0x25cb3d7c2a32aeff549c00ba6caecbb7ea640a3aa18741effe743695d3d15ec6, FinalizedBlockHash: 0xe0c28951c77fcca3ed52e746358daef2fd705e43f013102c3696cb56f0207a27)  
+2023-01-20 21:49:12.7542|FCU - block 16450486 (0x748c8a...82ebc0) was processed. 
+2023-01-20 21:49:12.7548|Block 0x748c8aed1102defc30e918ba11a458d628270723519d560d82868e980682ebc0 was set as head. 
+2023-01-20 21:49:12.7548|Valid. Request: ForkchoiceState: (HeadBlockHash: 0x748c8aed1102defc30e918ba11a458d628270723519d560d82868e980682ebc0, SafeBlockHash: 0x25cb3d7c2a32aeff549c00ba6caecbb7ea640a3aa18741effe743695d3d15ec6, FinalizedBlockHash: 0xe0c28951c77fcca3ed52e746358daef2fd705e43f013102c3696cb56f0207a27) . 
+2023-01-20 21:49:12.8665|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:49:13.3830|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:49:14.4366|Peers | with known best block: 16 | all: 16 | 
+2023-01-20 21:49:14.4366|Sync peers 16(16)/100
+===[Active][Sleep ][Peer (ProtocolVersion/Head/Host:Port)    ][Transfer Speeds (L/H/B/R/N/S)      ][Client Info (Name/Version/Operating System/Language)     ]
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+   [      ][      ][Peer|eth66|10096528|   78.159.97.17:46488][   93|     |     |     |     |     ][Nethermind/v1.15.0+2b708761/linux-x64/dotnet6.0.12] 
+2023-01-20 21:49:15.3962|Executing JSON RPC call eth_getLogs with params [{
+  "topics": [
+    "0x649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"
+  ],
+  "fromBlock": "0xfafa83",
+  "toBlock": "0xfafa83",
+  "address": [
+    "0x00000000219ab540356cBB839Cbe05303d7705Fa"
+  ]
+}] 
+2023-01-20 21:49:15.3962|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa83, False] 
+2023-01-20 21:49:17.3992|Executing JSON RPC call eth_getBlockByNumber with params [0xfafa84, False] 
+2023-01-20 21:49:18.4736|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:49:18.4747|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2023-01-20 21:49:18.6454|Error during parsing/validation. Microsoft.AspNetCore.Connections.ConnectionResetException: Connection reset by peer
+ ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.Internal.SocketConnection.DoReceive()
+   --- End of inner exception stack trace ---
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.BeginRead(ValueTask`1& awaitable)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
