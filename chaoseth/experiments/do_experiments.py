@@ -217,7 +217,7 @@ def do_experiment(experiment, injector_path, client_name, client_log, dump_logs_
 
     # step 3: 10 mins recovery phase + 5 mins validation phase
     if not result["client_crashed"]:
-        logging.info("5 mins recovery phase, we do nothing here.")
+        logging.info("10 mins recovery phase, we do nothing here.")
         time.sleep(60*10)
         logging.info("5 mins validation phase")
         validation_phase_log = tail_client_log(client_log, 60*5)
