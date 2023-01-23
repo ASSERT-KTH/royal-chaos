@@ -1,105 +1,170 @@
-INFO [10-15|04:05:38.450] State heal in progress                   accounts=59844@3.01MiB    slots=27762@2.14MiB    codes=15140@127.03MiB nodes=354,173,695@104.58GiB pending=125,216
-INFO [10-15|04:05:41.866] Imported new block headers               count=1    elapsed=7.918ms   number=13,420,426 hash=a30bd0..4cb68d
-INFO [10-15|04:05:46.762] State heal in progress                   accounts=60261@3.03MiB    slots=27766@2.14MiB    codes=15140@127.03MiB nodes=354,174,828@104.58GiB pending=125,286
-INFO [10-15|04:05:55.323] State heal in progress                   accounts=60636@3.06MiB    slots=27784@2.14MiB    codes=15140@127.03MiB nodes=354,175,891@104.58GiB pending=125,869
-INFO [10-15|04:06:03.817] State heal in progress                   accounts=61176@3.08MiB    slots=27792@2.14MiB    codes=15140@127.03MiB nodes=354,177,200@104.58GiB pending=126,010
-INFO [10-15|04:06:12.467] State heal in progress                   accounts=61404@3.10MiB    slots=27799@2.14MiB    codes=15140@127.03MiB nodes=354,177,994@104.58GiB pending=126,421
-INFO [10-15|04:06:24.029] State heal in progress                   accounts=61754@3.11MiB    slots=27820@2.14MiB    codes=15140@127.03MiB nodes=354,179,123@104.58GiB pending=127,188
-INFO [10-15|04:06:27.563] Imported new block headers               count=1    elapsed=6.809ms   number=13,420,427 hash=ec5538..8d1751 age=1m18s
-INFO [10-15|04:06:28.445] Downloader queue stats                   receiptTasks=0    blockTasks=0    itemSize=268.06KiB throttle=978
-INFO [10-15|04:06:33.405] State heal in progress                   accounts=61836@3.12MiB    slots=27832@2.14MiB    codes=15140@127.03MiB nodes=354,179,685@104.58GiB pending=127,832
-INFO [10-15|04:06:41.613] Writing clean trie cache to disk         path=/data/eth-data/geth/triecache threads=1
-INFO [10-15|04:06:41.636] Regenerated local transaction journal    transactions=0 accounts=0
-INFO [10-15|04:06:43.868] State heal in progress                   accounts=62019@3.13MiB    slots=27851@2.14MiB    codes=15140@127.03MiB nodes=354,180,472@104.58GiB pending=128,572
-INFO [10-15|04:06:44.327] Persisted the clean trie cache           path=/data/eth-data/geth/triecache elapsed=2.710s
-INFO [10-15|04:06:52.937] State heal in progress                   accounts=62223@3.14MiB    slots=27857@2.15MiB    codes=15140@127.03MiB nodes=354,181,150@104.58GiB pending=128,899
-INFO [10-15|04:07:01.075] State heal in progress                   accounts=62635@3.16MiB    slots=27867@2.15MiB    codes=15140@127.03MiB nodes=354,182,168@104.58GiB pending=128,914
-INFO [10-15|04:07:02.213] Imported new block headers               count=1    elapsed=9.721ms   number=13,420,428 hash=9024ea..c27803 age=1m42s
-INFO [10-15|04:07:05.236] Imported new block headers               count=1    elapsed=6.695ms   number=13,420,429 hash=737311..eb60e7 age=1m26s
-INFO [10-15|04:07:09.750] State heal in progress                   accounts=62693@3.16MiB    slots=27898@2.15MiB    codes=15140@127.03MiB nodes=354,182,652@104.58GiB pending=129,304
-INFO [10-15|04:07:18.884] State heal in progress                   accounts=62799@3.17MiB    slots=27914@2.15MiB    codes=15140@127.03MiB nodes=354,183,212@104.58GiB pending=129,974
-INFO [10-15|04:07:28.938] State heal in progress                   accounts=62817@3.17MiB    slots=27934@2.15MiB    codes=15140@127.03MiB nodes=354,183,673@104.58GiB pending=130,679
-INFO [10-15|04:07:37.950] Imported new block headers               count=2    elapsed=20.399ms  number=13,420,431 hash=163a6e..f2a297
-INFO [10-15|04:07:38.495] Downloader queue stats                   receiptTasks=0    blockTasks=0    itemSize=307.17KiB throttle=854
-INFO [10-15|04:07:40.610] State heal in progress                   accounts=62872@3.17MiB    slots=27958@2.15MiB    codes=15140@127.03MiB nodes=354,184,241@104.58GiB pending=131,352
-INFO [10-15|04:07:49.387] State heal in progress                   accounts=62926@3.18MiB    slots=27975@2.15MiB    codes=15140@127.03MiB nodes=354,184,700@104.58GiB pending=131,992
-WARN [10-15|04:07:54.315] Unexpected trienode heal packet          peer=e4272099 reqid=801,599,624,102,517,808
-INFO [10-15|04:07:56.313] Imported new block headers               count=1    elapsed=8.768ms   number=13,420,432 hash=93448e..2821d2
-INFO [10-15|04:07:59.345] Imported new block headers               count=1    elapsed=6.568ms   number=13,420,433 hash=ed692c..5c40b1
-INFO [10-15|04:08:01.076] State heal in progress                   accounts=62926@3.18MiB    slots=28003@2.16MiB    codes=15140@127.03MiB nodes=354,185,182@104.58GiB pending=132,836
-WARN [10-15|04:08:01.077] Unexpected trienode heal packet          peer=244de030 reqid=4,057,743,738,127,600,102
-WARN [10-15|04:08:02.046] Unexpected trienode heal packet          peer=8fe0dc37 reqid=328,166,725,996,869,901
-INFO [10-15|04:08:02.442] Imported new block headers               count=1    elapsed=13.869ms  number=13,420,434 hash=87f7b4..d33769
-WARN [10-15|04:08:03.569] Unexpected trienode heal packet          peer=91deee08 reqid=2,163,544,277,095,336,337
-WARN [10-15|04:08:07.566] Unexpected trienode heal packet          peer=805b1ebf reqid=6,285,291,889,453,106,410
-INFO [10-15|04:08:13.038] State heal in progress                   accounts=62982@3.18MiB    slots=28040@2.16MiB    codes=15140@127.03MiB nodes=354,185,835@104.58GiB pending=134,218
-WARN [10-15|04:08:13.039] Unexpected trienode heal packet          peer=4fe20ae7 reqid=8,792,845,792,763,712,035
-WARN [10-15|04:08:18.647] Unexpected trienode heal packet          peer=9fb0b7bf reqid=2,071,716,396,714,880,131
-WARN [10-15|04:08:20.391] Unexpected trienode heal packet          peer=4a904f02 reqid=2,400,150,168,052,511,341
-INFO [10-15|04:08:20.731] Imported new block headers               count=1    elapsed=7.119ms   number=13,420,435 hash=3b473a..bfe0ba
-WARN [10-15|04:08:21.519] Pivot became stale, moving               old=13,420,309 new=13,420,373
-INFO [10-15|04:08:21.732] Imported new block receipts              count=64   elapsed=210.019ms number=13,420,372 hash=bddde3..44f310 age=17m30s   size=8.60MiB
-WARN [10-15|04:08:21.734] Unexpected trienode heal packet          peer=98eff4d8 reqid=156,284,857,789,648,496
-INFO [10-15|04:08:23.175] State heal in progress                   accounts=63048@3.18MiB    slots=28069@2.16MiB    codes=15140@127.03MiB nodes=354,186,427@104.58GiB pending=135,166
-INFO [10-15|04:08:23.175] State heal in progress                   accounts=63048@3.18MiB    slots=28069@2.16MiB    codes=15140@127.03MiB nodes=354,186,427@104.58GiB pending=135,166
-WARN [10-15|04:08:23.189] Unexpected trienode heal packet          peer=4a904f02 reqid=604,671,540,970,179,442
-WARN [10-15|04:08:23.197] Unexpected trienode heal packet          peer=91deee08 reqid=4,036,739,091,902,299,518
-WARN [10-15|04:08:23.205] Unexpected trienode heal packet          peer=98eff4d8 reqid=6,491,436,363,436,132,303
-WARN [10-15|04:08:23.261] Unexpected trienode heal packet          peer=fc362cb8 reqid=7,675,632,313,195,746,080
-WARN [10-15|04:08:23.340] Unexpected trienode heal packet          peer=e4272099 reqid=4,023,314,804,853,591,831
-WARN [10-15|04:08:23.403] Unexpected trienode heal packet          peer=244de030 reqid=7,843,484,571,416,164,824
-WARN [10-15|04:08:23.403] Unexpected trienode heal packet          peer=8fe0dc37 reqid=308,710,467,092,736,590
-WARN [10-15|04:08:23.407] Unexpected trienode heal packet          peer=6a09c64e reqid=3,601,882,790,011,833,981
-WARN [10-15|04:08:23.509] Unexpected trienode heal packet          peer=2fc3dc5f reqid=2,209,546,004,668,093,606
-INFO [10-15|04:08:26.783] Imported new block headers               count=1    elapsed=7.621ms   number=13,420,436 hash=977e20..00a571
-INFO [10-15|04:08:35.847] State heal in progress                   accounts=63048@3.18MiB    slots=28069@2.16MiB    codes=15140@127.03MiB nodes=354,188,343@104.58GiB pending=24273
-INFO [10-15|04:08:44.881] Imported new block headers               count=1    elapsed=6.399ms   number=13,420,437 hash=44b704..2b555a
-INFO [10-15|04:08:44.940] State heal in progress                   accounts=63048@3.18MiB    slots=28069@2.16MiB    codes=15140@127.03MiB nodes=354,189,840@104.58GiB pending=47130
-INFO [10-15|04:08:45.205] Downloader queue stats                   receiptTasks=0    blockTasks=0    itemSize=253.38KiB throttle=1035
-INFO [10-15|04:08:58.757] State heal in progress                   accounts=63048@3.18MiB    slots=28069@2.16MiB    codes=15140@127.03MiB nodes=354,191,168@104.59GiB pending=57885
-INFO [10-15|04:09:07.088] State heal in progress                   accounts=63048@3.18MiB    slots=28069@2.16MiB    codes=15140@127.03MiB nodes=354,192,060@104.59GiB pending=66610
-INFO [10-15|04:09:12.019] Imported new block headers               count=1    elapsed=7.415ms   number=13,420,438 hash=2d95a5..d29385
-INFO [10-15|04:09:15.073] Imported new block headers               count=1    elapsed=5.888ms   number=13,420,439 hash=09e3f5..6fd187
-INFO [10-15|04:09:17.001] State heal in progress                   accounts=63048@3.18MiB    slots=28069@2.16MiB    codes=15140@127.03MiB nodes=354,193,562@104.59GiB pending=84312
-WARN [10-15|04:09:22.380] Unexpected trienode heal packet          peer=244de030 reqid=1,290,455,435,230,844,995
-INFO [10-15|04:09:24.211] Imported new block headers               count=1    elapsed=7.211ms   number=13,420,440 hash=3569c4..42bd42
-INFO [10-15|04:09:25.553] State heal in progress                   accounts=63048@3.18MiB    slots=28069@2.16MiB    codes=15140@127.03MiB nodes=354,195,074@104.59GiB pending=105,152
-WARN [10-15|04:09:25.555] Unexpected trienode heal packet          peer=6a09c64e reqid=3,451,680,475,191,793,620
-INFO [10-15|04:09:30.256] Imported new block headers               count=1    elapsed=7.205ms   number=13,420,441 hash=c0059e..92b321
-WARN [10-15|04:09:33.086] Unexpected trienode heal packet          peer=2fc3dc5f reqid=3,967,493,840,814,321,375
-INFO [10-15|04:09:36.419] Imported new block headers               count=1    elapsed=8.131ms   number=13,420,442 hash=29fe6c..335bd4
-INFO [10-15|04:09:38.099] State heal in progress                   accounts=63048@3.18MiB    slots=28069@2.16MiB    codes=15140@127.03MiB nodes=354,196,760@104.59GiB pending=123,181
-WARN [10-15|04:09:38.100] Unexpected trienode heal packet          peer=e4272099 reqid=7,249,258,212,434,880,910
-WARN [10-15|04:09:38.683] Unexpected trienode heal packet          peer=4a904f02 reqid=143,949,745,271,758,665
-INFO [10-15|04:09:46.220] State heal in progress                   accounts=63048@3.18MiB    slots=28069@2.16MiB    codes=15140@127.03MiB nodes=354,197,803@104.59GiB pending=127,744
-WARN [10-15|04:09:46.221] Unexpected trienode heal packet          peer=805b1ebf reqid=5,252,829,487,080,884,538
-INFO [10-15|04:09:55.532] State heal in progress                   accounts=63048@3.18MiB    slots=28069@2.16MiB    codes=15140@127.03MiB nodes=354,198,700@104.59GiB pending=131,905
-WARN [10-15|04:09:55.534] Unexpected trienode heal packet          peer=fc362cb8 reqid=2,413,766,347,121,991,671
-WARN [10-15|04:09:59.726] Unexpected trienode heal packet          peer=98eff4d8 reqid=8,698,508,133,271,744,055
-INFO [10-15|04:10:01.332] Imported new block headers               count=1    elapsed=12.027ms  number=13,420,443 hash=22db18..2a8db4
-INFO [10-15|04:10:02.269] Downloader queue stats                   receiptTasks=0    blockTasks=0    itemSize=233.63KiB throttle=1123
-INFO [10-15|04:10:05.840] State heal in progress                   accounts=63048@3.18MiB    slots=28069@2.16MiB    codes=15140@127.03MiB nodes=354,200,286@104.59GiB pending=147,567
-WARN [10-15|04:10:05.840] Unexpected trienode heal packet          peer=9fb0b7bf reqid=4,425,806,391,605,936,211
-WARN [10-15|04:10:06.227] Unexpected trienode heal packet          peer=4fe20ae7 reqid=8,616,801,947,156,166,371
-INFO [10-15|04:10:18.255] State heal in progress                   accounts=63048@3.18MiB    slots=28069@2.16MiB    codes=15140@127.03MiB nodes=354,201,111@104.59GiB pending=149,097
-WARN [10-15|04:10:18.256] Unexpected trienode heal packet          peer=91deee08 reqid=6,048,270,034,711,333,666
-WARN [10-15|04:10:25.734] Unexpected trienode heal packet          peer=244de030 reqid=3,666,479,641,292,573,610
-WARN [10-15|04:10:25.753] Unexpected trienode heal packet          peer=8fe0dc37 reqid=2,365,358,939,764,348,612
-INFO [10-15|04:10:26.761] State heal in progress                   accounts=63048@3.18MiB    slots=28069@2.16MiB    codes=15140@127.03MiB nodes=354,201,932@104.59GiB pending=150,347
-WARN [10-15|04:10:26.762] Unexpected trienode heal packet          peer=6a09c64e reqid=3,650,534,723,999,443,677
-WARN [10-15|04:10:26.778] Unexpected trienode heal packet          peer=2fc3dc5f reqid=2,913,114,111,579,590,050
-WARN [10-15|04:10:26.809] Unexpected trienode heal packet          peer=e4272099 reqid=8,858,601,651,918,785,549
-INFO [10-15|04:10:35.489] State heal in progress                   accounts=63048@3.18MiB    slots=28069@2.16MiB    codes=15140@127.03MiB nodes=354,202,453@104.59GiB pending=152,001
-INFO [10-15|04:10:40.777] Imported new block headers               count=1    elapsed=8.882ms   number=13,420,444 hash=32bbad..e65b1e age=1m13s
-INFO [10-15|04:10:45.049] Imported new block headers               count=1    elapsed=6.102ms   number=13,420,445 hash=4b465b..5ebdeb age=1m11s
-INFO [10-15|04:10:46.554] State heal in progress                   accounts=63048@3.18MiB    slots=28069@2.16MiB    codes=15140@127.03MiB nodes=354,203,075@104.59GiB pending=153,937
-INFO [10-15|04:10:51.148] Imported new block headers               count=1    elapsed=7.566ms   number=13,420,446 hash=90e544..03d285
-INFO [10-15|04:10:57.196] Imported new block headers               count=1    elapsed=10.826ms  number=13,420,447 hash=6d8d47..a823ad
-INFO [10-15|04:10:58.280] State heal in progress                   accounts=63048@3.18MiB    slots=28069@2.16MiB    codes=15140@127.03MiB nodes=354,203,703@104.59GiB pending=155,897
-INFO [10-15|04:11:07.214] Imported new block headers               count=1    elapsed=7.237ms   number=13,420,448 hash=f80f5d..901b0f
-INFO [10-15|04:11:08.306] Downloader queue stats                   receiptTasks=0    blockTasks=0    itemSize=254.06KiB throttle=1032
-INFO [10-15|04:11:11.888] State heal in progress                   accounts=63048@3.18MiB    slots=28069@2.16MiB    codes=15140@127.03MiB nodes=354,204,495@104.59GiB pending=158,380
-INFO [10-15|04:11:25.707] Imported new block headers               count=1    elapsed=6.982ms   number=13,420,449 hash=4a70c4..125678
-INFO [10-15|04:11:26.895] State heal in progress                   accounts=63048@3.18MiB    slots=28069@2.16MiB    codes=15140@127.03MiB nodes=354,205,335@104.59GiB pending=160,924
-INFO [10-15|04:11:39.336] State heal in progress                   accounts=63048@3.18MiB    slots=28069@2.16MiB    codes=15140@127.03MiB nodes=354,206,087@104.59GiB pending=164,017
-WARN [10-15|04:11:39.337] Unexpected trienode heal packet          peer=fc362cb8 reqid=2,079,629,547,140,630,508
+INFO [01-23|01:33:42.213] State heal in progress                   accounts=278,763@14.52MiB slots=611,212@44.88MiB codes=6743@48.87MiB nodes=36,533,545@8.31GiB pending=61204
+INFO [01-23|01:33:47.388] Downloader queue stats                   receiptTasks=0   blockTasks=0   itemSize=209.55KiB throttle=1251
+INFO [01-23|01:33:48.539] Forkchoice requested sync to new head    number=16,466,245 hash=0e8f8a..f1298b
+INFO [01-23|01:33:49.680] Imported new block headers               count=1   elapsed="349.642µs" number=16,466,245 hash=0e8f8a..f1298b
+WARN [01-23|01:33:49.872] Unexpected trienode heal packet          peer=42cf72bd reqid=4,361,504,164,292,998,778
+ERROR[01-23|01:33:50.081] Expired request does not exist           peer=02d6bfa5641925245c07dab3d2af238ff5987a0cef23c818a2ba78577cf6e4e1
+ERROR[01-23|01:33:50.368] Expired request does not exist           peer=ff7f210ec88a944f4d074131e5b5bb90d8404de2d3cd3dbe118b4df8e3a44e48
+INFO [01-23|01:33:50.527] State heal in progress                   accounts=278,763@14.52MiB slots=612,691@44.99MiB codes=6743@48.87MiB nodes=36,538,490@8.31GiB pending=59883
+INFO [01-23|01:33:58.659] State heal in progress                   accounts=278,763@14.52MiB slots=614,106@45.10MiB codes=6743@48.87MiB nodes=36,543,676@8.31GiB pending=59897
+INFO [01-23|01:34:00.166] Forkchoice requested sync to new head    number=16,466,246 hash=42ae1a..81482c
+INFO [01-23|01:34:01.682] Imported new block headers               count=1   elapsed="258.416µs" number=16,466,246 hash=42ae1a..81482c
+WARN [01-23|01:34:01.712] Unexpected trienode heal packet          peer=42cf72bd reqid=5,568,789,108,480,952,397
+INFO [01-23|01:34:07.163] State heal in progress                   accounts=278,763@14.52MiB slots=615,744@45.22MiB codes=6743@48.87MiB nodes=36,549,722@8.31GiB pending=61420
+INFO [01-23|01:34:13.262] Forkchoice requested sync to new head    number=16,466,247 hash=62b604..3795db
+INFO [01-23|01:34:17.500] State heal in progress                   accounts=278,763@14.52MiB slots=617,418@45.35MiB codes=6743@48.87MiB nodes=36,554,244@8.31GiB pending=60261
+INFO [01-23|01:34:17.500] Imported new block headers               count=1   elapsed=1.024ms     number=16,466,247 hash=62b604..3795db
+WARN [01-23|01:34:17.501] Unexpected trienode heal packet          peer=a6a1cf6b reqid=433,934,287,638,692,794
+WARN [01-23|01:34:18.093] Unexpected trienode heal packet          peer=04fef786 reqid=5,958,268,307,734,068,249
+WARN [01-23|01:34:18.393] Unexpected trienode heal packet          peer=71d39c35 reqid=6,444,246,881,999,581,515
+WARN [01-23|01:34:18.436] Unexpected trienode heal packet          peer=0e1a8fe4 reqid=2,901,125,813,590,648,571
+WARN [01-23|01:34:19.220] Unexpected trienode heal packet          peer=d4604660 reqid=8,515,806,542,123,437,253
+WARN [01-23|01:34:20.540] Dropping unsynced node during sync       id=11807484bd0ec1e9 conn=inbound addr=216.183.196.203:34206 type=Geth/v1.10.26-stable...
+WARN [01-23|01:34:21.548] Unexpected trienode heal packet          peer=ea5d974b reqid=2,365,705,901,769,431,070
+WARN [01-23|01:34:22.312] Unexpected trienode heal packet          peer=84fabfcb reqid=8,603,946,773,203,473,404
+WARN [01-23|01:34:23.356] Unexpected trienode heal packet          peer=917426e1 reqid=1,650,742,964,689,294,520
+WARN [01-23|01:34:23.883] Unexpected trienode heal packet          peer=a2a8ab5a reqid=4,080,012,638,396,151,022
+INFO [01-23|01:34:24.724] Forkchoice requested sync to new head    number=16,466,248 hash=2c16db..09c596
+INFO [01-23|01:34:25.530] State heal in progress                   accounts=278,763@14.52MiB slots=618,300@45.41MiB codes=6743@48.87MiB nodes=36,557,841@8.31GiB pending=61619
+INFO [01-23|01:34:26.502] Imported new block headers               count=1   elapsed="628.023µs" number=16,466,248 hash=2c16db..09c596
+WARN [01-23|01:34:31.067] Snapshot extension registration failed   peer=409e2bcc err="peer connected on snap without compatible eth support"
+INFO [01-23|01:34:34.086] State heal in progress                   accounts=278,763@14.52MiB slots=618,979@45.46MiB codes=6743@48.87MiB nodes=36,561,241@8.31GiB pending=63028
+INFO [01-23|01:34:35.884] Forkchoice requested sync to new head    number=16,466,249 hash=dc948a..f5d788
+INFO [01-23|01:34:38.507] Imported new block headers               count=1   elapsed="320.174µs" number=16,466,249 hash=dc948a..f5d788
+WARN [01-23|01:34:40.515] Snapshot extension registration failed   peer=cd0e3f58 err="peer connected on snap without compatible eth support"
+INFO [01-23|01:34:42.140] State heal in progress                   accounts=278,763@14.52MiB slots=620,776@45.60MiB codes=6743@48.87MiB nodes=36,567,271@8.32GiB pending=61972
+INFO [01-23|01:34:47.937] Forkchoice requested sync to new head    number=16,466,250 hash=9c21ea..9cafea
+INFO [01-23|01:34:50.185] State heal in progress                   accounts=278,763@14.52MiB slots=622,099@45.69MiB codes=6743@48.87MiB nodes=36,571,618@8.32GiB pending=60541
+INFO [01-23|01:34:50.509] Imported new block headers               count=1   elapsed="325.176µs" number=16,466,250 hash=9c21ea..9cafea
+ERROR[01-23|01:34:50.998] Expired request does not exist           peer=25ebd37136963109dd54f499ba698ff625dd63b8b99f05fd5fbdad1669fed422
+ERROR[01-23|01:34:51.225] Expired request does not exist           peer=d76a7aaa6194b61352d2820f761061f79b4844a1865361e2fc6732ff62569af9
+ERROR[01-23|01:34:51.309] Expired request does not exist           peer=2322880a1e1c64202caa4e282c905f32dc14a7559fed185395b73ade2cf6dbf2
+ERROR[01-23|01:34:52.229] Expired request does not exist           peer=e6b15848935f8c92c0390d80662ef30590e08367e1b5980b9a64482a584029cd
+ERROR[01-23|01:34:52.287] Expired request does not exist           peer=0da8730bae7520e76710020841f9ab06d20c0d0bc0a1257fff97c96b52a38524
+ERROR[01-23|01:34:56.510] Expired request does not exist           peer=5069e94409c119485d852778a5f20fa9a96355724023d0fabbcb040318df2867
+INFO [01-23|01:34:58.265] State heal in progress                   accounts=278,763@14.52MiB slots=622,830@45.75MiB codes=6743@48.87MiB nodes=36,574,796@8.32GiB pending=60708
+INFO [01-23|01:34:59.438] Downloader queue stats                   receiptTasks=0   blockTasks=0   itemSize=253.11KiB throttle=1036
+INFO [01-23|01:35:01.804] Forkchoice requested sync to new head    number=16,466,251 hash=fde93d..30085c
+INFO [01-23|01:35:02.512] Imported new block headers               count=1   elapsed="358.35µs"  number=16,466,251 hash=fde93d..30085c
+WARN [01-23|01:35:05.977] Snapshot extension registration failed   peer=baad5ce5 err="peer connected on snap without compatible eth support"
+INFO [01-23|01:35:06.368] State heal in progress                   accounts=278,763@14.52MiB slots=623,874@45.83MiB codes=6743@48.87MiB nodes=36,580,001@8.32GiB pending=62077
+INFO [01-23|01:35:14.463] State heal in progress                   accounts=278,763@14.52MiB slots=626,020@45.99MiB codes=6743@48.87MiB nodes=36,585,589@8.32GiB pending=59116
+INFO [01-23|01:35:16.435] Forkchoice requested sync to new head    number=16,466,252 hash=815b4c..d8bb7e
+WARN [01-23|01:35:16.936] Checkpoint challenge timed out, dropping id=bdfa6602f579b499 conn=dyndial addr=34.202.193.18:30303   type=Geth/v1.10.26-stable...
+INFO [01-23|01:35:17.516] Imported new block headers               count=1   elapsed="400.419µs" number=16,466,252 hash=815b4c..d8bb7e
+ERROR[01-23|01:35:18.249] Expired request does not exist           peer=43c9d666ee097502dd71b4a41281062ee4bc2758d1524c9f808ee70c7327f403
+ERROR[01-23|01:35:18.249] Expired request does not exist           peer=43c9d666ee097502dd71b4a41281062ee4bc2758d1524c9f808ee70c7327f403
+INFO [01-23|01:35:22.709] State heal in progress                   accounts=278,763@14.52MiB slots=628,080@46.15MiB codes=6743@48.87MiB nodes=36,591,627@8.32GiB pending=56659
+INFO [01-23|01:35:30.763] State heal in progress                   accounts=278,763@14.52MiB slots=631,069@46.37MiB codes=6743@48.87MiB nodes=36,599,222@8.32GiB pending=52296
+INFO [01-23|01:35:35.108] Forkchoice requested sync to new head    number=16,466,252 hash=03162f..a9a58d
+INFO [01-23|01:35:36.679] Forkchoice requested sync to new head    number=16,466,253 hash=777109..86ca05
+WARN [01-23|01:35:38.520] Invalid header encountered               number=16,466,253 hash=777109..86ca05 parent=03162f..a9a58d err="unknown ancestor"
+WARN [01-23|01:35:38.522] Rewinding blockchain                     target=16,464,203
+INFO [01-23|01:35:39.071] State heal in progress                   accounts=278,763@14.52MiB slots=633,194@46.53MiB codes=6743@48.87MiB nodes=36,605,274@8.32GiB pending=51952
+INFO [01-23|01:35:40.382] Loaded most recent local header          number=16,464,203 hash=b7a4df..b4a36a td=58,750,003,716,598,352,816,469 age=6h53m41s
+INFO [01-23|01:35:40.383] Loaded most recent local full block      number=0          hash=d4e567..cb8fa3 td=17,179,869,184                 age=53y10mo1h
+INFO [01-23|01:35:40.383] Loaded most recent local fast block      number=16,464,203 hash=b7a4df..b4a36a td=58,750,003,716,598,352,816,469 age=6h53m41s
+INFO [01-23|01:35:40.383] Loaded last fast-sync pivot marker       number=16,466,158
+WARN [01-23|01:35:40.384] Rolled back chain segment                header=16466252->16464203 snap=16466157->16464203 block=0->0 reason="unknown ancestor"
+INFO [01-23|01:35:40.721] State heal in progress                   accounts=278,763@14.52MiB slots=633,321@46.54MiB codes=6743@48.87MiB nodes=36,606,019@8.32GiB pending=52821
+ERROR[01-23|01:35:40.723] Beacon backfilling failed                err="retrieved hash chain is invalid: unknown ancestor"
+WARN [01-23|01:35:40.854] Unexpected trienode heal packet          peer=e5d0ead4 reqid=6,876,704,607,414,656,851
+WARN [01-23|01:35:40.872] Unexpected trienode heal packet          peer=04fef786 reqid=6,900,433,435,850,194,336
+WARN [01-23|01:35:40.896] Unexpected trienode heal packet          peer=84fabfcb reqid=380,373,589,313,572,352
+WARN [01-23|01:35:40.912] Unexpected trienode heal packet          peer=d4604660 reqid=8,943,410,278,540,122,831
+WARN [01-23|01:35:40.951] Unexpected trienode heal packet          peer=ea5d974b reqid=7,882,053,801,827,469,260
+WARN [01-23|01:35:40.989] Unexpected trienode heal packet          peer=0e1a8fe4 reqid=3,100,785,505,676,079,234
+WARN [01-23|01:35:41.048] Unexpected trienode heal packet          peer=71d39c35 reqid=5,256,636,461,498,516,204
+WARN [01-23|01:35:41.159] Unexpected trienode heal packet          peer=a6a1cf6b reqid=3,045,889,777,011,891,331
+WARN [01-23|01:35:41.242] Unexpected trienode heal packet          peer=917426e1 reqid=7,476,686,441,488,789,496
+WARN [01-23|01:35:41.613] Unexpected trienode heal packet          peer=1cc4544c reqid=1,984,157,968,045,558,099
+WARN [01-23|01:35:41.664] Unexpected trienode heal packet          peer=a2a8ab5a reqid=5,476,404,481,776,899,822
+WARN [01-23|01:35:41.918] Unexpected trienode heal packet          peer=93494d0a reqid=7,067,859,045,972,349,950
+WARN [01-23|01:35:42.236] Snapshot extension registration failed   peer=89027a8b err="peer connected on snap without compatible eth support"
+ERROR[01-23|01:35:49.141] Beacon sync linkup unavailable           number=16,465,003 hash=bc054a..2716bb
+ERROR[01-23|01:35:49.142] Beacon backfilling failed                err="beacon linkup unavailable locally: 16465003 [bc054ae1dd2648252a989f83462227b5b7794586642a4596a5365a30422716bb]"
+INFO [01-23|01:35:49.261] Forkchoice requested sync to new head    number=16,466,254 hash=604406..6e06d4
+ERROR[01-23|01:35:49.261] Beacon sync linkup unavailable           number=16,465,003 hash=bc054a..2716bb
+ERROR[01-23|01:35:49.261] Beacon backfilling failed                err="beacon linkup unavailable locally: 16465003 [bc054ae1dd2648252a989f83462227b5b7794586642a4596a5365a30422716bb]"
+WARN [01-23|01:35:53.834] Unexpected trienode heal packet          peer=42cf72bd reqid=2,499,276,952,889,765,851
+ERROR[01-23|01:36:00.477] Beacon sync linkup unavailable           number=16,465,003 hash=bc054a..2716bb
+ERROR[01-23|01:36:00.477] Beacon backfilling failed                err="beacon linkup unavailable locally: 16465003 [bc054ae1dd2648252a989f83462227b5b7794586642a4596a5365a30422716bb]"
+INFO [01-23|01:36:00.602] Forkchoice requested sync to new head    number=16,466,255 hash=afb5d6..4291dd
+ERROR[01-23|01:36:00.603] Beacon sync linkup unavailable           number=16,465,003 hash=bc054a..2716bb
+ERROR[01-23|01:36:00.603] Beacon backfilling failed                err="beacon linkup unavailable locally: 16465003 [bc054ae1dd2648252a989f83462227b5b7794586642a4596a5365a30422716bb]"
+ERROR[01-23|01:36:11.965] Beacon sync linkup unavailable           number=16,465,003 hash=bc054a..2716bb
+ERROR[01-23|01:36:11.965] Beacon backfilling failed                err="beacon linkup unavailable locally: 16465003 [bc054ae1dd2648252a989f83462227b5b7794586642a4596a5365a30422716bb]"
+INFO [01-23|01:36:12.099] Forkchoice requested sync to new head    number=16,466,256 hash=983c3b..0cda4e
+ERROR[01-23|01:36:12.099] Beacon sync linkup unavailable           number=16,465,003 hash=bc054a..2716bb
+ERROR[01-23|01:36:12.099] Beacon backfilling failed                err="beacon linkup unavailable locally: 16465003 [bc054ae1dd2648252a989f83462227b5b7794586642a4596a5365a30422716bb]"
+ERROR[01-23|01:36:23.880] Beacon sync linkup unavailable           number=16,465,003 hash=bc054a..2716bb
+ERROR[01-23|01:36:23.880] Beacon backfilling failed                err="beacon linkup unavailable locally: 16465003 [bc054ae1dd2648252a989f83462227b5b7794586642a4596a5365a30422716bb]"
+INFO [01-23|01:36:24.005] Forkchoice requested sync to new head    number=16,466,257 hash=a56d15..c701b1
+ERROR[01-23|01:36:24.005] Beacon sync linkup unavailable           number=16,465,003 hash=bc054a..2716bb
+ERROR[01-23|01:36:24.005] Beacon backfilling failed                err="beacon linkup unavailable locally: 16465003 [bc054ae1dd2648252a989f83462227b5b7794586642a4596a5365a30422716bb]"
+ERROR[01-23|01:36:36.210] Beacon sync linkup unavailable           number=16,465,003 hash=bc054a..2716bb
+ERROR[01-23|01:36:36.210] Beacon backfilling failed                err="beacon linkup unavailable locally: 16465003 [bc054ae1dd2648252a989f83462227b5b7794586642a4596a5365a30422716bb]"
+INFO [01-23|01:36:36.315] Forkchoice requested sync to new head    number=16,466,258 hash=e4ecf7..6141f5
+ERROR[01-23|01:36:36.316] Beacon sync linkup unavailable           number=16,465,003 hash=bc054a..2716bb
+ERROR[01-23|01:36:36.316] Beacon backfilling failed                err="beacon linkup unavailable locally: 16465003 [bc054ae1dd2648252a989f83462227b5b7794586642a4596a5365a30422716bb]"
+ERROR[01-23|01:36:48.040] Beacon sync linkup unavailable           number=16,465,003 hash=bc054a..2716bb
+ERROR[01-23|01:36:48.040] Beacon backfilling failed                err="beacon linkup unavailable locally: 16465003 [bc054ae1dd2648252a989f83462227b5b7794586642a4596a5365a30422716bb]"
+INFO [01-23|01:36:48.178] Forkchoice requested sync to new head    number=16,466,259 hash=9dd443..206ca6
+ERROR[01-23|01:36:48.178] Beacon sync linkup unavailable           number=16,465,003 hash=bc054a..2716bb
+ERROR[01-23|01:36:48.178] Beacon backfilling failed                err="beacon linkup unavailable locally: 16465003 [bc054ae1dd2648252a989f83462227b5b7794586642a4596a5365a30422716bb]"
+ERROR[01-23|01:36:59.875] Beacon sync linkup unavailable           number=16,465,003 hash=bc054a..2716bb
+ERROR[01-23|01:36:59.875] Beacon backfilling failed                err="beacon linkup unavailable locally: 16465003 [bc054ae1dd2648252a989f83462227b5b7794586642a4596a5365a30422716bb]"
+INFO [01-23|01:36:59.993] Forkchoice requested sync to new head    number=16,466,260 hash=76daf7..7be19a
+ERROR[01-23|01:36:59.993] Beacon sync linkup unavailable           number=16,465,003 hash=bc054a..2716bb
+ERROR[01-23|01:36:59.993] Beacon backfilling failed                err="beacon linkup unavailable locally: 16465003 [bc054ae1dd2648252a989f83462227b5b7794586642a4596a5365a30422716bb]"
+ERROR[01-23|01:37:11.649] Beacon sync linkup unavailable           number=16,465,003 hash=bc054a..2716bb
+ERROR[01-23|01:37:11.649] Beacon backfilling failed                err="beacon linkup unavailable locally: 16465003 [bc054ae1dd2648252a989f83462227b5b7794586642a4596a5365a30422716bb]"
+INFO [01-23|01:37:11.757] Forkchoice requested sync to new head    number=16,466,261 hash=a21612..ac5a5f
+ERROR[01-23|01:37:11.758] Beacon sync linkup unavailable           number=16,465,003 hash=bc054a..2716bb
+ERROR[01-23|01:37:11.758] Beacon backfilling failed                err="beacon linkup unavailable locally: 16465003 [bc054ae1dd2648252a989f83462227b5b7794586642a4596a5365a30422716bb]"
+ERROR[01-23|01:37:24.202] Beacon sync linkup unavailable           number=16,465,003 hash=bc054a..2716bb
+ERROR[01-23|01:37:24.202] Beacon backfilling failed                err="beacon linkup unavailable locally: 16465003 [bc054ae1dd2648252a989f83462227b5b7794586642a4596a5365a30422716bb]"
+INFO [01-23|01:37:24.354] Forkchoice requested sync to new head    number=16,466,262 hash=ee733e..4568d0
+ERROR[01-23|01:37:24.354] Beacon sync linkup unavailable           number=16,465,003 hash=bc054a..2716bb
+ERROR[01-23|01:37:24.354] Beacon backfilling failed                err="beacon linkup unavailable locally: 16465003 [bc054ae1dd2648252a989f83462227b5b7794586642a4596a5365a30422716bb]"
+WARN [01-23|01:37:31.292] Dropping unsynced node during sync       id=4d06674da7ec7a25 conn=dyndial addr=34.75.81.17:30303     type=Geth/v1.10.17-stable...
+ERROR[01-23|01:37:36.907] Beacon sync linkup unavailable           number=16,465,003 hash=bc054a..2716bb
+ERROR[01-23|01:37:36.907] Beacon backfilling failed                err="beacon linkup unavailable locally: 16465003 [bc054ae1dd2648252a989f83462227b5b7794586642a4596a5365a30422716bb]"
+INFO [01-23|01:37:37.054] Forkchoice requested sync to new head    number=16,466,263 hash=610760..e4c94c
+ERROR[01-23|01:37:37.054] Beacon sync linkup unavailable           number=16,465,003 hash=bc054a..2716bb
+ERROR[01-23|01:37:37.054] Beacon backfilling failed                err="beacon linkup unavailable locally: 16465003 [bc054ae1dd2648252a989f83462227b5b7794586642a4596a5365a30422716bb]"
+ERROR[01-23|01:37:49.399] Beacon sync linkup unavailable           number=16,465,003 hash=bc054a..2716bb
+ERROR[01-23|01:37:49.399] Beacon backfilling failed                err="beacon linkup unavailable locally: 16465003 [bc054ae1dd2648252a989f83462227b5b7794586642a4596a5365a30422716bb]"
+INFO [01-23|01:37:49.536] Forkchoice requested sync to new head    number=16,466,264 hash=81ee76..4fd508
+ERROR[01-23|01:37:49.536] Beacon sync linkup unavailable           number=16,465,003 hash=bc054a..2716bb
+ERROR[01-23|01:37:49.536] Beacon backfilling failed                err="beacon linkup unavailable locally: 16465003 [bc054ae1dd2648252a989f83462227b5b7794586642a4596a5365a30422716bb]"
+ERROR[01-23|01:38:01.522] Beacon sync linkup unavailable           number=16,465,003 hash=bc054a..2716bb
+ERROR[01-23|01:38:01.522] Beacon backfilling failed                err="beacon linkup unavailable locally: 16465003 [bc054ae1dd2648252a989f83462227b5b7794586642a4596a5365a30422716bb]"
+INFO [01-23|01:38:01.698] Forkchoice requested sync to new head    number=16,466,265 hash=7051b2..09506c
+ERROR[01-23|01:38:01.699] Beacon sync linkup unavailable           number=16,465,003 hash=bc054a..2716bb
+ERROR[01-23|01:38:01.699] Beacon backfilling failed                err="beacon linkup unavailable locally: 16465003 [bc054ae1dd2648252a989f83462227b5b7794586642a4596a5365a30422716bb]"
+ERROR[01-23|01:38:13.615] Beacon sync linkup unavailable           number=16,465,003 hash=bc054a..2716bb
+ERROR[01-23|01:38:13.615] Beacon backfilling failed                err="beacon linkup unavailable locally: 16465003 [bc054ae1dd2648252a989f83462227b5b7794586642a4596a5365a30422716bb]"
+INFO [01-23|01:38:13.772] Forkchoice requested sync to new head    number=16,466,266 hash=d8b288..718cf9
+ERROR[01-23|01:38:13.773] Beacon sync linkup unavailable           number=16,465,003 hash=bc054a..2716bb
+ERROR[01-23|01:38:13.773] Beacon backfilling failed                err="beacon linkup unavailable locally: 16465003 [bc054ae1dd2648252a989f83462227b5b7794586642a4596a5365a30422716bb]"
+ERROR[01-23|01:38:24.600] Beacon sync linkup unavailable           number=16,465,003 hash=bc054a..2716bb
+ERROR[01-23|01:38:24.600] Beacon backfilling failed                err="beacon linkup unavailable locally: 16465003 [bc054ae1dd2648252a989f83462227b5b7794586642a4596a5365a30422716bb]"
+INFO [01-23|01:38:24.726] Forkchoice requested sync to new head    number=16,466,267 hash=9f949b..7fec99
+ERROR[01-23|01:38:24.726] Beacon sync linkup unavailable           number=16,465,003 hash=bc054a..2716bb
+ERROR[01-23|01:38:24.726] Beacon backfilling failed                err="beacon linkup unavailable locally: 16465003 [bc054ae1dd2648252a989f83462227b5b7794586642a4596a5365a30422716bb]"
+ERROR[01-23|01:38:35.955] Beacon sync linkup unavailable           number=16,465,003 hash=bc054a..2716bb
+ERROR[01-23|01:38:35.955] Beacon backfilling failed                err="beacon linkup unavailable locally: 16465003 [bc054ae1dd2648252a989f83462227b5b7794586642a4596a5365a30422716bb]"
+INFO [01-23|01:38:36.103] Forkchoice requested sync to new head    number=16,466,268 hash=7943db..f5b6e6
+ERROR[01-23|01:38:36.104] Beacon sync linkup unavailable           number=16,465,003 hash=bc054a..2716bb
+ERROR[01-23|01:38:36.104] Beacon backfilling failed                err="beacon linkup unavailable locally: 16465003 [bc054ae1dd2648252a989f83462227b5b7794586642a4596a5365a30422716bb]"
+ERROR[01-23|01:38:48.591] Beacon sync linkup unavailable           number=16,465,003 hash=bc054a..2716bb
+ERROR[01-23|01:38:48.591] Beacon backfilling failed                err="beacon linkup unavailable locally: 16465003 [bc054ae1dd2648252a989f83462227b5b7794586642a4596a5365a30422716bb]"
+INFO [01-23|01:38:48.724] Forkchoice requested sync to new head    number=16,466,269 hash=e34486..6efe67
+ERROR[01-23|01:38:48.725] Beacon sync linkup unavailable           number=16,465,003 hash=bc054a..2716bb
+ERROR[01-23|01:38:48.725] Beacon backfilling failed                err="beacon linkup unavailable locally: 16465003 [bc054ae1dd2648252a989f83462227b5b7794586642a4596a5365a30422716bb]"
+ERROR[01-23|01:38:59.821] Beacon sync linkup unavailable           number=16,465,003 hash=bc054a..2716bb
+ERROR[01-23|01:38:59.821] Beacon backfilling failed                err="beacon linkup unavailable locally: 16465003 [bc054ae1dd2648252a989f83462227b5b7794586642a4596a5365a30422716bb]"
+INFO [01-23|01:38:59.936] Forkchoice requested sync to new head    number=16,466,270 hash=330e43..c22712
+ERROR[01-23|01:38:59.937] Beacon sync linkup unavailable           number=16,465,003 hash=bc054a..2716bb
+ERROR[01-23|01:38:59.937] Beacon backfilling failed                err="beacon linkup unavailable locally: 16465003 [bc054ae1dd2648252a989f83462227b5b7794586642a4596a5365a30422716bb]"
