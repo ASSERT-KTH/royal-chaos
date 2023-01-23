@@ -1,0 +1,4322 @@
+{
+  "experiment_name": "Error Models for Resilience Benchmarking Experiments", 
+  "experiments": [
+    {
+      "result": {
+        "metrics": {
+          "validation": {
+            "nethermind_statuses_received": {
+              "max": 0.4666666666666667, 
+              "mean": 0.11428571428571428, 
+              "variance": 0.02122448979591837, 
+              "pvalue": 0.10159541431157848, 
+              "min": 0.0
+            }, 
+            "nethermind_block_infos_db_reads": {
+              "max": 0.13333333333333333, 
+              "mean": 0.09206349206349206, 
+              "variance": 0.0010481229528848575, 
+              "pvalue": 0.2031887475878552, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_other_disconnects": {
+              "max": 0.06666666666666667, 
+              "mean": 0.012698412698412698, 
+              "variance": 0.001108591584782061, 
+              "pvalue": 0.007083096641899926, 
+              "min": 0.0
+            }, 
+            "nethermind_statuses_sent": {
+              "max": 0.5333333333333333, 
+              "mean": 0.13333333333333333, 
+              "variance": 0.030052910052910057, 
+              "pvalue": 0.14514979373763565, 
+              "min": 0.0
+            }, 
+            "nethermind_bloom_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.08253968253968254, 
+              "variance": 0.0008062484252960446, 
+              "pvalue": 0.4693229651573667, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_header_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.08253968253968254, 
+              "variance": 0.0008062484252960446, 
+              "pvalue": 0.47007489040789346, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_eth66block_headers_received": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.3460902837974774, 
+              "min": 0.0
+            }, 
+            "nethermind_persisted_node_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37373008113422956, 
+              "min": 0.0
+            }, 
+            "nethermind_local_receive_message_timeout_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.21072032148397796, 
+              "min": 0.0
+            }, 
+            "nethermind_metadata_db_writes": {
+              "max": 0.26666666666666666, 
+              "mean": 0.16507936507936508, 
+              "variance": 0.003224993701184178, 
+              "pvalue": 0.4634850586062829, 
+              "min": 0.13333333333333333
+            }, 
+            "nethermind_local_already_connected_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.13496391566461247, 
+              "min": 0.0
+            }, 
+            "nethermind_already_connected_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.020004782054530053, 
+              "min": 0.0
+            }, 
+            "nethermind_calls": {
+              "max": 100.46666666666667, 
+              "mean": 61.73968253968255, 
+              "variance": 914.9354094230281, 
+              "pvalue": 0.00235346024395736, 
+              "min": 37.53333333333333
+            }, 
+            "nethermind_last_persisted_block_number": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37373006745442305, 
+              "min": 0.0
+            }, 
+            "nethermind_replaced_nodes_count": {
+              "max": 5.933333333333334, 
+              "mean": 3.13015873015873, 
+              "variance": 2.783270345175107, 
+              "pvalue": 0.34062576716415244, 
+              "min": 0.7333333333333333
+            }, 
+            "nethermind_state_db_reads": {
+              "max": 335.8, 
+              "mean": 201.47619047619042, 
+              "variance": 10166.788692365833, 
+              "pvalue": 0.2310548933264327, 
+              "min": 102.66666666666667
+            }, 
+            "nethermind_code_db_writes": {
+              "max": 0.26666666666666666, 
+              "mean": 0.073015873015873, 
+              "variance": 0.027049634668682286, 
+              "pvalue": 0.17660026895767056, 
+              "min": 0.0
+            }, 
+            "nethermind_receipts_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.08253968253968254, 
+              "variance": 0.0008062484252960446, 
+              "pvalue": 0.4693229651573667, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_sstore_opcode": {
+              "max": 187.73333333333332, 
+              "mean": 82.90158730158728, 
+              "variance": 1862.6347593852358, 
+              "pvalue": 0.01569153963745497, 
+              "min": 46.86666666666667
+            }, 
+            "process_virtual_memory_bytes": {
+              "max": 3647746048.0, 
+              "mean": 1563454512.7619045, 
+              "variance": 3.2562620879872517e+18, 
+              "pvalue": 0.01008187546279322, 
+              "min": 0.0
+            }, 
+            "nethermind_client_quitting_disconnects": {
+              "max": 0.26666666666666666, 
+              "mean": 0.07619047619047618, 
+              "variance": 0.008163265306122446, 
+              "pvalue": 0.0005565943362205391, 
+              "min": 0.0
+            }, 
+            "nethermind_bn256pairing_precompile": {
+              "max": 0.0, 
+              "mean": 0.0031746031746031746, 
+              "variance": 0.00020156210632401098, 
+              "pvalue": 0.2795231035137564, 
+              "min": 0.0
+            }, 
+            "nethermind_bn256add_precompile": {
+              "max": 0.0, 
+              "mean": 0.06349206349206349, 
+              "variance": 0.08062484252960447, 
+              "pvalue": 0.2898256795241041, 
+              "min": 0.0
+            }, 
+            "nethermind_local_breach_of_protocol_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0031746031746031746, 
+              "variance": 0.00020156210632401106, 
+              "pvalue": 0.25734575858809405, 
+              "min": 0.0
+            }, 
+            "nethermind_pruned_transient_nodes_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37373008113422956, 
+              "min": 0.0
+            }, 
+            "nethermind_disconnect_requested_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.3233619287513373, 
+              "min": 0.0
+            }, 
+            "nethermind_eth66get_receipts_received": {
+              "max": 0.13333333333333333, 
+              "mean": 0.047619047619047616, 
+              "variance": 0.0017535903250188963, 
+              "pvalue": 1.972071874598462e-16, 
+              "min": 0.0
+            }, 
+            "nethermind_snapshot_persistence_time": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.3846292486522763, 
+              "min": 0.0
+            }, 
+            "nethermind_blocks_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.08253968253968254, 
+              "variance": 0.0008062484252960446, 
+              "pvalue": 0.47007489040789346, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_hellos_sent": {
+              "max": 0.8, 
+              "mean": 0.21587301587301586, 
+              "variance": 0.07445704207608969, 
+              "pvalue": 0.13364519866126157, 
+              "min": 0.0
+            }, 
+            "nethermind_receive_message_timeout_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0031746031746031746, 
+              "variance": 0.00020156210632401106, 
+              "pvalue": 0.00017115911927805688, 
+              "min": 0.0
+            }, 
+            "nethermind_storage_tree_writes": {
+              "max": 108.26666666666667, 
+              "mean": 54.45079365079364, 
+              "variance": 653.85562106324, 
+              "pvalue": 0.02534180019903105, 
+              "min": 32.6
+            }, 
+            "nethermind_pruning_time": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.2978445718188498, 
+              "min": 0.0
+            }, 
+            "nethermind_blocks": {
+              "max": 0.13333333333333333, 
+              "mean": 0.08253968253968254, 
+              "variance": 0.0008062484252960446, 
+              "pvalue": 0.4693229651573667, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_dark_pool_ratio_level2": {
+              "max": 0.005161290367444356, 
+              "mean": 0.0026241498811170457, 
+              "variance": 3.2063245039541574e-06, 
+              "pvalue": 0.00688640280868355, 
+              "min": 8.014862736066183e-05
+            }, 
+            "nethermind_block_infos_db_writes": {
+              "max": 0.5333333333333333, 
+              "mean": 0.33015873015873015, 
+              "variance": 0.011630133534895445, 
+              "pvalue": 0.4959194632857686, 
+              "min": 0.26666666666666666
+            }, 
+            "nethermind_useless_peer_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37372960233835617, 
+              "min": 0.0
+            }, 
+            "nethermind_sha256precompile": {
+              "max": 0.26666666666666666, 
+              "mean": 0.044444444444444446, 
+              "variance": 0.022574955908289247, 
+              "pvalue": 0.3130861590670792, 
+              "min": 0.0
+            }, 
+            "nethermind_eth62new_block_received": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37372960233835617, 
+              "min": 0.0
+            }, 
+            "nethermind_reorganizations": {
+              "max": 0.13333333333333333, 
+              "mean": 0.08253968253968254, 
+              "variance": 0.0008062484252960446, 
+              "pvalue": 0.47007489040789346, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_mgas": {
+              "max": 2.483955133333802, 
+              "mean": 1.285840342857132, 
+              "variance": 0.3770841101810854, 
+              "pvalue": 0.3949915467272886, 
+              "min": 0.7999934000001909
+            }, 
+            "nethermind_dark_pool_ratio_level1": {
+              "max": 0.0044836875791847705, 
+              "mean": 0.002144455497031292, 
+              "variance": 3.1219943777458017e-06, 
+              "pvalue": 0.10528538614171168, 
+              "min": 0.0
+            }, 
+            "nethermind_mod_exp_precompile": {
+              "max": 0.06666666666666667, 
+              "mean": 0.006349206349206349, 
+              "variance": 0.0003829680020156209, 
+              "pvalue": 0.33981022048270093, 
+              "min": 0.0
+            }, 
+            "nethermind_deep_pruned_persisted_nodes_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.2978445796168771, 
+              "min": 0.0
+            }, 
+            "process_num_threads": {
+              "max": 13.266666666666666, 
+              "mean": 5.14920634920635, 
+              "variance": 40.59212899974805, 
+              "pvalue": 0.03162260606842516, 
+              "min": 0.0
+            }, 
+            "nethermind_bn256mul_precompile": {
+              "max": 0.0, 
+              "mean": 0.06666666666666667, 
+              "variance": 0.0888888888888889, 
+              "pvalue": 0.28982685431855715, 
+              "min": 0.0
+            }, 
+            "nethermind_hellos_received": {
+              "max": 0.6, 
+              "mean": 0.15873015873015872, 
+              "variance": 0.0382968002015621, 
+              "pvalue": 0.19031220523463988, 
+              "min": 0.0
+            }, 
+            "nethermind_pruned_persisted_nodes_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.2978445796168771, 
+              "min": 0.0
+            }, 
+            "nethermind_breach_of_protocol_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.4498914133843307, 
+              "min": 0.0
+            }, 
+            "nethermind_outgoing_connections": {
+              "max": 0.3333333333333333, 
+              "mean": 0.11746031746031745, 
+              "variance": 0.021123708742756358, 
+              "pvalue": 0.30515554584955407, 
+              "min": 0.0
+            }, 
+            "process_private_memory_bytes": {
+              "max": 1343012864.0, 
+              "mean": 192202550.45079368, 
+              "variance": 2.2084777742678147e+17, 
+              "pvalue": 5.5554113194429216e-05, 
+              "min": 19387.733333333334
+            }, 
+            "nethermind_cached_nodes_count": {
+              "max": 1034.5333333333333, 
+              "mean": 533.4412698412698, 
+              "variance": 54273.49226505415, 
+              "pvalue": 0.053817927251115484, 
+              "min": 312.0
+            }, 
+            "nethermind_code_db_reads": {
+              "max": 0.7333333333333333, 
+              "mean": 0.4857142857142859, 
+              "variance": 0.03900226757369612, 
+              "pvalue": 0.3162943557852088, 
+              "min": 0.2
+            }, 
+            "nethermind_blockhash_opcode": {
+              "max": 0.2, 
+              "mean": 0.06349206349206349, 
+              "variance": 0.0040110859158478205, 
+              "pvalue": 0.44490944543630717, 
+              "min": 0.0
+            }, 
+            "nethermind_eth66get_block_headers_received": {
+              "max": 0.6666666666666666, 
+              "mean": 0.39682539682539675, 
+              "variance": 0.020942302847064758, 
+              "pvalue": 2.6039264465240268e-08, 
+              "min": 0.26666666666666666
+            }
+          }, 
+          "ce": {
+            "nethermind_statuses_received": {
+              "max": 0.13333333333333333, 
+              "mean": 0.06666666666666667, 
+              "variance": 0.0038095238095238104, 
+              "pvalue": 0.06931792626421013, 
+              "min": 0.0
+            }, 
+            "nethermind_block_infos_db_reads": {
+              "max": 0.2, 
+              "mean": 0.09206349206349206, 
+              "variance": 0.002741244646006551, 
+              "pvalue": 0.15843715172881861, 
+              "min": 0.0
+            }, 
+            "nethermind_other_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0031746031746031746, 
+              "variance": 0.00020156210632401092, 
+              "pvalue": 0.414387761816638, 
+              "min": 0.0
+            }, 
+            "nethermind_statuses_sent": {
+              "max": 0.2, 
+              "mean": 0.07619047619047618, 
+              "variance": 0.006046863189720331, 
+              "pvalue": 0.07791725299169151, 
+              "min": 0.0
+            }, 
+            "nethermind_bloom_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.07936507936507936, 
+              "variance": 0.0015318720080624842, 
+              "pvalue": 0.3723189929964581, 
+              "min": 0.0
+            }, 
+            "nethermind_header_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.07936507936507936, 
+              "variance": 0.001108591584782061, 
+              "pvalue": 0.3277096959224517, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_eth66block_headers_received": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.3460902837974774, 
+              "min": 0.0
+            }, 
+            "nethermind_persisted_node_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37373008113422956, 
+              "min": 0.0
+            }, 
+            "nethermind_local_receive_message_timeout_disconnects": {
+              "max": 0.06666666666666667, 
+              "mean": 0.009523809523809525, 
+              "variance": 0.0005442176870748299, 
+              "pvalue": 0.001830426469933116, 
+              "min": 0.0
+            }, 
+            "nethermind_metadata_db_writes": {
+              "max": 0.26666666666666666, 
+              "mean": 0.15873015873015872, 
+              "variance": 0.007820609725371627, 
+              "pvalue": 0.24046681608402481, 
+              "min": 0.0
+            }, 
+            "nethermind_local_already_connected_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.13496391566461247, 
+              "min": 0.0
+            }, 
+            "nethermind_already_connected_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.020004782054530053, 
+              "min": 0.0
+            }, 
+            "nethermind_calls": {
+              "max": 88.53333333333333, 
+              "mean": 50.66349206349206, 
+              "variance": 554.899249181154, 
+              "pvalue": 0.0957075915360705, 
+              "min": 10.8
+            }, 
+            "nethermind_last_persisted_block_number": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37373006745442305, 
+              "min": 0.0
+            }, 
+            "nethermind_replaced_nodes_count": {
+              "max": 9.933333333333334, 
+              "mean": 4.926984126984127, 
+              "variance": 10.3466263542454, 
+              "pvalue": 0.016436878688495776, 
+              "min": 0.0
+            }, 
+            "nethermind_state_db_reads": {
+              "max": 223.79999999999998, 
+              "mean": 140.83809523809524, 
+              "variance": 3259.2908238851096, 
+              "pvalue": 0.00015616941406260948, 
+              "min": 45.266666666666666
+            }, 
+            "nethermind_code_db_writes": {
+              "max": 0.9333333333333333, 
+              "mean": 0.4412698412698412, 
+              "variance": 2.6025296044343653, 
+              "pvalue": 0.3628724797628594, 
+              "min": 0.0
+            }, 
+            "nethermind_receipts_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.07936507936507936, 
+              "variance": 0.0015318720080624842, 
+              "pvalue": 0.3723189929964581, 
+              "min": 0.0
+            }, 
+            "nethermind_sstore_opcode": {
+              "max": 119.39999999999999, 
+              "mean": 67.83492063492064, 
+              "variance": 996.3490450995213, 
+              "pvalue": 0.18463014615249868, 
+              "min": 8.4
+            }, 
+            "process_virtual_memory_bytes": {
+              "max": 3638251793.0666666, 
+              "mean": 1559160838.5015874, 
+              "variance": 3.225572371990915e+18, 
+              "pvalue": 0.2960708841376002, 
+              "min": 1092.2666666666667
+            }, 
+            "nethermind_client_quitting_disconnects": {
+              "max": 0.2, 
+              "mean": 0.053968253968253964, 
+              "variance": 0.011267321743512219, 
+              "pvalue": 4.247596508543585e-06, 
+              "min": 0.0
+            }, 
+            "nethermind_bn256pairing_precompile": {
+              "max": 0.0, 
+              "mean": 0.0031746031746031746, 
+              "variance": 0.00020156210632401106, 
+              "pvalue": 0.2795231035137564, 
+              "min": 0.0
+            }, 
+            "nethermind_bn256add_precompile": {
+              "max": 0.0, 
+              "mean": 0.06349206349206349, 
+              "variance": 0.08062484252960443, 
+              "pvalue": 0.2898256795241041, 
+              "min": 0.0
+            }, 
+            "nethermind_local_breach_of_protocol_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.23212894693901143, 
+              "min": 0.0
+            }, 
+            "nethermind_pruned_transient_nodes_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37373008113422956, 
+              "min": 0.0
+            }, 
+            "nethermind_disconnect_requested_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.3233619287513373, 
+              "min": 0.0
+            }, 
+            "nethermind_eth66get_receipts_received": {
+              "max": 0.13333333333333333, 
+              "mean": 0.073015873015873, 
+              "variance": 0.0024993701184177373, 
+              "pvalue": 5.198424595333393e-28, 
+              "min": 0.0
+            }, 
+            "nethermind_snapshot_persistence_time": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.3846292486522763, 
+              "min": 0.0
+            }, 
+            "nethermind_blocks_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.07936507936507936, 
+              "variance": 0.001108591584782061, 
+              "pvalue": 0.3277096959224517, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_hellos_sent": {
+              "max": 0.26666666666666666, 
+              "mean": 0.10476190476190476, 
+              "variance": 0.020136054421768704, 
+              "pvalue": 0.0369303231009355, 
+              "min": 0.0
+            }, 
+            "nethermind_receive_message_timeout_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0031746031746031746, 
+              "variance": 0.00020156210632401092, 
+              "pvalue": 0.00017115911927805688, 
+              "min": 0.0
+            }, 
+            "nethermind_storage_tree_writes": {
+              "max": 88.13333333333333, 
+              "mean": 46.8031746031746, 
+              "variance": 665.540942302847, 
+              "pvalue": 0.29767234417106136, 
+              "min": 6.066666666666666
+            }, 
+            "nethermind_pruning_time": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.2978445718188498, 
+              "min": 0.0
+            }, 
+            "nethermind_blocks": {
+              "max": 0.13333333333333333, 
+              "mean": 0.07936507936507936, 
+              "variance": 0.0015318720080624842, 
+              "pvalue": 0.3723189929964581, 
+              "min": 0.0
+            }, 
+            "nethermind_dark_pool_ratio_level2": {
+              "max": 0.009547083333333333, 
+              "mean": 0.005013738003520581, 
+              "variance": 0.0001047088187393756, 
+              "pvalue": 0.008048093714346517, 
+              "min": 0.0
+            }, 
+            "nethermind_block_infos_db_writes": {
+              "max": 0.4666666666666667, 
+              "mean": 0.31746031746031744, 
+              "variance": 0.016467624086671708, 
+              "pvalue": 0.3486206043419974, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_useless_peer_disconnects": {
+              "max": 0.06666666666666667, 
+              "mean": 0.006349206349206349, 
+              "variance": 0.00038296800201562093, 
+              "pvalue": 1.8941543988361165e-07, 
+              "min": 0.0
+            }, 
+            "nethermind_sha256precompile": {
+              "max": 0.5333333333333333, 
+              "mean": 0.16507936507936508, 
+              "variance": 0.2542302847064753, 
+              "pvalue": 0.20815474290708774, 
+              "min": 0.0
+            }, 
+            "nethermind_eth62new_block_received": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37372960233835617, 
+              "min": 0.0
+            }, 
+            "nethermind_reorganizations": {
+              "max": 0.13333333333333333, 
+              "mean": 0.07936507936507936, 
+              "variance": 0.001108591584782061, 
+              "pvalue": 0.3277096959224517, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_mgas": {
+              "max": 2.156380266667111, 
+              "mean": 1.1842743619047624, 
+              "variance": 0.5944185439098297, 
+              "pvalue": 0.24928329358167584, 
+              "min": 0.0
+            }, 
+            "nethermind_dark_pool_ratio_level1": {
+              "max": 0.008950390625, 
+              "mean": 0.004813533565986054, 
+              "variance": 9.514666129026425e-05, 
+              "pvalue": 0.00908485234342579, 
+              "min": 0.0
+            }, 
+            "nethermind_mod_exp_precompile": {
+              "max": 0.6, 
+              "mean": 0.33968253968253964, 
+              "variance": 1.694774502393551, 
+              "pvalue": 1.9811587269679183e-06, 
+              "min": 0.0
+            }, 
+            "nethermind_deep_pruned_persisted_nodes_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.2978445796168771, 
+              "min": 0.0
+            }, 
+            "process_num_threads": {
+              "max": 13.4, 
+              "mean": 5.9269841269841255, 
+              "variance": 41.567367094986146, 
+              "pvalue": 0.3565280489994247, 
+              "min": 0.0
+            }, 
+            "nethermind_bn256mul_precompile": {
+              "max": 0.0, 
+              "mean": 0.06666666666666667, 
+              "variance": 0.08888888888888889, 
+              "pvalue": 0.28982685431855715, 
+              "min": 0.0
+            }, 
+            "nethermind_hellos_received": {
+              "max": 0.2, 
+              "mean": 0.07619047619047618, 
+              "variance": 0.006046863189720331, 
+              "pvalue": 0.06504406428525768, 
+              "min": 0.0
+            }, 
+            "nethermind_pruned_persisted_nodes_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.2978445796168771, 
+              "min": 0.0
+            }, 
+            "nethermind_breach_of_protocol_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.4498914133843307, 
+              "min": 0.0
+            }, 
+            "nethermind_outgoing_connections": {
+              "max": 0.4, 
+              "mean": 0.12063492063492065, 
+              "variance": 0.02565885613504661, 
+              "pvalue": 0.4354578790202386, 
+              "min": 0.0
+            }, 
+            "process_private_memory_bytes": {
+              "max": 1328445030.4, 
+              "mean": 568312783.2380953, 
+              "variance": 4.2551863787044755e+17, 
+              "pvalue": 0.4689195822389356, 
+              "min": 378197.3333333333
+            }, 
+            "nethermind_cached_nodes_count": {
+              "max": 749.7333333333333, 
+              "mean": 408.32698412698414, 
+              "variance": 48506.93583270345, 
+              "pvalue": 0.08470894196692724, 
+              "min": 47.2
+            }, 
+            "nethermind_code_db_reads": {
+              "max": 1.3333333333333333, 
+              "mean": 0.5587301587301589, 
+              "variance": 0.14707986898463088, 
+              "pvalue": 0.4750853343180541, 
+              "min": 0.0
+            }, 
+            "nethermind_blockhash_opcode": {
+              "max": 0.3333333333333333, 
+              "mean": 0.07936507936507936, 
+              "variance": 0.01338372385991434, 
+              "pvalue": 0.45756140277331075, 
+              "min": 0.0
+            }, 
+            "nethermind_eth66get_block_headers_received": {
+              "max": 0.7333333333333333, 
+              "mean": 0.4666666666666667, 
+              "variance": 0.019894179894179888, 
+              "pvalue": 1.0576841423638439e-10, 
+              "min": 0.26666666666666666
+            }
+          }, 
+          "pre_check": {
+            "nethermind_statuses_received": {
+              "max": 4.4, 
+              "mean": 0.7777777777777777, 
+              "variance": 2.7578130511463845, 
+              "pvalue": 0.3314742519762437, 
+              "min": 0.0
+            }, 
+            "nethermind_block_infos_db_reads": {
+              "max": 0.26666666666666666, 
+              "mean": 0.16825396825396832, 
+              "variance": 0.07052658100277148, 
+              "pvalue": 0.19929606071468187, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_other_disconnects": {
+              "max": 0.4, 
+              "mean": 0.05714285714285714, 
+              "variance": 0.030173847316704465, 
+              "pvalue": 0.006197293092397924, 
+              "min": 0.0
+            }, 
+            "nethermind_statuses_sent": {
+              "max": 6.066666666666666, 
+              "mean": 1.3047619047619046, 
+              "variance": 10.930612244897954, 
+              "pvalue": 0.2991985473834218, 
+              "min": 0.0
+            }, 
+            "nethermind_bloom_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.07936507936507936, 
+              "variance": 0.001108591584782061, 
+              "pvalue": 0.32747435304131445, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_header_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.09523809523809523, 
+              "variance": 0.002358276643990931, 
+              "pvalue": 0.1513449965766162, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_eth66block_headers_received": {
+              "max": 0.5333333333333333, 
+              "mean": 0.6190476190476191, 
+              "variance": 7.031171579743009, 
+              "pvalue": 1.0631908878540165e-05, 
+              "min": 0.0
+            }, 
+            "nethermind_persisted_node_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37373008113422956, 
+              "min": 0.0
+            }, 
+            "nethermind_local_receive_message_timeout_disconnects": {
+              "max": 3.8, 
+              "mean": 0.5619047619047619, 
+              "variance": 1.574845049130764, 
+              "pvalue": 1.0455638657022306e-14, 
+              "min": 0.0
+            }, 
+            "nethermind_metadata_db_writes": {
+              "max": 0.26666666666666666, 
+              "mean": 0.16190476190476188, 
+              "variance": 0.006167800453514739, 
+              "pvalue": 0.4905333623989276, 
+              "min": 0.0
+            }, 
+            "nethermind_local_already_connected_disconnects": {
+              "max": 0.06666666666666667, 
+              "mean": 0.006349206349206349, 
+              "variance": 0.0003829680020156209, 
+              "pvalue": 0.21311967510712715, 
+              "min": 0.0
+            }, 
+            "nethermind_already_connected_disconnects": {
+              "max": 0.0, 
+              "mean": 0.006349206349206349, 
+              "variance": 0.0008062484252960441, 
+              "pvalue": 0.0780799849915115, 
+              "min": 0.0
+            }, 
+            "nethermind_calls": {
+              "max": 88.4, 
+              "mean": 53.93015873015873, 
+              "variance": 1041.2069740488787, 
+              "pvalue": 0.10737670768624435, 
+              "min": 29.066666666666666
+            }, 
+            "nethermind_last_persisted_block_number": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37373006745442305, 
+              "min": 0.0
+            }, 
+            "nethermind_replaced_nodes_count": {
+              "max": 169.73333333333332, 
+              "mean": 32.466666666666676, 
+              "variance": 8081.638941798941, 
+              "pvalue": 0.016069943272519923, 
+              "min": 1.7333333333333334
+            }, 
+            "nethermind_state_db_reads": {
+              "max": 462.26666666666665, 
+              "mean": 199.42539682539683, 
+              "variance": 16506.363799445706, 
+              "pvalue": 0.046295383175815344, 
+              "min": 87.13333333333333
+            }, 
+            "nethermind_code_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.04126984126984127, 
+              "variance": 0.0027412446460065515, 
+              "pvalue": 0.3260125656104173, 
+              "min": 0.0
+            }, 
+            "nethermind_receipts_db_writes": {
+              "max": 0.2, 
+              "mean": 0.08888888888888888, 
+              "variance": 0.002257495590828925, 
+              "pvalue": 0.3859544479930716, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_sstore_opcode": {
+              "max": 124.93333333333334, 
+              "mean": 81.54603174603174, 
+              "variance": 2909.3814260519016, 
+              "pvalue": 0.059349073792405824, 
+              "min": 42.06666666666666
+            }, 
+            "process_virtual_memory_bytes": {
+              "max": 3629148569.6, 
+              "mean": 2069981931.6825397, 
+              "variance": 3.199208206033941e+18, 
+              "pvalue": 0.46749174604903915, 
+              "min": 1122304.0
+            }, 
+            "nethermind_client_quitting_disconnects": {
+              "max": 6.2, 
+              "mean": 1.3365079365079364, 
+              "variance": 5.422000503905266, 
+              "pvalue": 0.20476024376110236, 
+              "min": 0.0
+            }, 
+            "nethermind_bn256pairing_precompile": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.22465759402001678, 
+              "min": 0.0
+            }, 
+            "nethermind_bn256add_precompile": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.2210732782104004, 
+              "min": 0.0
+            }, 
+            "nethermind_local_breach_of_protocol_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0031746031746031746, 
+              "variance": 0.00020156210632401103, 
+              "pvalue": 0.25734575858809405, 
+              "min": 0.0
+            }, 
+            "nethermind_pruned_transient_nodes_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37373008113422956, 
+              "min": 0.0
+            }, 
+            "nethermind_disconnect_requested_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.3233619287513373, 
+              "min": 0.0
+            }, 
+            "nethermind_eth66get_receipts_received": {
+              "max": 0.2, 
+              "mean": 0.06666666666666667, 
+              "variance": 0.003386243386243387, 
+              "pvalue": 5.843937661006888e-22, 
+              "min": 0.0
+            }, 
+            "nethermind_snapshot_persistence_time": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.3846292486522763, 
+              "min": 0.0
+            }, 
+            "nethermind_blocks_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.09206349206349206, 
+              "variance": 0.0023179642227261284, 
+              "pvalue": 0.2946741339436421, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_hellos_sent": {
+              "max": 9.4, 
+              "mean": 2.7587301587301587, 
+              "variance": 24.110254472159234, 
+              "pvalue": 0.14199717510775411, 
+              "min": 0.0
+            }, 
+            "nethermind_receive_message_timeout_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.410763037456953, 
+              "min": 0.0
+            }, 
+            "nethermind_storage_tree_writes": {
+              "max": 90.4, 
+              "mean": 56.03492063492064, 
+              "variance": 1549.1316906021666, 
+              "pvalue": 0.10289297177497048, 
+              "min": 31.2
+            }, 
+            "nethermind_pruning_time": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.2978445718188498, 
+              "min": 0.0
+            }, 
+            "nethermind_blocks": {
+              "max": 0.13333333333333333, 
+              "mean": 0.08253968253968254, 
+              "variance": 0.0012295288485764673, 
+              "pvalue": 0.48296511676273113, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_dark_pool_ratio_level2": {
+              "max": 0.020168066024780273, 
+              "mean": 0.004707553035532907, 
+              "variance": 6.33941870530167e-05, 
+              "pvalue": 0.04000828087050431, 
+              "min": 0.0
+            }, 
+            "nethermind_block_infos_db_writes": {
+              "max": 0.6, 
+              "mean": 0.34285714285714286, 
+              "variance": 0.020438397581254725, 
+              "pvalue": 0.23619514906493355, 
+              "min": 0.2
+            }, 
+            "nethermind_useless_peer_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37372960233835617, 
+              "min": 0.0
+            }, 
+            "nethermind_sha256precompile": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.03746938895815434, 
+              "min": 0.0
+            }, 
+            "nethermind_eth62new_block_received": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37372960233835617, 
+              "min": 0.0
+            }, 
+            "nethermind_reorganizations": {
+              "max": 0.13333333333333333, 
+              "mean": 0.07936507936507936, 
+              "variance": 0.0011085915847820612, 
+              "pvalue": 0.3277096959224517, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_mgas": {
+              "max": 2.26344706666617, 
+              "mean": 1.2136246952380698, 
+              "variance": 0.39071778176305355, 
+              "pvalue": 0.34063671909301096, 
+              "min": 0.6771717333331859
+            }, 
+            "nethermind_dark_pool_ratio_level1": {
+              "max": 0.020168066024780273, 
+              "mean": 0.004909973670994006, 
+              "variance": 6.204150436030534e-05, 
+              "pvalue": 0.0026293535226200823, 
+              "min": 0.0
+            }, 
+            "nethermind_mod_exp_precompile": {
+              "max": 0.0, 
+              "mean": 0.0031746031746031746, 
+              "variance": 0.00020156210632401098, 
+              "pvalue": 0.33898879702198226, 
+              "min": 0.0
+            }, 
+            "nethermind_deep_pruned_persisted_nodes_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.2978445796168771, 
+              "min": 0.0
+            }, 
+            "process_num_threads": {
+              "max": 14.799999999999999, 
+              "mean": 9.342857142857143, 
+              "variance": 39.09472411186697, 
+              "pvalue": 0.02713194023973365, 
+              "min": 0.13333333333333333
+            }, 
+            "nethermind_bn256mul_precompile": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.22107473426470786, 
+              "min": 0.0
+            }, 
+            "nethermind_hellos_received": {
+              "max": 6.6, 
+              "mean": 1.3523809523809522, 
+              "variance": 11.435404383975811, 
+              "pvalue": 0.2967713937504714, 
+              "min": 0.0
+            }, 
+            "nethermind_pruned_persisted_nodes_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.2978445796168771, 
+              "min": 0.0
+            }, 
+            "nethermind_breach_of_protocol_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.4498914133843307, 
+              "min": 0.0
+            }, 
+            "nethermind_outgoing_connections": {
+              "max": 6.666666666666667, 
+              "mean": 2.0190476190476194, 
+              "variance": 14.119425547996979, 
+              "pvalue": 0.11270260762641532, 
+              "min": 0.0
+            }, 
+            "process_private_memory_bytes": {
+              "max": 1319449395.2, 
+              "mean": 565101480.2285714, 
+              "variance": 4.203451244532674e+17, 
+              "pvalue": 0.46247259930633017, 
+              "min": 489062.39999999997
+            }, 
+            "nethermind_cached_nodes_count": {
+              "max": 792.7333333333333, 
+              "mean": 440.3650793650794, 
+              "variance": 34622.34015621064, 
+              "pvalue": 0.2209292240180213, 
+              "min": 265.26666666666665
+            }, 
+            "nethermind_code_db_reads": {
+              "max": 1.2, 
+              "mean": 0.5365079365079365, 
+              "variance": 0.15173595364071554, 
+              "pvalue": 0.27542493124745204, 
+              "min": 0.13333333333333333
+            }, 
+            "nethermind_blockhash_opcode": {
+              "max": 0.26666666666666666, 
+              "mean": 0.07936507936507937, 
+              "variance": 0.015500125976316453, 
+              "pvalue": 0.35263990050547195, 
+              "min": 0.0
+            }, 
+            "nethermind_eth66get_block_headers_received": {
+              "max": 1.2, 
+              "mean": 0.5714285714285714, 
+              "variance": 0.10733182161753588, 
+              "pvalue": 9.081488465872786e-10, 
+              "min": 0.26666666666666666
+            }
+          }
+        }, 
+        "client_crashed": false, 
+        "injection_count": 1344
+      }, 
+      "syscall_name": "accept4", 
+      "error_code": "-EAGAIN", 
+      "failure_rate": 1, 
+      "experiment_duration": 300
+    }, 
+    {
+      "result": {
+        "metrics": {
+          "pre_check": {
+            "nethermind_statuses_received": {
+              "max": 0.3333333333333333, 
+              "mean": 0.13968253968253969, 
+              "variance": 0.017314184933232543, 
+              "pvalue": 0.3487928702830111, 
+              "min": 0.0
+            }, 
+            "nethermind_block_infos_db_reads": {
+              "max": 0.13333333333333333, 
+              "mean": 0.09206349206349206, 
+              "variance": 0.0010481229528848575, 
+              "pvalue": 0.2031887475878552, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_other_disconnects": {
+              "max": 0.06666666666666667, 
+              "mean": 0.006349206349206349, 
+              "variance": 0.00038296800201562093, 
+              "pvalue": 0.09267770885992582, 
+              "min": 0.0
+            }, 
+            "nethermind_statuses_sent": {
+              "max": 0.4666666666666667, 
+              "mean": 0.18095238095238095, 
+              "variance": 0.031806500377928947, 
+              "pvalue": 0.4994830839753856, 
+              "min": 0.0
+            }, 
+            "nethermind_bloom_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.08253968253968254, 
+              "variance": 0.0008062484252960442, 
+              "pvalue": 0.4693229651573667, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_header_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.08253968253968254, 
+              "variance": 0.0008062484252960442, 
+              "pvalue": 0.47007489040789346, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_eth66block_headers_received": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.3460902837974774, 
+              "min": 0.0
+            }, 
+            "nethermind_persisted_node_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37373008113422956, 
+              "min": 0.0
+            }, 
+            "nethermind_local_receive_message_timeout_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.21072032148397796, 
+              "min": 0.0
+            }, 
+            "nethermind_metadata_db_writes": {
+              "max": 0.26666666666666666, 
+              "mean": 0.16507936507936508, 
+              "variance": 0.003224993701184177, 
+              "pvalue": 0.4634850586062829, 
+              "min": 0.13333333333333333
+            }, 
+            "nethermind_local_already_connected_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.13496391566461247, 
+              "min": 0.0
+            }, 
+            "nethermind_already_connected_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.020004782054530053, 
+              "min": 0.0
+            }, 
+            "nethermind_calls": {
+              "max": 75.53333333333333, 
+              "mean": 47.92380952380952, 
+              "variance": 578.9656235827664, 
+              "pvalue": 0.4005254772848253, 
+              "min": 14.666666666666666
+            }, 
+            "nethermind_last_persisted_block_number": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37373006745442305, 
+              "min": 0.0
+            }, 
+            "nethermind_replaced_nodes_count": {
+              "max": 4.266666666666667, 
+              "mean": 2.253968253968254, 
+              "variance": 1.3564525069286975, 
+              "pvalue": 0.0036125453637021786, 
+              "min": 1.0
+            }, 
+            "nethermind_state_db_reads": {
+              "max": 315.46666666666664, 
+              "mean": 199.52380952380952, 
+              "variance": 8346.135570672714, 
+              "pvalue": 0.29573074604188093, 
+              "min": 80.53333333333333
+            }, 
+            "nethermind_code_db_writes": {
+              "max": 2.3333333333333335, 
+              "mean": 0.49523809523809526, 
+              "variance": 2.487437641723357, 
+              "pvalue": 0.274380351300434, 
+              "min": 0.0
+            }, 
+            "nethermind_receipts_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.08253968253968254, 
+              "variance": 0.0008062484252960442, 
+              "pvalue": 0.4693229651573667, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_sstore_opcode": {
+              "max": 121.2, 
+              "mean": 71.99047619047617, 
+              "variance": 1306.6646712018141, 
+              "pvalue": 0.28919305188512084, 
+              "min": 25.933333333333334
+            }, 
+            "process_virtual_memory_bytes": {
+              "max": 3580354560.0, 
+              "mean": 1534251996.2412696, 
+              "variance": 3.134555644905485e+18, 
+              "pvalue": 0.04338837604437534, 
+              "min": 0.0
+            }, 
+            "nethermind_client_quitting_disconnects": {
+              "max": 0.3333333333333333, 
+              "mean": 0.07619047619047618, 
+              "variance": 0.012396069538926682, 
+              "pvalue": 0.00019830895840912546, 
+              "min": 0.0
+            }, 
+            "nethermind_bn256pairing_precompile": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.22465759402001678, 
+              "min": 0.0
+            }, 
+            "nethermind_bn256add_precompile": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.2210732782104004, 
+              "min": 0.0
+            }, 
+            "nethermind_local_breach_of_protocol_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.23212894693901143, 
+              "min": 0.0
+            }, 
+            "nethermind_pruned_transient_nodes_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37373008113422956, 
+              "min": 0.0
+            }, 
+            "nethermind_disconnect_requested_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0031746031746031746, 
+              "variance": 0.00020156210632401092, 
+              "pvalue": 0.0480765574699335, 
+              "min": 0.0
+            }, 
+            "nethermind_eth66get_receipts_received": {
+              "max": 0.13333333333333333, 
+              "mean": 0.04126984126984127, 
+              "variance": 0.0018946837994457048, 
+              "pvalue": 6.944617529203673e-12, 
+              "min": 0.0
+            }, 
+            "nethermind_snapshot_persistence_time": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.3846292486522763, 
+              "min": 0.0
+            }, 
+            "nethermind_blocks_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.08253968253968254, 
+              "variance": 0.0008062484252960442, 
+              "pvalue": 0.47007489040789346, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_hellos_sent": {
+              "max": 0.8666666666666667, 
+              "mean": 0.2698412698412699, 
+              "variance": 0.08824389014865204, 
+              "pvalue": 0.3702370985227584, 
+              "min": 0.0
+            }, 
+            "nethermind_receive_message_timeout_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.410763037456953, 
+              "min": 0.0
+            }, 
+            "nethermind_storage_tree_writes": {
+              "max": 80.46666666666667, 
+              "mean": 48.336507936507935, 
+              "variance": 665.8558629377678, 
+              "pvalue": 0.4330087529184402, 
+              "min": 18.066666666666666
+            }, 
+            "nethermind_pruning_time": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.2978445718188498, 
+              "min": 0.0
+            }, 
+            "nethermind_blocks": {
+              "max": 0.13333333333333333, 
+              "mean": 0.08253968253968254, 
+              "variance": 0.0008062484252960442, 
+              "pvalue": 0.4693229651573667, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_dark_pool_ratio_level2": {
+              "max": 0.009300590527318417, 
+              "mean": 0.0030142848606015404, 
+              "variance": 7.428046878285933e-06, 
+              "pvalue": 0.01143903736635454, 
+              "min": 0.0003905098885297775
+            }, 
+            "nethermind_block_infos_db_writes": {
+              "max": 0.5333333333333333, 
+              "mean": 0.33015873015873015, 
+              "variance": 0.012899974804736708, 
+              "pvalue": 0.4036995449669492, 
+              "min": 0.26666666666666666
+            }, 
+            "nethermind_useless_peer_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37372960233835617, 
+              "min": 0.0
+            }, 
+            "nethermind_sha256precompile": {
+              "max": 0.5333333333333333, 
+              "mean": 0.11428571428571428, 
+              "variance": 0.04450491307634167, 
+              "pvalue": 0.06676271101901697, 
+              "min": 0.0
+            }, 
+            "nethermind_eth62new_block_received": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37372960233835617, 
+              "min": 0.0
+            }, 
+            "nethermind_reorganizations": {
+              "max": 0.13333333333333333, 
+              "mean": 0.08253968253968254, 
+              "variance": 0.0008062484252960442, 
+              "pvalue": 0.47007489040789346, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_mgas": {
+              "max": 1.9994728666667168, 
+              "mean": 1.2658283492063513, 
+              "variance": 0.428875214271108, 
+              "pvalue": 0.417243854924822, 
+              "min": 0.49265046666660056
+            }, 
+            "nethermind_dark_pool_ratio_level1": {
+              "max": 0.009300590527318417, 
+              "mean": 0.0028896018946852793, 
+              "variance": 7.594364366246686e-06, 
+              "pvalue": 0.016838102538994214, 
+              "min": 0.0003905098885297775
+            }, 
+            "nethermind_mod_exp_precompile": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.10493016299505709, 
+              "min": 0.0
+            }, 
+            "nethermind_deep_pruned_persisted_nodes_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.2978445796168771, 
+              "min": 0.0
+            }, 
+            "process_num_threads": {
+              "max": 13.466666666666667, 
+              "mean": 4.561904761904762, 
+              "variance": 38.50352229780801, 
+              "pvalue": 0.041059103893873676, 
+              "min": 0.0
+            }, 
+            "nethermind_bn256mul_precompile": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.22107473426470786, 
+              "min": 0.0
+            }, 
+            "nethermind_hellos_received": {
+              "max": 0.5333333333333333, 
+              "mean": 0.20634920634920637, 
+              "variance": 0.043980851599899215, 
+              "pvalue": 0.4865658763213501, 
+              "min": 0.0
+            }, 
+            "nethermind_pruned_persisted_nodes_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.2978445796168771, 
+              "min": 0.0
+            }, 
+            "nethermind_breach_of_protocol_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.4498914133843307, 
+              "min": 0.0
+            }, 
+            "nethermind_outgoing_connections": {
+              "max": 0.4, 
+              "mean": 0.13015873015873017, 
+              "variance": 0.019672461577223483, 
+              "pvalue": 0.48518744187534496, 
+              "min": 0.0
+            }, 
+            "process_private_memory_bytes": {
+              "max": 1165512977.0666666, 
+              "mean": 444200147.3015872, 
+              "variance": 3.19117694946084e+17, 
+              "pvalue": 0.08001278563643499, 
+              "min": 48605.86666666667
+            }, 
+            "nethermind_cached_nodes_count": {
+              "max": 795.7333333333333, 
+              "mean": 501.85079365079355, 
+              "variance": 60453.229589317205, 
+              "pvalue": 0.36942239840831, 
+              "min": 217.53333333333333
+            }, 
+            "nethermind_code_db_reads": {
+              "max": 0.8666666666666667, 
+              "mean": 0.4634920634920635, 
+              "variance": 0.07131267321743512, 
+              "pvalue": 0.14609338779335823, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_blockhash_opcode": {
+              "max": 0.13333333333333333, 
+              "mean": 0.025396825396825397, 
+              "variance": 0.0018946837994457046, 
+              "pvalue": 0.0015981809719969784, 
+              "min": 0.0
+            }, 
+            "nethermind_eth66get_block_headers_received": {
+              "max": 0.6, 
+              "mean": 0.38095238095238093, 
+              "variance": 0.0271504157218443, 
+              "pvalue": 3.438585599166667e-07, 
+              "min": 0.26666666666666666
+            }
+          }
+        }, 
+        "client_crashed": true, 
+        "injection_count": 2
+      }, 
+      "syscall_name": "futex", 
+      "error_code": "-EAGAIN", 
+      "failure_rate": 0.05, 
+      "experiment_duration": 300
+    }, 
+    {
+      "result": {
+        "metrics": {
+          "validation": {
+            "nethermind_statuses_received": {
+              "max": 0.26666666666666666, 
+              "mean": 0.08888888888888888, 
+              "variance": 0.009453262786596119, 
+              "pvalue": 0.0794749793605638, 
+              "min": 0.0
+            }, 
+            "nethermind_block_infos_db_reads": {
+              "max": 0.2, 
+              "mean": 0.09523809523809523, 
+              "variance": 0.002781557067271353, 
+              "pvalue": 0.1128160266214151, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_other_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.18065933325978928, 
+              "min": 0.0
+            }, 
+            "nethermind_statuses_sent": {
+              "max": 0.26666666666666666, 
+              "mean": 0.09206349206349206, 
+              "variance": 0.009090450995212898, 
+              "pvalue": 0.10723874306524517, 
+              "min": 0.0
+            }, 
+            "nethermind_bloom_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.08253968253968254, 
+              "variance": 0.0008062484252960444, 
+              "pvalue": 0.4693229651573667, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_header_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.08253968253968254, 
+              "variance": 0.0008062484252960444, 
+              "pvalue": 0.47007489040789346, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_eth66block_headers_received": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.3460902837974774, 
+              "min": 0.0
+            }, 
+            "nethermind_persisted_node_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37373008113422956, 
+              "min": 0.0
+            }, 
+            "nethermind_local_receive_message_timeout_disconnects": {
+              "max": 0.0, 
+              "mean": 0.009523809523809525, 
+              "variance": 0.0018140589569161018, 
+              "pvalue": 0.30700527016972157, 
+              "min": 0.0
+            }, 
+            "nethermind_metadata_db_writes": {
+              "max": 0.26666666666666666, 
+              "mean": 0.16507936507936508, 
+              "variance": 0.0032249937011841778, 
+              "pvalue": 0.4634850586062829, 
+              "min": 0.13333333333333333
+            }, 
+            "nethermind_local_already_connected_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.13496391566461247, 
+              "min": 0.0
+            }, 
+            "nethermind_already_connected_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.020004782054530053, 
+              "min": 0.0
+            }, 
+            "nethermind_calls": {
+              "max": 91.6, 
+              "mean": 49.184126984126976, 
+              "variance": 454.05329302091207, 
+              "pvalue": 0.2295382504325375, 
+              "min": 26.4
+            }, 
+            "nethermind_last_persisted_block_number": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37373006745442305, 
+              "min": 0.0
+            }, 
+            "nethermind_replaced_nodes_count": {
+              "max": 7.266666666666667, 
+              "mean": 3.2539682539682544, 
+              "variance": 4.610209120685311, 
+              "pvalue": 0.2722582503191774, 
+              "min": 0.6
+            }, 
+            "nethermind_state_db_reads": {
+              "max": 310.3333333333333, 
+              "mean": 218.38412698412702, 
+              "variance": 17407.645673973293, 
+              "pvalue": 0.37650550597918186, 
+              "min": 119.6
+            }, 
+            "nethermind_code_db_writes": {
+              "max": 8.533333333333333, 
+              "mean": 1.368253968253968, 
+              "variance": 8.723224993701185, 
+              "pvalue": 0.30536484049991514, 
+              "min": 0.0
+            }, 
+            "nethermind_receipts_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.08253968253968254, 
+              "variance": 0.0008062484252960444, 
+              "pvalue": 0.4693229651573667, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_sstore_opcode": {
+              "max": 124.13333333333333, 
+              "mean": 67.32380952380956, 
+              "variance": 823.8096447467875, 
+              "pvalue": 0.35353372602968086, 
+              "min": 37.8
+            }, 
+            "process_virtual_memory_bytes": {
+              "max": 3591048123.733333, 
+              "mean": 1711598055.6190476, 
+              "variance": 3.2087265053916805e+18, 
+              "pvalue": 0.2551789789696456, 
+              "min": 0.0
+            }, 
+            "nethermind_client_quitting_disconnects": {
+              "max": 0.2, 
+              "mean": 0.08253968253968254, 
+              "variance": 0.02620307382212142, 
+              "pvalue": 9.247993765611904e-05, 
+              "min": 0.0
+            }, 
+            "nethermind_bn256pairing_precompile": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.22465759402001678, 
+              "min": 0.0
+            }, 
+            "nethermind_bn256add_precompile": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.2210732782104004, 
+              "min": 0.0
+            }, 
+            "nethermind_local_breach_of_protocol_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.23212894693901143, 
+              "min": 0.0
+            }, 
+            "nethermind_pruned_transient_nodes_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37373008113422956, 
+              "min": 0.0
+            }, 
+            "nethermind_disconnect_requested_disconnects": {
+              "max": 0.0, 
+              "mean": 0.006349206349206349, 
+              "variance": 0.0008062484252960439, 
+              "pvalue": 0.04600872722157722, 
+              "min": 0.0
+            }, 
+            "nethermind_eth66get_receipts_received": {
+              "max": 0.13333333333333333, 
+              "mean": 0.047619047619047616, 
+              "variance": 0.0026001511715797424, 
+              "pvalue": 4.257454861093852e-14, 
+              "min": 0.0
+            }, 
+            "nethermind_snapshot_persistence_time": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.3846292486522763, 
+              "min": 0.0
+            }, 
+            "nethermind_blocks_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.08253968253968254, 
+              "variance": 0.0008062484252960444, 
+              "pvalue": 0.47007489040789346, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_hellos_sent": {
+              "max": 0.5333333333333333, 
+              "mean": 0.17777777777777778, 
+              "variance": 0.058977072310405665, 
+              "pvalue": 0.12204923869787448, 
+              "min": 0.0
+            }, 
+            "nethermind_receive_message_timeout_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0031746031746031746, 
+              "variance": 0.0002015621063240109, 
+              "pvalue": 0.00017115911927805688, 
+              "min": 0.0
+            }, 
+            "nethermind_storage_tree_writes": {
+              "max": 89.2, 
+              "mean": 46.06031746031747, 
+              "variance": 427.34260519022416, 
+              "pvalue": 0.45209103798026407, 
+              "min": 26.8
+            }, 
+            "nethermind_pruning_time": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.2978445718188498, 
+              "min": 0.0
+            }, 
+            "nethermind_blocks": {
+              "max": 0.13333333333333333, 
+              "mean": 0.08253968253968254, 
+              "variance": 0.0008062484252960444, 
+              "pvalue": 0.4693229651573667, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_dark_pool_ratio_level2": {
+              "max": 0.035194583733876544, 
+              "mean": 0.015373620784687837, 
+              "variance": 0.0001563656948186234, 
+              "pvalue": 7.350875185386964e-11, 
+              "min": 0.0010256410265962284
+            }, 
+            "nethermind_block_infos_db_writes": {
+              "max": 0.5333333333333333, 
+              "mean": 0.33015873015873015, 
+              "variance": 0.012899974804736711, 
+              "pvalue": 0.4036995449669492, 
+              "min": 0.26666666666666666
+            }, 
+            "nethermind_useless_peer_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37372960233835617, 
+              "min": 0.0
+            }, 
+            "nethermind_sha256precompile": {
+              "max": 0.13333333333333333, 
+              "mean": 0.03174603174603175, 
+              "variance": 0.010420760896951372, 
+              "pvalue": 0.4778429270284173, 
+              "min": 0.0
+            }, 
+            "nethermind_eth62new_block_received": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37372960233835617, 
+              "min": 0.0
+            }, 
+            "nethermind_reorganizations": {
+              "max": 0.13333333333333333, 
+              "mean": 0.08253968253968254, 
+              "variance": 0.0008062484252960444, 
+              "pvalue": 0.47007489040789346, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_mgas": {
+              "max": 2.4758289999999152, 
+              "mean": 1.2272182380952426, 
+              "variance": 0.37722268087180505, 
+              "pvalue": 0.25405701796064417, 
+              "min": 0.6571268000000904
+            }, 
+            "nethermind_dark_pool_ratio_level1": {
+              "max": 0.035194583733876544, 
+              "mean": 0.01533138171664139, 
+              "variance": 0.00015494603163956276, 
+              "pvalue": 7.863347447790928e-11, 
+              "min": 0.0010256410265962284
+            }, 
+            "nethermind_mod_exp_precompile": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.10493016299505709, 
+              "min": 0.0
+            }, 
+            "nethermind_deep_pruned_persisted_nodes_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.2978445796168771, 
+              "min": 0.0
+            }, 
+            "process_num_threads": {
+              "max": 13.466666666666667, 
+              "mean": 6.615873015873016, 
+              "variance": 40.90704963466868, 
+              "pvalue": 0.4192737772333963, 
+              "min": 0.0
+            }, 
+            "nethermind_bn256mul_precompile": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.22107473426470786, 
+              "min": 0.0
+            }, 
+            "nethermind_hellos_received": {
+              "max": 0.3333333333333333, 
+              "mean": 0.11428571428571428, 
+              "variance": 0.017414965986394554, 
+              "pvalue": 0.13690546684606453, 
+              "min": 0.0
+            }, 
+            "nethermind_pruned_persisted_nodes_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.2978445796168771, 
+              "min": 0.0
+            }, 
+            "nethermind_breach_of_protocol_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.4498914133843307, 
+              "min": 0.0
+            }, 
+            "nethermind_outgoing_connections": {
+              "max": 0.4, 
+              "mean": 0.11746031746031746, 
+              "variance": 0.0295893172083648, 
+              "pvalue": 0.32712784963832375, 
+              "min": 0.0
+            }, 
+            "process_private_memory_bytes": {
+              "max": 1188067464.5333333, 
+              "mean": 567162132.3174604, 
+              "variance": 3.491304278260669e+17, 
+              "pvalue": 0.4304175350068092, 
+              "min": 209988.26666666666
+            }, 
+            "nethermind_cached_nodes_count": {
+              "max": 890.1999999999999, 
+              "mean": 474.1333333333334, 
+              "variance": 42144.05756613757, 
+              "pvalue": 0.46037664302941955, 
+              "min": 293.6
+            }, 
+            "nethermind_code_db_reads": {
+              "max": 1.3333333333333333, 
+              "mean": 0.5650793650793651, 
+              "variance": 0.13105568153187197, 
+              "pvalue": 0.46911633316429757, 
+              "min": 0.13333333333333333
+            }, 
+            "nethermind_blockhash_opcode": {
+              "max": 0.13333333333333333, 
+              "mean": 0.04126984126984127, 
+              "variance": 0.003587805492567397, 
+              "pvalue": 0.03684346911351928, 
+              "min": 0.0
+            }, 
+            "nethermind_eth66get_block_headers_received": {
+              "max": 1.4, 
+              "mean": 0.7111111111111111, 
+              "variance": 0.10469135802469137, 
+              "pvalue": 1.9722384374131967e-13, 
+              "min": 0.4
+            }
+          }, 
+          "ce": {
+            "nethermind_statuses_received": {
+              "max": 0.06666666666666667, 
+              "mean": 0.06666666666666667, 
+              "variance": 0.0, 
+              "pvalue": 0.4381701806451849, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_block_infos_db_reads": {
+              "max": 0.06666666666666667, 
+              "mean": 0.06666666666666667, 
+              "variance": 0.0, 
+              "pvalue": 0.20382986586469715, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_other_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.42264374599096644, 
+              "min": 0.0
+            }, 
+            "nethermind_statuses_sent": {
+              "max": 0.06666666666666667, 
+              "mean": 0.06666666666666667, 
+              "variance": 0.0, 
+              "pvalue": 0.4369674466518004, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_bloom_db_writes": {
+              "max": 0.06666666666666667, 
+              "mean": 0.06666666666666667, 
+              "variance": 0.0, 
+              "pvalue": 0.2893606477931622, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_header_db_writes": {
+              "max": 0.06666666666666667, 
+              "mean": 0.06666666666666667, 
+              "variance": 0.0, 
+              "pvalue": 0.2889286326875653, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_eth66block_headers_received": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.4692300140414082, 
+              "min": 0.0
+            }, 
+            "nethermind_persisted_node_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.476466583283202, 
+              "min": 0.0
+            }, 
+            "nethermind_local_receive_message_timeout_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.4321805692403104, 
+              "min": 0.0
+            }, 
+            "nethermind_metadata_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.13333333333333333, 
+              "variance": 0.0, 
+              "pvalue": 0.28898975199367843, 
+              "min": 0.13333333333333333
+            }, 
+            "nethermind_local_already_connected_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.4061814766607728, 
+              "min": 0.0
+            }, 
+            "nethermind_already_connected_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.32754122792869844, 
+              "min": 0.0
+            }, 
+            "nethermind_calls": {
+              "max": 43.8, 
+              "mean": 43.8, 
+              "variance": 0.0, 
+              "pvalue": 0.4183721056048455, 
+              "min": 43.8
+            }, 
+            "nethermind_last_persisted_block_number": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.476466580558053, 
+              "min": 0.0
+            }, 
+            "nethermind_replaced_nodes_count": {
+              "max": 1.4666666666666666, 
+              "mean": 1.4666666666666666, 
+              "variance": 0.0, 
+              "pvalue": 0.11952542837834701, 
+              "min": 1.4666666666666666
+            }, 
+            "nethermind_state_db_reads": {
+              "max": 99.26666666666667, 
+              "mean": 99.26666666666667, 
+              "variance": 0.0, 
+              "pvalue": 0.06120637514546944, 
+              "min": 99.26666666666667
+            }, 
+            "nethermind_code_db_writes": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.19502758508029894, 
+              "min": 0.0
+            }, 
+            "nethermind_receipts_db_writes": {
+              "max": 0.06666666666666667, 
+              "mean": 0.06666666666666667, 
+              "variance": 0.0, 
+              "pvalue": 0.2893606477931622, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_sstore_opcode": {
+              "max": 59.06666666666666, 
+              "mean": 59.06666666666666, 
+              "variance": 0.0, 
+              "pvalue": 0.4444189929003447, 
+              "min": 59.06666666666666
+            }, 
+            "process_virtual_memory_bytes": {
+              "max": 6731639.466666667, 
+              "mean": 6731639.466666667, 
+              "variance": 0.0, 
+              "pvalue": 0.49769521354879775, 
+              "min": 6731639.466666667
+            }, 
+            "nethermind_client_quitting_disconnects": {
+              "max": 0.06666666666666667, 
+              "mean": 0.06666666666666667, 
+              "variance": 0.0, 
+              "pvalue": 0.23436070484053012, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_bn256pairing_precompile": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.4363585686938032, 
+              "min": 0.0
+            }, 
+            "nethermind_bn256add_precompile": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.4352965920188968, 
+              "min": 0.0
+            }, 
+            "nethermind_local_breach_of_protocol_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.43854593388290575, 
+              "min": 0.0
+            }, 
+            "nethermind_pruned_transient_nodes_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.476466583283202, 
+              "min": 0.0
+            }, 
+            "nethermind_disconnect_requested_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.46332875376607097, 
+              "min": 0.0
+            }, 
+            "nethermind_eth66get_receipts_received": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.38672714015462006, 
+              "min": 0.0
+            }, 
+            "nethermind_snapshot_persistence_time": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.4793821505201735, 
+              "min": 0.0
+            }, 
+            "nethermind_blocks_db_writes": {
+              "max": 0.06666666666666667, 
+              "mean": 0.06666666666666667, 
+              "variance": 0.0, 
+              "pvalue": 0.2889286326875653, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_hellos_sent": {
+              "max": 0.13333333333333333, 
+              "mean": 0.13333333333333333, 
+              "variance": 0.0, 
+              "pvalue": 0.4785444949206479, 
+              "min": 0.13333333333333333
+            }, 
+            "nethermind_receive_message_timeout_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.48669885415887165, 
+              "min": 0.0
+            }, 
+            "nethermind_storage_tree_writes": {
+              "max": 37.333333333333336, 
+              "mean": 37.333333333333336, 
+              "variance": 0.0, 
+              "pvalue": 0.44612728134001894, 
+              "min": 37.333333333333336
+            }, 
+            "nethermind_pruning_time": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.4566460626250377, 
+              "min": 0.0
+            }, 
+            "nethermind_blocks": {
+              "max": 0.06666666666666667, 
+              "mean": 0.06666666666666667, 
+              "variance": 0.0, 
+              "pvalue": 0.2893606477931622, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_dark_pool_ratio_level2": {
+              "max": 0.007060719529787699, 
+              "mean": 0.007060719529787699, 
+              "variance": 0.0, 
+              "pvalue": 0.04999736776703015, 
+              "min": 0.007060719529787699
+            }, 
+            "nethermind_block_infos_db_writes": {
+              "max": 0.26666666666666666, 
+              "mean": 0.26666666666666666, 
+              "variance": 0.0, 
+              "pvalue": 0.274852433605185, 
+              "min": 0.26666666666666666
+            }, 
+            "nethermind_useless_peer_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.47646648790242496, 
+              "min": 0.0
+            }, 
+            "nethermind_sha256precompile": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.34948271389905494, 
+              "min": 0.0
+            }, 
+            "nethermind_eth62new_block_received": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.47646648790242496, 
+              "min": 0.0
+            }, 
+            "nethermind_reorganizations": {
+              "max": 0.06666666666666667, 
+              "mean": 0.06666666666666667, 
+              "variance": 0.0, 
+              "pvalue": 0.2889286326875653, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_mgas": {
+              "max": 0.8871411999999206, 
+              "mean": 0.8871411999999206, 
+              "variance": 0.0, 
+              "pvalue": 0.25463763359610336, 
+              "min": 0.8871411999999206
+            }, 
+            "nethermind_dark_pool_ratio_level1": {
+              "max": 0.007060719529787699, 
+              "mean": 0.007060719529787699, 
+              "variance": 0.0, 
+              "pvalue": 0.050199166264944126, 
+              "min": 0.007060719529787699
+            }, 
+            "nethermind_mod_exp_precompile": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.3933149960561663, 
+              "min": 0.0
+            }, 
+            "nethermind_deep_pruned_persisted_nodes_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.45664606451815026, 
+              "min": 0.0
+            }, 
+            "process_num_threads": {
+              "max": 1.0666666666666667, 
+              "mean": 1.0666666666666667, 
+              "variance": 0.0, 
+              "pvalue": 0.4505084459981542, 
+              "min": 1.0666666666666667
+            }, 
+            "nethermind_bn256mul_precompile": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.4352970151392257, 
+              "min": 0.0
+            }, 
+            "nethermind_hellos_received": {
+              "max": 0.13333333333333333, 
+              "mean": 0.13333333333333333, 
+              "variance": 0.0, 
+              "pvalue": 0.45591179154178696, 
+              "min": 0.13333333333333333
+            }, 
+            "nethermind_pruned_persisted_nodes_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.45664606451815026, 
+              "min": 0.0
+            }, 
+            "nethermind_breach_of_protocol_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.5, 
+              "min": 0.0
+            }, 
+            "nethermind_outgoing_connections": {
+              "max": 0.06666666666666667, 
+              "mean": 0.06666666666666667, 
+              "variance": 0.0, 
+              "pvalue": 0.49039367944554707, 
+              "min": 0.06666666666666667
+            }, 
+            "process_private_memory_bytes": {
+              "max": 6853973.333333333, 
+              "mean": 6853973.333333333, 
+              "variance": 0.0, 
+              "pvalue": 0.4245534838057311, 
+              "min": 6853973.333333333
+            }, 
+            "nethermind_cached_nodes_count": {
+              "max": 379.2, 
+              "mean": 379.2, 
+              "variance": 0.0, 
+              "pvalue": 0.4313583258060363, 
+              "min": 379.2
+            }, 
+            "nethermind_code_db_reads": {
+              "max": 0.3333333333333333, 
+              "mean": 0.3333333333333333, 
+              "variance": 0.0, 
+              "pvalue": 0.254693415087038, 
+              "min": 0.3333333333333333
+            }, 
+            "nethermind_blockhash_opcode": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.11939295084420132, 
+              "min": 0.0
+            }, 
+            "nethermind_eth66get_block_headers_received": {
+              "max": 0.2, 
+              "mean": 0.2, 
+              "variance": 0.0, 
+              "pvalue": 0.405295810045369, 
+              "min": 0.2
+            }
+          }, 
+          "pre_check": {
+            "nethermind_statuses_received": {
+              "max": 0.2, 
+              "mean": 0.06984126984126984, 
+              "variance": 0.006127488032249937, 
+              "pvalue": 0.03681638706014421, 
+              "min": 0.0
+            }, 
+            "nethermind_block_infos_db_reads": {
+              "max": 0.13333333333333333, 
+              "mean": 0.08888888888888888, 
+              "variance": 0.0009876543209876541, 
+              "pvalue": 0.11536048549702055, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_other_disconnects": {
+              "max": 0.0, 
+              "mean": 0.006349206349206349, 
+              "variance": 0.0008062484252960437, 
+              "pvalue": 0.3976880557948148, 
+              "min": 0.0
+            }, 
+            "nethermind_statuses_sent": {
+              "max": 0.2, 
+              "mean": 0.07936507936507936, 
+              "variance": 0.007457797933988408, 
+              "pvalue": 0.0544774172509284, 
+              "min": 0.0
+            }, 
+            "nethermind_bloom_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.07936507936507936, 
+              "variance": 0.0006853111615016378, 
+              "pvalue": 0.2848056651284569, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_header_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.08253968253968254, 
+              "variance": 0.0008062484252960446, 
+              "pvalue": 0.47007489040789346, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_eth66block_headers_received": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.3460902837974774, 
+              "min": 0.0
+            }, 
+            "nethermind_persisted_node_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37373008113422956, 
+              "min": 0.0
+            }, 
+            "nethermind_local_receive_message_timeout_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0031746031746031746, 
+              "variance": 0.00020156210632401103, 
+              "pvalue": 0.32154499161271877, 
+              "min": 0.0
+            }, 
+            "nethermind_metadata_db_writes": {
+              "max": 0.26666666666666666, 
+              "mean": 0.16507936507936508, 
+              "variance": 0.003224993701184178, 
+              "pvalue": 0.4634850586062829, 
+              "min": 0.13333333333333333
+            }, 
+            "nethermind_local_already_connected_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.13496391566461247, 
+              "min": 0.0
+            }, 
+            "nethermind_already_connected_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.020004782054530053, 
+              "min": 0.0
+            }, 
+            "nethermind_calls": {
+              "max": 106.06666666666666, 
+              "mean": 51.18412698412699, 
+              "variance": 697.7823935500127, 
+              "pvalue": 0.30168246878665417, 
+              "min": 25.133333333333333
+            }, 
+            "nethermind_last_persisted_block_number": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37373006745442305, 
+              "min": 0.0
+            }, 
+            "nethermind_replaced_nodes_count": {
+              "max": 7.3999999999999995, 
+              "mean": 10.114285714285714, 
+              "variance": 1098.3005895691613, 
+              "pvalue": 0.0775737093813643, 
+              "min": 0.9333333333333333
+            }, 
+            "nethermind_state_db_reads": {
+              "max": 321.5333333333333, 
+              "mean": 221.24444444444444, 
+              "variance": 170713.54596119927, 
+              "pvalue": 3.459077414436816e-05, 
+              "min": 72.06666666666666
+            }, 
+            "nethermind_code_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.09206349206349207, 
+              "variance": 0.1250692869740489, 
+              "pvalue": 0.011879616241801741, 
+              "min": 0.0
+            }, 
+            "nethermind_receipts_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.08253968253968254, 
+              "variance": 0.0008062484252960446, 
+              "pvalue": 0.4693229651573667, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_sstore_opcode": {
+              "max": 134.73333333333332, 
+              "mean": 67.95873015873015, 
+              "variance": 1261.6002015621061, 
+              "pvalue": 0.41748725009524473, 
+              "min": 35.2
+            }, 
+            "process_virtual_memory_bytes": {
+              "max": 3578184772.2666664, 
+              "mean": 1534550393.0920634, 
+              "variance": 3.128906309053028e+18, 
+              "pvalue": 0.10697178775252014, 
+              "min": 0.0
+            }, 
+            "nethermind_client_quitting_disconnects": {
+              "max": 0.2, 
+              "mean": 0.0380952380952381, 
+              "variance": 0.004051398337112624, 
+              "pvalue": 8.578329524804032e-07, 
+              "min": 0.0
+            }, 
+            "nethermind_bn256pairing_precompile": {
+              "max": 0.0, 
+              "mean": 0.0031746031746031746, 
+              "variance": 0.00020156210632401103, 
+              "pvalue": 0.2795231035137564, 
+              "min": 0.0
+            }, 
+            "nethermind_bn256add_precompile": {
+              "max": 0.0, 
+              "mean": 0.06349206349206349, 
+              "variance": 0.08062484252960445, 
+              "pvalue": 0.2898256795241041, 
+              "min": 0.0
+            }, 
+            "nethermind_local_breach_of_protocol_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.23212894693901143, 
+              "min": 0.0
+            }, 
+            "nethermind_pruned_transient_nodes_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37373008113422956, 
+              "min": 0.0
+            }, 
+            "nethermind_disconnect_requested_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.3233619287513373, 
+              "min": 0.0
+            }, 
+            "nethermind_eth66get_receipts_received": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.09146621150972523, 
+              "min": 0.0
+            }, 
+            "nethermind_snapshot_persistence_time": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.3846292486522763, 
+              "min": 0.0
+            }, 
+            "nethermind_blocks_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.08253968253968254, 
+              "variance": 0.0008062484252960446, 
+              "pvalue": 0.47007489040789346, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_hellos_sent": {
+              "max": 0.26666666666666666, 
+              "mean": 0.11111111111111112, 
+              "variance": 0.013686067019400354, 
+              "pvalue": 0.037607488440515396, 
+              "min": 0.0
+            }, 
+            "nethermind_receive_message_timeout_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.410763037456953, 
+              "min": 0.0
+            }, 
+            "nethermind_storage_tree_writes": {
+              "max": 84.6, 
+              "mean": 47.22539682539683, 
+              "variance": 632.4620005039053, 
+              "pvalue": 0.3826778591432547, 
+              "min": 26.133333333333333
+            }, 
+            "nethermind_pruning_time": {
+              "max": 0.0, 
+              "mean": 2.196825396825397, 
+              "variance": 96.52083648274125, 
+              "pvalue": 0.08806293411960475, 
+              "min": 0.0
+            }, 
+            "nethermind_blocks": {
+              "max": 0.13333333333333333, 
+              "mean": 0.07936507936507936, 
+              "variance": 0.0006853111615016378, 
+              "pvalue": 0.2848056651284569, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_dark_pool_ratio_level2": {
+              "max": 0.018695258544832467, 
+              "mean": 0.0070194752891361714, 
+              "variance": 2.1360939595930112e-05, 
+              "pvalue": 8.481801633835326e-11, 
+              "min": 0.002006589372952779
+            }, 
+            "nethermind_block_infos_db_writes": {
+              "max": 0.5333333333333333, 
+              "mean": 0.33015873015873015, 
+              "variance": 0.012899974804736713, 
+              "pvalue": 0.4036995449669492, 
+              "min": 0.26666666666666666
+            }, 
+            "nethermind_useless_peer_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0031746031746031746, 
+              "variance": 0.0002015621063240109, 
+              "pvalue": 0.005197851662898934, 
+              "min": 0.0
+            }, 
+            "nethermind_sha256precompile": {
+              "max": 0.2, 
+              "mean": 0.10793650793650793, 
+              "variance": 0.1936407155454773, 
+              "pvalue": 0.3161005388914268, 
+              "min": 0.0
+            }, 
+            "nethermind_eth62new_block_received": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37372960233835617, 
+              "min": 0.0
+            }, 
+            "nethermind_reorganizations": {
+              "max": 0.13333333333333333, 
+              "mean": 0.08253968253968254, 
+              "variance": 0.0008062484252960446, 
+              "pvalue": 0.47007489040789346, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_mgas": {
+              "max": 2.217382133333376, 
+              "mean": 1.2207597682539695, 
+              "variance": 0.43472471279287217, 
+              "pvalue": 0.16036042852677967, 
+              "min": 0.6059555333333264
+            }, 
+            "nethermind_dark_pool_ratio_level1": {
+              "max": 0.018695258544832467, 
+              "mean": 0.0069732294998921095, 
+              "variance": 2.1859510158115112e-05, 
+              "pvalue": 1.0719300665357115e-10, 
+              "min": 0.002006589372952779
+            }, 
+            "nethermind_mod_exp_precompile": {
+              "max": 0.6, 
+              "mean": 0.6476190476190476, 
+              "variance": 7.481541950113382, 
+              "pvalue": 0.014241371873642437, 
+              "min": 0.0
+            }, 
+            "nethermind_deep_pruned_persisted_nodes_count": {
+              "max": 0.0, 
+              "mean": 32.30793650793651, 
+              "variance": 20876.05522801714, 
+              "pvalue": 0.09410613454098588, 
+              "min": 0.0
+            }, 
+            "process_num_threads": {
+              "max": 13.4, 
+              "mean": 5.958730158730158, 
+              "variance": 40.721894683799455, 
+              "pvalue": 0.3380306203540271, 
+              "min": 0.0
+            }, 
+            "nethermind_bn256mul_precompile": {
+              "max": 0.0, 
+              "mean": 0.06666666666666667, 
+              "variance": 0.08888888888888889, 
+              "pvalue": 0.28982685431855715, 
+              "min": 0.0
+            }, 
+            "nethermind_hellos_received": {
+              "max": 0.26666666666666666, 
+              "mean": 0.09206349206349206, 
+              "variance": 0.009090450995212902, 
+              "pvalue": 0.06964303493550905, 
+              "min": 0.0
+            }, 
+            "nethermind_pruned_persisted_nodes_count": {
+              "max": 0.0, 
+              "mean": 627.4031746031746, 
+              "variance": 7872694.8700428335, 
+              "pvalue": 0.09410613454098588, 
+              "min": 0.0
+            }, 
+            "nethermind_breach_of_protocol_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.4498914133843307, 
+              "min": 0.0
+            }, 
+            "nethermind_outgoing_connections": {
+              "max": 0.26666666666666666, 
+              "mean": 0.073015873015873, 
+              "variance": 0.01011841773746536, 
+              "pvalue": 0.08027656265593758, 
+              "min": 0.0
+            }, 
+            "process_private_memory_bytes": {
+              "max": 1171555942.4, 
+              "mean": 390149422.3238095, 
+              "variance": 3.003127715369194e+17, 
+              "pvalue": 0.100126151404418, 
+              "min": 1638.4
+            }, 
+            "nethermind_cached_nodes_count": {
+              "max": 1025.2666666666667, 
+              "mean": 4612.574603174603, 
+              "variance": 344661784.5902544, 
+              "pvalue": 0.325673332847108, 
+              "min": 264.46666666666664
+            }, 
+            "nethermind_code_db_reads": {
+              "max": 0.9333333333333333, 
+              "mean": 0.45079365079365086, 
+              "variance": 0.09858402620307384, 
+              "pvalue": 0.07135572930422106, 
+              "min": 0.13333333333333333
+            }, 
+            "nethermind_blockhash_opcode": {
+              "max": 0.2, 
+              "mean": 0.073015873015873, 
+              "variance": 0.005885613504661123, 
+              "pvalue": 0.3105918620125715, 
+              "min": 0.0
+            }, 
+            "nethermind_eth66get_block_headers_received": {
+              "max": 0.4, 
+              "mean": 0.22857142857142865, 
+              "variance": 0.00997732426303855, 
+              "pvalue": 0.07882565201392944, 
+              "min": 0.13333333333333333
+            }
+          }
+        }, 
+        "client_crashed": false, 
+        "injection_count": 26691
+      }, 
+      "syscall_name": "recvfrom", 
+      "error_code": "-EAGAIN", 
+      "failure_rate": 0.6, 
+      "experiment_duration": 300
+    }, 
+    {
+      "result": {
+        "metrics": {
+          "validation": {
+            "nethermind_statuses_received": {
+              "max": 1.0666666666666667, 
+              "mean": 0.20634920634920634, 
+              "variance": 0.11170571932476696, 
+              "pvalue": 0.3029832953205163, 
+              "min": 0.0
+            }, 
+            "nethermind_block_infos_db_reads": {
+              "max": 0.2, 
+              "mean": 0.126984126984127, 
+              "variance": 0.0037692113882590076, 
+              "pvalue": 0.05266600610597061, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_other_disconnects": {
+              "max": 0.06666666666666667, 
+              "mean": 0.012698412698412698, 
+              "variance": 0.0019551524313429053, 
+              "pvalue": 0.08536846159270411, 
+              "min": 0.0
+            }, 
+            "nethermind_statuses_sent": {
+              "max": 1.0666666666666667, 
+              "mean": 0.22222222222222218, 
+              "variance": 0.11231040564373891, 
+              "pvalue": 0.3861865789796304, 
+              "min": 0.0
+            }, 
+            "nethermind_bloom_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.08253968253968254, 
+              "variance": 0.0008062484252960444, 
+              "pvalue": 0.4693229651573667, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_header_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.08253968253968254, 
+              "variance": 0.0008062484252960444, 
+              "pvalue": 0.47007489040789346, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_eth66block_headers_received": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.3460902837974774, 
+              "min": 0.0
+            }, 
+            "nethermind_persisted_node_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37373008113422956, 
+              "min": 0.0
+            }, 
+            "nethermind_local_receive_message_timeout_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.21072032148397796, 
+              "min": 0.0
+            }, 
+            "nethermind_metadata_db_writes": {
+              "max": 0.26666666666666666, 
+              "mean": 0.16507936507936508, 
+              "variance": 0.0032249937011841778, 
+              "pvalue": 0.4634850586062829, 
+              "min": 0.13333333333333333
+            }, 
+            "nethermind_local_already_connected_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.13496391566461247, 
+              "min": 0.0
+            }, 
+            "nethermind_already_connected_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.020004782054530053, 
+              "min": 0.0
+            }, 
+            "nethermind_calls": {
+              "max": 94.06666666666666, 
+              "mean": 55.23809523809524, 
+              "variance": 1669.8542101284952, 
+              "pvalue": 0.28993966690107814, 
+              "min": 20.2
+            }, 
+            "nethermind_last_persisted_block_number": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37373006745442305, 
+              "min": 0.0
+            }, 
+            "nethermind_replaced_nodes_count": {
+              "max": 5.666666666666667, 
+              "mean": 2.755555555555556, 
+              "variance": 2.608395061728394, 
+              "pvalue": 0.054284106238538785, 
+              "min": 1.2
+            }, 
+            "nethermind_state_db_reads": {
+              "max": 424.3333333333333, 
+              "mean": 182.56190476190474, 
+              "variance": 14553.064368858652, 
+              "pvalue": 0.014265211364967393, 
+              "min": 79.73333333333333
+            }, 
+            "nethermind_code_db_writes": {
+              "max": 0.8666666666666667, 
+              "mean": 0.36507936507936506, 
+              "variance": 2.01930964978584, 
+              "pvalue": 0.015811699867728818, 
+              "min": 0.0
+            }, 
+            "nethermind_receipts_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.08253968253968254, 
+              "variance": 0.0008062484252960444, 
+              "pvalue": 0.4693229651573667, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_sstore_opcode": {
+              "max": 163.2, 
+              "mean": 85.11746031746031, 
+              "variance": 5170.732234819853, 
+              "pvalue": 0.30670162756110597, 
+              "min": 30.733333333333334
+            }, 
+            "process_virtual_memory_bytes": {
+              "max": 3602175590.4, 
+              "mean": 1542935438.222222, 
+              "variance": 3.1690104348320266e+18, 
+              "pvalue": 0.04863757539052046, 
+              "min": 0.0
+            }, 
+            "nethermind_client_quitting_disconnects": {
+              "max": 0.6666666666666666, 
+              "mean": 0.14920634920634923, 
+              "variance": 0.04906021667926429, 
+              "pvalue": 0.011856593959994475, 
+              "min": 0.0
+            }, 
+            "nethermind_bn256pairing_precompile": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.22465759402001678, 
+              "min": 0.0
+            }, 
+            "nethermind_bn256add_precompile": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.2210732782104004, 
+              "min": 0.0
+            }, 
+            "nethermind_local_breach_of_protocol_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.23212894693901143, 
+              "min": 0.0
+            }, 
+            "nethermind_pruned_transient_nodes_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37373008113422956, 
+              "min": 0.0
+            }, 
+            "nethermind_disconnect_requested_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.3233619287513373, 
+              "min": 0.0
+            }, 
+            "nethermind_eth66get_receipts_received": {
+              "max": 0.0, 
+              "mean": 0.0031746031746031746, 
+              "variance": 0.00020156210632401092, 
+              "pvalue": 0.28583576602121186, 
+              "min": 0.0
+            }, 
+            "nethermind_snapshot_persistence_time": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.3846292486522763, 
+              "min": 0.0
+            }, 
+            "nethermind_blocks_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.08253968253968254, 
+              "variance": 0.0008062484252960444, 
+              "pvalue": 0.47007489040789346, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_hellos_sent": {
+              "max": 1.4666666666666666, 
+              "mean": 0.31428571428571433, 
+              "variance": 0.2091609977324263, 
+              "pvalue": 0.3135405645818858, 
+              "min": 0.0
+            }, 
+            "nethermind_receive_message_timeout_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.410763037456953, 
+              "min": 0.0
+            }, 
+            "nethermind_storage_tree_writes": {
+              "max": 104.53333333333333, 
+              "mean": 51.11746031746032, 
+              "variance": 967.9923406399595, 
+              "pvalue": 0.4738912377578619, 
+              "min": 18.733333333333334
+            }, 
+            "nethermind_pruning_time": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.2978445718188498, 
+              "min": 0.0
+            }, 
+            "nethermind_blocks": {
+              "max": 0.13333333333333333, 
+              "mean": 0.08253968253968254, 
+              "variance": 0.0008062484252960444, 
+              "pvalue": 0.4693229651573667, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_dark_pool_ratio_level2": {
+              "max": 0.0038834951817989347, 
+              "mean": 0.0020537707295240192, 
+              "variance": 1.505408800223093e-06, 
+              "pvalue": 0.05591630539328548, 
+              "min": 0.0004229322075843811
+            }, 
+            "nethermind_block_infos_db_writes": {
+              "max": 0.5333333333333333, 
+              "mean": 0.33015873015873015, 
+              "variance": 0.012899974804736711, 
+              "pvalue": 0.4036995449669492, 
+              "min": 0.26666666666666666
+            }, 
+            "nethermind_useless_peer_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37372960233835617, 
+              "min": 0.0
+            }, 
+            "nethermind_sha256precompile": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.03746938895815434, 
+              "min": 0.0
+            }, 
+            "nethermind_eth62new_block_received": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37372960233835617, 
+              "min": 0.0
+            }, 
+            "nethermind_reorganizations": {
+              "max": 0.13333333333333333, 
+              "mean": 0.08253968253968254, 
+              "variance": 0.0008062484252960444, 
+              "pvalue": 0.47007489040789346, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_mgas": {
+              "max": 1.9988510000000437, 
+              "mean": 1.2497772253968298, 
+              "variance": 0.39368687892642285, 
+              "pvalue": 0.28304098541452577, 
+              "min": 0.5553264666666412
+            }, 
+            "nethermind_dark_pool_ratio_level1": {
+              "max": 0.0038834951817989347, 
+              "mean": 0.002222928829659762, 
+              "variance": 1.2859800747547034e-06, 
+              "pvalue": 0.007393773965670905, 
+              "min": 0.0006535947943727175
+            }, 
+            "nethermind_mod_exp_precompile": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.10493016299505709, 
+              "min": 0.0
+            }, 
+            "nethermind_deep_pruned_persisted_nodes_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.2978445796168771, 
+              "min": 0.0
+            }, 
+            "process_num_threads": {
+              "max": 14.133333333333333, 
+              "mean": 5.965079365079366, 
+              "variance": 43.65190224237843, 
+              "pvalue": 0.4363430933987691, 
+              "min": 0.0
+            }, 
+            "nethermind_bn256mul_precompile": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.22107473426470786, 
+              "min": 0.0
+            }, 
+            "nethermind_hellos_received": {
+              "max": 1.1333333333333333, 
+              "mean": 0.24761904761904763, 
+              "variance": 0.12958427815570675, 
+              "pvalue": 0.423345785157714, 
+              "min": 0.0
+            }, 
+            "nethermind_pruned_persisted_nodes_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.2978445796168771, 
+              "min": 0.0
+            }, 
+            "nethermind_breach_of_protocol_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.4498914133843307, 
+              "min": 0.0
+            }, 
+            "nethermind_outgoing_connections": {
+              "max": 0.6, 
+              "mean": 0.1619047619047619, 
+              "variance": 0.04553287981859412, 
+              "pvalue": 0.4863562254823247, 
+              "min": 0.0
+            }, 
+            "process_private_memory_bytes": {
+              "max": 1145206647.4666667, 
+              "mean": 436333135.6444444, 
+              "variance": 3.07169277854221e+17, 
+              "pvalue": 0.11200220011194784, 
+              "min": 11741.866666666667
+            }, 
+            "nethermind_cached_nodes_count": {
+              "max": 933.6, 
+              "mean": 484.62857142857166, 
+              "variance": 74955.12955404383, 
+              "pvalue": 0.2695872127618446, 
+              "min": 216.0
+            }, 
+            "nethermind_code_db_reads": {
+              "max": 1.0666666666666667, 
+              "mean": 0.4222222222222222, 
+              "variance": 0.09114638447971779, 
+              "pvalue": 0.02299795582368358, 
+              "min": 0.13333333333333333
+            }, 
+            "nethermind_blockhash_opcode": {
+              "max": 0.13333333333333333, 
+              "mean": 0.03809523809523809, 
+              "variance": 0.0032048374905517766, 
+              "pvalue": 0.02235995700188471, 
+              "min": 0.0
+            }, 
+            "nethermind_eth66get_block_headers_received": {
+              "max": 0.9333333333333333, 
+              "mean": 0.5587301587301589, 
+              "variance": 0.045915847820609715, 
+              "pvalue": 5.920889618221796e-12, 
+              "min": 0.26666666666666666
+            }
+          }, 
+          "ce": {
+            "nethermind_statuses_received": {
+              "max": 0.8, 
+              "mean": 0.24761904761904757, 
+              "variance": 0.12069538926681782, 
+              "pvalue": 0.4725062522771614, 
+              "min": 0.0
+            }, 
+            "nethermind_block_infos_db_reads": {
+              "max": 0.26666666666666666, 
+              "mean": 0.13650793650793652, 
+              "variance": 0.004434366339128243, 
+              "pvalue": 0.01453539422274551, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_other_disconnects": {
+              "max": 0.13333333333333333, 
+              "mean": 0.012698412698412698, 
+              "variance": 0.0015318720080624848, 
+              "pvalue": 0.07931798369312848, 
+              "min": 0.0
+            }, 
+            "nethermind_statuses_sent": {
+              "max": 1.0, 
+              "mean": 0.28253968253968254, 
+              "variance": 0.15868984630889388, 
+              "pvalue": 0.422187989061827, 
+              "min": 0.0
+            }, 
+            "nethermind_bloom_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.0857142857142857, 
+              "variance": 0.0009070294784580498, 
+              "pvalue": 0.3398657313449934, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_header_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.08253968253968254, 
+              "variance": 0.0008062484252960446, 
+              "pvalue": 0.47007489040789346, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_eth66block_headers_received": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.3460902837974774, 
+              "min": 0.0
+            }, 
+            "nethermind_persisted_node_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37373008113422956, 
+              "min": 0.0
+            }, 
+            "nethermind_local_receive_message_timeout_disconnects": {
+              "max": 0.0, 
+              "mean": 0.006349206349206349, 
+              "variance": 0.0008062484252960442, 
+              "pvalue": 0.30811349506543206, 
+              "min": 0.0
+            }, 
+            "nethermind_metadata_db_writes": {
+              "max": 0.26666666666666666, 
+              "mean": 0.1714285714285714, 
+              "variance": 0.0036281179138321993, 
+              "pvalue": 0.34597044059045, 
+              "min": 0.13333333333333333
+            }, 
+            "nethermind_local_already_connected_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.13496391566461247, 
+              "min": 0.0
+            }, 
+            "nethermind_already_connected_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.020004782054530053, 
+              "min": 0.0
+            }, 
+            "nethermind_calls": {
+              "max": 86.53333333333333, 
+              "mean": 47.885714285714286, 
+              "variance": 480.3361451247165, 
+              "pvalue": 0.3934311690929751, 
+              "min": 22.53333333333333
+            }, 
+            "nethermind_last_persisted_block_number": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37373006745442305, 
+              "min": 0.0
+            }, 
+            "nethermind_replaced_nodes_count": {
+              "max": 5.0, 
+              "mean": 3.3650793650793647, 
+              "variance": 4.3731720836482735, 
+              "pvalue": 0.46545305759169997, 
+              "min": 1.6
+            }, 
+            "nethermind_state_db_reads": {
+              "max": 336.8, 
+              "mean": 189.26349206349207, 
+              "variance": 8142.972053413957, 
+              "pvalue": 0.10155865544702669, 
+              "min": 79.06666666666666
+            }, 
+            "nethermind_code_db_writes": {
+              "max": 0.6666666666666666, 
+              "mean": 0.35238095238095235, 
+              "variance": 1.0836583522297807, 
+              "pvalue": 0.12127455350178384, 
+              "min": 0.0
+            }, 
+            "nethermind_receipts_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.0857142857142857, 
+              "variance": 0.0009070294784580498, 
+              "pvalue": 0.3398657313449934, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_sstore_opcode": {
+              "max": 149.2, 
+              "mean": 82.65079365079366, 
+              "variance": 2055.5931872008064, 
+              "pvalue": 0.06170540337480286, 
+              "min": 30.0
+            }, 
+            "process_virtual_memory_bytes": {
+              "max": 3597689651.2, 
+              "mean": 2226420693.7396827, 
+              "variance": 3.049084968580097e+18, 
+              "pvalue": 0.13090095123469586, 
+              "min": 0.0
+            }, 
+            "nethermind_client_quitting_disconnects": {
+              "max": 0.4, 
+              "mean": 0.12380952380952381, 
+              "variance": 0.031443688586545726, 
+              "pvalue": 0.004803019346093322, 
+              "min": 0.0
+            }, 
+            "nethermind_bn256pairing_precompile": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.22465759402001678, 
+              "min": 0.0
+            }, 
+            "nethermind_bn256add_precompile": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.2210732782104004, 
+              "min": 0.0
+            }, 
+            "nethermind_local_breach_of_protocol_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.23212894693901143, 
+              "min": 0.0
+            }, 
+            "nethermind_pruned_transient_nodes_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37373008113422956, 
+              "min": 0.0
+            }, 
+            "nethermind_disconnect_requested_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0031746031746031746, 
+              "variance": 0.00020156210632401103, 
+              "pvalue": 0.0480765574699335, 
+              "min": 0.0
+            }, 
+            "nethermind_eth66get_receipts_received": {
+              "max": 0.0, 
+              "mean": 0.0031746031746031746, 
+              "variance": 0.00020156210632401092, 
+              "pvalue": 0.28583576602121186, 
+              "min": 0.0
+            }, 
+            "nethermind_snapshot_persistence_time": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.3846292486522763, 
+              "min": 0.0
+            }, 
+            "nethermind_blocks_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.08253968253968254, 
+              "variance": 0.0008062484252960446, 
+              "pvalue": 0.47007489040789346, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_hellos_sent": {
+              "max": 1.3333333333333333, 
+              "mean": 0.38730158730158726, 
+              "variance": 0.30375409423028465, 
+              "pvalue": 0.45006263711080663, 
+              "min": 0.0
+            }, 
+            "nethermind_receive_message_timeout_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.410763037456953, 
+              "min": 0.0
+            }, 
+            "nethermind_storage_tree_writes": {
+              "max": 97.4, 
+              "mean": 55.38412698412699, 
+              "variance": 755.1969967246158, 
+              "pvalue": 0.07973962761938608, 
+              "min": 21.6
+            }, 
+            "nethermind_pruning_time": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.2978445718188498, 
+              "min": 0.0
+            }, 
+            "nethermind_blocks": {
+              "max": 0.13333333333333333, 
+              "mean": 0.0857142857142857, 
+              "variance": 0.0009070294784580498, 
+              "pvalue": 0.3398657313449934, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_dark_pool_ratio_level2": {
+              "max": 0.013161057124982277, 
+              "mean": 0.0032235610206803635, 
+              "variance": 1.8639741557009956e-05, 
+              "pvalue": 0.12569688604694246, 
+              "min": 0.0
+            }, 
+            "nethermind_block_infos_db_writes": {
+              "max": 0.4666666666666667, 
+              "mean": 0.33968253968253964, 
+              "variance": 0.008425296044343665, 
+              "pvalue": 0.14374825735560726, 
+              "min": 0.26666666666666666
+            }, 
+            "nethermind_useless_peer_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37372960233835617, 
+              "min": 0.0
+            }, 
+            "nethermind_sha256precompile": {
+              "max": 0.4, 
+              "mean": 0.0761904761904762, 
+              "variance": 0.039909297052154215, 
+              "pvalue": 0.4209292801408602, 
+              "min": 0.0
+            }, 
+            "nethermind_eth62new_block_received": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37372960233835617, 
+              "min": 0.0
+            }, 
+            "nethermind_reorganizations": {
+              "max": 0.13333333333333333, 
+              "mean": 0.08253968253968254, 
+              "variance": 0.0008062484252960446, 
+              "pvalue": 0.47007489040789346, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_mgas": {
+              "max": 2.6597289333333416, 
+              "mean": 1.3764404920634938, 
+              "variance": 0.6986985209933914, 
+              "pvalue": 0.4072897403722229, 
+              "min": 0.48806100000001607
+            }, 
+            "nethermind_dark_pool_ratio_level1": {
+              "max": 0.013161057124982277, 
+              "mean": 0.003284428206728722, 
+              "variance": 1.901491983250917e-05, 
+              "pvalue": 0.070859317455266, 
+              "min": 0.0
+            }, 
+            "nethermind_mod_exp_precompile": {
+              "max": 0.06666666666666667, 
+              "mean": 0.009523809523809525, 
+              "variance": 0.0009674981103552525, 
+              "pvalue": 0.32398145645040977, 
+              "min": 0.0
+            }, 
+            "nethermind_deep_pruned_persisted_nodes_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.2978445796168771, 
+              "min": 0.0
+            }, 
+            "process_num_threads": {
+              "max": 13.533333333333333, 
+              "mean": 7.673015873015872, 
+              "variance": 42.983663391282434, 
+              "pvalue": 0.330847272978256, 
+              "min": 0.0
+            }, 
+            "nethermind_bn256mul_precompile": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.22107473426470786, 
+              "min": 0.0
+            }, 
+            "nethermind_hellos_received": {
+              "max": 1.2666666666666666, 
+              "mean": 0.3238095238095238, 
+              "variance": 0.21345427059712782, 
+              "pvalue": 0.4044221634832494, 
+              "min": 0.0
+            }, 
+            "nethermind_pruned_persisted_nodes_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.2978445796168771, 
+              "min": 0.0
+            }, 
+            "nethermind_breach_of_protocol_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.4498914133843307, 
+              "min": 0.0
+            }, 
+            "nethermind_outgoing_connections": {
+              "max": 0.7333333333333333, 
+              "mean": 0.19047619047619047, 
+              "variance": 0.06699924414210129, 
+              "pvalue": 0.36080179316054206, 
+              "min": 0.0
+            }, 
+            "process_private_memory_bytes": {
+              "max": 1137491421.8666666, 
+              "mean": 325290016.50793654, 
+              "variance": 2.634023800512658e+17, 
+              "pvalue": 0.016054951431584776, 
+              "min": 179677.86666666667
+            }, 
+            "nethermind_cached_nodes_count": {
+              "max": 935.6, 
+              "mean": 511.9015873015872, 
+              "variance": 71375.74417737464, 
+              "pvalue": 0.47873493108547366, 
+              "min": 212.0
+            }, 
+            "nethermind_code_db_reads": {
+              "max": 0.8, 
+              "mean": 0.3841269841269841, 
+              "variance": 0.052869740488788085, 
+              "pvalue": 0.010484115657388292, 
+              "min": 0.13333333333333333
+            }, 
+            "nethermind_blockhash_opcode": {
+              "max": 0.13333333333333333, 
+              "mean": 0.047619047619047616, 
+              "variance": 0.0042932728647014345, 
+              "pvalue": 0.09367659733961031, 
+              "min": 0.0
+            }, 
+            "nethermind_eth66get_block_headers_received": {
+              "max": 0.8666666666666667, 
+              "mean": 0.5174603174603175, 
+              "variance": 0.03297556059460821, 
+              "pvalue": 1.1498337525002866e-11, 
+              "min": 0.3333333333333333
+            }
+          }, 
+          "pre_check": {
+            "nethermind_statuses_received": {
+              "max": 1.4, 
+              "mean": 0.4825396825396826, 
+              "variance": 0.2793247669438146, 
+              "pvalue": 0.034040669228339655, 
+              "min": 0.0
+            }, 
+            "nethermind_block_infos_db_reads": {
+              "max": 0.26666666666666666, 
+              "mean": 0.14285714285714288, 
+              "variance": 0.004777021919879062, 
+              "pvalue": 0.004817179186884462, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_other_disconnects": {
+              "max": 0.13333333333333333, 
+              "mean": 0.01904761904761905, 
+              "variance": 0.0017535903250188967, 
+              "pvalue": 0.00018544282443665145, 
+              "min": 0.0
+            }, 
+            "nethermind_statuses_sent": {
+              "max": 1.4666666666666666, 
+              "mean": 0.5365079365079365, 
+              "variance": 0.3426354245401864, 
+              "pvalue": 0.02755163054504789, 
+              "min": 0.0
+            }, 
+            "nethermind_bloom_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.0857142857142857, 
+              "variance": 0.0009070294784580498, 
+              "pvalue": 0.3398657313449934, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_header_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.0857142857142857, 
+              "variance": 0.0009070294784580498, 
+              "pvalue": 0.33862357752635386, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_eth66block_headers_received": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.3460902837974774, 
+              "min": 0.0
+            }, 
+            "nethermind_persisted_node_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37373008113422956, 
+              "min": 0.0
+            }, 
+            "nethermind_local_receive_message_timeout_disconnects": {
+              "max": 0.06666666666666667, 
+              "mean": 0.012698412698412698, 
+              "variance": 0.0006853111615016379, 
+              "pvalue": 2.224213225317692e-05, 
+              "min": 0.0
+            }, 
+            "nethermind_metadata_db_writes": {
+              "max": 0.26666666666666666, 
+              "mean": 0.1714285714285714, 
+              "variance": 0.0036281179138321993, 
+              "pvalue": 0.34597044059045, 
+              "min": 0.13333333333333333
+            }, 
+            "nethermind_local_already_connected_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0031746031746031746, 
+              "variance": 0.00020156210632401092, 
+              "pvalue": 0.4418335686231709, 
+              "min": 0.0
+            }, 
+            "nethermind_already_connected_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.020004782054530053, 
+              "min": 0.0
+            }, 
+            "nethermind_calls": {
+              "max": 94.8, 
+              "mean": 50.05079365079365, 
+              "variance": 704.4528697404888, 
+              "pvalue": 0.31286084540229175, 
+              "min": 15.733333333333333
+            }, 
+            "nethermind_last_persisted_block_number": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37373006745442305, 
+              "min": 0.0
+            }, 
+            "nethermind_replaced_nodes_count": {
+              "max": 7.533333333333333, 
+              "mean": 3.4095238095238085, 
+              "variance": 15.156099773242628, 
+              "pvalue": 0.07405731823436446, 
+              "min": 0.8666666666666667
+            }, 
+            "nethermind_state_db_reads": {
+              "max": 380.2, 
+              "mean": 190.0095238095238, 
+              "variance": 9944.77768707483, 
+              "pvalue": 0.10946635169662572, 
+              "min": 82.93333333333334
+            }, 
+            "nethermind_code_db_writes": {
+              "max": 4.666666666666667, 
+              "mean": 0.7904761904761906, 
+              "variance": 3.1400151171579744, 
+              "pvalue": 0.13875497084044808, 
+              "min": 0.0
+            }, 
+            "nethermind_receipts_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.0857142857142857, 
+              "variance": 0.0009070294784580498, 
+              "pvalue": 0.3398657313449934, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_sstore_opcode": {
+              "max": 143.8, 
+              "mean": 71.29206349206349, 
+              "variance": 1706.968667170572, 
+              "pvalue": 0.4322729911194383, 
+              "min": 21.666666666666668
+            }, 
+            "process_virtual_memory_bytes": {
+              "max": 3598249164.7999997, 
+              "mean": 1713399736.48254, 
+              "variance": 3.225082906478287e+18, 
+              "pvalue": 0.08520195823550408, 
+              "min": 1092.2666666666667
+            }, 
+            "nethermind_client_quitting_disconnects": {
+              "max": 0.7333333333333333, 
+              "mean": 0.253968253968254, 
+              "variance": 0.07433610481229527, 
+              "pvalue": 0.4659325382570932, 
+              "min": 0.0
+            }, 
+            "nethermind_bn256pairing_precompile": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.22465759402001678, 
+              "min": 0.0
+            }, 
+            "nethermind_bn256add_precompile": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.2210732782104004, 
+              "min": 0.0
+            }, 
+            "nethermind_local_breach_of_protocol_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.23212894693901143, 
+              "min": 0.0
+            }, 
+            "nethermind_pruned_transient_nodes_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37373008113422956, 
+              "min": 0.0
+            }, 
+            "nethermind_disconnect_requested_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0031746031746031746, 
+              "variance": 0.00020156210632401103, 
+              "pvalue": 0.0480765574699335, 
+              "min": 0.0
+            }, 
+            "nethermind_eth66get_receipts_received": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.09146621150972523, 
+              "min": 0.0
+            }, 
+            "nethermind_snapshot_persistence_time": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.3846292486522763, 
+              "min": 0.0
+            }, 
+            "nethermind_blocks_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.0857142857142857, 
+              "variance": 0.0009070294784580498, 
+              "pvalue": 0.33862357752635386, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_hellos_sent": {
+              "max": 1.8666666666666667, 
+              "mean": 0.7174603174603175, 
+              "variance": 0.5959385235575713, 
+              "pvalue": 0.05642227978441829, 
+              "min": 0.0
+            }, 
+            "nethermind_receive_message_timeout_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.410763037456953, 
+              "min": 0.0
+            }, 
+            "nethermind_storage_tree_writes": {
+              "max": 102.93333333333334, 
+              "mean": 49.40317460317459, 
+              "variance": 828.6749105568155, 
+              "pvalue": 0.4709124028007893, 
+              "min": 16.133333333333333
+            }, 
+            "nethermind_pruning_time": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.2978445718188498, 
+              "min": 0.0
+            }, 
+            "nethermind_blocks": {
+              "max": 0.13333333333333333, 
+              "mean": 0.0857142857142857, 
+              "variance": 0.0009070294784580498, 
+              "pvalue": 0.3398657313449934, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_dark_pool_ratio_level2": {
+              "max": 0.00639474093914032, 
+              "mean": 0.0023680502667038574, 
+              "variance": 3.890203880954208e-06, 
+              "pvalue": 0.0652253000962057, 
+              "min": 0.0
+            }, 
+            "nethermind_block_infos_db_writes": {
+              "max": 0.5333333333333333, 
+              "mean": 0.3428571428571428, 
+              "variance": 0.013242630385487527, 
+              "pvalue": 0.3138274830079856, 
+              "min": 0.26666666666666666
+            }, 
+            "nethermind_useless_peer_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37372960233835617, 
+              "min": 0.0
+            }, 
+            "nethermind_sha256precompile": {
+              "max": 0.4, 
+              "mean": 0.050793650793650794, 
+              "variance": 0.02620307382212144, 
+              "pvalue": 0.32808663873055366, 
+              "min": 0.0
+            }, 
+            "nethermind_eth62new_block_received": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37372960233835617, 
+              "min": 0.0
+            }, 
+            "nethermind_reorganizations": {
+              "max": 0.13333333333333333, 
+              "mean": 0.0857142857142857, 
+              "variance": 0.0009070294784580498, 
+              "pvalue": 0.33862357752635386, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_mgas": {
+              "max": 2.6177661999999446, 
+              "mean": 1.293275723809526, 
+              "variance": 0.6065124474499484, 
+              "pvalue": 0.32399003167498974, 
+              "min": 0.4208660000000236
+            }, 
+            "nethermind_dark_pool_ratio_level1": {
+              "max": 0.0066679467757542925, 
+              "mean": 0.002267694359025253, 
+              "variance": 3.648276502970865e-06, 
+              "pvalue": 0.07022630950338685, 
+              "min": 0.0
+            }, 
+            "nethermind_mod_exp_precompile": {
+              "max": 0.06666666666666667, 
+              "mean": 0.009523809523809525, 
+              "variance": 0.0009674981103552524, 
+              "pvalue": 0.32398145645040977, 
+              "min": 0.0
+            }, 
+            "nethermind_deep_pruned_persisted_nodes_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.2978445796168771, 
+              "min": 0.0
+            }, 
+            "process_num_threads": {
+              "max": 13.533333333333333, 
+              "mean": 6.507936507936509, 
+              "variance": 43.00168304358781, 
+              "pvalue": 0.4384391763829022, 
+              "min": 0.0
+            }, 
+            "nethermind_bn256mul_precompile": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.22107473426470786, 
+              "min": 0.0
+            }, 
+            "nethermind_hellos_received": {
+              "max": 1.6, 
+              "mean": 0.6126984126984127, 
+              "variance": 0.46671705719324774, 
+              "pvalue": 0.02788932969267713, 
+              "min": 0.0
+            }, 
+            "nethermind_pruned_persisted_nodes_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.2978445796168771, 
+              "min": 0.0
+            }, 
+            "nethermind_breach_of_protocol_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.4498914133843307, 
+              "min": 0.0
+            }, 
+            "nethermind_outgoing_connections": {
+              "max": 0.6666666666666666, 
+              "mean": 0.3015873015873016, 
+              "variance": 0.09042076089695138, 
+              "pvalue": 0.025897846419778537, 
+              "min": 0.0
+            }, 
+            "process_private_memory_bytes": {
+              "max": 1131532288.0, 
+              "mean": 216646490.20952374, 
+              "variance": 1.969943354463232e+17, 
+              "pvalue": 0.016952328906446993, 
+              "min": 80008.53333333333
+            }, 
+            "nethermind_cached_nodes_count": {
+              "max": 966.6, 
+              "mean": 493.6190476190476, 
+              "variance": 74996.60365835225, 
+              "pvalue": 0.3349376157023629, 
+              "min": 199.86666666666667
+            }, 
+            "nethermind_code_db_reads": {
+              "max": 1.7333333333333334, 
+              "mean": 1.1396825396825394, 
+              "variance": 4.076573444192492, 
+              "pvalue": 0.07810701086444442, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_blockhash_opcode": {
+              "max": 0.06666666666666667, 
+              "mean": 0.0380952380952381, 
+              "variance": 0.0036281179138321993, 
+              "pvalue": 0.018523565391096734, 
+              "min": 0.0
+            }, 
+            "nethermind_eth66get_block_headers_received": {
+              "max": 1.0, 
+              "mean": 0.6317460317460317, 
+              "variance": 0.030314940791131263, 
+              "pvalue": 1.1219439132205064e-13, 
+              "min": 0.4
+            }
+          }
+        }, 
+        "client_crashed": false, 
+        "injection_count": 0
+      }, 
+      "syscall_name": "connect", 
+      "error_code": "-EINPROGRESS", 
+      "failure_rate": 1, 
+      "experiment_duration": 300
+    }, 
+    {
+      "result": {
+        "metrics": {
+          "pre_check": {
+            "nethermind_statuses_received": {
+              "max": 0.5333333333333333, 
+              "mean": 0.15873015873015875, 
+              "variance": 0.07512219702695892, 
+              "pvalue": 0.16105405797054761, 
+              "min": 0.0
+            }, 
+            "nethermind_block_infos_db_reads": {
+              "max": 0.2, 
+              "mean": 0.10476190476190475, 
+              "variance": 0.0044746787603930464, 
+              "pvalue": 0.24986030254444075, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_other_disconnects": {
+              "max": 0.0, 
+              "mean": 0.006349206349206349, 
+              "variance": 0.0008062484252960437, 
+              "pvalue": 0.3976880557948148, 
+              "min": 0.0
+            }, 
+            "nethermind_statuses_sent": {
+              "max": 0.6, 
+              "mean": 0.19682539682539685, 
+              "variance": 0.10856135046611233, 
+              "pvalue": 0.27813258944617625, 
+              "min": 0.0
+            }, 
+            "nethermind_bloom_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.0857142857142857, 
+              "variance": 0.0009070294784580498, 
+              "pvalue": 0.3398657313449934, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_header_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.0857142857142857, 
+              "variance": 0.0009070294784580498, 
+              "pvalue": 0.33862357752635386, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_eth66block_headers_received": {
+              "max": 0.0, 
+              "mean": 0.0031746031746031746, 
+              "variance": 0.00020156210632401103, 
+              "pvalue": 0.021661515637493994, 
+              "min": 0.0
+            }, 
+            "nethermind_persisted_node_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37373008113422956, 
+              "min": 0.0
+            }, 
+            "nethermind_local_receive_message_timeout_disconnects": {
+              "max": 0.06666666666666667, 
+              "mean": 0.006349206349206349, 
+              "variance": 0.00038296800201562093, 
+              "pvalue": 0.04455688340224734, 
+              "min": 0.0
+            }, 
+            "nethermind_metadata_db_writes": {
+              "max": 0.26666666666666666, 
+              "mean": 0.1714285714285714, 
+              "variance": 0.0036281179138321993, 
+              "pvalue": 0.34597044059045, 
+              "min": 0.13333333333333333
+            }, 
+            "nethermind_local_already_connected_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.13496391566461247, 
+              "min": 0.0
+            }, 
+            "nethermind_already_connected_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.020004782054530053, 
+              "min": 0.0
+            }, 
+            "nethermind_calls": {
+              "max": 103.6, 
+              "mean": 51.126984126984134, 
+              "variance": 924.2187956664146, 
+              "pvalue": 0.4631011354300689, 
+              "min": 20.333333333333332
+            }, 
+            "nethermind_last_persisted_block_number": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37373006745442305, 
+              "min": 0.0
+            }, 
+            "nethermind_replaced_nodes_count": {
+              "max": 4.666666666666667, 
+              "mean": 2.136507936507936, 
+              "variance": 2.4315243134290747, 
+              "pvalue": 0.0009711557190474371, 
+              "min": 0.6
+            }, 
+            "nethermind_state_db_reads": {
+              "max": 303.1333333333333, 
+              "mean": 172.10476190476194, 
+              "variance": 7695.609977324263, 
+              "pvalue": 0.013278011501018032, 
+              "min": 89.4
+            }, 
+            "nethermind_code_db_writes": {
+              "max": 8.533333333333333, 
+              "mean": 1.3396825396825396, 
+              "variance": 8.706837994457041, 
+              "pvalue": 0.4155233119616409, 
+              "min": 0.0
+            }, 
+            "nethermind_receipts_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.0857142857142857, 
+              "variance": 0.0009070294784580498, 
+              "pvalue": 0.3398657313449934, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_sstore_opcode": {
+              "max": 143.93333333333334, 
+              "mean": 72.98730158730159, 
+              "variance": 1908.641108591585, 
+              "pvalue": 0.468183259269234, 
+              "min": 23.866666666666667
+            }, 
+            "process_virtual_memory_bytes": {
+              "max": 3596567620.2666664, 
+              "mean": 1883679649.726984, 
+              "variance": 3.2203100594893394e+18, 
+              "pvalue": 0.08191639608412415, 
+              "min": 0.0
+            }, 
+            "nethermind_client_quitting_disconnects": {
+              "max": 0.3333333333333333, 
+              "mean": 0.0984126984126984, 
+              "variance": 0.047246157722348206, 
+              "pvalue": 0.00011296474600799721, 
+              "min": 0.0
+            }, 
+            "nethermind_bn256pairing_precompile": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.22465759402001678, 
+              "min": 0.0
+            }, 
+            "nethermind_bn256add_precompile": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.2210732782104004, 
+              "min": 0.0
+            }, 
+            "nethermind_local_breach_of_protocol_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.23212894693901143, 
+              "min": 0.0
+            }, 
+            "nethermind_pruned_transient_nodes_count": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37373008113422956, 
+              "min": 0.0
+            }, 
+            "nethermind_disconnect_requested_disconnects": {
+              "max": 0.06666666666666667, 
+              "mean": 0.02222222222222222, 
+              "variance": 0.0009876543209876543, 
+              "pvalue": 8.791796643607997e-33, 
+              "min": 0.0
+            }, 
+            "nethermind_eth66get_receipts_received": {
+              "max": 0.13333333333333333, 
+              "mean": 0.047619047619047616, 
+              "variance": 0.001753590325018896, 
+              "pvalue": 1.972071874598462e-16, 
+              "min": 0.0
+            }, 
+            "nethermind_snapshot_persistence_time": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.3846292486522763, 
+              "min": 0.0
+            }, 
+            "nethermind_blocks_db_writes": {
+              "max": 0.13333333333333333, 
+              "mean": 0.0857142857142857, 
+              "variance": 0.0009070294784580498, 
+              "pvalue": 0.33862357752635386, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_hellos_sent": {
+              "max": 0.8, 
+              "mean": 0.2888888888888889, 
+              "variance": 0.2515696649029981, 
+              "pvalue": 0.20698507436635788, 
+              "min": 0.0
+            }, 
+            "nethermind_receive_message_timeout_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0031746031746031746, 
+              "variance": 0.00020156210632401106, 
+              "pvalue": 0.00017115911927805688, 
+              "min": 0.0
+            }, 
+            "nethermind_storage_tree_writes": {
+              "max": 104.0, 
+              "mean": 50.75873015873016, 
+              "variance": 998.3743814562861, 
+              "pvalue": 0.42896462232650506, 
+              "min": 19.266666666666666
+            }, 
+            "nethermind_pruning_time": {
+              "max": 0.0, 
+              "mean": 0.5746031746031746, 
+              "variance": 6.603376165280922, 
+              "pvalue": 0.0956636513369371, 
+              "min": 0.0
+            }, 
+            "nethermind_blocks": {
+              "max": 0.13333333333333333, 
+              "mean": 0.0857142857142857, 
+              "variance": 0.0009070294784580498, 
+              "pvalue": 0.3398657313449934, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_dark_pool_ratio_level2": {
+              "max": 0.010199537521766291, 
+              "mean": 0.0043988170301275595, 
+              "variance": 9.617737570124994e-06, 
+              "pvalue": 1.1988962216975497e-06, 
+              "min": 0.0010781193772951762
+            }, 
+            "nethermind_block_infos_db_writes": {
+              "max": 0.5333333333333333, 
+              "mean": 0.3428571428571428, 
+              "variance": 0.013242630385487522, 
+              "pvalue": 0.3138274830079856, 
+              "min": 0.26666666666666666
+            }, 
+            "nethermind_useless_peer_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37372960233835617, 
+              "min": 0.0
+            }, 
+            "nethermind_sha256precompile": {
+              "max": 0.0, 
+              "mean": 0.01904761904761905, 
+              "variance": 0.007256235827664407, 
+              "pvalue": 0.12854514537261014, 
+              "min": 0.0
+            }, 
+            "nethermind_eth62new_block_received": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.37372960233835617, 
+              "min": 0.0
+            }, 
+            "nethermind_reorganizations": {
+              "max": 0.13333333333333333, 
+              "mean": 0.0857142857142857, 
+              "variance": 0.0009070294784580498, 
+              "pvalue": 0.33862357752635386, 
+              "min": 0.06666666666666667
+            }, 
+            "nethermind_mgas": {
+              "max": 2.629138933333403, 
+              "mean": 1.372473320634919, 
+              "variance": 0.6232619328855802, 
+              "pvalue": 0.4738912911641021, 
+              "min": 0.4882702666665864
+            }, 
+            "nethermind_dark_pool_ratio_level1": {
+              "max": 0.009677252811160353, 
+              "mean": 0.004025855984671249, 
+              "variance": 1.0018207897131344e-05, 
+              "pvalue": 3.1968094791209736e-05, 
+              "min": 0.0006718926131725311
+            }, 
+            "nethermind_mod_exp_precompile": {
+              "max": 0.06666666666666667, 
+              "mean": 0.326984126984127, 
+              "variance": 2.0524464600655072, 
+              "pvalue": 0.09533657191992295, 
+              "min": 0.0
+            }, 
+            "nethermind_deep_pruned_persisted_nodes_count": {
+              "max": 0.0, 
+              "mean": 144.36507936507937, 
+              "variance": 416825.5228017135, 
+              "pvalue": 0.09410613454098588, 
+              "min": 0.0
+            }, 
+            "process_num_threads": {
+              "max": 13.666666666666666, 
+              "mean": 7.7936507936507935, 
+              "variance": 42.40080624842529, 
+              "pvalue": 0.3035314830360077, 
+              "min": 0.0
+            }, 
+            "nethermind_bn256mul_precompile": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.22107473426470786, 
+              "min": 0.0
+            }, 
+            "nethermind_hellos_received": {
+              "max": 0.6, 
+              "mean": 0.22857142857142865, 
+              "variance": 0.12891912320483756, 
+              "pvalue": 0.33920779698729964, 
+              "min": 0.0
+            }, 
+            "nethermind_pruned_persisted_nodes_count": {
+              "max": 0.0, 
+              "mean": 1593.3460317460315, 
+              "variance": 50775031.53761651, 
+              "pvalue": 0.08806294275374893, 
+              "min": 0.0
+            }, 
+            "nethermind_breach_of_protocol_disconnects": {
+              "max": 0.0, 
+              "mean": 0.0, 
+              "variance": 0.0, 
+              "pvalue": 0.4498914133843307, 
+              "min": 0.0
+            }, 
+            "nethermind_outgoing_connections": {
+              "max": 0.4, 
+              "mean": 0.13968253968253969, 
+              "variance": 0.055409423028470677, 
+              "pvalue": 0.29428300203375246, 
+              "min": 0.0
+            }, 
+            "process_private_memory_bytes": {
+              "max": 1165506423.4666667, 
+              "mean": 389099402.97142863, 
+              "variance": 3.006282367307108e+17, 
+              "pvalue": 0.03823736042694104, 
+              "min": 5461.333333333333
+            }, 
+            "nethermind_cached_nodes_count": {
+              "max": 1064.3333333333333, 
+              "mean": 4425.063492063493, 
+              "variance": 308620181.24464595, 
+              "pvalue": 0.4685553627078038, 
+              "min": 210.13333333333333
+            }, 
+            "nethermind_code_db_reads": {
+              "max": 0.8666666666666667, 
+              "mean": 0.44761904761904764, 
+              "variance": 0.10799697656840516, 
+              "pvalue": 0.056179565944651066, 
+              "min": 0.13333333333333333
+            }, 
+            "nethermind_blockhash_opcode": {
+              "max": 0.06666666666666667, 
+              "mean": 0.02222222222222222, 
+              "variance": 0.0009876543209876546, 
+              "pvalue": 0.0011164116658782647, 
+              "min": 0.0
+            }, 
+            "nethermind_eth66get_block_headers_received": {
+              "max": 0.6, 
+              "mean": 0.4031746031746031, 
+              "variance": 0.018825900730662638, 
+              "pvalue": 2.2286797600090445e-08, 
+              "min": 0.26666666666666666
+            }
+          }
+        }, 
+        "client_crashed": true, 
+        "injection_count": 1
+      }, 
+      "syscall_name": "futex", 
+      "error_code": "-ETIMEDOUT", 
+      "failure_rate": 0.05, 
+      "experiment_duration": 300
+    }
+  ]
+}
