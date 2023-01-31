@@ -16,16 +16,15 @@ TEMPLATE_CE_RESULTS = r"""\begin{table}[tb]
 \caption{Chaos Engineering Experiment Results}\label{tab:ce-experiment-results}
 \begin{tabularx}{\columnwidth}{lllrrlXXX}
 \toprule
-\textbf{C}& \textbf{Syscall}& \textbf{E. C.}& \textbf{E. R.}& \textbf{Inj.}& \textbf{Prechecked Metric}& \textbf{H\textsubscript{N}}& \textbf{H\textsubscript{O}}& \textbf{H\textsubscript{R}}\\
+\textbf{Client}& \textbf{Syscall}& \textbf{Error Code}& \textbf{Error Rate}& \textbf{Injections}& \textbf{Evaluated Metrics}& \textbf{H\textsubscript{N}}& \textbf{H\textsubscript{O}}& \textbf{H\textsubscript{R}}\\
 \midrule
 """ + "%s" + r"""
 \bottomrule
 \multicolumn{9}{p{8.5cm}}{
-H\textsubscript{C}: `√' if the injected errors crash the client, otherwise `X'.\newline
-H\textsubscript{O}: `√' if the injected errors have visible effect on the metric, otherwise `X'.\newline
-H\textsubscript{R}: `√' if the metric matches its steady state during the validation phase, otherwise `X'.\newline
-If a hypothesis is left to be untested, it is marked as `-'.\newline
-The following metrics are selected: SELECTED_METRICS.}
+H\textsubscript{N}: `√' if the injected errors do not crash the client, otherwise `X'.\newline
+H\textsubscript{O}: The number of metrics that the injected errors have a visible effect on.\newline
+H\textsubscript{R}: The number of metrics that matche its steady state during the validation phase.\newline
+If a hypothesis is left to be untested, it is marked as `-'.}
 \end{tabularx}
 \end{table}
 """
@@ -186,6 +185,7 @@ def pre_check_steady_state(steady_state_metrics, metric_name_filter, experiment,
     for metric in steady_state_metrics:
         metric_name = metric["metric_name"]
         if metric_name_filter != None and metric_name not in metric_name_filter: continue
+        if pre_check_metrics[metric_name] == None: continue
 
         ss_metric_points = np.array(metric["data_points"]).astype(float)
         pre_check_metric_points = np.array(pre_check_metrics[metric_name]["values"]).astype(float)
@@ -206,6 +206,7 @@ def ks_compare_metrics(steady_state_metrics, metric_name_filter, experiment, log
     for metric in steady_state_metrics:
         metric_name = metric["metric_name"]
         if metric_name_filter != None and metric_name not in metric_name_filter: continue
+        if ce_metrics[metric_name] == None: continue
 
         metric_result = {"metric": metric_name, "h_o": "", "h_r": ""}
         ss_metric_points = np.array(metric["data_points"]).astype(float)
@@ -315,15 +316,12 @@ def main(args):
             body = ""
             experiment_count = 0
             row_count = 0
+            first_column = r"\multirow{ROW_COUNT}{*}{%s}"%args.client
             for experiment in sorted(data["experiments"], key=lambda d: d["syscall_name"]):
                 if experiment["result"]["injection_count"] == 0: continue
+                if row_count > 0: first_column = ""
 
-                experiment_count = experiment_count + 1
-
-                first_column = r"\multirow{ROW_COUNT}{*}{%s}"%args.client
                 if experiment["result"]["client_crashed"]:
-                    row_count = row_count + 1
-                    if row_count > 1: first_column = ""
                     body += r"%s& %s& %s& %s& %d& %s& %s& %s& %s\\"%(
                         first_column,
                         experiment["syscall_name"],
@@ -339,39 +337,33 @@ def main(args):
                     stable_metrics_during_pre_check = pre_check_steady_state(ss_metrics, args.metrics, experiment, args.logs, args.p_value, args.plot)
                     metric_results = ks_compare_metrics(ss_metrics, args.metrics, experiment, args.logs, args.p_value, args.plot)
                     metric_to_be_present = [m for m in metric_results if m["metric"] in stable_metrics_during_pre_check]
-                    for index, metric in enumerate(metric_to_be_present):
-                        row_count = row_count + 1
-                        if row_count > 1: first_column = ""
-                        if index == 0:
-                            row_template = r"%s& %s& %s& %s& %d& %s& %s& %s& %s\\" + "\n"
-                            body += row_template%(
-                                first_column,
-                                experiment["syscall_name"],
-                                experiment["error_code"][1:], # remove the "-" before the error code
-                                round_number(experiment["failure_rate"]),
-                                experiment["result"]["injection_count"],
-                                metric["metric"],
-                                "√",
-                                metric["h_o"],
-                                metric["h_r"]
-                            )
-                        else:
-                            row_template = r"& & & & & %s& √& %s& %s\\" + "\n"
-                            body += row_template%(
-                                metric["metric"],
-                                metric["h_o"],
-                                metric["h_r"]
-                            )
+                    h_o_list = list()
+                    h_r_list = list()
+                    for metric in metric_to_be_present:
+                        if metric["h_o"] == "√":
+                            h_o_list.append(metric)
+                        if metric["h_r"] == "√":
+                            h_r_list.append(metric)
+                    body += r"%s& %s& %s& %s& %d& %s& %s& %s& %s\\"%(
+                        first_column,
+                        experiment["syscall_name"],
+                        experiment["error_code"][1:], # remove the "-" before the error code
+                        round_number(experiment["failure_rate"]),
+                        experiment["result"]["injection_count"],
+                        len(metric_to_be_present),
+                        "√",
+                        len(h_o_list),
+                        len(h_r_list)
+                    ) + "\n"
+                row_count = row_count + 1
+                experiment_count = experiment_count + 1
+                logging.info("experiment (%s, %s, %s)"%(experiment["syscall_name"], experiment["error_code"][1:], round_number(experiment["failure_rate"])))
+                logging.info("H_o: %s"%h_o_list)
+                logging.info("H_r: %s"%h_r_list)
+
             body = body.replace("ROW_COUNT", str(row_count))
             body = body[:-1] # remove the last line break
             latex = TEMPLATE_CE_RESULTS%(body)
-            if args.metrics:
-                latex = latex.replace("SELECTED_METRICS", ", ".join(args.metrics))
-            else:
-                metric_names = list()
-                for metric in ss_metrics:
-                    metric_names.append(metric["metric_name"])
-                latex = latex.replace("SELECTED_METRICS", ", ".join(metric_names))
             latex = latex.replace("_", "\\_")
             print(latex)
 
