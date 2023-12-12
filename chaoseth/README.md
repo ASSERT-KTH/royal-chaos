@@ -5,6 +5,19 @@ By design an Ethereum client should be fault-tolerant on turbulences in producti
 ChaosETH is a chaos engineering framework that intercepts an Ethereum client's system call invocations and actively injects error codes into these system call invocations in production. The source code of the Ethereum client is not necessary. Developers can also apply various workload or directly use production traffic to conduct chaos engineering experiments at the system call invocation level.
 
 More details in the paper: [Chaos Engineering of Ethereum Blockchain Clients](https://arxiv.org/abs/2111.00221), Long Zhang, Javier Ron, Benoit Baudry, and Martin Monperrus
+```bibtex
+@article{chaoseth2023,
+ title = {Chaos Engineering of Ethereum Blockchain Clients},
+ year = {2023},
+ doi = {10.1145/3611649},
+ author = {Long Zhang and Javier Ron and Benoit Baudry and Martin Monperrus},
+ url = {http://oadoi.org/10.1145/3611649},
+ journal = {Distributed Ledger Technologies: Research and Practice},
+ issue = {3},
+ volume = {2}
+}
+```
+
 
 ## Talks about ChaosETH
 
